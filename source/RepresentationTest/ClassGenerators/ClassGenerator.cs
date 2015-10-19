@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Justin Sliekers - udpating DefinedRepresentation to EnumeratedRepresentation
   *******************************************************************************/
 
 using System.Linq;
@@ -45,7 +46,7 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
                 .AppendFormat(ClassNamePattern, declaration, Name)
                 .Append("{\n");
 
-            var definedRepresentations = RepresentationManager.Instance.Representations.Values.OfType<DefinedRepresentation>();
+            var definedRepresentations = RepresentationManager.Instance.Representations.Values.OfType<EnumeratedRepresentation>();
             foreach (var definedRepresentation in definedRepresentations)
             {
                 Append(definedRepresentation, classBuilder);
@@ -66,7 +67,7 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
 
         }
 
-        protected virtual void Append(DefinedRepresentation definedRepresentation, StringBuilder stringBuilder)
+        protected virtual void Append(EnumeratedRepresentation definedRepresentation, StringBuilder stringBuilder)
         {
 
         }

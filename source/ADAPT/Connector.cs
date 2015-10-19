@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Justin Sliekers - udpating DefinedRepresentation to EnumeratedRepresentation
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
@@ -21,7 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public DefinedRepresentation ConnectorType;
+        public EnumeratedRepresentation ConnectorType;
 
         public ReferencePoint ConnectorPointOffset;
     }
