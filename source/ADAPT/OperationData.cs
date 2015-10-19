@@ -8,8 +8,9 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -45,9 +46,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public int MaxDepth { get; set; }
 
-        public IEnumerable<SpatialRecord> GetSpatialRecords { get; set; }
+        public Func<IEnumerable<SpatialRecord>> GetSpatialRecords { get; set; }
 
-        public IEnumerable<Section> GetSections { get; set; }
+        public Func<IEnumerable<Section>> GetSections { get; set; }
  
         public int SpatialRecordCount { get; set; }
     }

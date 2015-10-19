@@ -35,7 +35,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public List<int> CropZoneIds { get; set; }
 
-        public int Version { get; set; }
+        public int? Version { get; set; }
 
         public List<int> CropIds { get; set; }
 
