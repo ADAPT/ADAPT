@@ -18,7 +18,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     {
         public List<ProprietaryValue> ProprietaryValues { get; set; }
 
-        public ReferenceData ReferenceData { get; set; }
+        public Catalog Catalog { get; set; }
 
         public List<Document> Documents { get; set; }
 

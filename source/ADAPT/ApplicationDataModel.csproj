@@ -137,7 +137,7 @@
     <Compile Include="PropagationDirectionEnum.cs" />
     <Compile Include="ProprietaryValue.cs" />
     <Compile Include="RasterReferenceLayer.cs" />
-    <Compile Include="ReferenceData.cs" />
+    <Compile Include="Catalog.cs" />
     <Compile Include="ReferenceLayer.cs" />
     <Compile Include="ReferencePoint.cs" />
     <Compile Include="Representation.cs" />
