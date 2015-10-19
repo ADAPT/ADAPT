@@ -56,6 +56,7 @@
     <Compile Include="Contact.cs" />
     <Compile Include="ContactInfo.cs" />
     <Compile Include="ContactType.cs" />
+    <Compile Include="Container.cs" />
     <Compile Include="ContextItem.cs" />
     <Compile Include="ContextItemType.cs" />
     <Compile Include="Crop.cs" />
