@@ -34,7 +34,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public int? LoadId { get; set; }
 
-        public OperationType OperationType { get; set; }
+        public OperationTypeEnum OperationType { get; set; }
 
         public int? PrescriptionId { get; set; }
 

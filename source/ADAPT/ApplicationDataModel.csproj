@@ -123,7 +123,7 @@
     <Compile Include="NumericRepresentation.cs" />
     <Compile Include="NumericRepresentationValue.cs" />
     <Compile Include="OperationData.cs" />
-    <Compile Include="OperationType.cs" />
+    <Compile Include="OperationTypeEnum.cs" />
     <Compile Include="OriginAxleLocationEnum.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonRole.cs" />

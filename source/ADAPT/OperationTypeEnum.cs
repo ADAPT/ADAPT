@@ -12,7 +12,7 @@
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public enum OperationType
+    public enum OperationTypeEnum
     {
     }
 }
