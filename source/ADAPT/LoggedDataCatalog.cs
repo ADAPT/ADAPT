@@ -8,15 +8,17 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
 
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class LoggedData : WorkRecord
+    public class LoggedDataCatalog
     {
-        //TODO: Convert to helper method
-        public List<OperationData> Operations { get; set; } 
+        public List<Section> Sections { get; set; }
+        public List<Meter> Meters { get; set; }
+        public List<LoggedData> LoggedData { get; set; } 
+        public List<OperationData> OperationData { get; set; } 
     }
 }

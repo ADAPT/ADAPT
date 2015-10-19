@@ -68,6 +68,7 @@
     <Compile Include="DateWithContext.cs" />
     <Compile Include="DensityFactor.cs" />
     <Compile Include="Document.cs" />
+    <Compile Include="Documents.cs" />
     <Compile Include="DrivenHeadland.cs" />
     <Compile Include="EnumeratedMember.cs" />
     <Compile Include="EnumeratedMeter.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="LoadDestination.cs" />
     <Compile Include="LoggedData.cs" />
     <Compile Include="LoggedNote.cs" />
+    <Compile Include="LoggedDataCatalog.cs" />
     <Compile Include="Machine.cs" />
     <Compile Include="MachineConfiguration.cs" />
     <Compile Include="MachineModel.cs" />
