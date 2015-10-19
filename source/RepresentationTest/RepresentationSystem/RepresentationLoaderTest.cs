@@ -32,7 +32,7 @@ namespace AgGateway.ADAPT.RepresentationTest.RepresentationSystem
         {
             var result = _representationLoader.Load();
 
-            Assert.AreEqual(423, result.Values.Count);
+            Assert.AreEqual(420, result.Values.Count);
         }
 
         [Test]

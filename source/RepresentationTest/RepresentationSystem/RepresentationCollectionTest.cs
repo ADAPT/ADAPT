@@ -62,7 +62,7 @@ namespace AgGateway.ADAPT.RepresentationTest.RepresentationSystem
 
         private static ApplicationDataModel.Representation CreateRepresentation(int domainId, string description, string name)
         {
-            var representation = new ApplicationDataModel.VariableRepresentation()
+            var representation = new ApplicationDataModel.NumericRepresentation
             {
                 Id = domainId,
                 Description = description,

@@ -20,7 +20,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
         private readonly INumber _baseNumber;
         private readonly IUnitOfMeasureConverter _converter;
 
-        public VariableRepresentation Representation
+        public NumericRepresentation Representation
         {
             get;
             private set;
@@ -62,29 +62,29 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             }
         }
 
-        public VariableNumber(VariableRepresentation representation, UnitOfMeasure unitOfMeasure, double value)
+        public VariableNumber(NumericRepresentation representation, UnitOfMeasure unitOfMeasure, double value)
             : this(representation, unitOfMeasure, value, UnitOfMeasureConverter.Create())
         {
 
         }
 
-        public VariableNumber(VariableRepresentation representation, UnitOfMeasure unitOfMeasure, double value, IUnitOfMeasureConverter converter)
+        public VariableNumber(NumericRepresentation representation, UnitOfMeasure unitOfMeasure, double value, IUnitOfMeasureConverter converter)
             : this(representation, new BaseNumber(unitOfMeasure, value, converter), converter)
         {
             
         }
 
         public VariableNumber(int representationTag, UnitOfMeasure uom, double value) :
-            this((VariableRepresentation)RepresentationManager.Instance.Representations[representationTag], uom, value)
+            this((NumericRepresentation)RepresentationManager.Instance.Representations[representationTag], uom, value)
         {
         }
 
         public VariableNumber(int representationTag, string uomDomainId, double value) :
-            this((VariableRepresentation)RepresentationManager.Instance.Representations[representationTag], UnitSystemManager.Instance.UnitOfMeasures[uomDomainId], value)
+            this((NumericRepresentation)RepresentationManager.Instance.Representations[representationTag], UnitSystemManager.Instance.UnitOfMeasures[uomDomainId], value)
         {
         }
 
-        private VariableNumber(VariableRepresentation representation, INumber number, IUnitOfMeasureConverter converter)
+        private VariableNumber(NumericRepresentation representation, INumber number, IUnitOfMeasureConverter converter)
         {
             _baseNumber = number;
             _converter = converter;
@@ -164,7 +164,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             return new VariableNumber(Representation, quotient, _converter);
         }
 
-        public VariableNumber Divide(VariableNumber denominator, VariableRepresentation variableRepresentation)
+        public VariableNumber Divide(VariableNumber denominator, NumericRepresentation variableRepresentation)
         {
             var quotient = _baseNumber.Divide(denominator);
             return new VariableNumber(variableRepresentation, quotient, _converter);
@@ -182,7 +182,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             return new VariableNumber(Representation, product, _converter);
         }
 
-        public VariableNumber Multiply(VariableNumber right, VariableRepresentation variableRepresentation)
+        public VariableNumber Multiply(VariableNumber right, NumericRepresentation variableRepresentation)
         {
             var product = Multiply(right);
             return new VariableNumber(variableRepresentation, product, _converter);

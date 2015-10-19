@@ -167,7 +167,6 @@
     <Compile Include="UnitOfMeasureComponent.cs" />
     <Compile Include="UnitOfMeasureDimension.cs" />
     <Compile Include="UnitType.cs" />
-    <Compile Include="VariableRepresentation.cs" />
     <Compile Include="VariableRepresentationValue.cs" />
     <Compile Include="WorkItem.cs" />
     <Compile Include="WorkItemOperation.cs" />
