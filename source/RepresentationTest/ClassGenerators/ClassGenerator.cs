@@ -1,0 +1,74 @@
+/*******************************************************************************
+  * Copyright (C) 2015 AgGateway and ADAPT Contributors
+  * Copyright (C) 2015 Deere and Company
+  * All rights reserved. This program and the accompanying materials
+  * are made available under the terms of the Eclipse Public License v1.0
+  * which accompanies this distribution, and is available at
+  * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
+  *
+  * Contributors:
+  *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *******************************************************************************/
+
+using System.Linq;
+using System.Text;
+using AgGateway.ADAPT.ApplicationDataModel;
+using AgGateway.ADAPT.Representation.RepresentationSystem;
+
+namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
+{
+    public interface IClassGenerator
+    {
+        string Generate();
+    }
+
+    public abstract class ClassGenerator : IClassGenerator
+    {
+        private const string NameSpace = "namespace AgGateway.ADAPT.Representation.RepresentationSystem\n{\n";
+        private const string ClassNamePattern = "    public {0} {1} \n    ";
+        private const string FileFooter = "    }\n}";
+        protected abstract string Name
+        {
+            get;
+        }
+        protected abstract bool IsEnum
+        {
+            get;
+        }
+
+        public string Generate()
+        {
+            var declaration = IsEnum ? "enum" : "class";
+            var classBuilder = new StringBuilder()
+                .Append("using AgGateway.ADAPT.ApplicationDataModel;\r\r")
+                .Append(NameSpace)
+                .AppendFormat(ClassNamePattern, declaration, Name)
+                .Append("{\n");
+
+            var definedRepresentations = RepresentationManager.Instance.Representations.Values.OfType<DefinedRepresentation>();
+            foreach (var definedRepresentation in definedRepresentations)
+            {
+                Append(definedRepresentation, classBuilder);
+            }
+
+            var variableRepresentations = RepresentationManager.Instance.Representations.Values.OfType<VariableRepresentation>();
+            foreach (var variableRepresentation in variableRepresentations)
+            {
+                Append(variableRepresentation, classBuilder);
+            }
+
+            classBuilder.Append(FileFooter);
+            return classBuilder.ToString();
+        }
+
+        protected virtual void Append(VariableRepresentation representation, StringBuilder stringBuilder)
+        {
+
+        }
+
+        protected virtual void Append(DefinedRepresentation definedRepresentation, StringBuilder stringBuilder)
+        {
+
+        }
+    }
+}
