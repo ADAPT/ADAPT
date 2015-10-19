@@ -43,7 +43,7 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
             stringBuilder.Append("\n\n");
         }
 
-        protected override void Append(VariableRepresentation representation, StringBuilder stringBuilder)
+        protected override void Append(NumericRepresentation representation, StringBuilder stringBuilder)
         {
             string representationName = representation.Name.Replace("\r", "")
                                                             .Replace("[", "")
@@ -54,7 +54,7 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
                                                             .Replace("–", "")
                                                             .Replace(" ", "");
 
-            stringBuilder.Append(String.Format(RepresentationPattern, typeof(VariableRepresentation).Name, representation.Id, representationName));
+            stringBuilder.Append(String.Format(RepresentationPattern, typeof(NumericRepresentation).Name, representation.Id, representationName));
             stringBuilder.Append("\n\n");
         }
     }

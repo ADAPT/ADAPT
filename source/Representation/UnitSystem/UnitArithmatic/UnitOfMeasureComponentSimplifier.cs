@@ -41,7 +41,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
             return unitOfMeasure;
         }
 
-        public VariableNumber Simplify(VariableRepresentation representation, IEnumerable<UnitOfMeasureComponent> components, double value) 
+        public VariableNumber Simplify(NumericRepresentation representation, IEnumerable<UnitOfMeasureComponent> components, double value) 
         {
             var finalValue = value;
             var unitTypeComponents = new Dictionary<string, UnitOfMeasureComponent>();

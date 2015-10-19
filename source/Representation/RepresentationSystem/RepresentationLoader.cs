@@ -62,7 +62,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
             var unit = definitionLines.FirstOrDefault(l => l.StartsWith("Unit:"));
             var definition = definitionLines.Single(l => l.StartsWith("Definition:"));
 
-            return new ApplicationDataModel.VariableRepresentation
+            return new ApplicationDataModel.NumericRepresentation
             {
                 Id = ParseId(nameId),
                 Name = ParseName(nameId),

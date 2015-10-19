@@ -52,7 +52,7 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
                 Append(definedRepresentation, classBuilder);
             }
 
-            var variableRepresentations = RepresentationManager.Instance.Representations.Values.OfType<VariableRepresentation>();
+            var variableRepresentations = RepresentationManager.Instance.Representations.Values.OfType<NumericRepresentation>();
             foreach (var variableRepresentation in variableRepresentations)
             {
                 Append(variableRepresentation, classBuilder);
@@ -62,7 +62,7 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
             return classBuilder.ToString();
         }
 
-        protected virtual void Append(VariableRepresentation representation, StringBuilder stringBuilder)
+        protected virtual void Append(NumericRepresentation representation, StringBuilder stringBuilder)
         {
 
         }

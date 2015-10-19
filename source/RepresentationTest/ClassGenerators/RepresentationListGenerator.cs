@@ -41,7 +41,7 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
             Append(definedRepresentation, stringBuilder);
         }
 
-        protected override void Append(VariableRepresentation representation, StringBuilder stringBuilder)
+        protected override void Append(NumericRepresentation representation, StringBuilder stringBuilder)
         {
             Append(representation, stringBuilder);
         }

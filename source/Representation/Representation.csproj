@@ -49,6 +49,8 @@
       <DependentUpon>RepresentationResources.resx</DependentUpon>
     </Compile>
     <Compile Include="RepresentationSystem\RepresentationCollection.cs" />
+    <Compile Include="RepresentationSystem\RepresentationInstanceList.cs" />
+    <Compile Include="RepresentationSystem\RepresentationList.cs" />
     <Compile Include="RepresentationSystem\RepresentationLoader.cs" />
     <Compile Include="RepresentationSystem\RepresentationManager.cs" />
     <Compile Include="UnitSystem\BaseNumber.cs" />
