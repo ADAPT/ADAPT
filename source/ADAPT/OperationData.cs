@@ -30,7 +30,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public int? MachineConfigurationId { get; set; }
 
-        public List<int> ConnetorIds { get; set; }
+        public List<int> ConnectorIds { get; set; }
 
         public int? LoadId { get; set; }
 
@@ -48,7 +48,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public Func<IEnumerable<SpatialRecord>> GetSpatialRecords { get; set; }
 
-        public Func<IEnumerable<Section>> GetSections { get; set; }
+        public Func<int, IEnumerable<Section>> GetSections { get; set; }
  
         public int SpatialRecordCount { get; set; }
     }
