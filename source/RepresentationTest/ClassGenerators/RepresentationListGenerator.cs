@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Justin Sliekers - udpating DefinedRepresentation to EnumeratedRepresentation
   *******************************************************************************/
 
 using System.Text;
@@ -35,7 +36,7 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
             }
         }
 
-        protected override void Append(DefinedRepresentation definedRepresentation, StringBuilder stringBuilder)
+        protected override void Append(EnumeratedRepresentation definedRepresentation, StringBuilder stringBuilder)
         {
             Append(definedRepresentation, stringBuilder);
         }

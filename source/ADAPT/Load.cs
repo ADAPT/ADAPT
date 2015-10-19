@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Justin Sliekers - udpating DefinedRepresentation to EnumeratedRepresentation
+  *******************************************************************************/
 
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -23,7 +24,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public string LoadNumber { get; set; }
 
-        public DefinedRepresentation LoadType { get; set; }
+        public EnumeratedRepresentation LoadType { get; set; }
 
         public NumericRepresentationValue LoadQuality { get; set; }
 

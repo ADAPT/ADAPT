@@ -74,13 +74,13 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             
         }
 
-        public VariableNumber(int representationTag, UnitOfMeasure uom, double value) :
-            this((VariableRepresentation)RepresentationManager.Instance.Representations[representationTag], uom, value)
+        public VariableNumber(int representationTag, UnitOfMeasure uom, double value) 
+            : this((VariableRepresentation)RepresentationManager.Instance.Representations[representationTag], uom, value)
         {
         }
 
-        public VariableNumber(int representationTag, string uomDomainId, double value) :
-            this((VariableRepresentation)RepresentationManager.Instance.Representations[representationTag], UnitSystemManager.Instance.UnitOfMeasures[uomDomainId], value)
+        public VariableNumber(int representationTag, string uomDomainId, double value) 
+            : this((VariableRepresentation)RepresentationManager.Instance.Representations[representationTag], UnitSystemManager.Instance.UnitOfMeasures[uomDomainId], value)
         {
         }
 

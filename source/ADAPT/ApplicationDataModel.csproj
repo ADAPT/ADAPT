@@ -65,7 +65,6 @@
     <Compile Include="CropZone.cs" />
     <Compile Include="DateContextEnum.cs" />
     <Compile Include="DateWithContext.cs" />
-    <Compile Include="DefinedRepresentation.cs" />
     <Compile Include="DensityFactor.cs" />
     <Compile Include="Document.cs" />
     <Compile Include="DrivenHeadland.cs" />

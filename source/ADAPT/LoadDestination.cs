@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Justin Sliekers - udpating DefinedRepresentation to EnumeratedRepresentation   
   *******************************************************************************/  
 
 using System;
@@ -20,7 +21,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public string Name { get; set; }
 
-        public DefinedRepresentation DestinationType { get; set; }
+        public EnumeratedRepresentation DestinationType { get; set; }
 
         public Uri GLN { get; set; }
 
