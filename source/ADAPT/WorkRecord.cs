@@ -26,7 +26,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<int> GuidanceIds { get; set; }
         public List<Note> Notes { get; set; }
         public List<int> ContextItemIds { get; set; }
-        public string Description { get; set; }
         public int? CropZoneId { get; set; }
         public int? PersonRoleId { get; set; }
         public List<int> NoteIds { get; set; }

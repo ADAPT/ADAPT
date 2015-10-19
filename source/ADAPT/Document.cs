@@ -23,9 +23,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public string Name { get; set; }
+        public string Description { get; set; }
 
-        //Todo: Rename uml to id's 
         public List<int> CropSeasonIds { get; set; }
 
         public int? GrowerId { get; set; }
