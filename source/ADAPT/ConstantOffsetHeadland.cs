@@ -14,6 +14,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class ConstantOffsetHeadland : Headland
     {
-        public double Value;
+        public NumericRepresentationValue Value;
     }
 }

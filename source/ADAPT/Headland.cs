@@ -14,17 +14,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public abstract class Headland
     {
-        protected Headland()
-        {
-            Id = CompoundIdentifierFactory.Instance.Create();
-        }
-
-        public CompoundIdentifier Id { get; private set; }
-
-        public string Name;
-
-        public int FieldId;
-
-        public MultiPolygon Shape;
+        public string Description;
     }
 }

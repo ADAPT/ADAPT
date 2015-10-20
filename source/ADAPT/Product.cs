@@ -41,6 +41,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public UnitOfMeasure DefaultUnit;
 
-        public List<DensityFactor> DensityFactors;
+        public NumericRepresentationValue Density;
     }
 }

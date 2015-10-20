@@ -11,17 +11,20 @@
   *******************************************************************************/  
 
 using System;
+using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class DensityFactor
     {
+        public int ProductId { get; set; }
+
         public string BatchNo;
 
         public string LotNo;
 
-        public NumericRepresentation Factor;
+        public NumericRepresentationValue Density;
 
-        public DateTime TimeStamp;
+        public List<int> TimeScopeIds { get; set; }
     }
 }
