@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 using System.Collections.Generic;
 
@@ -16,6 +17,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class FertilizerProduct : Product
     {
-        public List<IngredientUse> Ingredients;
+        public List<IngredientUse> Ingredients { get; set; }
     }
 }

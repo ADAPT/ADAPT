@@ -8,16 +8,17 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class ReferencePoint
     {
-        public NumericRepresentationValue XOffset;
+        public NumericRepresentationValue XOffset { get; set; }
 
-        public NumericRepresentationValue YOffset;
+        public NumericRepresentationValue YOffset { get; set; }
 
-        public NumericRepresentationValue ZOffset;
+        public NumericRepresentationValue ZOffset { get; set; }
     }
 }

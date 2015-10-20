@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Joseph Ross Making Properties
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -23,10 +24,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public int MeterId;
+        public int MeterId  { get; set; }
 
         public List<int> TimeScopeIds { get; set; }
         
-        public NumericRepresentationValue Value;
+        public NumericRepresentationValue Value  { get; set; }
     }
 }

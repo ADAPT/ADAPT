@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Joseph Ross Making Properties
   *******************************************************************************/  
 
 using System;
@@ -19,11 +20,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     {
         public int ProductId { get; set; }
 
-        public string BatchNo;
+        public string BatchNo { get; set; }
 
-        public string LotNo;
+        public string LotNo { get; set; }
 
-        public NumericRepresentationValue Density;
+        public NumericRepresentationValue Density { get; set; }
 
         public List<int> TimeScopeIds { get; set; }
     }

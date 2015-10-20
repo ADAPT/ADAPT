@@ -8,18 +8,19 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Joseph Ross Making Properties
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class Implement : Equipment
     {
-        public int ImplementTypeId;
+        public int ImplementTypeId { get; set; }
 
-        public int? ImplementModelId;
+        public int? ImplementModelId { get; set; }
 
-        public ImplementConfiguration ImplementConfiguration;
+        public ImplementConfiguration ImplementConfiguration { get; set; }
 
-        public int AciveImplementConfigurationId;
+        public int AciveImplementConfigurationId { get; set; }
     }
 } 

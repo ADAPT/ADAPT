@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
@@ -21,10 +22,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public int Sectionid;
+        public int Sectionid { get; set; }
 
-        public NumericRepresentation TotalDistanceTravelled;
+        public NumericRepresentation TotalDistanceTravelled { get; set; }
 
-        public NumericRepresentation TotalElapsedTime;
+        public NumericRepresentation TotalElapsedTime { get; set; }
     }
 }

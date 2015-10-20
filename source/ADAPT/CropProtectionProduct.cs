@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 using System.Collections.Generic;
 
@@ -16,12 +17,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class CropProtectionProduct : Product
     {
-        public bool Biological;
+        public bool Biological { get; set; }
 
-        public bool Organophosphate;
+        public bool Organophosphate { get; set; }
 
-        public bool Carbamate;
+        public bool Carbamate { get; set; }
 
-        public List<IngredientUse> Ingredients;
+        public List<IngredientUse> Ingredients { get; set; }
     }
 }

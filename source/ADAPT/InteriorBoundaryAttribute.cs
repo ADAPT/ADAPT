@@ -8,16 +8,17 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class InteriorBoundaryAttribute
     {
-        public int ShapeIdRef;
+        public int ShapeIdRef { get; set; }
 
-        public bool Passable;
+        public bool Passable { get; set; }
 
-        public string Name;
+        public string Name { get; set; }
     }
 }

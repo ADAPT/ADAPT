@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 
 using System.Collections.Generic;
@@ -24,14 +25,14 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public int SectionId;
+        public int SectionId { get; set; }
 
-        public Representation Representation;
+        public Representation Representation { get; set; }
 
-        public List<double> Values;
+        public List<double> Values { get; set; }
 
-        public NumericRepresentationValue AppliedLatency;
+        public NumericRepresentationValue AppliedLatency { get; set; }
 
-        public NumericRepresentationValue ReportedLatency;
+        public NumericRepresentationValue ReportedLatency { get; set; }
     }
 }

@@ -8,17 +8,18 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class Machine : Equipment
     {
-        public int MachineTypeId;
+        public int MachineTypeId { get; set; }
 
-        public int? MachineModelId;
+        public int? MachineModelId { get; set; }
 
-        public MachineConfiguration MachineConfiguration;
+        public MachineConfiguration MachineConfiguration { get; set; }
 
     }
 }
