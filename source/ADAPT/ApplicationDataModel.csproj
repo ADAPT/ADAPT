@@ -139,10 +139,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropagationDirectionEnum.cs" />
     <Compile Include="ProprietaryValue.cs" />
+    <Compile Include="RasterData.cs" />
     <Compile Include="RasterReferenceLayer.cs" />
     <Compile Include="Catalog.cs" />
     <Compile Include="Recommendation.cs" />
     <Compile Include="ReferenceLayer.cs" />
+    <Compile Include="ReferenceLayers.cs" />
     <Compile Include="ReferencePoint.cs" />
     <Compile Include="Representation.cs" />
     <Compile Include="ReferenceIdSource.cs" />

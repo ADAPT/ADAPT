@@ -26,6 +26,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public NumericRepresentationValue CellHeight { get; set; }
 
-        public List<SpatialAttribute> SpatialAttributes { get; set; }
+        public List<RasterData<EnumeratedRepresentation, EnumeratedMember>> EnumeratedRasterValues { get; set; }
+        public List<RasterData<StringRepresentation, string>> StringRasterValues { get; set; }
+        public List<RasterData<NumericRepresentation, NumericalValue>> NumericRasterValues { get; set; }
     }
 }
