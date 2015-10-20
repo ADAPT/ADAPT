@@ -22,7 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public int Sectionid { get; set; }
+        public int SectionId { get; set; }
 
         public NumericRepresentation TotalDistanceTravelled { get; set; }
 
