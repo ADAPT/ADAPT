@@ -43,6 +43,8 @@
     <Compile Include="AbLine.cs" />
     <Compile Include="APlus.cs" />
     <Compile Include="ApplicationDataModel.cs" />
+    <Compile Include="ApplicationStrategyEnum.cs" />
+    <Compile Include="BoundingBox.cs" />
     <Compile Include="Brand.cs" />
     <Compile Include="CalibrationFactor.cs" />
     <Compile Include="Category.cs" />
@@ -112,6 +114,7 @@
     <Compile Include="MachineSeries.cs" />
     <Compile Include="MachineType.cs" />
     <Compile Include="MachineTypeEnum.cs" />
+    <Compile Include="ManualPrescription.cs" />
     <Compile Include="Manufacturer.cs" />
     <Compile Include="Meter.cs" />
     <Compile Include="ModeOfAction.cs" />
@@ -132,14 +135,17 @@
     <Compile Include="Plan.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Polygon.cs" />
+    <Compile Include="Prescription.cs" />
     <Compile Include="Priority.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductMixComponent.cs" />
     <Compile Include="ProductType.cs" />
+    <Compile Include="ProductUse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropagationDirectionEnum.cs" />
     <Compile Include="ProprietaryValue.cs" />
     <Compile Include="RasterData.cs" />
+    <Compile Include="RasterGridPrescription.cs" />
     <Compile Include="RasterReferenceLayer.cs" />
     <Compile Include="Catalog.cs" />
     <Compile Include="Recommendation.cs" />
@@ -150,6 +156,9 @@
     <Compile Include="ReferenceIdSource.cs" />
     <Compile Include="RepresentationValue.cs" />
     <Compile Include="Role.cs" />
+    <Compile Include="RxRate.cs" />
+    <Compile Include="RxRates.cs" />
+    <Compile Include="RxShapeLookup.cs" />
     <Compile Include="Section.cs" />
     <Compile Include="SectionSummary.cs" />
     <Compile Include="Shape.cs" />
@@ -160,6 +169,7 @@
     <Compile Include="ShapeTypeEnum.cs" />
     <Compile Include="GpsSourceType.cs" />
     <Compile Include="SpatialAttribute.cs" />
+    <Compile Include="SpatialPrescription.cs" />
     <Compile Include="SpatialRecord.cs" />
     <Compile Include="Spiral.cs" />
     <Compile Include="Status.cs" />
@@ -173,6 +183,7 @@
     <Compile Include="UnitOfMeasureDimension.cs" />
     <Compile Include="UnitType.cs" />
     <Compile Include="VariableRepresentationValue.cs" />
+    <Compile Include="VectorPrescription.cs" />
     <Compile Include="WorkItem.cs" />
     <Compile Include="WorkItemOperation.cs" />
     <Compile Include="WorkOrder.cs" />
