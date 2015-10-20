@@ -129,6 +129,7 @@
     <Compile Include="OriginAxleLocationEnum.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonRole.cs" />
+    <Compile Include="Plan.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Polygon.cs" />
     <Compile Include="Priority.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="ProprietaryValue.cs" />
     <Compile Include="RasterReferenceLayer.cs" />
     <Compile Include="Catalog.cs" />
+    <Compile Include="Recommendation.cs" />
     <Compile Include="ReferenceLayer.cs" />
     <Compile Include="ReferencePoint.cs" />
     <Compile Include="Representation.cs" />
@@ -172,6 +174,7 @@
     <Compile Include="VariableRepresentationValue.cs" />
     <Compile Include="WorkItem.cs" />
     <Compile Include="WorkItemOperation.cs" />
+    <Compile Include="WorkOrder.cs" />
     <Compile Include="WorkRecord.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

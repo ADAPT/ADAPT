@@ -7,15 +7,12 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Justin Sliekers - initial API and implementation
   *******************************************************************************/  
-
-using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class LoggedData : WorkRecord
+    public class Recommendation : Document
     {
-        public List<int> OperationDataIds { get; set; } 
     }
 }
