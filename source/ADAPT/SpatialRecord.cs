@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 using System;
 using System.Collections.Generic;
@@ -19,9 +20,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     {
         private readonly Dictionary<int, RepresentationValue> _meterValues = new Dictionary<int, RepresentationValue>(); 
 
-        public Shape Geometry;
+        public Shape Geometry { get; set; }
 
-        public DateTime Timestamp;
+        public DateTime Timestamp { get; set; }
 
         public void SetMeterValue(Meter meter, RepresentationValue value)
         {
@@ -35,6 +36,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
             return null;
         }
 
-        public int GetAppliedLatency;
+        public int GetAppliedLatency { get; set; }
     }
 }

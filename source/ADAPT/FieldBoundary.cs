@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Joseph Ross Making Properties
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -22,14 +23,14 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public CompoundIdentifier Id { get; private set; }
-        public string Description;
-        public int FieldId;
-        public MultiPolygon SpatialData;
+        public string Description { get; set; }
+        public int FieldId { get; set; }
+        public MultiPolygon SpatialData { get; set; }
         public List<int> TimeScopeIds { get; set; }
-        public Headland Headland;
-        public GpsSourceEnum GpsSource;
-        public string OriginalEpsgCode;
-        public List<InteriorBoundaryAttribute> InteriorBoundaryAttributes; 
-        public List<ContextItem> ContextItems;
+        public Headland Headland { get; set; }
+        public GpsSourceEnum GpsSource { get; set; }
+        public string OriginalEpsgCode { get; set; }
+        public List<InteriorBoundaryAttribute> InteriorBoundaryAttributes { get; set; }
+        public List<ContextItem> ContextItems { get; set; }
     }
 }

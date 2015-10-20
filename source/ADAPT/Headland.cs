@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
@@ -21,10 +22,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public string Name;
+        public string Name { get; set; }
 
-        public int FieldId;
+        public int FieldId { get; set; }
 
-        public MultiPolygon Shape;
+        public MultiPolygon Shape { get; set; }
     }
 }

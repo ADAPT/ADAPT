@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 using System;
 
@@ -16,12 +17,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class DensityFactor
     {
-        public string BatchNo;
+        public string BatchNo { get; set; }
 
-        public string LotNo;
+        public string LotNo { get; set; }
 
-        public NumericRepresentation Factor;
+        public NumericRepresentation Factor { get; set; }
 
-        public DateTime TimeStamp;
+        public DateTime TimeStamp { get; set; }
     }
 }

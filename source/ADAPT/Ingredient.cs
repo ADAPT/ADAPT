@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 using System.Collections.Generic;
 
@@ -23,12 +24,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public string Name;
+        public string Name { get; set; }
 
-        public List<ModeOfAction> ModesOfAction;
+        public List<ModeOfAction> ModesOfAction { get; set; }
 
-        public List<ContextItem> ContextItems;
+        public List<ContextItem> ContextItems { get; set; }
 
-        public bool IsActive;
+        public bool IsActive { get; set; }
     }
 }

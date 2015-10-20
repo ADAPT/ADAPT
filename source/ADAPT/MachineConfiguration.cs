@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 using System.Collections.Generic;
 
@@ -23,11 +24,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
         public List<int> TimeScopeIds { get; set; }
-        public NumericRepresentationValue GpsReceiverXOffset;
-        public NumericRepresentationValue GpsReceiverYOffset;
-        public NumericRepresentationValue GpsReceiverZOffset;
-        public OriginAxleLocationEnum OriginAxleLocation;
+        public NumericRepresentationValue GpsReceiverXOffset { get; set; }
+        public NumericRepresentationValue GpsReceiverYOffset { get; set; }
+        public NumericRepresentationValue GpsReceiverZOffset { get; set; }
+        public OriginAxleLocationEnum OriginAxleLocation { get; set; }
 
-        public List<int> ConnectorIds;
+        public List<int> ConnectorIds { get; set; }
     }
 }

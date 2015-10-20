@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 using System.Collections.Generic;
 
@@ -16,10 +17,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class CropVariety : Product
     {
-        public int CropId;
+        public int CropId { get; set; }
 
-        public List<Trait> Traits;
+        public List<Trait> Traits { get; set; }
 
-        public bool GeneticallyEnhanced;
+        public bool GeneticallyEnhanced { get; set; }
     }
 }

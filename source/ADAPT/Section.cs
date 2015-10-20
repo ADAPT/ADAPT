@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 using System.Collections.Generic;
 
@@ -23,17 +24,17 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public int OperationDataId;
+        public int OperationDataId { get; set; }
 
-        public int Depth;
+        public int Depth { get; set; }
 
-        public int Order;
+        public int Order { get; set; }
 
-        public NumericRepresentationValue SectionWidth;
+        public NumericRepresentationValue SectionWidth { get; set; }
 
-        public NumericRepresentationValue TotalDistanceTravelled;
+        public NumericRepresentationValue TotalDistanceTravelled { get; set; }
 
-        public NumericRepresentationValue TotalElapsedTime;
+        public NumericRepresentationValue TotalElapsedTime { get; set; }
 
         public List<Meter> Meters { get; set; }
     }

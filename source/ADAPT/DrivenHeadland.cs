@@ -8,12 +8,13 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class DrivenHeadland : Headland
     {
-        public MultiPolygon SpatialData;
+        public MultiPolygon SpatialData { get; set; }
     }
 }

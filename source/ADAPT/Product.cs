@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 using System.Collections.Generic;
 
@@ -23,24 +24,24 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public string Name;
+        public string Name { get; set; }
 
-        public int? ManufacturerId;
+        public int? ManufacturerId { get; set; }
 
-        public int? BrandId;
+        public int? BrandId { get; set; }
 
-        public ProductType ProductType;
+        public ProductType ProductType { get; set; }
 
-        public List<Category> Categories;
+        public List<Category> Categories { get; set; }
 
-        public Status Status;
+        public Status Status { get; set; }
 
-        public List<ContextItem> ContextItems;
+        public List<ContextItem> ContextItems { get; set; }
 
-        public FormType Form;
+        public FormType Form { get; set; }
 
-        public UnitOfMeasure DefaultUnit;
+        public UnitOfMeasure DefaultUnit { get; set; }
 
-        public List<DensityFactor> DensityFactors;
+        public List<DensityFactor> DensityFactors { get; set; }
     }
 }

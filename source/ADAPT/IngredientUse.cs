@@ -8,7 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross Making Properties
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
@@ -21,12 +22,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public int? ProductId;
+        public int? ProductId { get; set; }
 
-        public int? IngredientId;
+        public int? IngredientId { get; set; }
 
-        public double Fraction;
+        public double Fraction { get; set; }
 
-        public bool IsProduct;
+        public bool IsProduct { get; set; }
     }
 }
