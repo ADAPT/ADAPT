@@ -14,5 +14,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public abstract class RepresentationValue
     {
+        public int? Code { get; set; }
+
+        public string Designator { get; set; }
+
+        public int Color { get; set; }
     }
 }
