@@ -28,5 +28,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public int? PersonRoleId { get; set; }
         public List<int> NoteIds { get; set; }
         public List<int> WorkItemIds { get; set; }
+        public List<StatusUpdate> StatusUpdates { get; set; }
     }
 }

@@ -34,7 +34,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public List<Category> Categories { get; set; }
 
-        public Status Status { get; set; }
+        public WorkStatusEnum WorkStatusEnum { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }
 

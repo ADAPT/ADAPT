@@ -170,7 +170,8 @@
     <Compile Include="SpatialPrescription.cs" />
     <Compile Include="SpatialRecord.cs" />
     <Compile Include="Spiral.cs" />
-    <Compile Include="Status.cs" />
+    <Compile Include="WorkStatusEnum.cs" />
+    <Compile Include="StatusUpdate.cs" />
     <Compile Include="StringRepresentation.cs" />
     <Compile Include="StringValue.cs" />
     <Compile Include="TimeScope.cs" />

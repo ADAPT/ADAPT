@@ -39,6 +39,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public int? FieldBoundaryId { get; set; }
         public List<int> WorkItemOperationIds { get; set; }
         public List<int> GuidanceIds { get; set; }
-        public List<int> StatusIds { get; set; }
+        public List<StatusUpdate> StatusUpdates { get; set; }
     }
 }

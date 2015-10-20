@@ -9,9 +9,8 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
-  *******************************************************************************/  
+  *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
