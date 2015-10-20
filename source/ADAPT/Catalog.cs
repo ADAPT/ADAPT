@@ -34,6 +34,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<Person> Persons { get; set; } 
         public List<PersonRole> PersonRoles { get; set; }
         public List<Product> Products { get; set; } 
+        public List<ProductMixComponent> ProductMixComponents { get; set; }
         public List<TimeScope> TimeScopes { get; set; }
         public List<Machine> Machines { get; set; }
         public List<MachineModel> MachineModels { get; set; }
