@@ -160,7 +160,7 @@
     <Compile Include="Section.cs" />
     <Compile Include="SectionSummary.cs" />
     <Compile Include="Shape.cs" />
-    <Compile Include="ShapeAttribute.cs" />
+    <Compile Include="InteriorBoundaryAttribute.cs" />
     <Compile Include="ShapeLookup.cs" />
     <Compile Include="ShapeReferenceLayer.cs" />
     <Compile Include="ShapeSettings.cs" />
