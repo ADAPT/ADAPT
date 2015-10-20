@@ -22,11 +22,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public int? SeasonId { get; set; }
         public int? WorkItemId { get; set; }
         public List<int> GuidanceIds { get; set; }
-        public List<Note> Notes { get; set; }
         public List<int> ContextItemIds { get; set; }
         public int? CropZoneId { get; set; }
         public int? PersonRoleId { get; set; }
-        public List<int> NoteIds { get; set; }
+        public List<int> ReferenceNoteIds { get; set; }
         public List<int> WorkItemIds { get; set; }
         public List<StatusUpdate> StatusUpdates { get; set; }
     }

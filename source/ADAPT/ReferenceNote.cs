@@ -14,14 +14,18 @@ using System;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class Note
+    public class ReferenceNote : Note
     {
-        public Note()
+        public ReferenceNote()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
         }
 
         public CompoundIdentifier Id { get; private set; }
+    }
+
+    public abstract class Note
+    {
         public string Description { get; set; }
         public int? EnumeratedNoteListValueReference { get; set; }
         public DateTime TimeStamp { get; set; }

@@ -17,5 +17,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     public class LoggedData : WorkRecord
     {
         public List<int> OperationDataIds { get; set; } 
+
+        public List<LoggedNote> LoggedNotes { get; set; } 
     }
 }
