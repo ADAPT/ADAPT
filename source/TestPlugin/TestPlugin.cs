@@ -8,12 +8,12 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
 
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel;
 
-namespace Adapt.TestPlugin
+namespace AgGateway.ADAPT.TestPlugin
 {
     public class TestPlugin : IPlugin
     {
@@ -41,12 +41,12 @@ namespace Adapt.TestPlugin
             return new List<IError>();
         }
 
-        public ApplicationDataModel Import(string dataPath, Properties properties = null)
+        public ApplicationDataModel.ApplicationDataModel Import(string dataPath, Properties properties = null)
         {
-            return new ApplicationDataModel();
+            return new ApplicationDataModel.ApplicationDataModel();
         }
 
-        public void Export(ApplicationDataModel dataModel, string exportPath, Properties properties = null)
+        public void Export(ApplicationDataModel.ApplicationDataModel dataModel, string exportPath, Properties properties = null)
         {
         }
 

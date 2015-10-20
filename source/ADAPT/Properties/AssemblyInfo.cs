@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("AgGateway")]
 [assembly: AssemblyProduct("ApplicationDataModel")]
-[assembly: AssemblyCopyright("Copyright © ADAPT 2015")]
+[assembly: AssemblyCopyright("Copyright (C) 2015 AgGateway and ADAPT Contributors")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

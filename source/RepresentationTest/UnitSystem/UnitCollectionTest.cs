@@ -10,14 +10,13 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using AgGateway.ADAPT.Representation.UnitSystem;
 using Moq;
 using NUnit.Framework;
 
-namespace JohnDeere.RepresentationTest.UnitSystem
+namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 {
     [TestFixture]
     public class UnitCollectionTest

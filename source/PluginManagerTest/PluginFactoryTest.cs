@@ -8,18 +8,18 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
 
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Adapt.PluginManager;
 using AgGateway.ADAPT.ApplicationDataModel;
+using AgGateway.ADAPT.PluginManager;
 using Moq;
 using NUnit.Framework;
 
-namespace Adapt.PluginManagerTest
+namespace AgGateway.ADAPT.PluginManagerTest
 {
     [TestFixture]
     public class PluginFactoryTest

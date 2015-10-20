@@ -7,8 +7,8 @@
     <ProjectGuid>{C7E68936-2A8B-4185-B5CB-C47C69346A08}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Adapt.TestPlugin</RootNamespace>
-    <AssemblyName>Adapt.TestPlugin</AssemblyName>
+    <RootNamespace>AgGateway.ADAPT.TestPlugin</RootNamespace>
+    <AssemblyName>AgGateway.ADAPT.TestPlugin</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

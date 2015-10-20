@@ -7,8 +7,8 @@
     <ProjectGuid>{3658F658-0DE9-4ABD-AF83-C9F061F662ED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Adapt.PluginManager</RootNamespace>
-    <AssemblyName>Adapt.PluginManager</AssemblyName>
+    <RootNamespace>AgGateway.ADAPT.PluginManager</RootNamespace>
+    <AssemblyName>AgGateway.ADAPT.PluginManager</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

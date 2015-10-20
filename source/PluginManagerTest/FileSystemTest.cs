@@ -8,16 +8,16 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
 
 using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Adapt.PluginManager;
+using AgGateway.ADAPT.PluginManager;
 using NUnit.Framework;
 
-namespace Adapt.PluginManagerTest
+namespace AgGateway.ADAPT.PluginManagerTest
 {
     [TestFixture]
     public class FilesystemTests

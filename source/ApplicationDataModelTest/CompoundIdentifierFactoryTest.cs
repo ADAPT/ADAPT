@@ -8,12 +8,12 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
 
 using AgGateway.ADAPT.ApplicationDataModel;
 using NUnit.Framework;
 
-namespace ApplicationDataModelTest
+namespace AgGateway.ADAPT.ApplicationDataModelTest
 {
     [TestFixture]
     public class CompoundIdentifierFactoryTest

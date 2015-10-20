@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("TestPlugin")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Deere & Company")]
+[assembly: AssemblyCompany("AgGateway")]
 [assembly: AssemblyProduct("TestPlugin")]
-[assembly: AssemblyCopyright("Copyright © Deere & Company 2015")]
+[assembly: AssemblyCopyright("Copyright (C) 2015 AgGateway and ADAPT Contributors")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

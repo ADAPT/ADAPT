@@ -8,11 +8,11 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
 
 using System.IO;
 
-namespace Adapt.PluginManagerTest
+namespace AgGateway.ADAPT.PluginManagerTest
 {
     public class AssemblyWriter
     {

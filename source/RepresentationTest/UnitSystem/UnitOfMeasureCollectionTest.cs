@@ -13,7 +13,7 @@
 using AgGateway.ADAPT.Representation.UnitSystem;
 using NUnit.Framework;
 
-namespace JohnDeere.RepresentationTest.UnitSystem
+namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 {
     [TestFixture]
     public class UnitOfMeasureCollectionTest

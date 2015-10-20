@@ -8,7 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
 
 using System;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ using System.IO;
 using System.Linq;
 using AgGateway.ADAPT.ApplicationDataModel;
 
-namespace Adapt.PluginManager
+namespace AgGateway.ADAPT.PluginManager
 {
     public interface IPluginFactory
     {

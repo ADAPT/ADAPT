@@ -7,8 +7,8 @@
     <ProjectGuid>{EC7AEA0F-E4B9-420B-A81B-3192B0227CB6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ApplicationDataModelTest</RootNamespace>
-    <AssemblyName>ApplicationDataModelTest</AssemblyName>
+    <RootNamespace>AgGateway.ADAPT.ApplicationDataModelTest</RootNamespace>
+    <AssemblyName>AgGateway.ADAPT.ApplicationDataModelTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
