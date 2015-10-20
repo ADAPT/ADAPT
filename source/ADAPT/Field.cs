@@ -23,7 +23,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public string Name { get; set; }
+        public string Description { get; set; }
 
         public int? FarmId { get; set; }
 
@@ -31,7 +31,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public List<int> TimeScopeIds { get; set; }
 
-        public int ActiveBoundaryId { get; set; }
+        public int? ActiveBoundaryId { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }
 
@@ -41,6 +41,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public NumericRepresentationValue SlopeLength { get; set; }
 
-        public int GuidanceGroupId { get; set; }
+        public List<int> GuidanceGroupIds { get; set; }
     }
 }

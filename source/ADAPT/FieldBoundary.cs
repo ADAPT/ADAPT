@@ -22,14 +22,14 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public CompoundIdentifier Id { get; private set; }
-        public string Name;
+        public string Description;
         public int FieldId;
         public MultiPolygon SpatialData;
         public List<int> TimeScopeIds { get; set; }
         public Headland Headland;
-        public GpsSourceType GpsSource;
+        public GpsSourceEnum GpsSource;
         public string OriginalEpsgCode;
-        public List<ShapeAttribute> ShapeAttributes; 
+        public List<InteriorBoundaryAttribute> InteriorBoundaryAttributes; 
         public List<ContextItem> ContextItems;
     }
 }

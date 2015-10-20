@@ -12,7 +12,7 @@
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class ShapeAttribute
+    public class InteriorBoundaryAttribute
     {
         public int ShapeIdRef;
 

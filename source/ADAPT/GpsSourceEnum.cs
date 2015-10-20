@@ -12,11 +12,11 @@
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public enum GpsSourceType
+    public enum GpsSourceEnum
     {
         Unknown,
         Drawn,
-        MobileGps,
+        MobileGPS,
         DeereRTK,
         DeereRTKX,
         DeereSF1,
@@ -27,7 +27,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         PreciseGNSS,
         RTKFixedInteger,
         RTKFloat,
-        EstimatedDrMode,
+        EstDRmode,
         ManualInput,
         SimulateMode,
         DesktopGeneratedData,

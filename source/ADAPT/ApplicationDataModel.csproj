@@ -165,7 +165,7 @@
     <Compile Include="ShapeReferenceLayer.cs" />
     <Compile Include="ShapeSettings.cs" />
     <Compile Include="ShapeTypeEnum.cs" />
-    <Compile Include="GpsSourceType.cs" />
+    <Compile Include="GpsSourceEnum.cs" />
     <Compile Include="SpatialAttribute.cs" />
     <Compile Include="SpatialPrescription.cs" />
     <Compile Include="SpatialRecord.cs" />

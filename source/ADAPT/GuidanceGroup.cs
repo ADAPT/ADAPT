@@ -23,10 +23,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public string Name { get; set; }
+        public string Description { get; set; }
 
-        public List<int> GuindanceIds { get; set; }
+        public List<int> GuidanceIds { get; set; }
 
-        public Polygon BoudingPolygon { get; set; }
+        public MultiPolygon BoundingPolygon { get; set; }
     }
 }

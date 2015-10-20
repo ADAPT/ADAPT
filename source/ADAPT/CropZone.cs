@@ -24,12 +24,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public CompoundIdentifier Id { get; private set; }
 
         public List<int> TimeScopeIds { get; set; }
-        public string Name { get; set; }
+        public string Description { get; set; }
         public int FieldId { get; set; }
         public int? CropId { get; set; }
         public NumericRepresentationValue Area { get; set; }
-        public Shape BoundingRegion { get; set; }
-        public GpsSourceType BoundarySource { get; set; }
+        public MultiPolygon BoundingRegion { get; set; }
+        public GpsSourceEnum BoundarySource { get; set; }
         public List<int> NoteIds { get; set; }
         public List<int> GuidanceGroupIds { get; set; }
         public List<ContextItem> ContextItems { get; set; } 

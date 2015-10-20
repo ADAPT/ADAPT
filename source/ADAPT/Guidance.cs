@@ -23,7 +23,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public GuidancePatternType GuidancePatternType { get; set; }
 
-        public GpsSourceType GpsSource { get; set; }
+        public GpsSourceEnum GpsSource { get; set; }
 
         public string OriginalEpsgCode { get; set; }
 
@@ -39,6 +39,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public int NumbersOfSwathsRight { get; set; }
 
-        public Polygon BoundingPolygon { get; set; }
+        public MultiPolygon BoundingPolygon { get; set; }
     }
 }
