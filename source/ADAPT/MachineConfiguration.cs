@@ -22,7 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public CompoundIdentifier Id { get; private set; }
-        public TimeScope TimeScope;
+        public List<int> TimeScopeIds { get; set; }
         public NumericRepresentationValue GpsReceiverXOffset;
         public NumericRepresentationValue GpsReceiverYOffset;
         public NumericRepresentationValue GpsReceiverZOffset;

@@ -27,11 +27,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<int> RecommendationdIds { get; set; }
         public List<int> WorkOrderIds { get; set; }
         public List<int> NoteIds { get; set; }
-        public TimeScope WorkDates { get; set; }
         public Priority Priority { get; set; }
-        public DateTime CreationDate { get; set; }
-        public DateTime ModifiedDate { get; set; }
-        public TimeScope Season { get; set; }
+        public List<int> TimeScopeIds { get; set; }
         public List<int> PeopleRoleIds { get; set; }
         public int? GrowerId { get; set; }
         public int? FarmId { get; set; }

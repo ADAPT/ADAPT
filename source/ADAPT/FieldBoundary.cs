@@ -25,7 +25,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public string Name;
         public int FieldId;
         public MultiPolygon SpatialData;
-        public TimeScope ValidityRange;
+        public List<int> TimeScopeIds { get; set; }
         public Headland Headland;
         public GpsSourceType GpsSource;
         public string OriginalEpsgCode;

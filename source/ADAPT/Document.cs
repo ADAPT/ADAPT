@@ -25,7 +25,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public string Description { get; set; }
 
-        public List<int> CropSeasonIds { get; set; }
+        public List<int> TimeScopeIds { get; set; }
 
         public int? GrowerId { get; set; }
 

@@ -12,6 +12,8 @@
   *******************************************************************************/
 
 
+using System.Collections.Generic;
+
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class Load
@@ -20,7 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public string Description { get; set; }
 
-        public TimeScope TimeStamp { get; set; }
+        public List<int> TimeScopeIds { get; set; }
 
         public string LoadNumber { get; set; }
 

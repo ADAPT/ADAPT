@@ -8,7 +8,9 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
+
+using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
@@ -23,8 +25,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public int MeterId;
 
-        public TimeScope Timestamp;
-
+        public List<int> TimeScopeIds { get; set; }
+        
         public NumericRepresentationValue Value;
     }
 }

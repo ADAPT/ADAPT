@@ -8,7 +8,9 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
+
+using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
@@ -25,7 +27,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public int? GrowerId { get; set; }
 
-        public TimeScope ActiveScope { get; set; }
+        public List<int> TimeScopeIds { get; set; }
 
         public string Role { get; set; }
 

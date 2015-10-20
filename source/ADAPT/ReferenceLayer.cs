@@ -28,7 +28,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         //Todo: Update UML and wiki to Enumerated Value instead of Enumerated representation
         public EnumeratedValue LayerType { get; set; }
 
-        public TimeScope TimeScope { get; set; }
+        public List<int> TimeScopeIds { get; set; }
 
         public Polygon BoundingPolygon { get; set; }
 

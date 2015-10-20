@@ -23,10 +23,16 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public string Name { get; set; }
+        public string Description { get; set; }
 
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }
+
+        public Location StartLocation { get; set; }
+
+        public Location EndLocation { get; set; }
+
+        public DateContextEnum? DateContextEnum { get; set; }
     }
 }

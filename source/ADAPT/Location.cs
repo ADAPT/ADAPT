@@ -16,9 +16,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class Location
     {
-        public double Lat { get; set; }
-        public double Lon { get; set; }
-        public NumericRepresentationValue Elevation { get; set; }
+        public Point Position { get; set; }
         public List<ContextItem> ContextItems { get; set; }
     }
 }

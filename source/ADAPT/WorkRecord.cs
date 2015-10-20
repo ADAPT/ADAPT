@@ -16,8 +16,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class WorkRecord : Document
     {
-        public TimeScope StartEndTime { get; set; }
-        public TimeScope EndDateTime { get; set; }
         public int? FarmId { get; set; }
         public int? FieldId { get; set; }
         public int? MachineId { get; set; }

@@ -27,8 +27,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public string PoBoxNumber { get; set; }
         public string PostalCode { get; set; }
         public string City { get; set; }
-        public string State { get; set; }
-        public string Province { get; set; }
+        public string StateOrProvince { get; set; }
         public string Country { get; set; }
         public string CountryCode { get; set; }
         public List<Contact> Contacts { get; set; }

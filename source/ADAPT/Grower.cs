@@ -25,7 +25,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public string Name { get; set; }
 
-        public int ContactInfoId { get; set; }
+        public ContactInfo ContactInfo { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }
     }

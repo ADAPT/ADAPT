@@ -63,11 +63,9 @@
     <Compile Include="ContextItemType.cs" />
     <Compile Include="Crop.cs" />
     <Compile Include="CropProtectionProduct.cs" />
-    <Compile Include="CropSeason.cs" />
     <Compile Include="CropVariety.cs" />
     <Compile Include="CropZone.cs" />
     <Compile Include="DateContextEnum.cs" />
-    <Compile Include="DateWithContext.cs" />
     <Compile Include="DensityFactor.cs" />
     <Compile Include="Document.cs" />
     <Compile Include="Documents.cs" />

@@ -23,7 +23,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public TimeScope CropSeason { get; set; }
+        public List<int> TimeScopeIds { get; set; }
         public string Name { get; set; }
         public int FieldId { get; set; }
         public int? CropId { get; set; }

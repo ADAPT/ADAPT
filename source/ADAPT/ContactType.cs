@@ -14,8 +14,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum ContactType
     {
-        Phone,
-        Mobile,
+        FixedPhone,
+        MobilePhone,
         Fax,
         Email
     }

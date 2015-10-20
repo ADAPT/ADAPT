@@ -25,11 +25,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public string Name { get; set; }
 
-        public int FarmId { get; set; }
+        public int? FarmId { get; set; }
 
         public NumericRepresentationValue Area { get; set; }
 
-        public List<int> CropSeasonIds { get; set; }
+        public List<int> TimeScopeIds { get; set; }
 
         public int ActiveBoundaryId { get; set; }
 

@@ -20,7 +20,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<Connector> Connectors { get; set; }
         public List<Container> Containers { get; set; } 
         public List<Crop> Crops { get; set; }
-        public List<CropSeason> CropSeaons { get; set; }
         public List<CropZone> CropZones { get; set; }
         public List<Farm> Farms { get; set; }
         public List<Field> Fields { get; set; }
