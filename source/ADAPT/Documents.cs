@@ -16,8 +16,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class Documents
     {
-        //TODO: Implement Plan, Recommendation, and WorkOrder
-            //Should we extract common elements from these into Document and use it as a parent class?
         public LoggedDataCatalog LoggedDataCatalog { get; set; } 
+        public List<Plan> Plans { get; set; } 
+        public List<WorkOrder> WorkOrders { get; set; } 
+        public List<Recommendation> Recommendations { get; set; } 
     }
 }

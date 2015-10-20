@@ -42,7 +42,7 @@
     <Compile Include="AbCurve.cs" />
     <Compile Include="AbLine.cs" />
     <Compile Include="APlus.cs" />
-    <Compile Include="AppliationDataModel.cs" />
+    <Compile Include="ApplicationDataModel.cs" />
     <Compile Include="Brand.cs" />
     <Compile Include="CalibrationFactor.cs" />
     <Compile Include="Category.cs" />
@@ -150,7 +150,6 @@
     <Compile Include="Role.cs" />
     <Compile Include="Section.cs" />
     <Compile Include="SectionSummary.cs" />
-    <Compile Include="SetupData.cs" />
     <Compile Include="Shape.cs" />
     <Compile Include="ShapeAttribute.cs" />
     <Compile Include="ShapeLookup.cs" />
