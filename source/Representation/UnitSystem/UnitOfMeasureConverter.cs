@@ -22,15 +22,6 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
     public class UnitOfMeasureConverter : IUnitOfMeasureConverter
     {
-        private UnitOfMeasureConverter()
-        {
-        }
-
-        public static IUnitOfMeasureConverter Create()
-        {
-            return new UnitOfMeasureConverter();
-        }
-
         public double Convert(UnitOfMeasure sourceUom, UnitOfMeasure targetUom, double sourceValue)
         {
             var scalarSource = sourceUom as ScalarUnitOfMeasure;

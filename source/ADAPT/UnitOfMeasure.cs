@@ -21,11 +21,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
+        public string Code { get; set; }
+
         public string Name { get; set; }
 
         public string Symbol { get; set; }
 
         public double ConversionScale { get; set; }
+
+        public double ConversionOffset { get; set; }
 
         public UnitType UnitType { get; set; }
     }

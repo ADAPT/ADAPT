@@ -14,10 +14,28 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class NumericRepresentationValue : RepresentationValue
     {
+        public NumericRepresentationValue(NumericRepresentation representation, NumericalValue value)
+        {
+            Representation = representation;
+            Value = value;
+        }
+
+        public NumericRepresentationValue(NumericRepresentation representation, UnitOfMeasure userProvidedUnitOfMeasure, NumericalValue value)
+        {
+            Representation = representation;
+            UserProvidedUnitOfMeasure = userProvidedUnitOfMeasure;
+            Value = value;
+        }
+
         public NumericRepresentation Representation { get; set; }
 
         public NumericalValue Value { get; set; }
 
         public UnitOfMeasure UserProvidedUnitOfMeasure { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0} {1} ({2})", Value, UserProvidedUnitOfMeasure.Name, Representation.Name);
+        }
     }
 }
