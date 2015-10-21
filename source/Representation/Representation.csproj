@@ -53,9 +53,11 @@
     <Compile Include="RepresentationSystem\RepresentationList.cs" />
     <Compile Include="RepresentationSystem\RepresentationLoader.cs" />
     <Compile Include="RepresentationSystem\RepresentationManager.cs" />
-    <Compile Include="UnitSystem\BaseNumber.cs" />
+    <Compile Include="UnitSystem\ExtensionMethods\NumericalValueExtensions.cs" />
+    <Compile Include="UnitSystem\ExtensionMethods\NumericRepresentationValueExtensions.cs" />
     <Compile Include="UnitSystem\CompositeConversionFactor.cs" />
     <Compile Include="UnitSystem\CompositeUnitOfMeasure.cs" />
+    <Compile Include="UnitSystem\ExtensionMethods\UnitOfMeasureExtensions.cs" />
     <Compile Include="UnitSystem\IUnit.cs" />
     <Compile Include="UnitSystem\ScalarUnitOfMeasure.cs" />
     <Compile Include="UnitSystem\UnitArithmatic\BaseNumberDivision.cs" />
@@ -74,7 +76,6 @@
     <Compile Include="UnitSystem\UnitRepresentation.cs" />
     <Compile Include="UnitSystem\UnitSystemManager.cs" />
     <Compile Include="UnitSystem\UnitType.cs" />
-    <Compile Include="UnitSystem\VariableNumber.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="RepresentationResources.resx">

@@ -25,7 +25,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [SetUp]
         public void Setup()
         {
-            _unitOfMeasureConverter = UnitOfMeasureConverter.Create();
+            _unitOfMeasureConverter = new UnitOfMeasureConverter();
         }
 
         [Test]

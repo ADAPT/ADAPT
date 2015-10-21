@@ -11,8 +11,11 @@
   *******************************************************************************/
 
 using System;
+using AgGateway.ADAPT.ApplicationDataModel;
 using AgGateway.ADAPT.Representation.UnitSystem;
+using AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods;
 using NUnit.Framework;
+using UnitOfMeasure = AgGateway.ADAPT.Representation.UnitSystem.UnitOfMeasure;
 
 namespace AgGateway.ADAPT.RepresentationTest
 {
@@ -89,9 +92,9 @@ namespace AgGateway.ADAPT.RepresentationTest
 
             var sourceUnitOfMeasure = GetUomCdf(variableValue.UnitOfMeasure);
             var targetUnitOfMeasure = GetUomCdf(targetUnit);
-            var bn = new BaseNumber(sourceUnitOfMeasure, variableValue.Value);
-            bn.SetTarget(targetUnitOfMeasure);
-            var convertedValue = bn.TargetValue;
+            var bn = new NumericalValue(sourceUnitOfMeasure.ToModelUom(), variableValue.Value);
+            bn.ConvertToUnit(targetUnitOfMeasure);
+            var convertedValue = bn.Value;
             return new VariableValue(variableValue.Representation, targetUnit, convertedValue);
         }
 

@@ -19,7 +19,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     {
         public string Description { get; set; }
         public EnumeratedValue EnumeratedValue { get; set; }
-        public DateTime TimeStamp { get; set; }
+        public TimeScope TimeStamp { get; set; }
         public Shape SpatialContext { get; set; }
     }
 }

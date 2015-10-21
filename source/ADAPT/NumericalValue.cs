@@ -17,5 +17,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public double Value { get; set; }
 
         public UnitOfMeasure UnitOfMeasure { get; set; }
+
+        public NumericalValue(UnitOfMeasure uom, double value)
+        {
+            UnitOfMeasure = uom;
+            Value = value;
+        }
     }
 }

@@ -8,7 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/
+  *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
