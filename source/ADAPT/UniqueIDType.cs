@@ -8,20 +8,21 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross - Renaming Enums to end in Enum
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class UniqueIDType
     {
         public string ID { get; set; }
-        public CompoundIdentifierType CIType { get; set; }
+        public CompoundIdentifierTypeEnum CiTypeEnum { get; set; }
         public string Source { get; set; }
-        public SourceType SourceType { get; set; }
+        public SourceTypeEnum SourceTypeEnum { get; set; }
         public bool IsFirstSource { get; set; }
     }
 
-    public enum CompoundIdentifierType
+    public enum CompoundIdentifierTypeEnum
     {
         UUID,
         GLN,
@@ -30,7 +31,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         Long
     }
 
-    public enum SourceType
+    public enum SourceTypeEnum
     {
         GLN,
         URI

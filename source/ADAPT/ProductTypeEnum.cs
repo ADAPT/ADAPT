@@ -1,4 +1,4 @@
-/*******************************************************************************
+﻿/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -8,15 +8,17 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross - Renaming Enums to end in Enum
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public enum ContactType
+    public enum ProductTypeEnum
     {
-        FixedPhone,
-        MobilePhone,
-        Fax,
-        Email
+        Generic,
+        Chemical,
+        Fertilizer,
+        Variety,
+        Mix,
     }
 }

@@ -30,15 +30,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public int? BrandId { get; set; }
 
-        public ProductType ProductType { get; set; }
+        public ProductTypeEnum ProductTypeEnum { get; set; }
 
-        public List<Category> Categories { get; set; }
+        public List<CategoryEnum> Categories { get; set; }
 
         public WorkStatusEnum WorkStatusEnum { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }
 
-        public FormType Form { get; set; }
+        public FormTypeEnum Form { get; set; }
 
         public UnitOfMeasure DefaultUnit { get; set; }
 

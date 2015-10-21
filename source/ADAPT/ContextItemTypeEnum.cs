@@ -8,14 +8,13 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross - Renaming Enums to end in Enum
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public enum FormType
+    public enum ContextItemTypeEnum
     {
-        Gas,
-        Liquid,
-        Solid,
+        RegistrationNumber
     }
 }

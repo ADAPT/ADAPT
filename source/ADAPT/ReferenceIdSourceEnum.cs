@@ -8,20 +8,17 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
-
-using System.Collections.Generic;
+  *    Joseph Ross - Renaming Enums to end in Enum
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class ContextItem
+    public enum ReferenceIdSourceEnum
     {
-        public ContextItemTypeEnum ContextItemTypeEnum { get; set; }
-
-        public string Value { get; set; }
-
-        public string UnitOfMeasureCode { get; set; }
-
-        public List<ContextItem> ContextItems { get; set; }
+        ISO11783_DDI,
+        ISO11783_SPN,
+        J1939_SPN,
+        ADAPT,
+        Propietary
     }
 }

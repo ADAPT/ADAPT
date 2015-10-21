@@ -27,7 +27,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<int> RecommendationdIds { get; set; }
         public List<int> WorkOrderIds { get; set; }
         public List<int> NoteIds { get; set; }
-        public Priority Priority { get; set; }
+        public PriorityEnum PriorityEnum { get; set; }
         public List<int> TimeScopeIds { get; set; }
         public List<int> PeopleRoleIds { get; set; }
         public int? GrowerId { get; set; }

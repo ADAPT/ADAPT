@@ -16,6 +16,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     {
         public string Number { get; set; }
 
-        public ContactType Type { get; set; }
+        public ContactTypeEnum Type { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public int CompanyId { get; set; }
         public string Description { get; set; }
         public ContactInfo ContactInfo { get; set; }
-        public FacilityType FacilityType { get; set; }
+        public FacilityTypeEnum FacilityTypeEnum { get; set; }
         public List<ContextItem> ContextItems { get; set; } 
     }
 }
