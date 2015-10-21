@@ -10,8 +10,6 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/  
 
-using System;
-
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class ReferenceNote : Note
@@ -22,13 +20,5 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public CompoundIdentifier Id { get; private set; }
-    }
-
-    public abstract class Note
-    {
-        public string Description { get; set; }
-        public int? EnumeratedNoteListValueReference { get; set; }
-        public TimeScope TimeStamp { get; set; }
-        public Shape SpatialContext { get; set; }
     }
 }

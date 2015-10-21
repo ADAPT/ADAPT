@@ -20,7 +20,7 @@ using NUnit.Framework;
 namespace AgGateway.ADAPT.PluginManagerTest
 {
     [TestFixture]
-    public class FilesystemTests
+    public class FileSystemTest
     {
         private FileSystem _fileSystem;
         private string _directoryLocation;

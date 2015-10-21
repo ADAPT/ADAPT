@@ -122,6 +122,7 @@
     <Compile Include="MultiLineString.cs" />
     <Compile Include="MultiPoint.cs" />
     <Compile Include="MultiPolygon.cs" />
+    <Compile Include="Note.cs" />
     <Compile Include="ReferenceNote.cs" />
     <Compile Include="NumericalValue.cs" />
     <Compile Include="NumericMeter.cs" />

@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    
   *******************************************************************************/  
 
 using System;
@@ -26,7 +27,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<int> PlanIds { get; set; }
         public List<int> RecommendationdIds { get; set; }
         public List<int> WorkOrderIds { get; set; }
-        public List<int> NoteIds { get; set; }
+        public List<int> ReferenceNoteIds { get; set; }
         public PriorityEnum PriorityEnum { get; set; }
         public List<int> TimeScopeIds { get; set; }
         public List<int> PeopleRoleIds { get; set; }
