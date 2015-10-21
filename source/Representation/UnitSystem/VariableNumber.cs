@@ -15,9 +15,9 @@ using AgGateway.ADAPT.Representation.RepresentationSystem;
 
 namespace AgGateway.ADAPT.Representation.UnitSystem
 {
-    public class VariableNumber : INumber, ICopy<VariableNumber>
+    public class VariableNumber : ICopy<VariableNumber>
     {
-        private readonly INumber _baseNumber;
+        private readonly BaseNumber _baseNumber;
         private readonly IUnitOfMeasureConverter _converter;
 
         public NumericRepresentation Representation
@@ -84,7 +84,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
         {
         }
 
-        private VariableNumber(NumericRepresentation representation, INumber number, IUnitOfMeasureConverter converter)
+        private VariableNumber(NumericRepresentation representation, BaseNumber number, IUnitOfMeasureConverter converter)
         {
             _baseNumber = number;
             _converter = converter;
@@ -96,12 +96,17 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             _baseNumber.SetTarget(targetUom);
         }
 
-        public void SubtractFromSource(INumber secondNumber)
+        public void SubtractFromSource(BaseNumber secondNumber)
         {
             _baseNumber.SubtractFromSource(secondNumber);
         }
 
-        public INumber Add(double number)
+        public void SubtractFromSource(VariableNumber secondNumber)
+        {
+            _baseNumber.SubtractFromSource(secondNumber._baseNumber);
+        }
+
+        public VariableNumber Add(double number)
         {
             var sum = _baseNumber.Add(number);
             return new VariableNumber(Representation, sum, _converter);
@@ -112,24 +117,29 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             _baseNumber.AddToSource(number);
         }
 
-        public INumber Add(INumber secondNumber)
+        public VariableNumber Add(BaseNumber secondNumber)
         {
             var sum = _baseNumber.Add(secondNumber);
             return new VariableNumber(Representation, sum, _converter);
         }
 
-        public void AddToSource(INumber secondNumber)
+        public void AddToSource(BaseNumber secondNumber)
         {
             _baseNumber.AddToSource(secondNumber);
         }
 
+        public void AddToSource(VariableNumber secondNumber)
+        {
+            _baseNumber.AddToSource(secondNumber._baseNumber);
+        }
+
         public VariableNumber Add(VariableNumber secondNumber)
         {
-            var sum = _baseNumber.Add(secondNumber);
+            var sum = _baseNumber.Add(secondNumber._baseNumber);
             return new VariableNumber(Representation, sum, _converter);
         }
 
-        public INumber Subtract(double number)
+        public VariableNumber Subtract(double number)
         {
             var difference = _baseNumber.Subtract(number);
             return new VariableNumber(Representation, difference, _converter);
@@ -140,52 +150,64 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             _baseNumber.SubtractFromSource(number);
         }
 
-        public INumber Subtract(INumber secondNumber)
-        {
-            var difference = _baseNumber.Subtract(secondNumber);
-            return new VariableNumber(Representation, difference, _converter);
-        }
-
         public VariableNumber Subtract(VariableNumber secondNumber)
         {
+            var difference = _baseNumber.Subtract(secondNumber._baseNumber);
+            return new VariableNumber(Representation, difference, _converter);
+        }
+
+        public VariableNumber Subtract(BaseNumber secondNumber)
+        {
             var difference = _baseNumber.Subtract(secondNumber);
             return new VariableNumber(Representation, difference, _converter);
         }
 
-        public INumber Divide(double denominator)
+        public VariableNumber Divide(double denominator)
         {
             var quotient = _baseNumber.Divide(denominator);
             return new VariableNumber(Representation, quotient, _converter);
         }
 
-        public INumber Divide(INumber denominator)
+        public VariableNumber Divide(BaseNumber denominator)
         {
             var quotient = _baseNumber.Divide(denominator);
+            return new VariableNumber(Representation, quotient, _converter);
+        }
+
+        public VariableNumber Divide(VariableNumber denominator)
+        {
+            var quotient = _baseNumber.Divide(denominator._baseNumber);
             return new VariableNumber(Representation, quotient, _converter);
         }
 
         public VariableNumber Divide(VariableNumber denominator, NumericRepresentation variableRepresentation)
         {
-            var quotient = _baseNumber.Divide(denominator);
+            var quotient = _baseNumber.Divide(denominator._baseNumber);
             return new VariableNumber(variableRepresentation, quotient, _converter);
         }
 
-        public INumber Multiply(double right)
+        public VariableNumber Multiply(double right)
         {
             var product = _baseNumber.Multiply(right);
             return new VariableNumber(Representation, product, _converter);
         }
 
-        public INumber Multiply(INumber right)
+        public VariableNumber Multiply(BaseNumber right)
         {
             var product = _baseNumber.Multiply(right);
+            return new VariableNumber(Representation, product, _converter);
+        }
+
+        public VariableNumber Multiply(VariableNumber right)
+        {
+            var product = _baseNumber.Multiply(right._baseNumber);
             return new VariableNumber(Representation, product, _converter);
         }
 
         public VariableNumber Multiply(VariableNumber right, NumericRepresentation variableRepresentation)
         {
             var product = Multiply(right);
-            return new VariableNumber(variableRepresentation, product, _converter);
+            return new VariableNumber(variableRepresentation, product._baseNumber, _converter);
         }
 
         public override string ToString()

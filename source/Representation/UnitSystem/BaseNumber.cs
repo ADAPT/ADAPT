@@ -15,28 +15,8 @@ using AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic;
 
 namespace AgGateway.ADAPT.Representation.UnitSystem
 {
-    public interface INumber
-    {
-        UnitOfMeasure SourceUnitOfMeasure { get; }
-        double SourceValue { get; set; }
-        UnitOfMeasure TargetUnitOfMeasure { get; }
-        double TargetValue { get; }
-        void SetTarget(UnitOfMeasure targetUom);
-        INumber Add(INumber secondNumber);
-        void AddToSource(INumber secondNumber);
-        INumber Subtract(INumber secondNumber);
-        void SubtractFromSource(INumber secondNumber);
-        INumber Add(double number);
-        void AddToSource(double number);
-        INumber Subtract(double number);
-        void SubtractFromSource(double number);
-        INumber Divide(double denominator);
-        INumber Divide(INumber denominator);
-        INumber Multiply(double right);
-        INumber Multiply(INumber right);
-    }
 
-    public class BaseNumber : INumber
+    public class BaseNumber 
     {
         private readonly IUnitOfMeasureConverter _converter;
         private BaseNumberDivision _baseNumberDivision;
@@ -79,13 +59,13 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             TargetUnitOfMeasure = targetUom;
         }
 
-        public INumber Add(INumber secondNumber)
+        public BaseNumber Add(BaseNumber secondNumber)
         {
             secondNumber.SetTarget(SourceUnitOfMeasure);
             return new BaseNumber(SourceUnitOfMeasure, SourceValue + secondNumber.TargetValue);
         }
 
-        public void AddToSource(INumber secondNumber)
+        public void AddToSource(BaseNumber secondNumber)
         {
             if (secondNumber != null)
             {
@@ -94,13 +74,13 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             }
         }
 
-        public INumber Subtract(INumber secondNumber)
+        public BaseNumber Subtract(BaseNumber secondNumber)
         {
             secondNumber.SetTarget(SourceUnitOfMeasure);
             return new BaseNumber(SourceUnitOfMeasure, SourceValue - secondNumber.TargetValue);
         }
 
-        public void SubtractFromSource(INumber secondNumber)
+        public void SubtractFromSource(BaseNumber secondNumber)
         {
             if (secondNumber != null)
             {
@@ -109,7 +89,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             }
         }
 
-        public INumber Add(double number)
+        public BaseNumber Add(double number)
         {
             return new BaseNumber(SourceUnitOfMeasure, SourceValue + number);
         }
@@ -119,7 +99,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             SourceValue += number;
         }
 
-        public INumber Subtract(double number)
+        public BaseNumber Subtract(double number)
         {
             return new BaseNumber(SourceUnitOfMeasure, SourceValue - number);
         }
@@ -129,7 +109,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             SourceValue -= number;
         }
 
-        public INumber Divide(double denominator)
+        public BaseNumber Divide(double denominator)
         {
             if (denominator == 0.0)
                 throw new DivideByZeroException();
@@ -137,7 +117,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             return new BaseNumber(SourceUnitOfMeasure, SourceValue / denominator);
         }
 
-        public INumber Divide(INumber denominator)
+        public BaseNumber Divide(BaseNumber denominator)
         {
             if(_baseNumberDivision == null)
                 _baseNumberDivision = new BaseNumberDivision(_converter);
@@ -145,12 +125,12 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             return _baseNumberDivision.Divide(this, denominator);
         }
 
-        public INumber Multiply(double right)
+        public BaseNumber Multiply(double right)
         {
             return new BaseNumber(SourceUnitOfMeasure, SourceValue * right);
         }
 
-        public INumber Multiply(INumber right)
+        public BaseNumber Multiply(BaseNumber right)
         {
             if(_baseNumberMultiplication == null)
                 _baseNumberMultiplication = new BaseNumberMultiplication(_converter);

@@ -25,7 +25,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
             _simplifier = new UnitOfMeasureComponentSimplifier(converter);
         }
 
-        public INumber Multiply(INumber left, INumber right)
+        public BaseNumber Multiply(BaseNumber left, BaseNumber right)
         {
             var leftComponents = _decomposer.GetComponents(left.SourceUnitOfMeasure, 1);
             var rightComponents = _decomposer.GetComponents(right.SourceUnitOfMeasure, 1);

@@ -26,7 +26,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
             _simplifier = new UnitOfMeasureComponentSimplifier(converter);
         }
 
-        public INumber Divide(INumber numerator, INumber denominator)
+        public BaseNumber Divide(BaseNumber numerator, BaseNumber denominator)
         {
             if (denominator.SourceValue == 0.0)
                 throw new DivideByZeroException();
