@@ -30,7 +30,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public NumericRepresentationValue Area { get; set; }
         public MultiPolygon BoundingRegion { get; set; }
         public GpsSourceEnum BoundarySource { get; set; }
-        public List<int> NoteIds { get; set; }
+        public List<int> ReferenceNoteIds { get; set; }
         public List<int> GuidanceGroupIds { get; set; }
         public List<ContextItem> ContextItems { get; set; } 
     }
