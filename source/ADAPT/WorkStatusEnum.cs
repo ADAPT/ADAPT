@@ -7,15 +7,19 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Justin Sliekers - initial API and implementation
-  *******************************************************************************/
-
-using System.Collections.Generic;
+  *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class WorkOrder : Document
+    public enum WorkStatusEnum
     {
-        public List<StatusUpdate> StatusUpdates { get; set; }
+        Planned = 1,
+        Scheduled,
+        InProgress,
+        Paused,
+        PartiallyCompleted,
+        Completed,
+        Cancelled
     }
 }

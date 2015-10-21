@@ -8,11 +8,18 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
+
+using System;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public enum Status
+    public class StatusUpdate
     {
+        public WorkStatusEnum WorkStatusEnum { get; set; }
+
+        public string Comment { get; set; }
+
+        public DateTime TimeStamp { get; set; }
     }
 }

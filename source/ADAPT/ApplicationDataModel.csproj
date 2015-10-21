@@ -120,7 +120,7 @@
     <Compile Include="MultiLineString.cs" />
     <Compile Include="MultiPoint.cs" />
     <Compile Include="MultiPolygon.cs" />
-    <Compile Include="Note.cs" />
+    <Compile Include="ReferenceNote.cs" />
     <Compile Include="NumericalValue.cs" />
     <Compile Include="NumericMeter.cs" />
     <Compile Include="NumericRepresentation.cs" />
@@ -170,7 +170,8 @@
     <Compile Include="SpatialPrescription.cs" />
     <Compile Include="SpatialRecord.cs" />
     <Compile Include="Spiral.cs" />
-    <Compile Include="Status.cs" />
+    <Compile Include="WorkStatusEnum.cs" />
+    <Compile Include="StatusUpdate.cs" />
     <Compile Include="StringRepresentation.cs" />
     <Compile Include="StringValue.cs" />
     <Compile Include="TimeScope.cs" />
