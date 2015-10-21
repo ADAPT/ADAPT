@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{00D0CB8E-2EDE-4766-B261-1EB0CB655F07}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgGateway.ADAPT.Representation</RootNamespace>
+    <AssemblyName>AgGateway.ADAPT.Representation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CultureInfoDefault.cs" />
+    <Compile Include="Generated\GeneratedClasses.cs" />
+    <Compile Include="ICopy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepresentationResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepresentationResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RepresentationSystem\RepresentationCollection.cs" />
+    <Compile Include="RepresentationSystem\RepresentationInstanceList.cs" />
+    <Compile Include="RepresentationSystem\RepresentationList.cs" />
+    <Compile Include="RepresentationSystem\RepresentationLoader.cs" />
+    <Compile Include="RepresentationSystem\RepresentationManager.cs" />
+    <Compile Include="UnitSystem\BaseNumber.cs" />
+    <Compile Include="UnitSystem\CompositeConversionFactor.cs" />
+    <Compile Include="UnitSystem\CompositeUnitOfMeasure.cs" />
+    <Compile Include="UnitSystem\IUnit.cs" />
+    <Compile Include="UnitSystem\ScalarUnitOfMeasure.cs" />
+    <Compile Include="UnitSystem\UnitArithmatic\BaseNumberDivision.cs" />
+    <Compile Include="UnitSystem\UnitArithmatic\BaseNumberMultiplication.cs" />
+    <Compile Include="UnitSystem\UnitArithmatic\UnitOfMeasureComponentSimplifier.cs" />
+    <Compile Include="UnitSystem\UnitArithmatic\UnitOfMeasureDecomposer.cs" />
+    <Compile Include="UnitSystem\UnitCollection.cs" />
+    <Compile Include="UnitSystem\UnitOfMeasure.cs" />
+    <Compile Include="UnitSystem\UnitOfMeasureCollection.cs" />
+    <Compile Include="UnitSystem\UnitOfMeasureComponent.cs" />
+    <Compile Include="UnitSystem\UnitOfMeasureConverter.cs" />
+    <Compile Include="UnitSystem\UnitOfMeasureDoesNotExistException.cs" />
+    <Compile Include="UnitSystem\UnitOfMeasurePreference.cs" />
+    <Compile Include="UnitSystem\UnitOfMeasureSystem.cs" />
+    <Compile Include="UnitSystem\UnitOfMeasureSystemCollection.cs" />
+    <Compile Include="UnitSystem\UnitRepresentation.cs" />
+    <Compile Include="UnitSystem\UnitSystemManager.cs" />
+    <Compile Include="UnitSystem\UnitType.cs" />
+    <Compile Include="UnitSystem\VariableNumber.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RepresentationResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RepresentationResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gen_classes.bat" />
+    <None Include="Resources\jdtypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\RepresentationSystem.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\UnitSystem.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ddiExport.txt" />
+    <Content Include="Resources\RepresentationSystem.xml" />
+    <Content Include="Resources\UnitSystem.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ADAPT\ApplicationDataModel.csproj">
+      <Project>{af77f596-0c06-4873-a094-6f3ab987b0a5}</Project>
+      <Name>ApplicationDataModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

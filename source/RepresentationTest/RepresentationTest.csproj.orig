@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A78403A-98A9-4E85-8DAC-8E9C9A71305C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JohnDeere.RepresentationTest</RootNamespace>
+    <AssemblyName>JohnDeere.RepresentationTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\..\ThirdParty\MOQ\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\ThirdParty\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GenerateRepresentationInstanceList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepresentationSystem\DefinedRepresentationTest.cs" />
+    <Compile Include="RepresentationSystem\EnumerationMemberTest.cs" />
+    <Compile Include="RepresentationSystem\RepresentationCollectionTest.cs" />
+    <Compile Include="RepresentationSystem\RepresentationManagerTest.cs" />
+    <Compile Include="RepresentationSystem\UnitOfMeasureConverterTest.cs" />
+    <Compile Include="RepresentationSystem\VariableNumberTest.cs" />
+    <Compile Include="RepresentationSystem\VariableRepresentationTest.cs" />
+    <Compile Include="UnitSystem\CompositeUnitOfMeasureTest.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="UnitSystem\ScalarUnitRepresentationTest.cs" />
+>>>>>>> 175caee3d8903d6cac3171988d90c21fbd1a30dc
+    <Compile Include="UnitSystem\UnitCollectionTest.cs" />
+    <Compile Include="UnitSystem\UnitOfMeasureSystemTest.cs" />
+    <Compile Include="UnitSystem\UnitOfMeasureTest.cs" />
+    <Compile Include="UnitSystem\UnitSystemManagerTest.cs" />
+    <Compile Include="UnitSystem\UnitTypeTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Representation\Representation.csproj">
+      <Project>{00D0CB8E-2EDE-4766-B261-1EB0CB655F07}</Project>
+      <Name>Representation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
