@@ -21,15 +21,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public GuidancePatternType GuidancePatternType { get; set; }
+        public GuidancePatternTypeEnum GuidancePatternType { get; set; }
 
-        public GpsSourceEnum GpsSource { get; set; }
+        public GpsSource GpsSource { get; set; }
 
         public string OriginalEpsgCode { get; set; }
 
         public string Name { get; set; }
 
-        public double SwathWidth { get; set; }
+        public NumericRepresentationValue SwathWidth { get; set; }
 
         public PropagationDirectionEnum PropagationDirection { get; set; }
 

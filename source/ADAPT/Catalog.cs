@@ -40,7 +40,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<MachineSeries> MachineSeries { get; set; }
         public List<MachineType> MachineTypes { get; set; } 
         public List<ReferenceNote> Notes { get; set; }
-        public List<OperationData> OperationDatas { get; set; } 
+        public List<OperationData> OperationData { get; set; } 
         public List<WorkItem> WorkItems { get; set; } 
         public List<WorkItemOperation> WorkItemOperations { get; set; } 
     }
