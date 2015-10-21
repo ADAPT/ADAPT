@@ -84,7 +84,7 @@
     <Compile Include="Field.cs" />
     <Compile Include="FieldBoundary.cs" />
     <Compile Include="FormType.cs" />
-    <Compile Include="GlnType.cs" />
+    <Compile Include="GLNEnum.cs" />
     <Compile Include="Grower.cs" />
     <Compile Include="Guidance.cs" />
     <Compile Include="GuidanceGroup.cs" />
@@ -181,7 +181,7 @@
     <Compile Include="UnitOfMeasureDimension.cs" />
     <Compile Include="UnitType.cs" />
     <Compile Include="VariableRepresentationValue.cs" />
-    <Compile Include="VectorPrescription.cs" />
+    <Compile Include="RxPrescription.cs" />
     <Compile Include="WorkItem.cs" />
     <Compile Include="WorkItemOperation.cs" />
     <Compile Include="WorkOrder.cs" />

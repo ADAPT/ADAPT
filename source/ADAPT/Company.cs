@@ -25,7 +25,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public string Name { get; set; }
 
-        public GlnType Gln { get; set; }
+        public GLNEnum GLN { get; set; }
 
         public int? ContactId { get; set; }
 

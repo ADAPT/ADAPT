@@ -8,12 +8,13 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Justin Sliekers - rename to GLNEnum for consistency    
   *******************************************************************************/  
 
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public enum GlnType
+    public enum GLNEnum
     {
     }
 }

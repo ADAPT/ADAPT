@@ -14,7 +14,7 @@ using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class VectorPrescription : SpatialPrescription
+    public class RxPrescription : SpatialPrescription
     {
         public List<ShapeLookup> ShapeLookups { get; set; } 
     }
