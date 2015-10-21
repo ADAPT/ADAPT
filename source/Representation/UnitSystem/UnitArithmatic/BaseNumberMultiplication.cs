@@ -27,11 +27,11 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
 
         public BaseNumber Multiply(BaseNumber left, BaseNumber right)
         {
-            var leftComponents = _decomposer.GetComponents(left.SourceUnitOfMeasure, 1);
-            var rightComponents = _decomposer.GetComponents(right.SourceUnitOfMeasure, 1);
+            var leftComponents = _decomposer.GetComponents(left.UnitOfMeasure, 1);
+            var rightComponents = _decomposer.GetComponents(right.UnitOfMeasure, 1);
             var allComponents = leftComponents.Union(rightComponents).ToList();
 
-            return _simplifier.Simplify(allComponents, left.SourceValue * right.SourceValue);
+            return _simplifier.Simplify(allComponents, left.Value * right.Value);
         }
     }
 }

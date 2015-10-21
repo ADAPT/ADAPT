@@ -26,39 +26,23 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             private set;
         }
 
-        public UnitOfMeasure SourceUnitOfMeasure
+        public UnitOfMeasure UserProvidedUnitOfMeasure
         {
             get
             {
-                return _baseNumber.SourceUnitOfMeasure;
+                return _baseNumber.UnitOfMeasure;
             }
         }
 
-        public double SourceValue
+        public double Value
         {
             get
             {
-                return _baseNumber.SourceValue;
+                return _baseNumber.Value;
             }
             set
             {
-                _baseNumber.SourceValue = value;
-            }
-        }
-
-        public UnitOfMeasure TargetUnitOfMeasure
-        {
-            get
-            {
-                return _baseNumber.TargetUnitOfMeasure;
-            }
-        }
-
-        public double TargetValue
-        {
-            get
-            {
-                return _baseNumber.TargetValue;
+                _baseNumber.Value = value;
             }
         }
 
@@ -93,7 +77,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
         public void SetTarget(UnitOfMeasure targetUom)
         {
-            _baseNumber.SetTarget(targetUom);
+            _baseNumber.ConvertToUnit(targetUom);
         }
 
         public void SubtractFromSource(BaseNumber secondNumber)
@@ -212,12 +196,12 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
         public override string ToString()
         {
-            return string.Format("{0} {1} ({2})", SourceValue, SourceUnitOfMeasure.DomainID, Representation.Name);
+            return string.Format("{0} {1} ({2})", Value, UserProvidedUnitOfMeasure.DomainID, Representation.Name);
         }
 
         public VariableNumber Copy()
         {
-            return new VariableNumber(Representation, SourceUnitOfMeasure, SourceValue);
+            return new VariableNumber(Representation, UserProvidedUnitOfMeasure, Value);
         }
     }
 }

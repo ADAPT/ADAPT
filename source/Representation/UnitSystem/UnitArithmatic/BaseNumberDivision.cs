@@ -28,13 +28,13 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
 
         public BaseNumber Divide(BaseNumber numerator, BaseNumber denominator)
         {
-            if (denominator.SourceValue == 0.0)
+            if (denominator.Value == 0.0)
                 throw new DivideByZeroException();
 
-            var numeratorComponets = _decomposer.GetComponents(numerator.SourceUnitOfMeasure, 1);
-            var denominatorComponents = _decomposer.GetComponents(denominator.SourceUnitOfMeasure, -1);
+            var numeratorComponets = _decomposer.GetComponents(numerator.UnitOfMeasure, 1);
+            var denominatorComponents = _decomposer.GetComponents(denominator.UnitOfMeasure, -1);
             var allComponents = numeratorComponets.Union(denominatorComponents).ToList();
-            return _simplifier.Simplify(allComponents, numerator.SourceValue / denominator.SourceValue);
+            return _simplifier.Simplify(allComponents, numerator.Value / denominator.Value);
         }
     }
 }

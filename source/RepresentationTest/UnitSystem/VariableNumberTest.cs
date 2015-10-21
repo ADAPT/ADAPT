@@ -39,7 +39,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var number = new VariableNumber(representationTag, uom, 1.23);
 //
 //            Assert.AreEqual(representationTag, number.Representation.DomainTag);
-//            Assert.AreEqual(uom.DomainID, number.SourceUnitOfMeasure.DomainID);
+//            Assert.AreEqual(uom.DomainID, number.Unit.DomainID);
 //        }
 //
 //        [Test]
@@ -51,7 +51,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var number = new VariableNumber(representationTag, uom, 1.23);
 //
 //            Assert.AreEqual(representationTag, number.Representation.DomainTag);
-//            Assert.AreEqual(uom, number.SourceUnitOfMeasure.DomainID);
+//            Assert.AreEqual(uom, number.Unit.DomainID);
 //        }
 //
 //        [Test]
@@ -65,14 +65,14 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //        public void GivenSourceUnitOfMeasureDomainIdWhenCreatedThenSourceUnitOfMeasureInstance()
 //        {
 //            var variableNumber = new VariableNumber(RepresentationInstanceList.vrDistanceTraveled.DomainId, _ftUnitOfMeasure.DomainID, 5);
-//            Assert.AreSame(_ftUnitOfMeasure, variableNumber.SourceUnitOfMeasure);
+//            Assert.AreSame(_ftUnitOfMeasure, variableNumber.Unit);
 //        }
 //
 //        [Test]
 //        public void GivenSourceValueWhenCreatedThenSourceValue()
 //        {
 //            var variableNumber = new VariableNumber(RepresentationInstanceList.vrDistanceTraveled.DomainId, _ftUnitOfMeasure.DomainID, 5);
-//            Assert.AreEqual(5, variableNumber.SourceValue);
+//            Assert.AreEqual(5, variableNumber.Value);
 //        }
 //
 //        [Test]
@@ -88,7 +88,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //        {
 //            var sourceUom = _ftUnitOfMeasure;
 //            var variableNumber = new VariableNumber(RepresentationInstanceList.vrDistanceTraveled, sourceUom, 1.58);
-//            Assert.AreSame(sourceUom, variableNumber.SourceUnitOfMeasure);
+//            Assert.AreSame(sourceUom, variableNumber.Unit);
 //        }
 //
 //        [Test]
@@ -96,7 +96,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //        {
 //            var sourceUom = _ftUnitOfMeasure;
 //            var variableNumber = new VariableNumber(RepresentationInstanceList.vrDistanceTraveled, sourceUom, 12.0);
-//            Assert.AreEqual(12.0, variableNumber.SourceValue);
+//            Assert.AreEqual(12.0, variableNumber.Value);
 //        }
 //
 //        [Test]
@@ -104,7 +104,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //        {
 //            var sourceUom = _ftUnitOfMeasure;
 //            var baseNumber = new VariableNumber(RepresentationInstanceList.vrDistanceTraveled, sourceUom, 1.58);
-//            Assert.AreSame(baseNumber.SourceUnitOfMeasure, baseNumber.TargetUnitOfMeasure);
+//            Assert.AreSame(baseNumber.Unit, baseNumber.TargetUnitOfMeasure);
 //        }
 //
 //        [Test]
@@ -112,7 +112,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //        {
 //            var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["m"];
 //            var baseNumber = new VariableNumber(RepresentationInstanceList.vrDistanceTraveled, sourceUom, 6.89);
-//            Assert.AreEqual(baseNumber.SourceValue, baseNumber.TargetValue);
+//            Assert.AreEqual(baseNumber.Value, baseNumber.TargetValue);
 //        }
 //
 //        [Test]
@@ -122,7 +122,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var targetUom = UnitSystemManager.Instance.UnitOfMeasures["in"];
 //            var variableNumber = new VariableNumber(RepresentationInstanceList.vrDistanceTraveled, sourceUom, 12.0);
 //            
-//            variableNumber.SetTarget(targetUom);
+//            variableNumber.ConvertToUnit(targetUom);
 //            Assert.AreSame(targetUom, variableNumber.TargetUnitOfMeasure);
 //        }
 //
@@ -134,7 +134,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var variableNumber = new VariableNumber(RepresentationInstanceList.vrDistanceTraveled, sourceUom, 12.0, _unitOfMeasureConverterMock.Object);
 //
 //            _unitOfMeasureConverterMock.Setup(s => s.Convert(sourceUom, targetUom, 12.0)).Returns(50.0);
-//            variableNumber.SetTarget(targetUom);
+//            variableNumber.ConvertToUnit(targetUom);
 //            Assert.AreEqual(50.0, variableNumber.TargetValue);
 //        }
 //
@@ -147,7 +147,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //
 //            var result = originalNumber.Add(secondNumber);
 //            Assert.IsInstanceOf<VariableNumber>(result);
-//            Assert.AreEqual(33, result.SourceValue);
+//            Assert.AreEqual(33, result.Value);
 //        }
 //
 //        [Test]
@@ -172,8 +172,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var expected = 2.8168; //1.75m + (3.5ft -> m)
 //            var actual = originalNumber.Add(secondNumber);
 //            Assert.IsInstanceOf<VariableNumber>(actual);
-//            Assert.AreEqual(expected, actual.SourceValue, 0.005);
-//            Assert.AreSame(originalUom, actual.SourceUnitOfMeasure);
+//            Assert.AreEqual(expected, actual.Value, 0.005);
+//            Assert.AreSame(originalUom, actual.Unit);
 //        }
 //
 //        [Test]
@@ -185,7 +185,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var result = number.Add(1.23);
 //
 //            Assert.IsInstanceOf<VariableNumber>(result);
-//            Assert.AreEqual(4.85, result.SourceValue, Epsilon);
+//            Assert.AreEqual(4.85, result.Value, Epsilon);
 //        }
 //
 //        [Test]
@@ -210,7 +210,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //
 //            var result = originalNumber.Subtract(secondNumber);
 //            Assert.IsInstanceOf<VariableNumber>(result);
-//            Assert.AreEqual(9, result.SourceValue);
+//            Assert.AreEqual(9, result.Value);
 //        }
 //
 //        [Test]
@@ -225,8 +225,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var expected = 0.6832; //1.75m + (3.5ft -> m)
 //            var actual = originalNumber.Subtract(secondNumber);
 //            Assert.IsInstanceOf<VariableNumber>(actual);
-//            Assert.AreEqual(expected, actual.SourceValue, Epsilon);
-//            Assert.AreSame(originalUom, actual.SourceUnitOfMeasure);
+//            Assert.AreEqual(expected, actual.Value, Epsilon);
+//            Assert.AreSame(originalUom, actual.Unit);
 //        }
 //
 //        [Test]
@@ -261,7 +261,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var result = number.Subtract(1.23);
 //
 //            Assert.IsInstanceOf<VariableNumber>(result);
-//            Assert.AreEqual(2.39, result.SourceValue, Epsilon);
+//            Assert.AreEqual(2.39, result.Value, Epsilon);
 //        }
 //
 //        [Test]
@@ -273,7 +273,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var result = number.Divide(1.23);
 //
 //            Assert.IsInstanceOf<VariableNumber>(result);
-//            Assert.AreEqual(3.62 / 1.23, result.SourceValue, Epsilon);
+//            Assert.AreEqual(3.62 / 1.23, result.Value, Epsilon);
 //        }
 //
 //        [Test]
@@ -294,8 +294,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //
 //            var quotient = numerator.Divide(denominator);
 //            Assert.IsInstanceOf<VariableNumber>(quotient);
-//            Assert.AreEqual("ft1sec-1", quotient.SourceUnitOfMeasure.DomainID);
-//            Assert.AreEqual(2.4, quotient.SourceValue, Epsilon);
+//            Assert.AreEqual("ft1sec-1", quotient.Unit.DomainID);
+//            Assert.AreEqual(2.4, quotient.Value, Epsilon);
 //        }
 //
 //        [Test]
@@ -306,8 +306,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //
 //            var quotient = numerator.Divide(denominator);
 //            Assert.IsInstanceOf<VariableNumber>(quotient);
-//            Assert.AreEqual("ratio", quotient.SourceUnitOfMeasure.DomainID);
-//            Assert.AreEqual(2, quotient.SourceValue, Epsilon);
+//            Assert.AreEqual("ratio", quotient.Unit.DomainID);
+//            Assert.AreEqual(2, quotient.Value, Epsilon);
 //        }
 //
 //        [Test]
@@ -327,9 +327,9 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var denominator = new VariableNumber(RepresentationInstanceList.vrDeltaTime, UnitSystemManager.Instance.UnitOfMeasures["sec"], 5);
 //
 //            var quotient = numerator.Divide(denominator, RepresentationInstanceList.vrDistanceTraveled);
-//            Assert.AreEqual("ft1[sec2]-1", quotient.SourceUnitOfMeasure.DomainID);
+//            Assert.AreEqual("ft1[sec2]-1", quotient.Unit.DomainID);
 //            Assert.AreSame(RepresentationInstanceList.vrDistanceTraveled, quotient.Representation);
-//            Assert.AreEqual(.48, quotient.SourceValue, Epsilon);
+//            Assert.AreEqual(.48, quotient.Value, Epsilon);
 //        }
 //
 //        [Test]
@@ -339,9 +339,9 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var denominator = new VariableNumber(RepresentationInstanceList.vrDeltaTime, UnitSystemManager.Instance.UnitOfMeasures["[sec2]-1"], 5);
 //
 //            var quotient = numerator.Divide(denominator, RepresentationInstanceList.vrDeltaTime);
-//            Assert.AreEqual("ft1sec2", quotient.SourceUnitOfMeasure.DomainID);
+//            Assert.AreEqual("ft1sec2", quotient.Unit.DomainID);
 //            Assert.AreSame(RepresentationInstanceList.vrDeltaTime, quotient.Representation);
-//            Assert.AreEqual(2.508, quotient.SourceValue, Epsilon);
+//            Assert.AreEqual(2.508, quotient.Value, Epsilon);
 //        }
 //
 //        [Test]
@@ -351,9 +351,9 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var denominator = new VariableNumber(RepresentationInstanceList.vrFuelRatePerHour, UnitSystemManager.Instance.UnitOfMeasures["gal1sec-1"], 12);
 //
 //            var quotient = numerator.Divide(denominator, RepresentationInstanceList.vrEngineSpeed);
-//            Assert.AreEqual("ft1gal-1", quotient.SourceUnitOfMeasure.DomainID);
+//            Assert.AreEqual("ft1gal-1", quotient.Unit.DomainID);
 //            Assert.AreSame(RepresentationInstanceList.vrEngineSpeed, quotient.Representation);
-//            Assert.AreEqual(4.345833333333333, quotient.SourceValue, Epsilon);
+//            Assert.AreEqual(4.345833333333333, quotient.Value, Epsilon);
 //        }
 //
 //        [Test]
@@ -364,8 +364,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //
 //            var product = left.Multiply(right);
 //            Assert.IsInstanceOf<VariableNumber>(product);
-//            Assert.AreEqual("ft2", product.SourceUnitOfMeasure.DomainID);
-//            Assert.AreEqual(48, product.SourceValue);
+//            Assert.AreEqual("ft2", product.Unit.DomainID);
+//            Assert.AreEqual(48, product.Value);
 //        }
 //
 //        [Test]
@@ -376,7 +376,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //
 //            var result = number.Multiply(1.23);
 //
-//            Assert.AreEqual(3.62 * 1.23, result.SourceValue, Epsilon);
+//            Assert.AreEqual(3.62 * 1.23, result.Value, Epsilon);
 //        }
 //
 //        [Test]
@@ -387,8 +387,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //
 //            var product = left.Multiply(right);
 //            Assert.IsInstanceOf<VariableNumber>(product);
-//            Assert.AreEqual("ft2sec-1", product.SourceUnitOfMeasure.DomainID);
-//            Assert.AreEqual(142.5, product.SourceValue);
+//            Assert.AreEqual("ft2sec-1", product.Unit.DomainID);
+//            Assert.AreEqual(142.5, product.Value);
 //        }
 //
 //        [Test]
@@ -399,8 +399,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //
 //            var product = left.Multiply(right, RepresentationInstanceList.vrDistanceTraveled);
 //            Assert.AreSame(RepresentationInstanceList.vrDistanceTraveled, product.Representation);
-//            Assert.AreEqual("ft2sec-1", product.SourceUnitOfMeasure.DomainID);
-//            Assert.AreEqual(150.423, product.SourceValue);
+//            Assert.AreEqual("ft2sec-1", product.Unit.DomainID);
+//            Assert.AreEqual(150.423, product.Value);
 //        }
 //
 //        [Test]
@@ -411,8 +411,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //
 //            var product = left.Multiply(right, RepresentationInstanceList.vrDistanceTraveled);
 //            Assert.AreSame(RepresentationInstanceList.vrDistanceTraveled, product.Representation);
-//            Assert.AreEqual("ft2", product.SourceUnitOfMeasure.DomainID);
-//            Assert.AreEqual(40.6335, product.SourceValue);
+//            Assert.AreEqual("ft2", product.Unit.DomainID);
+//            Assert.AreEqual(40.6335, product.Value);
 //        }
 //
 //        [Test]
@@ -423,8 +423,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //
 //            var product = left.Multiply(right, RepresentationInstanceList.vrDistanceTraveled);
 //            Assert.AreSame(RepresentationInstanceList.vrDistanceTraveled, product.Representation);
-//            Assert.AreEqual("ft2[sec2]-1", product.SourceUnitOfMeasure.DomainID);
-//            Assert.AreEqual(200.56464, product.SourceValue);
+//            Assert.AreEqual("ft2[sec2]-1", product.Unit.DomainID);
+//            Assert.AreEqual(200.56464, product.Value);
 //        }
 //
 //        [Test]
@@ -434,8 +434,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var right = new VariableNumber(RepresentationInstanceList.vrDistanceTraveled, UnitSystemManager.Instance.UnitOfMeasures["sec"], 9.18);
 //
 //            var product = left.Multiply(right, RepresentationInstanceList.vrDistanceTraveled);
-//            Assert.AreEqual("ft", product.SourceUnitOfMeasure.DomainID);
-//            Assert.IsInstanceOf<ScalarUnitOfMeasure>(product.SourceUnitOfMeasure);
+//            Assert.AreEqual("ft", product.Unit.DomainID);
+//            Assert.IsInstanceOf<ScalarUnitOfMeasure>(product.Unit);
 //        }
 //
 //        [Test]
@@ -444,7 +444,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var number = new VariableNumber(RepresentationInstanceList.vrABShiftTrack, _ftUnitOfMeasure, 24.68);
 //            number.AddToSource(10.11);
 //
-//            Assert.AreEqual(34.79, number.SourceValue);
+//            Assert.AreEqual(34.79, number.Value);
 //        }
 //
 //        [Test]
@@ -453,7 +453,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var number = new VariableNumber(RepresentationInstanceList.vrABShiftTrack, _ftUnitOfMeasure, 24.68);
 //            number.SubtractFromSource(10.11);
 //
-//            Assert.AreEqual(14.57, number.SourceValue);
+//            Assert.AreEqual(14.57, number.Value);
 //        }
 //
 //        [Test]
@@ -463,7 +463,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var secondNumber = new VariableNumber(RepresentationInstanceList.vrABShiftTrack, _ftUnitOfMeasure, 10.11);
 //
 //            firstNumber.SubtractFromSource(secondNumber);
-//            Assert.AreEqual(14.57, firstNumber.SourceValue);
+//            Assert.AreEqual(14.57, firstNumber.Value);
 //        }
 //
 //        [Test]
@@ -473,7 +473,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var secondNumber = new VariableNumber(RepresentationInstanceList.vrABShiftTrack, _ftUnitOfMeasure, 10.11);
 //
 //            firstNumber.AddToSource(secondNumber);
-//            Assert.AreEqual(34.79, firstNumber.SourceValue);
+//            Assert.AreEqual(34.79, firstNumber.Value);
 //        }
 //
 //        [Test]

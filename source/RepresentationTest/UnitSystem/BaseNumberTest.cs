@@ -35,7 +35,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         {
             var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
             var baseNumber = new BaseNumber(sourceUom, 1.58);
-            Assert.AreSame(sourceUom, baseNumber.SourceUnitOfMeasure);
+            Assert.AreSame(sourceUom, baseNumber.UnitOfMeasure);
         }
 
         [Test]
@@ -43,7 +43,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         {
             var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
             var baseNumber = new BaseNumber(sourceUom, 1.58);
-            Assert.AreSame(baseNumber.SourceUnitOfMeasure, baseNumber.TargetUnitOfMeasure);
+            Assert.AreSame(baseNumber.UnitOfMeasure, baseNumber.UnitOfMeasure);
         }
 
         [Test]
@@ -51,7 +51,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         {
             var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["m"];
             var baseNumber = new BaseNumber(sourceUom, 6.89);
-            Assert.AreEqual(baseNumber.SourceValue, baseNumber.TargetValue);
+            Assert.AreEqual(baseNumber.Value, baseNumber.Value);
         }
 
         [Test]
@@ -59,7 +59,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         {
             var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
             var baseNumber = new BaseNumber(sourceUom, 12.0);
-            Assert.AreEqual(12.0, baseNumber.SourceValue);
+            Assert.AreEqual(12.0, baseNumber.Value);
         }
 
         [Test]
@@ -67,22 +67,22 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         {
             var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
             var targetUom = UnitSystemManager.Instance.UnitOfMeasures["in"];
-            var baseNumber = new BaseNumber(sourceUom, 12.0);
+            var baseNumber = new BaseNumber(sourceUom, 12.0, _unitOfMeasureConverterMock.Object);
 
-            baseNumber.SetTarget(targetUom);
-            Assert.AreSame(targetUom, baseNumber.TargetUnitOfMeasure);
+            baseNumber.ConvertToUnit(targetUom);
+            Assert.AreSame(targetUom, baseNumber.UnitOfMeasure);
         }
 
         [Test]
-        public void GivenBaseNumberWhenSetTargetThenTargetValueIsSet()
+        public void GivenBaseNumberWhenConvertUomThenValueIsSet()
         {
             var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
             var targetUom = UnitSystemManager.Instance.UnitOfMeasures["in"];
+            _unitOfMeasureConverterMock.Setup(s => s.Convert(sourceUom, targetUom, 12.0)).Returns(50.0);
             var baseNumber = new BaseNumber(sourceUom, 12.0, _unitOfMeasureConverterMock.Object);
 
-            _unitOfMeasureConverterMock.Setup(s => s.Convert(sourceUom, targetUom, 12.0)).Returns(50.0);
-            baseNumber.SetTarget(targetUom);
-            Assert.AreEqual(50.0, baseNumber.TargetValue);
+            baseNumber.ConvertToUnit(targetUom);
+            Assert.AreEqual(50.0, baseNumber.Value);
         }
 
         [Test]
@@ -93,7 +93,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var secondNumber = new BaseNumber(uom, 11);
 
             var result = originalNumber.Add(secondNumber);
-            Assert.AreEqual(33, result.SourceValue);
+            Assert.AreEqual(33, result.Value);
         }
 
         [Test]
@@ -107,7 +107,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 
             var expected = 2.8168; //1.75m + (3.5ft -> m)
             var actual = originalNumber.Add(secondNumber);
-            Assert.AreEqual(expected, actual.SourceValue, Epsilon);
+            Assert.AreEqual(expected, actual.Value, Epsilon);
         }
 
         [Test]
@@ -131,7 +131,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var secondNumber = new BaseNumber(uom, 13);
 
             var result = originalNumber.Subtract(secondNumber);
-            Assert.AreEqual(9, result.SourceValue);
+            Assert.AreEqual(9, result.Value);
         }
 
         [Test]
@@ -145,7 +145,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 
             var expected = 0.6832; //1.75m + (3.5ft -> m)
             var actual = originalNumber.Subtract(secondNumber);
-            Assert.AreEqual(expected, actual.SourceValue, Epsilon);
+            Assert.AreEqual(expected, actual.Value, Epsilon);
         }
 
         [Test]
@@ -169,7 +169,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 
             var result = number.Add(1.23);
 
-            Assert.AreEqual(4.85, result.SourceValue, Epsilon);
+            Assert.AreEqual(4.85, result.Value, Epsilon);
         }
 
         [Test]
@@ -180,7 +180,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 
             var result = number.Subtract(1.23);
 
-            Assert.AreEqual(2.39, result.SourceValue, Epsilon);
+            Assert.AreEqual(2.39, result.Value, Epsilon);
         }
 
         [Test]
@@ -191,7 +191,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 
             var result = number.Multiply(1.23);
 
-            Assert.AreEqual(3.62 * 1.23, result.SourceValue, Epsilon);
+            Assert.AreEqual(3.62 * 1.23, result.Value, Epsilon);
         }
 
         [Test]
@@ -202,7 +202,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 
             var result = number.Divide(1.23);
 
-            Assert.AreEqual(3.62 / 1.23, result.SourceValue, Epsilon);
+            Assert.AreEqual(3.62 / 1.23, result.Value, Epsilon);
         }
 
         [Test]
@@ -222,8 +222,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var denominator = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["sec"], 5);
 
             var quotient = numerator.Divide(denominator);
-            Assert.AreEqual("ft1sec-1", quotient.SourceUnitOfMeasure.DomainID);
-            Assert.AreEqual(2.4, quotient.SourceValue, Epsilon);
+            Assert.AreEqual("ft1sec-1", quotient.UnitOfMeasure.DomainID);
+            Assert.AreEqual(2.4, quotient.Value, Epsilon);
         }
 
         [Test]
@@ -233,8 +233,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var denominator = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["ft"], 6);
 
             var quotient = numerator.Divide(denominator);
-            Assert.AreEqual("ratio", quotient.SourceUnitOfMeasure.DomainID);
-            Assert.AreEqual(2, quotient.SourceValue, Epsilon);
+            Assert.AreEqual("ratio", quotient.UnitOfMeasure.DomainID);
+            Assert.AreEqual(2, quotient.Value, Epsilon);
         }
 
         [Test]
@@ -254,8 +254,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var denominator = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["sec"], 5);
 
             var quotient = numerator.Divide(denominator);
-            Assert.AreEqual("ft1[sec2]-1", quotient.SourceUnitOfMeasure.DomainID);
-            Assert.AreEqual(.48, quotient.SourceValue, Epsilon);
+            Assert.AreEqual("ft1[sec2]-1", quotient.UnitOfMeasure.DomainID);
+            Assert.AreEqual(.48, quotient.Value, Epsilon);
         }
 
         [Test]
@@ -265,8 +265,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var denominator = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["[sec2]-1"], 5);
 
             var quotient = numerator.Divide(denominator);
-            Assert.AreEqual("ft1sec2", quotient.SourceUnitOfMeasure.DomainID);
-            Assert.AreEqual(2.508, quotient.SourceValue, Epsilon);
+            Assert.AreEqual("ft1sec2", quotient.UnitOfMeasure.DomainID);
+            Assert.AreEqual(2.508, quotient.Value, Epsilon);
         }
 
         [Test]
@@ -276,8 +276,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var denominator = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["gal1sec-1"], 12);
 
             var quotient = numerator.Divide(denominator);
-            Assert.AreEqual("ft1gal-1", quotient.SourceUnitOfMeasure.DomainID);
-            Assert.AreEqual(4.345833333333333, quotient.SourceValue, Epsilon);
+            Assert.AreEqual("ft1gal-1", quotient.UnitOfMeasure.DomainID);
+            Assert.AreEqual(4.345833333333333, quotient.Value, Epsilon);
 
         }
 
@@ -288,8 +288,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var right = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["ft"], 4);
 
             var product = left.Multiply(right);
-            Assert.AreEqual("ft2", product.SourceUnitOfMeasure.DomainID);
-            Assert.AreEqual(48, product.SourceValue);
+            Assert.AreEqual("ft2", product.UnitOfMeasure.DomainID);
+            Assert.AreEqual(48, product.Value);
         }
 
         [Test]
@@ -299,8 +299,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var right = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["ft"], 3);
 
             var product = left.Multiply(right);
-            Assert.AreEqual("ft2sec-1", product.SourceUnitOfMeasure.DomainID);
-            Assert.AreEqual(142.5, product.SourceValue);
+            Assert.AreEqual("ft2sec-1", product.UnitOfMeasure.DomainID);
+            Assert.AreEqual(142.5, product.Value);
         }
 
         [Test]
@@ -310,8 +310,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var right = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"], 2.85);
 
             var product = left.Multiply(right);
-            Assert.AreEqual("ft2sec-1", product.SourceUnitOfMeasure.DomainID);
-            Assert.AreEqual(150.423, product.SourceValue);
+            Assert.AreEqual("ft2sec-1", product.UnitOfMeasure.DomainID);
+            Assert.AreEqual(150.423, product.Value);
         }
 
         [Test]
@@ -321,8 +321,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var right = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"], 7.89);
 
             var product = left.Multiply(right);
-            Assert.AreEqual("ft2", product.SourceUnitOfMeasure.DomainID);
-            Assert.AreEqual(40.6335, product.SourceValue);
+            Assert.AreEqual("ft2", product.UnitOfMeasure.DomainID);
+            Assert.AreEqual(40.6335, product.Value);
         }
 
         [Test]
@@ -332,7 +332,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var right = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["m2"], 13.6);
 
             var product = left.Multiply(right);
-            Assert.AreEqual("kg", product.SourceUnitOfMeasure.DomainID);
+            Assert.AreEqual("kg", product.UnitOfMeasure.DomainID);
         }
 
         [Test]
@@ -342,7 +342,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var right = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["m2"], 13.6);
 
             var product = left.Multiply(right);
-            Assert.AreEqual("m4", product.SourceUnitOfMeasure.DomainID);
+            Assert.AreEqual("m4", product.UnitOfMeasure.DomainID);
         }
 
         [Test]
@@ -352,7 +352,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var right = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["[m2]-1"], 13.6);
 
             var product = left.Multiply(right);
-            Assert.AreEqual("mg", product.SourceUnitOfMeasure.DomainID);
+            Assert.AreEqual("mg", product.UnitOfMeasure.DomainID);
         }
 
         [Test]
@@ -362,18 +362,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var right = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"], 9.18);
 
             var product = left.Multiply(right);
-            Assert.AreEqual("ft2[sec2]-1", product.SourceUnitOfMeasure.DomainID);
-            Assert.AreEqual(200.56464, product.SourceValue);
-        }
-
-        [Test]
-        public void GivenBaseNumberWithDifferentTargetUnitWhenSetSourceValueShouldUpdateTargetValue()
-        {
-            var number = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["ft"], 3);
-            number.SetTarget(UnitSystemManager.Instance.UnitOfMeasures["yd"]);
-
-            number.SourceValue = 6;
-            Assert.AreEqual(2, number.TargetValue, Epsilon);
+            Assert.AreEqual("ft2[sec2]-1", product.UnitOfMeasure.DomainID);
+            Assert.AreEqual(200.56464, product.Value);
         }
 
         [Test]
@@ -382,16 +372,16 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var number = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["mg"], 3.14);
             number.AddToSource(4.13);
 
-            Assert.AreEqual(7.27, number.SourceValue, Epsilon);
+            Assert.AreEqual(7.27, number.Value, Epsilon);
         }
 
         [Test]
         public void GivenTwoScalarValuesWhenConvertedThenResultIsConvertedCorrectly()
         {
             var number = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["seeds1ac-1"], 30213.0);
-            number.SetTarget(UnitSystemManager.Instance.UnitOfMeasures["seeds1ha-1"]);
+            number.ConvertToUnit(UnitSystemManager.Instance.UnitOfMeasures["seeds1ha-1"]);
 
-            Assert.AreEqual(74657.948902674674, number.TargetValue, Epsilon);
+            Assert.AreEqual(74657.948902674674, number.Value, Epsilon);
         }
 
 
@@ -401,7 +391,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var number = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["lb"], 22.1);
             number.AddToSource(null);
 
-            Assert.AreEqual(22.1, number.SourceValue, Epsilon);
+            Assert.AreEqual(22.1, number.Value, Epsilon);
         }
 
         [Test]
@@ -412,7 +402,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 
             firstNumber.AddToSource(secondNumber);
 
-            Assert.AreEqual(54.58, firstNumber.SourceValue, Epsilon);
+            Assert.AreEqual(54.58, firstNumber.Value, Epsilon);
         }
 
         [Test]
@@ -423,7 +413,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 
             firstNumber.AddToSource(secondNumber);
 
-            Assert.AreEqual(3.54, firstNumber.SourceValue, Epsilon);
+            Assert.AreEqual(3.54, firstNumber.Value, Epsilon);
         }
 
         [Test]
@@ -432,7 +422,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var firstNumber = new BaseNumber(_mileUnitOfMeasure, 42.24);
             firstNumber.SubtractFromSource(12.13);
 
-            Assert.AreEqual(30.11, firstNumber.SourceValue, Epsilon);
+            Assert.AreEqual(30.11, firstNumber.Value, Epsilon);
         }
 
         [Test]
@@ -441,7 +431,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var number = new BaseNumber(UnitSystemManager.Instance.UnitOfMeasures["cm"], 4.25);
             number.SubtractFromSource(null);
 
-            Assert.AreEqual(4.25, number.SourceValue, Epsilon);
+            Assert.AreEqual(4.25, number.Value, Epsilon);
         }
 
         [Test]
@@ -452,7 +442,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 
             number.SubtractFromSource(secondNumber);
 
-            Assert.AreEqual(8.642, number.SourceValue);
+            Assert.AreEqual(8.642, number.Value);
         }
 
         [Test]
@@ -463,7 +453,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 
             firstNumber.SubtractFromSource(secondNumber);
 
-            Assert.AreEqual(1, firstNumber.SourceValue, Epsilon);
+            Assert.AreEqual(1, firstNumber.Value, Epsilon);
         }
 
     }

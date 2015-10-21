@@ -21,15 +21,8 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
         private readonly IUnitOfMeasureConverter _converter;
         private BaseNumberDivision _baseNumberDivision;
         private BaseNumberMultiplication _baseNumberMultiplication;
-        public UnitOfMeasure SourceUnitOfMeasure { get; private set; }
-        public double SourceValue { get; set; }
-
-        public UnitOfMeasure TargetUnitOfMeasure { get; private set; }
-
-        public double TargetValue
-        {
-            get { return _converter.Convert(SourceUnitOfMeasure, TargetUnitOfMeasure, SourceValue); }
-        }
+        public UnitOfMeasure UnitOfMeasure { get; private set; }
+        public double Value { get; set; }
 
         public BaseNumber(string sourceUom, double value)
             : this(UnitSystemManager.Instance.UnitOfMeasures[sourceUom], value)
@@ -37,76 +30,73 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             
         }
 
-        public BaseNumber(UnitOfMeasure sourceUom, double value)
-            : this(sourceUom, value, UnitOfMeasureConverter.Create())
+        public BaseNumber(UnitOfMeasure uom, double value)
+            : this(uom, value, UnitOfMeasureConverter.Create())
         {
             
         }
 
-        public BaseNumber(UnitOfMeasure sourceUom, double value, IUnitOfMeasureConverter converter)
+        public BaseNumber(UnitOfMeasure uom, double value, IUnitOfMeasureConverter converter)
         {
             _converter = converter;
-            SourceUnitOfMeasure = sourceUom;
-            SourceValue = value;
-            SetTarget(sourceUom);
+            UnitOfMeasure = uom;
+            Value = value;
         }
 
-        public void SetTarget(UnitOfMeasure targetUom)
+        public double ConvertToUnit(UnitOfMeasure targetUom)
         {
             if (targetUom == null)
                 throw new ArgumentNullException("targetUom");
 
-            TargetUnitOfMeasure = targetUom;
+            Value = _converter.Convert(UnitOfMeasure, targetUom, Value);
+            UnitOfMeasure = targetUom;
+            return Value;
         }
 
         public BaseNumber Add(BaseNumber secondNumber)
         {
-            secondNumber.SetTarget(SourceUnitOfMeasure);
-            return new BaseNumber(SourceUnitOfMeasure, SourceValue + secondNumber.TargetValue);
+            return new BaseNumber(UnitOfMeasure, Value + secondNumber.ConvertToUnit(UnitOfMeasure));
         }
 
         public void AddToSource(BaseNumber secondNumber)
         {
             if (secondNumber != null)
             {
-                secondNumber.SetTarget(SourceUnitOfMeasure);
-                SourceValue += secondNumber.TargetValue;
+                Value += secondNumber.ConvertToUnit(UnitOfMeasure);
             }
         }
 
         public BaseNumber Subtract(BaseNumber secondNumber)
         {
-            secondNumber.SetTarget(SourceUnitOfMeasure);
-            return new BaseNumber(SourceUnitOfMeasure, SourceValue - secondNumber.TargetValue);
+            return new BaseNumber(UnitOfMeasure, Value - secondNumber.ConvertToUnit(UnitOfMeasure));
         }
 
         public void SubtractFromSource(BaseNumber secondNumber)
         {
             if (secondNumber != null)
             {
-                secondNumber.SetTarget(SourceUnitOfMeasure);
-                SourceValue -= secondNumber.TargetValue;                
+                Value -= secondNumber.ConvertToUnit(UnitOfMeasure);                
             }
         }
 
         public BaseNumber Add(double number)
         {
-            return new BaseNumber(SourceUnitOfMeasure, SourceValue + number);
+            return new BaseNumber(UnitOfMeasure, Value + number);
         }
 
         public void AddToSource(double number)
         {
-            SourceValue += number;
+            Value += number;
         }
 
         public BaseNumber Subtract(double number)
         {
-            return new BaseNumber(SourceUnitOfMeasure, SourceValue - number);
+            return new BaseNumber(UnitOfMeasure, Value - number);
         }
 
         public void SubtractFromSource(double number)
         {
-            SourceValue -= number;
+            Value -= number;
         }
 
         public BaseNumber Divide(double denominator)
@@ -114,7 +104,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             if (denominator == 0.0)
                 throw new DivideByZeroException();
 
-            return new BaseNumber(SourceUnitOfMeasure, SourceValue / denominator);
+            return new BaseNumber(UnitOfMeasure, Value / denominator);
         }
 
         public BaseNumber Divide(BaseNumber denominator)
@@ -127,7 +117,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
         public BaseNumber Multiply(double right)
         {
-            return new BaseNumber(SourceUnitOfMeasure, SourceValue * right);
+            return new BaseNumber(UnitOfMeasure, Value * right);
         }
 
         public BaseNumber Multiply(BaseNumber right)

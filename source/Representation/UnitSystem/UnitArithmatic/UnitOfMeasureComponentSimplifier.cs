@@ -51,7 +51,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
             }
 
             var baseNumber = CombineComponents(unitTypeComponents.Values.ToList(), finalValue);
-            return new VariableNumber(representation, baseNumber.SourceUnitOfMeasure, baseNumber.SourceValue);
+            return new VariableNumber(representation, baseNumber.UnitOfMeasure, baseNumber.Value);
         }
 
         protected double SimplifyComponent(UnitOfMeasureComponent component, Dictionary<string, UnitOfMeasureComponent> unitTypeComponents, double finalValue)
