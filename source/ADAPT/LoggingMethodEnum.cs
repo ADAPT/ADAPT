@@ -7,17 +7,13 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Tarak Reddy - Removed Meter and sections as they are embedded in equipment configuration which is part of the catalog
+  *    Tarak Reddy, Tim Shearouse - initial API and implementation    
   *******************************************************************************/
-
-using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class LoggedDataCatalog
+    public enum LoggingMethodEnum
     {
-        public List<LoggedData> LoggedData { get; set; } 
-        public List<OperationData> OperationData { get; set; } 
+        //Todo
     }
 }

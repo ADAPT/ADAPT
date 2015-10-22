@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal, Joseph Ross - Added Ingredients
+  *   Tarak Reddy - Added guidance group and Guidance Allocation
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -27,7 +28,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<FieldBoundary> FieldBoundaries { get; set; }
         public List<Grower> Growers { get; set; }
         public List<Ingredient> Ingredients { get; set; } 
-        public List<GuidancePattern> GuidancePatterns { get; set; } 
+        public List<GuidancePattern> GuidancePatterns { get; set; }
+        public List<GuidanceGroup> GuidanceGroups { get; set; }
         public List<Implement> Implements { get; set; } 
         public List<ImplementModel> ImplementModels { get; set; }
         public List<ImplementType> ImplementTypes { get; set; } 
@@ -41,7 +43,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<MachineModel> MachineModels { get; set; }
         public List<MachineSeries> MachineSeries { get; set; }
         public List<MachineType> MachineTypes { get; set; } 
-        public List<ReferenceNote> Notes { get; set; }
+        public List<ReferenceNote> ReferenceNotes { get; set; }
         public List<OperationData> OperationData { get; set; } 
         public List<WorkItem> WorkItems { get; set; } 
         public List<WorkItemOperation> WorkItemOperations { get; set; } 

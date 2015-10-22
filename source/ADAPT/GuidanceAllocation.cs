@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -7,10 +7,10 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Justin Sliekers - creation during Guidance realignment
+  *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using System.Runtime.InteropServices;
+using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
@@ -21,12 +21,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel
             Id = CompoundIdentifierFactory.Instance.Create();
         }
 
-        public CompoundIdentifier Id { get; set; }
+        public CompoundIdentifier Id { get; private set; }
 
         public int GuidanceGroupId { get; set; }
 
-        public TimeScope TimeScope { get; set; }
+        public List<int> TimeScopes { get; set; }
 
-        public GuidanceShift GuidanceShift { get; set; }
+        public List<GuidanceShift> GuidanceShifts { get; set; }
     }
 }
