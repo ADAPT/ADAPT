@@ -1,17 +1,17 @@
 /*******************************************************************************
-  * Copyright (C) 2015 AgGateway and ADAPT Contributors
-  * Copyright (C) 2015 Deere and Company
-  * All rights reserved. This program and the accompanying materials
-  * are made available under the terms of the Eclipse Public License v1.0
+ * Copyright (C) 2015 AgGateway and ADAPT Contributors
+ * Copyright (C) 2015 Deere and Company
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
   * which accompanies this distribution, and is available at
-  * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
-  *
-  * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Tarak Reddy - Updated List of GuidanceId to List GuidanceAllocationId
-  *******************************************************************************/
+ * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
+ *
+ * Contributors:
+ *    Tarak Reddy, Tim Shearouse - initial API and implementation
+ *    Tarak Reddy - Updated List of GuidanceId to List GuidanceAllocationId
+ *    Tarak Reddy - Added parent document id that is required. A work item would have to exists as a Plan, Recommendation or WorkOrder.
+ *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -25,7 +25,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
         public List<int> PlanIds { get; set; }
-        public List<int> RecommendationdIds { get; set; }
+        public List<int> RecommendationIds { get; set; }
         public List<int> WorkOrderIds { get; set; }
         public List<int> ReferenceNoteIds { get; set; }
         public PriorityEnum PriorityEnum { get; set; }
@@ -41,5 +41,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<int> WorkItemOperationIds { get; set; }
         public List<int> GuidanceAllocationIds { get; set; }
         public List<StatusUpdate> StatusUpdates { get; set; }
+        public int ParentDocumentId { get; set; }
     }
 }
