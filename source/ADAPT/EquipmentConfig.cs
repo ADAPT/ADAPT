@@ -7,27 +7,30 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
- *    Tarak Reddy - Renamed GuidanceId to GuidancePatternId
-  *******************************************************************************/  
+  *    Tarak Reddy, Tim Shearouse - initial API and implementation    
+  *******************************************************************************/
 
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class GuidanceGroup
+    public class EquipmentConfig
     {
-        public GuidanceGroup()
+        public EquipmentConfig()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
         }
 
         public CompoundIdentifier Id { get; private set; }
 
-        public string Description { get; set; }
+        public int? MachineConfigurationId { get; set; }
 
-        public List<int> GuidancePatternIds { get; set; }
+        public int? ImplementConfigurationId { get; set; }
 
-        public MultiPolygon BoundingPolygon { get; set; }
+        public List<Meter> Meters { get; set; }
+
+        public List<Section> Sections { get; set; }
+
+        public List<DataLogTrigger> Triggers { get; set; } 
     }
 }

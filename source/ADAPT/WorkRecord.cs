@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+ *    Tarak Reddy - Updated List of GuidanceId to List GuidanceAllocationId
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public int? MachineId { get; set; }
         public int? SeasonId { get; set; }
         public int? WorkItemId { get; set; }
-        public List<int> GuidanceGroupIds { get; set; }
+        public List<int> GuidanceAllocationIds { get; set; }
         public List<int> ContextItemIds { get; set; }
         public int? CropZoneId { get; set; }
         public int? PersonRoleId { get; set; }
