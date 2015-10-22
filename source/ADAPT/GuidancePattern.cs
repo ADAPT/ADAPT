@@ -12,9 +12,9 @@
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class Guidance
+    public class GuidancePattern
     {
-        public Guidance()
+        public GuidancePattern()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
         }

@@ -12,7 +12,7 @@
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class APlus : GuidancePatternType
+    public class APlus : GuidancePattern
     {
         public Point Point { get; set; }
 

@@ -25,7 +25,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<Field> Fields { get; set; }
         public List<FieldBoundary> FieldBoundaries { get; set; }
         public List<Grower> Growers { get; set; }
-        public List<Guidance> Guidances { get; set; } 
+        public List<GuidancePattern> Guidances { get; set; } 
         public List<Implement> Implements { get; set; } 
         public List<ImplementModel> ImplementModels { get; set; }
         public List<ImplementType> ImplementTypes { get; set; } 

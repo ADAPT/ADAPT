@@ -12,7 +12,7 @@
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class Spiral : GuidancePatternType
+    public class Spiral : GuidancePattern
     {
         public LineString Shape { get; set; }
     }

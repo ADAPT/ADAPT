@@ -21,7 +21,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public int? MachineId { get; set; }
         public int? SeasonId { get; set; }
         public int? WorkItemId { get; set; }
-        public List<int> GuidanceIds { get; set; }
+        public List<int> GuidanceGroupIds { get; set; }
         public List<int> ContextItemIds { get; set; }
         public int? CropZoneId { get; set; }
         public int? PersonRoleId { get; set; }
