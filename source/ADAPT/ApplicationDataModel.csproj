@@ -110,7 +110,6 @@
     <Compile Include="LoadDestination.cs" />
     <Compile Include="LoggedData.cs" />
     <Compile Include="LoggedNote.cs" />
-    <Compile Include="LoggedDataCatalog.cs" />
     <Compile Include="LoggingLevelEnum.cs" />
     <Compile Include="LoggingMethodEnum.cs" />
     <Compile Include="Machine.cs" />

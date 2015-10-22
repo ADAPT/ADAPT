@@ -23,9 +23,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public int MachineConfigurationId { get; set; }
+        public int? MachineConfigurationId { get; set; }
 
-        public int ImplementConfigurationId { get; set; }
+        public int? ImplementConfigurationId { get; set; }
 
         public List<Meter> Meters { get; set; }
 

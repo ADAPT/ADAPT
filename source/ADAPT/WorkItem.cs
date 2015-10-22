@@ -9,7 +9,8 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Tarak Reddy - Updated List of GuidanceId to List GuidanceAllocationId
-  *******************************************************************************/  
+ *    Tarak Reddy - Added parent document id that is required. A work item would have to exists as a Plan, Recommendation or WorkOrder.
+  *******************************************************************************/
 
 using System.Collections.Generic;
 
@@ -24,7 +25,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
         public List<int> PlanIds { get; set; }
-        public List<int> RecommendationdIds { get; set; }
+        public List<int> RecommendationIds { get; set; }
         public List<int> WorkOrderIds { get; set; }
         public List<int> ReferenceNoteIds { get; set; }
         public PriorityEnum PriorityEnum { get; set; }
@@ -40,5 +41,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<int> WorkItemOperationIds { get; set; }
         public List<int> GuidanceAllocationIds { get; set; }
         public List<StatusUpdate> StatusUpdates { get; set; }
+        public int ParentDocumentId { get; set; }
     }
 }
