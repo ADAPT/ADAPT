@@ -9,8 +9,8 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Tarak Reddy - Updated List of GuidanceId to List GuidanceAllocationId
- *    Tarak Reddy - Added parent document id that is required. A work item would have to exists as a Plan, Recommendation or WorkOrder.
-  *******************************************************************************/
+  *    Tarak Reddy - Added parent document id that is required. A work item would have to exists as a Plan, Recommendation or WorkOrder.
+  *******************************************************************************/  
 
 using System.Collections.Generic;
 
