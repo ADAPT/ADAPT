@@ -13,7 +13,7 @@
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class GuidancePattern
+    public abstract class GuidancePattern
     {
         public GuidancePattern()
         {
