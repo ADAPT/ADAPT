@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+ *    Tarak Reddy - Renamed GuidanceId to GuidancePatternId
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public string Description { get; set; }
 
-        public List<int> GuidanceIds { get; set; }
+        public List<int> GuidancePatternIds { get; set; }
 
         public MultiPolygon BoundingPolygon { get; set; }
     }

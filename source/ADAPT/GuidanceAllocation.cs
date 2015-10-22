@@ -8,37 +8,25 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
+
+using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class Guidance
+    public class GuidanceAllocation
     {
-        public Guidance()
+        public GuidanceAllocation()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
         }
 
         public CompoundIdentifier Id { get; private set; }
 
-        public GuidancePatternTypeEnum GuidancePatternType { get; set; }
+        public int GuidanceGroupId { get; set; }
 
-        public GpsSource GpsSource { get; set; }
+        public List<int> TimeScopes { get; set; }
 
-        public string OriginalEpsgCode { get; set; }
-
-        public string Name { get; set; }
-
-        public NumericRepresentationValue SwathWidth { get; set; }
-
-        public PropagationDirectionEnum PropagationDirection { get; set; }
-
-        public ExtensionEnum Extension { get; set; }
-
-        public int? NumbersOfSwathsLeft { get; set; }
-
-        public int NumbersOfSwathsRight { get; set; }
-
-        public MultiPolygon BoundingPolygon { get; set; }
+        public List<GuidanceShift> GuidanceShifts { get; set; }
     }
 }

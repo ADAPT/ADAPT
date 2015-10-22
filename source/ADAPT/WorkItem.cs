@@ -8,8 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    
-  *******************************************************************************/  
+  *    Tarak Reddy - Updated List of GuidanceId to List GuidanceAllocationId
+  *******************************************************************************/
 
 using System;
 using System.Collections.Generic;
@@ -39,7 +39,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<int> SpatialLayerIds { get; set; }
         public int? FieldBoundaryId { get; set; }
         public List<int> WorkItemOperationIds { get; set; }
-        public List<int> GuidanceIds { get; set; }
+        public List<int> GuidanceAllocationIds { get; set; }
         public List<StatusUpdate> StatusUpdates { get; set; }
     }
 }
