@@ -11,7 +11,6 @@
   *    
   *******************************************************************************/  
 
-using System;
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -24,22 +23,39 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public CompoundIdentifier Id { get; private set; }
+
         public List<int> PlanIds { get; set; }
+
         public List<int> RecommendationdIds { get; set; }
+
         public List<int> WorkOrderIds { get; set; }
+
         public List<int> ReferenceNoteIds { get; set; }
+
         public PriorityEnum PriorityEnum { get; set; }
+
         public List<int> TimeScopeIds { get; set; }
+
         public List<int> PeopleRoleIds { get; set; }
+
         public int? GrowerId { get; set; }
+
         public int? FarmId { get; set; }
+
         public int? FieldId { get; set; }
+
         public List<int> CropZoneId { get; set; }
+
         public int? MachineId { get; set; }
+
         public List<int> SpatialLayerIds { get; set; }
+
         public int? FieldBoundaryId { get; set; }
+
         public List<int> WorkItemOperationIds { get; set; }
-        public List<int> GuidanceIds { get; set; }
+
+        public List<int> GuidanceGroupIds { get; set; }
+
         public List<StatusUpdate> StatusUpdates { get; set; }
     }
 }

@@ -7,13 +7,13 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Justin Sliekers - creation during Guidance realignment
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public abstract class GuidancePatternType
+    public class GuidanceShift
     {
-        
+
     }
 }

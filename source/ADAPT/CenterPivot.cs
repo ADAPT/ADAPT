@@ -12,7 +12,7 @@
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class CenterPivot : GuidancePatternType
+    public class CenterPivot : GuidancePattern
     {
         public Point StartPoint { get; set; }
 

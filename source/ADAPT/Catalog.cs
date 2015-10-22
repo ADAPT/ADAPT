@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal, Joseph Ross - Added Ingredients
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -25,7 +26,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<Field> Fields { get; set; }
         public List<FieldBoundary> FieldBoundaries { get; set; }
         public List<Grower> Growers { get; set; }
-        public List<Guidance> Guidances { get; set; } 
+        public List<Ingredient> Ingredients { get; set; } 
+        public List<GuidancePattern> GuidancePatterns { get; set; } 
         public List<Implement> Implements { get; set; } 
         public List<ImplementModel> ImplementModels { get; set; }
         public List<ImplementType> ImplementTypes { get; set; } 

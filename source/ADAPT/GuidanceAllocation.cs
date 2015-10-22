@@ -7,21 +7,26 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Justin Sliekers - creation during Guidance realignment
+  *******************************************************************************/
+
+using System.Runtime.InteropServices;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class AbLine : GuidancePattern
+    public class GuidanceAllocation
     {
-        public Point A { get; set; }
+        public GuidanceAllocation()
+        {
+            Id = CompoundIdentifierFactory.Instance.Create();
+        }
 
-        public Point B { get; set; }
+        public CompoundIdentifier Id { get; set; }
 
-        public double? Heading { get; set; }
+        public int GuidanceGroupId { get; set; }
 
-        public double? EastShiftComponent { get; set; }
+        public TimeScope TimeScope { get; set; }
 
-        public double? NorthShiftComponent { get; set; }
+        public GuidanceShift GuidanceShift { get; set; }
     }
 }
