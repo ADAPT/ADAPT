@@ -12,7 +12,7 @@
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class AbLine : GuidancePatternType
+    public class AbLine : GuidancePattern
     {
         public Point A { get; set; }
 

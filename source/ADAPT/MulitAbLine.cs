@@ -15,7 +15,7 @@ using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class MulitAbLine : GuidancePatternType
+    public class MulitAbLine : GuidancePattern
     {
         public List<AbLine> AbLines { get; set; }
     }

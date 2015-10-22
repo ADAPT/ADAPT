@@ -14,7 +14,7 @@ using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class AbCurve : GuidancePatternType
+    public class AbCurve : GuidancePattern
     {
         public int NumberOfSegments { get; set; }
 

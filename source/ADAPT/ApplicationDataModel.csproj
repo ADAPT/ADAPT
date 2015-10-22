@@ -92,7 +92,6 @@
     <Compile Include="GuidancePattern.cs" />
     <Compile Include="GuidanceAllocation.cs" />
     <Compile Include="GuidanceGroup.cs" />
-    <Compile Include="GuidancePatternEnum.cs" />
     <Compile Include="GuidancePatternTypeEnum.cs" />
     <Compile Include="GuidanceShift.cs" />
     <Compile Include="Headland.cs" />
