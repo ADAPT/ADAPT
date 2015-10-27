@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - removed implementConfigId and machineConfigId, added EquipmentConfigId
   *******************************************************************************/
 
 using System;
@@ -25,11 +26,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public CompoundIdentifier Id { get; private set; }
 
         public int LoggedDataId { get; set; }
-
-        public int? ImplementConfigurationId { get; set; }
-
-        public int? MachineConfigurationId { get; set; }
-
+        
         public List<int> ConnectorIds { get; set; }
 
         public int? LoadId { get; set; }
@@ -51,5 +48,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public Func<int, IEnumerable<Section>> GetSections { get; set; }
  
         public int SpatialRecordCount { get; set; }
+
+        public int? EquipmentConfigId { get; set; }
     }
 }
