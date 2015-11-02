@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross - Renaming Enums to end in Enum
+  *    Kathleen Oneal - Adding Unknown to enum
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -18,5 +19,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         Gas,
         Liquid,
         Solid,
+        Unknown
     }
 }

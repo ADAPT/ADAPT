@@ -7,21 +7,26 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Joseph Ross Making Properties
-  *    Kathleen Oneal - changed the list of traits to have ids instead of the object
+  *    Kathleen Oneal - initial API and implementation
   *******************************************************************************/
 
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class CropVariety : Product
+    public class AvailableProduct
     {
-        public int CropId { get; set; }
+        public AvailableProduct()
+        {
+            Id = CompoundIdentifierFactory.Instance.Create();
+        }
 
-        public List<int> TraitIds { get; set; }
+        public CompoundIdentifier Id { get; private set; }
 
-        public bool GeneticallyEnhanced { get; set; }
+        public int ProductId { get; set; }
+
+        public int GrowerId { get; set; }
+
+        public List<ContextItem> ContextItems { get; set; }
     }
 }
