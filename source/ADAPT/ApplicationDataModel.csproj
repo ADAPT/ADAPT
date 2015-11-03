@@ -130,6 +130,7 @@
     <Compile Include="MultiPolygon.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="ProductMix.cs" />
+    <Compile Include="ReferenceLayerTypeEnum.cs" />
     <Compile Include="ReferenceNote.cs" />
     <Compile Include="NumericValue.cs" />
     <Compile Include="NumericMeter.cs" />

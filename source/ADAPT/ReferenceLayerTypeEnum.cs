@@ -7,20 +7,20 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Kathleen Oneal - changed ContextItemType to int
-  *******************************************************************************/  
-
-using System.Collections.Generic;
+  *    Kathleen Oneal - initial API and implementation
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class ContextItem
+    public enum ReferenceLayerTypeEnum
     {
-        public int ContextItemType { get; set; }
-
-        public RepresentationValue Value { get; set; }
-
-        public List<ContextItem> ContextItems { get; set; }
+        SoilTypeMap,
+        BackgroundImage,
+        ElevationMap,
+        CommonLandUnit,
+        ProfitMap,
+        Obstacles,
+        ManagementZone,
+        VarietyLocator
     }
 }
