@@ -10,23 +10,33 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross - Renaming Enums to end in Enum
   *    Kathleen Oneal - renamed class from PersonRolesEnum to PersonRolesEnum
+  *    Kathleen Oneal - added additional roles from wiki
   * *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum PersonRolesEnum
     {
-        Grower,
-        Operator,
-        CropAdvisor,
-        Authorizer,
-        CustomApplicator,
-        TruckDriver,
-        InputSupplier,
-        IrrigationManager,
-        GovernmentAgency,
-        Customer,
-        Financier,
-        InsuranceAgent,
+            Grower,
+            MarketProvider,
+            Customer,
+            Operator,
+            Owner,
+            FarmManager,
+            MarketAdvisor,
+            EndUser,
+            Financier,
+            InsuranceAgent,
+            GovernmentAgency,
+            FixedAssetSupplier,
+            MobileAssetSupplier,
+            InputSupplier,
+            CropAdvisor,
+            CustomServiceProvider,
+            IrrigationManager,
+            Laborer,
+            Transporter,
+            DataServicesProvider,
+            Authorizer
     }
 }
