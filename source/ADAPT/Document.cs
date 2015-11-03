@@ -24,26 +24,28 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
+        public List<ContextItem> ContextItems { get; set; }
+
+        public List<int> CropIds { get; set; }
+
+        public List<int> CropZoneIds { get; set; }
+
         public string Description { get; set; }
 
-        public List<int> TimeScopeIds { get; set; }
-
-        public int? GrowerId { get; set; }
+        public NumericRepresentationValue EstimatedArea { get; set; }
 
         public List<int> FarmIds { get; set; }
 
         public List<int> FieldIds { get; set; }
 
-        public List<int> CropZoneIds { get; set; }
+        public int? GrowerId { get; set; }
 
-        public int? Version { get; set; }
-
-        public List<int> CropIds { get; set; }
+        public List<int> NoteIds { get; set; }
 
         public List<int> PersonRoleIds { get; set; }
 
-        public List<ContextItem> ContextItems { get; set; }
+        public List<int> TimeScopeIds { get; set; }
 
-        public NumericRepresentationValue EstimatedArea { get; set; }
+        public int? Version { get; set; }
     }
 }
