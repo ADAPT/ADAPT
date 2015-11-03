@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Justin Sliekers - initial API and implementation
+  *    Kathleen Oneal - Renamed ShapeLookups to RxShapeLookups and changed type to List<RxShapeLookup> from List<ShapeLookup>
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -16,6 +17,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class RxPrescription : SpatialPrescription
     {
-        public List<ShapeLookup> ShapeLookups { get; set; } 
+        public List<RxShapeLookup> RxShapeLookups { get; set; } 
     }
 }

@@ -7,13 +7,20 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation    
+  *    Tarak Reddy, Tim Shearouse - initial API and implementation  
+  *    Kathleen Oneal - added values MachineType, SpecificMachine, ImplementType, SpecificImplement, SpecificSection, SpecificMeter, Unspecified
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum LoggingLevelEnum
     {
-        //Todo
+        MachineType,
+        SpecificMachine,
+        ImplementType,
+        SpecificImplement,
+        SpecificSection,
+        SpecificMeter,
+        Unspecified
     }
 }

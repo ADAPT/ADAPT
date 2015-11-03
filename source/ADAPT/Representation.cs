@@ -18,7 +18,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public int? ReferenceId { get; set; }
 
-        public ReferenceIdSourceEnum ReferenceIdSourceEnum { get; set; }
+        public RepresentationCodeSourceEnum RepresentationCodeSourceEnum { get; set; }
 
         public string Name { get; set; }
 

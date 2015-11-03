@@ -8,20 +8,15 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - renamed from EnumeratedMember to EnumerationMember
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class NumericalValue
+    public class EnumerationMember
     {
-        public double Value { get; set; }
+        public int Code { get; set; }
 
-        public UnitOfMeasure UnitOfMeasure { get; set; }
-
-        public NumericalValue(UnitOfMeasure uom, double value)
-        {
-            UnitOfMeasure = uom;
-            Value = value;
-        }
+        public string Value { get; set; }
     }
 }

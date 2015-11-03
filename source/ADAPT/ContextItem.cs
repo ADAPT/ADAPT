@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - changed ContextItemType to int
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class ContextItem
     {
-        public ContextItemTypeEnum ContextItemTypeEnum { get; set; }
+        public int ContextItemType { get; set; }
 
         public string Value { get; set; }
 

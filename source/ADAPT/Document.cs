@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - added estimatedArea
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -42,5 +43,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<int> PersonRoleIds { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }
+
+        public NumericRepresentationValue EstimatedArea { get; set; }
     }
 }

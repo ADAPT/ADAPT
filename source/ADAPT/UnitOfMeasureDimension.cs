@@ -8,11 +8,14 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - added values Lenght and NewLiteral
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum UnitOfMeasureDimension
     {
+        Length,
+        NewLiteral
     }
 }

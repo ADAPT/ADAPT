@@ -8,13 +8,13 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - removed value "Planned"
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum WorkStatusEnum
     {
-        Planned = 1,
         Scheduled,
         InProgress,
         Paused,

@@ -9,6 +9,7 @@
  * Contributors:
  *    Tarak Reddy, Tim Shearouse - initial API and implementation
  *    Tarak Reddy - Added implement id 
+ *    Kathleen Oneal - removed ImplementTypeId
  *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -22,9 +23,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel
             Id = CompoundIdentifierFactory.Instance.Create();
         }
 
-        public int ImplementId { get; set; }
-        public int ImplementTypeId { get; set; }
         public CompoundIdentifier Id { get; private set; }
+        public int ImplementId { get; set; }
         public string Description { get; set; }
         public NumericRepresentationValue Width { get; set; }
         public NumericRepresentationValue TrackSpacing { get; set; }

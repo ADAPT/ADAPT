@@ -8,11 +8,20 @@
   *
   * Contributors:
   *    Justin Sliekers - initial API and implementation
-  *******************************************************************************/  
+  *    Kathleen Oneal - added props cropSeasonId, WorkItems, Attachments
+  *******************************************************************************/
+
+using System.Collections.Generic;
+using System.Net.Mail;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class Recommendation : Document
     {
+        public int CropSeasonId { get; set; }
+
+        public List<WorkItem> WorkItems { get; set; }
+
+        public List<Attachment> Attachments { get; set; }
     }
 }

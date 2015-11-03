@@ -8,14 +8,18 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Joseph Ross - Renaming Enums to end in Enum
+  *    Kathleen Oneal - renamed class ReferenceIdSourceEnum to RepresentationCodeSourceEnum
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class EnumeratedMember
+    public enum RepresentationCodeSourceEnum
     {
-        public int Code { get; set; }
-
-        public string Value { get; set; }
+        ISO11783_DDI,
+        ISO11783_SPN,
+        J1939_SPN,
+        ADAPT,
+        Propietary
     }
 }

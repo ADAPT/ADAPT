@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Justin Sliekers - creating class
+  *    Kathleen Oneal - changed ProductAmount & Capacity from type NumericRepresentation to NumericRepresentationValue
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -21,9 +22,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel
             Id = CompoundIdentifierFactory.Instance.Create();
         }
 
-        public NumericRepresentation ProductAmount { get; set; }
+        public NumericRepresentationValue ProductAmount { get; set; }
         
-        public NumericRepresentation Capacity { get; set; }
+        public NumericRepresentationValue Capacity { get; set; }
 
         public List<ContextItem>  ContextItems { get; set; }
 

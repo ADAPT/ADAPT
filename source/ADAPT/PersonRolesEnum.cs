@@ -8,15 +8,25 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/
-
-using System.Collections.Generic;
+  *    Joseph Ross - Renaming Enums to end in Enum
+  *    Kathleen Oneal - renamed class from PersonRolesEnum to PersonRolesEnum
+  * *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class ReferenceLayers
+    public enum PersonRolesEnum
     {
-        public List<RasterReferenceLayer> RasterReferenceLayers { get; set; }
-        public List<ShapeReferenceLayer> ShapeReferenceLayers { get; set; }
+        Grower,
+        Operator,
+        CropAdvisor,
+        Authorizer,
+        CustomApplicator,
+        TruckDriver,
+        InputSupplier,
+        IrrigationManager,
+        GovernmentAgency,
+        Customer,
+        Financier,
+        InsuranceAgent,
     }
 }

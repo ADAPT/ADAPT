@@ -18,87 +18,87 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods
 {
     public static class NumericalValueExtensions
     {
-        public static void SubtractFromSource(this NumericalValue numericalValue, double number)
+        public static void SubtractFromSource(this NumericValue numericValue, double number)
         {
-            numericalValue.Value -= number;
+            numericValue.Value -= number;
         }
 
-        public static NumericalValue Divide(this NumericalValue numericalValue, double denominator)
+        public static NumericValue Divide(this NumericValue numericValue, double denominator)
         {
             if (denominator == 0.0)
                 throw new DivideByZeroException();
 
-            return new NumericalValue(numericalValue.UnitOfMeasure, numericalValue.Value / denominator);
+            return new NumericValue(numericValue.UnitOfMeasure, numericValue.Value / denominator);
         }
 
-        public static NumericalValue Subtract(this NumericalValue numericalValue, double number)
+        public static NumericValue Subtract(this NumericValue numericValue, double number)
         {
-            return new NumericalValue(numericalValue.UnitOfMeasure, numericalValue.Value - number);
+            return new NumericValue(numericValue.UnitOfMeasure, numericValue.Value - number);
         }
 
-        public static NumericalValue Add(this NumericalValue numericalValue, double number)
+        public static NumericValue Add(this NumericValue numericValue, double number)
         {
-            return new NumericalValue(numericalValue.UnitOfMeasure, numericalValue.Value + number);
+            return new NumericValue(numericValue.UnitOfMeasure, numericValue.Value + number);
         }
 
-        public static void AddToSource(this NumericalValue numericalValue, double number)
+        public static void AddToSource(this NumericValue numericValue, double number)
         {
-            numericalValue.Value += number;
+            numericValue.Value += number;
         }
 
-        public static NumericalValue Multiply(this NumericalValue numericalValue, double right)
+        public static NumericValue Multiply(this NumericValue numericValue, double right)
         {
-            return new NumericalValue(numericalValue.UnitOfMeasure, numericalValue.Value * right);
+            return new NumericValue(numericValue.UnitOfMeasure, numericValue.Value * right);
         }
 
-        public static NumericalValue Multiply(this NumericalValue numericalValue, NumericalValue right)
+        public static NumericValue Multiply(this NumericValue numericValue, NumericValue right)
         {
-            return BaseNumberMultiplication.Multiply(numericalValue, right);
+            return BaseNumberMultiplication.Multiply(numericValue, right);
         }
 
-        public static NumericalValue Divide(this NumericalValue numericalValue, NumericalValue denominator)
+        public static NumericValue Divide(this NumericValue numericValue, NumericValue denominator)
         {
-            return BaseNumberDivision.Divide(numericalValue, denominator);
+            return BaseNumberDivision.Divide(numericValue, denominator);
         }
 
-        public static NumericalValue Subtract(this NumericalValue numericalValue, NumericalValue secondNumber)
+        public static NumericValue Subtract(this NumericValue numericValue, NumericValue secondNumber)
         {
-            var unitOfMeasure = numericalValue.UnitOfMeasure.ToInternalUom();
-            return new NumericalValue(numericalValue.UnitOfMeasure, numericalValue.Value - secondNumber.ConvertToUnit(unitOfMeasure));
+            var unitOfMeasure = numericValue.UnitOfMeasure.ToInternalUom();
+            return new NumericValue(numericValue.UnitOfMeasure, numericValue.Value - secondNumber.ConvertToUnit(unitOfMeasure));
         }
 
-        public static void SubtractFromSource(this NumericalValue numericalValue, NumericalValue secondNumber)
-        {
-            if (secondNumber != null)
-            {
-                numericalValue.Value -= secondNumber.ConvertToUnit(numericalValue.UnitOfMeasure.ToInternalUom());
-            }
-        }
-
-        public static NumericalValue Add(this NumericalValue numericalValue, NumericalValue secondNumber)
-        {
-            var unitOfMeasure = numericalValue.UnitOfMeasure.ToInternalUom();
-            return new NumericalValue(numericalValue.UnitOfMeasure, numericalValue.Value + secondNumber.ConvertToUnit(unitOfMeasure));
-        }
-
-        public static void AddToSource(this NumericalValue numericalValue, NumericalValue secondNumber)
+        public static void SubtractFromSource(this NumericValue numericValue, NumericValue secondNumber)
         {
             if (secondNumber != null)
             {
-                numericalValue.Value += secondNumber.ConvertToUnit(numericalValue.UnitOfMeasure.ToInternalUom());
+                numericValue.Value -= secondNumber.ConvertToUnit(numericValue.UnitOfMeasure.ToInternalUom());
             }
         }
 
-        public static double ConvertToUnit(this NumericalValue numericalValue, UnitOfMeasure targetUom)
+        public static NumericValue Add(this NumericValue numericValue, NumericValue secondNumber)
+        {
+            var unitOfMeasure = numericValue.UnitOfMeasure.ToInternalUom();
+            return new NumericValue(numericValue.UnitOfMeasure, numericValue.Value + secondNumber.ConvertToUnit(unitOfMeasure));
+        }
+
+        public static void AddToSource(this NumericValue numericValue, NumericValue secondNumber)
+        {
+            if (secondNumber != null)
+            {
+                numericValue.Value += secondNumber.ConvertToUnit(numericValue.UnitOfMeasure.ToInternalUom());
+            }
+        }
+
+        public static double ConvertToUnit(this NumericValue numericValue, UnitOfMeasure targetUom)
         {
             if (targetUom == null)
                 throw new ArgumentNullException("targetUom");
 
-            var unitOfMeasure = numericalValue.UnitOfMeasure;
+            var unitOfMeasure = numericValue.UnitOfMeasure;
             var internalUnit = UnitSystemManager.Instance.UnitOfMeasures[unitOfMeasure.Code];
-            numericalValue.Value = new UnitOfMeasureConverter().Convert(internalUnit, targetUom, numericalValue.Value);
-            numericalValue.UnitOfMeasure = targetUom.ToModelUom();
-            return numericalValue.Value;
+            numericValue.Value = new UnitOfMeasureConverter().Convert(internalUnit, targetUom, numericValue.Value);
+            numericValue.UnitOfMeasure = targetUom.ToModelUom();
+            return numericValue.Value;
         }
     }
 }

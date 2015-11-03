@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -8,24 +8,21 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Joseph Ross - Renaming Enums to end in Enum
-  *******************************************************************************/
+  *    Kathleen Oneal - renamed from NumericalValue to NumericValue
+  *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public enum RoleEnum
+    public class NumericValue
     {
-        Grower,
-        Operator,
-        CropAdvisor,
-        Authorizer,
-        CustomApplicator,
-        TruckDriver,
-        InputSupplier,
-        IrrigationManager,
-        GovernmentAgency,
-        Customer,
-        Financier,
-        InsuranceAgent,
+        public double Value { get; set; }
+
+        public UnitOfMeasure UnitOfMeasure { get; set; }
+
+        public NumericValue(UnitOfMeasure uom, double value)
+        {
+            UnitOfMeasure = uom;
+            Value = value;
+        }
     }
 }

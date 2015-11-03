@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -53,6 +54,7 @@
     <Compile Include="Company.cs" />
     <Compile Include="CompoundIdentifier.cs" />
     <Compile Include="CompoundIdentifierFactory.cs" />
+    <Compile Include="CompoundIdentifierTypeEnum.cs" />
     <Compile Include="CompoundUnitOfMeasure.cs" />
     <Compile Include="Connector.cs" />
     <Compile Include="ConstantOffsetHeadland.cs" />
@@ -61,7 +63,6 @@
     <Compile Include="ContactTypeEnum.cs" />
     <Compile Include="Container.cs" />
     <Compile Include="ContextItem.cs" />
-    <Compile Include="ContextItemTypeEnum.cs" />
     <Compile Include="Crop.cs" />
     <Compile Include="CropProtectionProduct.cs" />
     <Compile Include="CropVariety.cs" />
@@ -72,7 +73,7 @@
     <Compile Include="Document.cs" />
     <Compile Include="Documents.cs" />
     <Compile Include="DrivenHeadland.cs" />
-    <Compile Include="EnumeratedMember.cs" />
+    <Compile Include="EnumerationMember.cs" />
     <Compile Include="EnumeratedMeter.cs" />
     <Compile Include="EnumeratedRepresentation.cs" />
     <Compile Include="EnumeratedRepresentationGroup.cs" />
@@ -130,7 +131,7 @@
     <Compile Include="Note.cs" />
     <Compile Include="ProductMix.cs" />
     <Compile Include="ReferenceNote.cs" />
-    <Compile Include="NumericalValue.cs" />
+    <Compile Include="NumericValue.cs" />
     <Compile Include="NumericMeter.cs" />
     <Compile Include="NumericRepresentation.cs" />
     <Compile Include="NumericRepresentationValue.cs" />
@@ -157,12 +158,11 @@
     <Compile Include="Catalog.cs" />
     <Compile Include="Recommendation.cs" />
     <Compile Include="ReferenceLayer.cs" />
-    <Compile Include="ReferenceLayers.cs" />
     <Compile Include="ReferencePoint.cs" />
     <Compile Include="Representation.cs" />
-    <Compile Include="ReferenceIdSourceEnum.cs" />
+    <Compile Include="RepresentationCodeSourceEnum.cs" />
     <Compile Include="RepresentationValue.cs" />
-    <Compile Include="RoleEnum.cs" />
+    <Compile Include="PersonRolesEnum.cs" />
     <Compile Include="RxRate.cs" />
     <Compile Include="RxRates.cs" />
     <Compile Include="RxShapeLookup.cs" />
@@ -175,10 +175,12 @@
     <Compile Include="ShapeSettings.cs" />
     <Compile Include="ShapeTypeEnum.cs" />
     <Compile Include="GpsSourceEnum.cs" />
+    <Compile Include="SourceTypeEnum.cs" />
     <Compile Include="SpatialAttribute.cs" />
     <Compile Include="SpatialPrescription.cs" />
     <Compile Include="SpatialRecord.cs" />
     <Compile Include="Spiral.cs" />
+    <Compile Include="Summary.cs" />
     <Compile Include="WorkStatusEnum.cs" />
     <Compile Include="StatusUpdate.cs" />
     <Compile Include="StringRepresentation.cs" />

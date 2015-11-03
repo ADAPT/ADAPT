@@ -8,15 +8,16 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - renamed enum values
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum ExtensionEnum
     {
-        FromFirstAndLastPoint = 1,
-        FromFirstPoint = 2,
-        FromLastPoint = 3,
-        NoExtension = 4
+        FromBothPoints = 1,
+        FromPointA = 2,
+        FromPointB = 3,
+        None = 4
     }
 }

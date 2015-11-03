@@ -22,6 +22,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public int ReferenceID { get; private set; }
-        public List<UniqueIDType> UniqueIDs { get; set; } 
+        public List<UniqueIdType> UniqueIDs { get; set; } 
     }
 }

@@ -9,31 +9,17 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross - Renaming Enums to end in Enum
+  *    Kathleen Oneal - Renamed SourceTypeEnum to SourceType, moved enums to their own files
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class UniqueIDType
+    public class UniqueIdType
     {
         public string ID { get; set; }
         public CompoundIdentifierTypeEnum CiTypeEnum { get; set; }
         public string Source { get; set; }
-        public SourceTypeEnum SourceTypeEnum { get; set; }
+        public SourceTypeEnum SourceType { get; set; }
         public bool IsFirstSource { get; set; }
-    }
-
-    public enum CompoundIdentifierTypeEnum
-    {
-        UUID,
-        GLN,
-        URI,
-        String,
-        Long
-    }
-
-    public enum SourceTypeEnum
-    {
-        GLN,
-        URI
     }
 }

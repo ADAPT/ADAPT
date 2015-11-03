@@ -18,7 +18,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
 {
     internal class BaseNumberMultiplication 
     {
-        public static NumericalValue Multiply(NumericalValue left, NumericalValue right)
+        public static NumericValue Multiply(NumericValue left, NumericValue right)
         {
             var decomposer = new UnitOfMeasureDecomposer();
             var leftComponents = decomposer.GetComponents(left.UnitOfMeasure.ToInternalUom(), 1);

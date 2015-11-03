@@ -1,4 +1,4 @@
-/*******************************************************************************
+﻿/*******************************************************************************
  * Copyright (C) 2015 AgGateway and ADAPT Contributors
  * Copyright (C) 2015 Deere and Company
  * All rights reserved. This program and the accompanying materials
@@ -7,18 +7,13 @@
  * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
  *
  * Contributors:
- *    Tarak Reddy, Tim Shearouse - initial API and implementation
- *    Tarak Reddy - Changed EnumeratedListValueRef to Enumerated Value
- *    Kathleen Oneal - renamed property name from enumberatedValue to Value
+ *    Kathleen Oneal - initial API and implementation
  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public abstract class Note
+    public class Summary
     {
-        public string Description { get; set; }
-        public EnumeratedValue Value { get; set; }
-        public TimeScope TimeStamp { get; set; }
-        public Shape SpatialContext { get; set; }
+        
     }
 }

@@ -11,6 +11,7 @@
  *    Tarak Reddy - Moved WorkItems and WorkItemsOperations from Catalog
  *    Tarak Reddy - Mowed LoggedData and OperationData from LoggedDataCatalog
  *    Tarak Reddy - Moved GuidanceAllocations from Catalog
+ *    Kathleen Oneal - added Summaries and LoggedDataCatalog
  *******************************************************************************/
 
 using System.Collections.Generic;
@@ -27,5 +28,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<WorkOrder> WorkOrders { get; set; } 
         public List<Recommendation> Recommendations { get; set; }
         public List<GuidanceAllocation> GuidanceAllocations { get; set; }
+        public List<Summary> Summaries { get; set; } 
+        public int LoggedDataCatalog { get; set; }
     }
 }

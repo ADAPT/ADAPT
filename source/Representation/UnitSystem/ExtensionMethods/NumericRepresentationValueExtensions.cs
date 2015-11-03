@@ -21,7 +21,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods
             numericRepresentationValue.Value.ConvertToUnit(targetUom);
         }
 
-        public static void SubtractFromSource(this NumericRepresentationValue numericRepresentationValue, NumericalValue secondNumber)
+        public static void SubtractFromSource(this NumericRepresentationValue numericRepresentationValue, NumericValue secondNumber)
         {
             numericRepresentationValue.Value.SubtractFromSource(secondNumber);
         }
@@ -42,13 +42,13 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods
             numericRepresentationValue.Value.AddToSource(number);
         }
 
-        public static NumericRepresentationValue Add(this NumericRepresentationValue numericRepresentationValue, NumericalValue secondNumber)
+        public static NumericRepresentationValue Add(this NumericRepresentationValue numericRepresentationValue, NumericValue secondNumber)
         {
             var sum = numericRepresentationValue.Value.Add(secondNumber);
             return new NumericRepresentationValue(numericRepresentationValue.Representation, sum);
         }
 
-        public static void AddToSource(this NumericRepresentationValue numericRepresentationValue, NumericalValue secondNumber)
+        public static void AddToSource(this NumericRepresentationValue numericRepresentationValue, NumericValue secondNumber)
         {
             numericRepresentationValue.Value.AddToSource(secondNumber);
         }
@@ -81,7 +81,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods
             return new NumericRepresentationValue(numericRepresentationValue.Representation, difference);
         }
 
-        public static NumericRepresentationValue Subtract(this NumericRepresentationValue numericRepresentationValue, NumericalValue secondNumber)
+        public static NumericRepresentationValue Subtract(this NumericRepresentationValue numericRepresentationValue, NumericValue secondNumber)
         {
             var difference = numericRepresentationValue.Value.Subtract(secondNumber);
             return new NumericRepresentationValue(numericRepresentationValue.Representation, difference);
@@ -93,7 +93,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods
             return new NumericRepresentationValue(numericRepresentationValue.Representation, quotient);
         }
 
-        public static NumericRepresentationValue Divide(this NumericRepresentationValue numericRepresentationValue, NumericalValue denominator)
+        public static NumericRepresentationValue Divide(this NumericRepresentationValue numericRepresentationValue, NumericValue denominator)
         {
             var quotient = numericRepresentationValue.Value.Divide(denominator);
             return new NumericRepresentationValue(numericRepresentationValue.Representation, quotient);
@@ -117,7 +117,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods
             return new NumericRepresentationValue(numericRepresentationValue.Representation, product);
         }
 
-        public static NumericRepresentationValue Multiply(this NumericRepresentationValue numericRepresentationValue, NumericalValue right)
+        public static NumericRepresentationValue Multiply(this NumericRepresentationValue numericRepresentationValue, NumericValue right)
         {
             var product = numericRepresentationValue.Value.Multiply(right);
             return new NumericRepresentationValue(numericRepresentationValue.Representation, product);

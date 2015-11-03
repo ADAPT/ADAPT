@@ -14,13 +14,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class NumericRepresentationValue : RepresentationValue
     {
-        public NumericRepresentationValue(NumericRepresentation representation, NumericalValue value)
+        public NumericRepresentationValue(NumericRepresentation representation, NumericValue value)
         {
             Representation = representation;
             Value = value;
         }
 
-        public NumericRepresentationValue(NumericRepresentation representation, UnitOfMeasure userProvidedUnitOfMeasure, NumericalValue value)
+        public NumericRepresentationValue(NumericRepresentation representation, UnitOfMeasure userProvidedUnitOfMeasure, NumericValue value)
         {
             Representation = representation;
             UserProvidedUnitOfMeasure = userProvidedUnitOfMeasure;
@@ -29,7 +29,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public NumericRepresentation Representation { get; set; }
 
-        public NumericalValue Value { get; set; }
+        public NumericValue Value { get; set; }
 
         public UnitOfMeasure UserProvidedUnitOfMeasure { get; set; }
 

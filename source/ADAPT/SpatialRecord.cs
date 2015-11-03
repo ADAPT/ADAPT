@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
+  *    Kathleen Oneal - added parameters to GetAppliedLatency
   *******************************************************************************/
 
 using System;
@@ -36,6 +37,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel
             return null;
         }
 
-        public int GetAppliedLatency { get; set; }
+        public int? GetAppliedLatency(Meter meter)
+        {
+            return null;
+        }
     }
 }

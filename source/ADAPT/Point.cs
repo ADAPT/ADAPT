@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - make slope nullable
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -22,6 +23,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public int M { get; set; }
 
-        public double Slope { get; set; }
+        public double? Slope { get; set; }
     }
 }

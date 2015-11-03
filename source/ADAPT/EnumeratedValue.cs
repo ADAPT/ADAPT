@@ -16,6 +16,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     {
         public EnumeratedRepresentation Representation { get; set; }
 
-        public EnumeratedMember Value { get; set; }
+        public EnumerationMember Value { get; set; }
     }
 }

@@ -16,9 +16,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     {
         public int DecimalDigits { get; set; }
 
-        public NumericalValue MinValue { get; set; }
+        public NumericValue MinValue { get; set; }
 
-        public NumericalValue MaxValue { get; set; }
+        public NumericValue MaxValue { get; set; }
 
         public UnitOfMeasureDimension Dimension { get; set; }
     }

@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - removed StartLocation, EndLocation, and DateContext
   *******************************************************************************/  
 
 using System;
@@ -28,11 +29,5 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }
-
-        public Location StartLocation { get; set; }
-
-        public Location EndLocation { get; set; }
-
-        public DateContextEnum? DateContextEnum { get; set; }
     }
 }

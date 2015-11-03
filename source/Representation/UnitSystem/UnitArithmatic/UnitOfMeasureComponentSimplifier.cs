@@ -32,7 +32,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
             _converter = converter;
         }
 
-        public NumericalValue Simplify(IEnumerable<UnitOfMeasureComponent> components, double value)
+        public NumericValue Simplify(IEnumerable<UnitOfMeasureComponent> components, double value)
         {
             var finalValue = value;
             var unitTypeComponents = new Dictionary<string, UnitOfMeasureComponent>();
@@ -93,10 +93,10 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
             return finalValue;
         }
 
-        protected NumericalValue CombineComponents(List<UnitOfMeasureComponent> components, double value)
+        protected NumericValue CombineComponents(List<UnitOfMeasureComponent> components, double value)
         {
             if (!components.Any())
-                return new NumericalValue(UnitSystemManager.Instance.UnitOfMeasures["ratio"].ToModelUom(), value);
+                return new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ratio"].ToModelUom(), value);
 
             if (components.Count > 1 || components.First().Power != 1)
             {
@@ -105,7 +105,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
                 return SimplifyComposite(compositeUnit, value);
 
             }
-            return new NumericalValue(components.First().Unit.ToModelUom(), value);
+            return new NumericValue(components.First().Unit.ToModelUom(), value);
         }
 
         private CompositeUnitOfMeasure BuildNewComposite(List<UnitOfMeasureComponent> components)
@@ -129,10 +129,10 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
             return string.Format("{0}{1}", component.DomainID, component.Power);
         }
 
-        private NumericalValue SimplifyComposite(CompositeUnitOfMeasure compositeUnitOfMeasure, double value)
+        private NumericValue SimplifyComposite(CompositeUnitOfMeasure compositeUnitOfMeasure, double value)
         {
             if (compositeUnitOfMeasure.Components.Count <= 1)
-                return new NumericalValue(compositeUnitOfMeasure.ToModelUom(), value);
+                return new NumericValue(compositeUnitOfMeasure.ToModelUom(), value);
             foreach (var firstComponent in compositeUnitOfMeasure.Components)
             {
                 foreach (var secondComponent in compositeUnitOfMeasure.Components)
@@ -153,7 +153,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
                     }
                 }
             }
-            return new NumericalValue(compositeUnitOfMeasure.ToModelUom(), value);
+            return new NumericValue(compositeUnitOfMeasure.ToModelUom(), value);
         }
 
         private static List<UnitOfMeasureComponent> CombineCompositeComponents(CompositeUnitOfMeasure compositeUnitOfMeasure,
