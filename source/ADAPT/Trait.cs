@@ -9,7 +9,10 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
+  *    Kathleen Oneal - Added Properties
   *******************************************************************************/
+
+using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
@@ -22,6 +25,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public string Name { get; set; }
+        public string TraitCode { get; set; }
+
+        public string Description { get; set; }
+
+        public int? ManufacturerId { get; set; }
+
+        public List<int> CropIds { get; set; }
     }
 }

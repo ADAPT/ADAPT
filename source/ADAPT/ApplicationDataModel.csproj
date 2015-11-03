@@ -44,6 +44,7 @@
     <Compile Include="APlus.cs" />
     <Compile Include="ApplicationDataModel.cs" />
     <Compile Include="ApplicationStrategyEnum.cs" />
+    <Compile Include="AvailableProduct.cs" />
     <Compile Include="BoundingBox.cs" />
     <Compile Include="Brand.cs" />
     <Compile Include="CalibrationFactor.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="MultiPoint.cs" />
     <Compile Include="MultiPolygon.cs" />
     <Compile Include="Note.cs" />
+    <Compile Include="ProductMix.cs" />
     <Compile Include="ReferenceNote.cs" />
     <Compile Include="NumericalValue.cs" />
     <Compile Include="NumericMeter.cs" />

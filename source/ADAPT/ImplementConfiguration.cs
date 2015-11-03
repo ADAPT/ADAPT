@@ -22,6 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
             Id = CompoundIdentifierFactory.Instance.Create();
         }
 
+        public int ImplementId { get; set; }
         public int ImplementTypeId { get; set; }
         public CompoundIdentifier Id { get; private set; }
         public string Description { get; set; }
