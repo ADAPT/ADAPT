@@ -27,13 +27,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public void SetMeterValue(Meter meter, RepresentationValue value)
         {
-            _meterValues.Add(meter.Id.ReferenceID, value);
+            _meterValues.Add(meter.Id.ReferenceId, value);
         }
 
         public RepresentationValue GetMeterValue(Meter meter)
         {
-            if (_meterValues.ContainsKey(meter.Id.ReferenceID))
-                return _meterValues[meter.Id.ReferenceID];
+            if (_meterValues.ContainsKey(meter.Id.ReferenceId))
+                return _meterValues[meter.Id.ReferenceId];
             return null;
         }
 

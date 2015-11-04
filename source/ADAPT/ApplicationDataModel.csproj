@@ -69,8 +69,10 @@
     <Compile Include="CropZone.cs" />
     <Compile Include="DataLogTrigger.cs" />
     <Compile Include="DateContextEnum.cs" />
+    <Compile Include="DateWithContext.cs" />
     <Compile Include="DensityFactor.cs" />
     <Compile Include="Document.cs" />
+    <Compile Include="DocumentCorrelation.cs" />
     <Compile Include="Documents.cs" />
     <Compile Include="DrivenHeadland.cs" />
     <Compile Include="EnumerationMember.cs" />
@@ -160,6 +162,7 @@
     <Compile Include="Recommendation.cs" />
     <Compile Include="ReferenceLayer.cs" />
     <Compile Include="ReferencePoint.cs" />
+    <Compile Include="DocRelationshipTypeEnum.cs" />
     <Compile Include="Representation.cs" />
     <Compile Include="RepresentationCodeSourceEnum.cs" />
     <Compile Include="RepresentationValue.cs" />
@@ -176,7 +179,7 @@
     <Compile Include="ShapeSettings.cs" />
     <Compile Include="ShapeTypeEnum.cs" />
     <Compile Include="GpsSourceEnum.cs" />
-    <Compile Include="SourceTypeEnum.cs" />
+    <Compile Include="IdSourceTypeEnum.cs" />
     <Compile Include="SpatialAttribute.cs" />
     <Compile Include="SpatialPrescription.cs" />
     <Compile Include="SpatialRecord.cs" />
@@ -188,7 +191,7 @@
     <Compile Include="StringValue.cs" />
     <Compile Include="TimeScope.cs" />
     <Compile Include="Trait.cs" />
-    <Compile Include="UniqueIDType.cs" />
+    <Compile Include="UniqueId.cs" />
     <Compile Include="UnitOfMeasure.cs" />
     <Compile Include="UnitOfMeasureComponent.cs" />
     <Compile Include="UnitOfMeasureDimension.cs" />

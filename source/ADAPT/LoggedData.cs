@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - moved machineId and guidanceAllocationIds from workRecord to this
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -19,5 +20,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<int> OperationDataIds { get; set; } 
 
         public List<LoggedNote> LoggedNotes { get; set; } 
+
+        public int? MachineId { get; set; }
+
+        public List<int> GuidanceAllocationIds { get; set; }
     }
 }

@@ -7,19 +7,19 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Joseph Ross - Renaming Enums to end in Enum
-  *    Kathleen Oneal - Renamed SourceTypeEnum to SourceType, moved enums to their own files
+  *    Kathleen Oneal - initial API and implementation
   *******************************************************************************/
+
+using System;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class UniqueIdType
+    public class DateWithContext
     {
-        public string ID { get; set; }
-        public CompoundIdentifierTypeEnum CiTypeEnum { get; set; }
-        public string Source { get; set; }
-        public SourceTypeEnum SourceType { get; set; }
-        public bool IsFirstSource { get; set; }
+        public DateTime TimeStamp { get; set; }
+
+        public DateContextEnum DateContext { get; set; }
+
+        public Location Location { get; set; }
     }
 }

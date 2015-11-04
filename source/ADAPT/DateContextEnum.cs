@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - added additional values
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -17,6 +18,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         Approval,
         ProposedStart,
         ProposedEnd,
-        CropSeason
+        CropSeason,
+        TimingEvent,
+        ActualStart,
+        ActualEnd,
+        RequestedStart,
+        RequestedEnd,
+        Expiration,
+        Creation,
+        Modification,
+        Unspecified
     }
 }

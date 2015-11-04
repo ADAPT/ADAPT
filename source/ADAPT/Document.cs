@@ -40,7 +40,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public int? GrowerId { get; set; }
 
-        public List<int> NoteIds { get; set; }
+        public List<int> ReferenceNoteIds { get; set; }
 
         public List<int> PersonRoleIds { get; set; }
 

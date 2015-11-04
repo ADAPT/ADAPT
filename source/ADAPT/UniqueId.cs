@@ -8,24 +8,19 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Tarak Reddy - Updated List of GuidanceId to List GuidanceAllocationId
-  *    Kathleen Oneal - removed all properties
+  *    Joseph Ross - Renaming Enums to end in Enum
+  *    Kathleen Oneal - Renamed SourceTypeEnum to SourceType, moved enums to their own files
+  *    Kathleen Oneal - renamed from UniqueIdType to UniqueId
   *******************************************************************************/
-
-using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class WorkRecord : Document
+    public class UniqueId
     {
-        public int? FarmId { get; set; }
-        public int? FieldId { get; set; }
-        public int? SeasonId { get; set; }
-        public int? WorkItemId { get; set; }
-        public List<int> ContextItemIds { get; set; }
-        public int? CropZoneId { get; set; }
-        public int? PersonRoleId { get; set; }
-        public List<int> WorkItemIds { get; set; }
-        public List<StatusUpdate> StatusUpdates { get; set; }
+        public string Id { get; set; }
+        public CompoundIdentifierTypeEnum CiTypeEnum { get; set; }
+        public string Source { get; set; }
+        public IdSourceTypeEnum SourceType { get; set; }
+        public bool IsFirstSource { get; set; }
     }
 }
