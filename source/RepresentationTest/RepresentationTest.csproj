@@ -58,7 +58,6 @@
     <Compile Include="PerformanceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepresentationSystem\RepresentationCollectionTest.cs" />
-    <Compile Include="RepresentationSystem\RepresentationLoaderTest.cs" />
     <Compile Include="RepresentationSystem\RepresentationManagerTest.cs" />
     <Compile Include="UnitSystem\UnitOfMeasureConverterTest.cs" />
     <Compile Include="UnitSystem\UnitOfMeasurePreferenceTest.cs" />

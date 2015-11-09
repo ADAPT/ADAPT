@@ -9,15 +9,15 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
-
 using System.Collections;
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
-    public class RepresentationCollection<T> : IEnumerable<T> where T : ApplicationDataModel.Representation
+    public class RepresentationCollection<T> : IEnumerable<T> where T : Representation
     {
-        private readonly Dictionary<int, T> _domainIdRepresentations;
+        private readonly Dictionary<string, T> _domainIdRepresentations;
+        private readonly Dictionary<long, T> _domainTagRepresentations;
 
         public int Count
         {
@@ -27,14 +27,25 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
             }
         }
 
-        public T this[int id]
+        public T this[long domainTag]
         {
             get
             {
-                if (!_domainIdRepresentations.ContainsKey(id))
+                if (!_domainTagRepresentations.ContainsKey(domainTag))
                     return default(T);
 
-                return _domainIdRepresentations[id];
+                return _domainTagRepresentations[domainTag];
+            }
+        }
+
+        public T this[string domainId]
+        {
+            get
+            {
+                if (!_domainIdRepresentations.ContainsKey(domainId))
+                    return default(T);
+
+                return _domainIdRepresentations[domainId];
             }
         }
 
@@ -46,13 +57,16 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public RepresentationCollection(IEnumerable<T> representations)
         {
-            _domainIdRepresentations = new Dictionary<int, T>();
+            _domainIdRepresentations = new Dictionary<string, T>();
+            _domainTagRepresentations = new Dictionary<long, T>();
 
             foreach (var representation in representations)
             {
-                if (!_domainIdRepresentations.ContainsKey(representation.Id))
+                if (!_domainIdRepresentations.ContainsKey(representation.DomainId)
+                    && !_domainTagRepresentations.ContainsKey(representation.DomainTag))
                 {
-                    _domainIdRepresentations.Add(representation.Id, representation);
+                    _domainIdRepresentations.Add(representation.DomainId, representation);
+                    _domainTagRepresentations.Add(representation.DomainTag, representation);
                 }
             }
         }

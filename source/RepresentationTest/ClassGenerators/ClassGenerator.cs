@@ -39,27 +39,28 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
 
         public string Generate()
         {
-            var declaration = IsEnum ? "enum" : "class";
-            var classBuilder = new StringBuilder()
-                .Append("using AgGateway.ADAPT.ApplicationDataModel;\r\r")
-                .Append(NameSpace)
-                .AppendFormat(ClassNamePattern, declaration, Name)
-                .Append("{\n");
-
-            var definedRepresentations = RepresentationManager.Instance.Representations.Values.OfType<EnumeratedRepresentation>();
-            foreach (var definedRepresentation in definedRepresentations)
-            {
-                Append(definedRepresentation, classBuilder);
-            }
-
-            var variableRepresentations = RepresentationManager.Instance.Representations.Values.OfType<NumericRepresentation>();
-            foreach (var variableRepresentation in variableRepresentations)
-            {
-                Append(variableRepresentation, classBuilder);
-            }
-
-            classBuilder.Append(FileFooter);
-            return classBuilder.ToString();
+//            var declaration = IsEnum ? "enum" : "class";
+//            var classBuilder = new StringBuilder()
+//                .Append("using AgGateway.ADAPT.ApplicationDataModel;\r\r")
+//                .Append(NameSpace)
+//                .AppendFormat(ClassNamePattern, declaration, Name)
+//                .Append("{\n");
+//
+//            var definedRepresentations = RepresentationManager.Instance.Representations.Values.OfType<EnumeratedRepresentation>();
+//            foreach (var definedRepresentation in definedRepresentations)
+//            {
+//                Append(definedRepresentation, classBuilder);
+//            }
+//
+//            var variableRepresentations = RepresentationManager.Instance.Representations.Values.OfType<NumericRepresentation>();
+//            foreach (var variableRepresentation in variableRepresentations)
+//            {
+//                Append(variableRepresentation, classBuilder);
+//            }
+//
+//            classBuilder.Append(FileFooter);
+//            return classBuilder.ToString();
+            return string.Empty;
         }
 
         protected virtual void Append(NumericRepresentation representation, StringBuilder stringBuilder)

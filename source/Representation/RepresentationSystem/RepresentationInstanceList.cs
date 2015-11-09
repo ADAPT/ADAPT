@@ -1,846 +1,967 @@
-using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Representation.RepresentationSystem
+/*******************************************************************************
+  * Copyright (C) 2015 AgGateway and ADAPT Contributors
+  * Copyright (C) 2015 Deere and Company
+  * All rights reserved. This program and the accompanying materials
+  * are made available under the terms of the Eclipse Public License v1.0
+  * which accompanies this distribution, and is available at
+  * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
+  *
+  * Contributors:
+  *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *******************************************************************************/
+namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public class RepresentationInstanceList 
     {
-        public static readonly NumericRepresentation DataDictionaryVersion = (NumericRepresentation)RepresentationManager.Instance.Representations[0];
+        public static readonly DefinedRepresentation dtApplicationMethod = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtApplicationMethod];
 
-        public static readonly NumericRepresentation SetpointVolumePerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[1];
+        public static readonly DefinedRepresentation dtRecordingStatus = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtRecordingStatus];
 
-        public static readonly NumericRepresentation ActualVolumePerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[2];
+        public static readonly DefinedRepresentation dtWindDirection = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtWindDirection];
 
-        public static readonly NumericRepresentation DefaultVolumePerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[3];
+        public static readonly DefinedRepresentation dtABLineSaveMethod = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtABLineSaveMethod];
 
-        public static readonly NumericRepresentation MinimumVolumePerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[4];
+        public static readonly DefinedRepresentation dtSkyCondition = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtSkyCondition];
 
-        public static readonly NumericRepresentation MaximumVolumePerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[5];
+        public static readonly DefinedRepresentation dtInlineOffsetType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtInlineOffsetType];
 
-        public static readonly NumericRepresentation SetpointMassPerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[6];
+        public static readonly DefinedRepresentation dtLateralOffsetType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtLateralOffsetType];
 
-        public static readonly NumericRepresentation ActualMassPerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[7];
+        public static readonly DefinedRepresentation dtHitchType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtHitchType];
 
-        public static readonly NumericRepresentation DefaultMassPerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[8];
+        public static readonly DefinedRepresentation dtSoilMoisture = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtSoilMoisture];
 
-        public static readonly NumericRepresentation MinimumMassPerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[9];
+        public static readonly DefinedRepresentation dtSeedingApplicationMethod = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtSeedingApplicationMethod];
 
-        public static readonly NumericRepresentation MaximumMassPerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[10];
+        public static readonly DefinedRepresentation dtOperationClass = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtOperationClass];
 
-        public static readonly NumericRepresentation SetpointCountPerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[11];
+        public static readonly DefinedRepresentation dtSensorStatus = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtSensorStatus];
 
-        public static readonly NumericRepresentation ActualCountPerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[12];
+        public static readonly DefinedRepresentation dtPrescriptionState = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtPrescriptionState];
 
-        public static readonly NumericRepresentation DefaultCountPerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[13];
+        public static readonly DefinedRepresentation dtLoadType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtLoadType];
 
-        public static readonly NumericRepresentation MinimumCountPerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[14];
+        public static readonly DefinedRepresentation dtCottonLoadType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtCottonLoadType];
 
-        public static readonly NumericRepresentation MaximumCountPerAreaApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[15];
+        public static readonly DefinedRepresentation dtCircleSaveMethod = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtCircleSaveMethod];
 
-        public static readonly NumericRepresentation SetpointSpacingApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[16];
+        public static readonly DefinedRepresentation dtMaterialClass = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtMaterialClass];
 
-        public static readonly NumericRepresentation ActualSpacingApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[17];
+        public static readonly DefinedRepresentation dtFunctionType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtFunctionType];
 
-        public static readonly NumericRepresentation DefaultSpacingApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[18];
+        public static readonly DefinedRepresentation dtFunctionHitchChange = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtFunctionHitchChange];
 
-        public static readonly NumericRepresentation MinimumSpacingApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[19];
+        public static readonly DefinedRepresentation dtFunctionPTOChange = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtFunctionPTOChange];
 
-        public static readonly NumericRepresentation MaximumSpacingApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[20];
+        public static readonly DefinedRepresentation dtFunctionDiffLocChange = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtFunctionDiffLocChange];
 
-        public static readonly NumericRepresentation SetpointVolumePerVolumeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[21];
+        public static readonly DefinedRepresentation dtFunction4WDChange = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtFunction4WDChange];
 
-        public static readonly NumericRepresentation ActualVolumePerVolumeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[22];
+        public static readonly DefinedRepresentation dtFunctionSCVChange = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtFunctionSCVChange];
 
-        public static readonly NumericRepresentation DefaultVolumePerVolumeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[23];
+        public static readonly DefinedRepresentation dtFunctionFieldCruiseChange = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtFunctionFieldCruiseChange];
 
-        public static readonly NumericRepresentation MinimumVolumePerVolumeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[24];
+        public static readonly DefinedRepresentation dtGuidanceBoundaryBehavior = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtGuidanceBoundaryBehavior];
 
-        public static readonly NumericRepresentation MaximumVolumePerVolumeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[25];
+        public static readonly DefinedRepresentation dtSkipPattern = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtSkipPattern];
 
-        public static readonly NumericRepresentation SetpointMassPerMassApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[26];
+        public static readonly DefinedRepresentation dtCoverageSetting = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtCoverageSetting];
 
-        public static readonly NumericRepresentation ActualMassPerMassApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[27];
+        public static readonly DefinedRepresentation dtSignalType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtSignalType];
 
-        public static readonly NumericRepresentation DefaultMassPerMassApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[28];
+        public static readonly DefinedRepresentation dtFunctionAPSChange = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtFunctionAPSChange];
 
-        public static readonly NumericRepresentation MinimumMassPerMassApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[29];
+        public static readonly DefinedRepresentation dtNavigationType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtNavigationType];
 
-        public static readonly NumericRepresentation MaximumMassPerMassApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[30];
+        public static readonly DefinedRepresentation dtNonSteeringAxleLocation = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtNonSteeringAxleLocation];
 
-        public static readonly NumericRepresentation SetpointVolumePerMassApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[31];
+        public static readonly DefinedRepresentation dtSPFHLoadType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtSPFHLoadType];
 
-        public static readonly NumericRepresentation ActualVolumePerMassApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[32];
+        public static readonly DefinedRepresentation dtSurfaceWaterManagementOpType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtSurfaceWaterManagementOpType];
 
-        public static readonly NumericRepresentation DefaultVolumePerMassApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[33];
+        public static readonly DefinedRepresentation dtFunctionFrontPTOChange = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtFunctionFrontPTOChange];
 
-        public static readonly NumericRepresentation MinimumVolumePerMassApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[34];
+        public static readonly DefinedRepresentation dtDrainType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtDrainType];
 
-        public static readonly NumericRepresentation MaximumVolumePerMassApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[35];
+        public static readonly DefinedRepresentation dtHeaderStatus = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtHeaderStatus];
 
-        public static readonly NumericRepresentation SetpointVolumePerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[36];
+        public static readonly DefinedRepresentation dtTicketStatus = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtTicketStatus];
 
-        public static readonly NumericRepresentation ActualVolumePerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[37];
+        public static readonly DefinedRepresentation dtProductDetailsProductType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtProductDetailsProductType];
 
-        public static readonly NumericRepresentation DefaultVolumePerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[38];
+        public static readonly DefinedRepresentation dtProductDetailsSeedType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtProductDetailsSeedType];
 
-        public static readonly NumericRepresentation MinimumVolumePerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[39];
+        public static readonly DefinedRepresentation dtTicketType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtTicketType];
 
-        public static readonly NumericRepresentation MaximumVolumePerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[40];
+        public static readonly DefinedRepresentation dtMeasuredWeightStatus = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtMeasuredWeightStatus];
 
-        public static readonly NumericRepresentation SetpointMassPerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[41];
+        public static readonly DefinedRepresentation dtProjectionType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtProjectionType];
 
-        public static readonly NumericRepresentation ActualMassPerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[42];
+        public static readonly DefinedRepresentation dtTillageType = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtTillageType];
 
-        public static readonly NumericRepresentation DefaultMassPerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[43];
+        public static readonly DefinedRepresentation dtUnloadingAugerState = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtUnloadingAugerState];
 
-        public static readonly NumericRepresentation MinimumMassPerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[44];
+        public static readonly DefinedRepresentation dtJDArmedDWS = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtJDArmedDWS];
 
-        public static readonly NumericRepresentation MaximumMassPerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[45];
+        public static readonly DefinedRepresentation dtSectionControlMasterState = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtSectionControlMasterState];
 
-        public static readonly NumericRepresentation SetpointCountPerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[46];
+        public static readonly DefinedRepresentation dtSprayerSystemOperatingMode = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtSprayerSystemOperatingMode];
 
-        public static readonly NumericRepresentation ActualCountPerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[47];
+        public static readonly DefinedRepresentation dtPrescriptionControlMasterState = (DefinedRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.dtPrescriptionControlMasterState];
 
-        public static readonly NumericRepresentation DefaultCountPerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[48];
+        public static readonly VariableRepresentation vrABRowSpacing = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrABRowSpacing];
 
-        public static readonly NumericRepresentation MinimumCountPerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[49];
+        public static readonly VariableRepresentation vrABShiftTrack = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrABShiftTrack];
 
-        public static readonly NumericRepresentation MaximumCountPerTimeApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[50];
+        public static readonly VariableRepresentation vrABLineHeading = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrABLineHeading];
 
-        public static readonly NumericRepresentation SetpointTillageDepth = (NumericRepresentation)RepresentationManager.Instance.Representations[51];
+        public static readonly VariableRepresentation vrCommodityPricePerBale = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCommodityPricePerBale];
 
-        public static readonly NumericRepresentation ActualTillageDepth = (NumericRepresentation)RepresentationManager.Instance.Representations[52];
+        public static readonly VariableRepresentation vrCommodityPricePerVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCommodityPricePerVolume];
 
-        public static readonly NumericRepresentation DefaultTillageDepth = (NumericRepresentation)RepresentationManager.Instance.Representations[53];
+        public static readonly VariableRepresentation vrHarvestMoisture = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrHarvestMoisture];
 
-        public static readonly NumericRepresentation MinimumTillageDepth = (NumericRepresentation)RepresentationManager.Instance.Representations[54];
+        public static readonly VariableRepresentation vrCropWeightBale = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCropWeightBale];
 
-        public static readonly NumericRepresentation MaximumTillageDepth = (NumericRepresentation)RepresentationManager.Instance.Representations[55];
+        public static readonly VariableRepresentation vrCropWeightVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCropWeightVolume];
 
-        public static readonly NumericRepresentation SetpointSeedingDepth = (NumericRepresentation)RepresentationManager.Instance.Representations[56];
+        public static readonly VariableRepresentation vrFSAArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFSAArea];
 
-        public static readonly NumericRepresentation ActualSeedingDepth = (NumericRepresentation)RepresentationManager.Instance.Representations[57];
+        public static readonly VariableRepresentation vrReportedFieldArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrReportedFieldArea];
 
-        public static readonly NumericRepresentation DefaultSeedingDepth = (NumericRepresentation)RepresentationManager.Instance.Representations[58];
+        public static readonly VariableRepresentation vrSpatialFieldArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSpatialFieldArea];
 
-        public static readonly NumericRepresentation MinimumSeedingDepth = (NumericRepresentation)RepresentationManager.Instance.Representations[59];
+        public static readonly VariableRepresentation vrYieldTotalMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldTotalMass];
 
-        public static readonly NumericRepresentation MaximumSeedingDepth = (NumericRepresentation)RepresentationManager.Instance.Representations[60];
+        public static readonly VariableRepresentation vrYieldTotalVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldTotalVolume];
 
-        public static readonly NumericRepresentation SetpointWorkingHeight = (NumericRepresentation)RepresentationManager.Instance.Representations[61];
+        public static readonly VariableRepresentation vrHeadlandOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrHeadlandOffset];
 
-        public static readonly NumericRepresentation ActualWorkingHeight = (NumericRepresentation)RepresentationManager.Instance.Representations[62];
+        public static readonly VariableRepresentation vrLatency = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLatency];
 
-        public static readonly NumericRepresentation DefaultWorkingHeight = (NumericRepresentation)RepresentationManager.Instance.Representations[63];
+        public static readonly VariableRepresentation vrLoadArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLoadArea];
 
-        public static readonly NumericRepresentation MinimumWorkingHeight = (NumericRepresentation)RepresentationManager.Instance.Representations[64];
+        public static readonly VariableRepresentation vrMassPer1000Seeds = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrMassPer1000Seeds];
 
-        public static readonly NumericRepresentation MaximumWorkingHeight = (NumericRepresentation)RepresentationManager.Instance.Representations[65];
+        public static readonly VariableRepresentation vrMassPerContainer = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrMassPerContainer];
 
-        public static readonly NumericRepresentation SetpointWorkingWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[66];
+        public static readonly VariableRepresentation vrMaturity = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrMaturity];
 
-        public static readonly NumericRepresentation ActualWorkingWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[67];
+        public static readonly VariableRepresentation vrEquipmentWidth = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrEquipmentWidth];
 
-        public static readonly NumericRepresentation DefaultWorkingWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[68];
+        public static readonly VariableRepresentation vrTrackSpacing = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTrackSpacing];
 
-        public static readonly NumericRepresentation MinimumWorkingWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[69];
+        public static readonly VariableRepresentation vrPathOverlap = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPathOverlap];
 
-        public static readonly NumericRepresentation MaximumWorkingWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[70];
+        public static readonly VariableRepresentation vrInlineOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrInlineOffset];
 
-        public static readonly NumericRepresentation SetpointVolumeContent = (NumericRepresentation)RepresentationManager.Instance.Representations[71];
+        public static readonly VariableRepresentation vrLateralOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLateralOffset];
 
-        public static readonly NumericRepresentation ActualVolumeContent = (NumericRepresentation)RepresentationManager.Instance.Representations[72];
+        public static readonly VariableRepresentation vrTotalInlineDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTotalInlineDistance];
 
-        public static readonly NumericRepresentation MaximumVolumeContent = (NumericRepresentation)RepresentationManager.Instance.Representations[73];
+        public static readonly VariableRepresentation vrTotalLateralDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTotalLateralDistance];
 
-        public static readonly NumericRepresentation SetpointMassContent = (NumericRepresentation)RepresentationManager.Instance.Representations[74];
+        public static readonly VariableRepresentation vrVerticalOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrVerticalOffset];
 
-        public static readonly NumericRepresentation ActualMassContent = (NumericRepresentation)RepresentationManager.Instance.Representations[75];
+        public static readonly VariableRepresentation vrSectionWidth = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSectionWidth];
 
-        public static readonly NumericRepresentation MaximumMassContent = (NumericRepresentation)RepresentationManager.Instance.Representations[76];
+        public static readonly VariableRepresentation vrSeedGerminationPercent = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedGerminationPercent];
 
-        public static readonly NumericRepresentation SetpointCountContent = (NumericRepresentation)RepresentationManager.Instance.Representations[77];
+        public static readonly VariableRepresentation vrSeedLoadQuantity = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedLoadQuantity];
 
-        public static readonly NumericRepresentation ActualCountContent = (NumericRepresentation)RepresentationManager.Instance.Representations[78];
+        public static readonly VariableRepresentation vrSeedsPerContainer = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedsPerContainer];
 
-        public static readonly NumericRepresentation MaximumCountContent = (NumericRepresentation)RepresentationManager.Instance.Representations[79];
+        public static readonly VariableRepresentation vrSeedsPerMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedsPerMass];
 
-        public static readonly NumericRepresentation ApplicationTotalVolumeinL = (NumericRepresentation)RepresentationManager.Instance.Representations[80];
+        public static readonly VariableRepresentation vrSolutionRateLiquid = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSolutionRateLiquid];
 
-        public static readonly NumericRepresentation ApplicationTotalMassinkg = (NumericRepresentation)RepresentationManager.Instance.Representations[81];
+        public static readonly VariableRepresentation vrSolutionRateMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSolutionRateMass];
 
-        public static readonly NumericRepresentation ApplicationTotalCount = (NumericRepresentation)RepresentationManager.Instance.Representations[82];
+        public static readonly VariableRepresentation vrSwathWidth = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSwathWidth];
 
-        public static readonly NumericRepresentation VolumePerAreaYield = (NumericRepresentation)RepresentationManager.Instance.Representations[83];
+        public static readonly VariableRepresentation vrYieldBale = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldBale];
 
-        public static readonly NumericRepresentation MassPerAreaYield = (NumericRepresentation)RepresentationManager.Instance.Representations[84];
+        public static readonly VariableRepresentation vrYieldBalePerArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldBalePerArea];
 
-        public static readonly NumericRepresentation CountPerAreaYield = (NumericRepresentation)RepresentationManager.Instance.Representations[85];
+        public static readonly VariableRepresentation vrYieldWetMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetMass];
 
-        public static readonly NumericRepresentation VolumePerTimeYield = (NumericRepresentation)RepresentationManager.Instance.Representations[86];
+        public static readonly VariableRepresentation vrYieldWetMassPerArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetMassPerArea];
 
-        public static readonly NumericRepresentation MassPerTimeYield = (NumericRepresentation)RepresentationManager.Instance.Representations[87];
+        public static readonly VariableRepresentation vrYieldWetVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetVolume];
 
-        public static readonly NumericRepresentation CountPerTimeYield = (NumericRepresentation)RepresentationManager.Instance.Representations[88];
+        public static readonly VariableRepresentation vrYieldWetVolumePerArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetVolumePerArea];
 
-        public static readonly NumericRepresentation YieldTotalVolume = (NumericRepresentation)RepresentationManager.Instance.Representations[89];
+        public static readonly VariableRepresentation vrYieldMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldMass];
 
-        public static readonly NumericRepresentation YieldTotalMass = (NumericRepresentation)RepresentationManager.Instance.Representations[90];
+        public static readonly VariableRepresentation vrYieldMassPerArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldMassPerArea];
 
-        public static readonly NumericRepresentation YieldTotalCount = (NumericRepresentation)RepresentationManager.Instance.Representations[91];
+        public static readonly VariableRepresentation vrYieldVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldVolume];
 
-        public static readonly NumericRepresentation VolumePerAreaCropLoss = (NumericRepresentation)RepresentationManager.Instance.Representations[92];
+        public static readonly VariableRepresentation vrYieldVolumePerArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldVolumePerArea];
 
-        public static readonly NumericRepresentation MassPerAreaCropLoss = (NumericRepresentation)RepresentationManager.Instance.Representations[93];
+        public static readonly VariableRepresentation vrAppRateMassMetered = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAppRateMassMetered];
 
-        public static readonly NumericRepresentation CountPerAreaCropLoss = (NumericRepresentation)RepresentationManager.Instance.Representations[94];
+        public static readonly VariableRepresentation vrAppRateMassMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAppRateMassMeasured];
 
-        public static readonly NumericRepresentation VolumePerTimeCropLoss = (NumericRepresentation)RepresentationManager.Instance.Representations[95];
+        public static readonly VariableRepresentation vrAppRateMassControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAppRateMassControl];
 
-        public static readonly NumericRepresentation MassPerTimeCropLoss = (NumericRepresentation)RepresentationManager.Instance.Representations[96];
+        public static readonly VariableRepresentation vrAppRateMassTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAppRateMassTarget];
 
-        public static readonly NumericRepresentation CountPerTimeCropLoss = (NumericRepresentation)RepresentationManager.Instance.Representations[97];
+        public static readonly VariableRepresentation vrAppRateVolumeMetered = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAppRateVolumeMetered];
 
-        public static readonly NumericRepresentation PercentageCropLoss = (NumericRepresentation)RepresentationManager.Instance.Representations[98];
+        public static readonly VariableRepresentation vrAppRateVolumeMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAppRateVolumeMeasured];
 
-        public static readonly NumericRepresentation CropMoisture = (NumericRepresentation)RepresentationManager.Instance.Representations[99];
+        public static readonly VariableRepresentation vrAppRateVolumeControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAppRateVolumeControl];
 
-        public static readonly NumericRepresentation CropContamination = (NumericRepresentation)RepresentationManager.Instance.Representations[100];
+        public static readonly VariableRepresentation vrAppRateVolumeTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAppRateVolumeTarget];
 
-        public static readonly NumericRepresentation SetpointBaleWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[101];
+        public static readonly VariableRepresentation vrAppRateVolumePerHour = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAppRateVolumePerHour];
 
-        public static readonly NumericRepresentation ActualBaleWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[102];
+        public static readonly VariableRepresentation vrAppHeightTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAppHeightTarget];
 
-        public static readonly NumericRepresentation DefaultBaleWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[103];
+        public static readonly VariableRepresentation vrTillageDepthTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTillageDepthTarget];
 
-        public static readonly NumericRepresentation MinimumBaleWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[104];
+        public static readonly VariableRepresentation vrSeedRateMassMetered = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedRateMassMetered];
 
-        public static readonly NumericRepresentation MaximumBaleWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[105];
+        public static readonly VariableRepresentation vrSeedRateMassMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedRateMassMeasured];
 
-        public static readonly NumericRepresentation SetpointBaleHeight = (NumericRepresentation)RepresentationManager.Instance.Representations[106];
+        public static readonly VariableRepresentation vrSeedRateMassControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedRateMassControl];
 
-        public static readonly NumericRepresentation ActualBaleHeight = (NumericRepresentation)RepresentationManager.Instance.Representations[107];
+        public static readonly VariableRepresentation vrSeedRateMassTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedRateMassTarget];
 
-        public static readonly NumericRepresentation DefaultBaleHeight = (NumericRepresentation)RepresentationManager.Instance.Representations[108];
+        public static readonly VariableRepresentation vrSeedRateSeedsMetered = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedRateSeedsMetered];
 
-        public static readonly NumericRepresentation MinimumBaleHeight = (NumericRepresentation)RepresentationManager.Instance.Representations[109];
+        public static readonly VariableRepresentation vrSeedRateSeedsMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedRateSeedsMeasured];
 
-        public static readonly NumericRepresentation MaximumBaleHeight = (NumericRepresentation)RepresentationManager.Instance.Representations[110];
+        public static readonly VariableRepresentation vrSeedRateSeedsControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedRateSeedsControl];
 
-        public static readonly NumericRepresentation SetpointBaleSize = (NumericRepresentation)RepresentationManager.Instance.Representations[111];
+        public static readonly VariableRepresentation vrSeedRateSeedsTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedRateSeedsTarget];
 
-        public static readonly NumericRepresentation ActualBaleSize = (NumericRepresentation)RepresentationManager.Instance.Representations[112];
+        public static readonly VariableRepresentation vrSeedDepthTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedDepthTarget];
 
-        public static readonly NumericRepresentation DefaultBaleSize = (NumericRepresentation)RepresentationManager.Instance.Representations[113];
+        public static readonly VariableRepresentation vrRelativeHumidity = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRelativeHumidity];
 
-        public static readonly NumericRepresentation MinimumBaleSize = (NumericRepresentation)RepresentationManager.Instance.Representations[114];
+        public static readonly VariableRepresentation vrAirTemperature = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAirTemperature];
 
-        public static readonly NumericRepresentation MaximumBaleSize = (NumericRepresentation)RepresentationManager.Instance.Representations[115];
+        public static readonly VariableRepresentation vrWindSpeed = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrWindSpeed];
 
-        public static readonly NumericRepresentation TotalArea = (NumericRepresentation)RepresentationManager.Instance.Representations[116];
+        public static readonly VariableRepresentation vrSoilTemperature = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSoilTemperature];
 
-        public static readonly NumericRepresentation EffectiveTotalDistance = (NumericRepresentation)RepresentationManager.Instance.Representations[117];
+        public static readonly VariableRepresentation vrTotalAreaCovered = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTotalAreaCovered];
 
-        public static readonly NumericRepresentation IneffectiveTotalDistance = (NumericRepresentation)RepresentationManager.Instance.Representations[118];
+        public static readonly VariableRepresentation vrTotalQuantityAppliedMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTotalQuantityAppliedMass];
 
-        public static readonly NumericRepresentation EffectiveTotalTime = (NumericRepresentation)RepresentationManager.Instance.Representations[119];
+        public static readonly VariableRepresentation vrTotalQuantityAppliedVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTotalQuantityAppliedVolume];
 
-        public static readonly NumericRepresentation IneffectiveTotalTime = (NumericRepresentation)RepresentationManager.Instance.Representations[120];
+        public static readonly VariableRepresentation vrTotalSeedQuantityAppliedSeed = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTotalSeedQuantityAppliedSeed];
 
-        public static readonly NumericRepresentation ProductDensityMassPerVolume = (NumericRepresentation)RepresentationManager.Instance.Representations[121];
+        public static readonly VariableRepresentation vrTotalSeedQuantityAppliedMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTotalSeedQuantityAppliedMass];
 
-        public static readonly NumericRepresentation ProductDensityMassPerCount = (NumericRepresentation)RepresentationManager.Instance.Representations[122];
+        public static readonly VariableRepresentation vrTotalOperationTime = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTotalOperationTime];
 
-        public static readonly NumericRepresentation ProductDensityVolumePerCount = (NumericRepresentation)RepresentationManager.Instance.Representations[123];
+        public static readonly VariableRepresentation vrHeading = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrHeading];
 
-        public static readonly NumericRepresentation AuxiliaryValveScalingExtend = (NumericRepresentation)RepresentationManager.Instance.Representations[124];
+        public static readonly VariableRepresentation vrElevation = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrElevation];
 
-        public static readonly NumericRepresentation AuxiliaryValveScalingRetract = (NumericRepresentation)RepresentationManager.Instance.Representations[125];
+        public static readonly VariableRepresentation vrStandardPayableMoisture = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrStandardPayableMoisture];
 
-        public static readonly NumericRepresentation AuxiliaryValveRampExtendUp = (NumericRepresentation)RepresentationManager.Instance.Representations[126];
+        public static readonly VariableRepresentation vrLatitude = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLatitude];
 
-        public static readonly NumericRepresentation AuxiliaryValveRampExtendDown = (NumericRepresentation)RepresentationManager.Instance.Representations[127];
+        public static readonly VariableRepresentation vrLongitude = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLongitude];
 
-        public static readonly NumericRepresentation AuxiliaryValveRampRetractUp = (NumericRepresentation)RepresentationManager.Instance.Representations[128];
+        public static readonly VariableRepresentation vrDistanceTraveled = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrDistanceTraveled];
 
-        public static readonly NumericRepresentation AuxiliaryValveRampRetractDown = (NumericRepresentation)RepresentationManager.Instance.Representations[129];
+        public static readonly VariableRepresentation vrNonLogTime = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrNonLogTime];
 
-        public static readonly NumericRepresentation AuxiliaryValveFloatThreshold = (NumericRepresentation)RepresentationManager.Instance.Representations[130];
+        public static readonly VariableRepresentation vrVehicleSpeed = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrVehicleSpeed];
 
-        public static readonly NumericRepresentation AuxiliaryValveProgressivityExtend = (NumericRepresentation)RepresentationManager.Instance.Representations[131];
+        public static readonly VariableRepresentation vrDeltaTime = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrDeltaTime];
 
-        public static readonly NumericRepresentation AuxiliaryValveProgressivityRetract = (NumericRepresentation)RepresentationManager.Instance.Representations[132];
+        public static readonly VariableRepresentation vrEquipmentLogFrequency = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrEquipmentLogFrequency];
 
-        public static readonly NumericRepresentation AuxiliaryValveInvertPorts = (NumericRepresentation)RepresentationManager.Instance.Representations[133];
+        public static readonly VariableRepresentation vrCommodityPricePerArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCommodityPricePerArea];
 
-        public static readonly NumericRepresentation DeviceElementOffsetX = (NumericRepresentation)RepresentationManager.Instance.Representations[134];
+        public static readonly VariableRepresentation vrCommodityPricePerYield = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCommodityPricePerYield];
 
-        public static readonly NumericRepresentation DeviceElementOffsetY = (NumericRepresentation)RepresentationManager.Instance.Representations[135];
+        public static readonly VariableRepresentation vrCommodityPricePerContainer = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCommodityPricePerContainer];
 
-        public static readonly NumericRepresentation DeviceElementOffsetZ = (NumericRepresentation)RepresentationManager.Instance.Representations[136];
+        public static readonly VariableRepresentation vrRowWidth = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRowWidth];
 
-        public static readonly NumericRepresentation DeviceVolumeCapacity = (NumericRepresentation)RepresentationManager.Instance.Representations[137];
+        public static readonly VariableRepresentation vrGuidanceSmallShift = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrGuidanceSmallShift];
 
-        public static readonly NumericRepresentation DeviceMassCapacity = (NumericRepresentation)RepresentationManager.Instance.Representations[138];
+        public static readonly VariableRepresentation vrGuidanceLargeShift = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrGuidanceLargeShift];
 
-        public static readonly NumericRepresentation DeviceCountCapacity = (NumericRepresentation)RepresentationManager.Instance.Representations[139];
+        public static readonly VariableRepresentation vrPathAccuracyIndicator = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPathAccuracyIndicator];
 
-        public static readonly NumericRepresentation SetpointPercentageApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[140];
+        public static readonly VariableRepresentation vrTrackToneBeginningDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTrackToneBeginningDistance];
 
-        public static readonly NumericRepresentation ActualWorkState = (NumericRepresentation)RepresentationManager.Instance.Representations[141];
+        public static readonly VariableRepresentation vrLeadCompensation = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLeadCompensation];
 
-        public static readonly NumericRepresentation PhysicalSetpointTimeLatency = (NumericRepresentation)RepresentationManager.Instance.Representations[142];
+        public static readonly VariableRepresentation vrAccuracyBarStepSize = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAccuracyBarStepSize];
 
-        public static readonly NumericRepresentation PhysicalActualValueTimeLatency = (NumericRepresentation)RepresentationManager.Instance.Representations[143];
+        public static readonly VariableRepresentation vrTurnDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTurnDistance];
 
-        public static readonly NumericRepresentation YawAngle = (NumericRepresentation)RepresentationManager.Instance.Representations[144];
+        public static readonly VariableRepresentation vrTrackSpacingRows = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTrackSpacingRows];
 
-        public static readonly NumericRepresentation RollAngle = (NumericRepresentation)RepresentationManager.Instance.Representations[145];
+        public static readonly VariableRepresentation vrEquipmentWidthRows = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrEquipmentWidthRows];
 
-        public static readonly NumericRepresentation PitchAngle = (NumericRepresentation)RepresentationManager.Instance.Representations[146];
+        public static readonly VariableRepresentation vrPathOverlapRows = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPathOverlapRows];
 
-        public static readonly NumericRepresentation LogCount = (NumericRepresentation)RepresentationManager.Instance.Representations[147];
+        public static readonly VariableRepresentation vrFuelRatePerHour = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFuelRatePerHour];
 
-        public static readonly NumericRepresentation TotalFuelConsumption = (NumericRepresentation)RepresentationManager.Instance.Representations[148];
+        public static readonly VariableRepresentation vrFuelTotal = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFuelTotal];
 
-        public static readonly NumericRepresentation InstantaneousFuelConsumptionperTime = (NumericRepresentation)RepresentationManager.Instance.Representations[149];
+        public static readonly VariableRepresentation vrTotalYieldVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTotalYieldVolume];
 
-        public static readonly NumericRepresentation InstantaneousFuelConsumptionperArea = (NumericRepresentation)RepresentationManager.Instance.Representations[150];
+        public static readonly VariableRepresentation vrTotalYieldMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTotalYieldMass];
 
-        public static readonly NumericRepresentation InstantaneousAreaPerTimeCapacity = (NumericRepresentation)RepresentationManager.Instance.Representations[151];
+        public static readonly VariableRepresentation vrTotalYieldWetMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTotalYieldWetMass];
 
-        public static readonly NumericRepresentation ActualNormalizedDifferenceVegetativeIndexNDVI = (NumericRepresentation)RepresentationManager.Instance.Representations[153];
+        public static readonly VariableRepresentation vrTotalYieldWetVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTotalYieldWetVolume];
 
-        public static readonly NumericRepresentation PhysicalObjectLength = (NumericRepresentation)RepresentationManager.Instance.Representations[154];
+        public static readonly VariableRepresentation vrTotalYieldBale = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTotalYieldBale];
 
-        public static readonly NumericRepresentation PhysicalObjectWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[155];
+        public static readonly VariableRepresentation vrHarvestMinimumMoisture = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrHarvestMinimumMoisture];
 
-        public static readonly NumericRepresentation PhysicalObjectHeight = (NumericRepresentation)RepresentationManager.Instance.Representations[156];
+        public static readonly VariableRepresentation vrHarvestMaximumMoisture = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrHarvestMaximumMoisture];
 
-        public static readonly NumericRepresentation ConnectorType = (NumericRepresentation)RepresentationManager.Instance.Representations[157];
+        public static readonly VariableRepresentation vrYieldMassMinimum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldMassMinimum];
 
-        public static readonly NumericRepresentation PrescriptionControlState = (NumericRepresentation)RepresentationManager.Instance.Representations[158];
+        public static readonly VariableRepresentation vrYieldMassMaximum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldMassMaximum];
 
-        public static readonly NumericRepresentation NumberofSubUnitsperSection = (NumericRepresentation)RepresentationManager.Instance.Representations[159];
+        public static readonly VariableRepresentation vrYieldMassPerAreaMinimum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldMassPerAreaMinimum];
 
-        public static readonly NumericRepresentation SectionControlState = (NumericRepresentation)RepresentationManager.Instance.Representations[160];
+        public static readonly VariableRepresentation vrYieldMassPerAreaMaximum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldMassPerAreaMaximum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState116 = (NumericRepresentation)RepresentationManager.Instance.Representations[161];
+        public static readonly VariableRepresentation vrYieldVolumeMinimum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldVolumeMinimum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState1732 = (NumericRepresentation)RepresentationManager.Instance.Representations[162];
+        public static readonly VariableRepresentation vrYieldVolumeMaximum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldVolumeMaximum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState3348 = (NumericRepresentation)RepresentationManager.Instance.Representations[163];
+        public static readonly VariableRepresentation vrYieldVolumePerAreaMinimum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldVolumePerAreaMinimum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState4964 = (NumericRepresentation)RepresentationManager.Instance.Representations[164];
+        public static readonly VariableRepresentation vrYieldVolumePerAreaMaximum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldVolumePerAreaMaximum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState6580 = (NumericRepresentation)RepresentationManager.Instance.Representations[165];
+        public static readonly VariableRepresentation vrYieldBaleMinimum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldBaleMinimum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState8196 = (NumericRepresentation)RepresentationManager.Instance.Representations[166];
+        public static readonly VariableRepresentation vrYieldBaleMaximum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldBaleMaximum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState97112 = (NumericRepresentation)RepresentationManager.Instance.Representations[167];
+        public static readonly VariableRepresentation vrYieldBalePerAreaMinimum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldBalePerAreaMinimum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState113128 = (NumericRepresentation)RepresentationManager.Instance.Representations[168];
+        public static readonly VariableRepresentation vrYieldWetMassMinimum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetMassMinimum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState129144 = (NumericRepresentation)RepresentationManager.Instance.Representations[169];
+        public static readonly VariableRepresentation vrYieldWetMassMaximum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetMassMaximum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState145160 = (NumericRepresentation)RepresentationManager.Instance.Representations[170];
+        public static readonly VariableRepresentation vrYieldWetMassPerAreaMinumum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetMassPerAreaMinumum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState161176 = (NumericRepresentation)RepresentationManager.Instance.Representations[171];
+        public static readonly VariableRepresentation vrYieldWetMassPerAreaMaximum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetMassPerAreaMaximum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState177192 = (NumericRepresentation)RepresentationManager.Instance.Representations[172];
+        public static readonly VariableRepresentation vrYieldWetVolumeMinimum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetVolumeMinimum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState193208 = (NumericRepresentation)RepresentationManager.Instance.Representations[173];
+        public static readonly VariableRepresentation vrYieldWetVolumeMaximum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetVolumeMaximum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState209224 = (NumericRepresentation)RepresentationManager.Instance.Representations[174];
+        public static readonly VariableRepresentation vrYieldWetVolumePerAreaMinimum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetVolumePerAreaMinimum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState225240 = (NumericRepresentation)RepresentationManager.Instance.Representations[175];
+        public static readonly VariableRepresentation vrYieldWetVolumePerAreaMaximum = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetVolumePerAreaMaximum];
 
-        public static readonly NumericRepresentation ActualCondensedWorkState241256 = (NumericRepresentation)RepresentationManager.Instance.Representations[176];
+        public static readonly VariableRepresentation vrEastShiftComponent = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrEastShiftComponent];
 
-        public static readonly NumericRepresentation Actuallengthofcut = (NumericRepresentation)RepresentationManager.Instance.Representations[177];
+        public static readonly VariableRepresentation vrNorthShiftComponent = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrNorthShiftComponent];
 
-        public static readonly NumericRepresentation ElementTypeInstance = (NumericRepresentation)RepresentationManager.Instance.Representations[178];
+        public static readonly VariableRepresentation vrTurnout = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTurnout];
 
-        public static readonly NumericRepresentation ActualCulturalPractice = (NumericRepresentation)RepresentationManager.Instance.Representations[179];
+        public static readonly VariableRepresentation vrTaskArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTaskArea];
 
-        public static readonly NumericRepresentation DeviceReferencePointDRPtoGrounddistance = (NumericRepresentation)RepresentationManager.Instance.Representations[180];
+        public static readonly VariableRepresentation vrBoundaryOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrBoundaryOffset];
 
-        public static readonly NumericRepresentation DryMassPerAreaYield = (NumericRepresentation)RepresentationManager.Instance.Representations[181];
+        public static readonly VariableRepresentation vrSpatialFieldPerimeter = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSpatialFieldPerimeter];
 
-        public static readonly NumericRepresentation DryMassPerTimeYield = (NumericRepresentation)RepresentationManager.Instance.Representations[182];
+        public static readonly VariableRepresentation vrAreaProductivity = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAreaProductivity];
 
-        public static readonly NumericRepresentation YieldTotalDryMass = (NumericRepresentation)RepresentationManager.Instance.Representations[183];
+        public static readonly VariableRepresentation vrMassProductivity = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrMassProductivity];
 
-        public static readonly NumericRepresentation ReferenceMoistureForDryMass = (NumericRepresentation)RepresentationManager.Instance.Representations[184];
+        public static readonly VariableRepresentation vrVolumeProductivity = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrVolumeProductivity];
 
-        public static readonly NumericRepresentation SeedCottonMassPerAreaYield = (NumericRepresentation)RepresentationManager.Instance.Representations[185];
+        public static readonly VariableRepresentation vrBaleProductivity = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrBaleProductivity];
 
-        public static readonly NumericRepresentation LintCottonMassPerAreaYield = (NumericRepresentation)RepresentationManager.Instance.Representations[186];
+        public static readonly VariableRepresentation vrSeedsProductivity = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedsProductivity];
 
-        public static readonly NumericRepresentation SeedCottonMassPerTimeYield = (NumericRepresentation)RepresentationManager.Instance.Representations[187];
+        public static readonly VariableRepresentation vrRadiusOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRadiusOffset];
 
-        public static readonly NumericRepresentation LintCottonMassPerTimeYield = (NumericRepresentation)RepresentationManager.Instance.Representations[188];
+        public static readonly VariableRepresentation vrRadialHeading = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRadialHeading];
 
-        public static readonly NumericRepresentation YieldTotalSeedCottonMass = (NumericRepresentation)RepresentationManager.Instance.Representations[189];
+        public static readonly VariableRepresentation vrRadiusShift = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRadiusShift];
 
-        public static readonly NumericRepresentation YieldTotalLintCottonMass = (NumericRepresentation)RepresentationManager.Instance.Representations[190];
+        public static readonly VariableRepresentation vrRecordingTimeRemaining = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRecordingTimeRemaining];
 
-        public static readonly NumericRepresentation LintTurnoutPercentage = (NumericRepresentation)RepresentationManager.Instance.Representations[191];
+        public static readonly VariableRepresentation vrReceiverOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrReceiverOffset];
 
-        public static readonly NumericRepresentation Ambienttemperature = (NumericRepresentation)RepresentationManager.Instance.Representations[192];
+        public static readonly VariableRepresentation vrManagementZoneClipping = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrManagementZoneClipping];
 
-        public static readonly NumericRepresentation SetpointProductPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[193];
+        public static readonly VariableRepresentation vrTrackRowWidth = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTrackRowWidth];
 
-        public static readonly NumericRepresentation ActualProductPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[194];
+        public static readonly VariableRepresentation vrInoculantDosing = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrInoculantDosing];
 
-        public static readonly NumericRepresentation MinimumProductPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[195];
+        public static readonly VariableRepresentation vrLengthOfCut = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLengthOfCut];
 
-        public static readonly NumericRepresentation MaximumProductPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[196];
+        public static readonly VariableRepresentation vrHeadland = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrHeadland];
 
-        public static readonly NumericRepresentation SetpointPumpOutputPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[197];
+        public static readonly VariableRepresentation vrGenericZoneValue = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrGenericZoneValue];
 
-        public static readonly NumericRepresentation ActualPumpOutputPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[198];
+        public static readonly VariableRepresentation vrHarvestMoistureTotal = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrHarvestMoistureTotal];
 
-        public static readonly NumericRepresentation MinimumPumpOutputPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[199];
+        public static readonly VariableRepresentation vrHarvestMoistureCount = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrHarvestMoistureCount];
 
-        public static readonly NumericRepresentation MaximumPumpOutputPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[200];
+        public static readonly VariableRepresentation vrCutWidthIncrement = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCutWidthIncrement];
 
-        public static readonly NumericRepresentation SetpointTankAgitationPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[201];
+        public static readonly VariableRepresentation vrCutWidthIncrementRows = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCutWidthIncrementRows];
 
-        public static readonly NumericRepresentation ActualTankAgitationPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[202];
+        public static readonly VariableRepresentation vrBoundaryIntersectionDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrBoundaryIntersectionDistance];
 
-        public static readonly NumericRepresentation MinimumTankAgitationPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[203];
+        public static readonly VariableRepresentation vrSequenceActivationDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSequenceActivationDistance];
 
-        public static readonly NumericRepresentation MaximumTankAgitationPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[204];
+        public static readonly VariableRepresentation vrSequenceActivationTime = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSequenceActivationTime];
 
-        public static readonly NumericRepresentation SCTurnOnTime = (NumericRepresentation)RepresentationManager.Instance.Representations[205];
+        public static readonly VariableRepresentation vrSequenceOffsetDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSequenceOffsetDistance];
 
-        public static readonly NumericRepresentation SCTurnOffTime = (NumericRepresentation)RepresentationManager.Instance.Representations[206];
+        public static readonly VariableRepresentation vrFunctionOffsetDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFunctionOffsetDistance];
 
-        public static readonly NumericRepresentation Windspeed = (NumericRepresentation)RepresentationManager.Instance.Representations[207];
+        public static readonly VariableRepresentation vrFunctionValueSpeed = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFunctionValueSpeed];
 
-        public static readonly NumericRepresentation Winddirection = (NumericRepresentation)RepresentationManager.Instance.Representations[208];
+        public static readonly VariableRepresentation vrFunctionValueEngineSpeed = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFunctionValueEngineSpeed];
 
-        public static readonly NumericRepresentation AirHumidity = (NumericRepresentation)RepresentationManager.Instance.Representations[209];
+        public static readonly VariableRepresentation vrMachineTurnRadius = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrMachineTurnRadius];
 
-        public static readonly NumericRepresentation Skyconditions = (NumericRepresentation)RepresentationManager.Instance.Representations[210];
+        public static readonly VariableRepresentation vrImplementTurnRadius = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrImplementTurnRadius];
 
-        public static readonly NumericRepresentation LastBaleFlakesperBale = (NumericRepresentation)RepresentationManager.Instance.Representations[211];
+        public static readonly VariableRepresentation vrInteriorHeadlandOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrInteriorHeadlandOffset];
 
-        public static readonly NumericRepresentation LastBaleAverageMoisture = (NumericRepresentation)RepresentationManager.Instance.Representations[212];
+        public static readonly VariableRepresentation vrPhysicalImplementWidth = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPhysicalImplementWidth];
 
-        public static readonly NumericRepresentation LastBaleAverageStrokesperFlake = (NumericRepresentation)RepresentationManager.Instance.Representations[213];
+        public static readonly VariableRepresentation vrImplementLength = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrImplementLength];
 
-        public static readonly NumericRepresentation LifetimeBaleCount = (NumericRepresentation)RepresentationManager.Instance.Representations[214];
+        public static readonly VariableRepresentation vrImplementFrontOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrImplementFrontOffset];
 
-        public static readonly NumericRepresentation LifetimeWorkingHours = (NumericRepresentation)RepresentationManager.Instance.Representations[215];
+        public static readonly VariableRepresentation vrGPSToNonSteeringAxleOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrGPSToNonSteeringAxleOffset];
 
-        public static readonly NumericRepresentation ActualBaleHydraulicPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[216];
+        public static readonly VariableRepresentation vrNonSteeringAxleToConnectionOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrNonSteeringAxleToConnectionOffset];
 
-        public static readonly NumericRepresentation LastBaleAverageHydraulicPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[217];
+        public static readonly VariableRepresentation vrLateralControlPointToConnectionOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLateralControlPointToConnectionOffset];
 
-        public static readonly NumericRepresentation SetpointBaleCompressionPlungerLoad = (NumericRepresentation)RepresentationManager.Instance.Representations[218];
+        public static readonly VariableRepresentation vrInlineControlPointToConnectionOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrInlineControlPointToConnectionOffset];
 
-        public static readonly NumericRepresentation ActualBaleCompressionPlungerLoad = (NumericRepresentation)RepresentationManager.Instance.Representations[219];
+        public static readonly VariableRepresentation vrInRowSteerLimitation = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrInRowSteerLimitation];
 
-        public static readonly NumericRepresentation LastBaleAverageBaleCompressionPlungerLoad = (NumericRepresentation)RepresentationManager.Instance.Representations[220];
+        public static readonly VariableRepresentation vrSlopeCompensation = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSlopeCompensation];
 
-        public static readonly NumericRepresentation LastBaleAppliedPreservative = (NumericRepresentation)RepresentationManager.Instance.Representations[221];
+        public static readonly VariableRepresentation vrInlineConnectionPointToReceiverOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrInlineConnectionPointToReceiverOffset];
 
-        public static readonly NumericRepresentation LastBaleTagNumber = (NumericRepresentation)RepresentationManager.Instance.Representations[222];
+        public static readonly VariableRepresentation vrLateralConnectionPointToReceiverOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLateralConnectionPointToReceiverOffset];
 
-        public static readonly NumericRepresentation LastBaleMass = (NumericRepresentation)RepresentationManager.Instance.Representations[223];
+        public static readonly VariableRepresentation vrImplementReceiverHeight = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrImplementReceiverHeight];
 
-        public static readonly NumericRepresentation DeltaT = (NumericRepresentation)RepresentationManager.Instance.Representations[224];
+        public static readonly VariableRepresentation vrStarfireHeight = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrStarfireHeight];
 
-        public static readonly NumericRepresentation SetpointWorkingLength = (NumericRepresentation)RepresentationManager.Instance.Representations[225];
+        public static readonly VariableRepresentation vrStarfireForeAft = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrStarfireForeAft];
 
-        public static readonly NumericRepresentation ActualWorkingLength = (NumericRepresentation)RepresentationManager.Instance.Representations[226];
+        public static readonly VariableRepresentation vrBoundaryDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrBoundaryDistance];
 
-        public static readonly NumericRepresentation MinimumWorkingLength = (NumericRepresentation)RepresentationManager.Instance.Representations[227];
+        public static readonly VariableRepresentation vrFeelerHoldOffTime = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFeelerHoldOffTime];
 
-        public static readonly NumericRepresentation MaximumWorkingLength = (NumericRepresentation)RepresentationManager.Instance.Representations[228];
+        public static readonly VariableRepresentation vrRowSensorOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRowSensorOffset];
 
-        public static readonly NumericRepresentation ActualNetWeight = (NumericRepresentation)RepresentationManager.Instance.Representations[229];
+        public static readonly VariableRepresentation vrMapDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrMapDistance];
 
-        public static readonly NumericRepresentation NetWeightState = (NumericRepresentation)RepresentationManager.Instance.Representations[230];
+        public static readonly VariableRepresentation vrYieldTotalMassForage = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldTotalMassForage];
 
-        public static readonly NumericRepresentation SetpointNetWeight = (NumericRepresentation)RepresentationManager.Instance.Representations[231];
+        public static readonly VariableRepresentation vrYieldWetMassFrgPerArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetMassFrgPerArea];
 
-        public static readonly NumericRepresentation ActualGrossWeight = (NumericRepresentation)RepresentationManager.Instance.Representations[232];
+        public static readonly VariableRepresentation vrYieldMassFrgPerArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldMassFrgPerArea];
 
-        public static readonly NumericRepresentation GrossWeightState = (NumericRepresentation)RepresentationManager.Instance.Representations[233];
+        public static readonly VariableRepresentation vrModuleDiameter = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrModuleDiameter];
 
-        public static readonly NumericRepresentation MinimumGrossWeight = (NumericRepresentation)RepresentationManager.Instance.Representations[234];
+        public static readonly VariableRepresentation vrModuleWeight = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrModuleWeight];
 
-        public static readonly NumericRepresentation MaximumGrossWeight = (NumericRepresentation)RepresentationManager.Instance.Representations[235];
+        public static readonly VariableRepresentation vrYieldMassForage = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldMassForage];
 
-        public static readonly NumericRepresentation ThresherEngagementTotalTime = (NumericRepresentation)RepresentationManager.Instance.Representations[236];
+        public static readonly VariableRepresentation vrSurveyTimeInterval = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSurveyTimeInterval];
 
-        public static readonly NumericRepresentation ActualHeaderWorkingHeightStatus = (NumericRepresentation)RepresentationManager.Instance.Representations[237];
+        public static readonly VariableRepresentation vrSurveyDistanceInterval = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSurveyDistanceInterval];
 
-        public static readonly NumericRepresentation ActualHeaderRotationalSpeedStatus = (NumericRepresentation)RepresentationManager.Instance.Representations[238];
+        public static readonly VariableRepresentation vrSurveyFrequencyInterval = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSurveyFrequencyInterval];
 
-        public static readonly NumericRepresentation YieldHoldStatus = (NumericRepresentation)RepresentationManager.Instance.Representations[239];
+        public static readonly VariableRepresentation vrVDOP = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrVDOP];
 
-        public static readonly NumericRepresentation ActualUnLoadingSystemStatus = (NumericRepresentation)RepresentationManager.Instance.Representations[240];
+        public static readonly VariableRepresentation vrPitchAngle = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPitchAngle];
 
-        public static readonly NumericRepresentation CropTemperature = (NumericRepresentation)RepresentationManager.Instance.Representations[241];
+        public static readonly VariableRepresentation vrRollAngle = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRollAngle];
 
-        public static readonly NumericRepresentation SetpointSieveClearance = (NumericRepresentation)RepresentationManager.Instance.Representations[242];
+        public static readonly VariableRepresentation vrEndTurnOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrEndTurnOffset];
 
-        public static readonly NumericRepresentation ActualSieveClearance = (NumericRepresentation)RepresentationManager.Instance.Representations[243];
+        public static readonly VariableRepresentation vrLeveeDrop = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLeveeDrop];
 
-        public static readonly NumericRepresentation MinimumSieveClearance = (NumericRepresentation)RepresentationManager.Instance.Representations[244];
+        public static readonly VariableRepresentation vrYieldWetMassForage = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetMassForage];
 
-        public static readonly NumericRepresentation MaximumSieveClearance = (NumericRepresentation)RepresentationManager.Instance.Representations[245];
+        public static readonly VariableRepresentation vrYieldTotalWetMassForage = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldTotalWetMassForage];
 
-        public static readonly NumericRepresentation SetpointChafferClearance = (NumericRepresentation)RepresentationManager.Instance.Representations[246];
+        public static readonly VariableRepresentation vrYieldMassMinForage = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldMassMinForage];
 
-        public static readonly NumericRepresentation ActualChafferClearance = (NumericRepresentation)RepresentationManager.Instance.Representations[247];
+        public static readonly VariableRepresentation vrYieldMassMaxForage = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldMassMaxForage];
 
-        public static readonly NumericRepresentation MinimumChafferClearance = (NumericRepresentation)RepresentationManager.Instance.Representations[248];
+        public static readonly VariableRepresentation vrYieldMassPerAreaMinForage = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldMassPerAreaMinForage];
 
-        public static readonly NumericRepresentation MaximumChafferClearance = (NumericRepresentation)RepresentationManager.Instance.Representations[249];
+        public static readonly VariableRepresentation vrYieldMassPerAreaMaxForage = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldMassPerAreaMaxForage];
 
-        public static readonly NumericRepresentation SetpointConcaveClearance = (NumericRepresentation)RepresentationManager.Instance.Representations[250];
+        public static readonly VariableRepresentation vrYieldWetMassMinForage = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetMassMinForage];
 
-        public static readonly NumericRepresentation ActualConcaveClearance = (NumericRepresentation)RepresentationManager.Instance.Representations[251];
+        public static readonly VariableRepresentation vrYieldWetMassMaxForage = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetMassMaxForage];
 
-        public static readonly NumericRepresentation MinimumConcaveClearance = (NumericRepresentation)RepresentationManager.Instance.Representations[252];
+        public static readonly VariableRepresentation vrYieldWetMassPerAreaMinForage = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetMassPerAreaMinForage];
 
-        public static readonly NumericRepresentation MaximumConcaveClearance = (NumericRepresentation)RepresentationManager.Instance.Representations[253];
+        public static readonly VariableRepresentation vrYieldWetMassPerAreaMaxForage = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldWetMassPerAreaMaxForage];
 
-        public static readonly NumericRepresentation SetpointSeparationFanRotationalSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations[254];
+        public static readonly VariableRepresentation vrInoculantDosingTotal = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrInoculantDosingTotal];
 
-        public static readonly NumericRepresentation ActualSeparationFanRotationalSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations[255];
+        public static readonly VariableRepresentation vrForageMassProductivity = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrForageMassProductivity];
 
-        public static readonly NumericRepresentation MinimumSeparationFanRotationalSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations[256];
+        public static readonly VariableRepresentation vrGear = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrGear];
 
-        public static readonly NumericRepresentation MaximumSeparationFanRotationalSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations[257];
+        public static readonly VariableRepresentation vrVerticalAccuracyIndicator = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrVerticalAccuracyIndicator];
 
-        public static readonly NumericRepresentation HydraulicOilTemperature = (NumericRepresentation)RepresentationManager.Instance.Representations[258];
+        public static readonly VariableRepresentation vrInlineRearConnectionPointToConnectionPointOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrInlineRearConnectionPointToConnectionPointOffset];
 
-        public static readonly NumericRepresentation YieldLagIgnoreTime = (NumericRepresentation)RepresentationManager.Instance.Representations[259];
+        public static readonly VariableRepresentation vrLateralRearConnectionPointToConnectionPointOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLateralRearConnectionPointToConnectionPointOffset];
 
-        public static readonly NumericRepresentation YieldLeadIgnoreTime = (NumericRepresentation)RepresentationManager.Instance.Representations[260];
+        public static readonly VariableRepresentation vrMachineVerticalReceiverOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrMachineVerticalReceiverOffset];
 
-        public static readonly NumericRepresentation AverageYieldMassPerTime = (NumericRepresentation)RepresentationManager.Instance.Representations[261];
+        public static readonly VariableRepresentation vrImplementVerticalReceiverToCuttingEdgeOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrImplementVerticalReceiverToCuttingEdgeOffset];
 
-        public static readonly NumericRepresentation AverageCropMoisture = (NumericRepresentation)RepresentationManager.Instance.Representations[262];
+        public static readonly VariableRepresentation vrImplementVerticalCuttingEdgeToGroundOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrImplementVerticalCuttingEdgeToGroundOffset];
 
-        public static readonly NumericRepresentation AverageYieldMassPerArea = (NumericRepresentation)RepresentationManager.Instance.Representations[263];
+        public static readonly VariableRepresentation vrVerticalProfileGridSize = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrVerticalProfileGridSize];
 
-        public static readonly NumericRepresentation ConnectorPivotXOffset = (NumericRepresentation)RepresentationManager.Instance.Representations[264];
+        public static readonly VariableRepresentation vrHorizontalProfileGridSize = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrHorizontalProfileGridSize];
 
-        public static readonly NumericRepresentation RemainingArea = (NumericRepresentation)RepresentationManager.Instance.Representations[265];
+        public static readonly VariableRepresentation vrLinearFitDrainSlope = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLinearFitDrainSlope];
 
-        public static readonly NumericRepresentation LifetimeApplicationTotalMass = (NumericRepresentation)RepresentationManager.Instance.Representations[266];
+        public static readonly VariableRepresentation vrMaxBestFitDrainCutDepth = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrMaxBestFitDrainCutDepth];
 
-        public static readonly NumericRepresentation LifetimeApplicationTotalCount = (NumericRepresentation)RepresentationManager.Instance.Representations[267];
+        public static readonly VariableRepresentation vrMinBestFitDrainCutDepth = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrMinBestFitDrainCutDepth];
 
-        public static readonly NumericRepresentation LifetimeYieldTotalVolume = (NumericRepresentation)RepresentationManager.Instance.Representations[268];
+        public static readonly VariableRepresentation vrRoverDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRoverDistance];
 
-        public static readonly NumericRepresentation LifetimeYieldTotalMass = (NumericRepresentation)RepresentationManager.Instance.Representations[269];
+        public static readonly VariableRepresentation vrPositiveLeveeElevationOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPositiveLeveeElevationOffset];
 
-        public static readonly NumericRepresentation LifetimeYieldTotalCount = (NumericRepresentation)RepresentationManager.Instance.Representations[270];
+        public static readonly VariableRepresentation vrNegativeLeveeElevationOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrNegativeLeveeElevationOffset];
 
-        public static readonly NumericRepresentation LifetimeTotalArea = (NumericRepresentation)RepresentationManager.Instance.Representations[271];
+        public static readonly VariableRepresentation vrLeveeDial = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLeveeDial];
 
-        public static readonly NumericRepresentation LifetimeTotalDistance = (NumericRepresentation)RepresentationManager.Instance.Representations[272];
+        public static readonly VariableRepresentation vrGPSAccuracy = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrGPSAccuracy];
 
-        public static readonly NumericRepresentation LifetimeIneffectiveTotalDistance = (NumericRepresentation)RepresentationManager.Instance.Representations[273];
+        public static readonly VariableRepresentation vrGPSVerticalAccuracy = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrGPSVerticalAccuracy];
 
-        public static readonly NumericRepresentation LifetimeEffectiveTotalTime = (NumericRepresentation)RepresentationManager.Instance.Representations[274];
+        public static readonly VariableRepresentation vrFlagArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFlagArea];
 
-        public static readonly NumericRepresentation LifetimeIneffectiveTotalTime = (NumericRepresentation)RepresentationManager.Instance.Representations[275];
+        public static readonly VariableRepresentation vrNormalizedMapPercent = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrNormalizedMapPercent];
 
-        public static readonly NumericRepresentation LifetimeFuelConsumption = (NumericRepresentation)RepresentationManager.Instance.Representations[276];
+        public static readonly VariableRepresentation vrRowFinderDisableTime = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRowFinderDisableTime];
 
-        public static readonly NumericRepresentation LifetimeAverageFuelConsumptionperTime = (NumericRepresentation)RepresentationManager.Instance.Representations[277];
+        public static readonly VariableRepresentation vrSeedsPerBag = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedsPerBag];
 
-        public static readonly NumericRepresentation LifetimeAverageFuelConsumptionperArea = (NumericRepresentation)RepresentationManager.Instance.Representations[278];
+        public static readonly VariableRepresentation vrSeedsPerSack = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedsPerSack];
 
-        public static readonly NumericRepresentation LifetimeYieldTotalDryMass = (NumericRepresentation)RepresentationManager.Instance.Representations[279];
+        public static readonly VariableRepresentation vrCommodityPricePerBag = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCommodityPricePerBag];
 
-        public static readonly NumericRepresentation LifetimeYieldTotalSeedCottonMass = (NumericRepresentation)RepresentationManager.Instance.Representations[280];
+        public static readonly VariableRepresentation vrMassPerBag = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrMassPerBag];
 
-        public static readonly NumericRepresentation LifetimeYieldTotalLintCottonMass = (NumericRepresentation)RepresentationManager.Instance.Representations[281];
+        public static readonly VariableRepresentation vrMassPerSack = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrMassPerSack];
 
-        public static readonly NumericRepresentation LifetimeThreshingEngagementTotalTime = (NumericRepresentation)RepresentationManager.Instance.Representations[282];
+        public static readonly VariableRepresentation vrSeedLoadQuantityContainer = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedLoadQuantityContainer];
 
-        public static readonly NumericRepresentation PrecutTotalCount = (NumericRepresentation)RepresentationManager.Instance.Representations[283];
+        public static readonly VariableRepresentation vrSeedLoadQuantitySack = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedLoadQuantitySack];
 
-        public static readonly NumericRepresentation UncutTotalCount = (NumericRepresentation)RepresentationManager.Instance.Representations[284];
+        public static readonly VariableRepresentation vrCutVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCutVolume];
 
-        public static readonly NumericRepresentation LifetimePrecutTotalCount = (NumericRepresentation)RepresentationManager.Instance.Representations[285];
+        public static readonly VariableRepresentation vrMaxBestFitDrainSlope = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrMaxBestFitDrainSlope];
 
-        public static readonly NumericRepresentation LifetimeUncutTotalCount = (NumericRepresentation)RepresentationManager.Instance.Representations[286];
+        public static readonly VariableRepresentation vrMinBestFitDrainSlope = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrMinBestFitDrainSlope];
 
-        public static readonly NumericRepresentation SetpointPrescriptionMode = (NumericRepresentation)RepresentationManager.Instance.Representations[287];
+        public static readonly VariableRepresentation vrLinearFitDrainOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLinearFitDrainOffset];
 
-        public static readonly NumericRepresentation ActualPrescriptionMode = (NumericRepresentation)RepresentationManager.Instance.Representations[288];
+        public static readonly VariableRepresentation vrFlagLength = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFlagLength];
 
-        public static readonly NumericRepresentation SetpointWorkState = (NumericRepresentation)RepresentationManager.Instance.Representations[289];
+        public static readonly VariableRepresentation vrVerticalAccuracyBarStepSize = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrVerticalAccuracyBarStepSize];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState116 = (NumericRepresentation)RepresentationManager.Instance.Representations[290];
+        public static readonly VariableRepresentation vrRowGuidanceSensorOffset = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRowGuidanceSensorOffset];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState1732 = (NumericRepresentation)RepresentationManager.Instance.Representations[291];
+        public static readonly VariableRepresentation vrTankFillSessionArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTankFillSessionArea];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState3348 = (NumericRepresentation)RepresentationManager.Instance.Representations[292];
+        public static readonly VariableRepresentation vrTankVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTankVolume];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState4964 = (NumericRepresentation)RepresentationManager.Instance.Representations[293];
+        public static readonly VariableRepresentation vrCargoWeightMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCargoWeightMass];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState6580 = (NumericRepresentation)RepresentationManager.Instance.Representations[294];
+        public static readonly VariableRepresentation vrCargoWeightVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCargoWeightVolume];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState8196 = (NumericRepresentation)RepresentationManager.Instance.Representations[295];
+        public static readonly VariableRepresentation vrTankVolumePercentage = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTankVolumePercentage];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState97112 = (NumericRepresentation)RepresentationManager.Instance.Representations[296];
+        public static readonly VariableRepresentation vrEngineHours = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrEngineHours];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState113128 = (NumericRepresentation)RepresentationManager.Instance.Representations[297];
+        public static readonly VariableRepresentation vrFuelAmount = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFuelAmount];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState129144 = (NumericRepresentation)RepresentationManager.Instance.Representations[298];
+        public static readonly VariableRepresentation vrBufferZone = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrBufferZone];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState145160 = (NumericRepresentation)RepresentationManager.Instance.Representations[299];
+        public static readonly VariableRepresentation vrWaitingTime = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrWaitingTime];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState161176 = (NumericRepresentation)RepresentationManager.Instance.Representations[300];
+        public static readonly VariableRepresentation vrProductContent = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrProductContent];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState177192 = (NumericRepresentation)RepresentationManager.Instance.Representations[301];
+        public static readonly VariableRepresentation vrActiveIngredientMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrActiveIngredientMass];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState193208 = (NumericRepresentation)RepresentationManager.Instance.Representations[302];
+        public static readonly VariableRepresentation vrActiveIngredientVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrActiveIngredientVolume];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState209224 = (NumericRepresentation)RepresentationManager.Instance.Representations[303];
+        public static readonly VariableRepresentation vrProductLimitIndicationCount = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrProductLimitIndicationCount];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState225240 = (NumericRepresentation)RepresentationManager.Instance.Representations[304];
+        public static readonly VariableRepresentation vrProductLimitIndicationPercent = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrProductLimitIndicationPercent];
 
-        public static readonly NumericRepresentation SetpointCondensedWorkState241256 = (NumericRepresentation)RepresentationManager.Instance.Representations[305];
+        public static readonly VariableRepresentation vrThousandCropWeight = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrThousandCropWeight];
 
-        public static readonly NumericRepresentation TrueRotationPointXOffset = (NumericRepresentation)RepresentationManager.Instance.Representations[306];
+        public static readonly VariableRepresentation vrPrimingInfoVolPerMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPrimingInfoVolPerMass];
 
-        public static readonly NumericRepresentation TrueRotationPointYOffset = (NumericRepresentation)RepresentationManager.Instance.Representations[307];
+        public static readonly VariableRepresentation vrPrimingInfoMassPerMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPrimingInfoMassPerMass];
 
-        public static readonly NumericRepresentation ActualPercentageApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[308];
+        public static readonly VariableRepresentation vrActiveIngredientVolPerVol = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrActiveIngredientVolPerVol];
 
-        public static readonly NumericRepresentation MinimumPercentageApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[309];
+        public static readonly VariableRepresentation vrGerminationRate = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrGerminationRate];
 
-        public static readonly NumericRepresentation MaximumPercentageApplicationRate = (NumericRepresentation)RepresentationManager.Instance.Representations[310];
+        public static readonly VariableRepresentation vrProvidedAmountVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrProvidedAmountVolume];
 
-        public static readonly NumericRepresentation RelativeYieldPotential = (NumericRepresentation)RepresentationManager.Instance.Representations[311];
+        public static readonly VariableRepresentation vrProvidedAmountMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrProvidedAmountMass];
 
-        public static readonly NumericRepresentation MinimumRelativeYieldPotential = (NumericRepresentation)RepresentationManager.Instance.Representations[312];
+        public static readonly VariableRepresentation vrTimeUntilEmpty = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTimeUntilEmpty];
 
-        public static readonly NumericRepresentation MaximumRelativeYieldPotential = (NumericRepresentation)RepresentationManager.Instance.Representations[313];
+        public static readonly VariableRepresentation vrBatteryVoltage = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrBatteryVoltage];
 
-        public static readonly NumericRepresentation ActualPercentageCropDryMatter = (NumericRepresentation)RepresentationManager.Instance.Representations[314];
+        public static readonly VariableRepresentation vrEngineCoolantTemperature = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrEngineCoolantTemperature];
 
-        public static readonly NumericRepresentation AveragePercentageCropDryMatter = (NumericRepresentation)RepresentationManager.Instance.Representations[315];
+        public static readonly VariableRepresentation vrEngineOilPressure = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrEngineOilPressure];
 
-        public static readonly NumericRepresentation EffectiveTotalFuelConsumption = (NumericRepresentation)RepresentationManager.Instance.Representations[316];
+        public static readonly VariableRepresentation vrHydraulicOilTemperature = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrHydraulicOilTemperature];
 
-        public static readonly NumericRepresentation IneffectiveTotalFuelConsumption = (NumericRepresentation)RepresentationManager.Instance.Representations[317];
+        public static readonly VariableRepresentation vrEngineSpeed = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrEngineSpeed];
 
-        public static readonly NumericRepresentation EffectiveTotalDieselExhaustFluidConsumption = (NumericRepresentation)RepresentationManager.Instance.Representations[318];
+        public static readonly VariableRepresentation vrAirBrakePressure = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAirBrakePressure];
 
-        public static readonly NumericRepresentation IneffectiveTotalDieselExhaustFluidConsumption = (NumericRepresentation)RepresentationManager.Instance.Representations[319];
+        public static readonly VariableRepresentation vrAmbientAirTemperature = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAmbientAirTemperature];
 
-        public static readonly NumericRepresentation LastloadedWeight = (NumericRepresentation)RepresentationManager.Instance.Representations[320];
+        public static readonly VariableRepresentation vrLFLateralNudgeExtent = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLFLateralNudgeExtent];
 
-        public static readonly NumericRepresentation LastunloadedWeight = (NumericRepresentation)RepresentationManager.Instance.Representations[321];
+        public static readonly VariableRepresentation vrLFInlineNudgeExtent = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLFInlineNudgeExtent];
 
-        public static readonly NumericRepresentation LoadIdentificationNumber = (NumericRepresentation)RepresentationManager.Instance.Representations[322];
+        public static readonly VariableRepresentation vrTransportDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTransportDistance];
 
-        public static readonly NumericRepresentation UnloadIdentificationNumber = (NumericRepresentation)RepresentationManager.Instance.Representations[323];
+        public static readonly VariableRepresentation vrIngredientDensity = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrIngredientDensity];
 
-        public static readonly NumericRepresentation ChopperEngagementTotalTime = (NumericRepresentation)RepresentationManager.Instance.Representations[324];
+        public static readonly VariableRepresentation vrProvidedAmountTotalMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrProvidedAmountTotalMass];
 
-        public static readonly NumericRepresentation LifetimeApplicationTotalVolume = (NumericRepresentation)RepresentationManager.Instance.Representations[325];
+        public static readonly VariableRepresentation vrProvidedAmountTotalVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrProvidedAmountTotalVolume];
 
-        public static readonly NumericRepresentation MinimumHeaderSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations[328];
+        public static readonly VariableRepresentation vrActiveIngredientMassPerMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrActiveIngredientMassPerMass];
 
-        public static readonly NumericRepresentation MaximumHeaderSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations[329];
+        public static readonly VariableRepresentation vrSeedSpacing = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeedSpacing];
 
-        public static readonly NumericRepresentation SetpointCuttingdrumspeed = (NumericRepresentation)RepresentationManager.Instance.Representations[330];
+        public static readonly VariableRepresentation vrDownForceMargin = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrDownForceMargin];
 
-        public static readonly NumericRepresentation ActualCuttingdrumspeed = (NumericRepresentation)RepresentationManager.Instance.Representations[331];
+        public static readonly VariableRepresentation vrTransmissionOilTemperature = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTransmissionOilTemperature];
 
-        public static readonly NumericRepresentation MaximumCuttingdrumspeed = (NumericRepresentation)RepresentationManager.Instance.Representations[333];
+        public static readonly VariableRepresentation vrPricePerContainer = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPricePerContainer];
 
-        public static readonly NumericRepresentation OperatingHoursSinceLastSharpening = (NumericRepresentation)RepresentationManager.Instance.Representations[334];
+        public static readonly VariableRepresentation vrPricePerBushel = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPricePerBushel];
 
-        public static readonly NumericRepresentation FrontPTOhours = (NumericRepresentation)RepresentationManager.Instance.Representations[335];
+        public static readonly VariableRepresentation vrPricePerBag = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPricePerBag];
 
-        public static readonly NumericRepresentation RearPTOhours = (NumericRepresentation)RepresentationManager.Instance.Representations[336];
+        public static readonly VariableRepresentation vrPricePerSack = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPricePerSack];
 
-        public static readonly NumericRepresentation LifetimeFrontPTOhours = (NumericRepresentation)RepresentationManager.Instance.Representations[337];
+        public static readonly VariableRepresentation vrPriceSolutionLiquid = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPriceSolutionLiquid];
 
-        public static readonly NumericRepresentation LifetimeRearPTOHours = (NumericRepresentation)RepresentationManager.Instance.Representations[338];
+        public static readonly VariableRepresentation vrPriceSolutionDry = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPriceSolutionDry];
 
-        public static readonly NumericRepresentation EffectiveLoadingTime = (NumericRepresentation)RepresentationManager.Instance.Representations[339];
+        public static readonly VariableRepresentation vrPriceSolutionGas = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPriceSolutionGas];
 
-        public static readonly NumericRepresentation EffectiveUnloadingTime = (NumericRepresentation)RepresentationManager.Instance.Representations[340];
+        public static readonly VariableRepresentation vrPricePerTime = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPricePerTime];
 
-        public static readonly NumericRepresentation SetpointGrainKernelCrackerGap = (NumericRepresentation)RepresentationManager.Instance.Representations[341];
+        public static readonly VariableRepresentation vrPricePerArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPricePerArea];
 
-        public static readonly NumericRepresentation ActualGrainKernelCrackerGap = (NumericRepresentation)RepresentationManager.Instance.Representations[342];
+        public static readonly VariableRepresentation vrPricePerField = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPricePerField];
 
-        public static readonly NumericRepresentation MinimumGrainKernelCrackerGap = (NumericRepresentation)RepresentationManager.Instance.Representations[343];
+        public static readonly VariableRepresentation vrPricePerBale = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPricePerBale];
 
-        public static readonly NumericRepresentation MaximumGrainKernelCrackerGap = (NumericRepresentation)RepresentationManager.Instance.Representations[344];
+        public static readonly VariableRepresentation vrPricePerMassCrop = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPricePerMassCrop];
 
-        public static readonly NumericRepresentation SetpointSwathingWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[345];
+        public static readonly VariableRepresentation vrPricePerMassCotton = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPricePerMassCotton];
 
-        public static readonly NumericRepresentation ActualSwathingWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[346];
+        public static readonly VariableRepresentation vrMeasuredWeight = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrMeasuredWeight];
 
-        public static readonly NumericRepresentation MinimumSwathingWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[347];
+        public static readonly VariableRepresentation vrBaleSize = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrBaleSize];
 
-        public static readonly NumericRepresentation MaximumSwathingWidth = (NumericRepresentation)RepresentationManager.Instance.Representations[348];
+        public static readonly VariableRepresentation vrBaleTotal = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrBaleTotal];
 
-        public static readonly NumericRepresentation NozzleDriftReduction = (NumericRepresentation)RepresentationManager.Instance.Representations[349];
+        public static readonly VariableRepresentation vrLookAheadTime = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrLookAheadTime];
 
-        public static readonly NumericRepresentation FunctionType = (NumericRepresentation)RepresentationManager.Instance.Representations[350];
+        public static readonly VariableRepresentation vrTankNumber = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTankNumber];
 
-        public static readonly NumericRepresentation ApplicationTotalVolumeinml = (NumericRepresentation)RepresentationManager.Instance.Representations[351];
+        public static readonly VariableRepresentation vrImplementInGroundTurnRadius = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrImplementInGroundTurnRadius];
 
-        public static readonly NumericRepresentation ApplicationTotalMassingramg = (NumericRepresentation)RepresentationManager.Instance.Representations[352];
+        public static readonly VariableRepresentation vrDeltaT = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrDeltaT];
 
-        public static readonly NumericRepresentation TotalApplicationofNitrogen = (NumericRepresentation)RepresentationManager.Instance.Representations[353];
+        public static readonly VariableRepresentation vrCountPerArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCountPerArea];
 
-        public static readonly NumericRepresentation TotalApplicationofAmmonium = (NumericRepresentation)RepresentationManager.Instance.Representations[354];
+        public static readonly VariableRepresentation vrConstituentCrudeProtein = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentCrudeProtein];
 
-        public static readonly NumericRepresentation TotalApplicationofPhosphor = (NumericRepresentation)RepresentationManager.Instance.Representations[355];
+        public static readonly VariableRepresentation vrConstituentStarch = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentStarch];
 
-        public static readonly NumericRepresentation TotalApplicationofPotassium = (NumericRepresentation)RepresentationManager.Instance.Representations[356];
+        public static readonly VariableRepresentation vrConstituentAcidDetergentFiber = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentAcidDetergentFiber];
 
-        public static readonly NumericRepresentation TotalApplicationofDryMatter = (NumericRepresentation)RepresentationManager.Instance.Representations[357];
+        public static readonly VariableRepresentation vrConstituentNeutralDetergentFiber = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentNeutralDetergentFiber];
 
-        public static readonly NumericRepresentation AverageDryYieldMassPerTime = (NumericRepresentation)RepresentationManager.Instance.Representations[358];
+        public static readonly VariableRepresentation vrConstituentSugar = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentSugar];
 
-        public static readonly NumericRepresentation AverageDryYieldMassPerArea = (NumericRepresentation)RepresentationManager.Instance.Representations[359];
+        public static readonly VariableRepresentation vrConstituentAsh = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentAsh];
 
-        public static readonly NumericRepresentation LastBaleSize = (NumericRepresentation)RepresentationManager.Instance.Representations[360];
+        public static readonly VariableRepresentation vrConstituentCrudeFat = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentCrudeFat];
 
-        public static readonly NumericRepresentation LastBaleDensity = (NumericRepresentation)RepresentationManager.Instance.Representations[361];
+        public static readonly VariableRepresentation vrConstituentCrudeFiber = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentCrudeFiber];
 
-        public static readonly NumericRepresentation TotalBaleLength = (NumericRepresentation)RepresentationManager.Instance.Representations[362];
+        public static readonly VariableRepresentation vrConstituentLignin = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentLignin];
 
-        public static readonly NumericRepresentation LastBaleDryMass = (NumericRepresentation)RepresentationManager.Instance.Representations[363];
+        public static readonly VariableRepresentation vrConstituentLactic = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentLactic];
 
-        public static readonly NumericRepresentation ActualFlakeSize = (NumericRepresentation)RepresentationManager.Instance.Representations[364];
+        public static readonly VariableRepresentation vrConstituentAcetic = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentAcetic];
 
-        public static readonly NumericRepresentation SetpointDownforcePressure = (NumericRepresentation)RepresentationManager.Instance.Representations[365];
+        public static readonly VariableRepresentation vrConstituentButyric = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentButyric];
 
-        public static readonly NumericRepresentation ActualDownforcePressure = (NumericRepresentation)RepresentationManager.Instance.Representations[366];
+        public static readonly VariableRepresentation vrConstituentAmmonia = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentAmmonia];
 
-        public static readonly NumericRepresentation CondensedSectionOverrideState116 = (NumericRepresentation)RepresentationManager.Instance.Representations[367];
+        public static readonly VariableRepresentation vrConstituentNonStructuralCarbohydrate = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentNonStructuralCarbohydrate];
 
-        public static readonly NumericRepresentation CondensedSectionOverrideState1732 = (NumericRepresentation)RepresentationManager.Instance.Representations[368];
+        public static readonly VariableRepresentation vrConstituentProteinSolubility = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentProteinSolubility];
 
-        public static readonly NumericRepresentation CondensedSectionOverrideState3348 = (NumericRepresentation)RepresentationManager.Instance.Representations[369];
+        public static readonly VariableRepresentation vrConstituentAdjustedCrudeProtein = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentAdjustedCrudeProtein];
 
-        public static readonly NumericRepresentation CondensedSectionOverrideState4964 = (NumericRepresentation)RepresentationManager.Instance.Representations[370];
+        public static readonly VariableRepresentation vrConstituentRumenUndegradableProtein = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentRumenUndegradableProtein];
 
-        public static readonly NumericRepresentation CondensedSectionOverrideState145160 = (NumericRepresentation)RepresentationManager.Instance.Representations[376];
+        public static readonly VariableRepresentation vrConstituentNonProteinNitrogen = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentNonProteinNitrogen];
 
-        public static readonly NumericRepresentation CondensedSectionOverrideState161176 = (NumericRepresentation)RepresentationManager.Instance.Representations[377];
+        public static readonly VariableRepresentation vrConstituentTotalNitrogenKjeldahl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentTotalNitrogenKjeldahl];
 
-        public static readonly NumericRepresentation CondensedSectionOverrideState177192 = (NumericRepresentation)RepresentationManager.Instance.Representations[378];
+        public static readonly VariableRepresentation vrConstituentNitrogenNitrate = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentNitrogenNitrate];
 
-        public static readonly NumericRepresentation CondensedSectionOverrideState193208 = (NumericRepresentation)RepresentationManager.Instance.Representations[379];
+        public static readonly VariableRepresentation vrConstituentNitrogenAmmonium = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentNitrogenAmmonium];
 
-        public static readonly NumericRepresentation CondensedSectionOverrideState209224 = (NumericRepresentation)RepresentationManager.Instance.Representations[380];
+        public static readonly VariableRepresentation vrConstituentDigestibleFat = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentDigestibleFat];
 
-        public static readonly NumericRepresentation CondensedSectionOverrideState225240 = (NumericRepresentation)RepresentationManager.Instance.Representations[381];
+        public static readonly VariableRepresentation vrConstituentNeutralDetergentFiberDigestibility = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentNeutralDetergentFiberDigestibility];
 
-        public static readonly NumericRepresentation CondensedSectionOverrideState241256 = (NumericRepresentation)RepresentationManager.Instance.Representations[382];
+        public static readonly VariableRepresentation vrConstituentCellulose = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentCellulose];
 
-        public static readonly NumericRepresentation ApparentWindDirection = (NumericRepresentation)RepresentationManager.Instance.Representations[383];
+        public static readonly VariableRepresentation vrConstituentHemicellulose = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentHemicellulose];
 
-        public static readonly NumericRepresentation ApparentWindSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations[384];
+        public static readonly VariableRepresentation vrConstituentTotalDigestibleNutrients = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentTotalDigestibleNutrients];
 
-        public static readonly NumericRepresentation MSLAtmosphericPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[385];
+        public static readonly VariableRepresentation vrConstituentNetEnergyForLactation = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentNetEnergyForLactation];
 
-        public static readonly NumericRepresentation ActualAtmosphericPressure = (NumericRepresentation)RepresentationManager.Instance.Representations[386];
+        public static readonly VariableRepresentation vrConstituentNetEnergyForMaintenance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentNetEnergyForMaintenance];
 
-        public static readonly NumericRepresentation TotalRevolutionsinFractionalRevolutions = (NumericRepresentation)RepresentationManager.Instance.Representations[387];
+        public static readonly VariableRepresentation vrConstituentNetEnergyForGain = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentNetEnergyForGain];
 
-        public static readonly NumericRepresentation TotalRevolutionsinCompleteRevolutions = (NumericRepresentation)RepresentationManager.Instance.Representations[388];
+        public static readonly VariableRepresentation vrConstituentDigestibleEnergy = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentDigestibleEnergy];
 
-        public static readonly NumericRepresentation SetpointRevolutionsspecifiedascountpertime = (NumericRepresentation)RepresentationManager.Instance.Representations[389];
+        public static readonly VariableRepresentation vrConstituentMetabolizableEnergy = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentMetabolizableEnergy];
 
-        public static readonly NumericRepresentation ActualRevolutionsPerTime = (NumericRepresentation)RepresentationManager.Instance.Representations[390];
+        public static readonly VariableRepresentation vrConstituentOil = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentOil];
 
-        public static readonly NumericRepresentation DefaultRevolutionsPerTime = (NumericRepresentation)RepresentationManager.Instance.Representations[391];
+        public static readonly VariableRepresentation vrConstituentSuspendedNitrogen = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentSuspendedNitrogen];
 
-        public static readonly NumericRepresentation MinimumRevolutionsPerTime = (NumericRepresentation)RepresentationManager.Instance.Representations[392];
+        public static readonly VariableRepresentation vrConstituentTotalPhosphorus = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentTotalPhosphorus];
 
-        public static readonly NumericRepresentation MaximumRevolutionsPerTime = (NumericRepresentation)RepresentationManager.Instance.Representations[393];
+        public static readonly VariableRepresentation vrConstituentSuspendedPhosphorus = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentSuspendedPhosphorus];
 
-        public static readonly NumericRepresentation ActualFuelTankContent = (NumericRepresentation)RepresentationManager.Instance.Representations[394];
+        public static readonly VariableRepresentation vrConstituentPotassium = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentPotassium];
 
-        public static readonly NumericRepresentation ActualDieselExhaustFluidTankContent = (NumericRepresentation)RepresentationManager.Instance.Representations[395];
+        public static readonly VariableRepresentation vrConstituentSodium = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentSodium];
 
-        public static readonly NumericRepresentation SetpointSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations[396];
+        public static readonly VariableRepresentation vrConstituentMagnesium = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentMagnesium];
 
-        public static readonly NumericRepresentation ActualSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations[397];
+        public static readonly VariableRepresentation vrConstituentCalcium = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentCalcium];
 
-        public static readonly NumericRepresentation MinimumSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations[398];
+        public static readonly VariableRepresentation vrConstituentSulphur = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentSulphur];
 
-        public static readonly NumericRepresentation MaximumSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations[399];
+        public static readonly VariableRepresentation vrConstituentMoistureReferenceA = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentMoistureReferenceA];
 
-        public static readonly NumericRepresentation SpeedSource = (NumericRepresentation)RepresentationManager.Instance.Representations[400];
+        public static readonly VariableRepresentation vrConstituentMoistureReferenceB = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentMoistureReferenceB];
 
-        public static readonly NumericRepresentation ActualApplicationofNitrogen = (NumericRepresentation)RepresentationManager.Instance.Representations[401];
+        public static readonly VariableRepresentation vrConstituentMoistureReferenceC = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentMoistureReferenceC];
 
-        public static readonly NumericRepresentation ActualapplicationofAmmonium = (NumericRepresentation)RepresentationManager.Instance.Representations[402];
+        public static readonly VariableRepresentation vrConstituentInvalid = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentInvalid];
 
-        public static readonly NumericRepresentation ActualapplicationofPhosphor = (NumericRepresentation)RepresentationManager.Instance.Representations[403];
+        public static readonly VariableRepresentation vrConstituentNitrogenAmmonia = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentNitrogenAmmonia];
 
-        public static readonly NumericRepresentation ActualapplicationofPotassium = (NumericRepresentation)RepresentationManager.Instance.Representations[404];
+        public static readonly VariableRepresentation vrConstituentPhosphorusAllTypes = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrConstituentPhosphorusAllTypes];
 
-        public static readonly NumericRepresentation ActualapplicationofDryMatter = (NumericRepresentation)RepresentationManager.Instance.Representations[405];
+        public static readonly VariableRepresentation vrInoculantDosingRateLow = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrInoculantDosingRateLow];
 
-        public static readonly NumericRepresentation ActualProteinContent = (NumericRepresentation)RepresentationManager.Instance.Representations[406];
+        public static readonly VariableRepresentation vrInoculantDosingRateLowTotal = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrInoculantDosingRateLowTotal];
 
-        public static readonly NumericRepresentation AverageProteinContent = (NumericRepresentation)RepresentationManager.Instance.Representations[407];
+        public static readonly VariableRepresentation vrFuelVolumePerWetMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFuelVolumePerWetMass];
 
-        public static readonly NumericRepresentation AverageCropContamination = (NumericRepresentation)RepresentationManager.Instance.Representations[408];
+        public static readonly VariableRepresentation vrFuelVolumePerDryMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFuelVolumePerDryMass];
 
-        public static readonly NumericRepresentation TotalDieselExhaustFluidConsumption = (NumericRepresentation)RepresentationManager.Instance.Representations[409];
+        public static readonly VariableRepresentation vrWetMassPerFuelVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrWetMassPerFuelVolume];
 
-        public static readonly NumericRepresentation InstantaneousDieselExhaustFluidConsumptionperTime = (NumericRepresentation)RepresentationManager.Instance.Representations[410];
+        public static readonly VariableRepresentation vrDryMassPerFuelVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrDryMassPerFuelVolume];
 
-        public static readonly NumericRepresentation InstantaneousDieselExhaustFluidConsumptionperArea = (NumericRepresentation)RepresentationManager.Instance.Representations[411];
+        public static readonly VariableRepresentation vrManureTotalSolids = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrManureTotalSolids];
 
-        public static readonly NumericRepresentation LifetimeDieselExhaustFluidConsumption = (NumericRepresentation)RepresentationManager.Instance.Representations[412];
+        public static readonly VariableRepresentation vrTillageDepthMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTillageDepthMeasured];
 
-        public static readonly NumericRepresentation LifetimeAverageDieselExhaustFluidConsumptionperTime = (NumericRepresentation)RepresentationManager.Instance.Representations[413];
+        public static readonly VariableRepresentation vrTillageDepthControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTillageDepthControl];
 
-        public static readonly NumericRepresentation LifetimeAverageDieselExhaustFluidConsumptionperArea = (NumericRepresentation)RepresentationManager.Instance.Representations[414];
+        public static readonly VariableRepresentation vrCircleEdgeRadius = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrCircleEdgeRadius];
 
-        public static readonly NumericRepresentation ActualSeedSingulationPercentage = (NumericRepresentation)RepresentationManager.Instance.Representations[415];
+        public static readonly VariableRepresentation vrABCurveRadialShift = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrABCurveRadialShift];
 
-        public static readonly NumericRepresentation AverageSeedSingulationPercentage = (NumericRepresentation)RepresentationManager.Instance.Representations[416];
+        public static readonly VariableRepresentation vrABCurveRadialTotalShift = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrABCurveRadialTotalShift];
 
-        public static readonly NumericRepresentation ActualSeedSkipPercentage = (NumericRepresentation)RepresentationManager.Instance.Representations[417];
+        public static readonly VariableRepresentation vrTillagePressureTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTillagePressureTarget];
 
-        public static readonly NumericRepresentation AverageSeedSkipPercentage = (NumericRepresentation)RepresentationManager.Instance.Representations[418];
+        public static readonly VariableRepresentation vrTillagePressureMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTillagePressureMeasured];
 
-        public static readonly NumericRepresentation ActualSeedMultiplePercentage = (NumericRepresentation)RepresentationManager.Instance.Representations[419];
+        public static readonly VariableRepresentation vrFuelProductivity = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFuelProductivity];
 
-        public static readonly NumericRepresentation AverageSeedMultiplePercentage = (NumericRepresentation)RepresentationManager.Instance.Representations[420];
+        public static readonly VariableRepresentation vrGuidanceShift = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrGuidanceShift];
 
-        public static readonly NumericRepresentation ActualSeedSpacingDeviation = (NumericRepresentation)RepresentationManager.Instance.Representations[421];
+        public static readonly VariableRepresentation vrRemainingABLineDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRemainingABLineDistance];
 
-        public static readonly NumericRepresentation AverageSeedSpacingDeviation = (NumericRepresentation)RepresentationManager.Instance.Representations[422];
+        public static readonly VariableRepresentation vrTrackSpacingGap = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTrackSpacingGap];
 
-        public static readonly NumericRepresentation ActualCoefficientofVariationofSeedSpacingPercentage = (NumericRepresentation)RepresentationManager.Instance.Representations[423];
+        public static readonly VariableRepresentation vrSlowSpeed = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSlowSpeed];
 
-        public static readonly NumericRepresentation AverageCoefficientofVariationofSeedSpacingPercentage = (NumericRepresentation)RepresentationManager.Instance.Representations[424];
+        public static readonly VariableRepresentation vrActualSeedSpacingCV = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrActualSeedSpacingCV];
 
-        public static readonly NumericRepresentation SetpointMaximumAllowedSeedSpacingDeviation = (NumericRepresentation)RepresentationManager.Instance.Representations[425];
+        public static readonly VariableRepresentation vrPlantingSingulation = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPlantingSingulation];
 
-        public static readonly NumericRepresentation SetpointDownforceasForce = (NumericRepresentation)RepresentationManager.Instance.Representations[426];
+        public static readonly VariableRepresentation vrPlantingSkips = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPlantingSkips];
 
-        public static readonly NumericRepresentation ActualDownforceasForce = (NumericRepresentation)RepresentationManager.Instance.Representations[427];
+        public static readonly VariableRepresentation vrPlantingDoubles = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPlantingDoubles];
 
-        public static readonly NumericRepresentation PGNBasedData = (NumericRepresentation)RepresentationManager.Instance.Representations[57342];
+        public static readonly VariableRepresentation vrDownForceApplied = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrDownForceApplied];
+
+        public static readonly VariableRepresentation vrGroundContact = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrGroundContact];
+
+        public static readonly VariableRepresentation vrRideQuality = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRideQuality];
+
+        public static readonly VariableRepresentation vrTillagePressureControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrTillagePressureControl];
+
+        public static readonly VariableRepresentation vrSCTurnOnTime = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSCTurnOnTime];
+
+        public static readonly VariableRepresentation vrSCTurnOffTime = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSCTurnOffTime];
+
+        public static readonly VariableRepresentation vrAppliedYieldLatency = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAppliedYieldLatency];
+
+        public static readonly VariableRepresentation vrAppliedMoistureLatency = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAppliedMoistureLatency];
+
+        public static readonly VariableRepresentation vrHeaderHours = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrHeaderHours];
+
+        public static readonly VariableRepresentation vrSeparatorHours = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSeparatorHours];
+
+        public static readonly VariableRepresentation vrDeltaDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrDeltaDistance];
+
+        public static readonly VariableRepresentation vrDeltaArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrDeltaArea];
+
+        public static readonly VariableRepresentation vrDeltaAppliedVolume = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrDeltaAppliedVolume];
+
+        public static readonly VariableRepresentation vrHarvestWetMassFlow = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrHarvestWetMassFlow];
+
+        public static readonly VariableRepresentation vrSolutionSystemFlowRatePerMinute = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSolutionSystemFlowRatePerMinute];
+
+        public static readonly VariableRepresentation vrSCTuningDistance = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSCTuningDistance];
+
+        public static readonly VariableRepresentation vrSCTuningSpeed = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSCTuningSpeed];
+
+        public static readonly VariableRepresentation vrFanSpeedControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFanSpeedControl];
+
+        public static readonly VariableRepresentation vrFanSpeedTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFanSpeedTarget];
+
+        public static readonly VariableRepresentation vrFanSpeedMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrFanSpeedMeasured];
+
+        public static readonly VariableRepresentation vrThreshingSpeedControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrThreshingSpeedControl];
+
+        public static readonly VariableRepresentation vrThreshingSpeedTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrThreshingSpeedTarget];
+
+        public static readonly VariableRepresentation vrThreshingSpeedMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrThreshingSpeedMeasured];
+
+        public static readonly VariableRepresentation vrThreshingClearanceControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrThreshingClearanceControl];
+
+        public static readonly VariableRepresentation vrThreshingClearanceTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrThreshingClearanceTarget];
+
+        public static readonly VariableRepresentation vrThreshingClearanceMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrThreshingClearanceMeasured];
+
+        public static readonly VariableRepresentation vrChaferPositionControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrChaferPositionControl];
+
+        public static readonly VariableRepresentation vrChafferPositionTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrChafferPositionTarget];
+
+        public static readonly VariableRepresentation vrChafferPositionMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrChafferPositionMeasured];
+
+        public static readonly VariableRepresentation vrSievePositionControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSievePositionControl];
+
+        public static readonly VariableRepresentation vrSievePositionTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSievePositionTarget];
+
+        public static readonly VariableRepresentation vrSievePositionMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrSievePositionMeasured];
+
+        public static readonly VariableRepresentation vrRipperDepthControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRipperDepthControl];
+
+        public static readonly VariableRepresentation vrRipperDepthTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRipperDepthTarget];
+
+        public static readonly VariableRepresentation vrRipperDepthMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrRipperDepthMeasured];
+
+        public static readonly VariableRepresentation vrOpeningDiscDepthControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrOpeningDiscDepthControl];
+
+        public static readonly VariableRepresentation vrOpeningDiscDepthTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrOpeningDiscDepthTarget];
+
+        public static readonly VariableRepresentation vrOpeningDiscDepthMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrOpeningDiscDepthMeasured];
+
+        public static readonly VariableRepresentation vrClosingDiscDepthControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrClosingDiscDepthControl];
+
+        public static readonly VariableRepresentation vrClosingDiscDepthTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrClosingDiscDepthTarget];
+
+        public static readonly VariableRepresentation vrClosingDiscDepthMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrClosingDiscDepthMeasured];
+
+        public static readonly VariableRepresentation vrBasketPressureControl = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrBasketPressureControl];
+
+        public static readonly VariableRepresentation vrBasketPressureTarget = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrBasketPressureTarget];
+
+        public static readonly VariableRepresentation vrBasketPressureMeasured = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrBasketPressureMeasured];
+
+        public static readonly VariableRepresentation vrPrescriptionRateMultiplier = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPrescriptionRateMultiplier];
+
+        public static readonly VariableRepresentation vrPrescriptionLookAheadTime = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPrescriptionLookAheadTime];
+
+        public static readonly VariableRepresentation vrYieldCalibration = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrYieldCalibration];
+
+        public static readonly VariableRepresentation vrAvgYieldWetMassPerArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAvgYieldWetMassPerArea];
+
+        public static readonly VariableRepresentation vrAvgYieldMassPerArea = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAvgYieldMassPerArea];
+
+        public static readonly VariableRepresentation vrAvgHarvestMoisture = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrAvgHarvestMoisture];
+
+        public static readonly VariableRepresentation vrPlantingSkipsCount = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPlantingSkipsCount];
+
+        public static readonly VariableRepresentation vrPlantingDoublesCount = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrPlantingDoublesCount];
+
+        public static readonly VariableRepresentation vrDistanceFromTrack = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrDistanceFromTrack];
+
+        public static readonly VariableRepresentation vrEngineLoadCurrentSpeed = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrEngineLoadCurrentSpeed];
+
+        public static readonly VariableRepresentation vrProductIndex = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrProductIndex];
+
+        public static readonly VariableRepresentation vrDeltaAppRateMass = (VariableRepresentation)RepresentationManager.Instance.Representations[RepresentationTagList.vrDeltaAppRateMass];
 
     }
 }

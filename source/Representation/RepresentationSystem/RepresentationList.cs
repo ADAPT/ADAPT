@@ -1,846 +1,967 @@
-using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Representation.RepresentationSystem
+/*******************************************************************************
+  * Copyright (C) 2015 AgGateway and ADAPT Contributors
+  * Copyright (C) 2015 Deere and Company
+  * All rights reserved. This program and the accompanying materials
+  * are made available under the terms of the Eclipse Public License v1.0
+  * which accompanies this distribution, and is available at
+  * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
+  *
+  * Contributors:
+  *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *******************************************************************************/
+namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public enum RepresentationList 
     {
-        DataDictionaryVersion = 0,
+        dtApplicationMethod = 1001,
 
-        SetpointVolumePerAreaApplicationRate = 1,
+        dtRecordingStatus = 1003,
 
-        ActualVolumePerAreaApplicationRate = 2,
+        dtWindDirection = 1004,
 
-        DefaultVolumePerAreaApplicationRate = 3,
+        dtABLineSaveMethod = 1005,
 
-        MinimumVolumePerAreaApplicationRate = 4,
+        dtSkyCondition = 1006,
 
-        MaximumVolumePerAreaApplicationRate = 5,
+        dtInlineOffsetType = 1007,
 
-        SetpointMassPerAreaApplicationRate = 6,
+        dtLateralOffsetType = 1008,
 
-        ActualMassPerAreaApplicationRate = 7,
+        dtHitchType = 1009,
 
-        DefaultMassPerAreaApplicationRate = 8,
+        dtSoilMoisture = 1010,
 
-        MinimumMassPerAreaApplicationRate = 9,
+        dtSeedingApplicationMethod = 1011,
 
-        MaximumMassPerAreaApplicationRate = 10,
+        dtOperationClass = 1012,
 
-        SetpointCountPerAreaApplicationRate = 11,
+        dtSensorStatus = 1013,
 
-        ActualCountPerAreaApplicationRate = 12,
+        dtPrescriptionState = 1014,
 
-        DefaultCountPerAreaApplicationRate = 13,
+        dtLoadType = 1015,
 
-        MinimumCountPerAreaApplicationRate = 14,
+        dtCottonLoadType = 1016,
 
-        MaximumCountPerAreaApplicationRate = 15,
+        dtCircleSaveMethod = 1017,
 
-        SetpointSpacingApplicationRate = 16,
+        dtMaterialClass = 1018,
 
-        ActualSpacingApplicationRate = 17,
+        dtFunctionType = 1019,
 
-        DefaultSpacingApplicationRate = 18,
+        dtFunctionHitchChange = 1020,
 
-        MinimumSpacingApplicationRate = 19,
+        dtFunctionPTOChange = 1021,
 
-        MaximumSpacingApplicationRate = 20,
+        dtFunctionDiffLocChange = 1022,
 
-        SetpointVolumePerVolumeApplicationRate = 21,
+        dtFunction4WDChange = 1023,
 
-        ActualVolumePerVolumeApplicationRate = 22,
+        dtFunctionSCVChange = 1024,
 
-        DefaultVolumePerVolumeApplicationRate = 23,
+        dtFunctionFieldCruiseChange = 1041,
 
-        MinimumVolumePerVolumeApplicationRate = 24,
+        dtGuidanceBoundaryBehavior = 1025,
 
-        MaximumVolumePerVolumeApplicationRate = 25,
+        dtSkipPattern = 1026,
 
-        SetpointMassPerMassApplicationRate = 26,
+        dtCoverageSetting = 1027,
 
-        ActualMassPerMassApplicationRate = 27,
+        dtSignalType = 1028,
 
-        DefaultMassPerMassApplicationRate = 28,
+        dtFunctionAPSChange = 1029,
 
-        MinimumMassPerMassApplicationRate = 29,
+        dtNavigationType = 1030,
 
-        MaximumMassPerMassApplicationRate = 30,
+        dtNonSteeringAxleLocation = 1031,
 
-        SetpointVolumePerMassApplicationRate = 31,
+        dtSPFHLoadType = 1032,
 
-        ActualVolumePerMassApplicationRate = 32,
+        dtSurfaceWaterManagementOpType = 1033,
 
-        DefaultVolumePerMassApplicationRate = 33,
+        dtFunctionFrontPTOChange = 1034,
 
-        MinimumVolumePerMassApplicationRate = 34,
+        dtDrainType = 1035,
 
-        MaximumVolumePerMassApplicationRate = 35,
+        dtHeaderStatus = 1036,
 
-        SetpointVolumePerTimeApplicationRate = 36,
+        dtTicketStatus = 1037,
 
-        ActualVolumePerTimeApplicationRate = 37,
+        dtProductDetailsProductType = 1038,
 
-        DefaultVolumePerTimeApplicationRate = 38,
+        dtProductDetailsSeedType = 1039,
 
-        MinimumVolumePerTimeApplicationRate = 39,
+        dtTicketType = 1040,
 
-        MaximumVolumePerTimeApplicationRate = 40,
+        dtMeasuredWeightStatus = 1042,
 
-        SetpointMassPerTimeApplicationRate = 41,
+        dtProjectionType = 1043,
 
-        ActualMassPerTimeApplicationRate = 42,
+        dtTillageType = 1044,
 
-        DefaultMassPerTimeApplicationRate = 43,
+        dtUnloadingAugerState = 1500,
 
-        MinimumMassPerTimeApplicationRate = 44,
+        dtJDArmedDWS = 1501,
 
-        MaximumMassPerTimeApplicationRate = 45,
+        dtSectionControlMasterState = 1502,
 
-        SetpointCountPerTimeApplicationRate = 46,
+        dtSprayerSystemOperatingMode = 1503,
 
-        ActualCountPerTimeApplicationRate = 47,
+        dtPrescriptionControlMasterState = 1504,
 
-        DefaultCountPerTimeApplicationRate = 48,
+        vrABRowSpacing = 1,
 
-        MinimumCountPerTimeApplicationRate = 49,
+        vrABShiftTrack = 2,
 
-        MaximumCountPerTimeApplicationRate = 50,
+        vrABLineHeading = 3,
 
-        SetpointTillageDepth = 51,
+        vrCommodityPricePerBale = 4,
 
-        ActualTillageDepth = 52,
+        vrCommodityPricePerVolume = 5,
 
-        DefaultTillageDepth = 53,
+        vrHarvestMoisture = 6,
 
-        MinimumTillageDepth = 54,
+        vrCropWeightBale = 7,
 
-        MaximumTillageDepth = 55,
+        vrCropWeightVolume = 8,
 
-        SetpointSeedingDepth = 56,
+        vrFSAArea = 9,
 
-        ActualSeedingDepth = 57,
+        vrReportedFieldArea = 10,
 
-        DefaultSeedingDepth = 58,
+        vrSpatialFieldArea = 11,
 
-        MinimumSeedingDepth = 59,
+        vrYieldTotalMass = 12,
 
-        MaximumSeedingDepth = 60,
+        vrYieldTotalVolume = 13,
 
-        SetpointWorkingHeight = 61,
+        vrHeadlandOffset = 14,
 
-        ActualWorkingHeight = 62,
+        vrLatency = 15,
 
-        DefaultWorkingHeight = 63,
+        vrLoadArea = 16,
 
-        MinimumWorkingHeight = 64,
+        vrMassPer1000Seeds = 17,
 
-        MaximumWorkingHeight = 65,
+        vrMassPerContainer = 18,
 
-        SetpointWorkingWidth = 66,
+        vrMaturity = 19,
 
-        ActualWorkingWidth = 67,
+        vrEquipmentWidth = 20,
 
-        DefaultWorkingWidth = 68,
+        vrTrackSpacing = 21,
 
-        MinimumWorkingWidth = 69,
+        vrPathOverlap = 22,
 
-        MaximumWorkingWidth = 70,
+        vrInlineOffset = 23,
 
-        SetpointVolumeContent = 71,
+        vrLateralOffset = 24,
 
-        ActualVolumeContent = 72,
+        vrTotalInlineDistance = 280,
 
-        MaximumVolumeContent = 73,
+        vrTotalLateralDistance = 281,
 
-        SetpointMassContent = 74,
+        vrVerticalOffset = 25,
 
-        ActualMassContent = 75,
+        vrSectionWidth = 26,
 
-        MaximumMassContent = 76,
+        vrSeedGerminationPercent = 27,
 
-        SetpointCountContent = 77,
+        vrSeedLoadQuantity = 28,
 
-        ActualCountContent = 78,
+        vrSeedsPerContainer = 29,
 
-        MaximumCountContent = 79,
+        vrSeedsPerMass = 30,
 
-        ApplicationTotalVolumeinL = 80,
+        vrSolutionRateLiquid = 31,
 
-        ApplicationTotalMassinkg = 81,
+        vrSolutionRateMass = 32,
 
-        ApplicationTotalCount = 82,
+        vrSwathWidth = 33,
 
-        VolumePerAreaYield = 83,
+        vrYieldBale = 34,
 
-        MassPerAreaYield = 84,
+        vrYieldBalePerArea = 35,
 
-        CountPerAreaYield = 85,
+        vrYieldWetMass = 36,
 
-        VolumePerTimeYield = 86,
+        vrYieldWetMassPerArea = 37,
 
-        MassPerTimeYield = 87,
+        vrYieldWetVolume = 38,
 
-        CountPerTimeYield = 88,
+        vrYieldWetVolumePerArea = 39,
 
-        YieldTotalVolume = 89,
+        vrYieldMass = 40,
 
-        YieldTotalMass = 90,
+        vrYieldMassPerArea = 41,
 
-        YieldTotalCount = 91,
+        vrYieldVolume = 42,
 
-        VolumePerAreaCropLoss = 92,
+        vrYieldVolumePerArea = 43,
 
-        MassPerAreaCropLoss = 93,
+        vrAppRateMassMetered = 44,
 
-        CountPerAreaCropLoss = 94,
+        vrAppRateMassMeasured = 45,
 
-        VolumePerTimeCropLoss = 95,
+        vrAppRateMassControl = 46,
 
-        MassPerTimeCropLoss = 96,
+        vrAppRateMassTarget = 47,
 
-        CountPerTimeCropLoss = 97,
+        vrAppRateVolumeMetered = 48,
 
-        PercentageCropLoss = 98,
+        vrAppRateVolumeMeasured = 49,
 
-        CropMoisture = 99,
+        vrAppRateVolumeControl = 50,
 
-        CropContamination = 100,
+        vrAppRateVolumeTarget = 51,
 
-        SetpointBaleWidth = 101,
+        vrAppRateVolumePerHour = 600,
 
-        ActualBaleWidth = 102,
+        vrAppHeightTarget = 52,
 
-        DefaultBaleWidth = 103,
+        vrTillageDepthTarget = 53,
 
-        MinimumBaleWidth = 104,
+        vrSeedRateMassMetered = 54,
 
-        MaximumBaleWidth = 105,
+        vrSeedRateMassMeasured = 55,
 
-        SetpointBaleHeight = 106,
+        vrSeedRateMassControl = 56,
 
-        ActualBaleHeight = 107,
+        vrSeedRateMassTarget = 57,
 
-        DefaultBaleHeight = 108,
+        vrSeedRateSeedsMetered = 58,
 
-        MinimumBaleHeight = 109,
+        vrSeedRateSeedsMeasured = 59,
 
-        MaximumBaleHeight = 110,
+        vrSeedRateSeedsControl = 60,
 
-        SetpointBaleSize = 111,
+        vrSeedRateSeedsTarget = 61,
 
-        ActualBaleSize = 112,
+        vrSeedDepthTarget = 62,
 
-        DefaultBaleSize = 113,
+        vrRelativeHumidity = 63,
 
-        MinimumBaleSize = 114,
+        vrAirTemperature = 64,
 
-        MaximumBaleSize = 115,
+        vrWindSpeed = 65,
 
-        TotalArea = 116,
+        vrSoilTemperature = 66,
 
-        EffectiveTotalDistance = 117,
+        vrTotalAreaCovered = 67,
 
-        IneffectiveTotalDistance = 118,
+        vrTotalQuantityAppliedMass = 68,
 
-        EffectiveTotalTime = 119,
+        vrTotalQuantityAppliedVolume = 69,
 
-        IneffectiveTotalTime = 120,
+        vrTotalSeedQuantityAppliedSeed = 70,
 
-        ProductDensityMassPerVolume = 121,
+        vrTotalSeedQuantityAppliedMass = 71,
 
-        ProductDensityMassPerCount = 122,
+        vrTotalOperationTime = 72,
 
-        ProductDensityVolumePerCount = 123,
+        vrHeading = 73,
 
-        AuxiliaryValveScalingExtend = 124,
+        vrElevation = 74,
 
-        AuxiliaryValveScalingRetract = 125,
+        vrStandardPayableMoisture = 75,
 
-        AuxiliaryValveRampExtendUp = 126,
+        vrLatitude = 76,
 
-        AuxiliaryValveRampExtendDown = 127,
+        vrLongitude = 77,
 
-        AuxiliaryValveRampRetractUp = 128,
+        vrDistanceTraveled = 78,
 
-        AuxiliaryValveRampRetractDown = 129,
+        vrNonLogTime = 80,
 
-        AuxiliaryValveFloatThreshold = 130,
+        vrVehicleSpeed = 81,
 
-        AuxiliaryValveProgressivityExtend = 131,
+        vrDeltaTime = 82,
 
-        AuxiliaryValveProgressivityRetract = 132,
+        vrEquipmentLogFrequency = 84,
 
-        AuxiliaryValveInvertPorts = 133,
+        vrCommodityPricePerArea = 85,
 
-        DeviceElementOffsetX = 134,
+        vrCommodityPricePerYield = 86,
 
-        DeviceElementOffsetY = 135,
+        vrCommodityPricePerContainer = 87,
 
-        DeviceElementOffsetZ = 136,
+        vrRowWidth = 88,
 
-        DeviceVolumeCapacity = 137,
+        vrGuidanceSmallShift = 89,
 
-        DeviceMassCapacity = 138,
+        vrGuidanceLargeShift = 90,
 
-        DeviceCountCapacity = 139,
+        vrPathAccuracyIndicator = 91,
 
-        SetpointPercentageApplicationRate = 140,
+        vrTrackToneBeginningDistance = 92,
 
-        ActualWorkState = 141,
+        vrLeadCompensation = 93,
 
-        PhysicalSetpointTimeLatency = 142,
+        vrAccuracyBarStepSize = 94,
 
-        PhysicalActualValueTimeLatency = 143,
+        vrTurnDistance = 95,
 
-        YawAngle = 144,
+        vrTrackSpacingRows = 96,
 
-        RollAngle = 145,
+        vrEquipmentWidthRows = 97,
 
-        PitchAngle = 146,
+        vrPathOverlapRows = 98,
 
-        LogCount = 147,
+        vrFuelRatePerHour = 99,
 
-        TotalFuelConsumption = 148,
+        vrFuelTotal = 100,
 
-        InstantaneousFuelConsumptionperTime = 149,
+        vrTotalYieldVolume = 101,
 
-        InstantaneousFuelConsumptionperArea = 150,
+        vrTotalYieldMass = 102,
 
-        InstantaneousAreaPerTimeCapacity = 151,
+        vrTotalYieldWetMass = 103,
 
-        ActualNormalizedDifferenceVegetativeIndexNDVI = 153,
+        vrTotalYieldWetVolume = 104,
 
-        PhysicalObjectLength = 154,
+        vrTotalYieldBale = 105,
 
-        PhysicalObjectWidth = 155,
+        vrHarvestMinimumMoisture = 106,
 
-        PhysicalObjectHeight = 156,
+        vrHarvestMaximumMoisture = 107,
 
-        ConnectorType = 157,
+        vrYieldMassMinimum = 108,
 
-        PrescriptionControlState = 158,
+        vrYieldMassMaximum = 109,
 
-        NumberofSubUnitsperSection = 159,
+        vrYieldMassPerAreaMinimum = 110,
 
-        SectionControlState = 160,
+        vrYieldMassPerAreaMaximum = 111,
 
-        ActualCondensedWorkState116 = 161,
+        vrYieldVolumeMinimum = 112,
 
-        ActualCondensedWorkState1732 = 162,
+        vrYieldVolumeMaximum = 113,
 
-        ActualCondensedWorkState3348 = 163,
+        vrYieldVolumePerAreaMinimum = 114,
 
-        ActualCondensedWorkState4964 = 164,
+        vrYieldVolumePerAreaMaximum = 115,
 
-        ActualCondensedWorkState6580 = 165,
+        vrYieldBaleMinimum = 116,
 
-        ActualCondensedWorkState8196 = 166,
+        vrYieldBaleMaximum = 117,
 
-        ActualCondensedWorkState97112 = 167,
+        vrYieldBalePerAreaMinimum = 118,
 
-        ActualCondensedWorkState113128 = 168,
+        vrYieldWetMassMinimum = 119,
 
-        ActualCondensedWorkState129144 = 169,
+        vrYieldWetMassMaximum = 120,
 
-        ActualCondensedWorkState145160 = 170,
+        vrYieldWetMassPerAreaMinumum = 121,
 
-        ActualCondensedWorkState161176 = 171,
+        vrYieldWetMassPerAreaMaximum = 122,
 
-        ActualCondensedWorkState177192 = 172,
+        vrYieldWetVolumeMinimum = 123,
 
-        ActualCondensedWorkState193208 = 173,
+        vrYieldWetVolumeMaximum = 124,
 
-        ActualCondensedWorkState209224 = 174,
+        vrYieldWetVolumePerAreaMinimum = 125,
 
-        ActualCondensedWorkState225240 = 175,
+        vrYieldWetVolumePerAreaMaximum = 126,
 
-        ActualCondensedWorkState241256 = 176,
+        vrEastShiftComponent = 127,
 
-        Actuallengthofcut = 177,
+        vrNorthShiftComponent = 128,
 
-        ElementTypeInstance = 178,
+        vrTurnout = 129,
 
-        ActualCulturalPractice = 179,
+        vrTaskArea = 130,
 
-        DeviceReferencePointDRPtoGrounddistance = 180,
+        vrBoundaryOffset = 131,
 
-        DryMassPerAreaYield = 181,
+        vrSpatialFieldPerimeter = 132,
 
-        DryMassPerTimeYield = 182,
+        vrAreaProductivity = 133,
 
-        YieldTotalDryMass = 183,
+        vrMassProductivity = 134,
 
-        ReferenceMoistureForDryMass = 184,
+        vrVolumeProductivity = 135,
 
-        SeedCottonMassPerAreaYield = 185,
+        vrBaleProductivity = 136,
 
-        LintCottonMassPerAreaYield = 186,
+        vrSeedsProductivity = 137,
 
-        SeedCottonMassPerTimeYield = 187,
+        vrRadiusOffset = 138,
 
-        LintCottonMassPerTimeYield = 188,
+        vrRadialHeading = 139,
 
-        YieldTotalSeedCottonMass = 189,
+        vrRadiusShift = 140,
 
-        YieldTotalLintCottonMass = 190,
+        vrRecordingTimeRemaining = 141,
 
-        LintTurnoutPercentage = 191,
+        vrReceiverOffset = 142,
 
-        Ambienttemperature = 192,
+        vrManagementZoneClipping = 143,
 
-        SetpointProductPressure = 193,
+        vrTrackRowWidth = 144,
 
-        ActualProductPressure = 194,
+        vrInoculantDosing = 145,
 
-        MinimumProductPressure = 195,
+        vrLengthOfCut = 146,
 
-        MaximumProductPressure = 196,
+        vrHeadland = 147,
 
-        SetpointPumpOutputPressure = 197,
+        vrGenericZoneValue = 148,
 
-        ActualPumpOutputPressure = 198,
+        vrHarvestMoistureTotal = 149,
 
-        MinimumPumpOutputPressure = 199,
+        vrHarvestMoistureCount = 150,
 
-        MaximumPumpOutputPressure = 200,
+        vrCutWidthIncrement = 151,
 
-        SetpointTankAgitationPressure = 201,
+        vrCutWidthIncrementRows = 152,
 
-        ActualTankAgitationPressure = 202,
+        vrBoundaryIntersectionDistance = 153,
 
-        MinimumTankAgitationPressure = 203,
+        vrSequenceActivationDistance = 155,
 
-        MaximumTankAgitationPressure = 204,
+        vrSequenceActivationTime = 156,
 
-        SCTurnOnTime = 205,
+        vrSequenceOffsetDistance = 157,
 
-        SCTurnOffTime = 206,
+        vrFunctionOffsetDistance = 158,
 
-        Windspeed = 207,
+        vrFunctionValueSpeed = 159,
 
-        Winddirection = 208,
+        vrFunctionValueEngineSpeed = 276,
 
-        AirHumidity = 209,
+        vrMachineTurnRadius = 160,
 
-        Skyconditions = 210,
+        vrImplementTurnRadius = 161,
 
-        LastBaleFlakesperBale = 211,
+        vrInteriorHeadlandOffset = 162,
 
-        LastBaleAverageMoisture = 212,
+        vrPhysicalImplementWidth = 163,
 
-        LastBaleAverageStrokesperFlake = 213,
+        vrImplementLength = 164,
 
-        LifetimeBaleCount = 214,
+        vrImplementFrontOffset = 165,
 
-        LifetimeWorkingHours = 215,
+        vrGPSToNonSteeringAxleOffset = 166,
 
-        ActualBaleHydraulicPressure = 216,
+        vrNonSteeringAxleToConnectionOffset = 167,
 
-        LastBaleAverageHydraulicPressure = 217,
+        vrLateralControlPointToConnectionOffset = 168,
 
-        SetpointBaleCompressionPlungerLoad = 218,
+        vrInlineControlPointToConnectionOffset = 169,
 
-        ActualBaleCompressionPlungerLoad = 219,
+        vrInRowSteerLimitation = 170,
 
-        LastBaleAverageBaleCompressionPlungerLoad = 220,
+        vrSlopeCompensation = 171,
 
-        LastBaleAppliedPreservative = 221,
+        vrInlineConnectionPointToReceiverOffset = 172,
 
-        LastBaleTagNumber = 222,
+        vrLateralConnectionPointToReceiverOffset = 173,
 
-        LastBaleMass = 223,
+        vrImplementReceiverHeight = 174,
 
-        DeltaT = 224,
+        vrStarfireHeight = 175,
 
-        SetpointWorkingLength = 225,
+        vrStarfireForeAft = 176,
 
-        ActualWorkingLength = 226,
+        vrBoundaryDistance = 177,
 
-        MinimumWorkingLength = 227,
+        vrFeelerHoldOffTime = 178,
 
-        MaximumWorkingLength = 228,
+        vrRowSensorOffset = 179,
 
-        ActualNetWeight = 229,
+        vrMapDistance = 180,
 
-        NetWeightState = 230,
+        vrYieldTotalMassForage = 181,
 
-        SetpointNetWeight = 231,
+        vrYieldWetMassFrgPerArea = 182,
 
-        ActualGrossWeight = 232,
+        vrYieldMassFrgPerArea = 183,
 
-        GrossWeightState = 233,
+        vrModuleDiameter = 184,
 
-        MinimumGrossWeight = 234,
+        vrModuleWeight = 185,
 
-        MaximumGrossWeight = 235,
+        vrYieldMassForage = 186,
 
-        ThresherEngagementTotalTime = 236,
+        vrSurveyTimeInterval = 187,
 
-        ActualHeaderWorkingHeightStatus = 237,
+        vrSurveyDistanceInterval = 188,
 
-        ActualHeaderRotationalSpeedStatus = 238,
+        vrSurveyFrequencyInterval = 189,
 
-        YieldHoldStatus = 239,
+        vrVDOP = 190,
 
-        ActualUnLoadingSystemStatus = 240,
+        vrPitchAngle = 191,
 
-        CropTemperature = 241,
+        vrRollAngle = 192,
 
-        SetpointSieveClearance = 242,
+        vrEndTurnOffset = 193,
 
-        ActualSieveClearance = 243,
+        vrLeveeDrop = 194,
 
-        MinimumSieveClearance = 244,
+        vrYieldWetMassForage = 195,
 
-        MaximumSieveClearance = 245,
+        vrYieldTotalWetMassForage = 196,
 
-        SetpointChafferClearance = 246,
+        vrYieldMassMinForage = 197,
 
-        ActualChafferClearance = 247,
+        vrYieldMassMaxForage = 198,
 
-        MinimumChafferClearance = 248,
+        vrYieldMassPerAreaMinForage = 199,
 
-        MaximumChafferClearance = 249,
+        vrYieldMassPerAreaMaxForage = 200,
 
-        SetpointConcaveClearance = 250,
+        vrYieldWetMassMinForage = 201,
 
-        ActualConcaveClearance = 251,
+        vrYieldWetMassMaxForage = 202,
 
-        MinimumConcaveClearance = 252,
+        vrYieldWetMassPerAreaMinForage = 203,
 
-        MaximumConcaveClearance = 253,
+        vrYieldWetMassPerAreaMaxForage = 204,
 
-        SetpointSeparationFanRotationalSpeed = 254,
+        vrInoculantDosingTotal = 205,
 
-        ActualSeparationFanRotationalSpeed = 255,
+        vrForageMassProductivity = 206,
 
-        MinimumSeparationFanRotationalSpeed = 256,
+        vrGear = 207,
 
-        MaximumSeparationFanRotationalSpeed = 257,
+        vrVerticalAccuracyIndicator = 208,
 
-        HydraulicOilTemperature = 258,
+        vrInlineRearConnectionPointToConnectionPointOffset = 209,
 
-        YieldLagIgnoreTime = 259,
+        vrLateralRearConnectionPointToConnectionPointOffset = 210,
 
-        YieldLeadIgnoreTime = 260,
+        vrMachineVerticalReceiverOffset = 211,
 
-        AverageYieldMassPerTime = 261,
+        vrImplementVerticalReceiverToCuttingEdgeOffset = 212,
 
-        AverageCropMoisture = 262,
+        vrImplementVerticalCuttingEdgeToGroundOffset = 213,
 
-        AverageYieldMassPerArea = 263,
+        vrVerticalProfileGridSize = 214,
 
-        ConnectorPivotXOffset = 264,
+        vrHorizontalProfileGridSize = 215,
 
-        RemainingArea = 265,
+        vrLinearFitDrainSlope = 216,
 
-        LifetimeApplicationTotalMass = 266,
+        vrMaxBestFitDrainCutDepth = 217,
 
-        LifetimeApplicationTotalCount = 267,
+        vrMinBestFitDrainCutDepth = 218,
 
-        LifetimeYieldTotalVolume = 268,
+        vrRoverDistance = 219,
 
-        LifetimeYieldTotalMass = 269,
+        vrPositiveLeveeElevationOffset = 220,
 
-        LifetimeYieldTotalCount = 270,
+        vrNegativeLeveeElevationOffset = 221,
 
-        LifetimeTotalArea = 271,
+        vrLeveeDial = 222,
 
-        LifetimeTotalDistance = 272,
+        vrGPSAccuracy = 223,
 
-        LifetimeIneffectiveTotalDistance = 273,
+        vrGPSVerticalAccuracy = 224,
 
-        LifetimeEffectiveTotalTime = 274,
+        vrFlagArea = 225,
 
-        LifetimeIneffectiveTotalTime = 275,
+        vrNormalizedMapPercent = 226,
 
-        LifetimeFuelConsumption = 276,
+        vrRowFinderDisableTime = 227,
 
-        LifetimeAverageFuelConsumptionperTime = 277,
+        vrSeedsPerBag = 228,
 
-        LifetimeAverageFuelConsumptionperArea = 278,
+        vrSeedsPerSack = 229,
 
-        LifetimeYieldTotalDryMass = 279,
+        vrCommodityPricePerBag = 230,
 
-        LifetimeYieldTotalSeedCottonMass = 280,
+        vrMassPerBag = 231,
 
-        LifetimeYieldTotalLintCottonMass = 281,
+        vrMassPerSack = 232,
 
-        LifetimeThreshingEngagementTotalTime = 282,
+        vrSeedLoadQuantityContainer = 233,
 
-        PrecutTotalCount = 283,
+        vrSeedLoadQuantitySack = 234,
 
-        UncutTotalCount = 284,
+        vrCutVolume = 235,
 
-        LifetimePrecutTotalCount = 285,
+        vrMaxBestFitDrainSlope = 236,
 
-        LifetimeUncutTotalCount = 286,
+        vrMinBestFitDrainSlope = 237,
 
-        SetpointPrescriptionMode = 287,
+        vrLinearFitDrainOffset = 238,
 
-        ActualPrescriptionMode = 288,
+        vrFlagLength = 239,
 
-        SetpointWorkState = 289,
+        vrVerticalAccuracyBarStepSize = 240,
 
-        SetpointCondensedWorkState116 = 290,
+        vrRowGuidanceSensorOffset = 241,
 
-        SetpointCondensedWorkState1732 = 291,
+        vrTankFillSessionArea = 242,
 
-        SetpointCondensedWorkState3348 = 292,
+        vrTankVolume = 243,
 
-        SetpointCondensedWorkState4964 = 293,
+        vrCargoWeightMass = 244,
 
-        SetpointCondensedWorkState6580 = 294,
+        vrCargoWeightVolume = 245,
 
-        SetpointCondensedWorkState8196 = 295,
+        vrTankVolumePercentage = 246,
 
-        SetpointCondensedWorkState97112 = 296,
+        vrEngineHours = 247,
 
-        SetpointCondensedWorkState113128 = 297,
+        vrFuelAmount = 248,
 
-        SetpointCondensedWorkState129144 = 298,
+        vrBufferZone = 249,
 
-        SetpointCondensedWorkState145160 = 299,
+        vrWaitingTime = 250,
 
-        SetpointCondensedWorkState161176 = 300,
+        vrProductContent = 251,
 
-        SetpointCondensedWorkState177192 = 301,
+        vrActiveIngredientMass = 252,
 
-        SetpointCondensedWorkState193208 = 302,
+        vrActiveIngredientVolume = 253,
 
-        SetpointCondensedWorkState209224 = 303,
+        vrProductLimitIndicationCount = 254,
 
-        SetpointCondensedWorkState225240 = 304,
+        vrProductLimitIndicationPercent = 255,
 
-        SetpointCondensedWorkState241256 = 305,
+        vrThousandCropWeight = 256,
 
-        TrueRotationPointXOffset = 306,
+        vrPrimingInfoVolPerMass = 257,
 
-        TrueRotationPointYOffset = 307,
+        vrPrimingInfoMassPerMass = 258,
 
-        ActualPercentageApplicationRate = 308,
+        vrActiveIngredientVolPerVol = 259,
 
-        MinimumPercentageApplicationRate = 309,
+        vrGerminationRate = 260,
 
-        MaximumPercentageApplicationRate = 310,
+        vrProvidedAmountVolume = 261,
 
-        RelativeYieldPotential = 311,
+        vrProvidedAmountMass = 262,
 
-        MinimumRelativeYieldPotential = 312,
+        vrTimeUntilEmpty = 263,
 
-        MaximumRelativeYieldPotential = 313,
+        vrBatteryVoltage = 266,
 
-        ActualPercentageCropDryMatter = 314,
+        vrEngineCoolantTemperature = 267,
 
-        AveragePercentageCropDryMatter = 315,
+        vrEngineOilPressure = 268,
 
-        EffectiveTotalFuelConsumption = 316,
+        vrHydraulicOilTemperature = 269,
 
-        IneffectiveTotalFuelConsumption = 317,
+        vrEngineSpeed = 271,
 
-        EffectiveTotalDieselExhaustFluidConsumption = 318,
+        vrAirBrakePressure = 272,
 
-        IneffectiveTotalDieselExhaustFluidConsumption = 319,
+        vrAmbientAirTemperature = 273,
 
-        LastloadedWeight = 320,
+        vrLFLateralNudgeExtent = 277,
 
-        LastunloadedWeight = 321,
+        vrLFInlineNudgeExtent = 278,
 
-        LoadIdentificationNumber = 322,
+        vrTransportDistance = 279,
 
-        UnloadIdentificationNumber = 323,
+        vrIngredientDensity = 282,
 
-        ChopperEngagementTotalTime = 324,
+        vrProvidedAmountTotalMass = 283,
 
-        LifetimeApplicationTotalVolume = 325,
+        vrProvidedAmountTotalVolume = 284,
 
-        MinimumHeaderSpeed = 328,
+        vrActiveIngredientMassPerMass = 285,
 
-        MaximumHeaderSpeed = 329,
+        vrSeedSpacing = 286,
 
-        SetpointCuttingdrumspeed = 330,
+        vrDownForceMargin = 287,
 
-        ActualCuttingdrumspeed = 331,
+        vrTransmissionOilTemperature = 288,
 
-        MaximumCuttingdrumspeed = 333,
+        vrPricePerContainer = 289,
 
-        OperatingHoursSinceLastSharpening = 334,
+        vrPricePerBushel = 290,
 
-        FrontPTOhours = 335,
+        vrPricePerBag = 291,
 
-        RearPTOhours = 336,
+        vrPricePerSack = 292,
 
-        LifetimeFrontPTOhours = 337,
+        vrPriceSolutionLiquid = 293,
 
-        LifetimeRearPTOHours = 338,
+        vrPriceSolutionDry = 294,
 
-        EffectiveLoadingTime = 339,
+        vrPriceSolutionGas = 295,
 
-        EffectiveUnloadingTime = 340,
+        vrPricePerTime = 296,
 
-        SetpointGrainKernelCrackerGap = 341,
+        vrPricePerArea = 297,
 
-        ActualGrainKernelCrackerGap = 342,
+        vrPricePerField = 298,
 
-        MinimumGrainKernelCrackerGap = 343,
+        vrPricePerBale = 299,
 
-        MaximumGrainKernelCrackerGap = 344,
+        vrPricePerMassCrop = 300,
 
-        SetpointSwathingWidth = 345,
+        vrPricePerMassCotton = 301,
 
-        ActualSwathingWidth = 346,
+        vrMeasuredWeight = 302,
 
-        MinimumSwathingWidth = 347,
+        vrBaleSize = 303,
 
-        MaximumSwathingWidth = 348,
+        vrBaleTotal = 304,
 
-        NozzleDriftReduction = 349,
+        vrLookAheadTime = 305,
 
-        FunctionType = 350,
+        vrTankNumber = 306,
 
-        ApplicationTotalVolumeinml = 351,
+        vrImplementInGroundTurnRadius = 307,
 
-        ApplicationTotalMassingramg = 352,
+        vrDeltaT = 308,
 
-        TotalApplicationofNitrogen = 353,
+        vrCountPerArea = 309,
 
-        TotalApplicationofAmmonium = 354,
+        vrConstituentCrudeProtein = 310,
 
-        TotalApplicationofPhosphor = 355,
+        vrConstituentStarch = 311,
 
-        TotalApplicationofPotassium = 356,
+        vrConstituentAcidDetergentFiber = 312,
 
-        TotalApplicationofDryMatter = 357,
+        vrConstituentNeutralDetergentFiber = 313,
 
-        AverageDryYieldMassPerTime = 358,
+        vrConstituentSugar = 314,
 
-        AverageDryYieldMassPerArea = 359,
+        vrConstituentAsh = 315,
 
-        LastBaleSize = 360,
+        vrConstituentCrudeFat = 316,
 
-        LastBaleDensity = 361,
+        vrConstituentCrudeFiber = 317,
 
-        TotalBaleLength = 362,
+        vrConstituentLignin = 318,
 
-        LastBaleDryMass = 363,
+        vrConstituentLactic = 319,
 
-        ActualFlakeSize = 364,
+        vrConstituentAcetic = 320,
 
-        SetpointDownforcePressure = 365,
+        vrConstituentButyric = 321,
 
-        ActualDownforcePressure = 366,
+        vrConstituentAmmonia = 322,
 
-        CondensedSectionOverrideState116 = 367,
+        vrConstituentNonStructuralCarbohydrate = 323,
 
-        CondensedSectionOverrideState1732 = 368,
+        vrConstituentProteinSolubility = 324,
 
-        CondensedSectionOverrideState3348 = 369,
+        vrConstituentAdjustedCrudeProtein = 325,
 
-        CondensedSectionOverrideState4964 = 370,
+        vrConstituentRumenUndegradableProtein = 326,
 
-        CondensedSectionOverrideState145160 = 376,
+        vrConstituentNonProteinNitrogen = 327,
 
-        CondensedSectionOverrideState161176 = 377,
+        vrConstituentTotalNitrogenKjeldahl = 328,
 
-        CondensedSectionOverrideState177192 = 378,
+        vrConstituentNitrogenNitrate = 329,
 
-        CondensedSectionOverrideState193208 = 379,
+        vrConstituentNitrogenAmmonium = 330,
 
-        CondensedSectionOverrideState209224 = 380,
+        vrConstituentDigestibleFat = 331,
 
-        CondensedSectionOverrideState225240 = 381,
+        vrConstituentNeutralDetergentFiberDigestibility = 332,
 
-        CondensedSectionOverrideState241256 = 382,
+        vrConstituentCellulose = 333,
 
-        ApparentWindDirection = 383,
+        vrConstituentHemicellulose = 334,
 
-        ApparentWindSpeed = 384,
+        vrConstituentTotalDigestibleNutrients = 335,
 
-        MSLAtmosphericPressure = 385,
+        vrConstituentNetEnergyForLactation = 336,
 
-        ActualAtmosphericPressure = 386,
+        vrConstituentNetEnergyForMaintenance = 337,
 
-        TotalRevolutionsinFractionalRevolutions = 387,
+        vrConstituentNetEnergyForGain = 338,
 
-        TotalRevolutionsinCompleteRevolutions = 388,
+        vrConstituentDigestibleEnergy = 339,
 
-        SetpointRevolutionsspecifiedascountpertime = 389,
+        vrConstituentMetabolizableEnergy = 340,
 
-        ActualRevolutionsPerTime = 390,
+        vrConstituentOil = 341,
 
-        DefaultRevolutionsPerTime = 391,
+        vrConstituentSuspendedNitrogen = 342,
 
-        MinimumRevolutionsPerTime = 392,
+        vrConstituentTotalPhosphorus = 343,
 
-        MaximumRevolutionsPerTime = 393,
+        vrConstituentSuspendedPhosphorus = 344,
 
-        ActualFuelTankContent = 394,
+        vrConstituentPotassium = 345,
 
-        ActualDieselExhaustFluidTankContent = 395,
+        vrConstituentSodium = 346,
 
-        SetpointSpeed = 396,
+        vrConstituentMagnesium = 347,
 
-        ActualSpeed = 397,
+        vrConstituentCalcium = 348,
 
-        MinimumSpeed = 398,
+        vrConstituentSulphur = 349,
 
-        MaximumSpeed = 399,
+        vrConstituentMoistureReferenceA = 350,
 
-        SpeedSource = 400,
+        vrConstituentMoistureReferenceB = 351,
 
-        ActualApplicationofNitrogen = 401,
+        vrConstituentMoistureReferenceC = 352,
 
-        ActualapplicationofAmmonium = 402,
+        vrConstituentInvalid = 353,
 
-        ActualapplicationofPhosphor = 403,
+        vrConstituentNitrogenAmmonia = 354,
 
-        ActualapplicationofPotassium = 404,
+        vrConstituentPhosphorusAllTypes = 355,
 
-        ActualapplicationofDryMatter = 405,
+        vrInoculantDosingRateLow = 356,
 
-        ActualProteinContent = 406,
+        vrInoculantDosingRateLowTotal = 357,
 
-        AverageProteinContent = 407,
+        vrFuelVolumePerWetMass = 358,
 
-        AverageCropContamination = 408,
+        vrFuelVolumePerDryMass = 359,
 
-        TotalDieselExhaustFluidConsumption = 409,
+        vrWetMassPerFuelVolume = 360,
 
-        InstantaneousDieselExhaustFluidConsumptionperTime = 410,
+        vrDryMassPerFuelVolume = 361,
 
-        InstantaneousDieselExhaustFluidConsumptionperArea = 411,
+        vrManureTotalSolids = 362,
 
-        LifetimeDieselExhaustFluidConsumption = 412,
+        vrTillageDepthMeasured = 363,
 
-        LifetimeAverageDieselExhaustFluidConsumptionperTime = 413,
+        vrTillageDepthControl = 364,
 
-        LifetimeAverageDieselExhaustFluidConsumptionperArea = 414,
+        vrCircleEdgeRadius = 365,
 
-        ActualSeedSingulationPercentage = 415,
+        vrABCurveRadialShift = 366,
 
-        AverageSeedSingulationPercentage = 416,
+        vrABCurveRadialTotalShift = 367,
 
-        ActualSeedSkipPercentage = 417,
+        vrTillagePressureTarget = 368,
 
-        AverageSeedSkipPercentage = 418,
+        vrTillagePressureMeasured = 369,
 
-        ActualSeedMultiplePercentage = 419,
+        vrFuelProductivity = 370,
 
-        AverageSeedMultiplePercentage = 420,
+        vrGuidanceShift = 371,
 
-        ActualSeedSpacingDeviation = 421,
+        vrRemainingABLineDistance = 372,
 
-        AverageSeedSpacingDeviation = 422,
+        vrTrackSpacingGap = 374,
 
-        ActualCoefficientofVariationofSeedSpacingPercentage = 423,
+        vrSlowSpeed = 375,
 
-        AverageCoefficientofVariationofSeedSpacingPercentage = 424,
+        vrActualSeedSpacingCV = 376,
 
-        SetpointMaximumAllowedSeedSpacingDeviation = 425,
+        vrPlantingSingulation = 377,
 
-        SetpointDownforceasForce = 426,
+        vrPlantingSkips = 378,
 
-        ActualDownforceasForce = 427,
+        vrPlantingDoubles = 379,
 
-        PGNBasedData = 57342,
+        vrDownForceApplied = 380,
+
+        vrGroundContact = 381,
+
+        vrRideQuality = 382,
+
+        vrTillagePressureControl = 383,
+
+        vrSCTurnOnTime = 500,
+
+        vrSCTurnOffTime = 501,
+
+        vrAppliedYieldLatency = 503,
+
+        vrAppliedMoistureLatency = 504,
+
+        vrHeaderHours = 505,
+
+        vrSeparatorHours = 506,
+
+        vrDeltaDistance = 507,
+
+        vrDeltaArea = 508,
+
+        vrDeltaAppliedVolume = 509,
+
+        vrHarvestWetMassFlow = 510,
+
+        vrSolutionSystemFlowRatePerMinute = 511,
+
+        vrSCTuningDistance = 512,
+
+        vrSCTuningSpeed = 513,
+
+        vrFanSpeedControl = 514,
+
+        vrFanSpeedTarget = 515,
+
+        vrFanSpeedMeasured = 516,
+
+        vrThreshingSpeedControl = 517,
+
+        vrThreshingSpeedTarget = 518,
+
+        vrThreshingSpeedMeasured = 519,
+
+        vrThreshingClearanceControl = 520,
+
+        vrThreshingClearanceTarget = 521,
+
+        vrThreshingClearanceMeasured = 522,
+
+        vrChaferPositionControl = 523,
+
+        vrChafferPositionTarget = 524,
+
+        vrChafferPositionMeasured = 525,
+
+        vrSievePositionControl = 526,
+
+        vrSievePositionTarget = 527,
+
+        vrSievePositionMeasured = 528,
+
+        vrRipperDepthControl = 529,
+
+        vrRipperDepthTarget = 530,
+
+        vrRipperDepthMeasured = 531,
+
+        vrOpeningDiscDepthControl = 532,
+
+        vrOpeningDiscDepthTarget = 533,
+
+        vrOpeningDiscDepthMeasured = 534,
+
+        vrClosingDiscDepthControl = 535,
+
+        vrClosingDiscDepthTarget = 536,
+
+        vrClosingDiscDepthMeasured = 537,
+
+        vrBasketPressureControl = 538,
+
+        vrBasketPressureTarget = 539,
+
+        vrBasketPressureMeasured = 540,
+
+        vrPrescriptionRateMultiplier = 541,
+
+        vrPrescriptionLookAheadTime = 542,
+
+        vrYieldCalibration = 543,
+
+        vrAvgYieldWetMassPerArea = 544,
+
+        vrAvgYieldMassPerArea = 545,
+
+        vrAvgHarvestMoisture = 546,
+
+        vrPlantingSkipsCount = 547,
+
+        vrPlantingDoublesCount = 548,
+
+        vrDistanceFromTrack = 549,
+
+        vrEngineLoadCurrentSpeed = 550,
+
+        vrProductIndex = 551,
+
+        vrDeltaAppRateMass = 552,
 
     }
 }

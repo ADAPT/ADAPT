@@ -49,11 +49,55 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RepresentationResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RepresentationSystem\RepresentationCollection.cs" />
-    <Compile Include="RepresentationSystem\RepresentationInstanceList.cs" />
-    <Compile Include="RepresentationSystem\RepresentationList.cs" />
-    <Compile Include="RepresentationSystem\RepresentationLoader.cs" />
-    <Compile Include="RepresentationSystem\RepresentationManager.cs" />
+    <Compile Include="RepresentationSystem\DefinedRepresentation.cs" />
+    <Compile Include="RepresentationSystem\DefinedTypeEnumerationInstanceList.cs" />
+    <Compile Include="RepresentationSystem\DefinedTypeInstanceList.cs" />
+    <Compile Include="RepresentationSystem\DefinedTypeValue.cs" />
+    <Compile Include="RepresentationSystem\EnumerationMember.cs" />
+    <Compile Include="RepresentationSystem\ExtensionMethods\RepresentationExtensions.cs" />
+    <Compile Include="RepresentationSystem\Groups\ApplicationMassDataGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\ApplicationVolumeDataGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\FunctionValueGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\HarvestDataGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\HarvestElevationGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\HarvestForageGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\HarvestMoistureGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\HarvestYieldGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\HarvestYieldMaximumGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\PricePerCottonGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\PricePerEquipmentGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\PricePerForageGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\PricePerGrainForage.cs" />
+    <Compile Include="RepresentationSystem\Groups\PricePerGrainGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\PricePerMiscellaneousItemGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\PricePerOperatorGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\PricePerSeedPackageGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\SeedingMassDataGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\SeedingSeedsDataGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\SeedsMeasuredQuantityGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\SeedsPerPackageSeedsGroup.cs" />
+    <Compile Include="RepresentationSystem\Groups\SeedsPerPackageWeightGroup.cs" />
+    <Compile Include="RepresentationSystem\PricePerGrainForage.cs" />
+    <Compile Include="RepresentationSystem\Representation.cs" />
+    <Compile Include="RepresentationSystem\RepresentationCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RepresentationSystem\RepresentationGroup.cs" />
+    <Compile Include="RepresentationSystem\RepresentationGroupInstanceList.cs" />
+    <Compile Include="RepresentationSystem\RepresentationGroupList.cs" />
+    <Compile Include="RepresentationSystem\RepresentationGroups.cs" />
+    <Compile Include="RepresentationSystem\RepresentationInstanceList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RepresentationSystem\RepresentationList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RepresentationSystem\RepresentationManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RepresentationSystem\RepresentationTagList.cs" />
+    <Compile Include="RepresentationSystem\UnitOfMeasurePreference.cs" />
+    <Compile Include="RepresentationSystem\VariableRepresentation.cs" />
     <Compile Include="UnitSystem\ExtensionMethods\NumericalValueExtensions.cs" />
     <Compile Include="UnitSystem\ExtensionMethods\NumericRepresentationValueExtensions.cs" />
     <Compile Include="UnitSystem\CompositeConversionFactor.cs" />
@@ -108,6 +152,7 @@
       <Name>ApplicationDataModel</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
