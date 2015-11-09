@@ -39,7 +39,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public string Name { get; set; }
         public List<Person> Persons { get; set; } 
         public List<PersonRole> PersonRoles { get; set; }
-        public List<Product> Products { get; set; } 
+        public List<CropVariety> CropVarieties { get; set; }
+        public List<CropProtectionProduct> CropProtectionProducts { get; set; }
+        public List<FertilizerProduct> FertilizerProducts { get; set; }
+        public List<ProductMix> ProductMixes { get; set; }
         public List<ProductMixComponent> ProductMixComponents { get; set; }
         public List<TimeScope> TimeScopes { get; set; }
         public List<Machine> Machines { get; set; }
