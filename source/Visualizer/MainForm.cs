@@ -1,5 +1,18 @@
-﻿using System;
+﻿ /* Copyright (C) 2015 AgGateway and ADAPT Contributors
+  * Copyright (C) 2015 Deere and Company
+  * All rights reserved. This program and the accompanying materials
+  * are made available under the terms of the Eclipse Public License v1.0
+  * which accompanies this distribution, and is available at
+  * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
+  *
+  * Contributors:
+  *    Tarak Reddy - initial implementation
+  *******************************************************************************/
+
+using System;
+using System.Collections;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 using AgGateway.ADAPT.ApplicationDataModel;
 using AgGateway.ADAPT.PluginManager;
@@ -79,13 +92,63 @@ namespace Visualizer
 
         private void ImportDataCard(IPlugin plugin, string datacardPath)
         {
-            _propertyGridViewer.SelectedObject = plugin.Import(datacardPath);
+            _treeViewMetadata.Nodes.Clear();
 
-            if (_propertyGridViewer.SelectedGridItem != null &&
-                _propertyGridViewer.SelectedGridItem.Parent != null &&
-                _propertyGridViewer.SelectedGridItem.Parent.GridItems.Count > 0)
+            var applicationDataModel = plugin.Import(datacardPath);
+
+            var parentNode = _treeViewMetadata.Nodes.Add("ApplicationDataModel");
+            AddNode(applicationDataModel, parentNode);
+        }
+
+        private void AddNode(object element, TreeNode parentNode)
+        {
+            if (element == null)
             {
-                _propertyGridViewer.SelectedGridItem = _propertyGridViewer.SelectedGridItem.Parent.GridItems[0];
+                return;
+            }
+
+            foreach (var propertyInfo in element.GetType().GetProperties())
+            {
+                ParseProperty(element, parentNode, propertyInfo);
+            }
+        }
+
+        private void ParseProperty(object element, TreeNode parentNode, PropertyInfo propertyInfo)
+        {
+            var propertyType = propertyInfo.PropertyType;
+            if (propertyType.IsGenericType && Nullable.GetUnderlyingType(propertyType) != null)
+            {
+                propertyType = Nullable.GetUnderlyingType(propertyType);
+            }
+
+            var propertyValue = propertyInfo.GetValue(element, null);
+
+            if (propertyType.IsPrimitive || propertyType == typeof (string)) 
+            {
+                parentNode.Nodes.Add(string.Format(@"{0}: {1}", propertyInfo.Name, propertyValue));
+            }
+            else if (typeof (IEnumerable).IsAssignableFrom(propertyType))
+            {
+                ParseArrays(parentNode, propertyInfo, propertyValue);
+            }
+            else
+            {
+                var childNode = parentNode.Nodes.Add(propertyInfo.Name);
+                AddNode(propertyValue, childNode);
+            }
+        }
+
+        private void ParseArrays(TreeNode parentNode, PropertyInfo propertyInfo, object propertyValue)
+        {
+            var collectionNode = parentNode.Nodes.Add(propertyInfo.Name);
+            var collection = (IEnumerable) propertyValue;
+            if (collection != null)
+            {
+                foreach (var child in collection)
+                {
+                    var node = collectionNode.Nodes.Add(child.ToString());
+                    AddNode(child, node);
+                }
             }
         }
 

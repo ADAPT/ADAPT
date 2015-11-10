@@ -41,7 +41,6 @@
             this._buttonBrowseDatacard = new System.Windows.Forms.Button();
             this._splitContainer = new System.Windows.Forms.SplitContainer();
             this._splitContainerViewer = new System.Windows.Forms.SplitContainer();
-            this._propertyGridViewer = new System.Windows.Forms.PropertyGrid();
             this._splitContainerMap = new System.Windows.Forms.SplitContainer();
             this._tabControlViewer = new System.Windows.Forms.TabControl();
             this._tabPageSpatial = new System.Windows.Forms.TabPage();
@@ -58,6 +57,7 @@
             this._buttonBrowseExportPath = new System.Windows.Forms.Button();
             this._textBoxExportPath = new System.Windows.Forms.TextBox();
             this._labelPath = new System.Windows.Forms.Label();
+            this._treeViewMetadata = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this._splitContainerMain)).BeginInit();
             this._splitContainerMain.Panel1.SuspendLayout();
             this._splitContainerMain.Panel2.SuspendLayout();
@@ -238,7 +238,7 @@
             // 
             // _splitContainerViewer.Panel1
             // 
-            this._splitContainerViewer.Panel1.Controls.Add(this._propertyGridViewer);
+            this._splitContainerViewer.Panel1.Controls.Add(this._treeViewMetadata);
             // 
             // _splitContainerViewer.Panel2
             // 
@@ -246,14 +246,6 @@
             this._splitContainerViewer.Size = new System.Drawing.Size(999, 556);
             this._splitContainerViewer.SplitterDistance = 449;
             this._splitContainerViewer.TabIndex = 0;
-            // 
-            // _propertyGridViewer
-            // 
-            this._propertyGridViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._propertyGridViewer.Location = new System.Drawing.Point(0, 0);
-            this._propertyGridViewer.Name = "_propertyGridViewer";
-            this._propertyGridViewer.Size = new System.Drawing.Size(449, 556);
-            this._propertyGridViewer.TabIndex = 0;
             // 
             // _splitContainerMap
             // 
@@ -421,6 +413,14 @@
             this._labelPath.TabIndex = 4;
             this._labelPath.Text = "Export Path";
             // 
+            // _treeViewMetadata
+            // 
+            this._treeViewMetadata.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._treeViewMetadata.Location = new System.Drawing.Point(0, 0);
+            this._treeViewMetadata.Name = "_treeViewMetadata";
+            this._treeViewMetadata.Size = new System.Drawing.Size(449, 556);
+            this._treeViewMetadata.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,7 +473,6 @@
         private System.Windows.Forms.Label _labelDataCard;
         private System.Windows.Forms.SplitContainer _splitContainer;
         private System.Windows.Forms.SplitContainer _splitContainerViewer;
-        private System.Windows.Forms.PropertyGrid _propertyGridViewer;
         private System.Windows.Forms.SplitContainer _splitContainerMap;
         private System.Windows.Forms.TabControl _tabControlViewer;
         private System.Windows.Forms.TabPage _tabPageSpatial;
@@ -495,6 +494,7 @@
         private System.Windows.Forms.Button _buttonLoadPlugins;
         private System.Windows.Forms.Button _buttonBrowsePluginLocation;
         private System.Windows.Forms.Label _labelPluginLocation;
+        private System.Windows.Forms.TreeView _treeViewMetadata;
     }
 }
 

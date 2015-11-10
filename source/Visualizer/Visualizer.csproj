@@ -7,8 +7,8 @@
     <ProjectGuid>{308B8C5A-715D-4F80-8EA4-C4CD9FBCB970}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Visualizer</RootNamespace>
-    <AssemblyName>Visualizer</AssemblyName>
+    <RootNamespace>AgGateway.ADAPT.Visualizer</RootNamespace>
+    <AssemblyName>AgGateway.ADAPT.Visualizer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
