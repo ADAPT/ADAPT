@@ -12,6 +12,7 @@
 
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel;
+using AgGateway.ADAPT.ApplicationDataModel.PluginProperties;
 
 namespace AgGateway.ADAPT.TestPlugin
 {

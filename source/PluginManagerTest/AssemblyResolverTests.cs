@@ -45,7 +45,7 @@ namespace AgGateway.ADAPT.PluginManagerTest
         {
             var result = _resolver.LoadFromPluginDirectory(null, new ResolveEventArgs("TestPlugin"));
 
-            Assert.AreEqual("Adapt.TestPlugin", result.GetName().Name);
+            Assert.AreEqual("AgGateway.ADAPT.TestPlugin", result.GetName().Name);
         }
     }
 }

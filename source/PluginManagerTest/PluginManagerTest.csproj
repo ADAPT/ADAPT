@@ -74,10 +74,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\AgGateway.ADAPT.TestPlugin.dll" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\Adapt.TestPlugin.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

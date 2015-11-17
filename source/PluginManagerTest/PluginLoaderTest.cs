@@ -22,7 +22,7 @@ namespace AgGateway.ADAPT.PluginManagerTest
     [TestFixture]
     public class PluginLoaderTest
     {
-        private const String TestpluginDll = "TestPlugin.dll";
+        private const String TestpluginDll = "AgGateway.ADAPT.TestPlugin.dll";
         private string _pluginDirectory;
         private string _pluginFileName;
         private Mock<IAssemblyResolver> _assemblyResolverMock;
@@ -48,7 +48,7 @@ namespace AgGateway.ADAPT.PluginManagerTest
             Assert.AreEqual(1, assemblyMetadata.ModelVersion.Major);
             Assert.AreEqual(0, assemblyMetadata.ModelVersion.Minor);
             Assert.AreEqual(_pluginFileName, assemblyMetadata.AssemblyLocation);
-            Assert.AreEqual("Adapt.TestPlugin.TestPlugin", assemblyMetadata.EntryClass);
+            Assert.AreEqual("AgGateway.ADAPT.TestPlugin.TestPlugin", assemblyMetadata.EntryClass);
         }
 
         [Test]

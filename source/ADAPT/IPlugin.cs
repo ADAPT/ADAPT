@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using AgGateway.ADAPT.ApplicationDataModel.PluginProperties;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
@@ -22,34 +22,5 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         string Source { get; }
         string Description { get; }
         string StackTrace { get; }
-    }
-
-    public class Properties
-    {
-        private readonly Dictionary<string, object> _properties = new Dictionary<string, object>();
-
-        public void SetProperty(string key, object value)
-        {
-            if (_properties.ContainsKey(key))
-            {
-                _properties[key] = value;
-            }
-            else
-            {
-                _properties.Add(key, value);
-            }
-        }
-
-        public object GetProperty(string key)
-        {
-            if (!_properties.ContainsKey(key))
-                return null;
-            return _properties[key];
-        }
-
-        public ReadOnlyDictionary<string, object> GetAllProperties()
-        {
-            return new ReadOnlyDictionary<string, object>(_properties);
-        }
     }
 }

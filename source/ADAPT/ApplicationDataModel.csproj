@@ -131,6 +131,9 @@
     <Compile Include="MultiPoint.cs" />
     <Compile Include="MultiPolygon.cs" />
     <Compile Include="Note.cs" />
+    <Compile Include="PluginProperties\LatencySettings.cs" />
+    <Compile Include="PluginProperties\Properties.cs" />
+    <Compile Include="PluginProperties\UnitOfMeasureSystem.cs" />
     <Compile Include="ProductMix.cs" />
     <Compile Include="ReferenceLayerTypeEnum.cs" />
     <Compile Include="ReferenceNote.cs" />
@@ -203,6 +206,7 @@
     <Compile Include="WorkOrder.cs" />
     <Compile Include="WorkRecord.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
