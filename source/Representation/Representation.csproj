@@ -44,12 +44,17 @@
     <Compile Include="Generated\GeneratedClasses.cs" />
     <Compile Include="ICopy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepresentationResources.Designer.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RepresentationResources.resx</DependentUpon>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RepresentationSystem\DefinedRepresentation.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RepresentationSystem\EnumeratedRepresentation.cs" />
     <Compile Include="RepresentationSystem\DefinedTypeEnumerationInstanceList.cs" />
     <Compile Include="RepresentationSystem\DefinedTypeInstanceList.cs" />
     <Compile Include="RepresentationSystem\DefinedTypeValue.cs" />
@@ -97,7 +102,7 @@
     </Compile>
     <Compile Include="RepresentationSystem\RepresentationTagList.cs" />
     <Compile Include="RepresentationSystem\UnitOfMeasurePreference.cs" />
-    <Compile Include="RepresentationSystem\VariableRepresentation.cs" />
+    <Compile Include="RepresentationSystem\NumericRepresentation.cs" />
     <Compile Include="UnitSystem\ExtensionMethods\NumericalValueExtensions.cs" />
     <Compile Include="UnitSystem\ExtensionMethods\NumericRepresentationValueExtensions.cs" />
     <Compile Include="UnitSystem\CompositeConversionFactor.cs" />
@@ -120,20 +125,17 @@
     <Compile Include="UnitSystem\UnitOfMeasureSystemCollection.cs" />
     <Compile Include="UnitSystem\UnitRepresentation.cs" />
     <Compile Include="UnitSystem\UnitSystemManager.cs" />
-    <Compile Include="UnitSystem\UnitType.cs" />
+    <Compile Include="UnitSystem\UnitDimension.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="RepresentationResources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>RepresentationResources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\gen_classes.bat" />
-    <None Include="Resources\jdtypes.xsd">
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\basictypes.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Resources\gen_classes.bat" />
     <None Include="Resources\RepresentationSystem.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -152,7 +154,12 @@
       <Name>ApplicationDataModel</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

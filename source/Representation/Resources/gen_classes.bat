@@ -11,7 +11,7 @@ set XML_SCHEMA_DIR=.
 
 :: setup input files
 set FILES=
-set FILES=%FILES% %XML_SCHEMA_DIR%\jdtypes.xsd
+set FILES=%FILES% %XML_SCHEMA_DIR%\basictypes.xsd
 set FILES=%FILES% %XML_SCHEMA_DIR%\RepresentationSystem.xsd
 set FILES=%FILES% %XML_SCHEMA_DIR%\UnitSystem.xsd
 
@@ -25,7 +25,7 @@ set XML_PROJECT_ROOT=%XML_SCHEMA_DIR%
 set XSD_FLAGS=
 set XSD_FLAGS=%XSD_FLAGS% /classes
 set XSD_FLAGS=%XSD_FLAGS% /fields
-set XSD_FLAGS=%XSD_FLAGS% /namespace:JohnDeere.Representation.RepresentationSystem.Generated
+set XSD_FLAGS=%XSD_FLAGS% /namespace:AgGateway.ADAPT.Representation.Generated
 set XSD_FLAGS=%XSD_FLAGS% /out:%XML_PROJECT_ROOT%
 
 mkdir %XML_PROJECT_ROOT%\..\Generated

@@ -15,6 +15,8 @@ using System.Linq;
 using System.Text;
 using AgGateway.ADAPT.ApplicationDataModel;
 using AgGateway.ADAPT.Representation.RepresentationSystem;
+using EnumeratedRepresentation = AgGateway.ADAPT.ApplicationDataModel.EnumeratedRepresentation;
+using NumericRepresentation = AgGateway.ADAPT.ApplicationDataModel.NumericRepresentation;
 
 namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
 {
@@ -52,10 +54,10 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
 //                Append(definedRepresentation, classBuilder);
 //            }
 //
-//            var variableRepresentations = RepresentationManager.Instance.Representations.Values.OfType<NumericRepresentation>();
-//            foreach (var variableRepresentation in variableRepresentations)
+//            var numericRepresentations = RepresentationManager.Instance.Representations.Values.OfType<NumericRepresentation>();
+//            foreach (var numericRepresentation in numericRepresentations)
 //            {
-//                Append(variableRepresentation, classBuilder);
+//                Append(numericRepresentation, classBuilder);
 //            }
 //
 //            classBuilder.Append(FileFooter);

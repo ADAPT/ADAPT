@@ -242,7 +242,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         }
 
         [Test]
-        public void GivenVariableNunmberWithCompositeUnitOfMeasureWhenDivideBaseNumberThenUnitOfMeasuresCombined()
+        public void GivenNumericValueWithCompositeUnitOfMeasureWhenDivideBaseNumberThenUnitOfMeasuresCombined()
         {
             var numerator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 2.4);
             var denominator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom(), 5);

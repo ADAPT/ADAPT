@@ -18,11 +18,11 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 {
     public class CompositeConversionFactor : IUnit
     {
-        public CompositeConversionFactor(UnitSystemUnitTypeCompositeUnitTypeRepresentation representation)
+        public CompositeConversionFactor(UnitSystemUnitDimensionCompositeUnitDimensionRepresentation representation)
         {
             Scale = representation.scale;
             BaseOffset = representation.baseOffset;
-            DomainID = BuildDomainId(representation.UnitTypeRef);
+            DomainID = BuildDomainId(representation.UnitDimensionRef);
         }
 
         public double Scale { get; set; }
@@ -31,7 +31,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
         public string DomainID { get; private set; }
 
-        private string BuildDomainId(IEnumerable<UnitSystemUnitTypeCompositeUnitTypeRepresentationUnitTypeRef> unitRef)
+        private string BuildDomainId(IEnumerable<UnitSystemUnitDimensionCompositeUnitDimensionRepresentationUnitDimensionRef> unitRef)
         {
             var domainId = new StringBuilder();
             foreach (var unit in unitRef)

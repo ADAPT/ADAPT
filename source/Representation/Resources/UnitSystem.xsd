@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:unit="urn:schemas-johndeere-com:UnitSystem" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bt="urn:schemas-johndeere-com:BasicTypes" targetNamespace="urn:schemas-johndeere-com:UnitSystem" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.2.0.0">
-	<xs:import namespace="urn:schemas-johndeere-com:BasicTypes" schemaLocation="jdtypes.xsd"/>
+<xs:schema xmlns:unit="urn:schemas-adapt-aggateway-org:UnitSystem" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bt="urn:schemas-adapt-aggateway-org:BasicTypes" targetNamespace="urn:schemas-adapt-aggateway-org:UnitSystem" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0.1">
+	<xs:import namespace="urn:schemas-adapt-aggateway-org:BasicTypes" schemaLocation="basictypes.xsd"/>
 	<xs:element name="UnitSystem">
 		<xs:annotation>
 			<xs:documentation>Root node of document.  This document defines constants type related information for use by RCD file specifications.  Only one file will exist using this schema that will be used as the master reference for all type information.  Versioning of this schema or the information in the master type definition file may constitute a version change in the RCD log file spec and other file specs that utilize this information as a reference.</xs:documentation>
@@ -12,18 +12,18 @@
 						<xs:documentation>Specifies the schema or format version of the file.
 major format changes require new readers of this file type that understand that major version number.
 Minor version changes reflect additions of attrubutes or nodes that can be ignored by previous version readers within the same major version number.
-<CurrentFileSchemaVersion major="1" minor="5"/>
+<CurrentFileSchemaVersion major="1" minor="1"/>
 						</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:attribute name="major" type="xs:int" use="required" fixed="1"/>
-						<xs:attribute name="minor" type="xs:int" use="required" fixed="5"/>
+						<xs:attribute name="minor" type="xs:int" use="required" fixed="1"/>
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="ContentVersion">
 					<xs:annotation>
-						<xs:documentation>Specifies the content version of the file.  It is assume that all readers will be forward compatible with all content versions of the same major version number as no changes can be made to delete unit types, unit of measures or unit of measure systems.  Only additions of unit types, unit of measures or unit of measure systems will be made.
-Changes to or deletions of unit types, unit of measures, or unit of measure systems will require an increment of a major version number.</xs:documentation>
+						<xs:documentation>Specifies the content version of the file.  It is assume that all readers will be forward compatible with all content versions of the same major version number as no changes can be made to delete Unit Dimensions, unit of measures or unit of measure systems.  Only additions of Unit Dimensions, unit of measures or unit of measure systems will be made.
+Changes to or deletions of Unit Dimensions, unit of measures, or unit of measure systems will require an increment of a major version number.</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:attribute name="major" type="xs:int" use="required"/>
@@ -41,23 +41,23 @@ Changes to or deletions of unit types, unit of measures, or unit of measure syst
 						<xs:field xpath="."/>
 					</xs:unique>
 				</xs:element>
-				<xs:element name="UnitTypes">
+				<xs:element name="UnitDimensions">
 					<xs:annotation>
-						<xs:documentation>Unit types represent basic dimensions that can be applied to values such as distance, mass, volume, area, temperature, count and even multiple dimensions such as distance^2, mass/area, volume/area, count/area, count/time, etc.</xs:documentation>
+						<xs:documentation>Unit Dimensions represent basic dimensions that can be applied to values such as distance, mass, volume, area, temperature, count and even multiple dimensions such as distance^2, mass/area, volume/area, count/area, count/time, etc.</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="UnitType" maxOccurs="unbounded">
+							<xs:element name="UnitDimension" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>The unit type represents a common type that will represent a set of unit of measures that have the same set of dimensions.
-However, a UnitType can also have a set of unit type representations.  The reason for multiple representations is to account for unit types such as area.  Area can be through of as a unit type with two distance dimensions but it can also have its own unit definition such as acres or hectares.</xs:documentation>
+									<xs:documentation>The Unit Dimension represents a common type that will represent a set of unit of measures that have the same set of dimensions.
+However, a UnitDimension can also have a set of Unit Dimension representations.  The reason for multiple representations is to account for Unit Dimensions such as area.  Area can be through of as a Unit Dimension with two distance dimensions but it can also have its own unit definition such as acres or hectares.</xs:documentation>
 								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
 										<xs:choice maxOccurs="unbounded">
-											<xs:element name="UnitTypeRepresentation">
+											<xs:element name="UnitDimensionRepresentation">
 												<xs:annotation>
-													<xs:documentation>This unit type represenation is for single dimensional, dimensionless and aggregate unit types such as acre or hectare.</xs:documentation>
+													<xs:documentation>This Unit Dimension represenation is for single dimensional, dimensionless and aggregate Unit Dimensions such as acre or hectare.</xs:documentation>
 												</xs:annotation>
 												<xs:complexType>
 													<xs:sequence>
@@ -96,18 +96,18 @@ However, a UnitType can also have a set of unit type representations.  The reaso
 													<xs:attribute name="domainID" type="unit:unitRepresentationDomainID" use="required"/>
 												</xs:complexType>
 											</xs:element>
-											<xs:element name="CompositeUnitTypeRepresentation">
+											<xs:element name="CompositeUnitDimensionRepresentation">
 												<xs:annotation>
-													<xs:documentation>This unit type representation is used for denoting unit types of more than one dimension such as mass/area, bu/area, volume per area, acre*foot, etc.
-The composite unit type does not have a set of unit of measures as they are implict from the referenced unit types.
-The referenced unit types are placed into two categories.  Numerator and denomiator.  Rates for example would have a numberator unit type of mass and a denominator unit type of area.
-A componsite unit type representation also has a scale and a baseOffset, (see UnitOfMeasure) that can be used if a unit type has more than one unit type representation for conversion between representations.</xs:documentation>
+													<xs:documentation>This Unit Dimension representation is used for denoting Unit Dimensions of more than one dimension such as mass/area, bu/area, volume per area, acre*foot, etc.
+The composite Unit Dimension does not have a set of unit of measures as they are implict from the referenced Unit Dimensions.
+The referenced Unit Dimensions are placed into two categories.  Numerator and denomiator.  Rates for example would have a numberator Unit Dimension of mass and a denominator Unit Dimension of area.
+A componsite Unit Dimension representation also has a scale and a baseOffset, (see UnitOfMeasure) that can be used if a Unit Dimension has more than one Unit Dimension representation for conversion between representations.</xs:documentation>
 												</xs:annotation>
 												<xs:complexType>
 													<xs:sequence>
-														<xs:element name="UnitTypeRef" maxOccurs="unbounded">
+														<xs:element name="UnitDimensionRef" maxOccurs="unbounded">
 															<xs:complexType>
-																<xs:attribute name="unitTypeRef" type="unit:unitTypeDomainID" use="required"/>
+																<xs:attribute name="UnitDimensionRef" type="unit:unitDimensionDomainID" use="required"/>
 																<xs:attribute name="power" use="optional" default="1">
 																	<xs:simpleType>
 																		<xs:restriction base="xs:double"/>
@@ -115,7 +115,7 @@ A componsite unit type representation also has a scale and a baseOffset, (see Un
 																</xs:attribute>
 																<xs:attribute name="display" type="xs:string" use="optional">
 																	<xs:annotation>
-																		<xs:documentation>displayText is optional.  If it does not exist it will take the format of the unit type referenced suffixed with the power if other than 1.  example ft^2.</xs:documentation>
+																		<xs:documentation>displayText is optional.  If it does not exist it will take the format of the Unit Dimension referenced suffixed with the power if other than 1.  example ft^2.</xs:documentation>
 																	</xs:annotation>
 																</xs:attribute>
 																<xs:attribute name="baseUnitOfMeasureRef" type="unit:unitOfMeasureDomainID" use="required"/>
@@ -139,7 +139,7 @@ A componsite unit type representation also has a scale and a baseOffset, (see Un
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
-									<xs:attribute name="domainID" type="unit:unitTypeDomainID" use="required"/>
+									<xs:attribute name="domainID" type="unit:unitDimensionDomainID" use="required"/>
 								</xs:complexType>
 								<xs:unique name="UnitOfMeasureLabelUniquenessUS">
 									<xs:selector xpath=".//*/unit:UnitOfMeasure/unit:Name"/>
@@ -149,12 +149,12 @@ A componsite unit type representation also has a scale and a baseOffset, (see Un
 							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
-					<xs:unique name="UnitTypeDomainIDUniquenessUS">
-						<xs:selector xpath="unit:UnitType"/>
+					<xs:unique name="UnitDimensionDomainIDUniquenessUS">
+						<xs:selector xpath="unit:UnitDimension"/>
 						<xs:field xpath="@domainID"/>
 					</xs:unique>
-					<xs:unique name="UnitTypeNameUniquenessUS">
-						<xs:selector xpath="unit:UnitType/unit:Name"/>
+					<xs:unique name="UnitDimensionNameUniquenessUS">
+						<xs:selector xpath="unit:UnitDimension/unit:Name"/>
 						<xs:field xpath="@locale"/>
 						<xs:field xpath="."/>
 					</xs:unique>
@@ -223,23 +223,23 @@ A componsite unit type representation also has a scale and a baseOffset, (see Un
 			<xs:field xpath="@plural"/>
 		</xs:unique>
 		<xs:unique name="UnitRepresentationDomainIDUniquenessUS">
-			<xs:selector xpath=".//*/unit:UnitTypeRepresentation"/>
+			<xs:selector xpath=".//*/unit:UnitDimensionRepresentation"/>
 			<xs:field xpath="@domainID"/>
 		</xs:unique>
 		<xs:keyref name="UnitSystemToUnitOfMeasureReferenceUS" refer="unit:UnitOfMeasureDomainIDlUniquenessUS">
 			<xs:selector xpath=".//*/unit:UnitOfMeasureSystem/unit:UnitOfMeasureRef"/>
 			<xs:field xpath="@unitOfMeasureRef"/>
 		</xs:keyref>
-		<xs:keyref name="CompositeUnitRepresentationToUnitTypeReferenceUS" refer="unit:UnitTypeDomainIDUniquenessUS">
-			<xs:selector xpath=".//*/unit:UnitType/unit:CompositeUnitTypeRepresentation/unit:UnitTypeRef"/>
-			<xs:field xpath="@unitTypeRef"/>
+		<xs:keyref name="CompositeUnitRepresentationToUnitDimensionReferenceUS" refer="unit:UnitDimensionDomainIDUniquenessUS">
+			<xs:selector xpath=".//*/unit:UnitDimension/unit:CompositeUnitDimensionRepresentation/unit:UnitDimensionRef"/>
+			<xs:field xpath="@UnitDimensionRef"/>
 		</xs:keyref>
 		<xs:keyref name="CompositeUnitRepresentationToBaseUnitOfMeasureReferenceUS" refer="unit:UnitOfMeasureDomainIDlUniquenessUS">
-			<xs:selector xpath=".//*/unit:UnitType/unit:CompositeUnitTypeRepresentation/unit:UnitTypeRef"/>
+			<xs:selector xpath=".//*/unit:UnitDimension/unit:CompositeUnitDimensionRepresentation/unit:UnitDimensionRef"/>
 			<xs:field xpath="@baseUnitOfMeasureRef"/>
 		</xs:keyref>
 	</xs:element>
-	<xs:complexType name="ComponentUnitTypeRefType">
+	<xs:complexType name="ComponentUnitDimensionRefType">
 		<xs:complexContent>
 			<xs:extension base="bt:EntityLocalRefType">
 				<xs:attribute name="power" use="optional" default="1">
@@ -249,14 +249,14 @@ A componsite unit type representation also has a scale and a baseOffset, (see Un
 				</xs:attribute>
 				<xs:attribute name="display" type="xs:string" use="optional">
 					<xs:annotation>
-						<xs:documentation>displayText is optional.  If it does not exist it will take the format of the unit type referenced suffixed with the power if other than 1.  example ft^2.</xs:documentation>
+						<xs:documentation>displayText is optional.  If it does not exist it will take the format of the Unit Dimension referenced suffixed with the power if other than 1.  example ft^2.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 				<xs:attribute name="baseUnitOfMeasure" type="xs:IDREF" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="UnitTypeRepresentationType">
+	<xs:complexType name="UnitDimensionRepresentationType">
 		<xs:complexContent>
 			<xs:extension base="bt:EntityLocalType">
 				<xs:sequence>
@@ -281,20 +281,20 @@ value(target) = ((value(source) * scale(source)+baseOffset(source)) -baseOffset(
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="CompositeUnitTypeRepresentationType">
+	<xs:complexType name="CompositeUnitDimensionRepresentationType">
 		<xs:sequence>
 			<xs:choice maxOccurs="unbounded">
-				<xs:element name="NumeratorUnitType">
+				<xs:element name="NumeratorUnitDimension">
 					<xs:complexType>
 						<xs:complexContent>
-							<xs:extension base="unit:ComponentUnitTypeRefType"/>
+							<xs:extension base="unit:ComponentUnitDimensionRefType"/>
 						</xs:complexContent>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="DenominatorUnitType">
+				<xs:element name="DenominatorUnitDimension">
 					<xs:complexType>
 						<xs:complexContent>
-							<xs:extension base="unit:ComponentUnitTypeRefType"/>
+							<xs:extension base="unit:ComponentUnitDimensionRefType"/>
 						</xs:complexContent>
 					</xs:complexType>
 				</xs:element>
@@ -304,7 +304,7 @@ value(target) = ((value(source) * scale(source)+baseOffset(source)) -baseOffset(
 		<xs:attribute name="scale" type="xs:double" use="optional"/>
 		<xs:attribute name="baseOffset" type="xs:double" use="optional"/>
 	</xs:complexType>
-	<xs:simpleType name="unitTypeDomainID">
+	<xs:simpleType name="unitDimensionDomainID">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="(ut)([a-z|A-Z|0-9])+"/>
 		</xs:restriction>

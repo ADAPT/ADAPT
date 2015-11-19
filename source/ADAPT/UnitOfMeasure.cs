@@ -31,6 +31,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public double ConversionOffset { get; set; }
 
-        public UnitType UnitType { get; set; }
+        public UnitDimension UnitDimension { get; set; }
     }
 }

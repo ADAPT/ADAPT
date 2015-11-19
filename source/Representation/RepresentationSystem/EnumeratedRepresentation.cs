@@ -15,39 +15,39 @@ using AgGateway.ADAPT.Representation.Generated;
 
 namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
-    public class DefinedRepresentation : Representation
+    public class EnumeratedRepresentation : Representation
     {
         public RepresentationCollection<EnumerationMember> EnumerationMembers { get; private set; }
 
-        public DefinedRepresentation(RepresentationSystemRepresentationsDefinedTypeRepresentation definedTypeRepresentation)
-            : this(definedTypeRepresentation, CultureInfo.CurrentUICulture)
+        public EnumeratedRepresentation(RepresentationSystemRepresentationsEnumeratedRepresentation enumeratedRepresentation)
+            : this(enumeratedRepresentation, CultureInfo.CurrentUICulture)
         {
 
         }
 
-        public DefinedRepresentation(RepresentationSystemRepresentationsDefinedTypeRepresentation definedTypeRepresentation, CultureInfo culture)
-            : base(definedTypeRepresentation.domainID, definedTypeRepresentation.domainTag)
+        public EnumeratedRepresentation(RepresentationSystemRepresentationsEnumeratedRepresentation enumeratedRepresentation, CultureInfo culture)
+            : base(enumeratedRepresentation.domainID, enumeratedRepresentation.domainTag)
         {
-            EnumerationMembers = GetEnumerationMembers(definedTypeRepresentation);
+            EnumerationMembers = GetEnumerationMembers(enumeratedRepresentation);
 
-            var name = GetName(definedTypeRepresentation.Name, culture);
+            var name = GetName(enumeratedRepresentation.Name, culture);
             Name = name != null ? name.Value : null;
             Description = name != null ? name.description : null;
         }
 
-        private static RepresentationCollection<EnumerationMember> GetEnumerationMembers(RepresentationSystemRepresentationsDefinedTypeRepresentation definedTypeRepresentation)
+        private static RepresentationCollection<EnumerationMember> GetEnumerationMembers(RepresentationSystemRepresentationsEnumeratedRepresentation enumeratedRepresentation)
         {
-            if (definedTypeRepresentation.Items == null)
+            if (enumeratedRepresentation.Items == null)
             {
                 return new RepresentationCollection<EnumerationMember>();
             }
-            var enumerationMembers = definedTypeRepresentation.Items
-                .OfType<RepresentationSystemRepresentationsDefinedTypeRepresentationDefinedTypeInstance>()
+            var enumerationMembers = enumeratedRepresentation.Items
+                .OfType<RepresentationSystemRepresentationsEnumeratedRepresentationEnumeratedMember>()
                 .Select(d => new EnumerationMember(d));
             return new RepresentationCollection<EnumerationMember>(enumerationMembers);
         }
 
-        private static RepresentationSystemRepresentationsDefinedTypeRepresentationName GetName(RepresentationSystemRepresentationsDefinedTypeRepresentationName[] names, CultureInfo culture)
+        private static RepresentationSystemRepresentationsEnumeratedRepresentationName GetName(RepresentationSystemRepresentationsEnumeratedRepresentationName[] names, CultureInfo culture)
         {
             if (names == null)
                 return null;

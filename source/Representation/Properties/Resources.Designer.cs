@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AgGateway.ADAPT.Representation {
+namespace AgGateway.ADAPT.Representation.Properties {
     using System;
     
     
@@ -22,24 +22,24 @@ namespace AgGateway.ADAPT.Representation {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class RepresentationResources {
+    internal class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RepresentationResources() {
+        internal Resources() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AgGateway.ADAPT.Representation.RepresentationResources", typeof(RepresentationResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AgGateway.ADAPT.Representation.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace AgGateway.ADAPT.Representation {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,28 +61,14 @@ namespace AgGateway.ADAPT.Representation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Snap-shot of the ISO 11783-11 online data base
-        ///@ Copyright International Organization for Standardization, see: www.iso.org/iso/copyright.htm. No reproduction on networking 
-        ///permitted without license from ISO. The export file from the online data base is supplied without liability. Hard and Saved 
-        ///copies of this document are considered uncontrolled and represents a snap-shot of the ISO11783-11 online data base.
-        ///
-        ///
-        ///DD Entity: 0 Data Dictionary Version
-        ///Definition: This DDE is used to specify which version of t [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string ddiExport {
-            get {
-                return ResourceManager.GetString("ddiExport", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;!-- edited with XMLSpy v2010 rel. 3 sp1 (x64) (http://www.altova.com) by Mike Waldo (private) --&gt;
-        ///&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;RepresentationSystem.xslt&quot;?&gt;
-        ///&lt;RepresentationSystem xmlns=&quot;urn:schemas-johndeere-com:Representation&quot; xmlns:bt=&quot;urn:schemas-johndeere-com:BasicTypes&quot; xmlns:unit=&quot;urn:schemas-johndeere-com:UnitSystem&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;urn:schemas-johndeere-com:Representation RepresentationSyste [rest of string was truncated]&quot;;.
+        ///&lt;RepresentationSystem xmlns=&quot;urn:schemas-adapt-aggateway-org:Representation&quot; xmlns:bt=&quot;urn:schemas-adapt-aggateway-org:BasicTypes&quot; xmlns:unit=&quot;urn:schemas-adapt-aggateway-org:UnitSystem&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;urn:schemas-adapt-aggateway-org:Representation RepresentationSystem.xsd&quot;&gt;
+        ///	&lt;SchemaVersion major=&quot;1&quot; minor=&quot;1&quot;/&gt;
+        ///	&lt;ContentVersion major=&quot;1&quot; minor=&quot;1&quot;/&gt;
+        ///	&lt;Representations&gt;
+        ///		&lt;NumericRepresentation domainID=&quot;vr [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string RepresentationSystem {
+        internal static string RepresentationSystem {
             get {
                 return ResourceManager.GetString("RepresentationSystem", resourceCulture);
             }
@@ -90,15 +76,17 @@ namespace AgGateway.ADAPT.Representation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;!-- edited with XMLSpy v2010 rel. 3 sp1 (x64) (http://www.altova.com) by Mike Waldo (private) --&gt;
-        ///&lt;UnitSystem xmlns=&quot;urn:schemas-johndeere-com:UnitSystem&quot; xmlns:bt=&quot;urn:schemas-johndeere-com:BasicTypes&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;urn:schemas-johndeere-com:UnitSystem UnitSystem.xsd&quot;&gt;
-        ///	&lt;SchemaVersion major=&quot;1&quot; minor=&quot;5&quot;/&gt;
-        ///	&lt;ContentVersion major=&quot;1&quot; minor=&quot;47&quot;/&gt;
+        ///&lt;UnitSystem xmlns=&quot;urn:schemas-adapt-aggateway-org:UnitSystem&quot; xmlns:bt=&quot;urn:schemas-adapt-aggateway-org:BasicTypes&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;urn:schemas-adapt-aggateway-org:UnitSystem UnitSystem.xsd&quot;&gt;
+        ///	&lt;SchemaVersion major=&quot;1&quot; minor=&quot;1&quot;/&gt;
+        ///	&lt;ContentVersion major=&quot;1&quot; minor=&quot;1&quot;/&gt;
         ///	&lt;SupportedLanguages&gt;
         ///		&lt;Language&gt;en&lt;/Language&gt;
-        ///		&lt;Langu [rest of string was truncated]&quot;;.
+        ///		&lt;Language&gt;de&lt;/Language&gt;
+        ///		&lt;Language&gt;fr&lt;/Language&gt;
+        ///		&lt;Language&gt;da&lt;/Language&gt;
+        ///		&lt;Languag [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string UnitSystem {
+        internal static string UnitSystem {
             get {
                 return ResourceManager.GetString("UnitSystem", resourceCulture);
             }

@@ -198,8 +198,7 @@
     <Compile Include="UnitOfMeasure.cs" />
     <Compile Include="UnitOfMeasureComponent.cs" />
     <Compile Include="UnitOfMeasureDimension.cs" />
-    <Compile Include="UnitType.cs" />
-    <Compile Include="VariableRepresentationValue.cs" />
+    <Compile Include="UnitDimension.cs" />
     <Compile Include="RxPrescription.cs" />
     <Compile Include="WorkItem.cs" />
     <Compile Include="WorkItemOperation.cs" />

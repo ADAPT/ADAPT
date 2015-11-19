@@ -17,13 +17,13 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public class EnumerationMember : Representation
     {
-        public EnumerationMember(RepresentationSystemRepresentationsDefinedTypeRepresentationDefinedTypeInstance definedTypeInstance)
+        public EnumerationMember(RepresentationSystemRepresentationsEnumeratedRepresentationEnumeratedMember definedTypeInstance)
             : this(definedTypeInstance, CultureInfo.CurrentUICulture)
         {
 
         }
 
-        public EnumerationMember(RepresentationSystemRepresentationsDefinedTypeRepresentationDefinedTypeInstance definedTypeInstance, CultureInfo culture)
+        public EnumerationMember(RepresentationSystemRepresentationsEnumeratedRepresentationEnumeratedMember definedTypeInstance, CultureInfo culture)
             : base(definedTypeInstance.domainID, definedTypeInstance.domainTag)
         {
             var name = GetName(definedTypeInstance.Name, culture);
@@ -31,7 +31,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
             Description = name != null ? name.description : null;
         }
 
-        private static RepresentationSystemRepresentationsDefinedTypeRepresentationDefinedTypeInstanceName GetName(RepresentationSystemRepresentationsDefinedTypeRepresentationDefinedTypeInstanceName[] names, CultureInfo culture)
+        private static RepresentationSystemRepresentationsEnumeratedRepresentationEnumeratedMemberName GetName(RepresentationSystemRepresentationsEnumeratedRepresentationEnumeratedMemberName[] names, CultureInfo culture)
         {
             if (names == null)
                 return null;

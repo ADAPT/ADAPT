@@ -17,27 +17,27 @@ using AgGateway.ADAPT.Representation.Generated;
 
 namespace AgGateway.ADAPT.Representation.UnitSystem
 {
-    public class UnitType : IUnit
+    public class UnitDimension : IUnit
     {
         public string Name { get; private set; }
         public string DomainID { get; private set; }
         public UnitOfMeasureCollection Units { get; private set; }
         public List<CompositeConversionFactor> CompositeEquivalents { get; set; } 
 
-        public UnitType(UnitSystemUnitType unitType)
-            : this(unitType, CultureInfo.CurrentUICulture)
+        public UnitDimension(UnitSystemUnitDimension unitDimension)
+            : this(unitDimension, CultureInfo.CurrentUICulture)
         {
             
         }
 
-        public UnitType(UnitSystemUnitType unitType, CultureInfo culture)
+        public UnitDimension(UnitSystemUnitDimension unitDimension, CultureInfo culture)
         {
-            var name = GetName(unitType.Name, culture);
+            var name = GetName(unitDimension.Name, culture);
             
-            DomainID = unitType.domainID;
+            DomainID = unitDimension.domainID;
             Name = name != null ? name.Value : null;
-            Units = GetUnitsOfMeasure(unitType.Items);
-            CompositeEquivalents = GetCompositeConversionFactors(unitType.Items);
+            Units = GetUnitsOfMeasure(unitDimension.Items);
+            CompositeEquivalents = GetCompositeConversionFactors(unitDimension.Items);
         }
 
         private UnitOfMeasureCollection GetUnitsOfMeasure(IEnumerable<object> items)
@@ -45,7 +45,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             if (items == null)
                 return new UnitOfMeasureCollection();
 
-            var xmlUnitRepresentation = items.OfType<UnitSystemUnitTypeUnitTypeRepresentation>().SingleOrDefault();
+            var xmlUnitRepresentation = items.OfType<UnitSystemUnitDimensionUnitDimensionRepresentation>().SingleOrDefault();
             if (xmlUnitRepresentation == null)
                 return new UnitOfMeasureCollection();
 
@@ -58,13 +58,13 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             if (items == null)
                 return new List<CompositeConversionFactor>();
 
-            var xmlUnitRepresentation = items.OfType<UnitSystemUnitTypeCompositeUnitTypeRepresentation>();
-            var conversionFactors = xmlUnitRepresentation.Select(compositeUnitTypeRepresentation => 
-                new CompositeConversionFactor(compositeUnitTypeRepresentation));
+            var xmlUnitRepresentation = items.OfType<UnitSystemUnitDimensionCompositeUnitDimensionRepresentation>();
+            var conversionFactors = xmlUnitRepresentation.Select(compositeUnitDimensionRepresentation => 
+                new CompositeConversionFactor(compositeUnitDimensionRepresentation));
             return conversionFactors.ToList();
         }
 
-        private static UnitSystemUnitTypeName GetName(UnitSystemUnitTypeName[] names, CultureInfo culture)
+        private static UnitSystemUnitDimensionName GetName(UnitSystemUnitDimensionName[] names, CultureInfo culture)
         {
             if (names == null)
                 return null;

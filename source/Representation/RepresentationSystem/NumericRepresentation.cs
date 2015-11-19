@@ -17,7 +17,7 @@ using AgGateway.ADAPT.Representation.UnitSystem;
 
 namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
-    public class VariableRepresentation : Representation
+    public class NumericRepresentation : Representation
     {
         private readonly Dictionary<UnitSystem.UnitSystem, UnitCollection<UnitOfMeasurePreference>> _unitOfMeasureDefaults;
         private readonly Dictionary<UnitSystem.UnitSystem, UnitCollection<UnitOfMeasurePreference>> _unitOfMeasurePreferences;
@@ -40,37 +40,37 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
             }
         }
 
-        public UnitType UnitType { get; private set; }
+        public UnitDimension UnitDimension { get; private set; }
 
-        public VariableRepresentation(RepresentationSystemRepresentationsVariableRepresentation representation)
+        public NumericRepresentation(RepresentationSystemRepresentationsNumericRepresentation representation)
             : this(representation, CultureInfo.CurrentUICulture)
         {
 
         }
 
-        public VariableRepresentation(RepresentationSystemRepresentationsVariableRepresentation representation, CultureInfo culture)
+        public NumericRepresentation(RepresentationSystemRepresentationsNumericRepresentation representation, CultureInfo culture)
             : base(representation.domainID, representation.domainTag)
         {
 
             var name = GetName(representation.Name, culture);
             Name = name != null ? name.Value : null;
             Description = name != null ? name.description : null;
-            UnitType = FindUnitType(representation);
+            UnitDimension = FindUnitDimension(representation);
 
             _unitOfMeasureDefaults = GetDefaultUnitOfMeasures(representation.Items);
             _unitOfMeasurePreferences = GetUnitOfMeasurePreferences(representation.Items);
         }
 
-        private static UnitType FindUnitType(RepresentationSystemRepresentationsVariableRepresentation representation)
+        private static UnitDimension FindUnitDimension(RepresentationSystemRepresentationsNumericRepresentation representation)
         {
-            if (representation.UnitTypeRef == null)
+            if (representation.UnitDimensionRef == null)
                 return null;
 
-            var unitType = representation.UnitTypeRef.unitType;
-            if (string.IsNullOrEmpty(unitType))
+            var unitDimension = representation.UnitDimensionRef.unitDimension;
+            if (string.IsNullOrEmpty(unitDimension))
                 return null;
 
-            return UnitSystemManager.Instance.UnitTypes[unitType];
+            return UnitSystemManager.Instance.UnitDimensions[unitDimension];
         }
 
         private static Dictionary<UnitSystem.UnitSystem, UnitCollection<UnitOfMeasurePreference>> GetDefaultUnitOfMeasures(IEnumerable<UnitOfMeasurePreferenceType> items)
@@ -79,7 +79,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
                 return new Dictionary<UnitSystem.UnitSystem, UnitCollection<UnitOfMeasurePreference>>();
 
             return items
-                .OfType<RepresentationSystemRepresentationsVariableRepresentationUnitOfMeasureDefault>()
+                .OfType<RepresentationSystemRepresentationsNumericRepresentationUnitOfMeasureDefault>()
                 .Select(u => new UnitOfMeasurePreference(u))
                 .GroupBy(u => u.UnitSystem)
                 .ToDictionary(g => g.Key, g => new UnitCollection<UnitOfMeasurePreference>(g));
@@ -91,13 +91,13 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
                 return new Dictionary<UnitSystem.UnitSystem, UnitCollection<UnitOfMeasurePreference>>();
 
             return items
-                .OfType<RepresentationSystemRepresentationsVariableRepresentationUnitOfMeasurePreference>()
+                .OfType<RepresentationSystemRepresentationsNumericRepresentationUnitOfMeasurePreference>()
                 .Select(u => new UnitOfMeasurePreference(u))
                 .GroupBy(u => u.UnitSystem)
                 .ToDictionary(g => g.Key, g => new UnitCollection<UnitOfMeasurePreference>(g));
         }
 
-        private static RepresentationSystemRepresentationsVariableRepresentationName GetName(RepresentationSystemRepresentationsVariableRepresentationName[] names, CultureInfo culture)
+        private static RepresentationSystemRepresentationsNumericRepresentationName GetName(RepresentationSystemRepresentationsNumericRepresentationName[] names, CultureInfo culture)
         {
             if (names == null)
                 return null;

@@ -35,44 +35,44 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
         public NumericValue Simplify(IEnumerable<UnitOfMeasureComponent> components, double value)
         {
             var finalValue = value;
-            var unitTypeComponents = new Dictionary<string, UnitOfMeasureComponent>();
+            var unitOfMeasureComponents = new Dictionary<string, UnitOfMeasureComponent>();
             foreach (var component in components)
             {
-                finalValue = SimplifyComponent(component, unitTypeComponents, finalValue);
+                finalValue = SimplifyComponent(component, unitOfMeasureComponents, finalValue);
             }
 
-            var unitOfMeasure = CombineComponents(unitTypeComponents.Values.ToList(), finalValue);
+            var unitOfMeasure = CombineComponents(unitOfMeasureComponents.Values.ToList(), finalValue);
             return unitOfMeasure;
         }
 
         public NumericRepresentationValue Simplify(NumericRepresentation representation, IEnumerable<UnitOfMeasureComponent> components, double value) 
         {
             var finalValue = value;
-            var unitTypeComponents = new Dictionary<string, UnitOfMeasureComponent>();
+            var unitOfMeasureComponents = new Dictionary<string, UnitOfMeasureComponent>();
             foreach (var component in components)
             {
-                finalValue = SimplifyComponent(component, unitTypeComponents, finalValue);
+                finalValue = SimplifyComponent(component, unitOfMeasureComponents, finalValue);
             }
 
-            var baseNumber = CombineComponents(unitTypeComponents.Values.ToList(), finalValue);
+            var baseNumber = CombineComponents(unitOfMeasureComponents.Values.ToList(), finalValue);
             return new NumericRepresentationValue(representation, baseNumber.UnitOfMeasure, baseNumber);
         }
 
-        protected double SimplifyComponent(UnitOfMeasureComponent component, Dictionary<string, UnitOfMeasureComponent> unitTypeComponents, double finalValue)
+        protected double SimplifyComponent(UnitOfMeasureComponent component, Dictionary<string, UnitOfMeasureComponent> unitOfMeasureComponents, double finalValue)
         {
             var scalarUnit = (ScalarUnitOfMeasure)component.Unit;
-            if (!unitTypeComponents.ContainsKey(scalarUnit.UnitType.DomainID))
+            if (!unitOfMeasureComponents.ContainsKey(scalarUnit.UnitDimension.DomainID))
             {
-                unitTypeComponents.Add(scalarUnit.UnitType.DomainID, component);
+                unitOfMeasureComponents.Add(scalarUnit.UnitDimension.DomainID, component);
                 return finalValue;
             }
 
-            return CombineComponentsOfSameType(component, unitTypeComponents, finalValue, scalarUnit);
+            return CombineComponentsOfSameType(component, unitOfMeasureComponents, finalValue, scalarUnit);
         }
 
-        protected double CombineComponentsOfSameType(UnitOfMeasureComponent component, Dictionary<string, UnitOfMeasureComponent> unitTypeComponents, double finalValue, ScalarUnitOfMeasure scalarUnit)
+        protected double CombineComponentsOfSameType(UnitOfMeasureComponent component, Dictionary<string, UnitOfMeasureComponent> unitOfMeasureComponents, double finalValue, ScalarUnitOfMeasure scalarUnit)
         {
-            var existingComponent = unitTypeComponents[scalarUnit.UnitType.DomainID];
+            var existingComponent = unitOfMeasureComponents[scalarUnit.UnitDimension.DomainID];
             var convertedValue = _converter.Convert(component.Unit, existingComponent.Unit, 1);
             var newPower = existingComponent.Power + component.Power;
             if (newPower == 0)
@@ -82,11 +82,11 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
                 {
                     convertedValue = _converter.Convert(component.Unit, existingComponent.Unit, convertedValue);
                 }
-                unitTypeComponents.Remove(scalarUnit.UnitType.DomainID);
+                unitOfMeasureComponents.Remove(scalarUnit.UnitDimension.DomainID);
             }
             else
             {
-                unitTypeComponents[scalarUnit.UnitType.DomainID] = new UnitOfMeasureComponent(existingComponent.Unit, newPower);
+                unitOfMeasureComponents[scalarUnit.UnitDimension.DomainID] = new UnitOfMeasureComponent(existingComponent.Unit, newPower);
             }
 
             finalValue = component.Power < 0 ? finalValue / convertedValue : finalValue * convertedValue;

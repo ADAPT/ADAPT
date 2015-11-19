@@ -99,10 +99,10 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods
             return new NumericRepresentationValue(numericRepresentationValue.Representation, quotient);
         }
 
-        public static NumericRepresentationValue Divide(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue denominator, NumericRepresentation variableRepresentation)
+        public static NumericRepresentationValue Divide(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue denominator, NumericRepresentation numericRepresentation)
         {
             var quotient = numericRepresentationValue.Value.Divide(denominator.Value);
-            return new NumericRepresentationValue(variableRepresentation, quotient);
+            return new NumericRepresentationValue(numericRepresentation, quotient);
         }
 
         public static NumericRepresentationValue Divide(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue denominator)
@@ -129,10 +129,10 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods
             return new NumericRepresentationValue(numericRepresentationValue.Representation, product);
         }
 
-        public static NumericRepresentationValue Multiply(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue right, NumericRepresentation variableRepresentation)
+        public static NumericRepresentationValue Multiply(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue right, NumericRepresentation numericRepresentation)
         {
             var product = numericRepresentationValue.Multiply(right);
-            return new NumericRepresentationValue(variableRepresentation, product.Value);
+            return new NumericRepresentationValue(numericRepresentation, product.Value);
         }
 
         public static NumericRepresentationValue Copy(this NumericRepresentationValue value)

@@ -19,27 +19,27 @@ using NUnit.Framework;
 namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 {
     [TestFixture]
-    public class UnitTypeTest
+    public class UnitDimensionTest
     {
-        private UnitSystemUnitType _unitType;
+        private UnitSystemUnitDimension _unitDimension;
 
         [SetUp]
         public void Setup()
         {
-            _unitType = new UnitSystemUnitType();
+            _unitDimension = new UnitSystemUnitDimension();
         }
 
         [Test]
-        public void GivenUnitTypeWhenGetNameThenNameForCultureIsFound()
+        public void GivenUnitDimensionWhenGetNameThenNameForCultureIsFound()
         {
-            _unitType.Name = new[]
+            _unitDimension.Name = new[]
             {
-                new UnitSystemUnitTypeName
+                new UnitSystemUnitDimensionName
                 {
                     locale = CultureInfoDefault.DefaultCulture,
                     Value = "Life"
                 },
-                new UnitSystemUnitTypeName
+                new UnitSystemUnitDimensionName
                 {
                    locale = "de",
                    Value = "Leben"
@@ -47,38 +47,38 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             };
 
             var culture = CultureInfo.GetCultureInfo("de");
-            var unitType = new UnitType(_unitType, culture);
-            Assert.AreEqual("Leben", unitType.Name);
+            var unitDimension = new UnitDimension(_unitDimension, culture);
+            Assert.AreEqual("Leben", unitDimension.Name);
         }
 
         [Test]
-        public void GivenUnitTypeWhenGetDomainIdThenDomainId()
+        public void GivenUnitDimensionWhenGetDomainIdThenDomainId()
         {
-            _unitType.domainID = "years";
+            _unitDimension.domainID = "years";
 
-            var unitType = new UnitType(_unitType);
-            Assert.AreEqual("years", unitType.DomainID);
+            var unitDimension = new UnitDimension(_unitDimension);
+            Assert.AreEqual("years", unitDimension.DomainID);
         }
 
         [Test]
-        public void GivenUnitTypeWhenGetUnitsThenUnitsOfMeasureAreLoaded()
+        public void GivenUnitDimensionWhenGetUnitsThenUnitsOfMeasureAreLoaded()
         {
-            _unitType.Items = new object[]
+            _unitDimension.Items = new object[]
             {
-                new UnitSystemUnitTypeUnitTypeRepresentation
+                new UnitSystemUnitDimensionUnitDimensionRepresentation
                 {
                     domainID = "Anything",
                     UnitOfMeasure = new []
                     {
-                        new UnitSystemUnitTypeUnitTypeRepresentationUnitOfMeasure
+                        new UnitSystemUnitDimensionUnitDimensionRepresentationUnitOfMeasure
                         {
                             domainID = "Food"   
                         },
-                        new UnitSystemUnitTypeUnitTypeRepresentationUnitOfMeasure
+                        new UnitSystemUnitDimensionUnitDimensionRepresentationUnitOfMeasure
                         {
                             domainID = "Water"   
                         },
-                        new UnitSystemUnitTypeUnitTypeRepresentationUnitOfMeasure
+                        new UnitSystemUnitDimensionUnitDimensionRepresentationUnitOfMeasure
                         {
                             domainID = "Hydrogen"   
                         }
@@ -86,15 +86,15 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
                 }
             };
 
-            var unitType = new UnitType(_unitType);
-            Assert.AreEqual(3, unitType.Units.Count);
+            var UnitDimension = new UnitDimension(_unitDimension);
+            Assert.AreEqual(3, UnitDimension.Units.Count);
         }
 
         [Test]
-        public void GivenUnitTypeWhenGetUnitsThenUnitOfMeasureCollection()
+        public void GivenUnitDimensionWhenGetUnitsThenUnitOfMeasureCollection()
         {
-            var unitType = new UnitType(_unitType);
-            Assert.IsInstanceOf<UnitOfMeasureCollection>(unitType.Units);
+            var UnitDimension = new UnitDimension(_unitDimension);
+            Assert.IsInstanceOf<UnitOfMeasureCollection>(UnitDimension.Units);
         }
     }
 }

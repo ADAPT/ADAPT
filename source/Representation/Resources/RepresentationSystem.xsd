@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2010 rel. 3 sp1 (x64) (http://www.altova.com) by Mike Waldo (private) -->
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Mike Waldo (John Deere AMS) -->
-<xs:schema xmlns:unit="urn:schemas-johndeere-com:UnitSystem" xmlns:rep="urn:schemas-johndeere-com:Representation" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bt="urn:schemas-johndeere-com:BasicTypes" targetNamespace="urn:schemas-johndeere-com:Representation" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0.1">
-	<xs:import namespace="urn:schemas-johndeere-com:BasicTypes" schemaLocation="jdtypes.xsd"/>
-	<xs:import namespace="urn:schemas-johndeere-com:UnitSystem" schemaLocation="UnitSystem.xsd"/>
+<!-- edited with XMLSpy v2012 rel. 2 sp1 (http://www.altova.com) by Tarak Reddy (DEERE & CO) -->
+<xs:schema xmlns:unit="urn:schemas-adapt-aggateway-org:UnitSystem" xmlns:rep="urn:schemas-adapt-aggateway-org:Representation" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bt="urn:schemas-adapt-aggateway-org:BasicTypes" targetNamespace="urn:schemas-adapt-aggateway-org:Representation" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0.1">
+	<xs:import namespace="urn:schemas-adapt-aggateway-org:BasicTypes" schemaLocation="basictypes.xsd"/>
+	<xs:import namespace="urn:schemas-adapt-aggateway-org:UnitSystem" schemaLocation="UnitSystem.xsd"/>
 	<xs:simpleType name="repShortNameType">
 		<xs:annotation>
 			<xs:documentation>Limits the translations to 25 characters</xs:documentation>
@@ -25,72 +24,34 @@
 						<xs:documentation>Specifies the schema or format version of the file.
 major format changes require new readers of this file type that understand that major version number.
 Minor version changes reflect additions of attrubutes or nodes that can be ignored by previous version readers within the same major version number.
-<CurrentFileSchemaVersion major="3" minor="2"/>
+<CurrentFileSchemaVersion major="1" minor="1"/>
 						</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
-						<xs:attribute name="major" type="xs:int" use="required" fixed="3"/>
-						<xs:attribute name="minor" type="xs:int" use="required" fixed="2"/>
+						<xs:attribute name="major" type="xs:int" use="required" fixed="1"/>
+						<xs:attribute name="minor" type="xs:int" use="required" fixed="1"/>
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="ContentVersion">
 					<xs:annotation>
-						<xs:documentation>Specifies the content version of the file.  It is assume that all readers will be forward compatible with all content versions of the same major version number as no changes can be made to delete unit types, unit of measures or unit of measure systems.  Only additions of unit types, unit of measures or unit of measure systems will be made.
-Changes to or deletions of unit types, unit of measures, or unit of measure systems will require an increment of a major version number.</xs:documentation>
+						<xs:documentation>Specifies the content version of the file.  It is assume that all readers will be forward compatible with all content versions of the same major version number as no changes can be made to delete unit dimensions, unit of measures or unit of measure systems.  Only additions of unit dimensions, unit of measures or unit of measure systems will be made.
+Changes to or deletions of unit dimensions, unit of measures, or unit of measure systems will require an increment of a major version number.</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:attribute name="major" type="xs:int" use="required"/>
 						<xs:attribute name="minor" type="xs:int" use="required"/>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="VariableGroups" minOccurs="0">
-					<xs:annotation>
-						<xs:documentation>This node is not currently used.  Some of the concepts here will be migrated into other nodes.
-Groups are a way to associate multiple Operational Variable Types to a common theme across slightly different interpretation or presentations.  For example, ProductApplication may include target, mapped, actual
-This element and sub elements are out of scope for now.  Left here for discussion and evalutation.</xs:documentation>
-					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="VariableGroup" maxOccurs="unbounded">
-								<xs:annotation>
-									<xs:documentation>A group consist of an aggregate list of OperationallVariableTypes that represent a common them.  (ex. WetYield, ProductAppliation)
-VariableGroups can also be exclusive.
-An exclusive group is one that implies a selection of one and only one of the child variable representations by the application for the process being performed. An example might include having a group for Product Application which might include ApplicationRateLiquid, ApplicationRateMass, and ApplicationRateSeeds</xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="VariableTypeReference" maxOccurs="unbounded">
-											<xs:complexType>
-												<xs:attribute name="variableRepresentationRef" type="rep:VariableRepresentationDomainID" use="required"/>
-											</xs:complexType>
-										</xs:element>
-										<xs:element name="Name" maxOccurs="unbounded">
-											<xs:complexType>
-												<xs:simpleContent>
-													<xs:extension base="xs:string">
-														<xs:attribute name="locale" type="bt:languageCode" use="required"/>
-														<xs:attribute name="description" type="xs:string" use="optional"/>
-													</xs:extension>
-												</xs:simpleContent>
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-									<xs:attribute name="domainID" type="rep:VariableGroupDomainID" use="required"/>
-								</xs:complexType>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
 				<xs:element name="Representations">
 					<xs:annotation>
-						<xs:documentation>Variable Representations are the basic construct used to associate, interpretation and presentation related information to values.  This allows a system to distinguish differences between units types and their use.  (ex. utDistance used for Depth, Width, Distance across field, UTM northing, easting, Sprayer application height, etc.)</xs:documentation>
+						<xs:documentation>Numeric Representations are the basic construct used to associate, interpretation and presentation related information to values.  This allows a system to distinguish differences between units types and their use.  (ex. utDistance used for Depth, Width, Distance across field, UTM northing, easting, Sprayer application height, etc.)</xs:documentation>
 						<xs:documentation>Operational variables are the basic construct used to associate, interpretation and presentation related information to values.</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="VariableRepresentation" maxOccurs="unbounded">
+							<xs:element name="NumericRepresentation" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>A variable representation is comprised of a domainID, domainTag, name, reference to a unit type and other presentation information.</xs:documentation>
+									<xs:documentation>A Numeric Representation is comprised of a domainID, domainTag, name, reference to a unit dimension and other presentation information.</xs:documentation>
 								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
@@ -110,26 +71,9 @@ An exclusive group is one that implies a selection of one and only one of the ch
 												</xs:complexType>
 											</xs:element>
 										</xs:choice>
-										<xs:element name="PresentationRange" minOccurs="0">
-											<xs:annotation>
-												<xs:documentation>The min and max value contained in this element must be of the same unit of measure as the parent element. "VariableRepresentation". This element is not optional.</xs:documentation>
-											</xs:annotation>
+										<xs:element name="UnitDimensionRef">
 											<xs:complexType>
-												<xs:attribute name="minValue" type="xs:double" use="required">
-													<xs:annotation>
-														<xs:documentation>Unit of measure specified in parent element.</xs:documentation>
-													</xs:annotation>
-												</xs:attribute>
-												<xs:attribute name="maxValue" type="xs:double" use="required">
-													<xs:annotation>
-														<xs:documentation>Unit of measure specified in parent element.</xs:documentation>
-													</xs:annotation>
-												</xs:attribute>
-											</xs:complexType>
-										</xs:element>
-										<xs:element name="UnitTypeRef">
-											<xs:complexType>
-												<xs:attribute name="unitType" type="unit:unitTypeDomainID" use="required"/>
+												<xs:attribute name="unitDimension" type="unit:unitDimensionDomainID" use="required"/>
 											</xs:complexType>
 										</xs:element>
 										<xs:element name="Name" maxOccurs="unbounded">
@@ -142,7 +86,7 @@ An exclusive group is one that implies a selection of one and only one of the ch
 														<xs:attribute name="postfix" type="xs:string" use="optional"/>
 														<xs:attribute name="alternateLabel" type="xs:string" use="optional">
 															<xs:annotation>
-																<xs:documentation>Optional:  Specifies a unit of measure label to use if the one for the referenced unit of measure is not acceptable for this variable representation.
+																<xs:documentation>Optional:  Specifies a unit of measure label to use if the one for the referenced unit of measure is not acceptable for this Numeric Representation.
 If not present the unit of measure lable will be used.</xs:documentation>
 															</xs:annotation>
 														</xs:attribute>
@@ -159,49 +103,12 @@ If not present the unit of measure lable will be used.</xs:documentation>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
-									<xs:attribute name="domainID" type="rep:VariableRepresentationDomainID" use="required"/>
-									<xs:attribute name="domainIDShort" type="rep:RepresentationDomainIDShort" use="required"/>
+									<xs:attribute name="domainID" type="rep:NumericRepresentationDomainID" use="required"/>
 									<xs:attribute name="domainTag" type="xs:long" use="required"/>
-									<xs:attribute name="useThousandSeparators" type="xs:boolean" use="optional"/>
 									<xs:attribute name="digits" type="xs:short" use="required"/>
 									<xs:attribute name="decimal" type="xs:short" use="required"/>
-									<xs:attribute name="unitOfMeasure" type="unit:unitOfMeasureDomainID" use="required"/>
-									<xs:attribute name="valueMergeMode">
-										<xs:annotation>
-											<xs:documentation>Merge mode specifies how multiple samples of a specific representation can be combined.  For example, vrYieldWetMass with a unit type of lb1ac-1 should have values averaged when multiple samples are combined into one.  This is not the same thing as aggregation or totals.</xs:documentation>
-										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:string">
-												<xs:enumeration value="Minimum">
-													<xs:annotation>
-														<xs:documentation>Specifieds that the minimum of all the samples given and should be used as the single representative value.</xs:documentation>
-													</xs:annotation>
-												</xs:enumeration>
-												<xs:enumeration value="Maximum">
-													<xs:annotation>
-														<xs:documentation>Specifieds that the maximum of all the samples given and should be used as the single representative value.</xs:documentation>
-													</xs:annotation>
-												</xs:enumeration>
-												<xs:enumeration value="RandomSample">
-													<xs:annotation>
-														<xs:documentation>Specifieds that a sample can be chosen at random of all the samples given and should be used as the single representative value.</xs:documentation>
-													</xs:annotation>
-												</xs:enumeration>
-												<xs:enumeration value="Average">
-													<xs:annotation>
-														<xs:documentation>Specifieds that a non-weighted average can be used to derive the single value that is representative of multiple samples.</xs:documentation>
-													</xs:annotation>
-												</xs:enumeration>
-												<xs:enumeration value="Total">
-													<xs:annotation>
-														<xs:documentation>Specifieds that a a total can be used to derive the single value that is representative of multiple samples.</xs:documentation>
-													</xs:annotation>
-												</xs:enumeration>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:attribute>
 								</xs:complexType>
-								<xs:unique name="LocalUniqunessWithinVariableRepresentationRS">
+								<xs:unique name="LocalUniqunessWithinNumericRepresentationRS">
 									<xs:selector xpath=".//rep:Name"/>
 									<xs:field xpath="@locale"/>
 								</xs:unique>
@@ -220,7 +127,7 @@ If not present the unit of measure lable will be used.</xs:documentation>
 									<xs:field xpath="@unitOfMeasureSystem"/>
 								</xs:unique>
 							</xs:element>
-							<xs:element name="DefinedTypeRepresentation" minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="EnumeratedRepresentation" minOccurs="0" maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="Name" maxOccurs="unbounded">
@@ -234,7 +141,7 @@ If not present the unit of measure lable will be used.</xs:documentation>
 											</xs:complexType>
 										</xs:element>
 										<xs:choice maxOccurs="unbounded">
-											<xs:element name="DefinedTypeInstance" maxOccurs="unbounded">
+											<xs:element name="EnumeratedMember" maxOccurs="unbounded">
 												<xs:complexType>
 													<xs:sequence>
 														<xs:element name="Name" maxOccurs="unbounded">
@@ -248,7 +155,7 @@ If not present the unit of measure lable will be used.</xs:documentation>
 															</xs:complexType>
 														</xs:element>
 													</xs:sequence>
-													<xs:attribute name="domainID" type="rep:DefinedTypeInstanceRepresentationDomainID" use="required"/>
+													<xs:attribute name="domainID" type="rep:EnumeratedMemberRepresentationDomainID" use="required"/>
 													<xs:attribute name="domainTag" type="xs:long" use="required"/>
 													<xs:attribute name="refID" type="xs:int" use="optional">
 														<xs:annotation>
@@ -256,14 +163,14 @@ If not present the unit of measure lable will be used.</xs:documentation>
 														</xs:annotation>
 													</xs:attribute>
 												</xs:complexType>
-												<xs:unique name="LocalUniqunessWithinDefinedTypeInstanceRS">
+												<xs:unique name="LocalUniqunessWithinEnumeratedMemberRS">
 													<xs:selector xpath="rep:Name"/>
 													<xs:field xpath="@locale"/>
 												</xs:unique>
 											</xs:element>
-											<xs:element name="DefinedTypeRepresentationRef" maxOccurs="unbounded">
+											<xs:element name="EnumeratedRepresentationRef" maxOccurs="unbounded">
 												<xs:complexType>
-													<xs:attribute name="definedTypeRepresentationID" type="rep:DefinedTypeRepresentationDomainID" use="optional"/>
+													<xs:attribute name="EnumeratedRepresentationID" type="rep:EnumeratedRepresentationDomainID" use="optional"/>
 												</xs:complexType>
 											</xs:element>
 										</xs:choice>
@@ -273,7 +180,7 @@ If not present the unit of measure lable will be used.</xs:documentation>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
-									<xs:attribute name="domainID" type="rep:DefinedTypeRepresentationDomainID" use="required"/>
+									<xs:attribute name="domainID" type="rep:EnumeratedRepresentationDomainID" use="required"/>
 									<xs:attribute name="domainIDShort" type="rep:RepresentationDomainIDShort" use="required"/>
 									<xs:attribute name="domainTag" type="xs:long" use="required"/>
 									<xs:attribute name="attributeID" type="xs:int" use="optional">
@@ -283,7 +190,7 @@ If not present the unit of measure lable will be used.</xs:documentation>
 									</xs:attribute>
 									<xs:attribute name="valueMergeMode">
 										<xs:annotation>
-											<xs:documentation>Merge mode specifies how multiple samples of a specific representation can be combined.  See "valueMergeMode" under VariableRepresentation.  The default value for DefinedTypeRepresentation's will be RandomSample. This attribute exist only for completeness.  If this attribute is not present, RandomSample is assumed.</xs:documentation>
+											<xs:documentation>Merge mode specifies how multiple samples of a specific representation can be combined.  See "valueMergeMode" under NumericRepresentation.  The default value for EnumeratedRepresentation's will be RandomSample. This attribute exist only for completeness.  If this attribute is not present, RandomSample is assumed.</xs:documentation>
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="xs:string">
@@ -292,7 +199,7 @@ If not present the unit of measure lable will be used.</xs:documentation>
 										</xs:simpleType>
 									</xs:attribute>
 								</xs:complexType>
-								<xs:unique name="LocalUniqunessWithinDefinedTypeRepresentationRS">
+								<xs:unique name="LocalUniqunessWithinEnumeratedRepresentationRS">
 									<xs:selector xpath="rep:Name"/>
 									<xs:field xpath="@locale"/>
 								</xs:unique>
@@ -315,7 +222,7 @@ If not present the unit of measure lable will be used.</xs:documentation>
 			<xs:field xpath="@domainTag"/>
 		</xs:unique>
 	</xs:element>
-	<xs:complexType name="VariableRepresentationValueType">
+	<xs:complexType name="NumericRepresentationValueType">
 		<xs:annotation>
 			<xs:documentation>The element name of the derived type of this complexType will be the domainID of the OperationalVariableType.
 All derived elements must not extend this type with additional or modified attributes or child elements.
@@ -323,24 +230,24 @@ If additional attributes or child elements are required, extend this type will a
 		</xs:annotation>
 		<xs:attribute name="value" type="xs:double" use="required"/>
 		<xs:attribute name="sourceUOM" type="unit:unitOfMeasureDomainID" use="required"/>
-		<xs:attribute name="variableRepresentation" type="rep:VariableRepresentationDomainID" use="required"/>
+		<xs:attribute name="NumericRepresentation" type="rep:NumericRepresentationDomainID" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="VariableRepresentationType">
+	<xs:complexType name="NumericRepresentationType">
 		<xs:annotation>
 			<xs:documentation>The element name of the derived type of this complexType will be the domainID of the OperationalVariableType.
 All derived elements must not extend this type with additional or modified attributes or child elements.
 If additional attributes or child elements are required, extend this type will another complexType derived from this one.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="sourceUOM" type="unit:unitOfMeasureDomainID" use="required"/>
-		<xs:attribute name="variableRepresentation" type="rep:VariableRepresentationDomainID" use="required"/>
+		<xs:attribute name="NumericRepresentation" type="rep:NumericRepresentationDomainID" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="DefinedTypeRepresentationType">
+	<xs:complexType name="EnumeratedRepresentationType">
 		<xs:annotation>
 			<xs:documentation>The element name of the derived type of this complexType will be the domainID of the OperationalVariableType.
 All derived elements must not extend this type with additional or modified attributes or child elements.
 If additional attributes or child elements are required, extend this type will another complexType derived from this one.</xs:documentation>
 		</xs:annotation>
-		<xs:attribute name="DefinedTypeRepresentation" type="rep:DefinedTypeRepresentationDomainID" use="required"/>
+		<xs:attribute name="EnumeratedRepresentation" type="rep:EnumeratedRepresentationDomainID" use="required"/>
 	</xs:complexType>
 	<xs:element name="Number">
 		<xs:complexType>
@@ -348,30 +255,30 @@ If additional attributes or child elements are required, extend this type will a
 			<xs:attribute name="sourceUOM" type="bt:idRef" use="required"/>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="VariableRepresentationValue" type="rep:VariableRepresentationValueType"/>
-	<xs:element name="VariableRepresentation">
+	<xs:element name="NumericRepresentationValue" type="rep:NumericRepresentationValueType"/>
+	<xs:element name="NumericRepresentation">
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="rep:VariableRepresentationType"/>
+				<xs:extension base="rep:NumericRepresentationType"/>
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
-	<xs:complexType name="DefinedTypeRepresentationValue">
+	<xs:complexType name="EnumeratedRepresentationValue">
 		<xs:attribute name="value" type="xs:string" use="required"/>
-		<xs:attribute name="definedTypeRepresentation" type="rep:DefinedTypeRepresentationDomainID" use="required"/>
+		<xs:attribute name="EnumeratedRepresentation" type="rep:EnumeratedRepresentationDomainID" use="required"/>
 	</xs:complexType>
-	<xs:element name="DefinedTypeRepresentationValue">
+	<xs:element name="EnumeratedRepresentationValue">
 		<xs:complexType>
 			<xs:attribute name="value" type="xs:string" use="required"/>
-			<xs:attribute name="definedTypeRepresentation" type="rep:DefinedTypeRepresentationDomainID" use="required"/>
+			<xs:attribute name="EnumeratedRepresentation" type="rep:EnumeratedRepresentationDomainID" use="required"/>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="DefinedTypeRepresentation">
+	<xs:element name="EnumeratedRepresentation">
 		<xs:complexType>
-			<xs:attribute name="definedTypeRepresentation" type="rep:DefinedTypeRepresentationDomainID" use="required"/>
+			<xs:attribute name="EnumeratedRepresentation" type="rep:EnumeratedRepresentationDomainID" use="required"/>
 		</xs:complexType>
 	</xs:element>
-	<xs:simpleType name="VariableRepresentationDomainID">
+	<xs:simpleType name="NumericRepresentationDomainID">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="(vr)([a-z|A-Z|0-9])+"/>
 		</xs:restriction>
@@ -381,19 +288,14 @@ If additional attributes or child elements are required, extend this type will a
 			<xs:pattern value="([a-z|A-Z|0-9]){1,8}"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="DefinedTypeRepresentationDomainID">
+	<xs:simpleType name="EnumeratedRepresentationDomainID">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="(dt)([a-z|A-Z|0-9])+"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="DefinedTypeInstanceRepresentationDomainID">
+	<xs:simpleType name="EnumeratedMemberRepresentationDomainID">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="(dti)([a-z|A-Z|0-9])+"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="VariableGroupDomainID">
-		<xs:restriction base="xs:string">
-			<xs:pattern value="(vg)([a-z|A-Z|0-9])+"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="UnitOfMeasurePreferenceType">
@@ -428,27 +330,27 @@ This element is optional in which case the default UOM range should be used.  If
 		<xs:attribute name="maxValue" type="xs:double" use="optional"/>
 		<xs:attribute name="decimal" type="xs:short" use="optional"/>
 	</xs:complexType>
-	<xs:complexType name="DefinedTypeRepresentationValueType">
+	<xs:complexType name="EnumeratedRepresentationValueType">
 		<xs:annotation>
-			<xs:documentation>The element name of the derived type of this complexType will be the domainID of the DefinedTypeRepresentation.</xs:documentation>
+			<xs:documentation>The element name of the derived type of this complexType will be the domainID of the EnumeratedRepresentation.</xs:documentation>
 		</xs:annotation>
-		<xs:attribute name="definedTypeInstance" type="rep:DefinedTypeRepresentationDomainID" use="required"/>
+		<xs:attribute name="EnumeratedMember" type="rep:EnumeratedRepresentationDomainID" use="required"/>
 	</xs:complexType>
 	<xs:simpleType name="RepresentationDomainID">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="(vr|dt)([a-z|A-Z|0-9])+"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="VariableRepresentationColumn">
+	<xs:complexType name="NumericRepresentationColumn">
 		<xs:attribute name="columnID" type="xs:string" use="required"/>
 		<xs:attribute name="sourceUOM" type="unit:unitOfMeasureDomainID" use="required"/>
-		<xs:attribute name="variableRepresentation" type="rep:VariableRepresentationDomainID" use="required"/>
+		<xs:attribute name="NumericRepresentation" type="rep:NumericRepresentationDomainID" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="DefinedTypeRepresentationColumn">
+	<xs:complexType name="EnumeratedRepresentationColumn">
 		<xs:attribute name="columnID" type="xs:string" use="required"/>
-		<xs:attribute name="definedTypeRepresentation" type="rep:DefinedTypeRepresentationDomainID" use="required">
+		<xs:attribute name="EnumeratedRepresentation" type="rep:EnumeratedRepresentationDomainID" use="required">
 			<xs:annotation>
-				<xs:documentation>This should be the representation of the top level DefinedTypeRepresentation if it belongs to a multiple level defined type.</xs:documentation>
+				<xs:documentation>This should be the representation of the top level EnumeratedRepresentation if it belongs to a multiple level enumerated representation.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>

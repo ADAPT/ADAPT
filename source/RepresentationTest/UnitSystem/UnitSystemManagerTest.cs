@@ -42,8 +42,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenXmlShouldLoadUnits()
         {
-            foreach (var unit in DeserializeUnitSystem().UnitTypes.SelectMany(
-                    ut => ut.Items.OfType<UnitSystemUnitTypeUnitTypeRepresentation>()
+            foreach (var unit in DeserializeUnitSystem().UnitDimensions.SelectMany(
+                    ut => ut.Items.OfType<UnitSystemUnitDimensionUnitDimensionRepresentation>()
                                   .SelectMany(utr => utr.UnitOfMeasure)))
             {
                 var unitOfMeasure = (ScalarUnitOfMeasure) UnitSystemManager.Instance.UnitOfMeasures[unit.domainID];
@@ -56,11 +56,11 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenXmlShouldLoadUnitsUnderTypes()
         {
-            foreach (var unit in DeserializeUnitSystem().UnitTypes.SelectMany(
-                    ut => ut.Items.OfType<UnitSystemUnitTypeUnitTypeRepresentation>()
+            foreach (var unit in DeserializeUnitSystem().UnitDimensions.SelectMany(
+                    ut => ut.Items.OfType<UnitSystemUnitDimensionUnitDimensionRepresentation>()
                                   .SelectMany(utr => utr.UnitOfMeasure)))
             {
-                var unitOfMeasure = (ScalarUnitOfMeasure) UnitSystemManager.Instance.UnitTypes.SelectMany(x => x.Units).First(y => y.DomainID == unit.domainID);
+                var unitOfMeasure = (ScalarUnitOfMeasure) UnitSystemManager.Instance.UnitDimensions.SelectMany(x => x.Units).First(y => y.DomainID == unit.domainID);
                 Assert.AreEqual(unit.scale, unitOfMeasure.Scale);
                 Assert.AreEqual(unit.baseOffset, unitOfMeasure.BaseOffset);
                 Assert.AreEqual(unit.Name.First(n => n.locale == CultureInfoDefault.DefaultCulture).label, unitOfMeasure.Label);
@@ -68,14 +68,14 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         }
 
         [Test]
-        public void GivenXmlShouldLoadUnitTypes()
+        public void GivenXmlShouldLoadunitDimensions()
         {
-            foreach (var unitType in DeserializeUnitSystem().UnitTypes)
+            foreach (var unitDimension in DeserializeUnitSystem().UnitDimensions)
             {
-                var matchingType = UnitSystemManager.Instance.UnitTypes[unitType.domainID];
-                var expected = unitType.Items.OfType<UnitSystemUnitTypeUnitTypeRepresentation>().SelectMany(x => x.UnitOfMeasure);
+                var matchingType = UnitSystemManager.Instance.UnitDimensions[unitDimension.domainID];
+                var expected = unitDimension.Items.OfType<UnitSystemUnitDimensionUnitDimensionRepresentation>().SelectMany(x => x.UnitOfMeasure);
                 Assert.AreEqual(expected.Count(), matchingType.Units.Count);
-                Assert.AreEqual(unitType.Name.First(n => n.locale == CultureInfoDefault.DefaultCulture).Value, matchingType.Name);
+                Assert.AreEqual(unitDimension.Name.First(n => n.locale == CultureInfoDefault.DefaultCulture).Value, matchingType.Name);
             }
         }
 
@@ -88,7 +88,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
                 if (Enum.TryParse(unitOfMeasureSystem.domainID, out unitSystem))
                 {
                     var system = UnitSystemManager.Instance.UnitOfMeasureSystems[unitSystem];
-                    var units = system.UnitTypes.SelectMany(x => x.Units).Select(x => x.DomainID).Distinct().ToList();
+                    var units = system.UnitDimensions.SelectMany(x => x.Units).Select(x => x.DomainID).Distinct().ToList();
                     foreach (var unitDomainId in unitOfMeasureSystem.UnitOfMeasureRef.Select(x => x.unitOfMeasureRef))
                     {
                         Assert.IsTrue(units.Contains(unitDomainId));
@@ -129,7 +129,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         private Representation.Generated.UnitSystem DeserializeUnitSystem()
         {
             var serializer = new XmlSerializer(typeof(Representation.Generated.UnitSystem));
-            var xmlStringBytes = System.Text.Encoding.UTF8.GetBytes(RepresentationResources.UnitSystem);
+            var xmlStringBytes = System.Text.Encoding.UTF8.GetBytes(Properties.Resources.UnitSystem);
             using (var stream = new MemoryStream(xmlStringBytes))
                 return (Representation.Generated.UnitSystem)serializer.Deserialize(stream);
         }

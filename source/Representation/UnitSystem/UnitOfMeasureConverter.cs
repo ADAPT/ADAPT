@@ -47,13 +47,13 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
         private static void CheckIfUnitsAreTheSameType(ScalarUnitOfMeasure sourceUom, ScalarUnitOfMeasure targetUom)
         {
-            if(sourceUom.UnitType.DomainID != targetUom.UnitType.DomainID)
+            if(sourceUom.UnitDimension.DomainID != targetUom.UnitDimension.DomainID)
                 throw new InvalidOperationException("Cannot convert between units of different types.");
         }
 
         private double Convert(ScalarUnitOfMeasure sourceUom, CompositeUnitOfMeasure targetUom, double sourceValue)
         {
-            foreach (var conversionFactor in sourceUom.UnitType.CompositeEquivalents)
+            foreach (var conversionFactor in sourceUom.UnitDimension.CompositeEquivalents)
             {
                 var compositeSourceValue = (sourceValue * sourceUom.Scale + sourceUom.BaseOffset - conversionFactor.BaseOffset) / conversionFactor.Scale;
                 var compositeSourceUom = new CompositeUnitOfMeasure(conversionFactor.DomainID);
@@ -64,7 +64,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
         private double Convert(CompositeUnitOfMeasure sourceUom, ScalarUnitOfMeasure targetUom, double sourceValue)
         {
-            foreach (var conversionFactor in targetUom.UnitType.CompositeEquivalents)
+            foreach (var conversionFactor in targetUom.UnitDimension.CompositeEquivalents)
             {
                 var compositeSourceValue = (sourceValue * conversionFactor.Scale + conversionFactor.BaseOffset - targetUom.BaseOffset) / targetUom.Scale;
                 var compositeTargetUom = new CompositeUnitOfMeasure(conversionFactor.DomainID);

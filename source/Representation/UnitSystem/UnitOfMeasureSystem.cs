@@ -26,7 +26,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
     public class UnitOfMeasureSystem : IUnit
     {
-        private readonly UnitCollection<UnitType> _units;
+        private readonly UnitCollection<UnitDimension> _units;
         public List<string> UnitOfMeasureDomainIds;
 
         public UnitSystem UnitSystem
@@ -39,7 +39,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             }
         }
 
-        public UnitCollection<UnitType> UnitTypes
+        public UnitCollection<UnitDimension> UnitDimensions
         {
             get { return _units; }
         }
@@ -49,20 +49,20 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
         public UnitOfMeasureSystem(UnitSystemUnitOfMeasureSystem unitOfMeasureSystem, UnitSystemManager unitSystemManager)
         {
             DomainID = unitOfMeasureSystem.domainID;
-            _units = GetUnitTypes(unitOfMeasureSystem.UnitOfMeasureRef, unitSystemManager);
+            _units = GetUnitDimensions(unitOfMeasureSystem.UnitOfMeasureRef, unitSystemManager);
         }
 
-        private UnitCollection<UnitType> GetUnitTypes(IEnumerable<UnitSystemUnitOfMeasureSystemUnitOfMeasureRef> unitOfMeasureRefs, UnitSystemManager unitSystemManager)
+        private UnitCollection<UnitDimension> GetUnitDimensions(IEnumerable<UnitSystemUnitOfMeasureSystemUnitOfMeasureRef> unitOfMeasureRefs, UnitSystemManager unitSystemManager)
         {
             if (unitOfMeasureRefs == null)
-                return new UnitCollection<UnitType>();
+                return new UnitCollection<UnitDimension>();
 
             UnitOfMeasureDomainIds = unitOfMeasureRefs.Select(u => u.unitOfMeasureRef).ToList();
 
-            var unitSystemUnitTypesLinq = unitSystemManager.UnitTypes
+            var dimensions = unitSystemManager.UnitDimensions
                 .Where(t => t.Units.Any(u => UnitOfMeasureDomainIds.Contains(u.DomainID)));
 
-            return new UnitCollection<UnitType>(unitSystemUnitTypesLinq);
+            return new UnitCollection<UnitDimension>(dimensions);
         }
     }
 }

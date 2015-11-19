@@ -39,7 +39,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         }
 
         [Test]
-        public void GivenUnitOfMeasureSystemWhenGetUnitTypesThenUnitTypesAreLoaded()
+        public void GivenUnitOfMeasureSystemWhenGetUnitDimensionsThenUnitDimensionsAreLoaded()
         {
             _unitOfMeasureSystem.UnitOfMeasureRef = new[]
             {
@@ -53,8 +53,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
                 }
             };
             var unitOfMeasureSystem = new UnitOfMeasureSystem(_unitOfMeasureSystem, _unitSystemManager);
-            Assert.Contains(_unitSystemManager.UnitTypes["utDistance"], unitOfMeasureSystem.UnitTypes.ToList());
-            Assert.Contains(_unitSystemManager.UnitTypes["utVolume"], unitOfMeasureSystem.UnitTypes.ToList());
+            Assert.Contains(_unitSystemManager.UnitDimensions["utDistance"], unitOfMeasureSystem.UnitDimensions.ToList());
+            Assert.Contains(_unitSystemManager.UnitDimensions["utVolume"], unitOfMeasureSystem.UnitDimensions.ToList());
         }
     }
 }

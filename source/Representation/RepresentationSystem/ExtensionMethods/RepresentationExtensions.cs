@@ -16,9 +16,9 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.ExtensionMethods
 {
     public static class RepresentationExtensions
     {
-        public static NumericRepresentation ToModelRepresentation(this VariableRepresentation representation)
+        public static ApplicationDataModel.NumericRepresentation ToModelRepresentation(this NumericRepresentation representation)
         {
-            return new NumericRepresentation
+            return new ApplicationDataModel.NumericRepresentation
             {
                 Id = (int) representation.DomainTag,
                 Name = representation.Name,
@@ -26,9 +26,9 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.ExtensionMethods
             };
         }
 
-        public static EnumeratedRepresentation ToModelRepresentation(this DefinedRepresentation representation)
+        public static ApplicationDataModel.EnumeratedRepresentation ToModelRepresentation(this EnumeratedRepresentation representation)
         {
-            return new EnumeratedRepresentation
+            return new ApplicationDataModel.EnumeratedRepresentation
             {
                 Id = (int) representation.DomainTag,
                 Name = representation.Name,
@@ -52,14 +52,14 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.ExtensionMethods
             return representation.EnumerationMembers.First(em => em.DomainTag == enumMember.Value.Code);
         }
 
-        public static VariableRepresentation ToInternalRepresentation(this NumericRepresentation representation)
+        public static NumericRepresentation ToInternalRepresentation(this ApplicationDataModel.NumericRepresentation representation)
         {
-            return (VariableRepresentation) RepresentationManager.Instance.Representations[representation.Id];
+            return (NumericRepresentation) RepresentationManager.Instance.Representations[representation.Id];
         }
 
-        public static DefinedRepresentation ToInternalRepresentation(this EnumeratedRepresentation representation)
+        public static EnumeratedRepresentation ToInternalRepresentation(this ApplicationDataModel.EnumeratedRepresentation representation)
         {
-            return (DefinedRepresentation) RepresentationManager.Instance.Representations[representation.Id];
+            return (EnumeratedRepresentation) RepresentationManager.Instance.Representations[representation.Id];
         }
     }
 }

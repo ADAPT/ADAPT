@@ -45,16 +45,16 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         private static RepresentationCollection<Representation> GetRepresentations(Generated.RepresentationSystem representationSystem)
         {
-            var variableRepresentations = representationSystem.Representations.VariableRepresentation.Select(v => new VariableRepresentation(v));
-            var definedRepresentations = representationSystem.Representations.DefinedTypeRepresentation.Select(d => new DefinedRepresentation(d));
-            var allRepresentations = variableRepresentations.Union<Representation>(definedRepresentations);
+            var numericRepresentations = representationSystem.Representations.NumericRepresentation.Select(v => new NumericRepresentation(v));
+            var enumeratedRepresentations = representationSystem.Representations.EnumeratedRepresentation.Select(d => new EnumeratedRepresentation(d));
+            var allRepresentations = numericRepresentations.Union<Representation>(enumeratedRepresentations);
             return new RepresentationCollection<Representation>(allRepresentations);
         } 
 
         private static Generated.RepresentationSystem DeserializeRepresentationSystem()
         {
             var serializer = new XmlSerializer(typeof(Generated.RepresentationSystem));
-			var xmlText = RepresentationResources.RepresentationSystem;
+            var xmlText = Properties.Resources.RepresentationSystem;
             var xmlStringBytes = System.Text.Encoding.UTF8.GetBytes (xmlText);
             using (var stream = new MemoryStream(xmlStringBytes))
                 return (Generated.RepresentationSystem)serializer.Deserialize(stream);

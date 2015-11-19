@@ -13,36 +13,36 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public class DefinedTypeValue : ICopy<DefinedTypeValue>
     {
-        public DefinedRepresentation Representation { get; private set; }
+        public EnumeratedRepresentation Representation { get; private set; }
         public EnumerationMember EnumerationMember { get; set; }
 
         public DefinedTypeValue(string representationDomainId)
-            : this((DefinedRepresentation)RepresentationManager.Instance.Representations[representationDomainId])
+            : this((EnumeratedRepresentation)RepresentationManager.Instance.Representations[representationDomainId])
         {
             
         }
 
-        public DefinedTypeValue(DefinedRepresentation definedRepresentation)
-            : this(definedRepresentation, null)
+        public DefinedTypeValue(EnumeratedRepresentation enumeratedRepresentation)
+            : this(enumeratedRepresentation, null)
         {
             
         }
 
         public DefinedTypeValue(string representationDomainId, string enumerationDomainId)
-            : this((DefinedRepresentation)RepresentationManager.Instance.Representations[representationDomainId], ((DefinedRepresentation)RepresentationManager.Instance.Representations[representationDomainId]).EnumerationMembers[enumerationDomainId])
+            : this((EnumeratedRepresentation)RepresentationManager.Instance.Representations[representationDomainId], ((EnumeratedRepresentation)RepresentationManager.Instance.Representations[representationDomainId]).EnumerationMembers[enumerationDomainId])
         {
 
         }
 
         public DefinedTypeValue(long representationDomainTag, long enumerationDomainTag) :
-            this((DefinedRepresentation)RepresentationManager.Instance.Representations[representationDomainTag], ((DefinedRepresentation)RepresentationManager.Instance.Representations[representationDomainTag]).EnumerationMembers[enumerationDomainTag])
+            this((EnumeratedRepresentation)RepresentationManager.Instance.Representations[representationDomainTag], ((EnumeratedRepresentation)RepresentationManager.Instance.Representations[representationDomainTag]).EnumerationMembers[enumerationDomainTag])
         {
             
         }
 
-        public DefinedTypeValue(DefinedRepresentation definedRepresentation, EnumerationMember enumerationMember)
+        public DefinedTypeValue(EnumeratedRepresentation enumeratedRepresentation, EnumerationMember enumerationMember)
         {
-            Representation = definedRepresentation;
+            Representation = enumeratedRepresentation;
             EnumerationMember = enumerationMember;
         }
 

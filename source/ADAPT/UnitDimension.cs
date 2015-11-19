@@ -10,12 +10,23 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/  
 
+using System.Collections.Generic;
+
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class VariableRepresentationValue
+    public class UnitDimension
     {
-        public double RecordedValue { get; set; }
+        public UnitDimension()
+        {
+            Id = CompoundIdentifierFactory.Instance.Create();
+        }
 
-        public double EnteredValue { get; set; }
+        public CompoundIdentifier Id { get; private set; }
+
+        public string Name { get; set; }
+
+        public List<CompoundUnitOfMeasure> CompoundUnitOfMeasures { get; set; }
+
+        public CompoundUnitOfMeasure BaseUnitOfMeasure { get; set; }
     }
 }
