@@ -9,22 +9,17 @@
   * Contributors:
   *    Tim Shearouse - initial API and implementation
   *******************************************************************************/
+
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace AgGateway.ADAPT.ApplicationDataModel.PluginProperties
+namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    /*
-     * Known properties (KeyName, Type):
-     * 
-     * "LatencySettings", LatencySettings
-     * "DesiredUnitSystem", UnitOfMeasureSystem
-     */
     public class Properties
     {
-        private readonly Dictionary<string, object> _properties = new Dictionary<string, object>();
+        private readonly Dictionary<string, string> _properties = new Dictionary<string, string>();
 
-        public void SetProperty(string key, object value)
+        public void SetProperty(string key, string value)
         {
             if (_properties.ContainsKey(key))
             {
@@ -36,16 +31,16 @@ namespace AgGateway.ADAPT.ApplicationDataModel.PluginProperties
             }
         }
 
-        public object GetProperty(string key)
+        public string GetProperty(string key)
         {
             if (!_properties.ContainsKey(key))
                 return null;
             return _properties[key];
         }
 
-        public ReadOnlyDictionary<string, object> GetAllProperties()
+        public ReadOnlyDictionary<string, string> GetAllProperties()
         {
-            return new ReadOnlyDictionary<string, object>(_properties);
+            return new ReadOnlyDictionary<string, string>(_properties);
         }
     }
 }
