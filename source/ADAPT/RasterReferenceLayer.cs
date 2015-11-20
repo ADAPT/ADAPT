@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Justin Sliekers - adding SpatialAttributes
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -27,7 +28,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public NumericRepresentationValue CellHeight { get; set; }
 
         public List<RasterData<EnumeratedRepresentation, EnumerationMember>> EnumeratedRasterValues { get; set; }
+        
         public List<RasterData<StringRepresentation, string>> StringRasterValues { get; set; }
+       
         public List<RasterData<NumericRepresentation, NumericValue>> NumericRasterValues { get; set; }
+
+        public List<SpatialAttribute> SpatialAttributes { get; set; }
     }
 }

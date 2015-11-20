@@ -8,11 +8,15 @@
   *
   * Contributors:
   *    Kathleen Oneal - initial API and implementation
+  *    Kathleen Oneal - added values
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum DocRelationshipTypeEnum
     {
+        Casual,
+        Contextual,
+        Compositional
     }
 }

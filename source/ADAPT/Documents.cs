@@ -21,14 +21,23 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     public class Documents
     {
         public List<WorkItem> WorkItems { get; set; }
+
         public List<WorkItemOperation> WorkItemOperations { get; set; }
+
         public List<LoggedData> LoggedData { get; set; }
+
         public List<OperationData> OperationData { get; set; }
-        public List<Plan> Plans { get; set; } 
-        public List<WorkOrder> WorkOrders { get; set; } 
+
+        public List<Plan> Plans { get; set; }
+
+        public List<WorkOrder> WorkOrders { get; set; }
+
         public List<Recommendation> Recommendations { get; set; }
+
         public List<GuidanceAllocation> GuidanceAllocations { get; set; }
-        public List<Summary> Summaries { get; set; } 
+
+        public List<Summary> Summaries { get; set; }
+
         public int LoggedDataCatalog { get; set; }
     }
 }

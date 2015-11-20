@@ -8,9 +8,9 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - made guidanceshifts into single guidanceShift, changes timescopes to timeScope
+  *    Kathleen Oneal - added properties guidancePatternId, EastShit, NorthShift, and PropagationOffset, removed GuidanceShift
   *******************************************************************************/
-
-using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
@@ -25,8 +25,14 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public int GuidanceGroupId { get; set; }
 
-        public List<int> TimeScopes { get; set; }
+        public int GuidancePatternId { get; set; }
 
-        public List<GuidanceShift> GuidanceShifts { get; set; }
+        public NumericRepresentationValue EastShift { get; set; }
+
+        public NumericRepresentationValue NorthShift { get; set; }
+
+        public NumericRepresentationValue PropagationOffset { get; set; }
+
+        public TimeScope TimeScope { get; set; }
     }
 }

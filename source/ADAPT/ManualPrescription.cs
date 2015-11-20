@@ -8,16 +8,13 @@
   *
   * Contributors:
   *    Justin Sliekers - initial API and implementation
+  *    Justin Sliekers - dropping product uses and application strategy, adding rate
   *******************************************************************************/
-
-using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class ManualPrescription : Prescription
     {
-        public List<ProductUse> ProductUses { get; set; } 
-
-        public ApplicationStrategyEnum ApplicationStrategy { get; set; }
+        public double Rate { get; set; }
     }
 }

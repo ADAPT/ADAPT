@@ -18,9 +18,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     public class UniqueId
     {
         public string Id { get; set; }
+        
         public CompoundIdentifierTypeEnum CiTypeEnum { get; set; }
+        
         public string Source { get; set; }
+        
         public IdSourceTypeEnum SourceType { get; set; }
+        
         public bool IsFirstSource { get; set; }
     }
 }

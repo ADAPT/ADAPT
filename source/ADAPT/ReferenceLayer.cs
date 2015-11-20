@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - changed LayerType to ReferenceLayerTypeEnum
+  *    Justin Sliekers - changing BoundingPolygon to Polgyon; changing to single timescope
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -28,9 +29,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public ReferenceLayerTypeEnum LayerType { get; set; }
 
-        public List<int> TimeScopeIds { get; set; }
+        public TimeScope TimeScope { get; set; }
 
-        public MultiPolygon BoundingPolygon { get; set; }
+        public Polygon BoundingPolygon { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }
     }

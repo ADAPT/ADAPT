@@ -29,8 +29,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public NumericRepresentationValue Area { get; set; }
 
-        public List<int> TimeScopeIds { get; set; }
-
         public int? ActiveBoundaryId { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }
@@ -42,5 +40,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public NumericRepresentationValue SlopeLength { get; set; }
 
         public List<int> GuidanceGroupIds { get; set; }
+
+        public List<int> TimeScopeIds { get; set; }
     }
 }

@@ -10,6 +10,7 @@
  *    Tarak Reddy, Tim Shearouse - initial API and implementation
  *    Joseph Ross - Making Properties
  *    Tarak Reddy - Added MachineId
+ *    Kathleen Oneal - changed TimeScope list of ints to single TimeScope
  *******************************************************************************/
 
 using System.Collections.Generic;
@@ -24,12 +25,19 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public CompoundIdentifier Id { get; private set; }
-        public List<int> TimeScopeIds { get; set; }
+        
+        public TimeScope TimeScope { get; set; }
+        
         public NumericRepresentationValue GpsReceiverXOffset { get; set; }
+        
         public NumericRepresentationValue GpsReceiverYOffset { get; set; }
+        
         public NumericRepresentationValue GpsReceiverZOffset { get; set; }
+        
         public OriginAxleLocationEnum OriginAxleLocation { get; set; }
+        
         public List<int> ConnectorIds { get; set; }
+        
         public int MachineId { get; set; }
     }
 }

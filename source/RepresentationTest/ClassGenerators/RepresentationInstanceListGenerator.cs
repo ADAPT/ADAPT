@@ -19,7 +19,7 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
 {
     public class RepresentationInstanceListGenerator : ClassGenerator
     {
-        private const string RepresentationPattern = "        public static readonly {0} {2} = ({0})RepresentationManager.Instance.Representations[{1}];";
+        private const string RepresentationPattern = "        public static readonly {0} {1} = ({0})RepresentationManager.Instance.Representations[\"{1}\"];";
 
         protected override string Name
         {
@@ -37,15 +37,15 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
             }
         }
 
-        protected override void Append(EnumeratedRepresentation definedRepresentation, StringBuilder stringBuilder)
+        protected override void Append(Representation.RepresentationSystem.EnumeratedRepresentation definedRepresentation, StringBuilder stringBuilder)
         {
-            stringBuilder.Append(String.Format(RepresentationPattern, typeof(EnumeratedRepresentation).Name, definedRepresentation.Id, definedRepresentation.Name));
+            stringBuilder.Append(String.Format(RepresentationPattern, typeof(EnumeratedRepresentation).Name, definedRepresentation.DomainId));
             stringBuilder.Append("\n\n");
         }
 
-        protected override void Append(NumericRepresentation representation, StringBuilder stringBuilder)
+        protected override void Append(Representation.RepresentationSystem.NumericRepresentation representation, StringBuilder stringBuilder)
         {
-            string representationName = representation.Name.Replace("\r", "")
+            string representationName = representation.DomainId.Replace("\r", "")
                                                             .Replace("[", "")
                                                             .Replace("]", "")
                                                             .Replace("(", "")
@@ -54,7 +54,7 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
                                                             .Replace("–", "")
                                                             .Replace(" ", "");
 
-            stringBuilder.Append(String.Format(RepresentationPattern, typeof(NumericRepresentation).Name, representation.Id, representationName));
+            stringBuilder.Append(String.Format(RepresentationPattern, typeof(NumericRepresentation).Name, representation.DomainId));
             stringBuilder.Append("\n\n");
         }
     }

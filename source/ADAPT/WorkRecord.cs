@@ -12,20 +12,10 @@
   *    Kathleen Oneal - removed all properties
   *******************************************************************************/
 
-using System.Collections.Generic;
-
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class WorkRecord : Document
     {
-        public int? FarmId { get; set; }
-        public int? FieldId { get; set; }
-        public int? SeasonId { get; set; }
-        public int? WorkItemId { get; set; }
-        public List<int> ContextItemIds { get; set; }
-        public int? CropZoneId { get; set; }
-        public int? PersonRoleId { get; set; }
-        public List<int> WorkItemIds { get; set; }
-        public List<StatusUpdate> StatusUpdates { get; set; }
+
     }
 }

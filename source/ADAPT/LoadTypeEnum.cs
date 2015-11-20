@@ -7,12 +7,18 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Kathleen Oneal - initial API and implementation
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class ShapeSettings
+    public enum LoadTypeEnum
     {
+        Unknown,
+        Tank,
+        Field,
+        Truck,
+        Bale,
+        Module
     }
 }

@@ -7,32 +7,26 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Kathleen Oneal - changed Role from string to PersonRolesEnum
-  *    Justin Sliekers - changed EmployerId to CompanyId, changed to list of Timescope for ActiveScopes
+  *    Justin Sliekers, Kathleen Oneal - initial API and implementation
   *******************************************************************************/
 
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class PersonRole
+    public class ActiveIngredient
     {
-        public PersonRole()
+        public ActiveIngredient()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
         }
 
-        public CompoundIdentifier Id { get; private set; }
+        public CompoundIdentifier Id { get; set; }
 
-        public int PersonId { get; set; }
+        public int ModeOfAction { get; set; }
 
-        public PersonRolesEnum Role { get; set; }
-        
-        public int? GrowerId { get; set; }
+        public List<ContextItem> ContextItems { get; set; }
 
-        public List<TimeScope> ActiveScopes { get; set; }
-
-        public int? CompanyId { get; set; }
+        public string Description { get; set; }
     }
 }

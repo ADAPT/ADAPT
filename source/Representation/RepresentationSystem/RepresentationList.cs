@@ -1,15 +1,4 @@
-/*******************************************************************************
-  * Copyright (C) 2015 AgGateway and ADAPT Contributors
-  * Copyright (C) 2015 Deere and Company
-  * All rights reserved. This program and the accompanying materials
-  * are made available under the terms of the Eclipse Public License v1.0
-  * which accompanies this distribution, and is available at
-  * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
-  *
-  * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/
-namespace AgGateway.ADAPT.Representation.RepresentationSystem
+using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public enum RepresentationList 
     {
@@ -183,7 +172,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         vrYieldBalePerArea = 35,
 
-        vrYieldWetMass = 36,
+        vrYieldWetMassFlow = 36,
 
         vrYieldWetMassPerArea = 37,
 
@@ -876,8 +865,6 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         vrDeltaArea = 508,
 
         vrDeltaAppliedVolume = 509,
-
-        vrHarvestWetMassFlow = 510,
 
         vrSolutionSystemFlowRatePerMinute = 511,
 

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AbCurve.cs" />
     <Compile Include="AbLine.cs" />
+    <Compile Include="ActiveIngredient.cs" />
     <Compile Include="APlus.cs" />
     <Compile Include="ApplicationDataModel.cs" />
     <Compile Include="ApplicationStrategyEnum.cs" />
@@ -55,8 +56,8 @@
     <Compile Include="CompoundIdentifier.cs" />
     <Compile Include="CompoundIdentifierFactory.cs" />
     <Compile Include="CompoundIdentifierTypeEnum.cs" />
-    <Compile Include="CompoundUnitOfMeasure.cs" />
     <Compile Include="Connector.cs" />
+    <Compile Include="ConnectorTypeEnum.cs" />
     <Compile Include="ConstantOffsetHeadland.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="ContactInfo.cs" />
@@ -82,7 +83,7 @@
     <Compile Include="EnumeratedValue.cs" />
     <Compile Include="Equipment.cs" />
     <Compile Include="EquipmentConfig.cs" />
-    <Compile Include="ExtensionEnum.cs" />
+    <Compile Include="GuidanceExtensionEnum.cs" />
     <Compile Include="Facility.cs" />
     <Compile Include="FacilityTypeEnum.cs" />
     <Compile Include="Farm.cs" />
@@ -104,14 +105,16 @@
     <Compile Include="ImplementConfiguration.cs" />
     <Compile Include="ImplementModel.cs" />
     <Compile Include="ImplementType.cs" />
+    <Compile Include="ImplementTypeEnum.cs" />
     <Compile Include="Ingredient.cs" />
     <Compile Include="IngredientUse.cs" />
     <Compile Include="IPlugin.cs" />
     <Compile Include="LinearRing.cs" />
     <Compile Include="LineString.cs" />
+    <Compile Include="LoadTypeEnum.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Load.cs" />
-    <Compile Include="LoadDestination.cs" />
+    <Compile Include="Destination.cs" />
     <Compile Include="LoggedData.cs" />
     <Compile Include="LoggedNote.cs" />
     <Compile Include="LoggingLevelEnum.cs" />
@@ -131,6 +134,7 @@
     <Compile Include="MultiPoint.cs" />
     <Compile Include="MultiPolygon.cs" />
     <Compile Include="Note.cs" />
+    <Compile Include="PermittedProduct.cs" />
     <Compile Include="PluginProperties\LatencySettings.cs" />
     <Compile Include="PluginProperties\Properties.cs" />
     <Compile Include="PluginProperties\UnitOfMeasureSystem.cs" />
@@ -150,7 +154,7 @@
     <Compile Include="Point.cs" />
     <Compile Include="Polygon.cs" />
     <Compile Include="Prescription.cs" />
-    <Compile Include="PriorityEnum.cs" />
+    <Compile Include="WorkItemPriorityEnum.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductMixComponent.cs" />
     <Compile Include="ProductTypeEnum.cs" />
@@ -179,7 +183,6 @@
     <Compile Include="InteriorBoundaryAttribute.cs" />
     <Compile Include="ShapeLookup.cs" />
     <Compile Include="ShapeReferenceLayer.cs" />
-    <Compile Include="ShapeSettings.cs" />
     <Compile Include="ShapeTypeEnum.cs" />
     <Compile Include="GpsSourceEnum.cs" />
     <Compile Include="IdSourceTypeEnum.cs" />
@@ -188,6 +191,7 @@
     <Compile Include="SpatialRecord.cs" />
     <Compile Include="Spiral.cs" />
     <Compile Include="Summary.cs" />
+    <Compile Include="VectorPrescription.cs" />
     <Compile Include="WorkStatusEnum.cs" />
     <Compile Include="StatusUpdate.cs" />
     <Compile Include="StringRepresentation.cs" />
@@ -196,9 +200,7 @@
     <Compile Include="Trait.cs" />
     <Compile Include="UniqueId.cs" />
     <Compile Include="UnitOfMeasure.cs" />
-    <Compile Include="UnitOfMeasureComponent.cs" />
-    <Compile Include="UnitOfMeasureDimension.cs" />
-    <Compile Include="UnitDimension.cs" />
+    <Compile Include="UnitOfMeasureDimensionEnum.cs" />
     <Compile Include="RxPrescription.cs" />
     <Compile Include="WorkItem.cs" />
     <Compile Include="WorkItemOperation.cs" />

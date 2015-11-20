@@ -41,36 +41,36 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
 
         public string Generate()
         {
-//            var declaration = IsEnum ? "enum" : "class";
-//            var classBuilder = new StringBuilder()
-//                .Append("using AgGateway.ADAPT.ApplicationDataModel;\r\r")
-//                .Append(NameSpace)
-//                .AppendFormat(ClassNamePattern, declaration, Name)
-//                .Append("{\n");
-//
-//            var definedRepresentations = RepresentationManager.Instance.Representations.Values.OfType<EnumeratedRepresentation>();
-//            foreach (var definedRepresentation in definedRepresentations)
-//            {
-//                Append(definedRepresentation, classBuilder);
-//            }
-//
-//            var numericRepresentations = RepresentationManager.Instance.Representations.Values.OfType<NumericRepresentation>();
-//            foreach (var numericRepresentation in numericRepresentations)
-//            {
-//                Append(numericRepresentation, classBuilder);
-//            }
-//
-//            classBuilder.Append(FileFooter);
-//            return classBuilder.ToString();
-            return string.Empty;
+            var declaration = IsEnum ? "enum" : "class";
+            var classBuilder = new StringBuilder()
+                .Append("using AgGateway.ADAPT.ApplicationDataModel;\r\r")
+                .Append(NameSpace)
+                .AppendFormat(ClassNamePattern, declaration, Name)
+                .Append("{\n");
+
+            var definedRepresentations = RepresentationManager.Instance.Representations.OfType<Representation.RepresentationSystem.EnumeratedRepresentation>();
+            foreach (var definedRepresentation in definedRepresentations)
+            {
+                Append(definedRepresentation, classBuilder);
+            }
+
+            var numericRepresentations = RepresentationManager.Instance.Representations.OfType<Representation.RepresentationSystem.NumericRepresentation>();
+            foreach (var numericRepresentation in numericRepresentations)
+            {
+                Append(numericRepresentation, classBuilder);
+            }
+
+            classBuilder.Append(FileFooter);
+            return classBuilder.ToString();
         }
 
-        protected virtual void Append(NumericRepresentation representation, StringBuilder stringBuilder)
+
+        protected virtual void Append(Representation.RepresentationSystem.NumericRepresentation representation, StringBuilder stringBuilder)
         {
 
         }
 
-        protected virtual void Append(EnumeratedRepresentation definedRepresentation, StringBuilder stringBuilder)
+        protected virtual void Append(Representation.RepresentationSystem.EnumeratedRepresentation definedRepresentation, StringBuilder stringBuilder)
         {
 
         }

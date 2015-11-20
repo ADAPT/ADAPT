@@ -9,12 +9,17 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
+  *    Kathleen Oneal - add values property
   *******************************************************************************/
+
+using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class NumericMeter : Meter
     {
         public UnitOfMeasure UnitOfMeasure { get; set; }
+
+        public List<double> Values { get; set; }
     }
 }

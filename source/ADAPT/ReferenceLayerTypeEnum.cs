@@ -14,13 +14,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum ReferenceLayerTypeEnum
     {
-        SoilTypeMap,
         BackgroundImage,
-        ElevationMap,
         CommonLandUnit,
-        ProfitMap,
-        Obstacles,
+        ElevationMap,
         ManagementZone,
+        Obstacles,
+        ProfitMap,
+        SoilTypeMap,
         VarietyLocator
     }
 }

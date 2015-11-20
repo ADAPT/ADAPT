@@ -21,8 +21,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public ShapeSettings Settings { get; set; }
-
         public ShapeTypeEnum Type { get; set; }
     }
 } 

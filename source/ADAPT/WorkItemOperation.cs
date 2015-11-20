@@ -21,10 +21,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public string Description { get; set; }
+        
         public CompoundIdentifier Id { get; private set; }
+        
         public OperationTypeEnum OperationType { get; set; }
+        
         public int? PrescriptionId { get; set; }
+        
         public int? ImplementId { get; set; }
+        
         public int? EquipmentConfigId { get; set; }
     }
 }

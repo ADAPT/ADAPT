@@ -22,9 +22,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public int? ProductId { get; set; }
+        public int ProductId { get; set; }
 
-        public int? IngredientId { get; set; }
+        public int IngredientId { get; set; }
 
         public double Fraction { get; set; }
 

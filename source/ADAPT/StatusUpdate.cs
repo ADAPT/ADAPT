@@ -16,7 +16,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class StatusUpdate
     {
-        public WorkStatusEnum WorkStatusEnum { get; set; }
+        public WorkStatusEnum Status { get; set; }
 
         public string Comment { get; set; }
 

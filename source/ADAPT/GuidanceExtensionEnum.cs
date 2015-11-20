@@ -8,23 +8,18 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Justin Sliekers - udpating DefinedRepresentation to EnumeratedRepresentation   
+  *    Kathleen Oneal - renamed enum values
+  *    Kathleen Oneal - renamed ExtensionEnum to GuidanceExtensionEnum
+  *    Kathleen Oneal - renamed FromPointA to FromA; renamed FromPointB to FromB
   *******************************************************************************/  
-
-using System;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class LoadDestination
+    public enum GuidanceExtensionEnum
     {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-
-        public EnumeratedRepresentation DestinationType { get; set; }
-
-        public Uri GLN { get; set; }
-
-        public int ContactInfo { get; set; }
+        FromBothPoints,
+        FromA,
+        FromB,
+        None
     }
 }

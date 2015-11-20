@@ -9,12 +9,20 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
+  *    Kathleen Oneal - added Id
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class ReferencePoint
     {
+        public ReferencePoint()
+        {
+            Id = CompoundIdentifierFactory.Instance.Create();
+        }
+
+        public CompoundIdentifier Id { get; set; }
+
         public NumericRepresentationValue XOffset { get; set; }
 
         public NumericRepresentationValue YOffset { get; set; }

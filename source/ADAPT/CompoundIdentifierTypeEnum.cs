@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Kathleen Oneal - initial API and implementation
+  *    Kathleen Oneal - removed GLN, URI; renamed Long to LongInt
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -15,9 +16,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     public enum CompoundIdentifierTypeEnum
     {
         UUID,
-        GLN,
-        URI,
         String,
-        Long
+        LongInt
     }
 }

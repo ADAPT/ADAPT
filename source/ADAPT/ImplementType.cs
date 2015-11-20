@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - changed MachineType to Type
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -20,7 +21,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public CompoundIdentifier Id { get; private set; }
+        
         public string Description { get; set; }
-        public MachineType MachineType { get; set; }
+
+        public ImplementTypeEnum Type { get; set; }
     }
 }

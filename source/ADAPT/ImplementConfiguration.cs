@@ -24,18 +24,31 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public CompoundIdentifier Id { get; private set; }
+        
         public int ImplementId { get; set; }
+        
         public string Description { get; set; }
+        
         public NumericRepresentationValue Width { get; set; }
+        
         public NumericRepresentationValue TrackSpacing { get; set; }
+        
         public NumericRepresentationValue PhysicalWidth { get; set; }
+        
         public HitchTypeEnum HitchType { get; set; }
+        
         public NumericRepresentationValue InGroundTurnRadius { get; set; }
+        
         public NumericRepresentationValue ImplementLength { get; set; }
+        
         public NumericRepresentationValue YOffset { get; set; }
+        
         public NumericRepresentationValue VerticalCuttingEdgeZOffset { get; set; }
+        
         public List<int> ConnectorIds { get; set; }
+        
         public ReferencePoint ControlPoint { get; set; }
+        
         public ReferencePoint GpsReceiverOffset { get; set; }
     }
 }

@@ -29,5 +29,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<int> TimeScopeIds { get; set; }
         
         public NumericRepresentationValue Value  { get; set; }
+
+        public int? OperationDataId { get; set; }
     }
 }

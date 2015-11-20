@@ -20,9 +20,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public CompoundIdentifier Id { get; private set; }
+        
         public string Description { get; set; }
+        
         public int ImplementTypeId { get; set; }
+        
         public int? SeriesId { get; set; }
+        
         public int? BrandId { get; set; }
     }
 }

@@ -23,10 +23,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public CompoundIdentifier Id { get; private set; }
+
         public int? CompanyId { get; set; }
+
         public string Description { get; set; }
+
         public ContactInfo ContactInfo { get; set; }
+
         public FacilityTypeEnum FacilityType { get; set; }
+
         public List<ContextItem> ContextItems { get; set; } 
     }
 }

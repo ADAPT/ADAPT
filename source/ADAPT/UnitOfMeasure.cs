@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - renamed UnitDiminesion to Dimension; removed Name, Symbol, ConversionScale, Conversion Offset; added IsReferenceForDimension, Scale, Offset
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -23,14 +24,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public string Code { get; set; }
 
-        public string Name { get; set; }
+        public UnitOfMeasureDimensionEnum Dimension { get; set; }
 
-        public string Symbol { get; set; }
+        public bool IsReferenceForDimension{ get; set; }
 
-        public double ConversionScale { get; set; }
+        public double Scale { get; set; }
 
-        public double ConversionOffset { get; set; }
+        public double Offset { get; set; }
 
-        public UnitDimension UnitDimension { get; set; }
     }
 }

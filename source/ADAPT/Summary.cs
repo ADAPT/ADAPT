@@ -8,12 +8,21 @@
  *
  * Contributors:
  *    Kathleen Oneal - initial API and implementation
+ *    Kathleen Oneal - added properties, growerId, FarmIds, FieldIds, CropZoneIds
  *******************************************************************************/
+
+using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class Summary
     {
+        public int? GrowerId { get; set; }
+
+        public List<int> FarmIds { get; set; }
+
+        public List<int> FieldIds { get; set; }
         
+        public List<int> CropZoneIds { get; set; }
     }
 }

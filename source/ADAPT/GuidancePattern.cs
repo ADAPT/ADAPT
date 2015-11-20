@@ -35,11 +35,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public PropagationDirectionEnum PropagationDirection { get; set; }
 
-        public ExtensionEnum Extension { get; set; }
+        public GuidanceExtensionEnum Extension { get; set; }
 
         public int? NumbersOfSwathsLeft { get; set; }
 
-        public int NumbersOfSwathsRight { get; set; }
+        public int? NumbersOfSwathsRight { get; set; }
 
         public MultiPolygon BoundingPolygon { get; set; }
     }

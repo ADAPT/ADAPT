@@ -15,10 +15,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum ProductTypeEnum
     {
-        Generic,
         Chemical,
         Fertilizer,
-        Variety,
+        Generic,
         Mix,
+        Variety,
     }
 }

@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Justin Sliekers - udpating DefinedRepresentation to EnumeratedRepresentation
+  *    Justin Sliekers - udpating DestinationId to collection and changed loadtype from EnumeratedRepresentation to LoadTypeEnum
   *******************************************************************************/
 
 
@@ -26,10 +27,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public string LoadNumber { get; set; }
 
-        public EnumeratedRepresentation LoadType { get; set; }
+        public LoadTypeEnum LoadType { get; set; }
 
         public NumericRepresentationValue LoadQuality { get; set; }
 
-        public int DestinationId { get; set; }
+        public List<int> DestinationIds { get; set; }
     }
 }

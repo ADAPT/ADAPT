@@ -10,16 +10,17 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross - Renaming Enums to end in Enum
   *    Kathleen Oneal - renamed class ReferenceIdSourceEnum to RepresentationCodeSourceEnum
+  *    Kathlen Oneal - renamed Proprietary to UserDefined
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum RepresentationCodeSourceEnum
     {
+        ADAPT,
         ISO11783_DDI,
         ISO11783_SPN,
         J1939_SPN,
-        ADAPT,
-        Propietary
+        User_Defined
     }
 }

@@ -20,8 +20,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.ExtensionMethods
         {
             return new ApplicationDataModel.NumericRepresentation
             {
-                Id = (int) representation.DomainTag,
-                Name = representation.Name,
+                Code = representation.DomainId,
                 Description = representation.Description,
             };
         }
@@ -30,8 +29,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.ExtensionMethods
         {
             return new ApplicationDataModel.EnumeratedRepresentation
             {
-                Id = (int) representation.DomainTag,
-                Name = representation.Name,
+                Code = representation.DomainId,
                 Description = representation.Description,
                 EnumeratedMembers = representation.EnumerationMembers.Select(m => m.ToModelEnumMember()).ToList()
             };
@@ -54,12 +52,12 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.ExtensionMethods
 
         public static NumericRepresentation ToInternalRepresentation(this ApplicationDataModel.NumericRepresentation representation)
         {
-            return (NumericRepresentation) RepresentationManager.Instance.Representations[representation.Id];
+            return (NumericRepresentation) RepresentationManager.Instance.Representations[representation.Code];
         }
 
         public static EnumeratedRepresentation ToInternalRepresentation(this ApplicationDataModel.EnumeratedRepresentation representation)
         {
-            return (EnumeratedRepresentation) RepresentationManager.Instance.Representations[representation.Id];
+            return (EnumeratedRepresentation) RepresentationManager.Instance.Representations[representation.Code];
         }
     }
 }

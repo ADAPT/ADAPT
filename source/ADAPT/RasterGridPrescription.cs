@@ -8,22 +8,13 @@
   *
   * Contributors:
   *    Justin Sliekers - initial API and implementation
+  *    Justin Sliekers - removing all properties
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class RasterGridPrescription : SpatialPrescription
     {
-        public Point Origin { get; set; }
-
-        public int RowCount { get; set; }
-
-        public int ColumnCount { get; set; }
-
-        public NumericRepresentationValue CellWidth { get; set; }
-
-        public NumericRepresentationValue CellHeight { get; set; }
-
-        public RxRates[,] Rates { get; set; }
+       
     }
 }

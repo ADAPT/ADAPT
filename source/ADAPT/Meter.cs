@@ -10,10 +10,8 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
   *    Kathleen Oneal - Added TriggerId
+  *    Kathleen Oneal - removed property Values
   *******************************************************************************/
-
-
-using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
@@ -29,9 +27,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public int SectionId { get; set; }
 
         public Representation Representation { get; set; }
-
-        public List<double> Values { get; set; }
-
+        
         public NumericRepresentationValue AppliedLatency { get; set; }
 
         public NumericRepresentationValue ReportedLatency { get; set; }

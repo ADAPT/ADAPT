@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -8,16 +8,14 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Kathleen Oneal - renamed enum values
+  *    Kathleen Oneal - added values Lenght and NewLiteral
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public enum ExtensionEnum
+    public enum UnitOfMeasureDimensionEnum
     {
-        FromBothPoints = 1,
-        FromPointA = 2,
-        FromPointB = 3,
-        None = 4
+        Length,
+        NewLiteral
     }
 }

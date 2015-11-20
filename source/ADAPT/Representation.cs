@@ -14,14 +14,19 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public abstract class Representation
     {
-        public int Id { get; set; }
+        protected Representation()
+        {
+            Id = CompoundIdentifierFactory.Instance.Create();
+        }
 
-        public int? ReferenceId { get; set; }
+        public CompoundIdentifier Id { get; set; }
 
-        public RepresentationCodeSourceEnum RepresentationCodeSourceEnum { get; set; }
+        public RepresentationCodeSourceEnum CodeSource { get; set; }
 
-        public string Name { get; set; }
+        public string Code { get; set; }
 
         public string Description { get; set; }
+
+        public string LongDescription { get; set; }
     }
 }

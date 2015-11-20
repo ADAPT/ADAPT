@@ -31,6 +31,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public List<Section> Sections { get; set; }
 
-        public List<DataLogTrigger> Triggers { get; set; } 
+        public List<DataLogTrigger> Triggers { get; set; }
     }
 }

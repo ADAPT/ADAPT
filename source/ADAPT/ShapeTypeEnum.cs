@@ -8,18 +8,20 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - added RasterGrid
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum ShapeTypeEnum
     {
-        Point,
-        MultiPoint,
+        LinearRing,
         LineString,
         MultiLineString,
-        LinearRing,
-        Polygon,
+        MultiPoint,
         MultiPolygon,
+        Point,
+        Polygon,
+        RasterGrid,
     }
 }

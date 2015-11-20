@@ -91,12 +91,8 @@
     <Compile Include="RepresentationSystem\RepresentationGroupInstanceList.cs" />
     <Compile Include="RepresentationSystem\RepresentationGroupList.cs" />
     <Compile Include="RepresentationSystem\RepresentationGroups.cs" />
-    <Compile Include="RepresentationSystem\RepresentationInstanceList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="RepresentationSystem\RepresentationList.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="RepresentationSystem\RepresentationInstanceList.cs" />
+    <Compile Include="RepresentationSystem\RepresentationList.cs" />
     <Compile Include="RepresentationSystem\RepresentationManager.cs">
       <SubType>Code</SubType>
     </Compile>

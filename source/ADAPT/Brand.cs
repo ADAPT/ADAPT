@@ -27,7 +27,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public String Description { get; set; }
 
-        public int? ManufacturerId { get; set; }
+        public int ManufacturerId { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }
     }

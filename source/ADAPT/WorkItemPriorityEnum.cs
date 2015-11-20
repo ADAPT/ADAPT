@@ -8,18 +8,17 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
-
-using System.Collections.Generic;
+  *    Joseph Ross - Renaming Enums to end in Enum
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class CompoundUnitOfMeasure
+    public enum WorkItemPriorityEnum
     {
-        public List<UnitOfMeasureComponent> Components { get; set; }
-
-        public string Name { get; set; }
-
-        public string Symbol { get; set; }
+        Immediately,
+        SoonAsPossible,
+        High,
+        Medium,
+        Low
     }
 }
