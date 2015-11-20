@@ -12,6 +12,7 @@
  *   Tarak Reddy - Added guidance group and Guidance Allocation
  *   Tarak Reddy - Moved WorkItems and WorkItemsOperations to Documents
  *   Tarak Reddy - Moved GuidanceAllocations to Documents
+ *   Joseph ross - Added Prescriptions to Catalog
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -39,6 +40,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public string Name { get; set; }
         public List<Person> Persons { get; set; } 
         public List<PersonRole> PersonRoles { get; set; }
+        public List<Prescription> Prescriptions { get; set; }
         public List<CropVariety> CropVarieties { get; set; }
         public List<CropProtectionProduct> CropProtectionProducts { get; set; }
         public List<FertilizerProduct> FertilizerProducts { get; set; }
