@@ -35,7 +35,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             }
         }
 
-        public UnitCollection<UnitType> UnitTypes { get; private set; }
+        public UnitCollection<UnitDimension> UnitDimensions { get; private set; }
 
         public UnitOfMeasureCollection UnitOfMeasures { get; private set; }
 
@@ -44,7 +44,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
         private UnitSystemManager()
         {
             var unitSystem = DeserializeUnitSystem();
-            UnitTypes = GetUnitTypes(unitSystem);
+            UnitDimensions = GetUnitDimensions(unitSystem);
             UnitOfMeasures = GetUnitsOfMeasure();
             UnitOfMeasureSystems = GetUnitOfMeasureSystems(unitSystem);
         }
@@ -55,22 +55,22 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             return new UnitOfMeasureSystemCollection(unitOfMeasureSystems);
         }
 
-        private UnitCollection<UnitType> GetUnitTypes(Generated.UnitSystem unitSystem)
+        private UnitCollection<UnitDimension> GetUnitDimensions(Generated.UnitSystem unitSystem)
         {
-            var unitTypes = unitSystem.UnitTypes.Select(u => new UnitType(u));
-            return new UnitCollection<UnitType>(unitTypes);
+            var unitDimensions = unitSystem.UnitDimensions.Select(u => new UnitDimension(u));
+            return new UnitCollection<UnitDimension>(unitDimensions);
         }
 
         private UnitOfMeasureCollection GetUnitsOfMeasure()
         {
-            var unitsOfMeasure = UnitTypes.SelectMany(u => u.Units);
+            var unitsOfMeasure = UnitDimensions.SelectMany(u => u.Units);
             return new UnitOfMeasureCollection(unitsOfMeasure);
         }
 
         private Generated.UnitSystem DeserializeUnitSystem()
         {
             var serializer = new XmlSerializer(typeof(Generated.UnitSystem));
-            var xmlStringBytes = System.Text.Encoding.UTF8.GetBytes(RepresentationResources.UnitSystem);
+            var xmlStringBytes = System.Text.Encoding.UTF8.GetBytes(Properties.Resources.UnitSystem);
             using (var stream = new MemoryStream(xmlStringBytes))
                 return (Generated.UnitSystem)serializer.Deserialize(stream);
         }

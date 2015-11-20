@@ -7,13 +7,18 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation    
+  *    Tarak Reddy, Tim Shearouse - initial API and implementation  
+  *    Kathleen Oneal - Added values TimeInterval, DistanceInterval, ThresholdLimits, OnChange, Total
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum LoggingMethodEnum
     {
-        //Todo
+        TimeInterval,
+        DistanceInterval,
+        ThresholdLimits,
+        OnChange,
+        Total
     }
 }

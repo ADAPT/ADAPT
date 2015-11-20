@@ -34,7 +34,7 @@ namespace AgGateway.ADAPT.ApplicationDataModelTest
             var factory = CompoundIdentifierFactory.Instance;
             var identifier = factory.Create();
 
-            Assert.IsEmpty(identifier.UniqueIDs);
+            Assert.IsEmpty(identifier.UniqueIds);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace AgGateway.ADAPT.ApplicationDataModelTest
             var identifier1 = factory.Create();
             var identifier2 = factory.Create();
 
-            Assert.AreEqual(identifier1.ReferenceID + 1, identifier2.ReferenceID);
+            Assert.AreEqual(identifier1.ReferenceId + 1, identifier2.ReferenceId);
         }
     }
 }

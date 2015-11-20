@@ -63,9 +63,9 @@ namespace AgGateway.ADAPT.PluginManagerTest {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Adapt_TestPlugin {
+        internal static byte[] AgGateway_ADAPT_TestPlugin {
             get {
-                object obj = ResourceManager.GetObject("Adapt_TestPlugin", resourceCulture);
+                object obj = ResourceManager.GetObject("AgGateway_ADAPT_TestPlugin", resourceCulture);
                 return ((byte[])(obj));
             }
         }

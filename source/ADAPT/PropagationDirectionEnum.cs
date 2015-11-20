@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - renamed LeftDirection to LeftOnly and RightDirection to RightOnly
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -15,8 +16,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     public enum PropagationDirectionEnum
     {
         BothDirections = 1,
-        LeftDirection = 2,
-        RightDirection = 3,
+        LeftOnly = 2,
+        RightOnly = 3,
         NoPropogation = 4
     }
 }

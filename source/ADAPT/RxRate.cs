@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Justin Sliekers - initial API and implementation
+  *    Kathleen Oneal - made ProductId nullable
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -16,6 +17,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     {
         public double Rate { get; set; }
 
-        public int ProductId { get; set; }
+        public int? ProductId { get; set; }
     }
 }

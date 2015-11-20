@@ -9,40 +9,55 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
-
-using System.Collections.Generic;
+using System;
+using System.IO;
+using System.Linq;
+using System.Xml.Serialization;
 
 namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public class RepresentationManager
     {
         private static RepresentationManager _instance;
-        private Dictionary<int, ApplicationDataModel.Representation> _representations;
-        private static readonly object Threadlock = new object();
+        private static readonly object BlueThreadLock = new Object();
 
         public static RepresentationManager Instance
         {
             get
             {
-                if (_instance == null)
-                    lock (Threadlock)
+                if(_instance == null)
+                    lock (BlueThreadLock)
                     {
-                        if(_instance == null)
+                        if (_instance == null)
                             _instance = new RepresentationManager();
                     }
                 return _instance;
             }
         }
 
-        public Dictionary<int, ApplicationDataModel.Representation> Representations {
-            get { return _representations; }
-        }
+        public RepresentationCollection<Representation> Representations { get; private set; }
 
         private RepresentationManager()
         {
-            _representations = new RepresentationLoader().Load();
+            var representationSystem = DeserializeRepresentationSystem();
+            Representations = GetRepresentations(representationSystem);
         }
 
+        private static RepresentationCollection<Representation> GetRepresentations(Generated.RepresentationSystem representationSystem)
+        {
+            var numericRepresentations = representationSystem.Representations.NumericRepresentation.Select(v => new NumericRepresentation(v));
+            var enumeratedRepresentations = representationSystem.Representations.EnumeratedRepresentation.Select(d => new EnumeratedRepresentation(d));
+            var allRepresentations = numericRepresentations.Union<Representation>(enumeratedRepresentations);
+            return new RepresentationCollection<Representation>(allRepresentations);
+        } 
 
+        private static Generated.RepresentationSystem DeserializeRepresentationSystem()
+        {
+            var serializer = new XmlSerializer(typeof(Generated.RepresentationSystem));
+            var xmlText = Properties.Resources.RepresentationSystem;
+            var xmlStringBytes = System.Text.Encoding.UTF8.GetBytes (xmlText);
+            using (var stream = new MemoryStream(xmlStringBytes))
+                return (Generated.RepresentationSystem)serializer.Deserialize(stream);
+        }
     }
 }

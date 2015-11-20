@@ -10,6 +10,7 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
   *    Kathleen Oneal - changed Name to Description
+ *    Kathleen Oneal - renamed ProductTypeEnum to ProductType
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public int? BrandId { get; set; }
 
-        public ProductTypeEnum ProductTypeEnum { get; set; }
+        public ProductTypeEnum ProductType { get; set; }
 
         public List<CategoryEnum> Categories { get; set; }
 
@@ -39,7 +40,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public List<ContextItem> ContextItems { get; set; }
 
-        public FormTypeEnum Form { get; set; }
+        public ProductFormEnum Form { get; set; }
 
         public UnitOfMeasure DefaultUnit { get; set; }
 

@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Justin Sliekers - changing Name to Description
+  *    Kathleen Oneal - added MachineTypeEnum
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -23,5 +24,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public CompoundIdentifier Id { get; private set; }
 
         public string Description { get; set; }
+
+        public MachineTypeEnum MachineTypeEnum { get; set; }
     }
 }

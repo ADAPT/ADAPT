@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - changed Role from string to PersonRolesEnum
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public List<int> TimeScopeIds { get; set; }
 
-        public string Role { get; set; }
+        public PersonRolesEnum Role { get; set; }
 
         public int? EmployerId { get; set; }
     }

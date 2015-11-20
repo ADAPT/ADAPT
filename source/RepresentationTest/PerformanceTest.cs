@@ -92,7 +92,7 @@ namespace AgGateway.ADAPT.RepresentationTest
 
             var sourceUnitOfMeasure = GetUomCdf(variableValue.UnitOfMeasure);
             var targetUnitOfMeasure = GetUomCdf(targetUnit);
-            var bn = new NumericalValue(sourceUnitOfMeasure.ToModelUom(), variableValue.Value);
+            var bn = new NumericValue(sourceUnitOfMeasure.ToModelUom(), variableValue.Value);
             bn.ConvertToUnit(targetUnitOfMeasure);
             var convertedValue = bn.Value;
             return new VariableValue(variableValue.Representation, targetUnit, convertedValue);

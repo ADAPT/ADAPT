@@ -8,14 +8,15 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - make properties nullable
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class StringRepresentation : Representation
     {
-        public int MinCharacters { get; set; }
+        public int? MinCharacters { get; set; }
 
-        public int MaxCharacters { get; set; }
+        public int? MaxCharacters { get; set; }
     }
 }

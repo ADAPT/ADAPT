@@ -23,52 +23,92 @@ namespace AgGateway.ADAPT.RepresentationTest.RepresentationSystem
         [Test]
         public void GivenRepresentationsWhenIndexedByDomainIdThenRepresentation()
         {
-            var representations = new List<ApplicationDataModel.Representation>
+            var representations = new List<Representation.RepresentationSystem.Representation>
             {
-                CreateRepresentation(6, "Setpoint Application Rate specified as mass per area", "Setpoint Mass Per Area Application Rate"),
-                CreateRepresentation(7, "Actual Application Rate specified as mass per area", "Actual Mass Per Area Application Rate"),
-                CreateRepresentation(8, "Default Application Rate specified as mass per area", "Default Mass Per Area Application Rate"),
-                CreateRepresentation(9, "Minimum Application Rate specified as mass per area", "Minimum Mass Per Area Application Rate")
+                CreateRepresentation("vrHarvestMoisture", 4),
+                CreateRepresentation("vrYieldWetMass", 5),
+                CreateRepresentation("vrYieldMass", 6),
+                CreateRepresentation("dtSignalType", 3)
             };
-            var collection = new RepresentationCollection<ApplicationDataModel.Representation>(representations);
-            Assert.AreSame(representations[1], collection[7]);
+            var collection = new RepresentationCollection<Representation.RepresentationSystem.Representation>(representations);
+            Assert.AreSame(representations[2], collection["vrYieldMass"]);
+        }
+
+        [Test]
+        public void GivenRepresentationsWhenIndexedByDomainTagThenRepresentation()
+        {
+            var representations = new List<Representation.RepresentationSystem.Representation>
+            {
+                CreateRepresentation("vrYieldWetMass", 5),
+                CreateRepresentation("vrHarvestMoisture", 4),
+                CreateRepresentation("vrYieldMass", 6),
+                CreateRepresentation("dtSignalType", 3)
+            };
+            var collection = new RepresentationCollection<Representation.RepresentationSystem.Representation>(representations);
+            Assert.AreSame(representations[1], collection[4]);
         }
 
         [Test]
         public void GivenRepresentationsWhenCreatedThenCountAvailable()
         {
-            var representations = new List<ApplicationDataModel.Representation>
+            var representations = new List<Representation.RepresentationSystem.Representation>
             {
-                CreateRepresentation(6, "Setpoint Application Rate specified as mass per area", "Setpoint Mass Per Area Application Rate"),
-                CreateRepresentation(7, "Actual Application Rate specified as mass per area", "Actual Mass Per Area Application Rate"),
-                CreateRepresentation(8, "Default Application Rate specified as mass per area", "Default Mass Per Area Application Rate")
+                CreateRepresentation("vrHarvestMoisture", 4),
+                CreateRepresentation("vrYieldWetMass", 5),
+                CreateRepresentation("dtSignalType", 3)
             };
-            var collection = new RepresentationCollection<ApplicationDataModel.Representation>(representations);
+            var collection = new RepresentationCollection<Representation.RepresentationSystem.Representation>(representations);
             Assert.AreEqual(3, collection.Count);
+        }
+
+        [Test]
+        public void GivenRepresentationsWhenEnumeratedThenAllRepresentationsAreEnumerated()
+        {
+            var representations = new List<Representation.RepresentationSystem.Representation>
+            {
+                CreateRepresentation("vrHarvestMoisture", 4),
+                CreateRepresentation("vrYieldWetMass", 5),
+                CreateRepresentation("vrYieldMass", 6),
+                CreateRepresentation("dtSignalType", 3)
+            };
+            var collection = new RepresentationCollection<Representation.RepresentationSystem.Representation>(representations);
+            Assert.AreEqual(4, collection.Count);
         }
 
         [Test]
         public void GivenDomainIdNotInCollectionWhenIndexedThenReturnsNull()
         {
-            var representations = new List<ApplicationDataModel.Representation>
+            var representations = new List<Representation.RepresentationSystem.Representation>
             {
-                CreateRepresentation(6, "Setpoint Application Rate specified as mass per area", "Setpoint Mass Per Area Application Rate"),
-                CreateRepresentation(7, "Actual Application Rate specified as mass per area", "Actual Mass Per Area Application Rate")
+                CreateRepresentation("vrHarvestMoisture", 4),
+                CreateRepresentation("vrYieldWetMass", 5),
+                CreateRepresentation("dtHitchType", 3)
             };
-            var collection = new RepresentationCollection<ApplicationDataModel.Representation>(representations);
-            var representation = collection[9000];
+            var collection = new RepresentationCollection<Representation.RepresentationSystem.Representation>(representations);
+            var representation = collection["dtSignalType"];
             Assert.IsNull(representation);
         }
 
-        private static ApplicationDataModel.Representation CreateRepresentation(int domainId, string description, string name)
+        [Test]
+        public void GivenDomainTagNotInCollectionWhenIndexedThenReturnsNull()
         {
-            var representation = new ApplicationDataModel.NumericRepresentation
+            var representations = new List<Representation.RepresentationSystem.Representation>
             {
-                Id = domainId,
-                Description = description,
-                Name = name,
+                CreateRepresentation("vrHarvestMoisture", 4),
+                CreateRepresentation("vrYieldWetMass", 5),
+                CreateRepresentation("dtSignalType", 3)
             };
-            return representation;
+            var collection = new RepresentationCollection<Representation.RepresentationSystem.Representation>(representations);
+            var representation = collection[9];
+            Assert.IsNull(representation);
+        }
+        private static Representation.RepresentationSystem.Representation CreateRepresentation(string domainId, long domainTag)
+        {
+            var representationMock = new Mock<Representation.RepresentationSystem.Representation>(domainId, domainTag)
+            {
+                CallBase = true
+            };
+            return representationMock.Object;
         }
     }
 }

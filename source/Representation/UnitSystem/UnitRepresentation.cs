@@ -15,12 +15,12 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
     public abstract class UnitRepresentation
     {
         public string DomainId { get; private set; }
-        public UnitType UnitType { get; private set; }
+        public UnitDimension UnitDimension { get; private set; }
 
-        protected UnitRepresentation(string domainId, UnitType unitType)
+        protected UnitRepresentation(string domainId, UnitDimension unitDimension)
         {
             DomainId = domainId;
-            UnitType = unitType;
+            UnitDimension = unitDimension;
         }
     }
 }

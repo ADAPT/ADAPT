@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - changed LayerType to ReferenceLayerTypeEnum
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public string Description { get; set; }
 
-        public EnumeratedValue LayerType { get; set; }
+        public ReferenceLayerTypeEnum LayerType { get; set; }
 
         public List<int> TimeScopeIds { get; set; }
 

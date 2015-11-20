@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
+  *    Kathleen Oneal - Added TriggerId
   *******************************************************************************/
 
 
@@ -34,5 +35,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public NumericRepresentationValue AppliedLatency { get; set; }
 
         public NumericRepresentationValue ReportedLatency { get; set; }
+
+        public int? TriggerId { get; set; }
     }
 }

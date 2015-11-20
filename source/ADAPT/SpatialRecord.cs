@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
+  *    Kathleen Oneal - added parameters to GetAppliedLatency
   *******************************************************************************/
 
 using System;
@@ -26,16 +27,19 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public void SetMeterValue(Meter meter, RepresentationValue value)
         {
-            _meterValues.Add(meter.Id.ReferenceID, value);
+            _meterValues.Add(meter.Id.ReferenceId, value);
         }
 
         public RepresentationValue GetMeterValue(Meter meter)
         {
-            if (_meterValues.ContainsKey(meter.Id.ReferenceID))
-                return _meterValues[meter.Id.ReferenceID];
+            if (_meterValues.ContainsKey(meter.Id.ReferenceId))
+                return _meterValues[meter.Id.ReferenceId];
             return null;
         }
 
-        public int GetAppliedLatency { get; set; }
+        public int? GetAppliedLatency(Meter meter)
+        {
+            return null;
+        }
     }
 }

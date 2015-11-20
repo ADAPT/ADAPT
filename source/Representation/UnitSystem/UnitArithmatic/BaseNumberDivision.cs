@@ -19,7 +19,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
 {
     internal class BaseNumberDivision
     {
-        public static NumericalValue Divide(NumericalValue numerator, NumericalValue denominator)
+        public static NumericValue Divide(NumericValue numerator, NumericValue denominator)
         {
             if (denominator.Value == 0.0)
                 throw new DivideByZeroException();

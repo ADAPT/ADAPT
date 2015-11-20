@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - added GpsSource
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -18,5 +19,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     {
         public Point Position { get; set; }
         public List<ContextItem> ContextItems { get; set; }
+        public GpsSource GpsSource { get; set; }
     }
 }

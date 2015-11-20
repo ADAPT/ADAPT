@@ -8,9 +8,9 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
-
-using System;
+  *    Kathleen Oneal - removed StartLocation, EndLocation, and DateContext
+  *    Kathleen Oneal - changed date params to Stamp1, Stamp2 of type DateWithContext
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
@@ -25,14 +25,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public string Description { get; set; }
 
-        public DateTime StartDate { get; set; }
+        public DateWithContext Stamp1 { get; set; }
 
-        public DateTime EndDate { get; set; }
-
-        public Location StartLocation { get; set; }
-
-        public Location EndLocation { get; set; }
-
-        public DateContextEnum? DateContextEnum { get; set; }
+        public DateWithContext Stamp2 { get; set; }
     }
 }

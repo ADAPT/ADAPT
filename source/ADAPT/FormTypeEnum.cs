@@ -10,11 +10,12 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross - Renaming Enums to end in Enum
   *    Kathleen Oneal - Adding Unknown to enum
+  *    Kathleen Oneal - Renamed FormTypeEnum to ProductFormEnum
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public enum FormTypeEnum
+    public enum ProductFormEnum
     {
         Gas,
         Liquid,

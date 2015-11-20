@@ -9,6 +9,7 @@
  * Contributors:
  *    Tarak Reddy, Tim Shearouse - initial API and implementation
  *    Tarak Reddy - Renamed Guidance to GuidancePattern to match ISO
+ *    Kathleen Oneal - renamed property Name to Description
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -28,7 +29,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public string OriginalEpsgCode { get; set; }
 
-        public string Name { get; set; }
+        public string Description { get; set; }
 
         public NumericRepresentationValue SwathWidth { get; set; }
 

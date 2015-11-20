@@ -18,7 +18,7 @@ namespace AgGateway.ADAPT.PluginManagerTest
     {
         public static void WriteTestPlugin(string directory, string fileName)
         {
-            WritePlugin(directory, fileName, Resources.Adapt_TestPlugin);
+            WritePlugin(directory, fileName, Resources.AgGateway_ADAPT_TestPlugin);
         }
 
         private static void WritePlugin(string directory, string fileName, byte[] plugin)

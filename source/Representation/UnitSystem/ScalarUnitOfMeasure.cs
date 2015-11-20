@@ -22,12 +22,12 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
         public double BaseOffset { get; private set; }
 
-        public ScalarUnitOfMeasure(UnitSystemUnitTypeUnitTypeRepresentationUnitOfMeasure unitOfMeasure, UnitType unitType) 
-            : this(unitOfMeasure, unitType, CultureInfo.CurrentUICulture)
+        public ScalarUnitOfMeasure(UnitSystemUnitDimensionUnitDimensionRepresentationUnitOfMeasure unitOfMeasure, UnitDimension unitDimension) 
+            : this(unitOfMeasure, unitDimension, CultureInfo.CurrentUICulture)
         {
         }
 
-        public ScalarUnitOfMeasure(UnitSystemUnitTypeUnitTypeRepresentationUnitOfMeasure unitOfMeasure, UnitType unitType, CultureInfo culture)
+        public ScalarUnitOfMeasure(UnitSystemUnitDimensionUnitDimensionRepresentationUnitOfMeasure unitOfMeasure, UnitDimension unitDimension, CultureInfo culture)
         {
             var name = GetName(unitOfMeasure.Name, culture);
 
@@ -37,10 +37,10 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             UomId = unitOfMeasure.uomID;
             BaseOffset = unitOfMeasure.baseOffset;
             Scale = unitOfMeasure.scale;
-            UnitType = unitType;
+            UnitDimension = unitDimension;
         }
 
-        private static UnitSystemUnitTypeUnitTypeRepresentationUnitOfMeasureName GetName(UnitSystemUnitTypeUnitTypeRepresentationUnitOfMeasureName[] names, CultureInfo culture)
+        private static UnitSystemUnitDimensionUnitDimensionRepresentationUnitOfMeasureName GetName(UnitSystemUnitDimensionUnitDimensionRepresentationUnitOfMeasureName[] names, CultureInfo culture)
         {
             if (names == null)
                 return null;
@@ -51,6 +51,6 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
         public override string Label { get; protected set; }
         public override string LabelPlural { get; protected set; }
-        public UnitType UnitType { get; set; }
+        public UnitDimension UnitDimension { get; set; }
     }
 }

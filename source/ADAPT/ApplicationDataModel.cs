@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - changed ReferenceLayers type from ReferenceLayers to List<ReferenceLayer>
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -22,6 +23,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public Documents Documents { get; set; }
 
-        public ReferenceLayers ReferenceLayers { get; set; }
+        public List<ReferenceLayer> ReferenceLayers { get; set; }
     }
 }

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationDataModel", "ADAPT\ApplicationDataModel.csproj", "{AF77F596-0C06-4873-A094-6F3AB987B0A5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationDataModelTest", "ApplicationDataModelTest\ApplicationDataModelTest.csproj", "{EC7AEA0F-E4B9-420B-A81B-3192B0227CB6}"
@@ -14,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Representation", "Representation\Representation.csproj", "{00D0CB8E-2EDE-4766-B261-1EB0CB655F07}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepresentationTest", "RepresentationTest\RepresentationTest.csproj", "{9A78403A-98A9-4E85-8DAC-8E9C9A71305C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visualizer", "Visualizer\Visualizer.csproj", "{308B8C5A-715D-4F80-8EA4-C4CD9FBCB970}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +53,10 @@ Global
 		{9A78403A-98A9-4E85-8DAC-8E9C9A71305C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A78403A-98A9-4E85-8DAC-8E9C9A71305C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A78403A-98A9-4E85-8DAC-8E9C9A71305C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{308B8C5A-715D-4F80-8EA4-C4CD9FBCB970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{308B8C5A-715D-4F80-8EA4-C4CD9FBCB970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{308B8C5A-715D-4F80-8EA4-C4CD9FBCB970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{308B8C5A-715D-4F80-8EA4-C4CD9FBCB970}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

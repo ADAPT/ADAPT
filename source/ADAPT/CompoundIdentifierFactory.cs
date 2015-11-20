@@ -52,7 +52,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
             }
             return new CompoundIdentifier(referenceId)
             {
-                UniqueIDs = new List<UniqueIDType>()
+                UniqueIds = new List<UniqueId>()
             };
         }
     }

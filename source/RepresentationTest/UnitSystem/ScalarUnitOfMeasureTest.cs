@@ -21,14 +21,14 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
     [TestFixture]
     public class ScalarUnitOfMeasureTest
     {
-        private UnitSystemUnitTypeUnitTypeRepresentationUnitOfMeasure _unitOfMeasure;
-        private UnitType _unitType;
+        private UnitSystemUnitDimensionUnitDimensionRepresentationUnitOfMeasure _unitOfMeasure;
+        private UnitDimension _unitDimension;
 
         [SetUp]
         public void Setup()
         {
-            _unitType = new UnitType(new UnitSystemUnitType());
-            _unitOfMeasure = new UnitSystemUnitTypeUnitTypeRepresentationUnitOfMeasure();
+            _unitDimension = new UnitDimension(new UnitSystemUnitDimension());
+            _unitOfMeasure = new UnitSystemUnitDimensionUnitDimensionRepresentationUnitOfMeasure();
         }
 
         [Test]
@@ -36,7 +36,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         {
             _unitOfMeasure.domainID = "Branch";
 
-            var unitOfMeasure = new ScalarUnitOfMeasure(_unitOfMeasure, _unitType);
+            var unitOfMeasure = new ScalarUnitOfMeasure(_unitOfMeasure, _unitDimension);
             Assert.AreEqual("Branch", unitOfMeasure.DomainID);
         }
 
@@ -45,12 +45,12 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         {
             _unitOfMeasure.Name = new[]
             {
-                new UnitSystemUnitTypeUnitTypeRepresentationUnitOfMeasureName
+                new UnitSystemUnitDimensionUnitDimensionRepresentationUnitOfMeasureName
                 {
                     locale = "de",
                     label = "Herkunft"
                 },
-                new UnitSystemUnitTypeUnitTypeRepresentationUnitOfMeasureName
+                new UnitSystemUnitDimensionUnitDimensionRepresentationUnitOfMeasureName
                 {
                     locale = CultureInfoDefault.DefaultCulture,
                     label = "Origin"
@@ -58,7 +58,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             };
 
             var culture = CultureInfo.GetCultureInfo("de");
-            var unitOfMeasure = new ScalarUnitOfMeasure(_unitOfMeasure, _unitType, culture);
+            var unitOfMeasure = new ScalarUnitOfMeasure(_unitOfMeasure, _unitDimension, culture);
             Assert.AreEqual("Herkunft", unitOfMeasure.Label);
         }
 
@@ -67,12 +67,12 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         {
             _unitOfMeasure.Name = new[]
             {
-                new UnitSystemUnitTypeUnitTypeRepresentationUnitOfMeasureName
+                new UnitSystemUnitDimensionUnitDimensionRepresentationUnitOfMeasureName
                 {
                     locale = "de",
                     plural = "Ursprünge"
                 },
-                new UnitSystemUnitTypeUnitTypeRepresentationUnitOfMeasureName
+                new UnitSystemUnitDimensionUnitDimensionRepresentationUnitOfMeasureName
                 {
                     locale = CultureInfoDefault.DefaultCulture,
                     plural = "Origins"
@@ -80,7 +80,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             };
 
             var culture = CultureInfo.GetCultureInfo("de");
-            var unitOfMeasure = new ScalarUnitOfMeasure(_unitOfMeasure, _unitType, culture);
+            var unitOfMeasure = new ScalarUnitOfMeasure(_unitOfMeasure, _unitDimension, culture);
             Assert.AreEqual("Ursprünge", unitOfMeasure.LabelPlural);
         }
 
@@ -89,7 +89,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         {
             _unitOfMeasure.uomID = 5;
 
-            var unitOfMeasure = new ScalarUnitOfMeasure(_unitOfMeasure, _unitType);
+            var unitOfMeasure = new ScalarUnitOfMeasure(_unitOfMeasure, _unitDimension);
             Assert.AreEqual(5, unitOfMeasure.UomId);
         }
 
@@ -98,7 +98,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         {
             _unitOfMeasure.baseOffset = 5.516;
 
-            var unitOfMeasure = new ScalarUnitOfMeasure(_unitOfMeasure, _unitType);
+            var unitOfMeasure = new ScalarUnitOfMeasure(_unitOfMeasure, _unitDimension);
             Assert.AreEqual(5.516, unitOfMeasure.BaseOffset);
         }
 
@@ -107,15 +107,15 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         {
             _unitOfMeasure.scale = 783681;
 
-            var unitOfMeasure = new ScalarUnitOfMeasure(_unitOfMeasure, _unitType);
+            var unitOfMeasure = new ScalarUnitOfMeasure(_unitOfMeasure, _unitDimension);
             Assert.AreEqual(783681, unitOfMeasure.Scale);
         }
 
         [Test]
-        public void GivenUnitTypeWhenGetUnitTypeThenUnitType()
+        public void GivenUnitDimensionWhenGetUnitDimensionThenUnitDimension()
         {
-            var unitOfMeasure = new ScalarUnitOfMeasure(_unitOfMeasure, _unitType);
-            Assert.AreSame(_unitType, unitOfMeasure.UnitType);
+            var unitOfMeasure = new ScalarUnitOfMeasure(_unitOfMeasure, _unitDimension);
+            Assert.AreSame(_unitDimension, unitOfMeasure.UnitDimension);
         }
     }
 }

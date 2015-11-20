@@ -143,7 +143,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //        {
 //            var uom = UnitSystemManager.Instance.UnitOfMeasures["C"];
 //            var originalNumber = new NumericRepresentationValue(RepresentationInstanceList.vrAirTemperature, uom, 22);
-//            var secondNumber = new NumericalValue(uom, 11);
+//            var secondNumber = new NumericValue(uom, 11);
 //
 //            var result = originalNumber.Add(secondNumber);
 //            Assert.IsInstanceOf<NumericRepresentationValue>(result);
@@ -167,7 +167,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var originalNumber = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled, originalUom, 1.75);
 //
 //            var secondUom = _ftUnitOfMeasure;
-//            var secondNumber = new NumericalValue(secondUom, 3.5);
+//            var secondNumber = new NumericValue(secondUom, 3.5);
 //
 //            var expected = 2.8168; //1.75m + (3.5ft -> m)
 //            var actual = originalNumber.Add(secondNumber);
@@ -206,7 +206,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //        {
 //            var uom = UnitSystemManager.Instance.UnitOfMeasures["C"];
 //            var originalNumber = new NumericRepresentationValue(RepresentationInstanceList.vrAirTemperature, uom, 22);
-//            var secondNumber = new NumericalValue(uom, 13);
+//            var secondNumber = new NumericValue(uom, 13);
 //
 //            var result = originalNumber.Subtract(secondNumber);
 //            Assert.IsInstanceOf<NumericRepresentationValue>(result);
@@ -220,7 +220,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //            var originalNumber = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled, originalUom, 1.75);
 //
 //            var secondUom = _ftUnitOfMeasure;
-//            var secondNumber = new NumericalValue(secondUom, 3.5);
+//            var secondNumber = new NumericValue(secondUom, 3.5);
 //
 //            var expected = 0.6832; //1.75m + (3.5ft -> m)
 //            var actual = originalNumber.Subtract(secondNumber);
@@ -290,7 +290,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //        public void GivenVariableNumberWhenDivideVariableNumberThenUnitOfMeasuresCombined()
 //        {
 //            var numerator = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled, _ftUnitOfMeasure, 12);
-//            var denominator = new NumericalValue(UnitSystemManager.Instance.UnitOfMeasures["sec"], 5);
+//            var denominator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["sec"], 5);
 //
 //            var quotient = numerator.Divide(denominator);
 //            Assert.IsInstanceOf<NumericRepresentationValue>(quotient);
@@ -302,7 +302,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //        public void GivenVariableNumberWhenDivideNumberWithSameUnitThenSourceValueIsQuotient()
 //        {
 //            var numerator = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled, _ftUnitOfMeasure, 12);
-//            var denominator = new NumericalValue(_ftUnitOfMeasure, 6);
+//            var denominator = new NumericValue(_ftUnitOfMeasure, 6);
 //
 //            var quotient = numerator.Divide(denominator);
 //            Assert.IsInstanceOf<NumericRepresentationValue>(quotient);
@@ -360,7 +360,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //        public void GivenVariableNumberWhenMultiplyNumberThenUnitOfMeasuresCombined()
 //        {
 //            var left = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled, _ftUnitOfMeasure, 12);
-//            var right = new NumericalValue(_ftUnitOfMeasure, 4);
+//            var right = new NumericValue(_ftUnitOfMeasure, 4);
 //
 //            var product = left.Multiply(right);
 //            Assert.IsInstanceOf<NumericRepresentationValue>(product);
@@ -383,7 +383,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 //        public void GivenVariableNumberWithCompositeUnitOfMeasureWhenMultiplyVariableNumberThenCombinedUnitOfMeasure()
 //        {
 //            var left = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled, UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"], 47.5);
-//            var right = new NumericalValue(_ftUnitOfMeasure, 3);
+//            var right = new NumericValue(_ftUnitOfMeasure, 3);
 //
 //            var product = left.Multiply(right);
 //            Assert.IsInstanceOf<NumericRepresentationValue>(product);

@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
+  *    Kathleen Oneal - changed Passable to IsPassable and Name to Description
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -17,8 +18,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     {
         public int ShapeIdRef { get; set; }
 
-        public bool Passable { get; set; }
+        public bool IsPassable { get; set; }
 
-        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - changed ID's to Id
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     {
         public CompoundIdentifier(int id)
         {
-            ReferenceID = id;
+            ReferenceId = id;
         }
 
-        public int ReferenceID { get; private set; }
-        public List<UniqueIDType> UniqueIDs { get; set; } 
+        public int ReferenceId { get; private set; }
+        public List<UniqueId> UniqueIds { get; set; } 
     }
 }
