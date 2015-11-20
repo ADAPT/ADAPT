@@ -131,10 +131,8 @@
     <Compile Include="MultiPoint.cs" />
     <Compile Include="MultiPolygon.cs" />
     <Compile Include="Note.cs" />
-    <Compile Include="PluginProperties\LatencySettings.cs" />
-    <Compile Include="PluginProperties\Properties.cs" />
-    <Compile Include="PluginProperties\UnitOfMeasureSystem.cs" />
     <Compile Include="ProductMix.cs" />
+    <Compile Include="Properties.cs" />
     <Compile Include="ReferenceLayerTypeEnum.cs" />
     <Compile Include="ReferenceNote.cs" />
     <Compile Include="NumericValue.cs" />
