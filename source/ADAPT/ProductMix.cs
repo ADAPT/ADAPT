@@ -14,6 +14,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class ProductMix : Product
     {
+        public NumericRepresentationValue TotalQuantity { get; set; }
 
+        public bool IsTemporary { get; set; }
     }
 }

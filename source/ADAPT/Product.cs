@@ -20,7 +20,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public abstract class Product
     {
-        public Product()
+        protected Product()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
         }
@@ -39,8 +39,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public ProductFormEnum Form { get; set; }
 
+        public ProductStatusEnum Status { get; set; }
+
         public NumericRepresentationValue Density { get; set; }
         
         public List<ContextItem> ContextItems { get; set; }
+
+        public List<ProductComponent> ProductComponents { get; set; }
     }
 }

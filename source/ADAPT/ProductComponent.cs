@@ -7,29 +7,18 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Joseph Ross Making Properties
+  *    Tim Shearouse - initial API and implementation
   *******************************************************************************/
-
-using System.Collections.Generic;
-
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class Ingredient
+    public class ProductComponent
     {
-        public Ingredient()
-        {
-            Id = CompoundIdentifierFactory.Instance.Create();
-        }
+        public int IngredientId { get; set; }
 
-        public CompoundIdentifier Id { get; private set; }
+        public NumericRepresentationValue Quantity { get; set; }
 
-        public string Description { get; set; }
+        public bool IsProduct { get; set; }
 
-        public List<ModeOfAction> ModesOfAction { get; set; }
-
-        public List<ContextItem> ContextItems { get; set; }
-
-        public bool IsActive { get; set; }
+        public bool IsCarrier { get; set; }
     }
 }
