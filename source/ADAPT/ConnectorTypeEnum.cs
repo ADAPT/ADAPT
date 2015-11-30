@@ -8,11 +8,21 @@
   *
   * Contributors:
   *    Kathleen Oneal - initial API and implementation
+  *    Joe Ross, Kathleen Oneal - added values
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum ConnectorTypeEnum
     {
+        Unkown,
+        ISO64893TractorDrawbar,
+        ISO730ThreePointHitchSemiMounted,
+        ISO730ThreePointHitchMounted,
+        ISO64891HitchHook,
+        ISO64892ClevisCoupling40,
+        ISO64894PitonTypeCoupling,
+        ISO56922PivotWagonHitch,
+        ISO24347BallTypeHitch,
     }
 }
