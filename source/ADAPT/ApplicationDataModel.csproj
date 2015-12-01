@@ -65,6 +65,8 @@
     <Compile Include="Container.cs" />
     <Compile Include="ContextItem.cs" />
     <Compile Include="Crop.cs" />
+    <Compile Include="CropNutritionIngredient.cs" />
+    <Compile Include="CropNutritionIngredientCodeEnum.cs" />
     <Compile Include="CropProtectionProduct.cs" />
     <Compile Include="CropVariety.cs" />
     <Compile Include="CropZone.cs" />

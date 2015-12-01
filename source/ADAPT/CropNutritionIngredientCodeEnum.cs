@@ -7,16 +7,27 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Justin Sliekers, Kathleen Oneal - initial API and implementation
-  *    Kathleen Oneal - Added parent class Ingredient and removed duplicate props
+  *    Kathleen Oneal - initial API and implementation
   *******************************************************************************/
-
-using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class ActiveIngredient : Ingredient
+    public enum CropNutritionIngredientCodeEnum
     {
-        public List<ModeOfAction> ModesOfAction { get; set; }
+        N,
+        P,
+        K,
+        Ca,
+        Mg,
+        S,
+        B,
+        Cl,
+        Cu,
+        Fe,
+        Mn,
+        Mo,
+        Zn,
+        FulvicAcid,
+        HumicAcid
     }
 }

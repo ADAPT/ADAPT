@@ -17,6 +17,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class DensityFactor
     {
+        public DensityFactor()
+        {
+            Id = CompoundIdentifierFactory.Instance.Create();
+        }
+
+        public CompoundIdentifier Id { get; set; }
+
         public int ProductId { get; set; }
 
         public string BatchNo { get; set; }

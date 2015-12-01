@@ -27,24 +27,24 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
-        public string Description { get; set; }
-
-        public int ManufacturerId { get; set; }
-
         public int BrandId { get; set; }
 
-        public ProductTypeEnum ProductType { get; set; }
-
         public CategoryEnum Category { get; set; }
-
-        public ProductFormEnum Form { get; set; }
-
-        public ProductStatusEnum Status { get; set; }
-
-        public NumericRepresentationValue Density { get; set; }
         
         public List<ContextItem> ContextItems { get; set; }
 
+        public NumericRepresentationValue Density { get; set; }
+
+        public string Description { get; set; }
+
+        public ProductFormEnum Form { get; set; }
+
+        public int ManufacturerId { get; set; }
+
         public List<ProductComponent> ProductComponents { get; set; }
+
+        public ProductTypeEnum ProductType { get; set; }
+
+        public ProductStatusEnum Status { get; set; }
     }
 }
