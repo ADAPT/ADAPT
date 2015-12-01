@@ -8,11 +8,24 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - added values
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum OperationTypeEnum
     {
+        Unknown,
+        Fertilizing,
+        SowingAndPlanting,
+        CropProtection,
+        Tillage,
+        Baling,
+        Mowing,
+        Wrapping,
+        Harvesting,
+        ForageHarvesting,
+        Transport,
+        Swathing
     }
 }
