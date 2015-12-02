@@ -158,7 +158,6 @@
     <Compile Include="Prescription.cs" />
     <Compile Include="WorkItemPriorityEnum.cs" />
     <Compile Include="Product.cs" />
-    <Compile Include="ProductMixComponent.cs" />
     <Compile Include="ProductTypeEnum.cs" />
     <Compile Include="ProductUse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

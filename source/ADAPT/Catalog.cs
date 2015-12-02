@@ -72,8 +72,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public List<ProductMix> ProductMixes { get; set; }
 
-        public List<ProductMixComponent> ProductMixComponents { get; set; }
-
         public List<TimeScope> TimeScopes { get; set; }
 
         public List<Machine> Machines { get; set; }
