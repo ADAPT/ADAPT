@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Justin Sliekers - making ManufacturerId, BrandId, and SeriesId nullable
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -22,11 +23,17 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public CompoundIdentifier Id { get; private set; }
+
         public string Description { get; set; }
+
         public string SerialNumber { get; set; }
-        public int ManufacturerId { get; set; }
-        public int BrandId { get; set; }
-        public int SeriesId { get; set; }
+
+        public int? ManufacturerId { get; set; }
+
+        public int? BrandId { get; set; }
+
+        public int? SeriesId { get; set; }
+
         public List<ContextItem> ContextItems { get; set; }
     }
 }

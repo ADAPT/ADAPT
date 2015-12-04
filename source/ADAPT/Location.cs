@@ -18,7 +18,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     public class Location
     {
         public Point Position { get; set; }
+        
         public List<ContextItem> ContextItems { get; set; }
+        
         public GpsSource GpsSource { get; set; }
     }
 }

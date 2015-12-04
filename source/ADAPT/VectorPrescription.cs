@@ -7,15 +7,12 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - initial API and implementation
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class UnitOfMeasureComponent
+    public class VectorPrescription : SpatialPrescription
     {
-        public UnitOfMeasure UnitOfMeasure { get; set; }
-
-        public int Power { get; set; }
     }
 }

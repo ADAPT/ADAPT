@@ -7,24 +7,18 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Justin Sliekers - udpating DefinedRepresentation to EnumeratedRepresentation   
-  *******************************************************************************/  
-
-using System;
+  *    Kathleen Oneal - initial API and implementation
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class LoadDestination
+    public enum LoadTypeEnum
     {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-
-        public EnumeratedRepresentation DestinationType { get; set; }
-
-        public Uri GLN { get; set; }
-
-        public int ContactInfo { get; set; }
+        Unknown,
+        Tank,
+        Field,
+        Truck,
+        Bale,
+        Module
     }
 }

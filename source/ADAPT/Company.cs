@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+ *    Kathleen Oneal - removed GLN, renamed ContactId to ContactInfoId
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -25,9 +26,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public string Name { get; set; }
 
-        public GLNEnum GLN { get; set; }
-
-        public int? ContactId { get; set; }
+        public int? ContactInfoId { get; set; }
 
         public List<ContextItem> ContextItems { get; set; } 
     }

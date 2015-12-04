@@ -15,9 +15,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum PropagationDirectionEnum
     {
-        BothDirections = 1,
-        LeftOnly = 2,
-        RightOnly = 3,
-        NoPropogation = 4
+        BothDirections,
+        LeftOnly,
+        NoPropagation,
+        RightOnly,
     }
 }

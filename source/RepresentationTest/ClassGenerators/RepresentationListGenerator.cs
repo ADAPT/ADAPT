@@ -12,7 +12,6 @@
   *******************************************************************************/
 
 using System.Text;
-using AgGateway.ADAPT.ApplicationDataModel;
 
 namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
 {
@@ -36,19 +35,19 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
             }
         }
 
-        protected override void Append(EnumeratedRepresentation definedRepresentation, StringBuilder stringBuilder)
+        protected override void Append(Representation.RepresentationSystem.EnumeratedRepresentation definedRepresentation, StringBuilder stringBuilder)
         {
             Append(definedRepresentation, stringBuilder);
         }
 
-        protected override void Append(NumericRepresentation representation, StringBuilder stringBuilder)
+        protected override void Append(Representation.RepresentationSystem.NumericRepresentation representation, StringBuilder stringBuilder)
         {
             Append(representation, stringBuilder);
         }
 
-        private void Append(ADAPT.ApplicationDataModel.Representation representation, StringBuilder stringBuilder)
+        private void Append(Representation.RepresentationSystem.Representation representation, StringBuilder stringBuilder)
         {
-            string representationName = representation.Name.Replace("\r", "")
+            string representationName = representation.DomainId.Replace("\r", "")
                                                             .Replace("[", "")
                                                             .Replace("]", "")
                                                             .Replace("(", "")
@@ -56,7 +55,7 @@ namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
                                                             .Replace("-", "")
                                                             .Replace("–", "")
                                                             .Replace(" ", "");
-            stringBuilder.AppendFormat(RepresentationListPattern, representationName, representation.Id);
+            stringBuilder.AppendFormat(RepresentationListPattern, representationName, representation.DomainTag);
             stringBuilder.Append("\n\n");
         }
     }

@@ -8,25 +8,21 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - delete threePoint, RearTwoPoing, Drawbar, RearPivotWagonHitch, FrontRigidThreePoint
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public enum HitchTypeEnum
     {
-        Unkown = 0,
-        ISO64893TractorDrawbar = 1,
-        ISO730ThreePointHitchSemiMounted = 2,
-        ISO730ThreePointHitchMounted = 3,
-        ISO64891HitchHook = 4,
-        ISO64892ClevisCoupling40 = 5,
-        ISO64894PitonTypeCoupling = 6,
-        ISO56922PivotWagonHitch = 7,
-        ISO24347BallTypeHitch = 8,
-        ThreePoint = 9,
-        RearTwoPoint = 10,
-        Drawbar = 11,
-        RearPivotWagonHitch = 12,
-        FrontRigidThreePoint = 13,        
+        Unkown,
+        ISO64893TractorDrawbar,
+        ISO730ThreePointHitchSemiMounted,
+        ISO730ThreePointHitchMounted,
+        ISO64891HitchHook,
+        ISO64892ClevisCoupling40,
+        ISO64894PitonTypeCoupling,
+        ISO56922PivotWagonHitch,
+        ISO24347BallTypeHitch,
     }
 }

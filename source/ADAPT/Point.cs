@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - make slope nullable
+  *    Justin Sliekers - removing M and Slope, making Z nullable
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -19,10 +20,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public double Y { get; set; }
 
-        public double Z { get; set; }
-
-        public int M { get; set; }
-
-        public double? Slope { get; set; }
+        public double? Z { get; set; }
     }
 }

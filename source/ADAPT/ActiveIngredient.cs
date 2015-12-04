@@ -7,19 +7,16 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Justin Sliekers, Kathleen Oneal - initial API and implementation
+  *    Kathleen Oneal - Added parent class Ingredient and removed duplicate props
+  *******************************************************************************/
 
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class CompoundUnitOfMeasure
+    public class ActiveIngredient : Ingredient
     {
-        public List<UnitOfMeasureComponent> Components { get; set; }
-
-        public string Name { get; set; }
-
-        public string Symbol { get; set; }
+        public List<ModeOfAction> ModesOfAction { get; set; }
     }
 }

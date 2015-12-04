@@ -7,25 +7,13 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Kathleen Oneal - added values
-  *******************************************************************************/  
+  *    Kathleen Oneal - initial API and implementation
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public enum OperationTypeEnum
+    public class CropNutritionIngredient : Ingredient
     {
-        Unknown,
-        Fertilizing,
-        SowingAndPlanting,
-        CropProtection,
-        Tillage,
-        Baling,
-        Mowing,
-        Wrapping,
-        Harvesting,
-        ForageHarvesting,
-        Transport,
-        Swathing
+        public CropNutritionIngredientCodeEnum IngredientCode { get; set; }
     }
 }

@@ -8,25 +8,25 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
-
-using System.Collections.Generic;
+  *    Justin Sliekers - udpating DefinedRepresentation to EnumeratedRepresentation   
+  *    Justin Sliekers - renaming to Destination; removing GLN, ContactInfo and DestinationType; renaming name to description; adding location and facilityId
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class UnitDimension
+    public class Destination
     {
-        public UnitDimension()
+        public Destination()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
         }
 
-        public CompoundIdentifier Id { get; private set; }
+        public CompoundIdentifier Id { get; set; }
 
-        public string Name { get; set; }
+        public string Description { get; set; }
+        
+        public Location Location { get; set; }
 
-        public List<CompoundUnitOfMeasure> CompoundUnitOfMeasures { get; set; }
-
-        public CompoundUnitOfMeasure BaseUnitOfMeasure { get; set; }
+        public int? FacilityId { get; set; }
     }
 }

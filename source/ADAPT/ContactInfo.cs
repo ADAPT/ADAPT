@@ -22,16 +22,27 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public CompoundIdentifier Id { get; private set; }
+
         public string AddressLine1 { get; set; }
+
         public string AddressLine2 { get; set; }
+
         public string PoBoxNumber { get; set; }
+
         public string PostalCode { get; set; }
+
         public string City { get; set; }
+
         public string StateOrProvince { get; set; }
+
         public string Country { get; set; }
+
         public string CountryCode { get; set; }
+
         public List<Contact> Contacts { get; set; }
+
         public Location Location { get; set; }
+
         public List<ContextItem> ContextItems { get; set; }
     }
 }

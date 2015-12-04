@@ -7,20 +7,22 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *    Kathleen Oneal - initial API and implementation
+  *    Joe Ross, Kathleen Oneal - added values
+  *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public abstract class Shape
+    public enum ConnectorTypeEnum
     {
-        protected Shape()
-        {
-            Id = CompoundIdentifierFactory.Instance.Create();
-        }
-
-        public CompoundIdentifier Id { get; private set; }
-
-        public ShapeTypeEnum Type { get; set; }
+        Unkown,
+        ISO64893TractorDrawbar,
+        ISO730ThreePointHitchSemiMounted,
+        ISO730ThreePointHitchMounted,
+        ISO64891HitchHook,
+        ISO64892ClevisCoupling40,
+        ISO64894PitonTypeCoupling,
+        ISO56922PivotWagonHitch,
+        ISO24347BallTypeHitch,
     }
-} 
+}

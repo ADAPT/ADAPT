@@ -9,12 +9,13 @@
   * Contributors:
   *    Justin Sliekers - initial API and implementation
   *    Kathleen Oneal - added CropSeasonId
+  *    Justin Sliekers - removed CropSeasonId
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class Plan : Document
     {
-        public int? CropSeasonId { get; set; }
+
     }
 }

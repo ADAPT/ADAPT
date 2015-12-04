@@ -26,6 +26,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public int NumberOfSatellites { get; set; }
 
-        public DateTime GPSUTCTime { get; set; }
+        public DateTime GpsUtcTime { get; set; }
     }
 }

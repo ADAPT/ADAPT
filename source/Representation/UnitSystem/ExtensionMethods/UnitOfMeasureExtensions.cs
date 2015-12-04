@@ -7,14 +7,12 @@
             var unitOfMeasure = new ApplicationDataModel.UnitOfMeasure
             {
                 Code = uom.DomainID,
-                Name = uom.Label,
-                Symbol = uom.Label
             };
             var scalarUom = uom as ScalarUnitOfMeasure;
             if (scalarUom != null)
             {
-                unitOfMeasure.ConversionScale = scalarUom.Scale;
-                unitOfMeasure.ConversionOffset = scalarUom.BaseOffset;
+                unitOfMeasure.Scale = scalarUom.Scale;
+                unitOfMeasure.Offset = scalarUom.BaseOffset;
             }
             return unitOfMeasure;
         }

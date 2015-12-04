@@ -7,18 +7,18 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Joseph Ross - Renaming Enums to end in Enum
+  *    Tim Shearouse - initial API and implementation
   *******************************************************************************/
-
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public enum PriorityEnum
+    public class ProductComponent
     {
-        Immediately,
-        SoonAsPossible,
-        High,
-        Medium,
-        Low
+        public int IngredientId { get; set; }
+
+        public NumericRepresentationValue Quantity { get; set; }
+
+        public bool IsProduct { get; set; }
+
+        public bool IsCarrier { get; set; }
     }
 }

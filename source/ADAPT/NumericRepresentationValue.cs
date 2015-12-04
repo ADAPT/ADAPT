@@ -35,7 +35,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public override string ToString()
         {
-            return string.Format("{0} {1} ({2})", Value, UserProvidedUnitOfMeasure.Name, Representation.Name);
+            return string.Format("{0} {1} ({2})", Value, UserProvidedUnitOfMeasure.Code, Representation.Code);
         }
     }
 }

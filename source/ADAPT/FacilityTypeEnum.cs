@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross - Renaming Enums to end in Enum
+ *    Kathleen Oneal - removed facility, farm, field, storageLocation, tank; renamed grainBin to bin
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -16,11 +17,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     public enum FacilityTypeEnum
     {
         Office,
-        GrainBin,
-        Facility,
-        Farm,
-        Field,
-        StorageLocation,
-        Tank
+        Bin,
     }
 }

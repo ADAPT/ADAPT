@@ -9,9 +9,8 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
+  *    Justin Sliekers - removing Ingredients
   *******************************************************************************/
-
-using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
@@ -22,7 +21,5 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public bool Organophosphate { get; set; }
 
         public bool Carbamate { get; set; }
-
-        public List<IngredientUse> Ingredients { get; set; }
     }
 }

@@ -19,11 +19,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         {
             Id = CompoundIdentifierFactory.Instance.Create();
         }
-
+        
         public CompoundIdentifier Id { get; private set; }
+        
         public string Description { get; set; }
+        
         public int MachineTypeId { get; set; }
+        
         public int? SeriesId { get; set; }
+        
         public int? BrandId { get; set; }
     }
 }

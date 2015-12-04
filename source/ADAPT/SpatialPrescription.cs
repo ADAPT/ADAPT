@@ -17,7 +17,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public NumericRepresentationValue OutOfFieldRate { get; set; }
 
-        public NumericRepresentationValue LossofGPSRate { get; set; }
+        public NumericRepresentationValue LossOfGpsRate { get; set; }
 
         public UnitOfMeasure RateUnit { get; set; }
     }

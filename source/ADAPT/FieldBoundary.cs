@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
+ *    Kathleen Oneal - made headland into a list of headlands
   *******************************************************************************/  
 
 using System.Collections.Generic;
@@ -23,14 +24,23 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         }
 
         public CompoundIdentifier Id { get; private set; }
+
         public string Description { get; set; }
+        
         public int FieldId { get; set; }
+        
         public MultiPolygon SpatialData { get; set; }
+        
         public List<int> TimeScopeIds { get; set; }
-        public Headland Headland { get; set; }
+        
+        public List<Headland> Headlands { get; set; }
+        
         public GpsSourceEnum GpsSource { get; set; }
+        
         public string OriginalEpsgCode { get; set; }
+        
         public List<InteriorBoundaryAttribute> InteriorBoundaryAttributes { get; set; }
+        
         public List<ContextItem> ContextItems { get; set; }
     }
 }

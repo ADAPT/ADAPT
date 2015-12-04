@@ -20,6 +20,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public NumericValue MaxValue { get; set; }
 
-        public UnitOfMeasureDimension Dimension { get; set; }
+        public UnitOfMeasureDimensionEnum Dimension { get; set; }
     }
 }

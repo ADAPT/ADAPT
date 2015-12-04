@@ -17,8 +17,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     public abstract class Note
     {
         public string Description { get; set; }
+        
         public EnumeratedValue Value { get; set; }
+        
         public TimeScope TimeStamp { get; set; }
+        
         public Shape SpatialContext { get; set; }
     }
 }

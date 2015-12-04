@@ -9,8 +9,10 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
+ *    Kathleen Oneal - changed meters to GetMeters
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -36,6 +38,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public NumericRepresentationValue TotalElapsedTime { get; set; }
 
-        public List<Meter> Meters { get; set; }
+        public Func<List<Meter>> GetMeters { get; set; }
     }
 }
