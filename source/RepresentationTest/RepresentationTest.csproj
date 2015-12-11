@@ -66,8 +66,8 @@
     <Compile Include="RepresentationSystem\RepresentationManagerTest.cs" />
     <Compile Include="UnitSystem\UnitOfMeasureConverterTest.cs" />
     <Compile Include="UnitSystem\UnitOfMeasurePreferenceTest.cs" />
-    <Compile Include="UnitSystem\VariableNumberTest.cs" />
-    <Compile Include="UnitSystem\BaseNumberTest.cs" />
+    <Compile Include="UnitSystem\NumericRepresentationExtensionsTest.cs" />
+    <Compile Include="UnitSystem\NumericValueExtensionsTest.cs" />
     <Compile Include="UnitSystem\CompositeUnitOfMeasureTest.cs" />
     <Compile Include="UnitSystem\UnitCollectionTest.cs" />
     <Compile Include="UnitSystem\UnitOfMeasureCollectionTest.cs" />

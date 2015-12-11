@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Joseph Ross - Renamed File
   *******************************************************************************/
 
 using System;
@@ -20,7 +21,7 @@ using UnitOfMeasure = AgGateway.ADAPT.Representation.UnitSystem.UnitOfMeasure;
 namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 {
     [TestFixture]
-    public class BaseNumberTest
+    public class NumericValueExtensionsTest
     {
         private readonly UnitOfMeasure _mileUnitOfMeasure = UnitSystemManager.Instance.UnitOfMeasures["mi"];
         private const double Epsilon = 0.0000000001;
@@ -137,7 +138,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var secondUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
             var secondNumber = new NumericValue(secondUom.ToModelUom(), 3.5);
 
-            var expected = 0.6832; //1.75m + (3.5ft -> m)
+            var expected = 0.6832; //1.75m - (3.5ft -> m)
             var actual = originalNumber.Subtract(secondNumber);
             Assert.AreEqual(expected, actual.Value, Epsilon);
         }

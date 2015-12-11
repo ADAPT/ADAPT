@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Joseph Ross  - Updating ToString to acount for Value being a NumericValue
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -35,7 +36,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public override string ToString()
         {
-            return string.Format("{0} {1} ({2})", Value, UserProvidedUnitOfMeasure.Code, Representation.Code);
+            return string.Format("{0} {1} ({2})", Value.Value, UserProvidedUnitOfMeasure.Code, Representation.Code);
         }
     }
 }
