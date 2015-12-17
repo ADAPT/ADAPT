@@ -20,7 +20,7 @@ namespace AgGateway.ADAPT.RepresentationTest
     public class GenerateRepresentationInstanceList
     {
         [Test]
-        [Ignore]
+        [Ignore("Used to generate representation list")]
         public void GivenRepresentationManagerGenerateRepresentationInstanceList()
         {
             var representationSystemDirectory = Path.GetTempPath();

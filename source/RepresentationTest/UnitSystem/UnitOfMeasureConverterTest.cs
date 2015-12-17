@@ -49,23 +49,21 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         }
 
         [Test]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void GivenUnitsOfDifferentTypesWhenConvertThenException()
         {
             var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
             var targetUom = UnitSystemManager.Instance.UnitOfMeasures["gal"];
 
-            _unitOfMeasureConverter.Convert(sourceUom, targetUom, 8);
+            Assert.Throws<InvalidOperationException>(() => _unitOfMeasureConverter.Convert(sourceUom, targetUom, 8));
         }
 
         [Test]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void GivenCompositeUnitsOfDifferentTypesWhenConvertThenException()
         {
             var sourceUom = new CompositeUnitOfMeasure("[cm3]1[m2]-1");
             var targetUom = new CompositeUnitOfMeasure("bale1[in2]-1");
 
-            _unitOfMeasureConverter.Convert(sourceUom, targetUom, 3);
+            Assert.Throws<InvalidOperationException>(() => _unitOfMeasureConverter.Convert(sourceUom, targetUom, 3));
         }
 
         [Test]
