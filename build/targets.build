@@ -119,7 +119,7 @@
 				public static void ScriptMain(Project project)
 				{
           string cwd = System.IO.Directory.GetCurrentDirectory();
-          string verPath = Path.Combine(cwd, "..", "versions", project.Properties["versionFile"]);
+          string verPath = Path.Combine(cwd, project.Properties["versionFile"]);
 		  string buildnumber;
 			    StreamReader reader = new StreamReader(verPath.ToString());
 				  string versionInfo = reader.ReadLine();
