@@ -21,7 +21,7 @@
     </foreach>
   </target>
 
-  <version buildtype="MonthDay" revisiontype="Increment" path=".\${versionFile}" failonerror="false"/>
+  <version buildtype="Increment" revisiontype="Automatic" path=".\${versionFile}" failonerror="false"/>
 
   <target name="BeforeBuild">
     <property name="solution" value="" />
