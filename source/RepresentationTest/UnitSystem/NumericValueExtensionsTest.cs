@@ -106,7 +106,6 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         }
 
         [Test]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void GivenBaseNumbersWithIncompatibleUnitsWhenAddThenException()
         {
             var originalUom = UnitSystemManager.Instance.UnitOfMeasures["m"];
@@ -115,7 +114,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var secondUom = UnitSystemManager.Instance.UnitOfMeasures["C"];
             var secondNumber = new NumericValue(secondUom.ToModelUom(), 3.5);
 
-            originalNumber.Add(secondNumber);
+            Assert.Throws<InvalidOperationException>(() => originalNumber.Add(secondNumber));
         }
 
         [Test]
@@ -144,7 +143,6 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         }
 
         [Test]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void GivenBaseNumbersWithIncompatibleUnitsWhenSubtractThenException()
         {
             var originalUom = UnitSystemManager.Instance.UnitOfMeasures["m"];
@@ -153,7 +151,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var secondUom = UnitSystemManager.Instance.UnitOfMeasures["C"];
             var secondNumber = new NumericValue(secondUom.ToModelUom(), 3.5);
 
-            originalNumber.Subtract(secondNumber);
+            Assert.Throws<InvalidOperationException>(() => originalNumber.Subtract(secondNumber));
         }
 
         [Test]
@@ -201,13 +199,12 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         }
 
         [Test]
-        [ExpectedException(typeof(DivideByZeroException))]
         public void GivenBaseNumberWhenDivideByZeroShouldThrowException()
         {
             var uom = _mileUnitOfMeasure;
             var number = new NumericValue(uom.ToModelUom(), 3.62);
 
-            number.Divide(0);
+            Assert.Throws<DivideByZeroException>(() => number.Divide(0));
         }
 
         [Test]
@@ -233,13 +230,12 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         }
 
         [Test]
-        [ExpectedException(typeof(DivideByZeroException))]
         public void GivenBaseNumberWhenDivideBaseNumberWithZeroValueThenDivideByZeroException()
         {
             var numerator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 3);
             var denominator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom(), 0);
 
-            numerator.Divide(denominator);
+            Assert.Throws<DivideByZeroException>(() => numerator.Divide(denominator));
         }
 
         [Test]

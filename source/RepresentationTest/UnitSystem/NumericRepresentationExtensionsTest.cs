@@ -132,7 +132,6 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         }
 
         [Test]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void GivenVariableNumbersWithIncompatibleUnitsWhenAddThenException()
         {
             var originalUom = UnitSystemManager.Instance.UnitOfMeasures["m"].ToModelUom();
@@ -143,7 +142,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var secondValue = new NumericValue(secondUom, 3.5);
             var secondNumber = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), secondValue);
 
-            originalNumber.Add(secondNumber);
+            Assert.Throws<InvalidOperationException>(() => originalNumber.Add(secondNumber));
         }
 
         [Test]
@@ -191,7 +190,6 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         }
 
         [Test]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void GivenVariableNumbersWithIncompatibleUnitsWhenSubtractThenException()
         {
             var originalUom = UnitSystemManager.Instance.UnitOfMeasures["m"].ToModelUom();
@@ -202,7 +200,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var secondValue = new NumericValue(secondUom, 3.5);
             var secondNumber = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), secondValue);
 
-            originalNumber.Subtract(secondNumber);
+            Assert.Throws<InvalidOperationException>(() => originalNumber.Subtract(secondNumber));
         }
 
         [Test]
@@ -232,14 +230,13 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         }
 
         [Test]
-        [ExpectedException(typeof(DivideByZeroException))]
         public void GivenVariableNumberWhenDivideByZeroShouldThrowException()
         {
             var uom = UnitSystemManager.Instance.UnitOfMeasures["mi"].ToModelUom();
             var value = new NumericValue(uom, 3.62);
             var number = new NumericRepresentationValue(RepresentationInstanceList.vrRoverDistance.ToModelRepresentation(), value);
 
-            number.Divide(0);
+            Assert.Throws<DivideByZeroException>(() => number.Divide(0));
         }
 
         [Test]
@@ -271,7 +268,6 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         }
 
         [Test]
-        [ExpectedException(typeof(DivideByZeroException))]
         public void GivenVariableNumberWhenDivideVariableNumberWithZeroValueThenDivideByZeroException()
         {
             var numeratorUom = _ftUnitOfMeasure.ToModelUom();
@@ -281,7 +277,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var denominatorValue = new NumericValue(denominatorUom, 0);
             var denominator = new NumericRepresentationValue(RepresentationInstanceList.vrDeltaTime.ToModelRepresentation(), denominatorValue);
 
-            numerator.Divide(denominator, RepresentationInstanceList.vrVehicleSpeed.ToModelRepresentation());
+            Assert.Throws<DivideByZeroException>(() => numerator.Divide(denominator, RepresentationInstanceList.vrVehicleSpeed.ToModelRepresentation()));
         }
 
         [Test]

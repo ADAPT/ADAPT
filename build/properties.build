@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<project name="propertiesbuild" basedir=".">
+  <!-- System paths -->
+  <property name="msbuild.path" value="${framework::get-framework-directory('net-4.0')}\MSBuild.exe"/>
+  <property name="nunit.exe" value="nunit3-console.exe"/>
+  <property name="solutionDir" value=".\..\source"/>
+  <property name="solutionName" value="ADAPT.sln" />
+  <property name="buildnumber.version" value="" />
+  <property name="versionFile" value="ADAPT.version" />
+  <property name="configuration" value="Release" />
+  <property name="platform" value="Any CPU" />
+  
+</project>

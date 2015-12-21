@@ -80,10 +80,9 @@ namespace AgGateway.ADAPT.PluginManagerTest
         }
 
         [Test]
-        [ExpectedException(typeof(NotSupportedException))]
         public void GetPluginGivenBadNameThrowsException()
         {
-            _pluginFactory.GetPlugin("SomethingThatDoesNotExist");
+            Assert.Throws<NotSupportedException>(() => _pluginFactory.GetPlugin("SomethingThatDoesNotExist"));
         }
 
         [Test]
