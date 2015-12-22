@@ -118,7 +118,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             var power = GetPower(domainId);
             var powerLength = power.ToString(CultureInfo.InvariantCulture).Length;
             var unitOfMeasureDomainId = domainId.Substring(0, domainId.Length - powerLength);
-            var unitOfMeasure = UnitSystemManager.Instance.UnitOfMeasures[unitOfMeasureDomainId];
+            var unitOfMeasure = InternalUnitSystemManager.Instance.UnitOfMeasures[unitOfMeasureDomainId];
             return new UnitOfMeasureComponent(unitOfMeasure, power);
         }
 

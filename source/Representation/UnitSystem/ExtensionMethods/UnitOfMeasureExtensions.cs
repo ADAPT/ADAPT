@@ -19,7 +19,7 @@
 
         public static UnitOfMeasure ToInternalUom(this ApplicationDataModel.UnitOfMeasure uom)
         {
-            return UnitSystemManager.Instance.UnitOfMeasures[uom.Code];
+            return InternalUnitSystemManager.Instance.UnitOfMeasures[uom.Code];
         }
     }
 }

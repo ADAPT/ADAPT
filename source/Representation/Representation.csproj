@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CultureInfoDefault.cs" />
+    <Compile Include="Generated\DomainIdToUnRec20.cs" />
     <Compile Include="Generated\GeneratedClasses.cs" />
     <Compile Include="ICopy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -120,8 +122,9 @@
     <Compile Include="UnitSystem\UnitOfMeasureSystem.cs" />
     <Compile Include="UnitSystem\UnitOfMeasureSystemCollection.cs" />
     <Compile Include="UnitSystem\UnitRepresentation.cs" />
-    <Compile Include="UnitSystem\UnitSystemManager.cs" />
+    <Compile Include="UnitSystem\InternalUnitSystemManager.cs" />
     <Compile Include="UnitSystem\UnitDimension.cs" />
+    <Compile Include="UnitSystem\UnitSystemManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Settings.settings">
@@ -141,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\ddiExport.txt" />
+    <Content Include="Resources\DomainIdToUNRec20.xml" />
     <Content Include="Resources\RepresentationSystem.xml" />
     <Content Include="Resources\UnitSystem.xml" />
   </ItemGroup>

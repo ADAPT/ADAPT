@@ -26,7 +26,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
     [TestFixture]
     public class NumericRepresentationExtensionsTest
     {
-        private UnitOfMeasure _ftUnitOfMeasure = UnitSystemManager.Instance.UnitOfMeasures["ft"];
+        private UnitOfMeasure _ftUnitOfMeasure = InternalUnitSystemManager.Instance.UnitOfMeasures["ft"];
         private const double Epsilon = 0.005;
 
         [SetUp]
@@ -38,7 +38,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         public void GivenRepresentationAndUomWhenCreateVariableNumberShouldSetRepAndUom()
         {
             var representation = RepresentationInstanceList.vrAirTemperature.ToModelRepresentation();
-            var uom = UnitSystemManager.Instance.UnitOfMeasures["C"].ToModelUom();
+            var uom = InternalUnitSystemManager.Instance.UnitOfMeasures["C"].ToModelUom();
             var numericValue = new NumericValue(uom, 1.23);
 
             var numericRepresentationValue = new NumericRepresentationValue(representation, uom, numericValue);
@@ -51,7 +51,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         public void GivenRepresentationAndUomIdWhenCreateVariableNumberShouldSetRepAndUom()
         {
             var representationTag = RepresentationInstanceList.vrAirTemperature.ToModelRepresentation();
-            var uom = UnitSystemManager.Instance.UnitOfMeasures["C"].ToModelUom();
+            var uom = InternalUnitSystemManager.Instance.UnitOfMeasures["C"].ToModelUom();
             var numericValue = new NumericValue(uom, 1.23);
 
             var numericRepresentationValue = new NumericRepresentationValue(representationTag, numericValue);
@@ -64,7 +64,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         public void GivenSourceValueWhenCreatedThenSourceValue()
         {
             var representation = RepresentationInstanceList.vrAirTemperature.ToModelRepresentation();
-            var uom = UnitSystemManager.Instance.UnitOfMeasures["C"].ToModelUom();
+            var uom = InternalUnitSystemManager.Instance.UnitOfMeasures["C"].ToModelUom();
             var numericValue = new NumericValue(uom, 5);
 
             var numericRepresentationValue = new NumericRepresentationValue(representation, numericValue);
@@ -76,7 +76,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenTwoVariableNumbersWithSameUomWhenAddedThenSourceValueIsSum()
         {
-            var uom = UnitSystemManager.Instance.UnitOfMeasures["C"].ToModelUom();
+            var uom = InternalUnitSystemManager.Instance.UnitOfMeasures["C"].ToModelUom();
             var originalValue = new NumericValue(uom, 22);
             var originalRep = new NumericRepresentationValue(RepresentationInstanceList.vrAirTemperature.ToModelRepresentation(), originalValue);
             var secondNumber = new NumericValue(uom, 11);
@@ -93,7 +93,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var originalValue = new NumericValue(originalUom, 22);
             var originalNumber = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), originalValue);
 
-            var secondUom = UnitSystemManager.Instance.UnitOfMeasures["m"].ToModelUom();
+            var secondUom = InternalUnitSystemManager.Instance.UnitOfMeasures["m"].ToModelUom();
             var secondValue = new NumericValue(secondUom, 11);
             var secondNumber = new NumericRepresentationValue(RepresentationInstanceList.vrElevation.ToModelRepresentation(), secondValue);
 
@@ -104,7 +104,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNumberWhenAddVariableNumberThenResultIsInOriginalUom()
         {
-            var originalUom = UnitSystemManager.Instance.UnitOfMeasures["m"].ToModelUom();
+            var originalUom = InternalUnitSystemManager.Instance.UnitOfMeasures["m"].ToModelUom();
             var originalValue = new NumericValue(originalUom, 1.75);
             var originalNumber = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), originalValue);
 
@@ -121,7 +121,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNumberWhenAddDoubleShouldReturnNewVariableNumberWithSourceAddedToDouble()
         {
-            var uom = UnitSystemManager.Instance.UnitOfMeasures["mi"].ToModelUom();
+            var uom = InternalUnitSystemManager.Instance.UnitOfMeasures["mi"].ToModelUom();
             var originalValue = new NumericValue(uom, 3.62);
             var number = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), originalValue);
 
@@ -134,11 +134,11 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNumbersWithIncompatibleUnitsWhenAddThenException()
         {
-            var originalUom = UnitSystemManager.Instance.UnitOfMeasures["m"].ToModelUom();
+            var originalUom = InternalUnitSystemManager.Instance.UnitOfMeasures["m"].ToModelUom();
             var originalValue = new NumericValue(originalUom, 1.75);
             var originalNumber = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), originalValue);
 
-            var secondUom = UnitSystemManager.Instance.UnitOfMeasures["C"].ToModelUom();
+            var secondUom = InternalUnitSystemManager.Instance.UnitOfMeasures["C"].ToModelUom();
             var secondValue = new NumericValue(secondUom, 3.5);
             var secondNumber = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), secondValue);
 
@@ -148,7 +148,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenTwoVariableNumbersWithSameUomWhenSubtractedThenSourceValueIsDifference()
         {
-            var uom = UnitSystemManager.Instance.UnitOfMeasures["C"].ToModelUom();
+            var uom = InternalUnitSystemManager.Instance.UnitOfMeasures["C"].ToModelUom();
             var originalValue = new NumericValue(uom, 22);
             var originalNumber = new NumericRepresentationValue(RepresentationInstanceList.vrAirTemperature.ToModelRepresentation(), originalValue);
             var secondNumber = new NumericValue(uom, 13);
@@ -161,7 +161,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNumberWhenSubtractVariableNumberThenResultIsInOriginalUom()
         {
-            var originalUom = UnitSystemManager.Instance.UnitOfMeasures["m"].ToModelUom();
+            var originalUom = InternalUnitSystemManager.Instance.UnitOfMeasures["m"].ToModelUom();
             var originalValue = new NumericValue(originalUom, 1.75);
             var originalNumber = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(),  originalValue);
 
@@ -181,7 +181,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var originalUom = _ftUnitOfMeasure.ToModelUom();
             var originalValue = new NumericValue(originalUom, 22);
             var originalNumber = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), originalValue);
-            var secondUom = UnitSystemManager.Instance.UnitOfMeasures["m"].ToModelUom();
+            var secondUom = InternalUnitSystemManager.Instance.UnitOfMeasures["m"].ToModelUom();
             var secondValue = new NumericValue(secondUom, 11);
             var secondNumber = new NumericRepresentationValue(RepresentationInstanceList.vrElevation.ToModelRepresentation(), secondValue);
 
@@ -192,11 +192,11 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNumbersWithIncompatibleUnitsWhenSubtractThenException()
         {
-            var originalUom = UnitSystemManager.Instance.UnitOfMeasures["m"].ToModelUom();
+            var originalUom = InternalUnitSystemManager.Instance.UnitOfMeasures["m"].ToModelUom();
             var originalValue = new NumericValue(originalUom, 1.75);
             var originalNumber = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), originalValue);
 
-            var secondUom = UnitSystemManager.Instance.UnitOfMeasures["C"].ToModelUom();
+            var secondUom = InternalUnitSystemManager.Instance.UnitOfMeasures["C"].ToModelUom();
             var secondValue = new NumericValue(secondUom, 3.5);
             var secondNumber = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), secondValue);
 
@@ -206,7 +206,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNumberWhenSubtractDoubleShouldReturnNewVariableNumberWithDoubleSubtractedFromSource()
         {
-            var uom = UnitSystemManager.Instance.UnitOfMeasures["mi"].ToModelUom();
+            var uom = InternalUnitSystemManager.Instance.UnitOfMeasures["mi"].ToModelUom();
             var value = new NumericValue(uom, 3.62);
             var number = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), value);
 
@@ -219,7 +219,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNumberWhenDivideDoubleThenSourceValueIsQuotient()
         {
-            var uom = UnitSystemManager.Instance.UnitOfMeasures["mi"].ToModelUom();
+            var uom = InternalUnitSystemManager.Instance.UnitOfMeasures["mi"].ToModelUom();
             var value = new NumericValue(uom, 3.62);
             var number = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), value);
 
@@ -232,7 +232,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNumberWhenDivideByZeroShouldThrowException()
         {
-            var uom = UnitSystemManager.Instance.UnitOfMeasures["mi"].ToModelUom();
+            var uom = InternalUnitSystemManager.Instance.UnitOfMeasures["mi"].ToModelUom();
             var value = new NumericValue(uom, 3.62);
             var number = new NumericRepresentationValue(RepresentationInstanceList.vrRoverDistance.ToModelRepresentation(), value);
 
@@ -245,7 +245,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var uom = _ftUnitOfMeasure.ToModelUom();
             var value = new NumericValue(uom, 12);
             var numerator = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), value);
-            var denominator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom(), 5);
+            var denominator = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom(), 5);
 
             var quotient = numerator.Divide(denominator);
             Assert.IsInstanceOf<NumericRepresentationValue>(quotient);
@@ -273,7 +273,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var numeratorUom = _ftUnitOfMeasure.ToModelUom();
             var numeratorValue = new NumericValue(numeratorUom, 3);
             var numerator = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), numeratorValue);
-            var denominatorUom = UnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom();
+            var denominatorUom = InternalUnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom();
             var denominatorValue = new NumericValue(denominatorUom, 0);
             var denominator = new NumericRepresentationValue(RepresentationInstanceList.vrDeltaTime.ToModelRepresentation(), denominatorValue);
 
@@ -283,10 +283,10 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNunmberWithCompositeUnitOfMeasureWhenDivideVariableNumberThenUnitOfMeasuresCombined()
         {
-            var numeratorUom = UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom();
+            var numeratorUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom();
             var numeratorValue = new NumericValue(numeratorUom, 2.4);
             var numerator = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), numeratorValue);
-            var denominatorUom = UnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom();
+            var denominatorUom = InternalUnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom();
             var denominatorValue = new NumericValue(denominatorUom, 5);
             var denominator = new NumericRepresentationValue(RepresentationInstanceList.vrDeltaTime.ToModelRepresentation(), denominatorValue);
 
@@ -302,7 +302,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var numeratorUom = _ftUnitOfMeasure.ToModelUom();
             var numeratorValue = new NumericValue(numeratorUom, 12.54);
             var numerator = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), numeratorValue);
-            var denominatorUom = UnitSystemManager.Instance.UnitOfMeasures["[sec2]-1"].ToModelUom();
+            var denominatorUom = InternalUnitSystemManager.Instance.UnitOfMeasures["[sec2]-1"].ToModelUom();
             var denominatorValue = new NumericValue(denominatorUom, 5);
             var denominator = new NumericRepresentationValue(RepresentationInstanceList.vrDeltaTime.ToModelRepresentation(), denominatorValue);
 
@@ -315,10 +315,10 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNumberWithCompositeUnitOfMeasureWhenDivdeVariableNumberWithCompositeUnitOfMeasureThenUnitOfMeasuresSimplified()
         {
-            var numeratorUom = UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom();
+            var numeratorUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom();
             var numeratorValue = new NumericValue(numeratorUom, 52.15);
             var numerator = new NumericRepresentationValue(RepresentationInstanceList.vrEngineSpeed.ToModelRepresentation(), numeratorValue);
-            var denominatorUom = UnitSystemManager.Instance.UnitOfMeasures["gal1sec-1"].ToModelUom();
+            var denominatorUom = InternalUnitSystemManager.Instance.UnitOfMeasures["gal1sec-1"].ToModelUom();
             var denominatorValue = new NumericValue(denominatorUom, 12);
             var denominator = new NumericRepresentationValue(RepresentationInstanceList.vrFuelRatePerHour.ToModelRepresentation(), denominatorValue);
 
@@ -345,7 +345,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNumberWhenMultiplyDoubleThenSourceValueIsProduct()
         {
-            var uom = UnitSystemManager.Instance.UnitOfMeasures["mi"].ToModelUom();
+            var uom = InternalUnitSystemManager.Instance.UnitOfMeasures["mi"].ToModelUom();
             var value = new NumericValue(uom, 3.62);
             var number = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), value);
 
@@ -357,7 +357,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNumberWithCompositeUnitOfMeasureWhenMultiplyVariableNumberThenCombinedUnitOfMeasure()
         {
-            var leftUom = UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom();
+            var leftUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom();
             var leftValue = new NumericValue(leftUom, 47.5);
             var left = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), leftValue);
             var right = new NumericValue(_ftUnitOfMeasure.ToModelUom(), 3);
@@ -375,7 +375,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var leftValue = new NumericValue(leftUom, 52.78);
             var left = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), leftValue);
 
-            var rightUom = UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom();
+            var rightUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom();
             var rightValue = new NumericValue(rightUom, 2.85);
             var right = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), rightValue);
 
@@ -388,10 +388,10 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNumberWithCompositeUnitOfMeasureWhenMultiplyVariableNumberWithCompositeUnitOfMeasureThenUnitsCancel()
         {
-            var leftUom = UnitSystemManager.Instance.UnitOfMeasures["ft1sec1"].ToModelUom();
+            var leftUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec1"].ToModelUom();
             var leftValue = new NumericValue(leftUom, 5.15);
             var left = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), leftValue);
-            var rightUom = UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom();
+            var rightUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom();
             var rightValue = new NumericValue(rightUom, 7.89);
             var right = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), rightValue);
 
@@ -404,7 +404,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNumberWithCompositeUnitOfMeasureWhenMultiplyVariableNumberWithCompositeUnitOfMeasureThenCombinedUnitOfMeasure()
         {
-            var uom = UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom();
+            var uom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom();
             var leftValue = new NumericValue(uom, 21.848);
             var left = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), leftValue);
             var rightValue = new NumericValue(uom, 9.18);
@@ -419,10 +419,10 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenVariableNumbersWithTypesThatSimplifyToScalarTypeWhenMultiplyThenShouldHaveScalarUnit()
         {
-            var leftUom = UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom();
+            var leftUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom();
             var leftValue = new NumericValue(leftUom, 21.848);
             var left = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), leftValue);
-            var rightUom = UnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom();
+            var rightUom = InternalUnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom();
             var rightValue = new NumericValue(rightUom, 9.18);
             var right = new NumericRepresentationValue(RepresentationInstanceList.vrDistanceTraveled.ToModelRepresentation(), rightValue);
 

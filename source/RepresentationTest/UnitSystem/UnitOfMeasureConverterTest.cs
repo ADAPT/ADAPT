@@ -31,8 +31,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenUnitsInTheSameSystemAndOfTheSameTypeWhenConvertThenValueIsConverted()
         {
-            var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
-            var targetUom = UnitSystemManager.Instance.UnitOfMeasures["in"];
+            var sourceUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft"];
+            var targetUom = InternalUnitSystemManager.Instance.UnitOfMeasures["in"];
 
             var value = _unitOfMeasureConverter.Convert(sourceUom, targetUom, 3);
             Assert.AreEqual(36, value, Epsilon);
@@ -41,8 +41,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenUnitsInDifferentSystemsAndOfTheSameTypeWhenConvertThenValueIsConverted()
         {
-            var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["m"];
-            var targetUom = UnitSystemManager.Instance.UnitOfMeasures["in"];
+            var sourceUom = InternalUnitSystemManager.Instance.UnitOfMeasures["m"];
+            var targetUom = InternalUnitSystemManager.Instance.UnitOfMeasures["in"];
 
             var value = _unitOfMeasureConverter.Convert(sourceUom, targetUom, 3);
             Assert.AreEqual(118.11, value, Epsilon);
@@ -51,8 +51,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenUnitsOfDifferentTypesWhenConvertThenException()
         {
-            var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
-            var targetUom = UnitSystemManager.Instance.UnitOfMeasures["gal"];
+            var sourceUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft"];
+            var targetUom = InternalUnitSystemManager.Instance.UnitOfMeasures["gal"];
 
             Assert.Throws<InvalidOperationException>(() => _unitOfMeasureConverter.Convert(sourceUom, targetUom, 8));
         }
@@ -94,7 +94,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenScalarAndCompositeWhenConvertShouldUseCompositeConversionFactor()
         {
-            var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["ac"];
+            var sourceUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ac"];
             var targetUom = new CompositeUnitOfMeasure("m2");
 
             var result = _unitOfMeasureConverter.Convert(sourceUom, targetUom, 1);
@@ -106,7 +106,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         public void GivenCompositeUnitWhenConvertToScalarShouldUseCompositeConversionFactor()
         {
             var sourceUom = new CompositeUnitOfMeasure("m2");
-            var targetUom = UnitSystemManager.Instance.UnitOfMeasures["ac"];
+            var targetUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ac"];
 
             var result = _unitOfMeasureConverter.Convert(sourceUom, targetUom, 500000);
 

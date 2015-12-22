@@ -95,7 +95,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods
                 throw new ArgumentNullException("targetUom");
 
             var unitOfMeasure = numericValue.UnitOfMeasure;
-            var internalUnit = UnitSystemManager.Instance.UnitOfMeasures[unitOfMeasure.Code];
+            var internalUnit = InternalUnitSystemManager.Instance.UnitOfMeasures[unitOfMeasure.Code];
             numericValue.Value = new UnitOfMeasureConverter().Convert(internalUnit, targetUom, numericValue.Value);
             numericValue.UnitOfMeasure = targetUom.ToModelUom();
             return numericValue.Value;

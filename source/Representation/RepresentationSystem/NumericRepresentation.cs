@@ -70,7 +70,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
             if (string.IsNullOrEmpty(unitDimension))
                 return null;
 
-            return UnitSystemManager.Instance.UnitDimensions[unitDimension];
+            return InternalUnitSystemManager.Instance.UnitDimensions[unitDimension];
         }
 
         private static Dictionary<UnitSystem.UnitSystem, UnitCollection<UnitOfMeasurePreference>> GetDefaultUnitOfMeasures(IEnumerable<UnitOfMeasurePreferenceType> items)

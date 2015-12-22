@@ -144,7 +144,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenDomainIdAndComponentsWhenInjectedThenPropertiesMatch()
         {
-            var result = new CompositeUnitOfMeasure("m2", new[] {new UnitOfMeasureComponent(UnitSystemManager.Instance.UnitOfMeasures["m"], 2),});
+            var result = new CompositeUnitOfMeasure("m2", new[] {new UnitOfMeasureComponent(InternalUnitSystemManager.Instance.UnitOfMeasures["m"], 2),});
 
             Assert.AreEqual(1, result.Components.Count);
             Assert.AreEqual("m", result.Components.First().DomainID);

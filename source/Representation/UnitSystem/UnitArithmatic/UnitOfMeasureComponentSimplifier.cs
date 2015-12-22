@@ -96,7 +96,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
         protected NumericValue CombineComponents(List<UnitOfMeasureComponent> components, double value)
         {
             if (!components.Any())
-                return new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ratio"].ToModelUom(), value);
+                return new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ratio"].ToModelUom(), value);
 
             if (components.Count > 1 || components.First().Power != 1)
             {
@@ -143,8 +143,8 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
                     {
                         var firstDomainId = firstComponent.Power > 1 ? firstComponent.DomainID + firstComponent.Power : firstComponent.DomainID;
                         var secondDomainId = secondComponent.Power > 1 ? secondComponent.DomainID + secondComponent.Power : secondComponent.DomainID;
-                        value = _converter.Convert(UnitSystemManager.Instance.UnitOfMeasures[firstDomainId],
-                                                                        UnitSystemManager.Instance.UnitOfMeasures[secondDomainId], value);
+                        value = _converter.Convert(InternalUnitSystemManager.Instance.UnitOfMeasures[firstDomainId],
+                                                                        InternalUnitSystemManager.Instance.UnitOfMeasures[secondDomainId], value);
                         var uomComponents = CombineCompositeComponents(compositeUnitOfMeasure, firstComponent, secondComponent);
                         return Simplify(uomComponents, value);
                     }
@@ -165,7 +165,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
             uomComponents.Remove(secondComponent);
             if (power != 0)
             {
-                uomComponents.Add(new UnitOfMeasureComponent(UnitSystemManager.Instance.UnitOfMeasures[secondComponent.DomainID], secondComponent.Power * 2));
+                uomComponents.Add(new UnitOfMeasureComponent(InternalUnitSystemManager.Instance.UnitOfMeasures[secondComponent.DomainID], secondComponent.Power * 2));
             }
             return uomComponents;
         }

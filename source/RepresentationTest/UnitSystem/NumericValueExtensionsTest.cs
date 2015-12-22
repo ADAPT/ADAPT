@@ -23,13 +23,13 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
     [TestFixture]
     public class NumericValueExtensionsTest
     {
-        private readonly UnitOfMeasure _mileUnitOfMeasure = UnitSystemManager.Instance.UnitOfMeasures["mi"];
+        private readonly UnitOfMeasure _mileUnitOfMeasure = InternalUnitSystemManager.Instance.UnitOfMeasures["mi"];
         private const double Epsilon = 0.0000000001;
 
         [Test]
         public void GivenUnitOfMeasureWhenCreatedThenSourceUnitOfMeasureIsSet()
         {
-            var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
+            var sourceUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft"];
             var baseNumber = new NumericValue(sourceUom.ToModelUom(), 1.58);
             Assert.AreEqual(sourceUom.DomainID, baseNumber.UnitOfMeasure.Code);
         }
@@ -37,7 +37,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenUnitOfMeasureWhenCreatedThenTargetUnitOfMeasureDefaultsToSourceUnitOfMeasure()
         {
-            var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
+            var sourceUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft"];
             var baseNumber = new NumericValue(sourceUom.ToModelUom(), 1.58);
             Assert.AreSame(baseNumber.UnitOfMeasure, baseNumber.UnitOfMeasure);
         }
@@ -45,7 +45,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenUnitOfMeasureWhenCreatedThenTargetValueDefaultsToSourceValue()
         {
-            var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["m"];
+            var sourceUom = InternalUnitSystemManager.Instance.UnitOfMeasures["m"];
             var baseNumber = new NumericValue(sourceUom.ToModelUom(), 6.89);
             Assert.AreEqual(baseNumber.Value, baseNumber.Value);
         }
@@ -53,7 +53,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenValueWhenCreatedThenSourceValueIsSet()
         {
-            var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
+            var sourceUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft"];
             var baseNumber = new NumericValue(sourceUom.ToModelUom(), 12.0);
             Assert.AreEqual(12.0, baseNumber.Value);
         }
@@ -61,8 +61,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWhenSetTargetThenTargetUnitOfMeasureIsSet()
         {
-            var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
-            var targetUom = UnitSystemManager.Instance.UnitOfMeasures["in"];
+            var sourceUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft"];
+            var targetUom = InternalUnitSystemManager.Instance.UnitOfMeasures["in"];
             var baseNumber = new NumericValue(sourceUom.ToModelUom(), (double)12.0);
 
             baseNumber.ConvertToUnit(targetUom);
@@ -72,8 +72,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWhenConvertUomThenValueIsSet()
         {
-            var sourceUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
-            var targetUom = UnitSystemManager.Instance.UnitOfMeasures["in"];
+            var sourceUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft"];
+            var targetUom = InternalUnitSystemManager.Instance.UnitOfMeasures["in"];
             var baseNumber = new NumericValue(sourceUom.ToModelUom(), 12.0);
 
             baseNumber.ConvertToUnit(targetUom);
@@ -83,7 +83,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenTwoBaseNumbersWithSameUomWhenAddedShouldReturnNewBaseNumberWithSumAsSourceValue()
         {
-            var uom = UnitSystemManager.Instance.UnitOfMeasures["C"];
+            var uom = InternalUnitSystemManager.Instance.UnitOfMeasures["C"];
             var originalNumber = new NumericValue(uom.ToModelUom(), 22);
             var secondNumber = new NumericValue(uom.ToModelUom(), 11);
 
@@ -94,10 +94,10 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWhenAddBaseNumberThenResultIsInOriginalUom()
         {
-            var originalUom = UnitSystemManager.Instance.UnitOfMeasures["m"];
+            var originalUom = InternalUnitSystemManager.Instance.UnitOfMeasures["m"];
             var originalNumber = new NumericValue(originalUom.ToModelUom(), 1.75);
 
-            var secondUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
+            var secondUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft"];
             var secondNumber = new NumericValue(secondUom.ToModelUom(), 3.5);
 
             var expected = 2.8168; //1.75m + (3.5ft -> m)
@@ -108,10 +108,10 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumbersWithIncompatibleUnitsWhenAddThenException()
         {
-            var originalUom = UnitSystemManager.Instance.UnitOfMeasures["m"];
+            var originalUom = InternalUnitSystemManager.Instance.UnitOfMeasures["m"];
             var originalNumber = new NumericValue(originalUom.ToModelUom(), 1.75);
 
-            var secondUom = UnitSystemManager.Instance.UnitOfMeasures["C"];
+            var secondUom = InternalUnitSystemManager.Instance.UnitOfMeasures["C"];
             var secondNumber = new NumericValue(secondUom.ToModelUom(), 3.5);
 
             Assert.Throws<InvalidOperationException>(() => originalNumber.Add(secondNumber));
@@ -120,7 +120,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenTwoBaseNumbersWithSameUomWhenSubtractedReturnNewBaseNumberWithDifferenceAsSourceValue()
         {
-            var uom = UnitSystemManager.Instance.UnitOfMeasures["C"];
+            var uom = InternalUnitSystemManager.Instance.UnitOfMeasures["C"];
             var originalNumber = new NumericValue(uom.ToModelUom(), 22);
             var secondNumber = new NumericValue(uom.ToModelUom(), 13);
 
@@ -131,10 +131,10 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWhenSubtractBaseNumberThenResultIsInOriginalUom()
         {
-            var originalUom = UnitSystemManager.Instance.UnitOfMeasures["m"];
+            var originalUom = InternalUnitSystemManager.Instance.UnitOfMeasures["m"];
             var originalNumber = new NumericValue(originalUom.ToModelUom(), 1.75);
 
-            var secondUom = UnitSystemManager.Instance.UnitOfMeasures["ft"];
+            var secondUom = InternalUnitSystemManager.Instance.UnitOfMeasures["ft"];
             var secondNumber = new NumericValue(secondUom.ToModelUom(), 3.5);
 
             var expected = 0.6832; //1.75m - (3.5ft -> m)
@@ -145,10 +145,10 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumbersWithIncompatibleUnitsWhenSubtractThenException()
         {
-            var originalUom = UnitSystemManager.Instance.UnitOfMeasures["m"];
+            var originalUom = InternalUnitSystemManager.Instance.UnitOfMeasures["m"];
             var originalNumber = new NumericValue(originalUom.ToModelUom(), 1.75);
 
-            var secondUom = UnitSystemManager.Instance.UnitOfMeasures["C"];
+            var secondUom = InternalUnitSystemManager.Instance.UnitOfMeasures["C"];
             var secondNumber = new NumericValue(secondUom.ToModelUom(), 3.5);
 
             Assert.Throws<InvalidOperationException>(() => originalNumber.Subtract(secondNumber));
@@ -210,8 +210,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWhenDivideBaseNumberThenUnitOfMeasuresCombined()
         {
-            var numerator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 12);
-            var denominator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom(), 5);
+            var numerator = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 12);
+            var denominator = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom(), 5);
 
             var quotient = numerator.Divide(denominator);
             Assert.AreEqual("ft1sec-1", quotient.UnitOfMeasure.Code);
@@ -221,8 +221,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWhenDivideBaseNumberWithSameUnitThenValueDivided()
         {
-            var numerator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 12);
-            var denominator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 6);
+            var numerator = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 12);
+            var denominator = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 6);
 
             var quotient = numerator.Divide(denominator);
             Assert.AreEqual("ratio", quotient.UnitOfMeasure.Code);
@@ -232,8 +232,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWhenDivideBaseNumberWithZeroValueThenDivideByZeroException()
         {
-            var numerator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 3);
-            var denominator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom(), 0);
+            var numerator = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 3);
+            var denominator = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom(), 0);
 
             Assert.Throws<DivideByZeroException>(() => numerator.Divide(denominator));
         }
@@ -241,8 +241,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenNumericValueWithCompositeUnitOfMeasureWhenDivideBaseNumberThenUnitOfMeasuresCombined()
         {
-            var numerator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 2.4);
-            var denominator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom(), 5);
+            var numerator = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 2.4);
+            var denominator = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["sec"].ToModelUom(), 5);
 
             var quotient = numerator.Divide(denominator);
             Assert.AreEqual("ft1[sec2]-1", quotient.UnitOfMeasure.Code);
@@ -252,8 +252,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWhenWhenDivideBaseNumberWithCompositeUnitOfMeasureThenUnitOfMeasuresSimplified()
         {
-            var numerator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 12.54);
-            var denominator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["[sec2]-1"].ToModelUom(), 5);
+            var numerator = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 12.54);
+            var denominator = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["[sec2]-1"].ToModelUom(), 5);
 
             var quotient = numerator.Divide(denominator);
             Assert.AreEqual("ft1sec2", quotient.UnitOfMeasure.Code);
@@ -263,8 +263,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWithCompositeUnitOfMeasureWhenDivdeBaseNumberWithCompositeUnitOfMeasureThenUnitOfMeasuresSimplified()
         {
-            var numerator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 52.15);
-            var denominator = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["gal1sec-1"].ToModelUom(), 12);
+            var numerator = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 52.15);
+            var denominator = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["gal1sec-1"].ToModelUom(), 12);
 
             var quotient = numerator.Divide(denominator);
             Assert.AreEqual("ft1gal-1", quotient.UnitOfMeasure.Code);
@@ -275,8 +275,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWhenMultiplyBaseNumberThenUnitOfMeasuresCombined()
         {
-            var left = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 12);
-            var right = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 4);
+            var left = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 12);
+            var right = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 4);
 
             var product = left.Multiply(right);
             Assert.AreEqual("ft2", product.UnitOfMeasure.Code);
@@ -286,8 +286,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWithCompositeUnitOfMeasureWhenMultiplyBaseNumberThenCombinedUnitOfMeasure()
         {
-            var left = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 47.5);
-            var right = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 3);
+            var left = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 47.5);
+            var right = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 3);
 
             var product = left.Multiply(right);
             Assert.AreEqual("ft2sec-1", product.UnitOfMeasure.Code);
@@ -297,8 +297,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWhenMultiplyBaseNumberWithCompositeUnitOfMeasureThenCombinedUnitOfMeasure()
         {
-            var left = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 52.78);
-            var right = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 2.85);
+            var left = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft"].ToModelUom(), 52.78);
+            var right = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 2.85);
 
             var product = left.Multiply(right);
             Assert.AreEqual("ft2sec-1", product.UnitOfMeasure.Code);
@@ -308,8 +308,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWithCompositeUnitOfMeasureWhenMultiplyBaseNumberWithCompositeUnitOfMeasureThenUnitsCancel()
         {
-            var left = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft1sec1"].ToModelUom(), 5.15);
-            var right = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 7.89);
+            var left = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec1"].ToModelUom(), 5.15);
+            var right = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 7.89);
 
             var product = left.Multiply(right);
             Assert.AreEqual("ft2", product.UnitOfMeasure.Code);
@@ -319,8 +319,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWithCompositeUomThatWillCancelWhenMultiplyThenCombinedUnitOfMeasure()
         {
-            var left = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["kg1ac-1"].ToModelUom(), 352.14);
-            var right = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["m2"].ToModelUom(), 13.6);
+            var left = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["kg1ac-1"].ToModelUom(), 352.14);
+            var right = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["m2"].ToModelUom(), 13.6);
 
             var product = left.Multiply(right);
             Assert.AreEqual("kg", product.UnitOfMeasure.Code);
@@ -329,8 +329,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWithCompositeUomThatWillCombineWhenMultiplyThenCombinedUnitOfMeasure()
         {
-            var left = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ac"].ToModelUom(), 352.14);
-            var right = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["m2"].ToModelUom(), 13.6);
+            var left = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ac"].ToModelUom(), 352.14);
+            var right = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["m2"].ToModelUom(), 13.6);
 
             var product = left.Multiply(right);
             Assert.AreEqual("m4", product.UnitOfMeasure.Code);
@@ -339,8 +339,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWithCompositeUomThatWillCancelWhenMultipliedThenCombinedUnitOfMeasure()
         {
-            var left = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["mg1ac1"].ToModelUom(), 352.14);
-            var right = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["[m2]-1"].ToModelUom(), 13.6);
+            var left = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["mg1ac1"].ToModelUom(), 352.14);
+            var right = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["[m2]-1"].ToModelUom(), 13.6);
 
             var product = left.Multiply(right);
             Assert.AreEqual("mg", product.UnitOfMeasure.Code);
@@ -349,8 +349,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWithCompositeUnitOfMeasureWhenMultiplyBaseNumberWithCompositeUnitOfMeasureThenCombinedUnitOfMeasure()
         {
-            var left = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 21.848);
-            var right = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 9.18);
+            var left = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 21.848);
+            var right = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["ft1sec-1"].ToModelUom(), 9.18);
 
             var product = left.Multiply(right);
             Assert.AreEqual("ft2[sec2]-1", product.UnitOfMeasure.Code);
@@ -360,7 +360,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberAndDoubleValueWhenAddToSourceShouldAddDoubleToSourceValue()
         {
-            var number = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["mg"].ToModelUom(), 3.14);
+            var number = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["mg"].ToModelUom(), 3.14);
             number.AddToSource(4.13);
 
             Assert.AreEqual(7.27, number.Value, Epsilon);
@@ -369,8 +369,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenTwoScalarValuesWhenConvertedThenResultIsConvertedCorrectly()
         {
-            var number = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["seeds1ac-1"].ToModelUom(), 30213.0);
-            number.ConvertToUnit(UnitSystemManager.Instance.UnitOfMeasures["seeds1ha-1"]);
+            var number = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["seeds1ac-1"].ToModelUom(), 30213.0);
+            number.ConvertToUnit(InternalUnitSystemManager.Instance.UnitOfMeasures["seeds1ha-1"]);
 
             Assert.AreEqual(74657.948902674674, number.Value, Epsilon);
         }
@@ -379,7 +379,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenNullWhenAddToSourceShouldReturnSourceValue()
         {
-            var number = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["lb"].ToModelUom(), 22.1);
+            var number = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["lb"].ToModelUom(), 22.1);
             number.AddToSource(null);
 
             Assert.AreEqual(22.1, number.Value, Epsilon);
@@ -399,8 +399,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWhenAddBaseNumberWithDifferentUnitOfMeasureThenShouldConvertAndAddToSource()
         {
-            var firstNumber = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["cm"].ToModelUom(), 1);
-            var secondNumber = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["in"].ToModelUom(), 1);
+            var firstNumber = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["cm"].ToModelUom(), 1);
+            var secondNumber = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["in"].ToModelUom(), 1);
 
             firstNumber.AddToSource(secondNumber);
 
@@ -419,7 +419,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenNullWhenSubtractFromSourceShoulReturnSourceValue()
         {
-            var number = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["cm"].ToModelUom(), 4.25);
+            var number = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["cm"].ToModelUom(), 4.25);
             number.SubtractFromSource(null);
 
             Assert.AreEqual(4.25, number.Value, Epsilon);
@@ -439,8 +439,8 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenBaseNumberWhenSubtractBaseNumberWithDifferentUnitOfMeasureThenShouldConvertAndSubtractFromSource()
         {
-            var firstNumber = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["cm"].ToModelUom(), 3.54);
-            var secondNumber = new NumericValue(UnitSystemManager.Instance.UnitOfMeasures["in"].ToModelUom(), 1);
+            var firstNumber = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["cm"].ToModelUom(), 3.54);
+            var secondNumber = new NumericValue(InternalUnitSystemManager.Instance.UnitOfMeasures["in"].ToModelUom(), 1);
 
             firstNumber.SubtractFromSource(secondNumber);
 

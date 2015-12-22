@@ -19,7 +19,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
     {
         public UnitOfMeasurePreference(UnitOfMeasurePreferenceType unitOfMeasurePreference)
         {
-            UnitOfMeasure = UnitSystemManager.Instance.UnitOfMeasures[unitOfMeasurePreference.unitOfMeasure];
+            UnitOfMeasure = InternalUnitSystemManager.Instance.UnitOfMeasures[unitOfMeasurePreference.unitOfMeasure];
             MinValue = unitOfMeasurePreference.minValue;
             MaxValue = unitOfMeasurePreference.maxValue;
             DecimalPlaces = unitOfMeasurePreference.@decimal;
