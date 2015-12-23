@@ -11,6 +11,7 @@
   *    Joseph Ross - Renaming Enums to end in Enum
   *    Kathleen Oneal - added values
   *    Kathleen Oneal - added unknown value
+  *    Kathleen Oneal - added variety value
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel
@@ -20,6 +21,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         Fungicide,
         Herbicide,
         Manure,
+        Variety,
         Unknown,
     }
 }
