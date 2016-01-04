@@ -25,7 +25,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
             var preferenceType = new UnitOfMeasurePreferenceType {unitOfMeasure = "m"};
             var uomPreference = new UnitOfMeasurePreference(preferenceType);
 
-            Assert.AreEqual(UnitSystemManager.Instance.UnitOfMeasures["m"], uomPreference.UnitOfMeasure);
+            Assert.AreEqual(InternalUnitSystemManager.Instance.UnitOfMeasures["m"], uomPreference.UnitOfMeasure);
         }
 
         [Test]

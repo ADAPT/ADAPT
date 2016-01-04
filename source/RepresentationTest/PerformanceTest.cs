@@ -100,7 +100,7 @@ namespace AgGateway.ADAPT.RepresentationTest
 
         private static UnitOfMeasure GetUomCdf(string uomKey)
         {
-            return UnitSystemManager.Instance.UnitOfMeasures[uomKey];
+            return InternalUnitSystemManager.Instance.UnitOfMeasures[uomKey];
         }
     }
 

@@ -46,13 +46,13 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
         public string DomainID { get; private set; }
 
-        public UnitOfMeasureSystem(UnitSystemUnitOfMeasureSystem unitOfMeasureSystem, UnitSystemManager unitSystemManager)
+        public UnitOfMeasureSystem(UnitSystemUnitOfMeasureSystem unitOfMeasureSystem, InternalUnitSystemManager unitSystemManager)
         {
             DomainID = unitOfMeasureSystem.domainID;
             _units = GetUnitDimensions(unitOfMeasureSystem.UnitOfMeasureRef, unitSystemManager);
         }
 
-        private UnitCollection<UnitDimension> GetUnitDimensions(IEnumerable<UnitSystemUnitOfMeasureSystemUnitOfMeasureRef> unitOfMeasureRefs, UnitSystemManager unitSystemManager)
+        private UnitCollection<UnitDimension> GetUnitDimensions(IEnumerable<UnitSystemUnitOfMeasureSystemUnitOfMeasureRef> unitOfMeasureRefs, InternalUnitSystemManager unitSystemManager)
         {
             if (unitOfMeasureRefs == null)
                 return new UnitCollection<UnitDimension>();

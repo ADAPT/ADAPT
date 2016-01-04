@@ -21,13 +21,13 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
     public class UnitOfMeasureSystemTest
     {
         private UnitSystemUnitOfMeasureSystem _unitOfMeasureSystem;
-        private UnitSystemManager _unitSystemManager;
+        private InternalUnitSystemManager _unitSystemManager;
 
         [SetUp]
         public void Setup()
         {
             _unitOfMeasureSystem = new UnitSystemUnitOfMeasureSystem();
-            _unitSystemManager = UnitSystemManager.Instance;
+            _unitSystemManager = InternalUnitSystemManager.Instance;
         }
 
         [Test]

@@ -27,15 +27,15 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenUnitSystemManagerWhenGetInstanceThenRepresentationManagerIsCreated()
         {
-            var instance = UnitSystemManager.Instance;
+            var instance = InternalUnitSystemManager.Instance;
             Assert.IsNotNull(instance);
         }
 
         [Test]
         public void GivenUnitSystemManagerWhenGetInstanceThenSameInstanceIsReturned()
         {
-            var firstInstance = UnitSystemManager.Instance;
-            var secondInstance = UnitSystemManager.Instance;
+            var firstInstance = InternalUnitSystemManager.Instance;
+            var secondInstance = InternalUnitSystemManager.Instance;
             Assert.AreSame(firstInstance, secondInstance);
         }
 
@@ -46,7 +46,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
                     ut => ut.Items.OfType<UnitSystemUnitDimensionUnitDimensionRepresentation>()
                                   .SelectMany(utr => utr.UnitOfMeasure)))
             {
-                var unitOfMeasure = (ScalarUnitOfMeasure) UnitSystemManager.Instance.UnitOfMeasures[unit.domainID];
+                var unitOfMeasure = (ScalarUnitOfMeasure) InternalUnitSystemManager.Instance.UnitOfMeasures[unit.domainID];
 
                 Assert.AreEqual(unit.baseOffset, unitOfMeasure.BaseOffset);
                 Assert.AreEqual(unit.scale, unitOfMeasure.Scale);
@@ -60,7 +60,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
                     ut => ut.Items.OfType<UnitSystemUnitDimensionUnitDimensionRepresentation>()
                                   .SelectMany(utr => utr.UnitOfMeasure)))
             {
-                var unitOfMeasure = (ScalarUnitOfMeasure) UnitSystemManager.Instance.UnitDimensions.SelectMany(x => x.Units).First(y => y.DomainID == unit.domainID);
+                var unitOfMeasure = (ScalarUnitOfMeasure) InternalUnitSystemManager.Instance.UnitDimensions.SelectMany(x => x.Units).First(y => y.DomainID == unit.domainID);
                 Assert.AreEqual(unit.scale, unitOfMeasure.Scale);
                 Assert.AreEqual(unit.baseOffset, unitOfMeasure.BaseOffset);
                 Assert.AreEqual(unit.Name.First(n => n.locale == CultureInfoDefault.DefaultCulture).label, unitOfMeasure.Label);
@@ -72,7 +72,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         {
             foreach (var unitDimension in DeserializeUnitSystem().UnitDimensions)
             {
-                var matchingType = UnitSystemManager.Instance.UnitDimensions[unitDimension.domainID];
+                var matchingType = InternalUnitSystemManager.Instance.UnitDimensions[unitDimension.domainID];
                 var expected = unitDimension.Items.OfType<UnitSystemUnitDimensionUnitDimensionRepresentation>().SelectMany(x => x.UnitOfMeasure);
                 Assert.AreEqual(expected.Count(), matchingType.Units.Count);
                 Assert.AreEqual(unitDimension.Name.First(n => n.locale == CultureInfoDefault.DefaultCulture).Value, matchingType.Name);
@@ -87,7 +87,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
                 AgGateway.ADAPT.Representation.UnitSystem.UnitSystem unitSystem;
                 if (Enum.TryParse(unitOfMeasureSystem.domainID, out unitSystem))
                 {
-                    var system = UnitSystemManager.Instance.UnitOfMeasureSystems[unitSystem];
+                    var system = InternalUnitSystemManager.Instance.UnitOfMeasureSystems[unitSystem];
                     var units = system.UnitDimensions.SelectMany(x => x.Units).Select(x => x.DomainID).Distinct().ToList();
                     foreach (var unitDomainId in unitOfMeasureSystem.UnitOfMeasureRef.Select(x => x.unitOfMeasureRef))
                     {
@@ -100,17 +100,17 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenXmlWhenGetUnitsOfMeasureThenUnitOfMeasureCollection()
         {
-            var unitSystemManager = UnitSystemManager.Instance;
+            var unitSystemManager = InternalUnitSystemManager.Instance;
             Assert.IsInstanceOf<UnitOfMeasureCollection>(unitSystemManager.UnitOfMeasures);
         }
 
         [Test]
         public void GivenTwoScalarUnitsWhenDivideUnitsShouldReturnNewComposite()
         {
-            var firstUnit = UnitSystemManager.Instance.UnitOfMeasures["m"];
-            var secondUnit = UnitSystemManager.Instance.UnitOfMeasures["sec"];
+            var firstUnit = InternalUnitSystemManager.Instance.UnitOfMeasures["m"];
+            var secondUnit = InternalUnitSystemManager.Instance.UnitOfMeasures["sec"];
 
-            var result = UnitSystemManager.Instance.CombineUnitsAsFraction(firstUnit, secondUnit);
+            var result = InternalUnitSystemManager.Instance.CombineUnitsAsFraction(firstUnit, secondUnit);
 
             Assert.AreEqual("m1sec-1", result.DomainID);
         }
@@ -118,10 +118,10 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         [Test]
         public void GivenTwoCompositeUnitsWhenDivideUnitsShouldReturnNewComposite()
         {
-            var firstUnit = UnitSystemManager.Instance.UnitOfMeasures["m2"];
-            var secondUnit = UnitSystemManager.Instance.UnitOfMeasures["cm3"];
+            var firstUnit = InternalUnitSystemManager.Instance.UnitOfMeasures["m2"];
+            var secondUnit = InternalUnitSystemManager.Instance.UnitOfMeasures["cm3"];
 
-            var result = UnitSystemManager.Instance.CombineUnitsAsFraction(firstUnit, secondUnit);
+            var result = InternalUnitSystemManager.Instance.CombineUnitsAsFraction(firstUnit, secondUnit);
 
             Assert.AreEqual("[m2]1[cm3]-1", result.DomainID);
         }

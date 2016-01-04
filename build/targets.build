@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+
+<project name="targetsbuild" basedir=".">
+  <include buildfile=".\properties.build" failonerror="true"/>
+
+  <target name="MSBuildDirectory">
+    <echo message="entering foreach"/>
+    <foreach item="File" property="solutionFile" verbose="true">
+      <in>
+        <items basedir="${solutionDir}">
+          <include name=".\**\*.sln" />
+        </items>
+      </in>
+      <do>
+        <exec program="${msbuild.path}">
+          <arg line="${solutionFile}" />
+          <arg value="/property:Configuration=${configuration};Platform=${platform}"/>
+          <arg value="/t:Rebuild"/>
+        </exec>
+      </do>
+    </foreach>
+  </target>
+
+  <version buildtype="Increment" revisiontype="Automatic" path=".\${versionFile}" failonerror="false"/>
+
+  <target name="BeforeBuild">
+    <property name="solution" value="" />
+    <foreach item="File" property="pluginSolution" verbose="true">
+      <in>
+        <items basedir=".">
+          <include name=".\..\Plugins\**\*.sln" />
+        </items>
+      </in>
+      <do>
+        <property name="packagesDirectory" value="${directory::get-parent-directory(pluginSolution)}\packages" />
+        <echo message="${packagesDirectory}" />
+        <mkdir dir="${packagesDirectory}" unless="${directory::exists(packagesDirectory)}" />
+
+        <echo message="updating nuget packages : ${pluginSolution}" />
+        <exec program="NuGet.exe" >
+          <arg line="update ${pluginSolution} -Verbosity detailed" />
+        </exec>
+      </do>
+    </foreach>
+  </target>
+
+  <target name="buildCI" depends="BeforeBuild">
+    <exec program="${msbuild.path}">
+      <arg line='"${solutionDir}\${solutionName}"' />
+      <arg value="/property:Configuration=${configuration};Platform=${platform}"/>
+      <arg value="/t:Rebuild"/>
+    </exec>
+    <echo file="./${versionFile}">${buildnumber}</echo>
+  </target>
+  
+  <target name="build" depends="BeforeBuild">
+    <exec program="${msbuild.path}">
+      <arg line='"${solutionDir}\${solutionName}"' />
+      <arg value="/property:Configuration=${configuration};Platform=${platform}"/>
+      <arg value="/t:Rebuild"/>
+    </exec>
+  </target>
+
+  <target name="adaptpack" >
+    <call target="getnugetversion" />
+    <exec program="nuget" workingdir="${solutionDir}">
+      <arg line="pack ${nuspecfile}" />
+      <arg line="-Version ${version}" />
+    </exec>
+  </target>
+
+  <target name="adapt" depends="adaptpack">
+    <call target="getnugetversion" />
+    <property name="packagename" value="${nupkgName}.${version}.nupkg" />
+    <exec program="nuget" workingdir="${solutionDir}">
+      <arg line="push ${packagename}" />
+      <arg line="-ApiKey ${nugetapikey}" />
+      <arg line="-Source ${nugetserverpath}" />
+    </exec>
+  </target>
+
+  <target name="settestfileslist">
+    <property name="nunittest.filelist" value="" />
+    <foreach item="File" property="testfile" verbose="true">
+      <echo message="set test files list with ${solutionDir}"/>
+      <in>
+        <items basedir=".">
+          <include name="${solutionDir}\**\${test.wildcard}" />
+          <exclude name="${solutionDir}\**\obj\**\*.dll"/>
+        </items>
+      </in>
+      <do>
+        <property name="nunittest.filelist" value='${nunittest.filelist} ${testfile}'/>
+        <echo message='${nunittest.filelist}'/>
+      </do>
+    </foreach>
+  </target>
+
+  <target name="nunitTest" description="Execute nunit tests">
+    <call target="settestfileslist" />
+    <exec program="${nunit.exe}" commandline="${nunittest.filelist} /framework=4.0" failonerror="true" />
+  </target>
+
+  <target name="unitTests" description="Execute Unit tests using MSTest" basedir="." depends="MSBuildDirectory">
+    <property name="test.wildcard" value="*Test.dll" />
+    <call target="nunitTest" />
+  </target>
+
+  <target name="acceptancetest" description="Execute Acceptance tests using MSTest" basedir="." depends="MSBuildDirectory">
+    <property name="test.wildcard" value="*AcceptanceTests.dll" />
+    <call target="nunitTest" />
+  </target>
+  
+  <target name="getversion" description="Populate the version properties based on the version.txt file">
+    <echo message="${project::get-base-directory()}"/>
+    <script language="C#">
+      <code>
+        <![CDATA[
+				public static void ScriptMain(Project project)
+				{
+          string cwd = System.IO.Directory.GetCurrentDirectory();
+          string verPath = Path.Combine(cwd, "build", project.Properties["versionFile"]);
+		  string buildnumber;
+			    StreamReader reader = new StreamReader(verPath.ToString());
+				  string versionInfo = reader.ReadLine();
+				  reader.Close();
+  				Regex pattern = new Regex("[0-9]+");
+	  			MatchCollection matches = pattern.Matches(versionInfo);
+		  		if (matches.Count != 4)
+			  		    throw new Exception(string.Format("Version number {0} in Build version file has incorrect format.", versionInfo));
+				  int major = int.Parse(matches[0].Value);
+				  int minor = int.Parse(matches[1].Value);
+				  int build = int.Parse(matches[2].Value);
+				  int revision = int.Parse(matches[3].Value);				  
+				  
+				project.Properties.Add("build.version.major", major.ToString());
+				project.Properties.Add("build.version.minor", minor.ToString());
+				if (project.Properties["jenkinsnumber"] != null)	{
+					int jenkinsnum = int.Parse(project.Properties["jenkinsnumber"]);
+					project.Properties.Add("build.version.build", jenkinsnum.ToString());
+					buildnumber = major.ToString() + "." + minor.ToString() + "." + jenkinsnum.ToString() + "." + revision.ToString();
+					}
+				else {
+					project.Properties.Add("build.version.build", build.ToString());
+					buildnumber = major.ToString() + "." + minor.ToString() + "." + build.ToString() + "." + revision.ToString();
+					}
+				project.Properties.Add("build.version.revision", revision.ToString());				
+				
+				project.Properties.Add("buildnumber", buildnumber.ToString());									
+				
+			} 
+				]]>
+      </code>
+      <imports>
+        <import namespace="System.Text.RegularExpressions"/>
+      </imports>
+      <references>
+        <include name="System.dll"/>
+      </references>
+    </script>
+  </target>
+
+  <target name="setversion" description="Stamp the version info onto assemblyinfo.cs files" depends="getversion">
+    <foreach item="File" property="filename">
+      <in>
+        <items basedir="${solutionDir}">
+          <include name="**\**\AssemblyInfo.cs"/>
+        </items>
+      </in>
+      <do>
+        <echo message="Updating ${filename}"/>
+        <script language="C#">
+          <code>
+            <![CDATA[
+						public static void ScriptMain(Project project)
+						{
+						//FileStream file = File.Open(project.Properties["filename"], FileMode.Open, FileAccess.ReadWrite);
+						StreamReader reader = new StreamReader(project.Properties["filename"]);
+						string contents = reader.ReadToEnd();
+						reader.Close();
+						string replacement = string.Format("[assembly: AssemblyCopyright(\"Copyright © Deere & Company 2003-2012\")]", "");
+						StreamWriter writer = new StreamWriter(project.Properties["filename"], false);
+						string newText = Regex.Replace(contents, @"\[assembly: AssemblyCopyright\("".*""\)\]", replacement);
+						writer.Write(newText);
+						writer.Close();
+
+						reader = new StreamReader(project.Properties["filename"]);
+						contents = reader.ReadToEnd();
+						reader.Close();
+						replacement = string.Format("[assembly: AssemblyVersion(\"{0}.{1}.{2}.{3}\")]", project.Properties["build.version.major"], project.Properties["build.version.minor"], project.Properties["build.version.build"], project.Properties["build.version.revision"]);
+						writer = new StreamWriter(project.Properties["filename"], false);
+						newText = Regex.Replace(contents, @"\[assembly: AssemblyVersion\("".*""\)\]", replacement);
+						writer.Write(newText);
+						writer.Close();
+
+						reader = new StreamReader(project.Properties["filename"]);
+						contents = reader.ReadToEnd();
+						reader.Close();
+						replacement = string.Format("[assembly: AssemblyCompany(\"John Deere Ag Management Solutions\")]", "");
+						writer = new StreamWriter(project.Properties["filename"], false);
+						newText = Regex.Replace(contents, @"\[assembly: AssemblyCompany\("".*""\)\]", replacement);
+						writer.Write(newText);
+						writer.Close();
+
+						reader = new StreamReader(project.Properties["filename"]);
+						contents = reader.ReadToEnd();
+						reader.Close();
+						replacement = string.Format("[assembly: AssemblyFileVersion(\"{0}.{1}.{2}.{3}\")]", project.Properties["build.version.major"], project.Properties["build.version.minor"], project.Properties["build.version.build"], project.Properties["build.version.revision"]);
+						writer = new StreamWriter(project.Properties["filename"], false);
+						newText = Regex.Replace(contents, @"\[assembly: AssemblyFileVersion\("".*""\)\]", replacement);
+						writer.Write(newText);
+						writer.Close();
+
+						}
+						]]>
+          </code>
+          <imports>
+            <import namespace="System.Text.RegularExpressions"/>
+          </imports>
+          <references>
+            <include name="System.dll"/>
+          </references>
+        </script>
+      </do>
+    </foreach>
+  </target>
+</project>

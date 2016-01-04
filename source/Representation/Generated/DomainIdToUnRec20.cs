@@ -7,21 +7,27 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Joseph Ross - Renaming Enums to end in Enum
-  *    Kathleen Oneal - added values
-  *    Kathleen Oneal - added unknown value
-  *    Kathleen Oneal - added variety value
+  *    Tim Shearouse - initial API and implementation
   *******************************************************************************/
+using System.Collections.Generic;
+using System.Runtime.Serialization;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.Representation.Generated
 {
-    public enum CategoryEnum
+    [DataContract]
+    public class Root
     {
-        Fungicide,
-        Herbicide,
-        Manure,
-        Variety,
-        Unknown,
+        [DataMember]
+        public List<Row> Rows;
+    }
+
+    [DataContract]
+    public class Row
+    {
+        [DataMember]
+        public string UnRec20;
+
+        [DataMember]
+        public string DomainId;
     }
 }

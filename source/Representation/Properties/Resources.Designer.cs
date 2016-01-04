@@ -61,6 +61,37 @@ namespace AgGateway.ADAPT.Representation.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+        ///&lt;Root xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+        ///	&lt;Row&gt;
+        ///		&lt;UNRec20&gt;M39&lt;/UNRec20&gt;
+        ///		&lt;DomainID&gt;cm1[sec2]-1&lt;/DomainID&gt;
+        ///	&lt;/Row&gt;
+        ///	&lt;Row&gt;
+        ///		&lt;UNRec20&gt;A73&lt;/UNRec20&gt;
+        ///		&lt;DomainID&gt;ft1[sec2]-1&lt;/DomainID&gt;
+        ///	&lt;/Row&gt;
+        ///	&lt;Row&gt;
+        ///		&lt;UNRec20&gt;IV&lt;/UNRec20&gt;
+        ///		&lt;DomainID&gt;in1[sec2]-1&lt;/DomainID&gt;
+        ///	&lt;/Row&gt;
+        ///	&lt;Row&gt;
+        ///		&lt;UNRec20&gt;M38&lt;/UNRec20&gt;
+        ///		&lt;DomainID&gt;km1[sec2]-1&lt;/DomainID&gt;
+        ///	&lt;/Row&gt;
+        ///	&lt;Row&gt;
+        ///		&lt;UNRec20&gt;MSK&lt;/UNRec20&gt;
+        ///		&lt;DomainID&gt;m1[sec2]-1&lt;/DomainID&gt;
+        ///	&lt;/Row&gt;
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string DomainIdToUNRec20 {
+            get {
+                return ResourceManager.GetString("DomainIdToUNRec20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;RepresentationSystem xmlns=&quot;urn:schemas-adapt-aggateway-org:Representation&quot; xmlns:bt=&quot;urn:schemas-adapt-aggateway-org:BasicTypes&quot; xmlns:unit=&quot;urn:schemas-adapt-aggateway-org:UnitSystem&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;urn:schemas-adapt-aggateway-org:Representation RepresentationSystem.xsd&quot;&gt;
         ///	&lt;SchemaVersion major=&quot;1&quot; minor=&quot;1&quot;/&gt;
