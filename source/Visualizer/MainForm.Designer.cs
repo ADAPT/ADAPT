@@ -41,6 +41,7 @@
             this._buttonBrowseDatacard = new System.Windows.Forms.Button();
             this._splitContainer = new System.Windows.Forms.SplitContainer();
             this._splitContainerViewer = new System.Windows.Forms.SplitContainer();
+            this._treeViewMetadata = new System.Windows.Forms.TreeView();
             this._splitContainerMap = new System.Windows.Forms.SplitContainer();
             this._tabControlViewer = new System.Windows.Forms.TabControl();
             this._tabPageSpatial = new System.Windows.Forms.TabPage();
@@ -57,7 +58,6 @@
             this._buttonBrowseExportPath = new System.Windows.Forms.Button();
             this._textBoxExportPath = new System.Windows.Forms.TextBox();
             this._labelPath = new System.Windows.Forms.Label();
-            this._treeViewMetadata = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this._splitContainerMain)).BeginInit();
             this._splitContainerMain.Panel1.SuspendLayout();
             this._splitContainerMain.Panel2.SuspendLayout();
@@ -247,6 +247,14 @@
             this._splitContainerViewer.SplitterDistance = 449;
             this._splitContainerViewer.TabIndex = 0;
             // 
+            // _treeViewMetadata
+            // 
+            this._treeViewMetadata.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._treeViewMetadata.Location = new System.Drawing.Point(0, 0);
+            this._treeViewMetadata.Name = "_treeViewMetadata";
+            this._treeViewMetadata.Size = new System.Drawing.Size(449, 556);
+            this._treeViewMetadata.TabIndex = 1;
+            // 
             // _splitContainerMap
             // 
             this._splitContainerMap.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -366,6 +374,7 @@
             this._buttonExportDatacard.TabIndex = 8;
             this._buttonExportDatacard.Text = "Export";
             this._buttonExportDatacard.UseVisualStyleBackColor = true;
+            this._buttonExportDatacard.Click += new System.EventHandler(this._buttonExportDatacard_Click);
             // 
             // _comboBoxPlugins
             // 
@@ -412,14 +421,6 @@
             this._labelPath.Size = new System.Drawing.Size(62, 13);
             this._labelPath.TabIndex = 4;
             this._labelPath.Text = "Export Path";
-            // 
-            // _treeViewMetadata
-            // 
-            this._treeViewMetadata.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._treeViewMetadata.Location = new System.Drawing.Point(0, 0);
-            this._treeViewMetadata.Name = "_treeViewMetadata";
-            this._treeViewMetadata.Size = new System.Drawing.Size(449, 556);
-            this._treeViewMetadata.TabIndex = 1;
             // 
             // MainForm
             // 

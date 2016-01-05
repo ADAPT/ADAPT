@@ -22,6 +22,7 @@ namespace Visualizer
     public partial class MainForm : Form
     {
         private PluginFactory _pluginFactory;
+        private ApplicationDataModel _applicationDataModel;
 
         public MainForm()
         {
@@ -90,14 +91,33 @@ namespace Visualizer
             }
         }
 
+        private void _buttonExportDatacard_Click(object sender, EventArgs e)
+        {
+            var pluginName = (string)_comboBoxPlugins.SelectedItem;
+            var plugin = _pluginFactory.GetPlugin(pluginName);
+            if (_applicationDataModel == null
+                || plugin == null)
+            {
+                MessageBox.Show(@"Could not export, either not a comptable plugin or no data model to export");
+                return;
+            }
+
+            plugin.Export(_applicationDataModel, GetExportDirectory());
+        }
+
+        private string GetExportDirectory()
+        {
+            return _textBoxExportPath.Text != string.Empty ? _textBoxExportPath.Text : "C:\\newfile.zip";
+        }
+
         private void ImportDataCard(IPlugin plugin, string datacardPath)
         {
             _treeViewMetadata.Nodes.Clear();
 
-            var applicationDataModel = plugin.Import(datacardPath);
+            _applicationDataModel = plugin.Import(datacardPath);
 
             var parentNode = _treeViewMetadata.Nodes.Add("ApplicationDataModel");
-            AddNode(applicationDataModel, parentNode);
+            AddNode(_applicationDataModel, parentNode);
         }
 
         private void AddNode(object element, TreeNode parentNode)
