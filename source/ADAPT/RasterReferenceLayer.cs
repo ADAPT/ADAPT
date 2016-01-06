@@ -32,7 +32,5 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public List<RasterData<StringRepresentation, string>> StringRasterValues { get; set; }
        
         public List<RasterData<NumericRepresentation, NumericValue>> NumericRasterValues { get; set; }
-
-        public List<SpatialAttribute> SpatialAttributes { get; set; }
     }
 }
