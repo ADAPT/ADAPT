@@ -21,6 +21,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         ForageHarvester,
         IrrigationSystem,
         Lifter,
+        Other,
         PickupTruck,
         Sprayer,
         Tractor,
