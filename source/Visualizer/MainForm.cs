@@ -79,10 +79,11 @@ namespace Visualizer
             {
                 foreach (var availablePlugin in _pluginFactory.AvailablePlugins)
                 {
-                    var plugin = _pluginFactory.GetPlugin(availablePlugin);
+                    var plugin = _pluginFactory.GetPlugin(availablePlugin); 
+                    plugin.Initialize(_textBoxApplicationId.Text);
+
                     if (plugin.IsDataCardSupported(_textBoxDatacardPath.Text))
                     {
-                        plugin.Initialize(_textBoxApplicationId.Text);
                         ImportDataCard(plugin, textBox.Text);
                         return;
                     }
