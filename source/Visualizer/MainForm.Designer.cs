@@ -35,6 +35,8 @@
             this._buttonLoadPlugins = new System.Windows.Forms.Button();
             this._buttonBrowsePluginLocation = new System.Windows.Forms.Button();
             this._labelPluginLocation = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this._textBoxApplicationId = new System.Windows.Forms.TextBox();
             this._textBoxDatacardPath = new System.Windows.Forms.TextBox();
             this._buttonLoadDatacard = new System.Windows.Forms.Button();
             this._labelDataCard = new System.Windows.Forms.Label();
@@ -116,6 +118,8 @@
             // 
             // _splitContainerPlugin.Panel1
             // 
+            this._splitContainerPlugin.Panel1.Controls.Add(this._textBoxApplicationId);
+            this._splitContainerPlugin.Panel1.Controls.Add(this.label1);
             this._splitContainerPlugin.Panel1.Controls.Add(this._textBoxPluginPath);
             this._splitContainerPlugin.Panel1.Controls.Add(this._buttonLoadPlugins);
             this._splitContainerPlugin.Panel1.Controls.Add(this._buttonBrowsePluginLocation);
@@ -137,13 +141,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this._textBoxPluginPath.Location = new System.Drawing.Point(94, 11);
             this._textBoxPluginPath.Name = "_textBoxPluginPath";
-            this._textBoxPluginPath.Size = new System.Drawing.Size(715, 20);
+            this._textBoxPluginPath.Size = new System.Drawing.Size(286, 20);
             this._textBoxPluginPath.TabIndex = 5;
             // 
             // _buttonLoadPlugins
             // 
             this._buttonLoadPlugins.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._buttonLoadPlugins.Location = new System.Drawing.Point(875, 10);
+            this._buttonLoadPlugins.Location = new System.Drawing.Point(457, 8);
             this._buttonLoadPlugins.Name = "_buttonLoadPlugins";
             this._buttonLoadPlugins.Size = new System.Drawing.Size(110, 23);
             this._buttonLoadPlugins.TabIndex = 7;
@@ -154,7 +158,7 @@
             // _buttonBrowsePluginLocation
             // 
             this._buttonBrowsePluginLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._buttonBrowsePluginLocation.Location = new System.Drawing.Point(815, 10);
+            this._buttonBrowsePluginLocation.Location = new System.Drawing.Point(395, 8);
             this._buttonBrowsePluginLocation.Name = "_buttonBrowsePluginLocation";
             this._buttonBrowsePluginLocation.Size = new System.Drawing.Size(54, 23);
             this._buttonBrowsePluginLocation.TabIndex = 6;
@@ -170,6 +174,24 @@
             this._labelPluginLocation.Size = new System.Drawing.Size(76, 13);
             this._labelPluginLocation.TabIndex = 4;
             this._labelPluginLocation.Text = "Plugin location";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(596, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Application Id";
+            // 
+            // _textBoxApplicationId
+            // 
+            this._textBoxApplicationId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._textBoxApplicationId.Location = new System.Drawing.Point(673, 12);
+            this._textBoxApplicationId.Name = "_textBoxApplicationId";
+            this._textBoxApplicationId.Size = new System.Drawing.Size(312, 20);
+            this._textBoxApplicationId.TabIndex = 4;
             // 
             // _textBoxDatacardPath
             // 
@@ -496,6 +518,8 @@
         private System.Windows.Forms.Button _buttonBrowsePluginLocation;
         private System.Windows.Forms.Label _labelPluginLocation;
         private System.Windows.Forms.TreeView _treeViewMetadata;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox _textBoxApplicationId;
     }
 }
 

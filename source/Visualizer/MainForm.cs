@@ -82,6 +82,7 @@ namespace Visualizer
                     var plugin = _pluginFactory.GetPlugin(availablePlugin);
                     if (plugin.IsDataCardSupported(_textBoxDatacardPath.Text))
                     {
+                        plugin.Initialize(_textBoxApplicationId.Text);
                         ImportDataCard(plugin, textBox.Text);
                         return;
                     }
@@ -102,6 +103,7 @@ namespace Visualizer
                 return;
             }
 
+            plugin.Initialize(_textBoxApplicationId.Text);
             plugin.Export(_applicationDataModel, GetExportDirectory());
         }
 
