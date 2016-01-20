@@ -23,6 +23,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public CompoundIdentifier Id { get; private set; }
 
+        public TimeScope TimeScope { get; set; }
+
         public int? MachineConfigurationId { get; set; }
 
         public int? ImplementConfigurationId { get; set; }
