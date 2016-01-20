@@ -20,6 +20,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
     public class SpatialRecord
     {
         private readonly Dictionary<int, RepresentationValue> _meterValues = new Dictionary<int, RepresentationValue>(); 
+        private readonly Dictionary<int, int?> _appliedLatencyValues = new Dictionary<int, int?>(); 
 
         public Shape Geometry { get; set; }
 
@@ -37,8 +38,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel
             return null;
         }
 
+        public void SetAppliedLatency(Meter meter, int? latencyValue)
+        {
+            _appliedLatencyValues.Add(meter.Id.ReferenceId, latencyValue);
+        }
+
         public int? GetAppliedLatency(Meter meter)
         {
+            if (_appliedLatencyValues.ContainsKey(meter.Id.ReferenceId))
+                return _appliedLatencyValues[meter.Id.ReferenceId];
             return null;
         }
     }
