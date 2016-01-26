@@ -14,11 +14,20 @@
  *   Tarak Reddy - Moved GuidanceAllocations to Documents
  *   Joseph ross - Added Prescriptions to Catalog
  *   Kathleen Oneal - added equipmentConfigs and renamed Name to Description
-  *******************************************************************************/  
+  *******************************************************************************/
 
 using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Equipment;
+using AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries;
+using AgGateway.ADAPT.ApplicationDataModel.Guidance;
+using AgGateway.ADAPT.ApplicationDataModel.Logistics;
+using AgGateway.ADAPT.ApplicationDataModel.Notes;
+using AgGateway.ADAPT.ApplicationDataModel.Prescriptions;
+using AgGateway.ADAPT.ApplicationDataModel.Products;
+using AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
     public class Catalog
     {

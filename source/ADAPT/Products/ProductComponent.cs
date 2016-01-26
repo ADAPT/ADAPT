@@ -9,7 +9,10 @@
   * Contributors:
   *    Tim Shearouse - initial API and implementation
   *******************************************************************************/
-namespace AgGateway.ADAPT.ApplicationDataModel
+
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
     public class ProductComponent
     {

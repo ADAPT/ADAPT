@@ -11,8 +11,9 @@
   *******************************************************************************/
 
 using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
     public class RxShapeLookup
     {

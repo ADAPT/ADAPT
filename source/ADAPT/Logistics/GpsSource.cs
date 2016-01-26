@@ -11,8 +11,9 @@
   *******************************************************************************/
 
 using System;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
     public class GpsSource
     {

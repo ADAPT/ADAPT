@@ -9,11 +9,15 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Justin Sliekers - renamed ReferenceNoteIds to NoteIds
-  *******************************************************************************/  
+  *******************************************************************************/
 
 using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Logistics;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
+using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 {
     public class CropZone
     {

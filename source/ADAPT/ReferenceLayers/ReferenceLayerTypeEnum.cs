@@ -10,7 +10,7 @@
   *    Kathleen Oneal - initial API and implementation
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 {
     public enum ReferenceLayerTypeEnum
     {

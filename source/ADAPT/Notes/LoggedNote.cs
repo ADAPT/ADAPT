@@ -10,7 +10,7 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/  
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Notes
 {
     public class LoggedNote : Note
     {

@@ -12,7 +12,7 @@
 
 using System.Collections.Generic;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
     public class RxRates
     {

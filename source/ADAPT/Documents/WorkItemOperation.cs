@@ -9,9 +9,11 @@
  * Contributors:
  *    Tarak Reddy, Tim Shearouse - initial API and implementation
  *    Tarak Reddy - Added equipment config id to point to right machine configuration and implement configuration
- *******************************************************************************/  
+ *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public class WorkItemOperation
     {

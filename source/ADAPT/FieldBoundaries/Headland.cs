@@ -11,7 +11,7 @@
   *    Joseph Ross Making Properties
   *******************************************************************************/  
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries
 {
     public abstract class Headland
     {

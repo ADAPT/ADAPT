@@ -9,11 +9,12 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - made companyId nullable, renamed property name from FactilityTypeEnum to FacilityType
-  *******************************************************************************/  
+  *******************************************************************************/
 
 using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Common;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
     public class Facility
     {

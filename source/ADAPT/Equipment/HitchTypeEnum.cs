@@ -11,7 +11,7 @@
   *    Kathleen Oneal - delete threePoint, RearTwoPoing, Drawbar, RearPivotWagonHitch, FrontRigidThreePoint
   *******************************************************************************/  
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
     public enum HitchTypeEnum
     {

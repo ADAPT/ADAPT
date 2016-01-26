@@ -11,7 +11,7 @@
   *    Kathleen Oneal - added values
   *******************************************************************************/  
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
     public enum OperationTypeEnum
     {

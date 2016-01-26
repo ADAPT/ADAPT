@@ -11,7 +11,7 @@
   *    Justin Sliekers - removing all properties
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
     public class RasterGridPrescription : SpatialPrescription
     {

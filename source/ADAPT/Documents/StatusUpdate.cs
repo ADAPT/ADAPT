@@ -12,7 +12,7 @@
 
 using System;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public class StatusUpdate
     {

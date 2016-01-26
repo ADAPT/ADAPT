@@ -9,9 +9,11 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
-  *******************************************************************************/  
+  *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries
 {
     public class ConstantOffsetHeadland : Headland
     {

@@ -11,7 +11,7 @@
   *    Kathleen Oneal - renamed LeftDirection to LeftOnly and RightDirection to RightOnly
   *******************************************************************************/  
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
     public enum PropagationDirectionEnum
     {

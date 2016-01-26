@@ -11,7 +11,9 @@
   *    Joseph Ross Making Properties
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
     public class MachineSeries
     {

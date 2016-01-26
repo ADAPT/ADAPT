@@ -11,7 +11,7 @@
   *    Kathleen Oneal - made ProductId nullable
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
     public class RxRate
     {

@@ -10,11 +10,13 @@
  *    Tarak Reddy, Tim Shearouse - initial API and implementation
  *    Tarak Reddy - Added implement id 
  *    Kathleen Oneal - removed ImplementTypeId
- *******************************************************************************/  
+ *******************************************************************************/
 
 using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
     public class ImplementConfiguration
     {

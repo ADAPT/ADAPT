@@ -14,8 +14,10 @@
 
 using System;
 using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
+using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
     public class SpatialRecord
     {

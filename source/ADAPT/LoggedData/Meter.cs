@@ -13,7 +13,10 @@
   *    Kathleen Oneal - removed property Values
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
     public abstract class Meter
     {

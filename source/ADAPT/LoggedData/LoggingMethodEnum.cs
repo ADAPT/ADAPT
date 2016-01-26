@@ -11,7 +11,7 @@
   *    Kathleen Oneal - Added values TimeInterval, DistanceInterval, ThresholdLimits, OnChange, Total
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
     public enum LoggingMethodEnum
     {

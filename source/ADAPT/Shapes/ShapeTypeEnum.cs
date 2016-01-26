@@ -11,7 +11,7 @@
   *    Kathleen Oneal - added RasterGrid
   *******************************************************************************/  
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
 {
     public enum ShapeTypeEnum
     {

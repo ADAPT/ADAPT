@@ -12,7 +12,10 @@
   *    Kathleen Oneal - added properties guidancePatternId, EastShit, NorthShift, and PropagationOffset, removed GuidanceShift
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
     public class GuidanceAllocation
     {

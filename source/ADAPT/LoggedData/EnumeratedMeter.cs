@@ -13,7 +13,7 @@
 
 using System.Collections.Generic;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
     public class EnumeratedMeter : Meter
     {

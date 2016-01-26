@@ -13,7 +13,7 @@
   *    Kathleen Oneal - renamed FromPointA to FromA; renamed FromPointB to FromB
   *******************************************************************************/  
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
     public enum GuidanceExtensionEnum
     {

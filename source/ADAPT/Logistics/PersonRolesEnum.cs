@@ -13,7 +13,7 @@
   *    Kathleen Oneal - added additional roles from wiki
   * *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
     public enum PersonRolesEnum
     {

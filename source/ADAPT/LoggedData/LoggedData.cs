@@ -13,8 +13,10 @@
   *******************************************************************************/
 
 using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Documents;
+using AgGateway.ADAPT.ApplicationDataModel.Notes;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
     public class LoggedData : WorkRecord
     {

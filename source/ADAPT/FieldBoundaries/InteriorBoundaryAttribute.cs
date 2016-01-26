@@ -12,7 +12,7 @@
   *    Kathleen Oneal - changed Passable to IsPassable and Name to Description
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries
 {
     public class InteriorBoundaryAttribute
     {

@@ -8,9 +8,11 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.Representations
 {
     public abstract class Representation
     {

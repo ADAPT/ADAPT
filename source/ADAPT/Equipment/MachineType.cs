@@ -10,9 +10,11 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Justin Sliekers - changing Name to Description
   *    Kathleen Oneal - added MachineTypeEnum
-  *******************************************************************************/  
+  *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
     public class MachineType
     {

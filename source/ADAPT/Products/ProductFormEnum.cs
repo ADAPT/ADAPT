@@ -13,7 +13,7 @@
   *    Kathleen Oneal - Renamed FormTypeEnum to ProductFormEnum
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
     public enum ProductFormEnum
     {

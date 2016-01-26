@@ -13,66 +13,63 @@
 
 using System.Linq;
 using System.Text;
-using AgGateway.ADAPT.ApplicationDataModel;
 using AgGateway.ADAPT.Representation.RepresentationSystem;
-using EnumeratedRepresentation = AgGateway.ADAPT.ApplicationDataModel.EnumeratedRepresentation;
-using NumericRepresentation = AgGateway.ADAPT.ApplicationDataModel.NumericRepresentation;
 
 namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
 {
-    public interface IClassGenerator
-    {
-        string Generate();
-    }
+   public interface IClassGenerator
+   {
+      string Generate();
+   }
 
-    public abstract class ClassGenerator : IClassGenerator
-    {
-        private const string NameSpace = "namespace AgGateway.ADAPT.Representation.RepresentationSystem\n{\n";
-        private const string ClassNamePattern = "    public {0} {1} \n    ";
-        private const string FileFooter = "    }\n}";
-        protected abstract string Name
-        {
-            get;
-        }
-        protected abstract bool IsEnum
-        {
-            get;
-        }
+   public abstract class ClassGenerator : IClassGenerator
+   {
+      private const string NameSpace = "namespace AgGateway.ADAPT.Representation.RepresentationSystem\n{\n";
+      private const string ClassNamePattern = "    public {0} {1} \n    ";
+      private const string FileFooter = "    }\n}";
+      protected abstract string Name
+      {
+         get;
+      }
+      protected abstract bool IsEnum
+      {
+         get;
+      }
 
-        public string Generate()
-        {
-            var declaration = IsEnum ? "enum" : "class";
-            var classBuilder = new StringBuilder()
-                .Append("using AgGateway.ADAPT.ApplicationDataModel;\r\r")
-                .Append(NameSpace)
-                .AppendFormat(ClassNamePattern, declaration, Name)
-                .Append("{\n");
+      public string Generate()
+      {
+         var declaration = IsEnum ? "enum" : "class";
+         var classBuilder = new StringBuilder()
+             .Append("using AgGateway.ADAPT.ApplicationDataModel;\r\r")
+             .Append(NameSpace)
+             .AppendFormat(ClassNamePattern, declaration, Name)
+             .Append("{\n");
 
-            var definedRepresentations = RepresentationManager.Instance.Representations.OfType<Representation.RepresentationSystem.EnumeratedRepresentation>();
-            foreach (var definedRepresentation in definedRepresentations)
-            {
-                Append(definedRepresentation, classBuilder);
-            }
+         var definedRepresentations = RepresentationManager.Instance.Representations.OfType<Representation.RepresentationSystem.EnumeratedRepresentation>();
+         foreach (var definedRepresentation in definedRepresentations)
+         {
+            Append(definedRepresentation, classBuilder);
+         }
 
-            var numericRepresentations = RepresentationManager.Instance.Representations.OfType<Representation.RepresentationSystem.NumericRepresentation>();
-            foreach (var numericRepresentation in numericRepresentations)
-            {
-                Append(numericRepresentation, classBuilder);
-            }
+         var numericRepresentations = RepresentationManager.Instance.Representations.OfType<Representation.RepresentationSystem.NumericRepresentation>();
+         foreach (var numericRepresentation in numericRepresentations)
+         {
+            Append(numericRepresentation, classBuilder);
+         }
 
-            classBuilder.Append(FileFooter);
-            return classBuilder.ToString();
-        }
+         classBuilder.Append(FileFooter);
+         return classBuilder.ToString();
+      }
 
 
-        protected virtual void Append(Representation.RepresentationSystem.NumericRepresentation representation, StringBuilder stringBuilder)
-        {
+      protected virtual void Append(Representation.RepresentationSystem.NumericRepresentation representation, StringBuilder stringBuilder)
+      {
 
-        }
+      }
 
-        protected virtual void Append(Representation.RepresentationSystem.EnumeratedRepresentation definedRepresentation, StringBuilder stringBuilder)
-        {
+      protected virtual void Append(Representation.RepresentationSystem.EnumeratedRepresentation definedRepresentation, StringBuilder stringBuilder)
+      {
 
-        }
-    }
+      }
+   }
 }

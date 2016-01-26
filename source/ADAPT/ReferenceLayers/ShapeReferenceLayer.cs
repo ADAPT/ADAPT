@@ -8,11 +8,11 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
 
 using System.Collections.Generic;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 {
     public class ShapeReferenceLayer : ReferenceLayer
     {

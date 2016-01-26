@@ -11,7 +11,7 @@
   *    Kathleen Oneal - make properties nullable
   *******************************************************************************/  
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Representations
 {
     public class StringRepresentation : Representation
     {

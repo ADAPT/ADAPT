@@ -13,7 +13,7 @@
  *                  The work item operation will point to the active configuration.
  *******************************************************************************/  
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
     public class Implement : Equipment
     {

@@ -11,7 +11,7 @@
   *    Kathleen Oneal - renamed UnitDiminesion to Dimension; removed Name, Symbol, ConversionScale, Conversion Offset; added IsReferenceForDimension, Scale, Offset
   *******************************************************************************/  
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
     public class UnitOfMeasure
     {

@@ -10,7 +10,7 @@
   *    Justin Sliekers - initial API and implementation
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
 {
     public class BoundingBox
     {

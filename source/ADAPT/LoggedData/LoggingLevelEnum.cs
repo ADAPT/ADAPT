@@ -11,7 +11,7 @@
   *    Kathleen Oneal - added values MachineType, SpecificMachine, ImplementType, SpecificImplement, SpecificSection, SpecificMeter, Unspecified
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
     public enum LoggingLevelEnum
     {

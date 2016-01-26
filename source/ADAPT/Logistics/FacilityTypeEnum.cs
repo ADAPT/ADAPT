@@ -12,7 +12,7 @@
  *    Kathleen Oneal - removed facility, farm, field, storageLocation, tank; renamed grainBin to bin
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
     public enum FacilityTypeEnum
     {

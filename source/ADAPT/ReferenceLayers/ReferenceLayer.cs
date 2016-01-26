@@ -10,11 +10,13 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - changed LayerType to ReferenceLayerTypeEnum
   *    Justin Sliekers - changing BoundingPolygon to Polgyon; changing to single timescope
-  *******************************************************************************/  
+  *******************************************************************************/
 
 using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 {
     public abstract class ReferenceLayer
     {

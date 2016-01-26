@@ -13,7 +13,7 @@
   *    Kathlen Oneal - renamed Proprietary to UserDefined
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Representations
 {
     public enum RepresentationCodeSourceEnum
     {

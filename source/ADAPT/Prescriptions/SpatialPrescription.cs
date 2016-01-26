@@ -9,7 +9,12 @@
   * Contributors:
   *    Justin Sliekers - initial API and implementation
   *******************************************************************************/
-namespace AgGateway.ADAPT.ApplicationDataModel
+
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
+using AgGateway.ADAPT.ApplicationDataModel.Shapes;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
     public class SpatialPrescription : Prescription
     {

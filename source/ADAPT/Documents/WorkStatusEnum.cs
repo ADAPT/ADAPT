@@ -11,7 +11,7 @@
   *    Kathleen Oneal - removed value "Planned"
   *******************************************************************************/  
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public enum WorkStatusEnum
     {

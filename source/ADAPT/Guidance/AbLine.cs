@@ -8,9 +8,11 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+using AgGateway.ADAPT.ApplicationDataModel.Shapes;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
     public class AbLine : GuidancePattern
     {

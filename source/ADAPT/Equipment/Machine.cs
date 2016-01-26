@@ -12,7 +12,7 @@
  *    Tarak Reddy - Removed machine configuration. The configuration will reference a machine. 
  *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
     public class Machine : Equipment
     {

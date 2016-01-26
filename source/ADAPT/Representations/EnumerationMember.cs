@@ -11,7 +11,7 @@
   *    Kathleen Oneal - renamed from EnumeratedMember to EnumerationMember
   *******************************************************************************/  
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Representations
 {
     public class EnumerationMember
     {

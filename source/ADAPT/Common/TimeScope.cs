@@ -12,7 +12,7 @@
   *    Kathleen Oneal - changed date params to Stamp1, Stamp2 of type DateWithContext
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
     public class TimeScope
     {

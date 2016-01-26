@@ -12,9 +12,7 @@
   *    Kathleen Oneal - added periodic, IsManure, FulvicAcid, and Humic Acid properties
   *******************************************************************************/
 
-using System.Collections.Generic;
-
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
     public class FertilizerProduct : Product
     {

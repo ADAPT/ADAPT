@@ -12,7 +12,7 @@
   *******************************************************************************/  
 
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
     public enum GLNEnum
     {

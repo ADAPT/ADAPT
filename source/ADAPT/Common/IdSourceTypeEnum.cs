@@ -10,7 +10,7 @@
   *    Kathleen Oneal - initial API and implementation
   *    Kathleen Oneal - Changed name from SOurceTypeEnum to IdSourceTypeEnum
   *******************************************************************************/
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
     public enum IdSourceTypeEnum
     {

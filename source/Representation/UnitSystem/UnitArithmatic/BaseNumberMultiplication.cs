@@ -11,21 +11,21 @@
   *******************************************************************************/
 
 using System.Linq;
-using AgGateway.ADAPT.ApplicationDataModel;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 using AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods;
 
 namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
 {
-    internal class BaseNumberMultiplication 
-    {
-        public static NumericValue Multiply(NumericValue left, NumericValue right)
-        {
-            var decomposer = new UnitOfMeasureDecomposer();
-            var leftComponents = decomposer.GetComponents(left.UnitOfMeasure.ToInternalUom(), 1);
-            var rightComponents = decomposer.GetComponents(right.UnitOfMeasure.ToInternalUom(), 1);
-            var allComponents = leftComponents.Union(rightComponents).ToList();
+   internal class BaseNumberMultiplication
+   {
+      public static NumericValue Multiply(NumericValue left, NumericValue right)
+      {
+         var decomposer = new UnitOfMeasureDecomposer();
+         var leftComponents = decomposer.GetComponents(left.UnitOfMeasure.ToInternalUom(), 1);
+         var rightComponents = decomposer.GetComponents(right.UnitOfMeasure.ToInternalUom(), 1);
+         var allComponents = leftComponents.Union(rightComponents).ToList();
 
-            return new UnitOfMeasureComponentSimplifier().Simplify(allComponents, left.Value * right.Value);
-        }
-    }
+         return new UnitOfMeasureComponentSimplifier().Simplify(allComponents, left.Value * right.Value);
+      }
+   }
 }

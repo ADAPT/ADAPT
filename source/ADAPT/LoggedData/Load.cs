@@ -14,8 +14,9 @@
 
 
 using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
     public class Load
     {

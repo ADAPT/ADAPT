@@ -11,7 +11,9 @@
   *    Joseph Ross Making Properties
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+using AgGateway.ADAPT.ApplicationDataModel.Shapes;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries
 {
     public class DrivenHeadland : Headland
     {

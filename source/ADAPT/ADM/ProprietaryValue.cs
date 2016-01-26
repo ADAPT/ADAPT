@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -8,21 +8,14 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Kathleen Oneal - changed ReferenceLayers type from ReferenceLayers to List<ReferenceLayer>
   *******************************************************************************/  
 
-using System.Collections.Generic;
-
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
-    public class ApplicationDataModel
+    public class ProprietaryValue
     {
-        public List<ProprietaryValue> ProprietaryValues { get; set; }
+        public int Key { get; set; }
 
-        public Catalog Catalog { get; set; }
-
-        public Documents Documents { get; set; }
-
-        public List<ReferenceLayer> ReferenceLayers { get; set; }
+        public string Value { get; set; }
     }
 }

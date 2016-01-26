@@ -11,7 +11,7 @@
   *    Kathleen Oneal - removed GLN, URI; renamed Long to LongInt
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
     public enum CompoundIdentifierTypeEnum
     {

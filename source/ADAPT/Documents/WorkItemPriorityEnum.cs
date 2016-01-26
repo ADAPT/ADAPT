@@ -11,7 +11,7 @@
   *    Joseph Ross - Renaming Enums to end in Enum
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public enum WorkItemPriorityEnum
     {

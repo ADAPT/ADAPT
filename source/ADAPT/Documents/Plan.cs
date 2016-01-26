@@ -12,7 +12,7 @@
   *    Justin Sliekers - removed CropSeasonId
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public class Plan : Document
     {

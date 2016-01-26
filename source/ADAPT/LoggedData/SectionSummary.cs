@@ -11,7 +11,10 @@
   *    Joseph Ross Making Properties
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
     public class SectionSummary
     {

@@ -13,8 +13,9 @@
 
 using System;
 using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Common;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
     public class OperationData
     {

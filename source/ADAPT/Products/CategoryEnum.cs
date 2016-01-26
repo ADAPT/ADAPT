@@ -14,7 +14,7 @@
   *    Kathleen Oneal - added variety value
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
     public enum CategoryEnum
     {

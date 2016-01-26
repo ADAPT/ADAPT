@@ -12,7 +12,7 @@
   *    Justin Sliekers - removing all properties
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public class Recommendation : Document
     {

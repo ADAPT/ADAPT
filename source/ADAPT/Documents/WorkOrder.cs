@@ -11,7 +11,7 @@
   *    Kathleen Oneal - changes List of StatusUpdates to single
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public class WorkOrder : Document
     {

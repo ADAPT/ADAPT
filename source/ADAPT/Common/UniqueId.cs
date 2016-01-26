@@ -13,7 +13,7 @@
   *    Kathleen Oneal - renamed from UniqueIdType to UniqueId
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
     public class UniqueId
     {

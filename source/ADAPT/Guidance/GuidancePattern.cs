@@ -10,9 +10,14 @@
  *    Tarak Reddy, Tim Shearouse - initial API and implementation
  *    Tarak Reddy - Renamed Guidance to GuidancePattern to match ISO
  *    Kathleen Oneal - renamed property Name to Description
-  *******************************************************************************/  
+  *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Logistics;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
+using AgGateway.ADAPT.ApplicationDataModel.Shapes;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
     public abstract class GuidancePattern
     {

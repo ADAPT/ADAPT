@@ -8,21 +8,22 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Kathleen Oneal - added GpsSource
+  *    Kathleen Oneal - changed ReferenceLayers type from ReferenceLayers to List<ReferenceLayer>
   *******************************************************************************/
 
 using System.Collections.Generic;
-using AgGateway.ADAPT.ApplicationDataModel.Common;
-using AgGateway.ADAPT.ApplicationDataModel.Shapes;
+using AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers;
 
-namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
+namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
-    public class Location
+    public class ApplicationDataModel
     {
-        public Point Position { get; set; }
-        
-        public List<ContextItem> ContextItems { get; set; }
-        
-        public GpsSource GpsSource { get; set; }
+        public List<ProprietaryValue> ProprietaryValues { get; set; }
+
+        public Catalog Catalog { get; set; }
+
+        public Documents Documents { get; set; }
+
+        public List<ReferenceLayer> ReferenceLayers { get; set; }
     }
 }

@@ -9,7 +9,7 @@
   * Contributors:
   *    Tim Shearouse - initial API and implementation
   *******************************************************************************/
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
     public enum ProductStatusEnum
     {

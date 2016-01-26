@@ -11,8 +11,9 @@
   *******************************************************************************/
 
 using System;
+using AgGateway.ADAPT.ApplicationDataModel.Logistics;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
     public class DateWithContext
     {

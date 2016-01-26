@@ -11,7 +11,7 @@
   *    Joe Ross, Kathleen Oneal - added values
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
     public enum ConnectorTypeEnum
     {

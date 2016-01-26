@@ -12,7 +12,11 @@
  *    Kathleen Oneal - renamed property name from enumberatedValue to Value
  *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
+using AgGateway.ADAPT.ApplicationDataModel.Shapes;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.Notes
 {
     public abstract class Note
     {

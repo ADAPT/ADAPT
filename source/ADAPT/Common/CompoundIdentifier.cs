@@ -9,11 +9,11 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - changed ID's to Id
-  *******************************************************************************/  
+  *******************************************************************************/
 
 using System.Collections.Generic;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
     public class CompoundIdentifier
     {

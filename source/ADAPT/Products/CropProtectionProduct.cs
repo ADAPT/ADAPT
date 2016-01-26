@@ -12,7 +12,7 @@
   *    Justin Sliekers - removing Ingredients
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
     public class CropProtectionProduct : Product
     {

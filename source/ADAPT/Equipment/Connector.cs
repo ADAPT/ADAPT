@@ -13,7 +13,9 @@
  *    Kathleen Oneal - changed connectorType to ConnectoryTypeEnum from EnumeratedRepresentation
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
     public class Connector
     {

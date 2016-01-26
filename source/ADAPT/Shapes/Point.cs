@@ -12,7 +12,7 @@
   *    Justin Sliekers - removing M and Slope, making Z nullable
   *******************************************************************************/  
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
 {
     public class Point : Shape
     {

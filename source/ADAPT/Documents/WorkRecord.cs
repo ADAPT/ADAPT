@@ -12,7 +12,7 @@
   *    Kathleen Oneal - removed all properties
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public class WorkRecord : Document
     {

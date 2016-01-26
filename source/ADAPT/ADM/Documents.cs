@@ -15,8 +15,11 @@
  *******************************************************************************/
 
 using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Documents;
+using AgGateway.ADAPT.ApplicationDataModel.Guidance;
+using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
     public class Documents
     {
@@ -24,7 +27,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 
         public List<WorkItemOperation> WorkItemOperations { get; set; }
 
-        public List<LoggedData> LoggedData { get; set; }
+        public List<LoggedData.LoggedData> LoggedData { get; set; }
 
         public List<OperationData> OperationData { get; set; }
 

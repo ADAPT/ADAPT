@@ -11,7 +11,7 @@
   *    Justin Sliekers - dropping product uses and application strategy, adding rate
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel
+namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
     public class ManualPrescription : Prescription
     {
