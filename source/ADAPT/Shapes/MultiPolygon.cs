@@ -16,6 +16,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
 {
     public class MultiPolygon : Shape
     {
+        public MultiPolygon()
+        {
+            Type = ShapeTypeEnum.MultiPolygon;
+        }
+
         public List<Polygon> Polygons { get; set; }
     }
 }

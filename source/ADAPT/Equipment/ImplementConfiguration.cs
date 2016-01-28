@@ -26,7 +26,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
         }
 
         public CompoundIdentifier Id { get; private set; }
-        
+
+        public TimeScope TimeScope { get; set; }
+
         public int ImplementId { get; set; }
         
         public string Description { get; set; }

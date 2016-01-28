@@ -74,6 +74,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public List<Person> Persons { get; set; } 
 
         public List<PersonRole> PersonRoles { get; set; }
+
+        public List<ContactInfo> ContactInfo { get; set; }
         
         public List<Prescription> Prescriptions { get; set; }
         

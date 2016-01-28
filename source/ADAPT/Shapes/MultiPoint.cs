@@ -16,6 +16,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
 {
     public class MultiPoint : Shape
     {
+        public MultiPoint()
+        {
+            Type = ShapeTypeEnum.MultiPoint;
+        }
+
         public List<Point> Points { get; set; }
     }
 }

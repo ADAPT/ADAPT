@@ -16,6 +16,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
 {
     public class LinearRing : Shape
     {
+        public LinearRing()
+        {
+            Type = ShapeTypeEnum.LinearRing;
+        }
+
         public List<Point> Points { get; set; }
     }
 }

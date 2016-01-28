@@ -11,10 +11,24 @@
   *    Justin Sliekers - removing all properties
   *******************************************************************************/
 
+using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
+using AgGateway.ADAPT.ApplicationDataModel.Shapes;
+
 namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
-    public class RasterGridPrescription : SpatialPrescription
-    {
-       
-    }
+   public class RasterGridPrescription : SpatialPrescription
+   {
+      public Point Origin { get; set; }
+
+      public int RowCount { get; set; }
+
+      public int ColumnCount { get; set; }
+
+      public NumericRepresentationValue CellWidth { get; set; }
+
+      public NumericRepresentationValue CellHeight { get; set; }
+
+      public List<RxRates> Rates { get; set; }
+   }
 }

@@ -16,6 +16,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
 {
     public class Point : Shape
     {
+        public Point()
+        {
+            Type = ShapeTypeEnum.Point;
+        }
+
         public double X { get; set; }
 
         public double Y { get; set; }

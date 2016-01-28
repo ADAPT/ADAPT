@@ -12,16 +12,21 @@
   *    Kathleen Oneal - added values
   *    Kathleen Oneal - added unknown value
   *    Kathleen Oneal - added variety value
+  *    Kathleen Oneal - added Additive, GrowthRegulator, Insecticide, and NitrogenStabilizer values
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
     public enum CategoryEnum
     {
+        Additive,
         Fungicide,
+        GrowthRegulator,
+        Insecticide,
         Herbicide,
         Manure,
-        Variety,
+        NitrogenStabilizer,
         Unknown,
+        Variety,
     }
 }

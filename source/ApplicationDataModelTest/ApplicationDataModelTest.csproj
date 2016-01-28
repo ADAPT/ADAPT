@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CompoundIdentifierFactoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShapeTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
