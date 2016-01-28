@@ -131,7 +131,7 @@
     <Compile Include="Manufacturer.cs" />
     <Compile Include="Meter.cs" />
     <Compile Include="ModeOfAction.cs" />
-    <Compile Include="MulitAbLine.cs" />
+    <Compile Include="MultiAbLine.cs" />
     <Compile Include="MultiLineString.cs" />
     <Compile Include="MultiPoint.cs" />
     <Compile Include="MultiPolygon.cs" />
