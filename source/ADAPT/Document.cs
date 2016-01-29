@@ -35,12 +35,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public NumericRepresentationValue EstimatedArea { get; set; }
 
         public List<int> FarmIds { get; set; }
-
+        
         public List<int> FieldIds { get; set; }
 
         public int? GrowerId { get; set; }
 
-        public List<int> ReferenceNoteIds { get; set; }
+        public List<Note> Notes { get; set; }
 
         public List<int> PersonRoleIds { get; set; }
 
