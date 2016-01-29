@@ -10,134 +10,134 @@
   *    Joe Ross, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using AgGateway.ADAPT.ApplicationDataModel;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods
 {
-    public static class NumericRepresentationValueExtensions
-    {
-        public static void SetTarget(this NumericRepresentationValue numericRepresentationValue, UnitOfMeasure targetUom)
-        {
-            numericRepresentationValue.Value.ConvertToUnit(targetUom);
-        }
+   public static class NumericRepresentationValueExtensions
+   {
+      public static void SetTarget(this NumericRepresentationValue numericRepresentationValue, UnitOfMeasure targetUom)
+      {
+         numericRepresentationValue.Value.ConvertToUnit(targetUom);
+      }
 
-        public static void SubtractFromSource(this NumericRepresentationValue numericRepresentationValue, NumericValue secondNumber)
-        {
-            numericRepresentationValue.Value.SubtractFromSource(secondNumber);
-        }
+      public static void SubtractFromSource(this NumericRepresentationValue numericRepresentationValue, NumericValue secondNumber)
+      {
+         numericRepresentationValue.Value.SubtractFromSource(secondNumber);
+      }
 
-        public static void SubtractFromSource(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue secondNumber)
-        {
-            numericRepresentationValue.Value.SubtractFromSource(secondNumber.Value);
-        }
+      public static void SubtractFromSource(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue secondNumber)
+      {
+         numericRepresentationValue.Value.SubtractFromSource(secondNumber.Value);
+      }
 
-        public static NumericRepresentationValue Add(this NumericRepresentationValue numericRepresentationValue, double number)
-        {
-            var sum = numericRepresentationValue.Value.Add(number);
-            return new NumericRepresentationValue(numericRepresentationValue.Representation, sum);
-        }
+      public static NumericRepresentationValue Add(this NumericRepresentationValue numericRepresentationValue, double number)
+      {
+         var sum = numericRepresentationValue.Value.Add(number);
+         return new NumericRepresentationValue(numericRepresentationValue.Representation, sum);
+      }
 
-        public static void AddToSource(this NumericRepresentationValue numericRepresentationValue, double number)
-        {
-            numericRepresentationValue.Value.AddToSource(number);
-        }
+      public static void AddToSource(this NumericRepresentationValue numericRepresentationValue, double number)
+      {
+         numericRepresentationValue.Value.AddToSource(number);
+      }
 
-        public static NumericRepresentationValue Add(this NumericRepresentationValue numericRepresentationValue, NumericValue secondNumber)
-        {
-            var sum = numericRepresentationValue.Value.Add(secondNumber);
-            return new NumericRepresentationValue(numericRepresentationValue.Representation, sum);
-        }
+      public static NumericRepresentationValue Add(this NumericRepresentationValue numericRepresentationValue, NumericValue secondNumber)
+      {
+         var sum = numericRepresentationValue.Value.Add(secondNumber);
+         return new NumericRepresentationValue(numericRepresentationValue.Representation, sum);
+      }
 
-        public static void AddToSource(this NumericRepresentationValue numericRepresentationValue, NumericValue secondNumber)
-        {
-            numericRepresentationValue.Value.AddToSource(secondNumber);
-        }
+      public static void AddToSource(this NumericRepresentationValue numericRepresentationValue, NumericValue secondNumber)
+      {
+         numericRepresentationValue.Value.AddToSource(secondNumber);
+      }
 
-        public static void AddToSource(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue secondNumber)
-        {
-            numericRepresentationValue.Value.AddToSource(secondNumber.Value);
-        }
+      public static void AddToSource(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue secondNumber)
+      {
+         numericRepresentationValue.Value.AddToSource(secondNumber.Value);
+      }
 
-        public static NumericRepresentationValue Add(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue secondNumber)
-        {
-            var sum = numericRepresentationValue.Value.Add(secondNumber.Value);
-            return new NumericRepresentationValue(numericRepresentationValue.Representation, sum);
-        }
+      public static NumericRepresentationValue Add(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue secondNumber)
+      {
+         var sum = numericRepresentationValue.Value.Add(secondNumber.Value);
+         return new NumericRepresentationValue(numericRepresentationValue.Representation, sum);
+      }
 
-        public static NumericRepresentationValue Subtract(this NumericRepresentationValue numericRepresentationValue, double number)
-        {
-            var difference = numericRepresentationValue.Value.Subtract(number);
-            return new NumericRepresentationValue(numericRepresentationValue.Representation, difference);
-        }
+      public static NumericRepresentationValue Subtract(this NumericRepresentationValue numericRepresentationValue, double number)
+      {
+         var difference = numericRepresentationValue.Value.Subtract(number);
+         return new NumericRepresentationValue(numericRepresentationValue.Representation, difference);
+      }
 
-        public static void SubtractFromSource(this NumericRepresentationValue numericRepresentationValue, double number)
-        {
-            numericRepresentationValue.Value.SubtractFromSource(number);
-        }
+      public static void SubtractFromSource(this NumericRepresentationValue numericRepresentationValue, double number)
+      {
+         numericRepresentationValue.Value.SubtractFromSource(number);
+      }
 
-        public static NumericRepresentationValue Subtract(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue secondNumber)
-        {
-            var difference = numericRepresentationValue.Value.Subtract(secondNumber.Value);
-            return new NumericRepresentationValue(numericRepresentationValue.Representation, difference);
-        }
+      public static NumericRepresentationValue Subtract(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue secondNumber)
+      {
+         var difference = numericRepresentationValue.Value.Subtract(secondNumber.Value);
+         return new NumericRepresentationValue(numericRepresentationValue.Representation, difference);
+      }
 
-        public static NumericRepresentationValue Subtract(this NumericRepresentationValue numericRepresentationValue, NumericValue secondNumber)
-        {
-            var difference = numericRepresentationValue.Value.Subtract(secondNumber);
-            return new NumericRepresentationValue(numericRepresentationValue.Representation, difference);
-        }
+      public static NumericRepresentationValue Subtract(this NumericRepresentationValue numericRepresentationValue, NumericValue secondNumber)
+      {
+         var difference = numericRepresentationValue.Value.Subtract(secondNumber);
+         return new NumericRepresentationValue(numericRepresentationValue.Representation, difference);
+      }
 
-        public static NumericRepresentationValue Divide(this NumericRepresentationValue numericRepresentationValue, double denominator)
-        {
-            var quotient = numericRepresentationValue.Value.Divide(denominator);
-            return new NumericRepresentationValue(numericRepresentationValue.Representation, quotient);
-        }
+      public static NumericRepresentationValue Divide(this NumericRepresentationValue numericRepresentationValue, double denominator)
+      {
+         var quotient = numericRepresentationValue.Value.Divide(denominator);
+         return new NumericRepresentationValue(numericRepresentationValue.Representation, quotient);
+      }
 
-        public static NumericRepresentationValue Divide(this NumericRepresentationValue numericRepresentationValue, NumericValue denominator)
-        {
-            var quotient = numericRepresentationValue.Value.Divide(denominator);
-            return new NumericRepresentationValue(numericRepresentationValue.Representation, quotient);
-        }
+      public static NumericRepresentationValue Divide(this NumericRepresentationValue numericRepresentationValue, NumericValue denominator)
+      {
+         var quotient = numericRepresentationValue.Value.Divide(denominator);
+         return new NumericRepresentationValue(numericRepresentationValue.Representation, quotient);
+      }
 
-        public static NumericRepresentationValue Divide(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue denominator, NumericRepresentation numericRepresentation)
-        {
-            var quotient = numericRepresentationValue.Value.Divide(denominator.Value);
-            return new NumericRepresentationValue(numericRepresentation, quotient);
-        }
+      public static NumericRepresentationValue Divide(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue denominator, NumericRepresentation numericRepresentation)
+      {
+         var quotient = numericRepresentationValue.Value.Divide(denominator.Value);
+         return new NumericRepresentationValue(numericRepresentation, quotient);
+      }
 
-        public static NumericRepresentationValue Divide(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue denominator)
-        {
-            var quotient = numericRepresentationValue.Value.Divide(denominator.Value);
-            return new NumericRepresentationValue(numericRepresentationValue.Representation, quotient);
-        }
+      public static NumericRepresentationValue Divide(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue denominator)
+      {
+         var quotient = numericRepresentationValue.Value.Divide(denominator.Value);
+         return new NumericRepresentationValue(numericRepresentationValue.Representation, quotient);
+      }
 
-        public static NumericRepresentationValue Multiply(this NumericRepresentationValue numericRepresentationValue, double right)
-        {
-            var product = numericRepresentationValue.Value.Multiply(right);
-            return new NumericRepresentationValue(numericRepresentationValue.Representation, product);
-        }
+      public static NumericRepresentationValue Multiply(this NumericRepresentationValue numericRepresentationValue, double right)
+      {
+         var product = numericRepresentationValue.Value.Multiply(right);
+         return new NumericRepresentationValue(numericRepresentationValue.Representation, product);
+      }
 
-        public static NumericRepresentationValue Multiply(this NumericRepresentationValue numericRepresentationValue, NumericValue right)
-        {
-            var product = numericRepresentationValue.Value.Multiply(right);
-            return new NumericRepresentationValue(numericRepresentationValue.Representation, product);
-        }
+      public static NumericRepresentationValue Multiply(this NumericRepresentationValue numericRepresentationValue, NumericValue right)
+      {
+         var product = numericRepresentationValue.Value.Multiply(right);
+         return new NumericRepresentationValue(numericRepresentationValue.Representation, product);
+      }
 
-        public static NumericRepresentationValue Multiply(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue right)
-        {
-            var product = numericRepresentationValue.Value.Multiply(right.Value);
-            return new NumericRepresentationValue(numericRepresentationValue.Representation, product);
-        }
+      public static NumericRepresentationValue Multiply(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue right)
+      {
+         var product = numericRepresentationValue.Value.Multiply(right.Value);
+         return new NumericRepresentationValue(numericRepresentationValue.Representation, product);
+      }
 
-        public static NumericRepresentationValue Multiply(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue right, NumericRepresentation numericRepresentation)
-        {
-            var product = numericRepresentationValue.Multiply(right);
-            return new NumericRepresentationValue(numericRepresentation, product.Value);
-        }
+      public static NumericRepresentationValue Multiply(this NumericRepresentationValue numericRepresentationValue, NumericRepresentationValue right, NumericRepresentation numericRepresentation)
+      {
+         var product = numericRepresentationValue.Multiply(right);
+         return new NumericRepresentationValue(numericRepresentation, product.Value);
+      }
 
-        public static NumericRepresentationValue Copy(this NumericRepresentationValue value)
-        {
-            return new NumericRepresentationValue(value.Representation, value.UserProvidedUnitOfMeasure, value.Value);
-        }
-    }
+      public static NumericRepresentationValue Copy(this NumericRepresentationValue value)
+      {
+         return new NumericRepresentationValue(value.Representation, value.UserProvidedUnitOfMeasure, value.Value);
+      }
+   }
 }

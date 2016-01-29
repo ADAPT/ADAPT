@@ -2,9 +2,9 @@
 {
     public static class UnitOfMeasureExtensions
     {
-        public static ApplicationDataModel.UnitOfMeasure ToModelUom(this UnitOfMeasure uom)
+        public static ApplicationDataModel.Common.UnitOfMeasure ToModelUom(this UnitOfMeasure uom)
         {
-            var unitOfMeasure = new ApplicationDataModel.UnitOfMeasure
+            var unitOfMeasure = new ApplicationDataModel.Common.UnitOfMeasure
             {
                 Code = uom.DomainID,
             };
@@ -17,7 +17,7 @@
             return unitOfMeasure;
         }
 
-        public static UnitOfMeasure ToInternalUom(this ApplicationDataModel.UnitOfMeasure uom)
+        public static UnitOfMeasure ToInternalUom(this ApplicationDataModel.Common.UnitOfMeasure uom)
         {
             return InternalUnitSystemManager.Instance.UnitOfMeasures[uom.Code];
         }

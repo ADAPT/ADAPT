@@ -13,49 +13,49 @@
 
 using System;
 using System.Text;
-using AgGateway.ADAPT.ApplicationDataModel;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
 {
-    public class RepresentationInstanceListGenerator : ClassGenerator
-    {
-        private const string RepresentationPattern = "        public static readonly {0} {1} = ({0})RepresentationManager.Instance.Representations[\"{1}\"];";
+   public class RepresentationInstanceListGenerator : ClassGenerator
+   {
+      private const string RepresentationPattern = "        public static readonly {0} {1} = ({0})RepresentationManager.Instance.Representations[\"{1}\"];";
 
-        protected override string Name
-        {
-            get
-            {
-                return "RepresentationInstanceList";
-            }
-        }
+      protected override string Name
+      {
+         get
+         {
+            return "RepresentationInstanceList";
+         }
+      }
 
-        protected override bool IsEnum
-        {
-            get
-            {
-                return false;
-            }
-        }
+      protected override bool IsEnum
+      {
+         get
+         {
+            return false;
+         }
+      }
 
-        protected override void Append(Representation.RepresentationSystem.EnumeratedRepresentation definedRepresentation, StringBuilder stringBuilder)
-        {
-            stringBuilder.Append(String.Format(RepresentationPattern, typeof(EnumeratedRepresentation).Name, definedRepresentation.DomainId));
-            stringBuilder.Append("\n\n");
-        }
+      protected override void Append(Representation.RepresentationSystem.EnumeratedRepresentation definedRepresentation, StringBuilder stringBuilder)
+      {
+         stringBuilder.Append(String.Format(RepresentationPattern, typeof(EnumeratedRepresentation).Name, definedRepresentation.DomainId));
+         stringBuilder.Append("\n\n");
+      }
 
-        protected override void Append(Representation.RepresentationSystem.NumericRepresentation representation, StringBuilder stringBuilder)
-        {
-            string representationName = representation.DomainId.Replace("\r", "")
-                                                            .Replace("[", "")
-                                                            .Replace("]", "")
-                                                            .Replace("(", "")
-                                                            .Replace(")", "")
-                                                            .Replace("-", "")
-                                                            .Replace("–", "")
-                                                            .Replace(" ", "");
+      protected override void Append(Representation.RepresentationSystem.NumericRepresentation representation, StringBuilder stringBuilder)
+      {
+         string representationName = representation.DomainId.Replace("\r", "")
+                                                         .Replace("[", "")
+                                                         .Replace("]", "")
+                                                         .Replace("(", "")
+                                                         .Replace(")", "")
+                                                         .Replace("-", "")
+                                                         .Replace("–", "")
+                                                         .Replace(" ", "");
 
-            stringBuilder.Append(String.Format(RepresentationPattern, typeof(NumericRepresentation).Name, representation.DomainId));
-            stringBuilder.Append("\n\n");
-        }
-    }
+         stringBuilder.Append(String.Format(RepresentationPattern, typeof(NumericRepresentation).Name, representation.DomainId));
+         stringBuilder.Append("\n\n");
+      }
+   }
 }

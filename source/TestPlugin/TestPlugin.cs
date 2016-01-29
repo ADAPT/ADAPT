@@ -11,48 +11,48 @@
   *******************************************************************************/
 
 using System.Collections.Generic;
-using AgGateway.ADAPT.ApplicationDataModel;
+using AgGateway.ADAPT.ApplicationDataModel.ADM;
 
 namespace AgGateway.ADAPT.TestPlugin
 {
-    public class TestPlugin : IPlugin
-    {
-        public string Name
-        {
-            get
-            {
-                return "TestPlugin";
-            }
-        }
+   public class TestPlugin : IPlugin
+   {
+      public string Name
+      {
+         get
+         {
+            return "TestPlugin";
+         }
+      }
 
-        public string Version { get; private set; }
-        public string Owner { get; private set; }
-        public void Initialize(string args = null)
-        {
-        }
+      public string Version { get; private set; }
+      public string Owner { get; private set; }
+      public void Initialize(string args = null)
+      {
+      }
 
-        public bool IsDataCardSupported(string dataPath, Properties properties = null)
-        {
-            return true;
-        }
+      public bool IsDataCardSupported(string dataPath, Properties properties = null)
+      {
+         return true;
+      }
 
-        public List<IError> ValidateDataOnCard(string dataPath, Properties properties = null)
-        {
-            return new List<IError>();
-        }
+      public List<IError> ValidateDataOnCard(string dataPath, Properties properties = null)
+      {
+         return new List<IError>();
+      }
 
-        public ApplicationDataModel.ApplicationDataModel Import(string dataPath, Properties properties = null)
-        {
-            return new ApplicationDataModel.ApplicationDataModel();
-        }
+      public ApplicationDataModel.ADM.ApplicationDataModel Import(string dataPath, Properties properties = null)
+      {
+         return new ApplicationDataModel.ADM.ApplicationDataModel();
+      }
 
-        public void Export(ApplicationDataModel.ApplicationDataModel dataModel, string exportPath, Properties properties = null)
-        {
-        }
+      public void Export(ApplicationDataModel.ADM.ApplicationDataModel dataModel, string exportPath, Properties properties = null)
+      {
+      }
 
-        public Properties GetProperties(string dataPath)
-        {
-            return new Properties();
-        }
-    }
+      public Properties GetProperties(string dataPath)
+      {
+         return new Properties();
+      }
+   }
 }

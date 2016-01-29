@@ -15,6 +15,7 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using AgGateway.ADAPT.ApplicationDataModel;
+using AgGateway.ADAPT.ApplicationDataModel.ADM;
 using AgGateway.ADAPT.PluginManager;
 
 namespace Visualizer

@@ -10,38 +10,35 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using System.Text;
-using AgGateway.ADAPT.ApplicationDataModel;
-
 namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
 {
-//    public class DefinedTypeEnumerationInstanceListGenerator : ClassGenerator
-//    {
-//        private const string DefinedTypeEnumerationInstanceListPattern = "        public static readonly EnumerationMember {0} = RepresentationInstanceList.{1}.EnumerationMembers[(int) DefinedTypeInstanceList.{0}];";
-//
-//        protected override string Name
-//        {
-//            get
-//            {
-//                return "DefinedTypeEnumerationInstanceList";
-//            }
-//        }
-//
-//        protected override bool IsEnum
-//        {
-//            get
-//            {
-//                return false;
-//            }
-//        }
-//
-//        protected override void Append(DefinedRepresentation definedRepresentation, StringBuilder stringBuilder)
-//        {
-//            foreach (var enumerationMember in definedRepresentation.DefinedTypes)
-//            {
-//                stringBuilder.AppendFormat(DefinedTypeEnumerationInstanceListPattern, enumerationMember.DomainId, definedRepresentation.DomainId);
-//                stringBuilder.Append("\n\n");
-//            }
-//        }
-//    }
+   //    public class DefinedTypeEnumerationInstanceListGenerator : ClassGenerator
+   //    {
+   //        private const string DefinedTypeEnumerationInstanceListPattern = "        public static readonly EnumerationMember {0} = RepresentationInstanceList.{1}.EnumerationMembers[(int) DefinedTypeInstanceList.{0}];";
+   //
+   //        protected override string Name
+   //        {
+   //            get
+   //            {
+   //                return "DefinedTypeEnumerationInstanceList";
+   //            }
+   //        }
+   //
+   //        protected override bool IsEnum
+   //        {
+   //            get
+   //            {
+   //                return false;
+   //            }
+   //        }
+   //
+   //        protected override void Append(DefinedRepresentation definedRepresentation, StringBuilder stringBuilder)
+   //        {
+   //            foreach (var enumerationMember in definedRepresentation.DefinedTypes)
+   //            {
+   //                stringBuilder.AppendFormat(DefinedTypeEnumerationInstanceListPattern, enumerationMember.DomainId, definedRepresentation.DomainId);
+   //                stringBuilder.Append("\n\n");
+   //            }
+   //        }
+   //    }
 }
