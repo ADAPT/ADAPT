@@ -14,7 +14,7 @@
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public abstract class Note
+    public class Note
     {
         public string Description { get; set; }
         

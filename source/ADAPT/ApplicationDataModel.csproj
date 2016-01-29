@@ -118,7 +118,6 @@
     <Compile Include="Load.cs" />
     <Compile Include="Destination.cs" />
     <Compile Include="LoggedData.cs" />
-    <Compile Include="LoggedNote.cs" />
     <Compile Include="LoggingLevelEnum.cs" />
     <Compile Include="LoggingMethodEnum.cs" />
     <Compile Include="Machine.cs" />
@@ -131,7 +130,7 @@
     <Compile Include="Manufacturer.cs" />
     <Compile Include="Meter.cs" />
     <Compile Include="ModeOfAction.cs" />
-    <Compile Include="MulitAbLine.cs" />
+    <Compile Include="MultiAbLine.cs" />
     <Compile Include="MultiLineString.cs" />
     <Compile Include="MultiPoint.cs" />
     <Compile Include="MultiPolygon.cs" />
@@ -142,7 +141,6 @@
     <Compile Include="ProductStatusEnum.cs" />
     <Compile Include="Properties.cs" />
     <Compile Include="ReferenceLayerTypeEnum.cs" />
-    <Compile Include="ReferenceNote.cs" />
     <Compile Include="NumericValue.cs" />
     <Compile Include="NumericMeter.cs" />
     <Compile Include="NumericRepresentation.cs" />

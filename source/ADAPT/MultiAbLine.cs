@@ -1,4 +1,4 @@
-/*******************************************************************************
+﻿/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -10,15 +10,13 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/  
 
+
+using System.Collections.Generic;
+
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class ReferenceNote : Note
+    public class MultiAbLine : GuidancePattern
     {
-        public ReferenceNote()
-        {
-            Id = CompoundIdentifierFactory.Instance.Create();
-        }
-
-        public CompoundIdentifier Id { get; private set; }
+        public List<AbLine> AbLines { get; set; }
     }
 }
