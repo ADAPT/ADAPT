@@ -15,18 +15,18 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 {
     public static class UnitSystemManager
     {
-        public static ApplicationDataModel.UnitOfMeasure GetUnitOfMeasure(string code)
+        public static ApplicationDataModel.Common.UnitOfMeasure GetUnitOfMeasure(string code)
         {
             return InternalUnitSystemManager.Instance.UnitOfMeasures[code].ToModelUom();
         }
 
-        public static ApplicationDataModel.UnitOfMeasure FromUNRec20Code(string code)
+        public static ApplicationDataModel.Common.UnitOfMeasure FromUNRec20Code(string code)
         {
             var domainId = InternalUnitSystemManager.Instance.UnRec20CodeToDomainId[code];
             return GetUnitOfMeasure(domainId);
         }
 
-        public static string GetUNRec20Code(ApplicationDataModel.UnitOfMeasure uom)
+        public static string GetUNRec20Code(ApplicationDataModel.Common.UnitOfMeasure uom)
         {
             return InternalUnitSystemManager.Instance.DomainIdToUnRec20Code[uom.Code];
         }

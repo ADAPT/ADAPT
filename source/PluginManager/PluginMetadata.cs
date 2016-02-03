@@ -11,16 +11,16 @@
   *******************************************************************************/
 
 using System;
-using AgGateway.ADAPT.ApplicationDataModel;
+using AgGateway.ADAPT.ApplicationDataModel.ADM;
 
 namespace AgGateway.ADAPT.PluginManager
 {
-    public class PluginMetadata
-    {
-        public string Name { get; set; }
-        public Version ModelVersion { get; set; }
-        public IPlugin AssemblyInstance { get; set; }
-        public string EntryClass { get; set; }
-        public string AssemblyLocation { get; set; }
-    }
+   public class PluginMetadata
+   {
+      public string Name { get; set; }
+      public Version ModelVersion { get; set; }
+      public IPlugin AssemblyInstance { get; set; }
+      public string EntryClass { get; set; }
+      public string AssemblyLocation { get; set; }
+   }
 }

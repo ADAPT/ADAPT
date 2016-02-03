@@ -1,4 +1,4 @@
-﻿using AgGateway.ADAPT.ApplicationDataModel;
+﻿using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 using NUnit.Framework;
 
 namespace AgGateway.ADAPT.ApplicationDataModelTest

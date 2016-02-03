@@ -15,7 +15,9 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
-using AgGateway.ADAPT.ApplicationDataModel;
+using AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries;
+using AgGateway.ADAPT.ApplicationDataModel.Guidance;
+using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
 
 namespace AgGateway.ADAPT.Visualizer
 {
@@ -23,8 +25,8 @@ namespace AgGateway.ADAPT.Visualizer
     {
         private readonly DataProvider _dataProvider;
         private readonly DataProcessor _dataProcessor;
-        private ApplicationDataModel.ApplicationDataModel _applicationDataModel;
-
+        private ApplicationDataModel.ADM.ApplicationDataModel _applicationDataModel;
+        
         public MainForm()
         {
             InitializeComponent();
@@ -87,32 +89,32 @@ namespace AgGateway.ADAPT.Visualizer
         }
 
         private void _buttonExportDatacard_Click(object sender, EventArgs e)
-        {
+                {
             var pluginName = (string)_comboBoxPlugins.SelectedItem;
             var plugin = _dataProvider.GetPlugin(pluginName);
 
             if (_applicationDataModel == null || plugin == null)
-            {
+                    {
                 MessageBox.Show(@"Could not export, either not a comptable plugin or no data model to export");
-                return;
-            }
+                        return;
+                    }
 
             DataProvider.Export(plugin, _applicationDataModel, _textBoxInitializeString.Text, GetExportDirectory());
-        }
+                }
 
         private void _treeViewMetadata_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             using (var g = _tabPageSpatial.CreateGraphics())
             {
                 g.Clear(Color.White);
-            }
+        }
 
             var treeNode = e.Node;
 
             _tabPageSpatial.Tag = treeNode.Tag == null ? treeNode.Tag : treeNode;
 
             if (treeNode.Tag == null)
-            {
+        {
                 return;
             }
 

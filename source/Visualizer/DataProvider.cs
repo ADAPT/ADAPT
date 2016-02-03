@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using AgGateway.ADAPT.ApplicationDataModel;
+using AgGateway.ADAPT.ApplicationDataModel.ADM;
 using AgGateway.ADAPT.PluginManager;
 
 namespace AgGateway.ADAPT.Visualizer
@@ -25,7 +25,7 @@ namespace AgGateway.ADAPT.Visualizer
 
 
 
-        public ApplicationDataModel.ApplicationDataModel Import(string datacardPath, string initializeString)
+        public ApplicationDataModel.ADM.ApplicationDataModel Import(string datacardPath, string initializeString)
         {
             foreach (var availablePlugin in AvailablePlugins)
             {
@@ -46,7 +46,7 @@ namespace AgGateway.ADAPT.Visualizer
             return _pluginFactory.GetPlugin(pluginName);
         }
 
-        public static void Export(IPlugin plugin, ApplicationDataModel.ApplicationDataModel applicationDataModel, string initializeString, string exportPath)
+        public static void Export(IPlugin plugin, ApplicationDataModel.ADM.ApplicationDataModel applicationDataModel, string initializeString, string exportPath)
         {
             InitializePlugin(plugin, initializeString);
 

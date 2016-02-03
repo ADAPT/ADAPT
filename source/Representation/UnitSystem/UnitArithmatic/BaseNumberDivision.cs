@@ -12,23 +12,23 @@
 
 using System;
 using System.Linq;
-using AgGateway.ADAPT.ApplicationDataModel;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 using AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods;
 
 namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
 {
-    internal class BaseNumberDivision
-    {
-        public static NumericValue Divide(NumericValue numerator, NumericValue denominator)
-        {
-            if (denominator.Value == 0.0)
-                throw new DivideByZeroException();
+   internal class BaseNumberDivision
+   {
+      public static NumericValue Divide(NumericValue numerator, NumericValue denominator)
+      {
+         if (denominator.Value == 0.0)
+            throw new DivideByZeroException();
 
-            var decomposer = new UnitOfMeasureDecomposer();
-            var numeratorComponets = decomposer.GetComponents(numerator.UnitOfMeasure.ToInternalUom(), 1);
-            var denominatorComponents = decomposer.GetComponents(denominator.UnitOfMeasure.ToInternalUom(), -1);
-            var allComponents = numeratorComponets.Union(denominatorComponents).ToList();
-            return new UnitOfMeasureComponentSimplifier().Simplify(allComponents, numerator.Value / denominator.Value);
-        }
-    }
+         var decomposer = new UnitOfMeasureDecomposer();
+         var numeratorComponets = decomposer.GetComponents(numerator.UnitOfMeasure.ToInternalUom(), 1);
+         var denominatorComponents = decomposer.GetComponents(denominator.UnitOfMeasure.ToInternalUom(), -1);
+         var allComponents = numeratorComponets.Union(denominatorComponents).ToList();
+         return new UnitOfMeasureComponentSimplifier().Simplify(allComponents, numerator.Value / denominator.Value);
+      }
+   }
 }

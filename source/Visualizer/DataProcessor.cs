@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using AgGateway.ADAPT.ApplicationDataModel;
-using Point = AgGateway.ADAPT.ApplicationDataModel.Point;
+using AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries;
+using AgGateway.ADAPT.ApplicationDataModel.Guidance;
+using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
+using AgGateway.ADAPT.ApplicationDataModel.Shapes;
+using Point = AgGateway.ADAPT.ApplicationDataModel.Shapes.Point;
 
 namespace AgGateway.ADAPT.Visualizer
 {

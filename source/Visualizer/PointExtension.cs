@@ -11,7 +11,7 @@ namespace AgGateway.ADAPT.Visualizer
         private const double K0 = 0.9996;
         private const double EccPrimeSquared = (EccSquared) / (1 - EccSquared);
 
-        public static ApplicationDataModel.Point ToUtm(this ApplicationDataModel.Point point)
+        public static ApplicationDataModel.Shapes.Point ToUtm(this ApplicationDataModel.Shapes.Point point)
         {
             var latRad = point.Y * ConstDeg2Rad;
             var longRad = point.X * ConstDeg2Rad;
@@ -44,10 +44,10 @@ namespace AgGateway.ADAPT.Visualizer
                 utmNorthing += 10000000.0;
             }
 
-            return new ApplicationDataModel.Point {X = utmEasting, Y = utmNorthing};
+            return new ApplicationDataModel.Shapes.Point {X = utmEasting, Y = utmNorthing};
         }
 
-        public static PointF ToXy(this ApplicationDataModel.Point point, double minX, double minY, double delta)
+        public static PointF ToXy(this ApplicationDataModel.Shapes.Point point, double minX, double minY, double delta)
         {
             var x = (point.X - minX)/delta+25;
             var y = (point.Y - minY)/delta+25;

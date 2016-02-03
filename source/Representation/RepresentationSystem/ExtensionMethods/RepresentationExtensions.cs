@@ -10,54 +10,54 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 using System.Linq;
-using AgGateway.ADAPT.ApplicationDataModel;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.Representation.RepresentationSystem.ExtensionMethods
 {
-    public static class RepresentationExtensions
-    {
-        public static ApplicationDataModel.NumericRepresentation ToModelRepresentation(this NumericRepresentation representation)
-        {
-            return new ApplicationDataModel.NumericRepresentation
-            {
-                Code = representation.DomainId,
-                Description = representation.Description,
-            };
-        }
+   public static class RepresentationExtensions
+   {
+      public static ApplicationDataModel.Representations.NumericRepresentation ToModelRepresentation(this NumericRepresentation representation)
+      {
+         return new ApplicationDataModel.Representations.NumericRepresentation
+         {
+            Code = representation.DomainId,
+            Description = representation.Description,
+         };
+      }
 
-        public static ApplicationDataModel.EnumeratedRepresentation ToModelRepresentation(this EnumeratedRepresentation representation)
-        {
-            return new ApplicationDataModel.EnumeratedRepresentation
-            {
-                Code = representation.DomainId,
-                Description = representation.Description,
-                EnumeratedMembers = representation.EnumerationMembers.Select(m => m.ToModelEnumMember()).ToList()
-            };
-        }
+      public static ApplicationDataModel.Representations.EnumeratedRepresentation ToModelRepresentation(this EnumeratedRepresentation representation)
+      {
+         return new ApplicationDataModel.Representations.EnumeratedRepresentation
+         {
+            Code = representation.DomainId,
+            Description = representation.Description,
+            EnumeratedMembers = representation.EnumerationMembers.Select(m => m.ToModelEnumMember()).ToList()
+         };
+      }
 
-        public static ApplicationDataModel.EnumerationMember ToModelEnumMember(this EnumerationMember enumMember)
-        {
-            return new ApplicationDataModel.EnumerationMember
-            {
-                Code = (int) enumMember.DomainTag,
-                Value = enumMember.Name
-            };
-        }
+      public static ApplicationDataModel.Representations.EnumerationMember ToModelEnumMember(this EnumerationMember enumMember)
+      {
+         return new ApplicationDataModel.Representations.EnumerationMember
+         {
+            Code = (int)enumMember.DomainTag,
+            Value = enumMember.Name
+         };
+      }
 
-        public static EnumerationMember ToInternalEnumMember(this EnumeratedValue enumMember)
-        {
-            var representation = enumMember.Representation.ToInternalRepresentation();
-            return representation.EnumerationMembers.First(em => em.DomainTag == enumMember.Value.Code);
-        }
+      public static EnumerationMember ToInternalEnumMember(this EnumeratedValue enumMember)
+      {
+         var representation = enumMember.Representation.ToInternalRepresentation();
+         return representation.EnumerationMembers.First(em => em.DomainTag == enumMember.Value.Code);
+      }
 
-        public static NumericRepresentation ToInternalRepresentation(this ApplicationDataModel.NumericRepresentation representation)
-        {
-            return (NumericRepresentation) RepresentationManager.Instance.Representations[representation.Code];
-        }
+      public static NumericRepresentation ToInternalRepresentation(this ApplicationDataModel.Representations.NumericRepresentation representation)
+      {
+         return (NumericRepresentation)RepresentationManager.Instance.Representations[representation.Code];
+      }
 
-        public static EnumeratedRepresentation ToInternalRepresentation(this ApplicationDataModel.EnumeratedRepresentation representation)
-        {
-            return (EnumeratedRepresentation) RepresentationManager.Instance.Representations[representation.Code];
-        }
-    }
+      public static EnumeratedRepresentation ToInternalRepresentation(this ApplicationDataModel.Representations.EnumeratedRepresentation representation)
+      {
+         return (EnumeratedRepresentation)RepresentationManager.Instance.Representations[representation.Code];
+      }
+   }
 }
