@@ -30,7 +30,7 @@ namespace AgGateway.ADAPT.Visualizer
             foreach (var availablePlugin in AvailablePlugins)
             {
                 var plugin = GetPlugin(availablePlugin);
-                plugin.Initialize(initializeString);
+                InitializePlugin(plugin, initializeString);
 
                 if (plugin.IsDataCardSupported(datacardPath))
                 {
@@ -48,12 +48,17 @@ namespace AgGateway.ADAPT.Visualizer
 
         public static void Export(IPlugin plugin, ApplicationDataModel.ApplicationDataModel applicationDataModel, string initializeString, string exportPath)
         {
+            InitializePlugin(plugin, initializeString);
+
+            plugin.Export(applicationDataModel, exportPath);
+        }
+
+        private static void InitializePlugin(IPlugin plugin, string initializeString)
+        {
             if (string.IsNullOrEmpty(initializeString))
             {
                 plugin.Initialize(initializeString);
             }
-
-            plugin.Export(applicationDataModel, exportPath);
         }
     }
 }
