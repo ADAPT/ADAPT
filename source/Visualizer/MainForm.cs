@@ -229,9 +229,9 @@ namespace AgGateway.ADAPT.Visualizer
             {
                 _dataProcessor.ProcessGuidance(treeNode.Tag as GuidanceGroup, _applicationDataModel.Catalog.GuidancePatterns);
             }
-            else if (treeNode.Tag is LoggedData)
+            else if (treeNode.Tag is OperationData)
             {
-                _dataProcessor.ProcessLoggedData(treeNode.Tag as LoggedData);
+                _dataProcessor.ProcessLoggedData(treeNode.Tag as OperationData);
             }
         }
 
