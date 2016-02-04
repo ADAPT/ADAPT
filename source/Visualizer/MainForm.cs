@@ -231,7 +231,7 @@ namespace AgGateway.ADAPT.Visualizer
             }
             else if (treeNode.Tag is OperationData)
             {
-                _dataProcessor.ProcessLoggedData(treeNode.Tag as OperationData);
+                _dataProcessor.ProcessOperationData(treeNode.Tag as OperationData);
             }
         }
 

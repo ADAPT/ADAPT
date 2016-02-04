@@ -40,56 +40,74 @@ namespace AgGateway.ADAPT.Visualizer
             get { return new Pen(Color.Black, 2); }
         }
 
-        public void ProcessLoggedData(OperationData operationData)
+        public void ProcessOperationData(OperationData operationData)
         {
             _rawDataViewer.Rows.Clear();
             _rawDataViewer.Columns.Clear();
 
-            var spatialRecords = operationData.GetSpatialRecords.Invoke().ToList();
-            var sections = GetSections(operationData);
-            var meters = sections.SelectMany(x => x.GetMeters.Invoke()).Where(x => x.Representation != null).ToList();
+            var spatialRecords = operationData.GetSpatialRecords();
+            var meters = GetSections(operationData).SelectMany(x => x.GetMeters()).Where(x => x.Representation != null);
 
-            foreach (var meter in meters)
-            {
-                _rawDataViewer.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = meter.Representation.Code });
-            }
+            CreateColumns(meters);
 
             foreach (var spatialRecord in spatialRecords)
             {
-                var dataGridViewRow = new DataGridViewRow();
-                foreach (var meter in meters)
-                {
-                    var numericMeter = meter as NumericMeter;
-                    if (numericMeter != null)
-                    {
-                        var representationValue = spatialRecord.GetMeterValue(meter) as NumericRepresentationValue;
-                        var value = representationValue == null ? "" : representationValue.Value.Value.ToString(CultureInfo.InvariantCulture) + " " +
-                            representationValue.Value.UnitOfMeasure.Code;
-                        var dataGridViewCell = new DataGridViewTextBoxCell { Value = value };
-                        dataGridViewRow.Cells.Add(dataGridViewCell);
-                    }
-
-                    var enumeratedMeter = meter as EnumeratedMeter;
-                    if (enumeratedMeter != null)
-                    {
-                        var enumeratedValue = spatialRecord.GetMeterValue(meter) as EnumeratedValue;
-                        var dataGridViewCell = new DataGridViewTextBoxCell { Value = enumeratedValue == null ? "" : enumeratedValue.Value.Value };
-                        dataGridViewRow.Cells.Add(dataGridViewCell);
-                    }
-                }
-                _rawDataViewer.Rows.Add(dataGridViewRow);
+                CreateRow(meters, spatialRecord);
             }
+        }
+
+        private void CreateColumns(IEnumerable<Meter> meters)
+        {
+            foreach (var meter in meters)
+            {
+                _rawDataViewer.Columns.Add(new DataGridViewTextBoxColumn {HeaderText = meter.Representation.Code});
+            }
+        }
+
+        private void CreateRow(IEnumerable<Meter> meters, SpatialRecord spatialRecord)
+        {
+            var dataGridViewRow = new DataGridViewRow();
+            foreach (var meter in meters)
+            {
+                if (meter as NumericMeter != null)
+                    CreateNumericMeterCell(spatialRecord, meter, dataGridViewRow);
+
+                if (meter as EnumeratedMeter != null)
+                    CreateEnumeratedMeterCell(spatialRecord, meter, dataGridViewRow);
+            }
+            _rawDataViewer.Rows.Add(dataGridViewRow);
+        }
+
+        private static void CreateEnumeratedMeterCell(SpatialRecord spatialRecord, Meter meter, DataGridViewRow dataGridViewRow)
+        {
+            var enumeratedValue = spatialRecord.GetMeterValue(meter) as EnumeratedValue;
+            var dataGridViewCell = new DataGridViewTextBoxCell
+            {
+                Value = enumeratedValue != null ? enumeratedValue.Value.Value : ""
+            };
+            dataGridViewRow.Cells.Add(dataGridViewCell);
+        }
+
+        private static void CreateNumericMeterCell(SpatialRecord spatialRecord, Meter meter, DataGridViewRow dataGridViewRow)
+        {
+            var numericRepresentationValue = spatialRecord.GetMeterValue(meter) as NumericRepresentationValue;
+            var value = numericRepresentationValue != null
+                ? numericRepresentationValue.Value.Value.ToString(CultureInfo.InvariantCulture) + " " +
+                  numericRepresentationValue.Value.UnitOfMeasure.Code
+                : "";
+            var dataGridViewCell = new DataGridViewTextBoxCell {Value = value};
+            dataGridViewRow.Cells.Add(dataGridViewCell);
         }
 
         private static IEnumerable<Section> GetSections(OperationData operationData)
         {
-            var sectionsLevel0 = operationData.GetSections.Invoke(0);
-            var sectionsLevel1 = operationData.GetSections.Invoke(1);
-            var sectionsLevel2 = operationData.GetSections.Invoke(2);
-            var sectionsLevel3 = operationData.GetSections.Invoke(3);
-
-            var allSections = sectionsLevel0.Concat(sectionsLevel1).Concat(sectionsLevel2).Concat(sectionsLevel3).ToList();
-            return allSections;
+            for (var i = 0; i < operationData.MaxDepth; i++)
+            {
+                foreach (var section in operationData.GetSections(i))
+                {
+                    yield return section;
+                }
+            }
         }
 
         public void ProcessGuidance(GuidanceGroup guidanceGroup, List<GuidancePattern> guidancePatterns)
