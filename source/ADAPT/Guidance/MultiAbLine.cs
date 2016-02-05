@@ -11,22 +11,11 @@
  *******************************************************************************/
 
 using System.Collections.Generic;
-using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
-    public class GuidanceShift
+    public class MultiAbLine : GuidancePattern
     {
-        public int GuidanceGroupId { get; set; }
-
-        public int GuidancePatterId { get; set; }
-
-        public NumericRepresentationValue EastShift { get; set; }
-
-        public NumericRepresentationValue NorthShift { get; set; }
-
-        public NumericRepresentationValue PropagationOffset { get; set; }
-
-        public List<int> TimeScopeIds { get; set; }
+        public List<AbLine> AbLines { get; set; }
     }
 }

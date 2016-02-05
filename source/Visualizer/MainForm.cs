@@ -11,23 +11,28 @@
 
 using System;
 using System.Collections;
+using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
-using AgGateway.ADAPT.ApplicationDataModel;
-using AgGateway.ADAPT.ApplicationDataModel.ADM;
-using AgGateway.ADAPT.PluginManager;
+using AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries;
+using AgGateway.ADAPT.ApplicationDataModel.Guidance;
+using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
 
-namespace Visualizer
+namespace AgGateway.ADAPT.Visualizer
 {
     public partial class MainForm : Form
     {
-        private PluginFactory _pluginFactory;
-        private ApplicationDataModel _applicationDataModel;
-
+        private readonly DataProvider _dataProvider;
+        private readonly DataProcessor _dataProcessor;
+        private ApplicationDataModel.ADM.ApplicationDataModel _applicationDataModel;
+        
         public MainForm()
         {
             InitializeComponent();
+
+            _dataProvider = new DataProvider();
+            _dataProcessor = new DataProcessor(_tabPageSpatial, _dataGridViewRawData, _dataGridViewTotals);
         }
 
         private void _buttonBrowsePluginLocation_Click(object sender, EventArgs e)
@@ -51,11 +56,11 @@ namespace Visualizer
 
             if (IsValid(textBox, "Plugin"))
             {
-                _pluginFactory = new PluginFactory(textBox.Text);
+                _dataProvider.Initialize(textBox.Text);
 
-                if (_pluginFactory.AvailablePlugins != null)
+                if (_dataProvider.AvailablePlugins != null)
                 {
-                    object[] availablePlugins = _pluginFactory.AvailablePlugins.ToArray();
+                    object[] availablePlugins = _dataProvider.AvailablePlugins.ToArray();
 
                     _comboBoxPlugins.Items.Clear();
                     _comboBoxPlugins.Items.Add("(Select)");
@@ -68,8 +73,9 @@ namespace Visualizer
         private void _buttonLoadDatacard_Click(object sender, EventArgs e)
         {
             var textBox = _textBoxDatacardPath;
+            var datacardPath = textBox.Text;
 
-            if (_pluginFactory == null)
+            if (_dataProvider.PluginFactory == null)
             {
                 MessageBox.Show(@"Select a valid plugin path and load them before importing a datacard.");
                 _textBoxPluginPath.Focus();
@@ -78,35 +84,41 @@ namespace Visualizer
 
             if (IsValid(textBox, "Datacard"))
             {
-                foreach (var availablePlugin in _pluginFactory.AvailablePlugins)
-                {
-                    var plugin = _pluginFactory.GetPlugin(availablePlugin); 
-                    plugin.Initialize(_textBoxApplicationId.Text);
-
-                    if (plugin.IsDataCardSupported(_textBoxDatacardPath.Text))
-                    {
-                        ImportDataCard(plugin, textBox.Text);
-                        return;
-                    }
-                }
-
-                MessageBox.Show(@"Not supported data format.");
+                ImportDataCard(datacardPath);
             }
         }
 
         private void _buttonExportDatacard_Click(object sender, EventArgs e)
-        {
+                {
             var pluginName = (string)_comboBoxPlugins.SelectedItem;
-            var plugin = _pluginFactory.GetPlugin(pluginName);
-            if (_applicationDataModel == null
-                || plugin == null)
-            {
+            var plugin = _dataProvider.GetPlugin(pluginName);
+
+            if (_applicationDataModel == null || plugin == null)
+                    {
                 MessageBox.Show(@"Could not export, either not a comptable plugin or no data model to export");
+                        return;
+                    }
+
+            DataProvider.Export(plugin, _applicationDataModel, _textBoxInitializeString.Text, GetExportDirectory());
+                }
+
+        private void _treeViewMetadata_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            using (var g = _tabPageSpatial.CreateGraphics())
+            {
+                g.Clear(Color.White);
+        }
+
+            var treeNode = e.Node;
+
+            _tabPageSpatial.Tag = treeNode.Tag == null ? treeNode.Tag : treeNode;
+
+            if (treeNode.Tag == null)
+        {
                 return;
             }
 
-            plugin.Initialize(_textBoxApplicationId.Text);
-            plugin.Export(_applicationDataModel, GetExportDirectory());
+            ProcessData(treeNode);
         }
 
         private string GetExportDirectory()
@@ -114,11 +126,16 @@ namespace Visualizer
             return _textBoxExportPath.Text != string.Empty ? _textBoxExportPath.Text : "C:\\newfile.zip";
         }
 
-        private void ImportDataCard(IPlugin plugin, string datacardPath)
+        private void ImportDataCard(string datacardPath)
         {
             _treeViewMetadata.Nodes.Clear();
 
-            _applicationDataModel = plugin.Import(datacardPath);
+            _applicationDataModel = _dataProvider.Import(datacardPath, _textBoxInitializeString.Text);
+            if (_applicationDataModel == null)
+            {
+                MessageBox.Show(@"Not supported data format.");
+                return;
+            }
 
             var parentNode = _treeViewMetadata.Nodes.Add("ApplicationDataModel");
             AddNode(_applicationDataModel, parentNode);
@@ -140,9 +157,11 @@ namespace Visualizer
         private void ParseProperty(object element, TreeNode parentNode, PropertyInfo propertyInfo)
         {
             var propertyType = propertyInfo.PropertyType;
-            if (propertyType.IsGenericType && Nullable.GetUnderlyingType(propertyType) != null)
+
+            var underlyingType = Nullable.GetUnderlyingType(propertyType);
+            if (propertyType.IsGenericType && underlyingType != null)
             {
-                propertyType = Nullable.GetUnderlyingType(propertyType);
+                propertyType = underlyingType;
             }
 
             var propertyValue = propertyInfo.GetValue(element, null);
@@ -158,6 +177,7 @@ namespace Visualizer
             else
             {
                 var childNode = parentNode.Nodes.Add(propertyInfo.Name);
+                parentNode.Tag = element;
                 AddNode(propertyValue, childNode);
             }
         }
@@ -197,6 +217,32 @@ namespace Visualizer
             }
 
             return true;
+        }
+
+        private void ProcessData(TreeNode treeNode)
+        {
+            if (treeNode.Tag is FieldBoundary)
+            {
+                _dataProcessor.ProcessBoundary(treeNode.Tag as FieldBoundary);
+            }
+            else if (treeNode.Tag is GuidanceGroup)
+            {
+                _dataProcessor.ProcessGuidance(treeNode.Tag as GuidanceGroup, _applicationDataModel.Catalog.GuidancePatterns);
+            }
+            else if (treeNode.Tag is OperationData)
+            {
+                _dataProcessor.ProcessOperationData(treeNode.Tag as OperationData);
+            }
+        }
+
+        private void _tabPageSpatial_Paint(object sender, PaintEventArgs e)
+        {
+            if (_tabPageSpatial.Tag == null)
+            {
+                return;
+            }
+
+            ProcessData(_tabPageSpatial.Tag as TreeNode);
         }
     }
 }

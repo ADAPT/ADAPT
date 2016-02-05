@@ -44,6 +44,9 @@
   <ItemGroup>
     <Compile Include="Guidance\AbCurve.cs" />
     <Compile Include="Guidance\AbLine.cs" />
+    <Compile Include="Guidance\MultiAbLine.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Products\ActiveIngredient.cs" />
     <Compile Include="Guidance\APlus.cs" />
     <Compile Include="ADM\ApplicationDataModel.cs" />
@@ -133,7 +136,6 @@
     <Compile Include="Logistics\Manufacturer.cs" />
     <Compile Include="LoggedData\Meter.cs" />
     <Compile Include="Products\ModeOfAction.cs" />
-    <Compile Include="Guidance\MulitAbLine.cs" />
     <Compile Include="Shapes\MultiLineString.cs" />
     <Compile Include="Shapes\MultiPoint.cs" />
     <Compile Include="Shapes\MultiPolygon.cs" />

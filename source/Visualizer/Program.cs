@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Visualizer
+namespace AgGateway.ADAPT.Visualizer
 {
    static class Program
    {

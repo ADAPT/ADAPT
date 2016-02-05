@@ -1,4 +1,4 @@
-﻿namespace Visualizer
+﻿namespace AgGateway.ADAPT.Visualizer
 {
     partial class MainForm
     {
@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this._splitContainerMain = new System.Windows.Forms.SplitContainer();
             this._splitContainerPlugin = new System.Windows.Forms.SplitContainer();
+            this._textBoxInitializeString = new System.Windows.Forms.TextBox();
+            this._labelInitializeString = new System.Windows.Forms.Label();
             this._textBoxPluginPath = new System.Windows.Forms.TextBox();
             this._buttonLoadPlugins = new System.Windows.Forms.Button();
             this._buttonBrowsePluginLocation = new System.Windows.Forms.Button();
             this._labelPluginLocation = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this._textBoxApplicationId = new System.Windows.Forms.TextBox();
             this._textBoxDatacardPath = new System.Windows.Forms.TextBox();
             this._buttonLoadDatacard = new System.Windows.Forms.Button();
             this._labelDataCard = new System.Windows.Forms.Label();
@@ -118,8 +118,8 @@
             // 
             // _splitContainerPlugin.Panel1
             // 
-            this._splitContainerPlugin.Panel1.Controls.Add(this._textBoxApplicationId);
-            this._splitContainerPlugin.Panel1.Controls.Add(this.label1);
+            this._splitContainerPlugin.Panel1.Controls.Add(this._textBoxInitializeString);
+            this._splitContainerPlugin.Panel1.Controls.Add(this._labelInitializeString);
             this._splitContainerPlugin.Panel1.Controls.Add(this._textBoxPluginPath);
             this._splitContainerPlugin.Panel1.Controls.Add(this._buttonLoadPlugins);
             this._splitContainerPlugin.Panel1.Controls.Add(this._buttonBrowsePluginLocation);
@@ -134,6 +134,25 @@
             this._splitContainerPlugin.Size = new System.Drawing.Size(999, 85);
             this._splitContainerPlugin.SplitterDistance = 42;
             this._splitContainerPlugin.TabIndex = 4;
+            // 
+            // _textBoxInitializeString
+            // 
+            this._textBoxInitializeString.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._textBoxInitializeString.Location = new System.Drawing.Point(673, 12);
+            this._textBoxInitializeString.Name = "_textBoxInitializeString";
+            this._textBoxInitializeString.Size = new System.Drawing.Size(312, 20);
+            this._textBoxInitializeString.TabIndex = 4;
+            // 
+            // _labelInitializeString
+            // 
+            this._labelInitializeString.AccessibleDescription = "";
+            this._labelInitializeString.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._labelInitializeString.AutoSize = true;
+            this._labelInitializeString.Location = new System.Drawing.Point(596, 14);
+            this._labelInitializeString.Name = "_labelInitializeString";
+            this._labelInitializeString.Size = new System.Drawing.Size(74, 13);
+            this._labelInitializeString.TabIndex = 5;
+            this._labelInitializeString.Text = "Initialize String";
             // 
             // _textBoxPluginPath
             // 
@@ -174,24 +193,6 @@
             this._labelPluginLocation.Size = new System.Drawing.Size(76, 13);
             this._labelPluginLocation.TabIndex = 4;
             this._labelPluginLocation.Text = "Plugin location";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(596, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Application Id";
-            // 
-            // _textBoxApplicationId
-            // 
-            this._textBoxApplicationId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._textBoxApplicationId.Location = new System.Drawing.Point(673, 12);
-            this._textBoxApplicationId.Name = "_textBoxApplicationId";
-            this._textBoxApplicationId.Size = new System.Drawing.Size(312, 20);
-            this._textBoxApplicationId.TabIndex = 4;
             // 
             // _textBoxDatacardPath
             // 
@@ -276,6 +277,7 @@
             this._treeViewMetadata.Name = "_treeViewMetadata";
             this._treeViewMetadata.Size = new System.Drawing.Size(449, 556);
             this._treeViewMetadata.TabIndex = 1;
+            this._treeViewMetadata.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this._treeViewMetadata_NodeMouseClick);
             // 
             // _splitContainerMap
             // 
@@ -316,6 +318,7 @@
             this._tabPageSpatial.TabIndex = 0;
             this._tabPageSpatial.Text = "Spatial Viewer";
             this._tabPageSpatial.UseVisualStyleBackColor = true;
+            this._tabPageSpatial.Paint += new System.Windows.Forms.PaintEventHandler(this._tabPageSpatial_Paint);
             // 
             // _tabPageRawData
             // 
@@ -518,8 +521,8 @@
         private System.Windows.Forms.Button _buttonBrowsePluginLocation;
         private System.Windows.Forms.Label _labelPluginLocation;
         private System.Windows.Forms.TreeView _treeViewMetadata;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox _textBoxApplicationId;
+        private System.Windows.Forms.Label _labelInitializeString;
+        private System.Windows.Forms.TextBox _textBoxInitializeString;
     }
 }
 
