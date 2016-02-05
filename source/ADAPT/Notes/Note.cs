@@ -20,6 +20,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Notes
 {
     public class Note
     {
+        public Note()
+        {
+            Id = CompoundIdentifierFactory.Instance.Create();
+        }
+
+        public CompoundIdentifier Id { get; private set; }
         public string Description { get; set; }
         
         public EnumeratedValue Value { get; set; }
