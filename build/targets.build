@@ -1,34 +1,34 @@
 <?xml version="1.0"?>
 
 <project name="targetsbuild" basedir=".">
-  <include buildfile=".\properties.build" failonerror="true"/>
+  <include buildfile="./properties.build" failonerror="true"/>
 
-  <target name="MSBuildDirectory">
-    <echo message="entering foreach"/>
-    <foreach item="File" property="solutionFile" verbose="true">
-      <in>
-        <items basedir="${solutionDir}">
-          <include name=".\**\*.sln" />
-        </items>
-      </in>
-      <do>
-        <exec program="${msbuild.path}">
-          <arg line="${solutionFile}" />
-          <arg value="/property:Configuration=${configuration};Platform=${platform}"/>
-          <arg value="/t:Rebuild"/>
-        </exec>
-      </do>
-    </foreach>
+  <version buildtype="NoIncrement" revisiontype="Increment" path=".\${versionFile}" failonerror="false" prefix="adapt"/>
+  
+  <target name="unittest" description="Execute unit tests using nUnit" basdir="." depends="build">
+    <property name="test.wildcard" value="*Test.dll" />
+    <call target="nunitTest" />
   </target>
 
-  <version buildtype="Increment" revisiontype="Automatic" path=".\${versionFile}" failonerror="false"/>
+  <target name="acceptancetest" description="Execute Acceptance tests using MSTest" basedir="." depends="build">
+    <property name="test.wildcard" value="*AcceptanceTests.dll" />
+    <call target="nunitTest" />
+  </target>
+  
+    <target name="build" depends="UpdatePackages">
+    <exec program="${msbuild.path}">
+      <arg line='"${solutionDir}\${solutionName}"' />
+      <arg value="/property:Configuration=${configuration};Platform=${platform}"/>
+      <arg value="/t:Rebuild"/>
+    </exec>
+  </target>
 
-  <target name="BeforeBuild">
+  <target name="UpdatePackages">
     <property name="solution" value="" />
     <foreach item="File" property="pluginSolution" verbose="true">
       <in>
         <items basedir=".">
-          <include name=".\..\Plugins\**\*.sln" />
+          <include name=".\..\**\*.sln" />
         </items>
       </in>
       <do>
@@ -43,16 +43,9 @@
       </do>
     </foreach>
   </target>
-  
-  <target name="build" depends="BeforeBuild">
-    <exec program="${msbuild.path}">
-      <arg line='"${solutionDir}\${solutionName}"' />
-      <arg value="/property:Configuration=${configuration};Platform=${platform}"/>
-      <arg value="/t:Rebuild"/>
-    </exec>
-  </target>
 
   <target name="getnugetversion">
+	<property name="buildnumber" value="${adapt.version}" />
     <property name="version" value="${buildnumber}-prerelease" />
     <if test="${property::exists('isRelease')}">
       <if test="${isRelease}">
@@ -60,8 +53,8 @@
       </if>
     </if>
   </target>
-  
-  <target name="adaptpack" >
+
+  <target name="packagePlugin" >
     <call target="getnugetversion" />
     <exec program="nuget" workingdir="${solutionDir}">
       <arg line="pack ${nuspecfile}" />
@@ -69,7 +62,7 @@
     </exec>
   </target>
 
-  <target name="adapt" depends="adaptpack">
+  <target name="adapt" depends="packagePlugin">
     <call target="getnugetversion" />
     <property name="packagename" value="${nupkgName}.${version}.nupkg" />
     <exec program="nuget" workingdir="${solutionDir}">
@@ -96,18 +89,8 @@
     </foreach>
   </target>
 
-  <target name="nunitTest" description="Execute nunit tests">
+  <target name="nunitTest" description="Execute nunit tests" depends="build">
     <call target="settestfileslist" />
-    <exec program="${nunit.exe}" commandline="${nunittest.filelist} /framework=4.0" failonerror="true" />
-  </target>
-
-  <target name="unitTests" description="Execute Unit tests using MSTest" basedir="." depends="MSBuildDirectory">
-    <property name="test.wildcard" value="*Test.dll" />
-    <call target="nunitTest" />
-  </target>
-
-  <target name="acceptancetest" description="Execute Acceptance tests using MSTest" basedir="." depends="MSBuildDirectory">
-    <property name="test.wildcard" value="*AcceptanceTests.dll" />
-    <call target="nunitTest" />
+    <exec program="${nunit.exe}" commandline="${nunittest.filelist} /noshadow /framework=4.0" failonerror="true" />
   </target>
 </project>
