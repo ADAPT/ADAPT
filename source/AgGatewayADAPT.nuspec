@@ -15,8 +15,10 @@
 	</references>
   </metadata>
   <files>
-	<file src="ADAPT\bin\Release\AgGateway.ADAPT.ApplicationDataModel.dll" target="lib\AgGateway.ADAPT.ApplicationDataModel.dll"/>
+	<file src="ADAPT\bin\Release\AgGateway.ADAPT.ApplicationDataModel.dll" target="lib\AgGateway.ADAPT.ApplicationDataModel.dll"/>	
 	<file src="PluginManager\bin\Release\AgGateway.ADAPT.PluginManager.dll" target="lib\AgGateway.ADAPT.PluginManager.dll"/>
 	<file src="Representation\bin\Release\AgGateway.ADAPT.Representation.dll" target="lib\AgGateway.ADAPT.Representation.dll"/>
+	<file src="Representation\bin\Release\RepresentationSystem.xml" target="lib\RepresentationSystem.xml" />
+	<file src="Representation\bin\Release\UnitSystem.xml" target="lib\UnitSystem.xml" />
   </files>
 </package>
