@@ -95,6 +95,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<MachineConfiguration> MachineConfigurations { get; set; } 
 
-        public List<ReferenceNote> ReferenceNotes { get; set; }
+        public List<Note> Notes { get; set; }
     }
 }

@@ -18,7 +18,7 @@ using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Notes
 {
-    public abstract class Note
+    public class Note
     {
         public string Description { get; set; }
         
