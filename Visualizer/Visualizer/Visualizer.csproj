@@ -84,20 +84,6 @@
   <ItemGroup>
     <None Include="Resources\layers-24.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ADAPT\ApplicationDataModel.csproj">
-      <Project>{af77f596-0c06-4873-a094-6f3ab987b0a5}</Project>
-      <Name>ApplicationDataModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PluginManager\PluginManager.csproj">
-      <Project>{3658f658-0de9-4abd-af83-c9f061f662ed}</Project>
-      <Name>PluginManager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Representation\Representation.csproj">
-      <Project>{00d0cb8e-2ede-4766-b261-1eb0cb655f07}</Project>
-      <Name>Representation</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
