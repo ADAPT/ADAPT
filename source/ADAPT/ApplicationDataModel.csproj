@@ -123,7 +123,6 @@
     <Compile Include="LoggedData\Load.cs" />
     <Compile Include="Logistics\Destination.cs" />
     <Compile Include="LoggedData\LoggedData.cs" />
-    <Compile Include="Notes\LoggedNote.cs" />
     <Compile Include="LoggedData\LoggingLevelEnum.cs" />
     <Compile Include="LoggedData\LoggingMethodEnum.cs" />
     <Compile Include="Equipment\Machine.cs" />
@@ -146,7 +145,6 @@
     <Compile Include="Products\ProductStatusEnum.cs" />
     <Compile Include="ADM\Properties.cs" />
     <Compile Include="ReferenceLayers\ReferenceLayerTypeEnum.cs" />
-    <Compile Include="Notes\ReferenceNote.cs" />
     <Compile Include="Representations\NumericValue.cs" />
     <Compile Include="LoggedData\NumericMeter.cs" />
     <Compile Include="Representations\NumericRepresentation.cs" />

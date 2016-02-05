@@ -22,7 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
     {
         public List<int> WorkItemIds { get; set; } 
 
-        public List<LoggedNote> LoggedNotes { get; set; } 
+        public List<Note> Notes { get; set; } 
 
         public int? MachineId { get; set; }
 
