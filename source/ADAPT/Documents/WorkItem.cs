@@ -15,6 +15,7 @@
 
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Notes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
@@ -33,7 +34,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         
         public List<int> WorkOrderIds { get; set; }
         
-        public List<int> NoteIds { get; set; }
+        public List<Note> Notes { get; set; }
         
         public WorkItemPriorityEnum WorkItemPriority { get; set; }
         
