@@ -12,6 +12,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Xml.Serialization;
 
 namespace AgGateway.ADAPT.Representation.RepresentationSystem
@@ -54,8 +55,12 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         private static Generated.RepresentationSystem DeserializeRepresentationSystem()
         {
             var serializer = new XmlSerializer(typeof(Generated.RepresentationSystem));
-            var xmlText = Properties.Resources.RepresentationSystem;
-            var xmlStringBytes = System.Text.Encoding.UTF8.GetBytes (xmlText);
+
+            var assemblyLocation = Assembly.GetAssembly(typeof(RepresentationManager)).Location;
+            assemblyLocation = Path.GetDirectoryName(assemblyLocation);
+            var repSystemXml = Path.Combine(assemblyLocation, "RepresentationSystem.xml");
+
+            var xmlStringBytes = File.ReadAllBytes(repSystemXml);
             using (var stream = new MemoryStream(xmlStringBytes))
                 return (Generated.RepresentationSystem)serializer.Deserialize(stream);
         }

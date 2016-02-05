@@ -13,6 +13,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Xml.Serialization;
 using AgGateway.ADAPT.Representation.Generated;
 
@@ -90,7 +91,12 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
         private Generated.UnitSystem DeserializeUnitSystem()
         {
             var serializer = new XmlSerializer(typeof(Generated.UnitSystem));
-            var xmlStringBytes = System.Text.Encoding.UTF8.GetBytes(Properties.Resources.UnitSystem);
+
+            var assemblyLocation = Assembly.GetAssembly(typeof (InternalUnitSystemManager)).Location;
+            assemblyLocation = Path.GetDirectoryName(assemblyLocation);
+            var unitSystemXml = Path.Combine(assemblyLocation, "UnitSystem.xml");
+
+            var xmlStringBytes = File.ReadAllBytes(unitSystemXml);
             using (var stream = new MemoryStream(xmlStringBytes))
                 return (Generated.UnitSystem)serializer.Deserialize(stream);
         }
