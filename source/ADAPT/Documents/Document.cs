@@ -13,6 +13,7 @@
 
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Notes;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
@@ -42,7 +43,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 
         public int? GrowerId { get; set; }
 
-        public List<int> ReferenceNoteIds { get; set; }
+        public List<Note> Notes { get; set; }
 
         public List<int> PersonRoleIds { get; set; }
 

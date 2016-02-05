@@ -14,6 +14,7 @@
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Logistics;
+using AgGateway.ADAPT.ApplicationDataModel.Notes;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
@@ -42,7 +43,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 
         public GpsSourceEnum BoundarySource { get; set; }
 
-        public List<int> NoteIds { get; set; }
+        public List<Note> Notes { get; set; }
 
         public List<int> GuidanceGroupIds { get; set; }
 

@@ -145,8 +145,12 @@
   <ItemGroup>
     <Content Include="Resources\ddiExport.txt" />
     <Content Include="Resources\DomainIdToUNRec20.xml" />
-    <Content Include="Resources\RepresentationSystem.xml" />
-    <Content Include="Resources\UnitSystem.xml" />
+    <None Include="RepresentationSystem.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="UnitSystem.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ADAPT\ApplicationDataModel.csproj">
