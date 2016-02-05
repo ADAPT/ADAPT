@@ -91,6 +91,6 @@
 
   <target name="nunitTest" description="Execute nunit tests" depends="build">
     <call target="settestfileslist" />
-    <exec program="${nunit.exe}" commandline="${nunittest.filelist} /noshadow /framework=4.0" failonerror="true" />
+    <exec program="${nunit.exe}" commandline="${nunittest.filelist} /framework=4.0" failonerror="true" />
   </target>
 </project>
