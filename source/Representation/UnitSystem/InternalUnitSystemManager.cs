@@ -94,7 +94,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
             var assemblyLocation = Assembly.GetAssembly(typeof (InternalUnitSystemManager)).Location;
             assemblyLocation = Path.GetDirectoryName(assemblyLocation);
-            var unitSystemXml = Path.Combine(assemblyLocation, "UnitSystem.xml");
+            var unitSystemXml = Path.Combine(assemblyLocation, "Resources", "UnitSystem.xml");
 
             var xmlStringBytes = File.ReadAllBytes(unitSystemXml);
             using (var stream = new MemoryStream(xmlStringBytes))

@@ -58,7 +58,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
             var assemblyLocation = Assembly.GetAssembly(typeof(RepresentationManager)).Location;
             assemblyLocation = Path.GetDirectoryName(assemblyLocation);
-            var repSystemXml = Path.Combine(assemblyLocation, "RepresentationSystem.xml");
+            var repSystemXml = Path.Combine(assemblyLocation, "Resources", "RepresentationSystem.xml");
 
             var xmlStringBytes = File.ReadAllBytes(repSystemXml);
             using (var stream = new MemoryStream(xmlStringBytes))
