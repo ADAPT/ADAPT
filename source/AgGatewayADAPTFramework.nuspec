@@ -18,7 +18,7 @@
 	<file src="ADAPT\bin\Release\AgGateway.ADAPT.ApplicationDataModel.dll" target="lib\AgGateway.ADAPT.ApplicationDataModel.dll"/>	
 	<file src="PluginManager\bin\Release\AgGateway.ADAPT.PluginManager.dll" target="lib\AgGateway.ADAPT.PluginManager.dll"/>
 	<file src="Representation\bin\Release\AgGateway.ADAPT.Representation.dll" target="lib\AgGateway.ADAPT.Representation.dll"/>
-	<file src="Representation\bin\Release\RepresentationSystem.xml" target="content\Resources\RepresentationSystem.xml" />
-	<file src="Representation\bin\Release\UnitSystem.xml" target="content\Resources\UnitSystem.xml" />
+	<file src="Representation\bin\Release\Resources\RepresentationSystem.xml" target="content\Resources\RepresentationSystem.xml" />
+	<file src="Representation\bin\Release\Resources\UnitSystem.xml" target="content\Resources\UnitSystem.xml" />
   </files>
 </package>
