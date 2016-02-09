@@ -12,6 +12,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -140,6 +141,11 @@ namespace AgGateway.ADAPT.Visualizer
                     var screenPolygon = projectedPoints.Select(point => point.ToXy(_minX, _minY, delta)).ToArray();
 
                     g.Clear(Color.White);
+
+                    var max = screenPolygon.Max(p => p.Y) + 20;
+                    var m = new Matrix(1, 0, 0, -1, 0, max);
+                    g.Transform = m;
+
                     g.DrawPolygon(Pen, screenPolygon);
                 }
             }
@@ -147,11 +153,15 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ProcessGuidancePattern(IEnumerable<GuidancePattern> guidancePatterns, int id)
         {
+            var guidancePattern = guidancePatterns.First(pattern => pattern.Id.ReferenceId == id);
+            ProccessGuidancePattern(guidancePattern);
+        }
+
+        public void ProccessGuidancePattern(GuidancePattern guidancePattern)
+        {
             using (var graphics = SpatialViewerGraphics)
             {
                 graphics.Clear(Color.White);
-
-                var guidancePattern = guidancePatterns.First(pattern => pattern.Id.ReferenceId == id);
 
                 if (guidancePattern is APlus)
                 {

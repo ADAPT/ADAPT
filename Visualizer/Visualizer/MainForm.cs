@@ -13,6 +13,7 @@ using System;
 using System.Collections;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries;
@@ -52,6 +53,7 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void _buttonLoadPlugins_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var textBox = _textBoxPluginPath;
 
             if (IsValid(textBox, "Plugin"))
@@ -68,10 +70,14 @@ namespace AgGateway.ADAPT.Visualizer
                     _comboBoxPlugins.Items.AddRange(availablePlugins);
                 }
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void _buttonLoadDatacard_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            ClearForm();
+
             var textBox = _textBoxDatacardPath;
             var datacardPath = textBox.Text;
 
@@ -86,6 +92,7 @@ namespace AgGateway.ADAPT.Visualizer
             {
                 ImportDataCard(datacardPath);
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void _buttonExportDatacard_Click(object sender, EventArgs e)
@@ -107,18 +114,24 @@ namespace AgGateway.ADAPT.Visualizer
             using (var g = _tabPageSpatial.CreateGraphics())
             {
                 g.Clear(Color.White);
-        }
+            }
 
             var treeNode = e.Node;
 
             _tabPageSpatial.Tag = treeNode.Tag == null ? treeNode.Tag : treeNode;
 
             if (treeNode.Tag == null)
-        {
                 return;
-            }
 
+            Cursor.Current = Cursors.WaitCursor;
             ProcessData(treeNode);
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void ClearForm()
+        {
+            _treeViewMetadata.Nodes.Clear();
+            _dataGridViewRawData.Columns.Clear();
         }
 
         private string GetExportDirectory()
@@ -128,8 +141,6 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ImportDataCard(string datacardPath)
         {
-            _treeViewMetadata.Nodes.Clear();
-
             _applicationDataModel = _dataProvider.Import(datacardPath, _textBoxInitializeString.Text);
             if (_applicationDataModel == null)
             {
@@ -144,9 +155,7 @@ namespace AgGateway.ADAPT.Visualizer
         private void AddNode(object element, TreeNode parentNode)
         {
             if (element == null)
-            {
                 return;
-            }
 
             foreach (var propertyInfo in element.GetType().GetProperties())
             {
@@ -156,6 +165,9 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ParseProperty(object element, TreeNode parentNode, PropertyInfo propertyInfo)
         {
+            if (typeof(Func<object>).IsAssignableFrom(element.GetType()) || typeof(Func<int, object>).IsAssignableFrom(element.GetType()))
+                return;
+
             var propertyType = propertyInfo.PropertyType;
 
             var underlyingType = Nullable.GetUnderlyingType(propertyType);
@@ -164,9 +176,9 @@ namespace AgGateway.ADAPT.Visualizer
                 propertyType = underlyingType;
             }
 
-            var propertyValue = propertyInfo.GetValue(element, null);
+            var propertyValue = propertyInfo.GetIndexParameters().Any() ? null : propertyInfo.GetValue(element, null);
 
-            if (propertyType.IsPrimitive || propertyType == typeof (string)) 
+            if (propertyType.IsPrimitive || propertyType == typeof (string) || propertyType == typeof(DateTime)) 
             {
                 parentNode.Nodes.Add(string.Format(@"{0}: {1}", propertyInfo.Name, propertyValue));
             }
@@ -190,7 +202,8 @@ namespace AgGateway.ADAPT.Visualizer
             {
                 foreach (var child in collection)
                 {
-                    var node = collectionNode.Nodes.Add(child.ToString());
+                    var node = new TreeNode(child.ToString()) { Tag = child };
+                    collectionNode.Nodes.Add(node);
                     AddNode(child, node);
                 }
             }
