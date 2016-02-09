@@ -15,12 +15,20 @@
     <call target="nunitTest" />
   </target>
   
-    <target name="build" depends="UpdatePackages">
+  <target name="build" depends="UpdatePackages">
     <exec program="${msbuild.path}">
       <arg line='"${solutionDir}\${solutionName}"' />
       <arg value="/property:Configuration=${configuration};Platform=${platform}"/>
       <arg value="/t:Rebuild"/>
     </exec>
+  </target>
+  
+  <target name="buildVisualizer" depends="UpdatePackages">
+	<exec program="${msbuild.path}">
+		<arg line='"${visualizerSolutionDir}\${visualizerSolutionName}"' />
+		<arg value="/property:Configuration=${configuration};Platform=${platform}"/>
+		<arg value="/t:Rebuild"/>
+	</exec>
   </target>
 
   <target name="UpdatePackages">
