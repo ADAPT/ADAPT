@@ -32,10 +32,6 @@ namespace AgGateway.ADAPT.Visualizer
         {
             InitializeComponent();
 
-            _textBoxDatacardPath.Text = @"C:\Users\ko45439\Desktop\Datacards\2630\AllGuidance";
-            _textBoxPluginPath.Text = @"C:\Users\ko45439\Desktop\ReadyToRoll\Plugins";
-            _textBoxInitializeString.Text = "926f86f9-aba9-4f35-9405-7c8b7bbf2174";
-
             _dataProvider = new DataProvider();
             _dataProcessor = new DataProcessor(_tabPageSpatial, _dataGridViewRawData, _dataGridViewTotals);
         }
