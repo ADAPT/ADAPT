@@ -132,7 +132,7 @@ namespace AgGateway.ADAPT.Visualizer
 
         public void ProcessBoundary(FieldBoundary fieldBoundary)
         {
-            using (var g = SpatialViewerGraphics)
+            using (var graphics = SpatialViewerGraphics)
             {
                 foreach (var polygon in fieldBoundary.SpatialData.Polygons)
                 {
@@ -140,13 +140,11 @@ namespace AgGateway.ADAPT.Visualizer
                     var delta = GetDelta(projectedPoints);
                     var screenPolygon = projectedPoints.Select(point => point.ToXy(_minX, _minY, delta)).ToArray();
 
-                    g.Clear(Color.White);
+                    graphics.Clear(Color.White);
 
-                    var max = screenPolygon.Max(p => p.Y) + 20;
-                    var m = new Matrix(1, 0, 0, -1, 0, max);
-                    g.Transform = m;
+                    SetOriginPoint(delta, graphics);
 
-                    g.DrawPolygon(Pen, screenPolygon);
+                    graphics.DrawPolygon(Pen, screenPolygon);
                 }
             }
         }
@@ -165,77 +163,99 @@ namespace AgGateway.ADAPT.Visualizer
 
                 if (guidancePattern is APlus)
                 {
-                    ProcessAPlus(guidancePattern as APlus, graphics);
+                    var points = new List<Point> { ((APlus)guidancePattern).Point.ToUtm() };
+                    var delta = GetDelta(points);
+                    SetOriginPoint(delta, graphics);
+                    ProcessAPlus(guidancePattern as APlus, graphics, delta);
                 }
                 else if (guidancePattern is AbLine)
                 {
-                    ProcessAbLine(guidancePattern as AbLine, graphics);
+                    var points = new List<Point> { ((AbLine)guidancePattern).A.ToUtm(), ((AbLine)guidancePattern).B.ToUtm() };
+                    var delta = GetDelta(points);
+                    SetOriginPoint(delta, graphics);
+                    ProcessAbLine(guidancePattern as AbLine, graphics, delta);
                 }
                 else if (guidancePattern is AbCurve)
                 {
-                    ProcessAbCurve(guidancePattern as AbCurve, graphics);
+                    var points = ((AbCurve) guidancePattern).Shape.SelectMany(x => x.Points).Select(x => x.ToUtm()).ToList();
+                    var delta = GetDelta(points);
+                    SetOriginPoint(delta, graphics);
+                    ProcessAbCurve(guidancePattern as AbCurve, graphics, delta);
                 }
                 else if (guidancePattern is CenterPivot)
                 {
-                    ProcessCenterPivot(guidancePattern as CenterPivot, graphics);
+                    var points = new List<Point> { ((CenterPivot)guidancePattern).Center.ToUtm(), ((CenterPivot)guidancePattern).EndPoint.ToUtm(), ((CenterPivot)guidancePattern).StartPoint.ToUtm() };
+                    var delta = GetDelta(points);
+                    SetOriginPoint(delta, graphics);
+                    ProcessCenterPivot(guidancePattern as CenterPivot, graphics, delta);
                 }
                 else if (guidancePattern is MultiAbLine)
                 {
-                    ProcessMultiAbLine(guidancePattern as MultiAbLine, graphics);
+                    var points = ((MultiAbLine)guidancePattern).AbLines.SelectMany(x => new List<Point>{ x.A.ToUtm(), x.B.ToUtm() }).ToList();
+                    var delta = GetDelta(points);
+                    SetOriginPoint(delta, graphics);
+                    ProcessMultiAbLine(guidancePattern as MultiAbLine, graphics, delta);
                 }
                 else if (guidancePattern is Spiral)
                 {
-                    ProcessSpiral(guidancePattern as Spiral, graphics);
+                    var points = ((Spiral) guidancePattern).Shape.Points.Select(x => x.ToUtm()).ToList();
+                    var delta = GetDelta(points);
+                    SetOriginPoint(delta, graphics);
+                    ProcessSpiral(guidancePattern as Spiral, graphics, delta);
                 }
             }
         }
 
-        private void ProcessSpiral(Spiral spiral, Graphics graphics)
+        private void SetOriginPoint(double delta, Graphics graphics)
         {
-            ProcessLineString(spiral.Shape, graphics);
+            var max = ((_maxY - _minY)/delta + 25) + 20;
+            graphics.Transform = new Matrix(1, 0, 0, -1, 0, (float) max);
         }
 
-        private void ProcessMultiAbLine(MultiAbLine multiAbLine, Graphics graphics)
+        private void ProcessSpiral(Spiral spiral, Graphics graphics, double delta)
+        {
+            ProcessLineString(spiral.Shape, graphics, delta);
+        }
+
+        private void ProcessMultiAbLine(MultiAbLine multiAbLine, Graphics graphics, double delta)
         {
             foreach (var abline in multiAbLine.AbLines)
             {
-                ProcessAbLine(abline, graphics);
+                ProcessAbLine(abline, graphics, delta);
             }
         }
 
-        private void ProcessCenterPivot(CenterPivot centerPivot, Graphics graphics)
+        private void ProcessCenterPivot(CenterPivot centerPivot, Graphics graphics, double delta)
         {
             throw new NotImplementedException();
         }
 
-        private void ProcessAbCurve(AbCurve abCurve, Graphics graphics)
+        private void ProcessAbCurve(AbCurve abCurve, Graphics graphics, double delta)
         {
             foreach (var lineString in abCurve.Shape)
             {
-                ProcessLineString(lineString, graphics);
+                ProcessLineString(lineString, graphics, delta);
             }
         }
 
-        private void ProcessLineString(LineString lineString, Graphics graphics)
+        private void ProcessLineString(LineString lineString, Graphics graphics, double delta)
         {
-            ProcessPoints(lineString.Points, graphics);
+            ProcessPoints(lineString.Points, graphics, delta);
         }
 
-        private void ProcessAbLine(AbLine abLine, Graphics graphics)
+        private void ProcessAbLine(AbLine abLine, Graphics graphics, double delta)
         {
-            ProcessPoints(new List<Point> {abLine.A.ToUtm(), abLine.B.ToUtm()}, graphics);
+            ProcessPoints(new List<Point> {abLine.A.ToUtm(), abLine.B.ToUtm()}, graphics, delta);
         }
 
-        private void ProcessPoints(IEnumerable<Point> points, Graphics graphics)
+        private void ProcessPoints(IEnumerable<Point> points, Graphics graphics, double delta)
         {
-            var projectedPoints = points.Select(point => point.ToUtm()).ToList();
-            var delta = GetDelta(projectedPoints);
-            var screenPoints = projectedPoints.Select(point => point.ToXy(_minX, _minY, delta)).ToArray();
+            var screenPoints = points.Select(point => point.ToXy(_minX, _minY, delta)).ToArray();
 
             graphics.DrawLines(Pen, screenPoints);
         }
 
-        private void ProcessAPlus(APlus aPlus, Graphics graphics)
+        private void ProcessAPlus(APlus aPlus, Graphics graphics, double delta)
         {
             var projectedPoint = aPlus.Point.ToUtm();
         }
