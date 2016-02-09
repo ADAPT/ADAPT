@@ -23,12 +23,33 @@
     </exec>
   </target>
   
-  <target name="buildVisualizer" depends="UpdatePackages">
+  <target name="buildVisualizer" depends="UpdateVisualizerPackages">
 	<exec program="${msbuild.path}">
 		<arg line='"${visualizerSolutionDir}\${visualizerSolutionName}"' />
 		<arg value="/property:Configuration=${configuration};Platform=${platform}"/>
 		<arg value="/t:Rebuild"/>
 	</exec>
+  </target>
+  
+  <target name="UpdateVisualizerPackages">
+    <property name="solution" value="" />
+    <foreach item="File" property="pluginSolution" verbose="true">
+      <in>
+        <items basedir=".">
+          <include name=".\..\Visualizer\*.sln" />
+        </items>
+      </in>
+      <do>
+        <property name="packagesDirectory" value="${directory::get-parent-directory(pluginSolution)}\packages" />
+        <echo message="${packagesDirectory}" />
+        <mkdir dir="${packagesDirectory}" unless="${directory::exists(packagesDirectory)}" />
+
+        <echo message="updating nuget packages : ${pluginSolution}" />
+        <exec program="NuGet.exe" >
+          <arg line="update ${pluginSolution} -Verbosity detailed" />
+        </exec>
+      </do>
+    </foreach>
   </target>
 
   <target name="UpdatePackages">
