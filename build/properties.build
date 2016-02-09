@@ -5,7 +5,9 @@
   <property name="msbuild.path" value="${framework::get-framework-directory('net-4.0')}\MSBuild.exe"/>
   <property name="nunit.exe" value="nunit3-console.exe"/>
   <property name="solutionDir" value=".\..\source"/>
+  <property name="visualizerSolutionDir" value=".\..\Visualizer"/>
   <property name="solutionName" value="ADAPT.sln" />
+  <property name="visualizerSolutionName" value="Visualizer.sln" />
   <property name="buildnumber.version" value="" />
   <property name="versionFile" value="ADAPT.version" />
   <property name="configuration" value="Release" />
