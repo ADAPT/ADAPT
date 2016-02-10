@@ -56,8 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoundaryProcessor.cs" />
+    <Compile Include="GuidanceExtension.cs" />
+    <Compile Include="GuidanceProcessor.cs" />
+    <Compile Include="DrawingUtil.cs" />
+    <Compile Include="OperationDataProcessor.cs" />
     <Compile Include="PointExtension.cs" />
-    <Compile Include="DataProcessor.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
