@@ -9,6 +9,7 @@
   *    Tarak Reddy - initial implementation
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using AgGateway.ADAPT.ApplicationDataModel.Guidance;
@@ -41,11 +42,36 @@ namespace AgGateway.ADAPT.Visualizer
 
         public static double GetDelta(this CenterPivot centerPivot, DrawingUtil drawingUtil)
         {
+            var centerUtm = centerPivot.Center.ToUtm();
+            var radius = Math.Abs(centerUtm.X - centerPivot.EndPoint.ToUtm().X);
+
+            var northPoint = new Point
+            {
+                X = centerUtm.X,
+                Y = centerUtm.Y + radius,
+            };
+            var southPoint = new Point
+            {
+                X = centerUtm.X,
+                Y = centerUtm.Y - radius,
+            };
+            var westPoint = new Point
+            {
+                X = centerUtm.X - radius,
+                Y = centerUtm.Y,
+            };
+            var eastPoint = new Point
+            {
+                X = centerUtm.X + radius,
+                Y = centerUtm.Y,
+            };
+
             var points = new List<Point>
             {
-                centerPivot.Center.ToUtm(),
-                centerPivot.EndPoint.ToUtm(),
-                centerPivot.StartPoint.ToUtm()
+                northPoint,
+                southPoint,
+                westPoint,
+                eastPoint
             };
 
             return GetDelta(drawingUtil, points);

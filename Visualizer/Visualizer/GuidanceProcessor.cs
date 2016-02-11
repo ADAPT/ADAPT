@@ -9,6 +9,7 @@
   *    Tarak Reddy - initial implementation
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -95,6 +96,16 @@ namespace AgGateway.ADAPT.Visualizer
         private void ProcessCenterPivot(CenterPivot centerPivot)
         {
             var delta = centerPivot.GetDelta(_drawingUtil);
+            var center = centerPivot.Center.ToUtm().ToXy(_drawingUtil.MinX, _drawingUtil.MinY, delta);
+            var radius = GetRadius(centerPivot);
+            _drawingUtil.Graphics.DrawEllipse(DrawingUtil.Pen, center.X - radius, center.Y - radius, radius + radius, radius + radius);
+        }
+
+        private float GetRadius(CenterPivot centerPivot)
+        {
+            var width = centerPivot.Center.ToUtm().X - centerPivot.EndPoint.ToUtm().X;
+            
+            return (float)Math.Abs(width);
         }
 
         private void ProcessAbCurve(AbCurve abCurve)
