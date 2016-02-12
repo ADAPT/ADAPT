@@ -15,8 +15,8 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Windows.Forms;
-using AgGateway.ADAPT.ApplicationDataModel.ADM;
 using AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries;
 using AgGateway.ADAPT.ApplicationDataModel.Guidance;
 using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
@@ -251,18 +251,22 @@ namespace AgGateway.ADAPT.Visualizer
             if (treeNode.Tag is FieldBoundary)
             {
                 _boundaryProcessor.ProcessBoundary(treeNode.Tag as FieldBoundary);
+                _tabControlViewer.SelectedTab = _tabPageSpatial;
             }
             else if (treeNode.Tag is GuidanceGroup)
             {
                 _guidanceProcessor.ProcessGuidance(treeNode.Tag as GuidanceGroup, _applicationDataModel.Catalog.GuidancePatterns);
+                _tabControlViewer.SelectedTab = _tabPageSpatial;
             }
             else if (treeNode.Tag is GuidancePattern)
             {
                 _guidanceProcessor.ProccessGuidancePattern(treeNode.Tag as GuidancePattern);
+                _tabControlViewer.SelectedTab = _tabPageSpatial;
             }
             else if (treeNode.Tag is OperationData)
             {
                 _dataGridViewRawData.DataSource = _operationDataProcessor.ProcessOperationData(treeNode.Tag as OperationData);
+                _tabControlViewer.SelectedTab = _tabPageRawData;
             }
         }
 
@@ -274,6 +278,54 @@ namespace AgGateway.ADAPT.Visualizer
             }
 
             ProcessData(_tabPageSpatial.Tag as TreeNode);
+        }
+
+        private void _buttonExportRawData_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog = new SaveFileDialog
+            {
+                DefaultExt = ".csv", 
+                Filter = "CSV File (.csv)|*.csv"
+            };
+
+            var result = saveFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                WriteCsvFile(saveFileDialog);
+            }
+        }
+
+        private void WriteCsvFile(SaveFileDialog saveFileDialog)
+        {
+            using (var streamWriter = new StreamWriter(saveFileDialog.FileName))
+            {
+                var sb = new StringBuilder();
+
+                for (int i = 0; i < _dataGridViewRawData.Columns.Count; i++)
+                {
+                    if (i != 0)
+                        sb.Append(",");
+
+                    sb.Append(_dataGridViewRawData.Columns[i].Name);
+                }
+
+                foreach (DataGridViewRow row in _dataGridViewRawData.Rows)
+                {
+                    sb.Append("\n");
+                    for (int j = 0; j < _dataGridViewRawData.Columns.Count; j++)
+                    {
+                        if (j != 0)
+                            sb.Append(",");
+
+                        sb.Append(row.Cells[j].Value);
+                    }
+                }
+
+                streamWriter.WriteLine(sb.ToString());
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
         }
     }
 }
