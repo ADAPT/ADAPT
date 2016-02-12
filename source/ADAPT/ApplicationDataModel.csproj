@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -204,7 +205,6 @@
     <Compile Include="Common\UniqueId.cs" />
     <Compile Include="Common\UnitOfMeasure.cs" />
     <Compile Include="Common\UnitOfMeasureDimensionEnum.cs" />
-    <Compile Include="Prescriptions\RxPrescription.cs" />
     <Compile Include="Documents\WorkItem.cs" />
     <Compile Include="Documents\WorkItemOperation.cs" />
     <Compile Include="Documents\WorkOrder.cs" />
