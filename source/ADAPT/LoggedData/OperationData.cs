@@ -13,6 +13,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
@@ -47,7 +48,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public Func<IEnumerable<SpatialRecord>> GetSpatialRecords { get; set; }
 
         public Func<int, IEnumerable<Section>> GetSections { get; set; }
- 
+
         public int SpatialRecordCount { get; set; }
 
         public int? EquipmentConfigId { get; set; }

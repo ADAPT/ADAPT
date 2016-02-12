@@ -24,28 +24,26 @@ namespace AgGateway.ADAPT.Visualizer
 
         public static ApplicationDataModel.Shapes.Point ToUtm(this ApplicationDataModel.Shapes.Point point)
         {
-            var latRad = point.Y * ConstDeg2Rad;
-            var longRad = point.X * ConstDeg2Rad;
+            var latitudeInRadians = point.Y * ConstDeg2Rad;
+            var longitudeInRadians = point.X * ConstDeg2Rad;
 
-            var longOriginRad = GetLongOrigin(point.X) * ConstDeg2Rad;
+            var longitudeOriginInRadians = GetLongOrigin(point.X) * ConstDeg2Rad;
 
-            var n = A / Math.Sqrt(1 - EccSquared * Math.Sin(latRad) * Math.Sin(latRad));
-            var t = Math.Tan(latRad) * Math.Tan(latRad);
-            var c = EccPrimeSquared * Math.Cos(latRad) * Math.Cos(latRad);
-            var a1 = Math.Cos(latRad) * (longRad - longOriginRad);
+            var n = A / Math.Sqrt(1 - EccSquared * Math.Sin(latitudeInRadians) * Math.Sin(latitudeInRadians));
+            var t = Math.Tan(latitudeInRadians) * Math.Tan(latitudeInRadians);
+            var c = EccPrimeSquared * Math.Cos(latitudeInRadians) * Math.Cos(latitudeInRadians);
+            var a1 = Math.Cos(latitudeInRadians) * (longitudeInRadians - longitudeOriginInRadians);
 
-            var m = A*((1 - EccSquared/4 - 3*EccSquared*EccSquared/64 - 5*EccSquared*EccSquared*EccSquared/256)*latRad
-                       -
-                       (3*EccSquared/8 + 3*EccSquared*EccSquared/32 + 45*EccSquared*EccSquared*EccSquared/1024)*
-                       Math.Sin(2*latRad)
-                       + (15*EccSquared*EccSquared/256 + 45*EccSquared*EccSquared*EccSquared/1024)*Math.Sin(4*latRad)
-                       - (35*EccSquared*EccSquared*EccSquared/3072)*Math.Sin(6*latRad));
+            var m = A*((1 - EccSquared/4 - 3*EccSquared*EccSquared/64 - 5*EccSquared*EccSquared*EccSquared/256)*latitudeInRadians
+                       - (3*EccSquared/8 + 3*EccSquared*EccSquared/32 + 45*EccSquared*EccSquared*EccSquared/1024)*Math.Sin(2*latitudeInRadians)
+                       + (15*EccSquared*EccSquared/256 + 45*EccSquared*EccSquared*EccSquared/1024)*Math.Sin(4*latitudeInRadians)
+                       - (35*EccSquared*EccSquared*EccSquared/3072)*Math.Sin(6*latitudeInRadians));
 
             var utmEasting = K0*n*(a1 + (1 - t + c)*a1*a1*a1/6
                                    + (5 - 18*t + t*t + 72*c - 58*EccPrimeSquared)*a1*a1*a1*a1*a1/120)
                              + 500000.0;
 
-            var utmNorthing = K0*(m + n*Math.Tan(latRad)*(a1*a1/2 + (5 - t + 9*c + 4*c*c)*a1*a1*a1*a1/24
+            var utmNorthing = K0*(m + n*Math.Tan(latitudeInRadians)*(a1*a1/2 + (5 - t + 9*c + 4*c*c)*a1*a1*a1*a1/24
                                                           +
                                                           (61 - 58*t + t*t + 600*c - 330*EccPrimeSquared)*a1*a1*a1*a1*
                                                           a1*a1/720));

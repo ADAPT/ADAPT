@@ -66,7 +66,7 @@ namespace AgGateway.ADAPT.Visualizer
 
         private static void InitializePlugin(IPlugin plugin, string initializeString)
         {
-            if (string.IsNullOrEmpty(initializeString))
+            if (!string.IsNullOrEmpty(initializeString))
             {
                 plugin.Initialize(initializeString);
             }
