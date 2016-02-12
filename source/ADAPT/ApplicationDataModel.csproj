@@ -205,7 +205,6 @@
     <Compile Include="Common\UniqueId.cs" />
     <Compile Include="Common\UnitOfMeasure.cs" />
     <Compile Include="Common\UnitOfMeasureDimensionEnum.cs" />
-    <Compile Include="Prescriptions\RxPrescription.cs" />
     <Compile Include="Documents\WorkItem.cs" />
     <Compile Include="Documents\WorkItemOperation.cs" />
     <Compile Include="Documents\WorkOrder.cs" />
