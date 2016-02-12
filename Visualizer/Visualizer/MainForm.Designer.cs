@@ -60,6 +60,7 @@
             this._buttonBrowseExportPath = new System.Windows.Forms.Button();
             this._textBoxExportPath = new System.Windows.Forms.TextBox();
             this._labelPath = new System.Windows.Forms.Label();
+            this._buttonExportRawData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._splitContainerMain)).BeginInit();
             this._splitContainerMain.Panel1.SuspendLayout();
             this._splitContainerMain.Panel2.SuspendLayout();
@@ -322,6 +323,7 @@
             // 
             // _tabPageRawData
             // 
+            this._tabPageRawData.Controls.Add(this._buttonExportRawData);
             this._tabPageRawData.Controls.Add(this._dataGridViewRawData);
             this._tabPageRawData.Location = new System.Drawing.Point(4, 22);
             this._tabPageRawData.Name = "_tabPageRawData";
@@ -333,11 +335,13 @@
             // 
             // _dataGridViewRawData
             // 
+            this._dataGridViewRawData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._dataGridViewRawData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._dataGridViewRawData.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dataGridViewRawData.Location = new System.Drawing.Point(3, 3);
             this._dataGridViewRawData.Name = "_dataGridViewRawData";
-            this._dataGridViewRawData.Size = new System.Drawing.Size(532, 343);
+            this._dataGridViewRawData.Size = new System.Drawing.Size(532, 314);
             this._dataGridViewRawData.TabIndex = 0;
             // 
             // _dataGridViewTotals
@@ -447,6 +451,17 @@
             this._labelPath.TabIndex = 0;
             this._labelPath.Text = "Export Path";
             // 
+            // _buttonExportRawData
+            // 
+            this._buttonExportRawData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._buttonExportRawData.Location = new System.Drawing.Point(439, 321);
+            this._buttonExportRawData.Name = "_buttonExportRawData";
+            this._buttonExportRawData.Size = new System.Drawing.Size(89, 23);
+            this._buttonExportRawData.TabIndex = 1;
+            this._buttonExportRawData.Text = "Export";
+            this._buttonExportRawData.UseVisualStyleBackColor = true;
+            this._buttonExportRawData.Click += new System.EventHandler(this._buttonExportRawData_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,6 +538,7 @@
         private System.Windows.Forms.TreeView _treeViewMetadata;
         private System.Windows.Forms.Label _labelInitializeString;
         private System.Windows.Forms.TextBox _textBoxInitializeString;
+        private System.Windows.Forms.Button _buttonExportRawData;
     }
 }
 
