@@ -10,9 +10,11 @@
   *    Justin Sliekers - initial API and implementation
   *******************************************************************************/
 
+using System;
+
 namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
 {
-    public class BoundingBox
+    public class BoundingBox : MarshalByRefObject
     {
         public double MinLatitude { get; set; }
 

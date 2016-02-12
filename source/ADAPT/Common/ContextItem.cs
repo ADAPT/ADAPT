@@ -11,12 +11,13 @@
   *    Kathleen Oneal - changed ContextItemType to int
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
-    public class ContextItem
+    public class ContextItem : MarshalByRefObject
     {
         public int ContextItemType { get; set; }
 

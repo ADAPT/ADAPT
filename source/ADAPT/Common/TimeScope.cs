@@ -12,9 +12,11 @@
   *    Kathleen Oneal - changed date params to Stamp1, Stamp2 of type DateWithContext
   *******************************************************************************/
 
+using System;
+
 namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
-    public class TimeScope
+    public class TimeScope : MarshalByRefObject
     {
         public TimeScope()
         {

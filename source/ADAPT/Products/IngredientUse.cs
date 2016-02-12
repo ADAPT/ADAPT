@@ -11,11 +11,12 @@
   *    Joseph Ross Making Properties
   *******************************************************************************/
 
+using System;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    public class IngredientUse
+    public class IngredientUse : MarshalByRefObject
     {
         public IngredientUse()
         {

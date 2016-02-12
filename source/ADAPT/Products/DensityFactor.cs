@@ -11,13 +11,14 @@
   *    Joseph Ross Making Properties
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    public class DensityFactor
+    public class DensityFactor : MarshalByRefObject
     {
         public DensityFactor()
         {

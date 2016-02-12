@@ -11,12 +11,13 @@
  *    Kathleen Oneal - removed GLN, renamed ContactId to ContactInfoId
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
-    public class Company
+    public class Company : MarshalByRefObject
     {
         public Company()
         {

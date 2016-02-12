@@ -12,11 +12,12 @@
   *    Kathleen Oneal - added MachineTypeEnum
   *******************************************************************************/
 
+using System;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
-    public class MachineType
+    public class MachineType : MarshalByRefObject
     {
         public MachineType()
         {

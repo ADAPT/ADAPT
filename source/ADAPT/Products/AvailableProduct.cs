@@ -10,12 +10,13 @@
   *    Kathleen Oneal - initial API and implementation
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    public class AvailableProduct
+    public class AvailableProduct : MarshalByRefObject
     {
         public AvailableProduct()
         {

@@ -15,7 +15,7 @@ using AgGateway.ADAPT.ApplicationDataModel.Logistics;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
-    public class DateWithContext
+    public class DateWithContext : MarshalByRefObject
     {
         public DateTime TimeStamp { get; set; }
 

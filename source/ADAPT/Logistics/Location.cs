@@ -11,13 +11,14 @@
   *    Kathleen Oneal - added GpsSource
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
-    public class Location
+    public class Location : MarshalByRefObject
     {
         public Point Position { get; set; }
         

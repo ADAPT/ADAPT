@@ -8,11 +8,13 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
+
+using System;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
-    public class ProprietaryValue
+    public class ProprietaryValue : MarshalByRefObject
     {
         public int Key { get; set; }
 

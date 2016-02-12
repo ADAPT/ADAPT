@@ -13,12 +13,13 @@
   *******************************************************************************/
 
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
-    public class Load
+    public class Load : MarshalByRefObject
     {
         public int Id { get; set; }
 

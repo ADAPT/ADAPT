@@ -11,11 +11,12 @@
   *    Kathleen Oneal - changed ID's to Id
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
-    public class CompoundIdentifier
+    public class CompoundIdentifier : MarshalByRefObject
     {
         public CompoundIdentifier(int id)
         {

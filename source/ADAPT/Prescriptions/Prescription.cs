@@ -10,12 +10,13 @@
   *    Justin Sliekers - initial API and implementation
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
-    public class Prescription
+    public class Prescription : MarshalByRefObject
     {
         public Prescription()
         {

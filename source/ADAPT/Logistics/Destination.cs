@@ -12,11 +12,12 @@
   *    Justin Sliekers - renaming to Destination; removing GLN, ContactInfo and DestinationType; renaming name to description; adding location and facilityId
   *******************************************************************************/
 
+using System;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
-    public class Destination
+    public class Destination : MarshalByRefObject
     {
         public Destination()
         {

@@ -11,6 +11,7 @@
   *    Kathleen Oneal - added estimatedArea
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Notes;
@@ -18,7 +19,7 @@ using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
-    public abstract class Document
+    public abstract class Document : MarshalByRefObject
     {
         protected Document()
         {

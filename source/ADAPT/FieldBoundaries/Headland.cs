@@ -9,11 +9,13 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
-  *******************************************************************************/  
+  *******************************************************************************/
+
+using System;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries
 {
-    public abstract class Headland
+    public abstract class Headland : MarshalByRefObject
     {
         public string Description { get; set; }
     }

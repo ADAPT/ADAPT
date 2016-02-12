@@ -11,12 +11,13 @@
   *    Kathleen Oneal - made companyId nullable, renamed property name from FactilityTypeEnum to FacilityType
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
-    public class Facility
+    public class Facility : MarshalByRefObject
     {
         public Facility()
         {

@@ -10,11 +10,12 @@
   *    Justin Sliekers - initial API and implementation
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
-    public class RxRates
+    public class RxRates : MarshalByRefObject
     {
         public List<RxRate> RxRate { get; set; } 
     }

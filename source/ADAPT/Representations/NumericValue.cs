@@ -11,11 +11,12 @@
   *    Kathleen Oneal - renamed from NumericalValue to NumericValue
   *******************************************************************************/
 
+using System;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Representations
 {
-    public class NumericValue
+    public class NumericValue : MarshalByRefObject
     {
         public double Value { get; set; }
 

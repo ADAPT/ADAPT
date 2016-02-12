@@ -11,12 +11,13 @@
   *    Justin Sliekers - making ManufacturerId, BrandId, and SeriesId nullable
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
-    public abstract class Equipment
+    public abstract class Equipment : MarshalByRefObject
     {
         protected Equipment()
         {

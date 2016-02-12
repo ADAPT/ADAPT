@@ -12,6 +12,7 @@
 
 using System;
 using System.IO;
+using System.Reflection;
 using AgGateway.ADAPT.ApplicationDataModel.ADM;
 using AgGateway.ADAPT.PluginManager;
 using Moq;
@@ -34,6 +35,9 @@ namespace AgGateway.ADAPT.PluginManagerTest
          _pluginDirectory = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
          _pluginFileName = Path.Combine(_pluginDirectory, TestpluginDll);
          AssemblyWriter.WriteTestPlugin(_pluginDirectory, TestpluginDll);
+         var dataModelAssemblyLocation = Assembly.GetAssembly(typeof(ApplicationDataModel.ADM.ApplicationDataModel)).Location;
+         var dataModelAssemblyFileName = Path.GetFileName(dataModelAssemblyLocation);
+         File.Copy(dataModelAssemblyLocation, Path.Combine(_pluginDirectory, dataModelAssemblyFileName));
 
          _assemblyResolverMock = new Mock<IAssemblyResolver>();
          _pluginLoader = new PluginLoader(_assemblyResolverMock.Object, typeof(IPlugin).FullName);
@@ -65,6 +69,8 @@ namespace AgGateway.ADAPT.PluginManagerTest
          var pluginInstance = _pluginLoader.CreateInstance(metadata);
 
          Assert.IsInstanceOf(typeof(IPlugin), pluginInstance);
+         var admInstance = pluginInstance.Import(_pluginDirectory);
+         Assert.IsNotNull(admInstance);
       }
 
       [Test]

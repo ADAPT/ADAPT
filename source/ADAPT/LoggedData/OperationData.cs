@@ -17,7 +17,7 @@ using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
-    public class OperationData
+    public class OperationData : MarshalByRefObject
     {
         public OperationData()
         {

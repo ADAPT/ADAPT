@@ -11,12 +11,13 @@
   *    Kathleen Oneal - changed ReferenceLayers type from ReferenceLayers to List<ReferenceLayer>
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
-    public class ApplicationDataModel
+    public class ApplicationDataModel : MarshalByRefObject
     {
         public List<ProprietaryValue> ProprietaryValues { get; set; }
 

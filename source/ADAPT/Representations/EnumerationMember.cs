@@ -9,11 +9,13 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - renamed from EnumeratedMember to EnumerationMember
-  *******************************************************************************/  
+  *******************************************************************************/
+
+using System;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Representations
 {
-    public class EnumerationMember
+    public class EnumerationMember : MarshalByRefObject
     {
         public int Code { get; set; }
 

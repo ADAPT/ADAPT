@@ -10,11 +10,12 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
+using System;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 {
-    public class ShapeLookup
+    public class ShapeLookup : MarshalByRefObject
     {
         public Shape Shape { get; set; }
 

@@ -12,12 +12,13 @@
   *    Kathleen Oneal - added Id
   *******************************************************************************/
 
+using System;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
-    public class ReferencePoint
+    public class ReferencePoint : MarshalByRefObject
     {
         public ReferencePoint()
         {

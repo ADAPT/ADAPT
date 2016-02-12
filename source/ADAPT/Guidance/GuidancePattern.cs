@@ -12,6 +12,7 @@
  *    Kathleen Oneal - renamed property Name to Description
   *******************************************************************************/
 
+using System;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Logistics;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
@@ -19,7 +20,7 @@ using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
-    public abstract class GuidancePattern
+    public abstract class GuidancePattern : MarshalByRefObject
     {
         public GuidancePattern()
         {

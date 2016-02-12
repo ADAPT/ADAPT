@@ -11,13 +11,14 @@
   *    Joseph Ross Making Properties
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
-    public class CalibrationFactor
+    public class CalibrationFactor : MarshalByRefObject
     {
         public CalibrationFactor()
         {

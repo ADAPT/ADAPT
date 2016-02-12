@@ -8,11 +8,13 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
+
+using System;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
-    public class Contact
+    public class Contact : MarshalByRefObject
     {
         public string Number { get; set; }
 

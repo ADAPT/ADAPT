@@ -11,8 +11,11 @@
   *******************************************************************************/
 
 using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Remoting.Lifetime;
+using System.Security.Policy;
 using AgGateway.ADAPT.ApplicationDataModel.ADM;
 
 namespace AgGateway.ADAPT.PluginManager
@@ -95,11 +98,13 @@ namespace AgGateway.ADAPT.PluginManager
 
       public IPlugin CreateInstance(PluginMetadata pluginMetadata)
       {
-         var assembly = Assembly.LoadFile(pluginMetadata.AssemblyLocation);
-         var pluginEntryClass = assembly.GetType(pluginMetadata.EntryClass);
+          var basePath = Path.GetDirectoryName(pluginMetadata.AssemblyLocation);
+          var appDomain = AppDomain.CreateDomain(pluginMetadata.AssemblyLocation, null, basePath, basePath, false);
+          
+          var objectHandle = appDomain.CreateInstanceFrom(pluginMetadata.AssemblyLocation, pluginMetadata.EntryClass);
+          pluginMetadata.AssemblyInstance = (IPlugin) objectHandle.Unwrap();
 
-         pluginMetadata.AssemblyInstance = (IPlugin)Activator.CreateInstance(pluginEntryClass, null);
-         return pluginMetadata.AssemblyInstance;
+          return pluginMetadata.AssemblyInstance;
       }
 
       public void SetupDependencyResolver(string pluginDirectory)

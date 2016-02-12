@@ -14,7 +14,7 @@ using System;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
-    public class StatusUpdate
+    public class StatusUpdate : MarshalByRefObject
     {
         public WorkStatusEnum Status { get; set; }
 

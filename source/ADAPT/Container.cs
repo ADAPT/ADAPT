@@ -11,13 +11,14 @@
   *    Kathleen Oneal - changed ProductAmount & Capacity from type NumericRepresentation to NumericRepresentationValue
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class Container
+    public class Container : MarshalByRefObject
     {
         public Container()
         {
