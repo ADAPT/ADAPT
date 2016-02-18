@@ -51,6 +51,6 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
         public override string Label { get; protected set; }
         public override string LabelPlural { get; protected set; }
-        public UnitDimension UnitDimension { get; set; }
+        public override UnitDimension UnitDimension { get; set; }
     }
 }

@@ -12,7 +12,7 @@
 
 using System;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
-using AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic;
+using AgGateway.ADAPT.Representation.UnitSystem.UnitArithmetic;
 
 namespace AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods
 {

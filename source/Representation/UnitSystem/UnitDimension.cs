@@ -23,6 +23,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
         public string DomainID { get; private set; }
         public UnitOfMeasureCollection Units { get; private set; }
         public List<CompositeConversionFactor> CompositeEquivalents { get; set; } 
+        public List<UnitDimensionComponent> CompositeDimensionComponents { get; set; }
 
         public UnitDimension(UnitSystemUnitDimension unitDimension)
             : this(unitDimension, CultureInfo.CurrentUICulture)
@@ -38,6 +39,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             Name = name != null ? name.Value : null;
             Units = GetUnitsOfMeasure(unitDimension.Items);
             CompositeEquivalents = GetCompositeConversionFactors(unitDimension.Items);
+            CompositeDimensionComponents = GetCompositeDimensionComponents(unitDimension.Items);
         }
 
         private UnitOfMeasureCollection GetUnitsOfMeasure(IEnumerable<object> items)
@@ -62,6 +64,20 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
             var conversionFactors = xmlUnitRepresentation.Select(compositeUnitDimensionRepresentation => 
                 new CompositeConversionFactor(compositeUnitDimensionRepresentation));
             return conversionFactors.ToList();
+        }
+
+        private List<UnitDimensionComponent> GetCompositeDimensionComponents(IEnumerable<object> items)
+        {
+            if(items == null)
+                return new List<UnitDimensionComponent>();
+
+            var xmlUnitRepresentation = items.OfType<UnitSystemUnitDimensionCompositeUnitDimensionRepresentation>();
+            return xmlUnitRepresentation.SelectMany(x => GenerateDimensionComponent(x.UnitDimensionRef)).ToList();
+        }
+
+        private IEnumerable<UnitDimensionComponent> GenerateDimensionComponent(IEnumerable<UnitSystemUnitDimensionCompositeUnitDimensionRepresentationUnitDimensionRef> dimensions)
+        {
+            return dimensions.Select(d => new UnitDimensionComponent(d.UnitDimensionRef, (int) d.power));
         }
 
         private static UnitSystemUnitDimensionName GetName(UnitSystemUnitDimensionName[] names, CultureInfo culture)

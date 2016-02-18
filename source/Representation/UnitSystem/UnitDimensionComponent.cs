@@ -7,26 +7,20 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Justin Sliekers, Tim Shearouse - initial API and implementation
   *******************************************************************************/
-
 namespace AgGateway.ADAPT.Representation.UnitSystem
 {
-    public abstract class UnitOfMeasure : IUnit
+    public class UnitDimensionComponent
     {
-        public abstract string Label { get; protected set; }
-
-        public abstract string LabelPlural { get; protected set; }
-
-        public string DomainID { get; protected set; }
-
-        public short UomId { get; protected set; }
-
-        public abstract UnitDimension UnitDimension { get; set; }
-
-        public override string ToString()
+        public UnitDimensionComponent(string unitDimensionId, int power)
         {
-            return string.Format("{0} ({1})", DomainID, Label);
+            UnitDimensionDomainId = unitDimensionId;
+            Power = power;
         }
+
+        public string UnitDimensionDomainId{ get; private set; }
+
+        public int Power { get; private set; }
     }
 }

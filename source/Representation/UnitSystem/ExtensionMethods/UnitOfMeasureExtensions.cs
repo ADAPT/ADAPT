@@ -1,4 +1,7 @@
-﻿namespace AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods
+﻿using System;
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+
+namespace AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods
 {
     public static class UnitOfMeasureExtensions
     {
@@ -8,6 +11,12 @@
             {
                 Code = uom.DomainID,
             };
+            var unitDimensionId = uom.UnitDimension != null ? uom.UnitDimension.DomainID.TrimStart(new []{'u','t'}) : null;
+            if (unitDimensionId != null)
+            {
+                var adaptUnitDimension = (UnitOfMeasureDimensionEnum) Enum.Parse(typeof (UnitOfMeasureDimensionEnum), unitDimensionId);
+                unitOfMeasure.Dimension = adaptUnitDimension;
+            }
             var scalarUom = uom as ScalarUnitOfMeasure;
             if (scalarUom != null)
             {

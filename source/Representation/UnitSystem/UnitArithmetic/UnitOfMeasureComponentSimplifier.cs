@@ -17,7 +17,7 @@ using System.Text;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 using AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods;
 
-namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
+namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmetic
 {
    internal class UnitOfMeasureComponentSimplifier
    {
