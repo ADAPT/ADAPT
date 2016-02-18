@@ -17,6 +17,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Representations
 {
     public class NumericRepresentationValue : RepresentationValue
     {
+        public NumericRepresentationValue()
+        {
+        }
+
         public NumericRepresentationValue(NumericRepresentation representation, NumericValue value)
         {
             Representation = representation;
