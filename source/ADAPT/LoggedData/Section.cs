@@ -19,7 +19,7 @@ using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
-    public class Section : MarshalByRefObject
+    public class Section
     {
         public Section()
         {

@@ -11,12 +11,11 @@
  *    Tarak Reddy - Added equipment config id to point to right machine configuration and implement configuration
  *******************************************************************************/
 
-using System;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
-    public class WorkItemOperation : MarshalByRefObject
+    public class WorkItemOperation
     {
         public WorkItemOperation()
         {

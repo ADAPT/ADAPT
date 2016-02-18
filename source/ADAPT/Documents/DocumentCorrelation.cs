@@ -16,7 +16,7 @@ using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
-    public class DocumentCorrelation : MarshalByRefObject
+    public class DocumentCorrelation
     {
         public CompoundIdentifier Id { get; set; }
 

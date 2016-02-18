@@ -12,14 +12,13 @@
   *    Justin Sliekers - changing BoundingPolygon to Polgyon; changing to single timescope
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 {
-    public abstract class ReferenceLayer : MarshalByRefObject
+    public abstract class ReferenceLayer
     {
         protected ReferenceLayer()
         {

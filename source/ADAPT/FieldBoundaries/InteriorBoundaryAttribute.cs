@@ -12,11 +12,9 @@
   *    Kathleen Oneal - changed Passable to IsPassable and Name to Description
   *******************************************************************************/
 
-using System;
-
 namespace AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries
 {
-    public class InteriorBoundaryAttribute : MarshalByRefObject
+    public class InteriorBoundaryAttribute
     {
         public int ShapeIdRef { get; set; }
 

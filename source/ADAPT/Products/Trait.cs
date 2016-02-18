@@ -12,13 +12,12 @@
   *    Kathleen Oneal - Added Properties
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    public class Trait : MarshalByRefObject
+    public class Trait
     {
         public Trait()
         {

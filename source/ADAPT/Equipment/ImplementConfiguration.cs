@@ -12,14 +12,13 @@
  *    Kathleen Oneal - removed ImplementTypeId
  *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
-    public class ImplementConfiguration : MarshalByRefObject
+    public class ImplementConfiguration
     {
         public ImplementConfiguration()
         {

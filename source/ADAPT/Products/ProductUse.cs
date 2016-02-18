@@ -10,12 +10,11 @@
   *    Justin Sliekers - initial API and implementation
   *******************************************************************************/
 
-using System;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    public class ProductUse : MarshalByRefObject
+    public class ProductUse
     {
         public int ProductId { get; set; }
 

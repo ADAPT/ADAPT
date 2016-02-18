@@ -11,14 +11,13 @@
  *    Tarak Reddy - Renamed GuidanceId to GuidancePatternId
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
-    public class GuidanceGroup : MarshalByRefObject
+    public class GuidanceGroup
     {
         public GuidanceGroup()
         {

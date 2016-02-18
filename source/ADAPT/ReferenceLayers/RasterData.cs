@@ -1,10 +1,8 @@
-﻿using System;
-using AgGateway.ADAPT.ApplicationDataModel.Representations;
+﻿using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 {
-    public class RasterData<Rep,Val> : MarshalByRefObject 
-                           where Rep : Representation
+    public class RasterData<Rep,Val> where Rep : Representation
     {
         public Rep Representation { get; set; }
 

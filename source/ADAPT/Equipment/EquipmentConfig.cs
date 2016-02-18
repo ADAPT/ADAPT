@@ -10,14 +10,13 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation    
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
-    public class EquipmentConfig : MarshalByRefObject
+    public class EquipmentConfig
     {
         public EquipmentConfig()
         {

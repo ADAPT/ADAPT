@@ -12,14 +12,13 @@
  *    Kathleen Oneal - renamed property name from enumberatedValue to Value
  *******************************************************************************/
 
-using System;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Notes
 {
-    public class Note : MarshalByRefObject
+    public class Note
     {
         public string Description { get; set; }
         

@@ -13,12 +13,11 @@
  *    Kathleen Oneal - changed connectorType to ConnectoryTypeEnum from EnumeratedRepresentation
   *******************************************************************************/
 
-using System;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
-    public class Connector : MarshalByRefObject
+    public class Connector
     {
         public Connector()
         {

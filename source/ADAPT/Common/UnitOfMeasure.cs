@@ -9,13 +9,11 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - renamed UnitDiminesion to Dimension; removed Name, Symbol, ConversionScale, Conversion Offset; added IsReferenceForDimension, Scale, Offset
-  *******************************************************************************/
-
-using System;
+  *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
-    public class UnitOfMeasure : MarshalByRefObject
+    public class UnitOfMeasure
     {
         public UnitOfMeasure()
         {

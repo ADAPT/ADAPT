@@ -10,12 +10,11 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using System;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
 {
-    public abstract class Shape : MarshalByRefObject
+    public abstract class Shape
     {
         protected Shape()
         {

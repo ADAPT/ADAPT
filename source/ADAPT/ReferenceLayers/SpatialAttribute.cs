@@ -10,13 +10,12 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 {
-    public class SpatialAttribute : MarshalByRefObject
+    public class SpatialAttribute
     {
         public List<RepresentationValue> Values { get; set; }
     }

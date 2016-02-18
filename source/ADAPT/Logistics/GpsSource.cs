@@ -15,7 +15,7 @@ using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
-    public class GpsSource : MarshalByRefObject
+    public class GpsSource
     {
         public GpsSourceEnum SourceType { get; set; }
 

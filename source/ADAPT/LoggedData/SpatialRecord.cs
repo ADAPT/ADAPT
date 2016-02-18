@@ -19,7 +19,7 @@ using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
-    public class SpatialRecord : MarshalByRefObject
+    public class SpatialRecord
     {
         private readonly Dictionary<int, RepresentationValue> _meterValues = new Dictionary<int, RepresentationValue>(); 
         private readonly Dictionary<int, int?> _appliedLatencyValues = new Dictionary<int, int?>(); 

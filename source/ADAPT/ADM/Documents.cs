@@ -14,7 +14,6 @@
  *    Kathleen Oneal - added Summaries and LoggedDataCatalog
  *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Documents;
 using AgGateway.ADAPT.ApplicationDataModel.Guidance;
@@ -22,7 +21,7 @@ using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
-    public class Documents : MarshalByRefObject
+    public class Documents
     {
         public List<WorkItem> WorkItems { get; set; }
 

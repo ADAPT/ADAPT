@@ -11,12 +11,11 @@
   *    Kathleen Oneal - changed MachineType to Type
   *******************************************************************************/
 
-using System;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
-    public class ImplementType : MarshalByRefObject
+    public class ImplementType
     {
         public ImplementType()
         {
