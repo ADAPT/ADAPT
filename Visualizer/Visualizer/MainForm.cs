@@ -107,16 +107,25 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void _buttonExportDatacard_Click(object sender, EventArgs e)
         {
-            var pluginName = (string) _comboBoxPlugins.SelectedItem;
-            var plugin = _dataProvider.GetPlugin(pluginName);
-
-            if (_applicationDataModel == null || plugin == null)
+            try
             {
-                MessageBox.Show(@"Could not export, either not a comptable plugin or no data model to export");
-                return;
-            }
+                var pluginName = (string) _comboBoxPlugins.SelectedItem;
+                var plugin = _dataProvider.GetPlugin(pluginName);
 
-            DataProvider.Export(plugin, _applicationDataModel, _textBoxInitializeString.Text, GetExportDirectory());
+                if (_applicationDataModel == null || plugin == null)
+                {
+                    MessageBox.Show(@"Could not export, either not a comptable plugin or no data model to export");
+                    return;
+                }
+
+                DataProvider.Export(plugin, _applicationDataModel, _textBoxInitializeString.Text, GetExportDirectory());
+
+                MessageBox.Show(@"Data exported successfully.");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void _treeViewMetadata_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
