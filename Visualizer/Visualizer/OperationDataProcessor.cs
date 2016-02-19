@@ -27,17 +27,20 @@ namespace AgGateway.ADAPT.Visualizer
         {
             _dataTable = new DataTable();
 
-            var spatialRecords = operationData.GetSpatialRecords().ToList();
-            var meters = GetMeters(operationData);
-
-            CreateColumns(meters);
-
-            foreach (var spatialRecord in spatialRecords)
+            if (operationData.GetSpatialRecords != null)
             {
-                CreateRow(meters, spatialRecord);
-            }
+                var spatialRecords = operationData.GetSpatialRecords().ToList();
+                var meters = GetMeters(operationData);
 
-            UpdateColumnNamesWithUom(meters, spatialRecords);
+                CreateColumns(meters);
+
+                foreach (var spatialRecord in spatialRecords)
+                {
+                    CreateRow(meters, spatialRecord);
+                }
+
+                UpdateColumnNamesWithUom(meters, spatialRecords);
+            }
 
             return _dataTable;
         }

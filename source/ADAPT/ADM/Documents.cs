@@ -29,8 +29,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<LoggedData.LoggedData> LoggedData { get; set; }
 
-        public List<OperationData> OperationData { get; set; }
-
         public List<Plan> Plans { get; set; }
 
         public List<WorkOrder> WorkOrders { get; set; }
