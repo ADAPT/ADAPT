@@ -1335,6 +1335,7 @@
 					<Name locale="fr" label="°F" plural="Fahrenheit">Fahrenheit</Name>
 					<Name locale="da" label="°F" plural="fahrenheit">fahrenheit</Name>
 					<Name locale="nl" label="°F" plural="fahrenheit">fahrenheit</Name>
+					<Name locale="nl" label="°F" plural="fahrenheit">fahrenheit</Name>
 					<Name locale="es" label="°F" plural="fahrenheit">fahrenheit</Name>
 					<Name locale="it" label="°F" plural="fahrenheit">fahrenheit</Name>
 					<Name locale="pt" label="°F" plural="fahrenheit">fahrenheit</Name>
@@ -1369,47 +1370,50 @@
 					<Name locale="ug" label="°F" plural="فارنىگىت">فارنىگىت</Name>
 					<Name locale="vi" label="°F" plural="độ F">độ F</Name>
 				</UnitOfMeasure>
-				<UnitOfMeasure domainID="K" scale="1" baseOffset="-273.15">
-					<Name locale="en" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="de" label="K" plural="Kelvin">Kelvin</Name>
-					<Name locale="fr" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="da" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="nl" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="es" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="it" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="pt" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="ru" label="K" plural="кельвин">кельвин</Name>
-					<Name locale="hu" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="cs" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="sk" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="fi" label="K" plural="kelvinaste">kelvinaste</Name>
-					<Name locale="sv" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="et" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="lv" label="K" plural="Kelvins">Kelvins</Name>
-					<Name locale="lt" label="K" plural="laipsnis Kelvino">laipsnis Kelvino</Name>
-					<Name locale="no" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="pl" label="K" plural="Kelwina">Kelwina</Name>
-					<Name locale="bg" label="K" plural="келвин">келвин</Name>
-					<Name locale="hr" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="ro" label="K" plural="Kelvin">Kelvin</Name>
-					<Name locale="tr" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="el" label="K" plural="κέλβιν">κέλβιν</Name>
-					<Name locale="is" label="K" plural="kelvín">kelvín</Name>
-					<Name locale="sr" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="sl" label="K" plural="kelvin">kelvin</Name>
-					<Name locale="zh" label="K" plural="开氏温度">开氏温度</Name>
-					<Name locale="ar" label="K" plural="كلفين">كلفين</Name>
-					<Name locale="he" label="K" plural="קלווין">קלווין</Name>
-					<Name locale="ja" label="K" plural="ケルビン">ケルビン</Name>
-					<Name locale="kk" label="K" plural="кельвин">кельвин</Name>
-					<Name locale="ko" label="K" plural="켈빈">켈빈</Name>
-					<Name locale="mk" label="K" plural="келвин">келвин</Name>
-					<Name locale="th" label="K" plural="เคลวิน">เคลวิน</Name>
-					<Name locale="uk" label="К" plural="кельвін">кельвін</Name>
-					<Name locale="ug" label="كېلىۋىن" plural="كېلىۋىن">كېلىۋىن</Name>
-					<Name locale="vi" label="K" plural="kelvin">kelvin</Name>
-				</UnitOfMeasure>
-			</UnitDimensionRepresentation>
+        <UnitOfMeasure domainID="K" scale="1" baseOffset="-273.15">
+          <Name locale="en" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="de" label="K" plural="Kelvin">Kelvin</Name>
+          <Name locale="fr" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="da" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="nl" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="es" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="it" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="pt" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="ru" label="K" plural="кельвин">кельвин</Name>
+          <Name locale="hu" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="cs" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="sk" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="fi" label="K" plural="kelvinaste">kelvinaste</Name>
+          <Name locale="sv" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="et" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="lv" label="K" plural="Kelvins">Kelvins</Name>
+          <Name locale="lt" label="K" plural="laipsnis Kelvino">laipsnis Kelvino</Name>
+          <Name locale="no" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="pl" label="K" plural="Kelwina">Kelwina</Name>
+          <Name locale="bg" label="K" plural="келвин">келвин</Name>
+          <Name locale="hr" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="ro" label="K" plural="Kelvin">Kelvin</Name>
+          <Name locale="tr" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="el" label="K" plural="κέλβιν">κέλβιν</Name>
+          <Name locale="is" label="K" plural="kelvín">kelvín</Name>
+          <Name locale="sr" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="sl" label="K" plural="kelvin">kelvin</Name>
+          <Name locale="zh" label="K" plural="开氏温度">开氏温度</Name>
+          <Name locale="ar" label="K" plural="كلفين">كلفين</Name>
+          <Name locale="he" label="K" plural="קלווין">קלווין</Name>
+          <Name locale="ja" label="K" plural="ケルビン">ケルビン</Name>
+          <Name locale="kk" label="K" plural="кельвин">кельвин</Name>
+          <Name locale="ko" label="K" plural="켈빈">켈빈</Name>
+          <Name locale="mk" label="K" plural="келвин">келвин</Name>
+          <Name locale="th" label="K" plural="เคลวิน">เคลวิน</Name>
+          <Name locale="uk" label="К" plural="кельвін">кельвін</Name>
+          <Name locale="ug" label="كېلىۋىن" plural="كېلىۋىن">كېلىۋىن</Name>
+          <Name locale="vi" label="K" plural="kelvin">kelvin</Name>
+        </UnitOfMeasure>
+        <UnitOfMeasure domainID="mK" scale="0.001" baseOffset="-0.27315">
+          <Name locale="en" label="mK" plural="milliKelvin">milliKelvin</Name>
+        </UnitOfMeasure>
+      </UnitDimensionRepresentation>
 			<Name locale="en">temperature</Name>
 			<Name locale="de">Temperatur</Name>
 			<Name locale="fr">température</Name>
