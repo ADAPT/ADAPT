@@ -22,7 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
             ReferenceId = id;
         }
 
-        public int ReferenceId { get; private set; }
+        public int ReferenceId { get; set; }
         public List<UniqueId> UniqueIds { get; set; } 
     }
 }
