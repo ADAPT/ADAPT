@@ -2327,7 +2327,7 @@
 			<Name locale="uk" description="Об&apos;ємВнесенихРечовинЗаДанимиЛічильника">об&apos;єм внесених речовин за даними лічильника</Name>
 			<Name locale="ug" description="ئۆلچەنگەن قوللانما سىغىم نىسبىتى">ئۆلچەنگەن قوللانما سىغىم نىسبىتى</Name>
 			<Name locale="vi" description="Thể tích theo tốc độ ứng dụng được đo">thể tích theo tốc độ ứng dụng được đo</Name>
-			<RelatedDDI ddi="2" unitOfMeasure="mm3[m2]-1" resolution="0.01" offset="0"/>
+			<RelatedDDI ddi="1" unitOfMeasure="mm3[m2]-1" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateVolumeMeasured" domainTag="49" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2492,7 +2492,7 @@
 			<Name locale="uk" description="ЦільовийОб&apos;ємВнесенихРечовин">цільовий об&apos;єм внесених речовин</Name>
 			<Name locale="ug" description="نېشان قوللانما سىغىم نىسبىتى">نېشان قوللانما سىغىم نىسبىتى</Name>
 			<Name locale="vi" description="Mục tiêu thể tích theo tốc độ ứng dụng">mục tiêu thể tích theo tốc độ ứng dụng</Name>
-			<RelatedDDI ddi="1" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0"/>
+			<RelatedDDI ddi="3" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateVolumePerHour" domainTag="600" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="gal1hr-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
