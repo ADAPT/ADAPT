@@ -138,6 +138,11 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ProcessPoints(IEnumerable<Point> points, double delta)
         {
+            if (!points.Any() || points.Count() == 1)
+                return;
+
+            if (delta == 0.0)
+                delta = 1.0;
             var screenPoints = points.Select(point => point.ToUtm()).Select(point => point.ToXy(_drawingUtil.MinX, _drawingUtil.MinY, delta)).ToArray();
 
             _drawingUtil.Graphics.DrawLines(DrawingUtil.Pen, screenPoints);

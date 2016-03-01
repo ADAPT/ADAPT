@@ -68,6 +68,8 @@ namespace AgGateway.ADAPT.Visualizer
 
         public void SetOriginPoint(double delta)
         {
+            if (delta == 0.0)
+                delta = 1.0;
             var max = ((_maxY - MinY)/delta + 25) + 20;
             Graphics.Transform = new Matrix(1, 0, 0, -1, 0, (float) max);
         }

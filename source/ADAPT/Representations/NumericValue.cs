@@ -17,14 +17,21 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Representations
 {
     public class NumericValue
     {
-        public double Value { get; set; }
-
-        public UnitOfMeasure UnitOfMeasure { get; set; }
+        //needed for serilization
+        private NumericValue()
+        {
+            
+        }
 
         public NumericValue(UnitOfMeasure uom, double value)
         {
             UnitOfMeasure = uom;
             Value = value;
         }
+
+        public double Value { get; set; }
+
+        public UnitOfMeasure UnitOfMeasure { get; set; }
+
     }
 }

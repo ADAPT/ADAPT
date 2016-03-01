@@ -420,27 +420,7 @@ namespace AgGateway.ADAPT.Representation.Generated
 
       /// <remarks/>
       [System.Xml.Serialization.XmlAttributeAttribute()]
-      public string domainIDShort;
-
-      /// <remarks/>
-      [System.Xml.Serialization.XmlAttributeAttribute()]
       public long domainTag;
-
-      /// <remarks/>
-      [System.Xml.Serialization.XmlAttributeAttribute()]
-      public int attributeID;
-
-      /// <remarks/>
-      [System.Xml.Serialization.XmlIgnoreAttribute()]
-      public bool attributeIDSpecified;
-
-      /// <remarks/>
-      [System.Xml.Serialization.XmlAttributeAttribute()]
-      public RepresentationSystemRepresentationsEnumeratedRepresentationValueMergeMode valueMergeMode;
-
-      /// <remarks/>
-      [System.Xml.Serialization.XmlIgnoreAttribute()]
-      public bool valueMergeModeSpecified;
    }
 
    /// <remarks/>
@@ -543,17 +523,6 @@ namespace AgGateway.ADAPT.Representation.Generated
       /// <remarks/>
       [System.Xml.Serialization.XmlAttributeAttribute()]
       public int ddi;
-   }
-
-   /// <remarks/>
-   [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.18020")]
-   [System.SerializableAttribute()]
-   [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:schemas-adapt-aggateway-org:Representation")]
-   public enum RepresentationSystemRepresentationsEnumeratedRepresentationValueMergeMode
-   {
-
-      /// <remarks/>
-      RandomSample,
    }
 
    /// <remarks/>

@@ -181,23 +181,7 @@ If not present the unit of measure lable will be used.</xs:documentation>
 										</xs:element>
 									</xs:sequence>
 									<xs:attribute name="domainID" type="rep:EnumeratedRepresentationDomainID" use="required"/>
-									<xs:attribute name="domainIDShort" type="rep:RepresentationDomainIDShort" use="required"/>
 									<xs:attribute name="domainTag" type="xs:long" use="required"/>
-									<xs:attribute name="attributeID" type="xs:int" use="optional">
-										<xs:annotation>
-											<xs:documentation>SST Attribute ID</xs:documentation>
-										</xs:annotation>
-									</xs:attribute>
-									<xs:attribute name="valueMergeMode">
-										<xs:annotation>
-											<xs:documentation>Merge mode specifies how multiple samples of a specific representation can be combined.  See "valueMergeMode" under NumericRepresentation.  The default value for EnumeratedRepresentation's will be RandomSample. This attribute exist only for completeness.  If this attribute is not present, RandomSample is assumed.</xs:documentation>
-										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:string">
-												<xs:enumeration value="RandomSample"/>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:attribute>
 								</xs:complexType>
 								<xs:unique name="LocalUniqunessWithinEnumeratedRepresentationRS">
 									<xs:selector xpath="rep:Name"/>
@@ -212,10 +196,6 @@ If not present the unit of measure lable will be used.</xs:documentation>
 		<xs:unique name="RepresentationDomainIDUniquenessRS">
 			<xs:selector xpath=".//*"/>
 			<xs:field xpath="@domainID"/>
-		</xs:unique>
-		<xs:unique name="RepresentationShortDomainIDUniquenessRS">
-			<xs:selector xpath=".//*"/>
-			<xs:field xpath="@domainIDShort"/>
 		</xs:unique>
 		<xs:unique name="RepresentationDomainTagUniquenessRS">
 			<xs:selector xpath=".//*"/>
@@ -281,11 +261,6 @@ If additional attributes or child elements are required, extend this type will a
 	<xs:simpleType name="NumericRepresentationDomainID">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="(vr)([a-z|A-Z|0-9])+"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="RepresentationDomainIDShort">
-		<xs:restriction base="xs:string">
-			<xs:pattern value="([a-z|A-Z|0-9]){1,8}"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="EnumeratedRepresentationDomainID">
