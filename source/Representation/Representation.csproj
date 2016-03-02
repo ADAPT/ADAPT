@@ -108,11 +108,12 @@
     <Compile Include="UnitSystem\ExtensionMethods\UnitOfMeasureExtensions.cs" />
     <Compile Include="UnitSystem\IUnit.cs" />
     <Compile Include="UnitSystem\ScalarUnitOfMeasure.cs" />
-    <Compile Include="UnitSystem\UnitArithmatic\BaseNumberDivision.cs" />
-    <Compile Include="UnitSystem\UnitArithmatic\BaseNumberMultiplication.cs" />
-    <Compile Include="UnitSystem\UnitArithmatic\UnitOfMeasureComponentSimplifier.cs" />
-    <Compile Include="UnitSystem\UnitArithmatic\UnitOfMeasureDecomposer.cs" />
+    <Compile Include="UnitSystem\UnitArithmetic\BaseNumberDivision.cs" />
+    <Compile Include="UnitSystem\UnitArithmetic\BaseNumberMultiplication.cs" />
+    <Compile Include="UnitSystem\UnitArithmetic\UnitOfMeasureComponentSimplifier.cs" />
+    <Compile Include="UnitSystem\UnitArithmetic\UnitOfMeasureDecomposer.cs" />
     <Compile Include="UnitSystem\UnitCollection.cs" />
+    <Compile Include="UnitSystem\UnitDimensionComponent.cs" />
     <Compile Include="UnitSystem\UnitOfMeasure.cs" />
     <Compile Include="UnitSystem\UnitOfMeasureCollection.cs" />
     <Compile Include="UnitSystem\UnitOfMeasureComponent.cs" />

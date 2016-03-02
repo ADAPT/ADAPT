@@ -22,6 +22,8 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
         public short UomId { get; protected set; }
 
+        public abstract UnitDimension UnitDimension { get; set; }
+
         public override string ToString()
         {
             return string.Format("{0} ({1})", DomainID, Label);

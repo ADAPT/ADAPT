@@ -40,6 +40,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public NumericRepresentationValue TotalElapsedTime { get; set; }
 
-        public Func<List<Meter>> GetMeters { get; set; }
+        public Func<IEnumerable<Meter>> GetMeters { get; set; }
     }
 }

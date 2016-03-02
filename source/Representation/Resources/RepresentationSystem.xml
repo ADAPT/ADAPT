@@ -1917,6 +1917,7 @@
 			<Name locale="uk" description="Маса сухого зібраного врожаю">Маса сухого зібраного врожаю</Name>
 			<Name locale="ug" description="قۇرۇق مەھسۇلات مىقدارى">قۇرۇق مەھسۇلات مىقدارى</Name>
 			<Name locale="vi" description="Khối lượng sản xuất khi khô">Khối lượng sản xuất khi khô</Name>
+			<RelatedDDI ddi="183" unitOfMeasure="kg" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldMassPerArea" domainTag="41" digits="7" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2326,6 +2327,7 @@
 			<Name locale="uk" description="Об&apos;ємВнесенихРечовинЗаДанимиЛічильника">об&apos;єм внесених речовин за даними лічильника</Name>
 			<Name locale="ug" description="ئۆلچەنگەن قوللانما سىغىم نىسبىتى">ئۆلچەنگەن قوللانما سىغىم نىسبىتى</Name>
 			<Name locale="vi" description="Thể tích theo tốc độ ứng dụng được đo">thể tích theo tốc độ ứng dụng được đo</Name>
+			<RelatedDDI ddi="1" unitOfMeasure="mm3[m2]-1" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateVolumeMeasured" domainTag="49" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2380,7 +2382,7 @@
 			<Name locale="uk" description="ВимірянийОб&apos;ємВнесенихРечовин">цільовий об&apos;єм внесених речовин</Name>
 			<Name locale="ug" description="ئۆلچەنگەن قوللانمىنىڭ سىغىم نىسبىتى">ئۆلچەنگەن قوللانمىنىڭ سىغىم نىسبىتى</Name>
 			<Name locale="vi" description="Thể tích theo tốc độ ứng dụng được đo">thể tích theo tốc độ ứng dụng được đo</Name>
-			<RelatedDDI ddi="2" unitOfMeasure="[mm3]1[mm2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="2" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateVolumeControl" domainTag="50" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2435,7 +2437,7 @@
 			<Name locale="uk" description="Об&apos;ємВнесенихРечовинЗаДанимиМапи">об&apos;єм внесених речовин за даними мапи</Name>
 			<Name locale="ug" description="خەرىتە بىلەن ئۆلچەنگەن قوللانمىنىڭ سىغىم نىسبىتى">خەرىتە بىلەن ئۆلچەنگەن قوللانمىنىڭ سىغىم نىسبىتى</Name>
 			<Name locale="vi" description="Thể tích theo tốc độ ứng dụng được ánh xạ">thể tích theo tốc độ ứng dụng được ánh xạ</Name>
-			<RelatedDDI ddi="1" unitOfMeasure="[mm3]1[mm2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="1" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateVolumeTarget" domainTag="51" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2490,7 +2492,7 @@
 			<Name locale="uk" description="ЦільовийОб&apos;ємВнесенихРечовин">цільовий об&apos;єм внесених речовин</Name>
 			<Name locale="ug" description="نېشان قوللانما سىغىم نىسبىتى">نېشان قوللانما سىغىم نىسبىتى</Name>
 			<Name locale="vi" description="Mục tiêu thể tích theo tốc độ ứng dụng">mục tiêu thể tích theo tốc độ ứng dụng</Name>
-			<RelatedDDI ddi="3" unitOfMeasure="[mm3]1[mm2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="3" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateVolumePerHour" domainTag="600" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="gal1hr-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -3174,6 +3176,7 @@
 			<Name locale="uk" description="Виміряна швидкість вітру">Швидкість вітру</Name>
 			<Name locale="ug" description="خاتىرلەنگەن شامال سۈرئىتى">شامال سۈرئىتى</Name>
 			<Name locale="vi" description="Tốc độ gió ghi được">Tốc độ gió</Name>
+			<RelatedDDI ddi="207" unitOfMeasure="mm1sec-1" resolution="0.001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSoilTemperature" domainTag="66" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="F" digits="3" decimal="1" minValue="-999" maxValue="999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -3862,6 +3865,7 @@
 			<Name locale="uk" description="ШвидкістьМашини">Швидкість машини</Name>
 			<Name locale="ug" description="قاتناش قۇرالى تىزلىكى">قاتناش قۇرالى تىزلىكى</Name>
 			<Name locale="vi" description="Tốc độ xe">Tốc độ xe</Name>
+			<RelatedDDI ddi="397" unitOfMeasure="mm1sec-1" resolution="0.001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrDeltaTime" domainTag="82" digits="2" decimal="3">
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="3" unitOfMeasureSystem="umsEnglish"/>
@@ -4351,6 +4355,7 @@
 			<Name locale="uk" description="Компенсація ведення">Компенсація ведення</Name>
 			<Name locale="ug" description="يېتەكچى تولۇقلىمىسى">يېتەكچى تولۇقلىمىسى</Name>
 			<Name locale="vi" description="Bù sớm">Bù sớm</Name>
+			<RelatedDDI ddi="260" unitOfMeasure="ms" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAccuracyBarStepSize" domainTag="94" digits="2" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="2" decimal="1" minValue="1" maxValue="12" unitOfMeasureSystem="umsEnglish"/>
@@ -4483,7 +4488,7 @@
 			<Name locale="uk" description="Розмітка маршруту в рядах">Розмітка маршруту визначається як поперечна відстань між маршрутами та використовується лише для навігації.  Це фізична ширина, виміряна в рядах культури, без будь-якого перетину.</Name>
 			<Name locale="ug" description="قۇردىكى لېنىيە ئارىلىقى">لېنىيەلەر ئارىلىقلىرى يول باشلاش ئۈچۈنلا ئىشلىتىلگەچكە لېنىيە بوشلۇقى بەلگىلەندى.  بۇ ئۈسكۈنىنىڭ زىرائەت قۇرىدىكى ئەمەلىي كەڭلىكىدىن بىرەر تەكرارلىقنى ئېلىۋەتكەنگە تەڭ.</Name>
 			<Name locale="vi" description="Khoảng cách hai rãnh theo Luống">Khoảng cách hai rãnh được xác định là độ rộng giữa các rãnh và chỉ được sử dụng bởi dẫn hướng.  Đây là độ rộng thực tế theo các luống cây trồng của dụng cụ trừ đi mọi phần xếp chồng.</Name>
-			<RelatedDDI ddi="159" unitOfMeasure="count"/>
+			<RelatedDDI ddi="159" unitOfMeasure="count" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrEquipmentWidthRows" domainTag="97" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="row" minValue="1" maxValue="120" unitOfMeasureSystem="umsEnglish"/>
@@ -4528,6 +4533,7 @@
 			<Name locale="uk" description="Ширина обладнання.  Найчастіше використовується зі знаряддями.  Зазначає фізичну ширину знаряддя, виміряну в рядах культури.">ширина обладнання, виміряна в рядах</Name>
 			<Name locale="ug" description="ئۈسكۈنە كەڭلىكى.  كۆپىنچە ئۈسكۈنىلەر بىلەن ئىشلىتىلىدۇ.  زىرائەت قۇرىدىكى ئۈسكۈنىنىڭ كەڭلىكىنى بەلگىلەڭ.">قۇردىكى ئۈسكۈنە كەڭلىكى</Name>
 			<Name locale="vi" description="Chiều rộng thiết bị.  Thường được sử dụng với các dụng cụ.  Cho biết độ rộng thực tế của dụng cụ theo các luống cây trồng.">độ rộng thiết bị theo luống</Name>
+			<RelatedDDI ddi="159" unitOfMeasure="count" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrPathOverlapRows" domainTag="98" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="row" minValue="0" maxValue="119" unitOfMeasureSystem="umsEnglish"/>
@@ -4572,6 +4578,7 @@
 			<Name locale="uk" description="Перетин, що використовується в навігаційних роботах.  Сума перетину та робочої ширини дорівнює ширині знаряддя, виміряній у рядах.">перетин навігаційних маршрутів, виміряний у рядах</Name>
 			<Name locale="ug" description="يول باشلاش مەشغۇلاتىدا تەكرارلىق ئىشلىتىلدى.  تەكرارلىق بىلەن خىزمەت كەڭلىكىنى قوشقاندا قۇردىكى ئۈسكۈنە كەڭلىكىگە تەڭ.">قۇردىكى يىتەكلەش يولى تەكرارلىقى</Name>
 			<Name locale="vi" description="Phần xếp chồng được dùng trong các hoạt động dẫn hướng.  Phần xếp chồng cộng Chiều rộng làm việc bằng chiều rộng của dụng cụ theo luống.">phần xếp chồng của đường dẫn hướng theo hàng</Name>
+			<RelatedDDI ddi="159" unitOfMeasure="count" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFuelRatePerHour" domainTag="99" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="gal1hr-1" minValue="0" maxValue="999" unitOfMeasureSystem="umsEnglish"/>
@@ -4851,6 +4858,7 @@
 			<Name locale="uk" description="Об&apos;єм зібраного врожаю">об&apos;єм зібраного врожаю</Name>
 			<Name locale="ug" description="ئومۇمىي مەھسۇلات سىغىمى">ئومۇمىي مەھسۇلات سىغىمى</Name>
 			<Name locale="vi" description="Thể tích sản xuất">thể tích sản xuất</Name>
+			<RelatedDDI ddi="89" unitOfMeasure="l" resolution="1" offset="0" />
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTotalYieldBale" domainTag="105" digits="5" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="bale" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -7510,6 +7518,7 @@
 			<Name locale="uk" description="Фізична ширина знаряддя">Фізична ширина знаряддя</Name>
 			<Name locale="ug" description="ئۈسكۈنىنىڭ فىزىكىلىق كەڭلىكى">ئۈسكۈنىنىڭ فىزىكىلىق كەڭلىكى</Name>
 			<Name locale="vi" description="Chiều rộng dụng cụ thực tế">Chiều rộng dụng cụ thực tế</Name>
+			<RelatedDDI ddi="155" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrImplementLength" domainTag="164" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="3" decimal="1" minValue="0.0" maxValue="100.0" unitOfMeasureSystem="umsEnglish"/>
@@ -7554,7 +7563,7 @@
 			<Name locale="uk" description="Довжина знаряддя">Довжина знаряддя</Name>
 			<Name locale="ug" description="ئۈسكۈنە ئوزۇنلۇقى">ئۈسكۈنە ئوزۇنلۇقى</Name>
 			<Name locale="vi" description="Chiều dài dụng cụ">Chiều dài dụng cụ</Name>
-			<RelatedDDI ddi="154" unitOfMeasure="mm"/>
+			<RelatedDDI ddi="154" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrImplementFrontOffset" domainTag="165" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="3" decimal="1" minValue="0.0" maxValue="100.0" unitOfMeasureSystem="umsEnglish"/>
@@ -12678,6 +12687,7 @@
 			<Name locale="uk" description="Інтервал висіву">Інтервал висіву</Name>
 			<Name locale="ug" description="ئۇرۇق ئارىلىقى">ئۇرۇق ئارىلىقى</Name>
 			<Name locale="vi" description="Khoảng cách reo hạt">Khoảng cách reo hạt</Name>
+			<RelatedDDI ddi="421" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrDownForceMargin" domainTag="287" digits="4" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="lbf" digits="4" decimal="0" minValue="0" maxValue="2000" unitOfMeasureSystem="umsEnglish"/>
@@ -13449,6 +13459,7 @@
 			<Name locale="uk" description="Фактичний розмір кипи">Фактичний розмір кипи як довжина для квадратного пакувального преса або діаметр для круглого пакувального преса</Name>
 			<Name locale="ug" description="ئەمەلىي بولاق چوڭلۇقى">ئەمەلىي بولاق چوڭلۇقى، ئۇزۇنلۇق كۋادرات بولاققا، دىئامېتىر يۇملاق بولاققا ئىشلىتىلىدۇ</Name>
 			<Name locale="vi" description="Kích thước bao thực">Kích thước bao thực là chiều dài đối với bao vuông hoặc đường kính đối với bao tròn</Name>
+			<RelatedDDI ddi="112" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrBaleTotal" domainTag="304" digits="8" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="count" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsEnglish"/>
@@ -13493,6 +13504,7 @@
 			<Name locale="uk" description="Всього кип">Загальна кількість кип</Name>
 			<Name locale="ug" description="ئومۇمىي بولاق">بولاقنىڭ ئومۇمىي سانى</Name>
 			<Name locale="vi" description="Tổng số bao">Tổng số lượng bao</Name>
+			<RelatedDDI ddi="111" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrLookAheadTime" domainTag="305" digits="2" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="1" minValue="0.3" maxValue="15" unitOfMeasureSystem="umsEnglish"/>
@@ -16091,6 +16103,7 @@
 			<Name locale="uk" description="TillageDepthMeasured">tillage depth measured</Name>
 			<Name locale="ug" description="TillageDepthMeasured">tillage depth measured</Name>
 			<Name locale="vi" description="TillageDepthMeasured">tillage depth measured</Name>
+			<RelatedDDI ddi="52" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTillageDepthControl" domainTag="364" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="1" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
@@ -16135,6 +16148,7 @@
 			<Name locale="uk" description="TillageDepthControl">tillage depth control</Name>
 			<Name locale="ug" description="TillageDepthControl">tillage depth control</Name>
 			<Name locale="vi" description="TillageDepthControl">tillage depth control</Name>
+			<RelatedDDI ddi="51" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrCircleEdgeRadius" domainTag="365" digits="4" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="4" decimal="1" minValue="0.0" maxValue="5280.0" unitOfMeasureSystem="umsEnglish"/>
@@ -16317,6 +16331,7 @@
 			<Name locale="uk" description="TillagePressureTarget">tillage pressure target</Name>
 			<Name locale="ug" description="TillagePressureTarget">tillage pressure target</Name>
 			<Name locale="vi" description="TillagePressureTarget">tillage pressure target</Name>
+			<RelatedDDI ddi="365" unitOfMeasure="pa" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTillagePressureMeasured" domainTag="369" digits="4" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="PSI" digits="4" decimal="0" minValue="0" maxValue="9999" unitOfMeasureSystem="umsEnglish"/>
@@ -16361,6 +16376,7 @@
 			<Name locale="uk" description="TillagePressureMeasured">tillage pressure measured</Name>
 			<Name locale="ug" description="TillagePressureMeasured">tillage pressure measured</Name>
 			<Name locale="vi" description="TillagePressureMeasured">tillage pressure measured</Name>
+			<RelatedDDI ddi="366" unitOfMeasure="pa" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFuelProductivity" domainTag="370" digits="3" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -16533,6 +16549,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="unitless" digits="1" decimal="2" minValue="0" maxValue="1" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utUnitless"/>
 			<Name locale="en" description="Actual Seed Spacing CV">Actual Seed Spacing CV specified as percentage</Name>
+			<RelatedDDI ddi="421" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrPlantingSingulation" domainTag="377" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsEnglish"/>
@@ -16540,6 +16557,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utPercent"/>
 			<Name locale="en" description="Singulation">Singulation percentage</Name>
+			<RelatedDDI ddi="415" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrPlantingSkips" domainTag="378" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsEnglish"/>
@@ -16624,6 +16642,7 @@
 			<Name locale="uk" description="TillagePressureControl">tillage pressure control</Name>
 			<Name locale="ug" description="TillagePressureControl">tillage pressure control</Name>
 			<Name locale="vi" description="TillagePressureControl">tillage pressure control</Name>
+			<RelatedDDI ddi="426" unitOfMeasure="N" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSCTurnOnTime" domainTag="500" digits="2" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="1" minValue="0.3" maxValue="15" unitOfMeasureSystem="umsEnglish"/>
@@ -16845,6 +16864,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utAngularVelocity"/>
 			<Name locale="en" description="Fan Speed Control">Fan Speed Control</Name>
+			<RelatedDDI ddi="254" unitOfMeasure="RPM" resolution="60" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFanSpeedTarget" domainTag="515" digits="5" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsEnglish"/>
@@ -16852,6 +16872,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utAngularVelocity"/>
 			<Name locale="en" description="Fan Speed Target">Fan Speed Target</Name>
+			<RelatedDDI ddi="254" unitOfMeasure="RPM" resolution="60" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFanSpeedMeasured" domainTag="516" digits="5" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsEnglish"/>
@@ -16859,6 +16880,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utAngularVelocity"/>
 			<Name locale="en" description="Fan Speed Measured">Fan Speed Measured</Name>
+			<RelatedDDI ddi="255" unitOfMeasure="RPM" resolution="60" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrThreshingSpeedControl" domainTag="517" digits="5" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsEnglish"/>
@@ -16929,6 +16951,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="1" decimal="0" minValue="-5" maxValue="5" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utDistance"/>
 			<Name locale="en" description="Sieve Position Control">Sieve Position Control</Name>
+			<RelatedDDI ddi="242" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSievePositionTarget" domainTag="527" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="1" decimal="0" minValue="-5" maxValue="5" unitOfMeasureSystem="umsEnglish"/>
@@ -16936,6 +16959,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="1" decimal="0" minValue="-5" maxValue="5" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utDistance"/>
 			<Name locale="en" description="Sieve Position Target">Sieve Position Target</Name>
+			<RelatedDDI ddi="242" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSievePositionMeasured" domainTag="528" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="1" decimal="0" minValue="-5" maxValue="5" unitOfMeasureSystem="umsEnglish"/>
@@ -16943,6 +16967,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="1" decimal="0" minValue="-5" maxValue="5" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utDistance"/>
 			<Name locale="en" description="Sieve Position Measured">Sieve Position Measured</Name>
+			<RelatedDDI ddi="243" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrRipperDepthControl" domainTag="529" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="2" decimal="1" minValue="-30.0" maxValue="20.0" unitOfMeasureSystem="umsEnglish"/>

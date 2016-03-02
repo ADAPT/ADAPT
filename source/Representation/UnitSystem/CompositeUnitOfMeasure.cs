@@ -12,6 +12,7 @@
 
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 
 namespace AgGateway.ADAPT.Representation.UnitSystem
@@ -49,6 +50,22 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
         {
             get { return BuildLabel(); }
             protected set { }
+        }
+
+        public override UnitDimension UnitDimension
+        {
+            get
+            {
+                var unitDimension =
+                    InternalUnitSystemManager.Instance.UnitDimensions.FirstOrDefault(
+                        d => Components.All(
+                                c => c.Unit.UnitDimension != null && d.CompositeDimensionComponents.Any(
+                                        cdc => cdc.Power == c.Power && cdc.UnitDimensionDomainId == c.Unit.UnitDimension.DomainID)));
+                return unitDimension;
+            }
+            set
+            {
+            }
         }
 
         private string BuildLabel()
@@ -174,12 +191,12 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
                 if (openBracketCount == 0)
                     break;
                 closingBracketIndex++;
-        }
+            }
             return domainId.Substring(1, closingBracketIndex - 1);
-    }
+        }
 
         private static bool IsNumeric(char character)
-    {
+        {
             return NumericChars.Contains(character);
         }
     }

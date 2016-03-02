@@ -5,6 +5,18 @@
 
   <version buildtype="NoIncrement" revisiontype="Increment" path=".\${versionFile}" failonerror="false" prefix="adapt"/>
   
+  <target name="updateVersion">
+    <echo message="${buildnumber.version}"/>
+    <exec program="git" workingdir=".\">
+      <arg line="add ${versionFile}" />
+    </exec>
+    <exec program="git" workingdir=".\">
+      <arg line='commit -m "New Version # Checkedin by Jenkins ${buildnumber.version}"' />
+    </exec>
+    <exec program="git" workingdir=".\" failonerror="false">
+      <arg line='push origin master' />
+    </exec>
+   </target>
   <target name="unittest" description="Execute unit tests using nUnit" basdir="." depends="build">
     <property name="test.wildcard" value="*Test.dll" />
     <call target="nunitTest" />

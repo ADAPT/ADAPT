@@ -10,6 +10,7 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
+using System.Collections.Generic;
 using System.Globalization;
 using AgGateway.ADAPT.Representation;
 using AgGateway.ADAPT.Representation.Generated;
@@ -95,6 +96,53 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
         {
             var UnitDimension = new UnitDimension(_unitDimension);
             Assert.IsInstanceOf<UnitOfMeasureCollection>(UnitDimension.Units);
+        }
+
+        [Test]
+        public void GivenUnitDimensionWhenGetComponentsShouldMatch()
+        {
+            var compositeUnit = InternalUnitSystemManager.Instance.UnitOfMeasures["bu1ac-1"];
+
+            Assert.AreEqual("utVolumePerArea", compositeUnit.UnitDimension.DomainID);
+        }
+
+        [Test]
+        public void GivenUnitDimensionWhenGetCompositeDimensionComponentsThenCompositeDimensionComponentsAreReturned()
+        {
+            _unitDimension.Items = new object[]
+            {
+                new UnitSystemUnitDimensionCompositeUnitDimensionRepresentation
+                {
+                    domainID = "Anything",
+                    UnitDimensionRef = new []
+                    {
+                        new UnitSystemUnitDimensionCompositeUnitDimensionRepresentationUnitDimensionRef
+                        {
+                            UnitDimensionRef = "utMass",
+                            baseUnitOfMeasureRef = "g",
+                            power = 1
+                        },
+                        new UnitSystemUnitDimensionCompositeUnitDimensionRepresentationUnitDimensionRef
+                        {
+                            UnitDimensionRef = "utArea",
+                            baseUnitOfMeasureRef = "ha",
+                            power = -1
+                        }
+                    }
+                }
+            };
+
+            var expected = new List<UnitDimensionComponent>
+            {
+                new UnitDimensionComponent("utMass", 1),
+                new UnitDimensionComponent("utArea", -1),
+            };
+
+            var unitDimension = new UnitDimension(_unitDimension);
+            Assert.AreEqual(expected[0].UnitDimensionDomainId, unitDimension.CompositeDimensionComponents[0].UnitDimensionDomainId);
+            Assert.AreEqual(expected[0].Power, unitDimension.CompositeDimensionComponents[0].Power);
+            Assert.AreEqual(expected[1].UnitDimensionDomainId, unitDimension.CompositeDimensionComponents[1].UnitDimensionDomainId);
+            Assert.AreEqual(expected[1].Power, unitDimension.CompositeDimensionComponents[1].Power);
         }
     }
 }

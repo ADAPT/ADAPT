@@ -17,13 +17,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
     public class CompoundIdentifierFactory
     {
         private static CompoundIdentifierFactory _instance;
-        private static int _highestReferenceId;
+        private static int _lowestReferenceId;
         private static readonly object InstanceThreadLock = new object();
         private static readonly object CreateThreadLock = new object();
 
         private CompoundIdentifierFactory()
         {
-            _highestReferenceId = 0;
+            _lowestReferenceId = 0;
         }
 
         public static CompoundIdentifierFactory Instance
@@ -47,8 +47,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
             int referenceId;
             lock (CreateThreadLock)
             {
-                _highestReferenceId++;
-                referenceId = _highestReferenceId;
+                _lowestReferenceId--;
+                referenceId = _lowestReferenceId;
             }
             return new CompoundIdentifier(referenceId)
             {

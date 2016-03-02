@@ -60,6 +60,7 @@
             this._buttonBrowseExportPath = new System.Windows.Forms.Button();
             this._textBoxExportPath = new System.Windows.Forms.TextBox();
             this._labelPath = new System.Windows.Forms.Label();
+            this._buttonExportRawData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._splitContainerMain)).BeginInit();
             this._splitContainerMain.Panel1.SuspendLayout();
             this._splitContainerMain.Panel2.SuspendLayout();
@@ -133,22 +134,22 @@
             this._splitContainerPlugin.Panel2.Controls.Add(this._buttonBrowseDatacard);
             this._splitContainerPlugin.Size = new System.Drawing.Size(999, 85);
             this._splitContainerPlugin.SplitterDistance = 42;
-            this._splitContainerPlugin.TabIndex = 4;
+            this._splitContainerPlugin.TabIndex = 0;
             // 
             // _textBoxInitializeString
             // 
             this._textBoxInitializeString.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._textBoxInitializeString.Location = new System.Drawing.Point(673, 12);
+            this._textBoxInitializeString.Location = new System.Drawing.Point(673, 11);
             this._textBoxInitializeString.Name = "_textBoxInitializeString";
             this._textBoxInitializeString.Size = new System.Drawing.Size(312, 20);
-            this._textBoxInitializeString.TabIndex = 4;
+            this._textBoxInitializeString.TabIndex = 6;
             // 
             // _labelInitializeString
             // 
             this._labelInitializeString.AccessibleDescription = "";
             this._labelInitializeString.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._labelInitializeString.AutoSize = true;
-            this._labelInitializeString.Location = new System.Drawing.Point(596, 14);
+            this._labelInitializeString.Location = new System.Drawing.Point(593, 14);
             this._labelInitializeString.Name = "_labelInitializeString";
             this._labelInitializeString.Size = new System.Drawing.Size(74, 13);
             this._labelInitializeString.TabIndex = 5;
@@ -161,7 +162,7 @@
             this._textBoxPluginPath.Location = new System.Drawing.Point(94, 11);
             this._textBoxPluginPath.Name = "_textBoxPluginPath";
             this._textBoxPluginPath.Size = new System.Drawing.Size(286, 20);
-            this._textBoxPluginPath.TabIndex = 5;
+            this._textBoxPluginPath.TabIndex = 2;
             // 
             // _buttonLoadPlugins
             // 
@@ -169,7 +170,7 @@
             this._buttonLoadPlugins.Location = new System.Drawing.Point(457, 8);
             this._buttonLoadPlugins.Name = "_buttonLoadPlugins";
             this._buttonLoadPlugins.Size = new System.Drawing.Size(110, 23);
-            this._buttonLoadPlugins.TabIndex = 7;
+            this._buttonLoadPlugins.TabIndex = 4;
             this._buttonLoadPlugins.Text = "Load Plugins";
             this._buttonLoadPlugins.UseVisualStyleBackColor = true;
             this._buttonLoadPlugins.Click += new System.EventHandler(this._buttonLoadPlugins_Click);
@@ -180,7 +181,7 @@
             this._buttonBrowsePluginLocation.Location = new System.Drawing.Point(395, 8);
             this._buttonBrowsePluginLocation.Name = "_buttonBrowsePluginLocation";
             this._buttonBrowsePluginLocation.Size = new System.Drawing.Size(54, 23);
-            this._buttonBrowsePluginLocation.TabIndex = 6;
+            this._buttonBrowsePluginLocation.TabIndex = 3;
             this._buttonBrowsePluginLocation.Text = "Browse";
             this._buttonBrowsePluginLocation.UseVisualStyleBackColor = true;
             this._buttonBrowsePluginLocation.Click += new System.EventHandler(this._buttonBrowsePluginLocation_Click);
@@ -191,7 +192,7 @@
             this._labelPluginLocation.Location = new System.Drawing.Point(12, 15);
             this._labelPluginLocation.Name = "_labelPluginLocation";
             this._labelPluginLocation.Size = new System.Drawing.Size(76, 13);
-            this._labelPluginLocation.TabIndex = 4;
+            this._labelPluginLocation.TabIndex = 1;
             this._labelPluginLocation.Text = "Plugin location";
             // 
             // _textBoxDatacardPath
@@ -276,7 +277,7 @@
             this._treeViewMetadata.Location = new System.Drawing.Point(0, 0);
             this._treeViewMetadata.Name = "_treeViewMetadata";
             this._treeViewMetadata.Size = new System.Drawing.Size(449, 556);
-            this._treeViewMetadata.TabIndex = 1;
+            this._treeViewMetadata.TabIndex = 0;
             this._treeViewMetadata.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this._treeViewMetadata_NodeMouseClick);
             // 
             // _splitContainerMap
@@ -322,6 +323,7 @@
             // 
             // _tabPageRawData
             // 
+            this._tabPageRawData.Controls.Add(this._buttonExportRawData);
             this._tabPageRawData.Controls.Add(this._dataGridViewRawData);
             this._tabPageRawData.Location = new System.Drawing.Point(4, 22);
             this._tabPageRawData.Name = "_tabPageRawData";
@@ -333,11 +335,13 @@
             // 
             // _dataGridViewRawData
             // 
+            this._dataGridViewRawData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._dataGridViewRawData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._dataGridViewRawData.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dataGridViewRawData.Location = new System.Drawing.Point(3, 3);
             this._dataGridViewRawData.Name = "_dataGridViewRawData";
-            this._dataGridViewRawData.Size = new System.Drawing.Size(532, 343);
+            this._dataGridViewRawData.Size = new System.Drawing.Size(532, 314);
             this._dataGridViewRawData.TabIndex = 0;
             // 
             // _dataGridViewTotals
@@ -396,7 +400,7 @@
             this._buttonExportDatacard.Location = new System.Drawing.Point(931, 50);
             this._buttonExportDatacard.Name = "_buttonExportDatacard";
             this._buttonExportDatacard.Size = new System.Drawing.Size(54, 23);
-            this._buttonExportDatacard.TabIndex = 8;
+            this._buttonExportDatacard.TabIndex = 5;
             this._buttonExportDatacard.Text = "Export";
             this._buttonExportDatacard.UseVisualStyleBackColor = true;
             this._buttonExportDatacard.Click += new System.EventHandler(this._buttonExportDatacard_Click);
@@ -407,7 +411,7 @@
             this._comboBoxPlugins.Location = new System.Drawing.Point(94, 51);
             this._comboBoxPlugins.Name = "_comboBoxPlugins";
             this._comboBoxPlugins.Size = new System.Drawing.Size(286, 21);
-            this._comboBoxPlugins.TabIndex = 7;
+            this._comboBoxPlugins.TabIndex = 4;
             // 
             // _labelExportFormat
             // 
@@ -415,7 +419,7 @@
             this._labelExportFormat.Location = new System.Drawing.Point(49, 55);
             this._labelExportFormat.Name = "_labelExportFormat";
             this._labelExportFormat.Size = new System.Drawing.Size(39, 13);
-            this._labelExportFormat.TabIndex = 6;
+            this._labelExportFormat.TabIndex = 3;
             this._labelExportFormat.Text = "Format";
             // 
             // _buttonBrowseExportPath
@@ -424,7 +428,7 @@
             this._buttonBrowseExportPath.Location = new System.Drawing.Point(931, 21);
             this._buttonBrowseExportPath.Name = "_buttonBrowseExportPath";
             this._buttonBrowseExportPath.Size = new System.Drawing.Size(54, 23);
-            this._buttonBrowseExportPath.TabIndex = 5;
+            this._buttonBrowseExportPath.TabIndex = 2;
             this._buttonBrowseExportPath.Text = "Browse";
             this._buttonBrowseExportPath.UseVisualStyleBackColor = true;
             this._buttonBrowseExportPath.Click += new System.EventHandler(this._buttonBrowseExportPath_Click);
@@ -436,7 +440,7 @@
             this._textBoxExportPath.Location = new System.Drawing.Point(94, 22);
             this._textBoxExportPath.Name = "_textBoxExportPath";
             this._textBoxExportPath.Size = new System.Drawing.Size(831, 20);
-            this._textBoxExportPath.TabIndex = 4;
+            this._textBoxExportPath.TabIndex = 1;
             // 
             // _labelPath
             // 
@@ -444,8 +448,19 @@
             this._labelPath.Location = new System.Drawing.Point(26, 25);
             this._labelPath.Name = "_labelPath";
             this._labelPath.Size = new System.Drawing.Size(62, 13);
-            this._labelPath.TabIndex = 4;
+            this._labelPath.TabIndex = 0;
             this._labelPath.Text = "Export Path";
+            // 
+            // _buttonExportRawData
+            // 
+            this._buttonExportRawData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._buttonExportRawData.Location = new System.Drawing.Point(439, 321);
+            this._buttonExportRawData.Name = "_buttonExportRawData";
+            this._buttonExportRawData.Size = new System.Drawing.Size(89, 23);
+            this._buttonExportRawData.TabIndex = 1;
+            this._buttonExportRawData.Text = "Export";
+            this._buttonExportRawData.UseVisualStyleBackColor = true;
+            this._buttonExportRawData.Click += new System.EventHandler(this._buttonExportRawData_Click);
             // 
             // MainForm
             // 
@@ -523,6 +538,7 @@
         private System.Windows.Forms.TreeView _treeViewMetadata;
         private System.Windows.Forms.Label _labelInitializeString;
         private System.Windows.Forms.TextBox _textBoxInitializeString;
+        private System.Windows.Forms.Button _buttonExportRawData;
     }
 }
 

@@ -7,16 +7,20 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Justin Sliekers - initial API and implementation
-  *    Kathleen Oneal - Renamed ShapeLookups to RxShapeLookups and changed type to List<RxShapeLookup> from List<ShapeLookup>
+  *    Justin Sliekers, Tim Shearouse - initial API and implementation
   *******************************************************************************/
-
-using System.Collections.Generic;
-
-namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
+namespace AgGateway.ADAPT.Representation.UnitSystem
 {
-    public class RxPrescription : SpatialPrescription
+    public class UnitDimensionComponent
     {
-        public List<RxShapeLookup> RxShapeLookups { get; set; } 
+        public UnitDimensionComponent(string unitDimensionId, int power)
+        {
+            UnitDimensionDomainId = unitDimensionId;
+            Power = power;
+        }
+
+        public string UnitDimensionDomainId{ get; private set; }
+
+        public int Power { get; private set; }
     }
 }

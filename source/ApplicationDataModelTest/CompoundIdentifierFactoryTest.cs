@@ -44,7 +44,7 @@ namespace AgGateway.ADAPT.ApplicationDataModelTest
          var identifier1 = factory.Create();
          var identifier2 = factory.Create();
 
-         Assert.AreEqual(identifier1.ReferenceId + 1, identifier2.ReferenceId);
+         Assert.AreEqual(identifier1.ReferenceId - 1, identifier2.ReferenceId);
       }
    }
 }

@@ -12,7 +12,7 @@
 
 using System.Collections.Generic;
 
-namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmatic
+namespace AgGateway.ADAPT.Representation.UnitSystem.UnitArithmetic
 {
     internal class UnitOfMeasureDecomposer
     {

@@ -1,4 +1,4 @@
-﻿ /* Copyright (C) 2015-16 AgGateway and ADAPT Contributors
+﻿/* Copyright (C) 2015-16 AgGateway and ADAPT Contributors
   * Copyright (C) 2015-16 Deere and Company
   * All rights reserved. This program and the accompanying materials
   * are made available under the terms of the Eclipse Public License v1.0
@@ -13,7 +13,9 @@ using System;
 using System.Collections;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Windows.Forms;
 using AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries;
 using AgGateway.ADAPT.ApplicationDataModel.Guidance;
@@ -23,16 +25,21 @@ namespace AgGateway.ADAPT.Visualizer
 {
     public partial class MainForm : Form
     {
+        private readonly BoundaryProcessor _boundaryProcessor;
         private readonly DataProvider _dataProvider;
-        private readonly DataProcessor _dataProcessor;
+        private readonly GuidanceProcessor _guidanceProcessor;
+        private readonly OperationDataProcessor _operationDataProcessor;
         private ApplicationDataModel.ADM.ApplicationDataModel _applicationDataModel;
-        
+
         public MainForm()
         {
             InitializeComponent();
 
             _dataProvider = new DataProvider();
-            _dataProcessor = new DataProcessor(_tabPageSpatial, _dataGridViewRawData, _dataGridViewTotals);
+
+            _operationDataProcessor = new OperationDataProcessor();
+            _boundaryProcessor = new BoundaryProcessor(_tabPageSpatial);
+            _guidanceProcessor = new GuidanceProcessor(_tabPageSpatial);
         }
 
         private void _buttonBrowsePluginLocation_Click(object sender, EventArgs e)
@@ -52,6 +59,7 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void _buttonLoadPlugins_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var textBox = _textBoxPluginPath;
 
             if (IsValid(textBox, "Plugin"))
@@ -68,10 +76,14 @@ namespace AgGateway.ADAPT.Visualizer
                     _comboBoxPlugins.Items.AddRange(availablePlugins);
                 }
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void _buttonLoadDatacard_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            ClearForm();
+
             var textBox = _textBoxDatacardPath;
             var datacardPath = textBox.Text;
 
@@ -84,41 +96,65 @@ namespace AgGateway.ADAPT.Visualizer
 
             if (IsValid(textBox, "Datacard"))
             {
+                _treeViewMetadata.BeginUpdate();
+
                 ImportDataCard(datacardPath);
+
+                _treeViewMetadata.EndUpdate();
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void _buttonExportDatacard_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var pluginName = (string) _comboBoxPlugins.SelectedItem;
+                var plugin = _dataProvider.GetPlugin(pluginName);
+
+                if (_applicationDataModel == null || plugin == null)
                 {
-            var pluginName = (string)_comboBoxPlugins.SelectedItem;
-            var plugin = _dataProvider.GetPlugin(pluginName);
-
-            if (_applicationDataModel == null || plugin == null)
-                    {
-                MessageBox.Show(@"Could not export, either not a comptable plugin or no data model to export");
-                        return;
-                    }
-
-            DataProvider.Export(plugin, _applicationDataModel, _textBoxInitializeString.Text, GetExportDirectory());
+                    MessageBox.Show(@"Could not export, either not a comptable plugin or no data model to export");
+                    return;
                 }
+
+                DataProvider.Export(plugin, _applicationDataModel, _textBoxInitializeString.Text, GetExportDirectory());
+
+                MessageBox.Show(@"Data exported successfully.");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
 
         private void _treeViewMetadata_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
+            _tabControlViewer.SelectTab(_tabPageSpatial);
+
             using (var g = _tabPageSpatial.CreateGraphics())
             {
                 g.Clear(Color.White);
-        }
+            }
+            _dataGridViewRawData.DataSource = null;
+            _dataGridViewTotals.DataSource = null;
 
             var treeNode = e.Node;
 
             _tabPageSpatial.Tag = treeNode.Tag == null ? treeNode.Tag : treeNode;
 
             if (treeNode.Tag == null)
-        {
                 return;
-            }
 
+            Cursor.Current = Cursors.WaitCursor;
             ProcessData(treeNode);
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void ClearForm()
+        {
+            _treeViewMetadata.Nodes.Clear();
+            _dataGridViewRawData.Columns.Clear();
         }
 
         private string GetExportDirectory()
@@ -128,8 +164,6 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ImportDataCard(string datacardPath)
         {
-            _treeViewMetadata.Nodes.Clear();
-
             _applicationDataModel = _dataProvider.Import(datacardPath, _textBoxInitializeString.Text);
             if (_applicationDataModel == null)
             {
@@ -144,9 +178,7 @@ namespace AgGateway.ADAPT.Visualizer
         private void AddNode(object element, TreeNode parentNode)
         {
             if (element == null)
-            {
                 return;
-            }
 
             foreach (var propertyInfo in element.GetType().GetProperties())
             {
@@ -156,6 +188,9 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ParseProperty(object element, TreeNode parentNode, PropertyInfo propertyInfo)
         {
+            if (element is Func<object> || element is Func<int, object>)
+                return;
+
             var propertyType = propertyInfo.PropertyType;
 
             var underlyingType = Nullable.GetUnderlyingType(propertyType);
@@ -164,9 +199,9 @@ namespace AgGateway.ADAPT.Visualizer
                 propertyType = underlyingType;
             }
 
-            var propertyValue = propertyInfo.GetValue(element, null);
+            var propertyValue = propertyInfo.GetIndexParameters().Any() ? null : propertyInfo.GetValue(element, null);
 
-            if (propertyType.IsPrimitive || propertyType == typeof (string)) 
+            if (propertyType.IsPrimitive || propertyType == typeof (string) || propertyType == typeof (DateTime))
             {
                 parentNode.Nodes.Add(string.Format(@"{0}: {1}", propertyInfo.Name, propertyValue));
             }
@@ -190,7 +225,8 @@ namespace AgGateway.ADAPT.Visualizer
             {
                 foreach (var child in collection)
                 {
-                    var node = collectionNode.Nodes.Add(child.ToString());
+                    var node = new TreeNode(child.ToString()) {Tag = child};
+                    collectionNode.Nodes.Add(node);
                     AddNode(child, node);
                 }
             }
@@ -223,15 +259,23 @@ namespace AgGateway.ADAPT.Visualizer
         {
             if (treeNode.Tag is FieldBoundary)
             {
-                _dataProcessor.ProcessBoundary(treeNode.Tag as FieldBoundary);
+                _boundaryProcessor.ProcessBoundary(treeNode.Tag as FieldBoundary);
+                _tabControlViewer.SelectedTab = _tabPageSpatial;
             }
             else if (treeNode.Tag is GuidanceGroup)
             {
-                _dataProcessor.ProcessGuidance(treeNode.Tag as GuidanceGroup, _applicationDataModel.Catalog.GuidancePatterns);
+                _guidanceProcessor.ProcessGuidance(treeNode.Tag as GuidanceGroup, _applicationDataModel.Catalog.GuidancePatterns);
+                _tabControlViewer.SelectedTab = _tabPageSpatial;
+            }
+            else if (treeNode.Tag is GuidancePattern)
+            {
+                _guidanceProcessor.ProccessGuidancePattern(treeNode.Tag as GuidancePattern);
+                _tabControlViewer.SelectedTab = _tabPageSpatial;
             }
             else if (treeNode.Tag is OperationData)
             {
-                _dataProcessor.ProcessOperationData(treeNode.Tag as OperationData);
+                _dataGridViewRawData.DataSource = _operationDataProcessor.ProcessOperationData(treeNode.Tag as OperationData);
+                _tabControlViewer.SelectedTab = _tabPageRawData;
             }
         }
 
@@ -243,6 +287,54 @@ namespace AgGateway.ADAPT.Visualizer
             }
 
             ProcessData(_tabPageSpatial.Tag as TreeNode);
+        }
+
+        private void _buttonExportRawData_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog = new SaveFileDialog
+            {
+                DefaultExt = ".csv", 
+                Filter = "CSV File (.csv)|*.csv"
+            };
+
+            var result = saveFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                WriteCsvFile(saveFileDialog);
+            }
+        }
+
+        private void WriteCsvFile(SaveFileDialog saveFileDialog)
+        {
+            using (var streamWriter = new StreamWriter(saveFileDialog.FileName))
+            {
+                var sb = new StringBuilder();
+
+                for (int i = 0; i < _dataGridViewRawData.Columns.Count; i++)
+                {
+                    if (i != 0)
+                        sb.Append(",");
+
+                    sb.Append(_dataGridViewRawData.Columns[i].Name);
+                }
+
+                foreach (DataGridViewRow row in _dataGridViewRawData.Rows)
+                {
+                    sb.Append("\n");
+                    for (int j = 0; j < _dataGridViewRawData.Columns.Count; j++)
+                    {
+                        if (j != 0)
+                            sb.Append(",");
+
+                        sb.Append(row.Cells[j].Value);
+                    }
+                }
+
+                streamWriter.WriteLine(sb.ToString());
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
         }
     }
 }
