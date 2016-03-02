@@ -7,11 +7,11 @@
   
   <target name="updateVersion">
     <echo message="${buildnumber.version}"/>
-    <exec program="git" workingdir=".\">
-      <arg line="add ${versionFile}" />
+    <exec program="git" workingdir=".\..">
+      <arg line="add $build\{versionFile}" />
     </exec>
     <exec program="git" workingdir=".\..">
-      <arg line='commit -m "New Version # Checkedin by Jenkins ${buildnumber.version}"' />
+      <arg line='commit -m "New Version # Checked in by Jenkins ${buildnumber.version}"' />
     </exec>
     <exec program="git" workingdir=".\.." failonerror="false">
       <arg line='push origin master' />
