@@ -3865,7 +3865,7 @@
 			<Name locale="uk" description="ШвидкістьМашини">Швидкість машини</Name>
 			<Name locale="ug" description="قاتناش قۇرالى تىزلىكى">قاتناش قۇرالى تىزلىكى</Name>
 			<Name locale="vi" description="Tốc độ xe">Tốc độ xe</Name>
-			<RelatedDDI ddi="397" unitOfMeasure="	mm1sec-1" resolution="0.001" offset="0"/>
+			<RelatedDDI ddi="397" unitOfMeasure="mm1sec-1" resolution="0.001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrDeltaTime" domainTag="82" digits="2" decimal="3">
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="3" unitOfMeasureSystem="umsEnglish"/>
