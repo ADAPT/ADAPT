@@ -14,7 +14,7 @@
       <arg line='commit -m "New Version # Checked in by Jenkins ${buildnumber.version}"' />
     </exec>
     <exec program="git" workingdir=".\.." failonerror="false">
-      <arg line='push origin master' />
+      <arg line='push origin HEAD:master' />
     </exec>
   </target>
    
