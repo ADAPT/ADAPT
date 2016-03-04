@@ -93,7 +93,7 @@ namespace AgGateway.ADAPT.Visualizer
         {
             var enumeratedValue = spatialRecord.GetMeterValue(meter) as EnumeratedValue;
 
-            dataRow[GetColumnName(meter, depth)] = enumeratedValue != null ? enumeratedValue.Value.Value : "";
+            dataRow[GetColumnName(meter, depth)] = enumeratedValue != null && enumeratedValue.Value != null ? enumeratedValue.Value.Value : "";
         }
 
         private static void CreateNumericMeterCell(SpatialRecord spatialRecord, Meter meter, int depth, DataRow dataRow)
