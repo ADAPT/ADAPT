@@ -112,6 +112,56 @@ namespace VisualizerTests
         }
 
         [Test]
+        public void GivenOperationDataWithSpatialRecordDataWithNullMeterWhenProcessOperationDataThenRowsAreAdded()
+        {
+            var meter = new EnumeratedMeter { Representation = RepresentationInstanceList.dtRecordingStatus.ToModelRepresentation() };
+            _meters.Add(meter);
+            _sections.Add(0, new List<Section>
+            {
+                new Section
+                {
+                    Depth = 0,
+                    GetMeters = () => _meters,
+                }
+            });
+
+            var spatialRecord = new SpatialRecord();
+
+            _spatialRecords.Add(spatialRecord);
+
+            var dataTable = _operationDataProcessor.ProcessOperationData(_operationData);
+
+            Assert.AreEqual(1, dataTable.Rows.Count);
+            Assert.AreEqual("", dataTable.Rows[0][0]);
+        }
+
+        [Test]
+        public void GivenOperationDataWithSpatialRecordDataWithNullEnumeratedValueWhenProcessOperationDataThenRowsAreAdded()
+        {
+            var meter = new EnumeratedMeter { Representation = RepresentationInstanceList.dtRecordingStatus.ToModelRepresentation() };
+            _meters.Add(meter);
+            _sections.Add(0, new List<Section>
+            {
+                new Section
+                {
+                    Depth = 0,
+                    GetMeters = () => _meters,
+                }
+            });
+            var spatialRecord = new SpatialRecord();
+            var enumeratedValue = new EnumeratedValue { Representation = RepresentationInstanceList.dtRecordingStatus.ToModelRepresentation() , Value = null};
+
+            spatialRecord.SetMeterValue(meter, enumeratedValue);
+
+            _spatialRecords.Add(spatialRecord);
+
+            var dataTable = _operationDataProcessor.ProcessOperationData(_operationData);
+
+            Assert.AreEqual(1, dataTable.Rows.Count);
+            Assert.AreEqual("", dataTable.Rows[0][0]);
+        }
+
+        [Test]
         public void GivenOperationDataWithSpatialRecordDataWithNumericRepValueWhenProcessOperationDataThenColumnNamesContainUom()
         {
             var harvestMoistureMeter = new NumericMeter { Representation = RepresentationInstanceList.vrHarvestMoisture.ToModelRepresentation() };
