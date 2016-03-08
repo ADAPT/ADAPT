@@ -3,20 +3,7 @@
 <project name="targetsbuild" basedir=".">
   <include buildfile="./properties.build" failonerror="true"/>
 
-  <version buildtype="NoIncrement" revisiontype="Increment" path=".\${versionFile}" failonerror="false" prefix="adapt"/>
-  
-  <target name="updateVersion">
-    <echo message="${buildnumber.version}"/>
-    <exec program="git" workingdir=".\">
-      <arg line="add ${versionFile}" />
-    </exec>
-    <exec program="git" workingdir=".\..">
-      <arg line='commit -m "New Version # Checked in by Jenkins ${buildnumber.version}"' />
-    </exec>
-    <exec program="git" workingdir=".\.." failonerror="false">
-      <arg line='push origin HEAD:master' />
-    </exec>
-  </target>
+  <version buildtype="NoIncrement" revisiontype="Increment" path="${versionPath}${versionFile}" failonerror="false" prefix="adapt"/>
    
   <target name="unittest" description="Execute unit tests using nUnit" basdir="." depends="build">
     <property name="test.wildcard" value="*Test.dll" />

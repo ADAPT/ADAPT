@@ -9,6 +9,7 @@
   <property name="solutionName" value="ADAPT.sln" />
   <property name="visualizerSolutionName" value="Visualizer.sln" />
   <property name="buildnumber.version" value="" />
+  <property name="versionPath" value="C:\versions\"/>
   <property name="versionFile" value="ADAPT.version" />
   <property name="configuration" value="Release" />
   <property name="platform" value="Any CPU" />
