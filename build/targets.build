@@ -3,7 +3,9 @@
 <project name="targetsbuild" basedir=".">
   <include buildfile="./properties.build" failonerror="true"/>
 
-  <version buildtype="NoIncrement" revisiontype="Increment" path="${versionPath}${versionFile}" failonerror="false" prefix="adapt"/>
+  <target name="updateVersion" description="updates version file">
+	<version buildtype="NoIncrement" revisiontype="Increment" path="${versionPath}${versionFile}" failonerror="false" prefix="adapt"/>
+  </target>
    
   <target name="unittest" description="Execute unit tests using nUnit" basdir="." depends="build">
     <property name="test.wildcard" value="*Test.dll" />
@@ -86,7 +88,7 @@
     </if>
   </target>
 
-  <target name="packagePlugin" >
+  <target name="packagePlugin">
     <call target="getnugetversion" />
     <exec program="nuget" workingdir="${solutionDir}">
       <arg line="pack ${nuspecfile}" />
@@ -94,7 +96,7 @@
     </exec>
   </target>
 
-  <target name="adapt" depends="packagePlugin">
+  <target name="adapt" depends="updateVersion,packagePlugin">
     <call target="getnugetversion" />
     <property name="packagename" value="${nupkgName}.${version}.nupkg" />
     <exec program="nuget" workingdir="${solutionDir}">
