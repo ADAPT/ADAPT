@@ -14,7 +14,6 @@
 
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
-using AgGateway.ADAPT.ApplicationDataModel.Logistics;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
@@ -38,6 +37,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 
         public List<ContextItem> ContextItems { get; set; }
 
-        public Field Field { get; set; }
+        public List<int> FieldIds { get; set; }
     }
 }
