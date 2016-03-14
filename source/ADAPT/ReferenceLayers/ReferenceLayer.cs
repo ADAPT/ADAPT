@@ -36,7 +36,5 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
         public Polygon BoundingPolygon { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }
-
-        public List<int> FieldIds { get; set; }
     }
 }
