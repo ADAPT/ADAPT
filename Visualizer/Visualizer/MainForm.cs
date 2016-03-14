@@ -188,7 +188,7 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ParseProperty(object element, TreeNode parentNode, PropertyInfo propertyInfo)
         {
-            if (element is Func<object> || element is Func<int, object>)
+            if (element is Func<object> || element is Func<int, object> || element is Meter || element is Section || element is DataLogTrigger)
                 return;
 
             var propertyType = propertyInfo.PropertyType;

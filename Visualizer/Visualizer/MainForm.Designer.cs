@@ -48,6 +48,7 @@
             this._tabControlViewer = new System.Windows.Forms.TabControl();
             this._tabPageSpatial = new System.Windows.Forms.TabPage();
             this._tabPageRawData = new System.Windows.Forms.TabPage();
+            this._buttonExportRawData = new System.Windows.Forms.Button();
             this._dataGridViewRawData = new System.Windows.Forms.DataGridView();
             this._dataGridViewTotals = new System.Windows.Forms.DataGridView();
             this._dataGridColumnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +61,6 @@
             this._buttonBrowseExportPath = new System.Windows.Forms.Button();
             this._textBoxExportPath = new System.Windows.Forms.TextBox();
             this._labelPath = new System.Windows.Forms.Label();
-            this._buttonExportRawData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._splitContainerMain)).BeginInit();
             this._splitContainerMain.Panel1.SuspendLayout();
             this._splitContainerMain.Panel2.SuspendLayout();
@@ -333,6 +333,17 @@
             this._tabPageRawData.Text = "Raw data Viewer";
             this._tabPageRawData.UseVisualStyleBackColor = true;
             // 
+            // _buttonExportRawData
+            // 
+            this._buttonExportRawData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._buttonExportRawData.Location = new System.Drawing.Point(439, 321);
+            this._buttonExportRawData.Name = "_buttonExportRawData";
+            this._buttonExportRawData.Size = new System.Drawing.Size(89, 23);
+            this._buttonExportRawData.TabIndex = 1;
+            this._buttonExportRawData.Text = "Export";
+            this._buttonExportRawData.UseVisualStyleBackColor = true;
+            this._buttonExportRawData.Click += new System.EventHandler(this._buttonExportRawData_Click);
+            // 
             // _dataGridViewRawData
             // 
             this._dataGridViewRawData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -450,17 +461,6 @@
             this._labelPath.Size = new System.Drawing.Size(62, 13);
             this._labelPath.TabIndex = 0;
             this._labelPath.Text = "Export Path";
-            // 
-            // _buttonExportRawData
-            // 
-            this._buttonExportRawData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._buttonExportRawData.Location = new System.Drawing.Point(439, 321);
-            this._buttonExportRawData.Name = "_buttonExportRawData";
-            this._buttonExportRawData.Size = new System.Drawing.Size(89, 23);
-            this._buttonExportRawData.TabIndex = 1;
-            this._buttonExportRawData.Text = "Export";
-            this._buttonExportRawData.UseVisualStyleBackColor = true;
-            this._buttonExportRawData.Click += new System.EventHandler(this._buttonExportRawData_Click);
             // 
             // MainForm
             // 
