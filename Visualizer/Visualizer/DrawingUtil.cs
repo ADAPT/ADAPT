@@ -10,6 +10,7 @@ using System.Drawing.Drawing2D;
   *
   * Contributors:
   *    Tarak Reddy - initial implementation
+  *    Joseph Ross - Made Changes to Account for mapping multiple guidence patterns with the same context
   *******************************************************************************/
 
 using System.Linq;
@@ -21,18 +22,20 @@ namespace AgGateway.ADAPT.Visualizer
     {
         private readonly int _width;
         private readonly int _height;
-        private double _maxX;
-        private double _maxY;
+        private bool _isMaxMinSet;
 
         public DrawingUtil(int width, int height, Graphics graphics)
         {
             _width = width;
             _height = height;
             Graphics = graphics;
+            _isMaxMinSet = false;
         }
 
         public double MinX { get; private set; }
         public double MinY { get; private set; }
+        public double MaxX { get; private set; }
+        public double MaxY { get; private set; }
         public Graphics Graphics { get; private set; }
 
         public static Pen Pen
@@ -40,37 +43,59 @@ namespace AgGateway.ADAPT.Visualizer
             get { return new Pen(Color.Black, 2); }
         }
 
-        public double GetDelta(IList<Point> points)
+        public double GetDelta()
         {
             double delta;
-            MinX = points.Min(point => point.X);
-            _maxX = points.Max(point => point.X);
-            MinY = points.Min(point => point.Y);
-            _maxY = points.Max(point => point.Y);
-
-            var lonDistance = (_maxX - MinX);
-            var latDistance = (_maxY - MinY);
+            var lonDistance = (MaxX - MinX);
+            var latDistance = (MaxY - MinY);
 
             var width = _width - 50;
             var height = _height - 50;
 
             if (width < height && latDistance > lonDistance)
             {
-                delta = lonDistance/width;
+                delta = lonDistance / width;
             }
             else
             {
-                delta = latDistance/height;
+                delta = latDistance / height;
             }
 
             return delta;
+        }
+
+        public void SetMinMax(IList<Point> points)
+        {
+            if (_isMaxMinSet)
+            {
+                var minX = points.Min(point => point.X);
+                MinX = minX < MinX ? minX : MinX;
+
+                var maxX = points.Max(point => point.X);
+                MaxX = maxX > MaxX ? maxX : MaxX;
+
+                var minY = points.Min(point => point.Y);
+                MinY = minY < MinY ? minY : MinY;
+
+                var maxY = points.Max(point => point.Y);
+                MaxY = maxY > MaxY ? maxY : MaxY;
+            }
+            else
+            {
+                MinX = points.Min(point => point.X);
+                MaxX = points.Max(point => point.X);
+                MinY = points.Min(point => point.Y);
+                MaxY = points.Max(point => point.Y);
+                _isMaxMinSet = true;
+            }
+            SetOriginPoint(GetDelta());
         }
 
         public void SetOriginPoint(double delta)
         {
             if (delta == 0.0)
                 delta = 1.0;
-            var max = ((_maxY - MinY)/delta + 25) + 20;
+            var max = ((MaxY - MinY)/delta + 25) + 20;
             Graphics.Transform = new Matrix(1, 0, 0, -1, 0, (float) max);
         }
     }

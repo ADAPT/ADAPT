@@ -7,6 +7,7 @@
   *
   * Contributors:
   *    Tarak Reddy - initial implementation
+  *    Joseph Ross - Made changes to account for mapping multiple guidence patterns with the same context
   *******************************************************************************/
 
 using System.Linq;
@@ -30,15 +31,12 @@ namespace AgGateway.ADAPT.Visualizer
             using (var graphics = _spatialViewer.CreateGraphics())
             {
                 _drawingUtil = new DrawingUtil(_spatialViewer.Width, _spatialViewer.Height, graphics);
-
                 foreach (var polygon in fieldBoundary.SpatialData.Polygons)
                 {
                     var projectedPoints = polygon.ExteriorRing.Points.Select(point => point.ToUtm()).ToList();
-
-                    var delta = _drawingUtil.GetDelta(projectedPoints);
-                    _drawingUtil.SetOriginPoint(delta);
-
-                    var screenPolygon = projectedPoints.Select(point => point.ToXy(_drawingUtil.MinX, _drawingUtil.MinY, delta)).ToArray();
+                    _drawingUtil.SetMinMax(projectedPoints);
+                    
+                    var screenPolygon = projectedPoints.Select(point => point.ToXy(_drawingUtil.MinX, _drawingUtil.MinY, _drawingUtil.GetDelta())).ToArray();
 
                     graphics.DrawPolygon(DrawingUtil.Pen, screenPolygon);
                 }
