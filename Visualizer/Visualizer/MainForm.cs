@@ -201,7 +201,7 @@ namespace AgGateway.ADAPT.Visualizer
 
             var propertyValue = propertyInfo.GetIndexParameters().Any() ? null : propertyInfo.GetValue(element, null);
 
-            if (propertyType.IsPrimitive || propertyType == typeof (string) || propertyType == typeof (DateTime))
+            if (propertyType.IsPrimitive || propertyType == typeof (string) || propertyType == typeof (DateTime) || propertyType.IsEnum)
             {
                 parentNode.Nodes.Add(string.Format(@"{0}: {1}", propertyInfo.Name, propertyValue));
             }
