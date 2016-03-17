@@ -56,6 +56,8 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
             Name = name != null ? name.Value : null;
             Description = name != null ? name.description : null;
             UnitDimension = FindUnitDimension(representation);
+            if(representation.RelatedDDI != null)
+                Ddi = representation.RelatedDDI[0].ddi;
 
             _unitOfMeasureDefaults = GetDefaultUnitOfMeasures(representation.Items);
             _unitOfMeasurePreferences = GetUnitOfMeasurePreferences(representation.Items);

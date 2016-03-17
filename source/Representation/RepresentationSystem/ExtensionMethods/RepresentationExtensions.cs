@@ -10,6 +10,7 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 using System.Linq;
+using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.Representation.RepresentationSystem.ExtensionMethods
@@ -18,24 +19,41 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.ExtensionMethods
    {
       public static ApplicationDataModel.Representations.NumericRepresentation ToModelRepresentation(this NumericRepresentation representation)
       {
-         return new ApplicationDataModel.Representations.NumericRepresentation
-         {
-            Code = representation.DomainId,
-            Description = representation.Description,
-         };
+          var numericRepresentation = new ApplicationDataModel.Representations.NumericRepresentation
+          {
+              Code = representation.DomainId,
+              Description = representation.Description,
+          };
+          numericRepresentation.Id.UniqueIds.Add(new UniqueId
+          {
+              Id = representation.DomainId,
+              CiTypeEnum = CompoundIdentifierTypeEnum.LongInt,
+              Source = "http://dictionary.isobus.net/isobus/",
+              SourceType = IdSourceTypeEnum.URI
+          });
+
+          return numericRepresentation;
       }
 
-      public static ApplicationDataModel.Representations.EnumeratedRepresentation ToModelRepresentation(this EnumeratedRepresentation representation)
+       public static ApplicationDataModel.Representations.EnumeratedRepresentation ToModelRepresentation(this EnumeratedRepresentation representation)
       {
-         return new ApplicationDataModel.Representations.EnumeratedRepresentation
-         {
-            Code = representation.DomainId,
-            Description = representation.Description,
-            EnumeratedMembers = representation.EnumerationMembers.Select(m => m.ToModelEnumMember()).ToList()
-         };
+          var enumeratedRepresentation = new ApplicationDataModel.Representations.EnumeratedRepresentation
+          {
+              Code = representation.DomainId,
+              Description = representation.Description,
+              EnumeratedMembers = representation.EnumerationMembers.Select(m => m.ToModelEnumMember()).ToList(),
+          };
+          enumeratedRepresentation.Id.UniqueIds.Add(new UniqueId
+          {
+              Id = representation.DomainId,
+              CiTypeEnum = CompoundIdentifierTypeEnum.LongInt,
+              Source = "http://dictionary.isobus.net/isobus/",
+              SourceType = IdSourceTypeEnum.URI
+          });
+          return enumeratedRepresentation;
       }
 
-      public static ApplicationDataModel.Representations.EnumerationMember ToModelEnumMember(this EnumerationMember enumMember)
+       public static ApplicationDataModel.Representations.EnumerationMember ToModelEnumMember(this EnumerationMember enumMember)
       {
          return new ApplicationDataModel.Representations.EnumerationMember
          {

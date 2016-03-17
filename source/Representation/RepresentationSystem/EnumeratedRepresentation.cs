@@ -33,6 +33,8 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
             var name = GetName(enumeratedRepresentation.Name, culture);
             Name = name != null ? name.Value : null;
             Description = name != null ? name.description : null;
+            if (enumeratedRepresentation.RelatedDDI != null)
+                Ddi = enumeratedRepresentation.RelatedDDI[0].ddi;
         }
 
         private static RepresentationCollection<EnumerationMember> GetEnumerationMembers(RepresentationSystemRepresentationsEnumeratedRepresentation enumeratedRepresentation)
