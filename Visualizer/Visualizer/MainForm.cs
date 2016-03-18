@@ -188,7 +188,7 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ParseProperty(object element, TreeNode parentNode, PropertyInfo propertyInfo)
         {
-            if (element is Func<object> || element is Func<int, object>)
+            if (element is Func<object> || element is Func<int, object> || element is Meter || element is Section || element is DataLogTrigger)
                 return;
 
             var propertyType = propertyInfo.PropertyType;
@@ -201,7 +201,7 @@ namespace AgGateway.ADAPT.Visualizer
 
             var propertyValue = propertyInfo.GetIndexParameters().Any() ? null : propertyInfo.GetValue(element, null);
 
-            if (propertyType.IsPrimitive || propertyType == typeof (string) || propertyType == typeof (DateTime))
+            if (propertyType.IsPrimitive || propertyType == typeof (string) || propertyType == typeof (DateTime) || propertyType.IsEnum)
             {
                 parentNode.Nodes.Add(string.Format(@"{0}: {1}", propertyInfo.Name, propertyValue));
             }

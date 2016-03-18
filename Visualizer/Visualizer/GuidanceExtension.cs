@@ -7,6 +7,7 @@
   *
   * Contributors:
   *    Tarak Reddy - initial implementation
+  *    Joseph Ross - Made changes to account for mapping multiple guidence patterns with the same context
   *******************************************************************************/
 
 using System;
@@ -19,28 +20,28 @@ namespace AgGateway.ADAPT.Visualizer
 {
     public static class GuidanceExtension
     {
-        public static double GetDelta(this APlus aPlus, DrawingUtil drawingUtil)
+        public static void SetMinMax(this APlus aPlus, DrawingUtil drawingUtil)
         {
             var points = new List<Point> {aPlus.Point.ToUtm()};
 
-            return GetDelta(drawingUtil, points);
+            SetMinMax(drawingUtil, points);
         }
 
-        public static double GetDelta(this AbLine abLine, DrawingUtil drawingUtil)
+        public static void SetMinMax(this AbLine abLine, DrawingUtil drawingUtil)
         {
             var points = new List<Point> {abLine.A.ToUtm(), abLine.B.ToUtm()};
 
-            return GetDelta(drawingUtil, points);
+            SetMinMax(drawingUtil, points);
         }
 
-        public static double GetDelta(this AbCurve abCurve, DrawingUtil drawingUtil)
+        public static void SetMinMax(this AbCurve abCurve, DrawingUtil drawingUtil)
         {
             var points = abCurve.Shape.SelectMany(x => x.Points).Select(x => x.ToUtm()).ToList();
 
-            return GetDelta(drawingUtil, points);
+            SetMinMax(drawingUtil, points);
         }
 
-        public static double GetDelta(this CenterPivot centerPivot, DrawingUtil drawingUtil)
+        public static void SetMinMax(this CenterPivot centerPivot, DrawingUtil drawingUtil)
         {
             var centerUtm = centerPivot.Center.ToUtm();
             var radius = Math.Abs(centerUtm.X - centerPivot.EndPoint.ToUtm().X);
@@ -74,28 +75,26 @@ namespace AgGateway.ADAPT.Visualizer
                 eastPoint
             };
 
-            return GetDelta(drawingUtil, points);
+            SetMinMax(drawingUtil, points);
         }
 
-        public static double GetDelta(this MultiAbLine multiAbLine, DrawingUtil drawingUtil)
+        public static void SetMinMax(this MultiAbLine multiAbLine, DrawingUtil drawingUtil)
         {
             var points = multiAbLine.AbLines.SelectMany(x => new List<Point> {x.A.ToUtm(), x.B.ToUtm()}).ToList();
 
-            return GetDelta(drawingUtil, points);
+            SetMinMax(drawingUtil, points);
         }
 
-        public static double GetDelta(this Spiral spiral, DrawingUtil drawingUtil)
+        public static void SetMinMax(this Spiral spiral, DrawingUtil drawingUtil)
         {
             var points = spiral.Shape.Points.Select(x => x.ToUtm()).ToList();
 
-            return GetDelta(drawingUtil, points);
+            SetMinMax(drawingUtil, points);
         }
 
-        private static double GetDelta(DrawingUtil drawingUtil, List<Point> points)
+        private static void SetMinMax(DrawingUtil drawingUtil, List<Point> points)
         {
-            var delta = drawingUtil.GetDelta(points);
-            drawingUtil.SetOriginPoint(delta);
-            return delta;
+            drawingUtil.SetMinMax(points);
         }
     }
 }
