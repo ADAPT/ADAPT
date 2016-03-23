@@ -11,6 +11,7 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -188,7 +189,7 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ParseProperty(object element, TreeNode parentNode, PropertyInfo propertyInfo)
         {
-            if (element is Func<object> || element is Func<int, object> || element is Meter || element is Section || element is DataLogTrigger)
+            if (element is Func<object> || element is Func<int, object>)
                 return;
 
             var propertyType = propertyInfo.PropertyType;
@@ -223,6 +224,9 @@ namespace AgGateway.ADAPT.Visualizer
             var collection = (IEnumerable) propertyValue;
             if (collection != null)
             {
+                if(collection is IEnumerable<Meter> || collection is IEnumerable<Section> || collection is IEnumerable<DataLogTrigger>)
+                    return;
+
                 foreach (var child in collection)
                 {
                     var node = new TreeNode(child.ToString()) {Tag = child};
