@@ -10,6 +10,7 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - changed LayerType to ReferenceLayerTypeEnum
   *    Justin Sliekers - changing BoundingPolygon to Polgyon; changing to single timescope
+  *    Kathleen Oneal - added fieldIds and cropZoneIds
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -36,5 +37,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
         public Polygon BoundingPolygon { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }
+
+        public List<int> FieldIds { get; set; }
+
+        public List<int> CropZoneIds { get; set; }
     }
 }

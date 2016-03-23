@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - added referenceLayerIds
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -44,5 +45,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         public List<int> GuidanceGroupIds { get; set; }
 
         public List<int> TimeScopeIds { get; set; }
+
+        public List<int> ReferenceLayerIds { get; set; }
     }
 }
