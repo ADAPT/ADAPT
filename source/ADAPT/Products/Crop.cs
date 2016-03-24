@@ -10,14 +10,13 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    public class Crop : MarshalByRefObject
+    public class Crop
     {
         public Crop()
         {

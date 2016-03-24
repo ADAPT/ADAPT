@@ -10,12 +10,11 @@
   *    Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using System;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    public class ProductComponent : MarshalByRefObject
+    public class ProductComponent
     {
         public int IngredientId { get; set; }
 

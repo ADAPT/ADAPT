@@ -10,13 +10,12 @@
   *    Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
-    public class Properties : MarshalByRefObject
+    public class Properties
     {
         private readonly Dictionary<string, string> _properties = new Dictionary<string, string>();
 

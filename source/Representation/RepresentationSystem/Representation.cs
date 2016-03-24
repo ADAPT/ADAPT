@@ -17,6 +17,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         public long DomainTag { get; protected set; }
         public string Name { get; protected set; }
         public string Description { get; protected set; }
+        public int? Ddi { get; protected set; }
 
         protected Representation(string domainId, long domainTag)
         {

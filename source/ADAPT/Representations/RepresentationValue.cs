@@ -8,13 +8,11 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/
-
-using System;
+  *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Representations
 {
-    public abstract class RepresentationValue : MarshalByRefObject
+    public abstract class RepresentationValue
     {
         public int? Code { get; set; }
 

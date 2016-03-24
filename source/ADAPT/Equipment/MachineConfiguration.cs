@@ -13,14 +13,13 @@
  *    Kathleen Oneal - changed TimeScope list of ints to single TimeScope
  *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
-    public class MachineConfiguration : MarshalByRefObject
+    public class MachineConfiguration
     {
         public MachineConfiguration()
         {

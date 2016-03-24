@@ -10,13 +10,12 @@
   *    Justin Sliekers - initial API and implementation
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
-    public class PermittedProduct : MarshalByRefObject
+    public class PermittedProduct
     {
         public PermittedProduct()
         {

@@ -11,7 +11,6 @@
   *    Justin Sliekers - renamed ReferenceNoteIds to NoteIds
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Logistics;
@@ -21,7 +20,7 @@ using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 {
-    public class CropZone : MarshalByRefObject
+    public class CropZone
     {
         public CropZone()
         {

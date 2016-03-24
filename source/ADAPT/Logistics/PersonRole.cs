@@ -12,13 +12,12 @@
   *    Justin Sliekers - changed EmployerId to CompanyId, changed to list of Timescope for ActiveScopes
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
-    public class PersonRole : MarshalByRefObject
+    public class PersonRole
     {
         public PersonRole()
         {

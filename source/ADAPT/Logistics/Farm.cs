@@ -10,13 +10,12 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
-    public class Farm : MarshalByRefObject
+    public class Farm
     {
         public Farm()
         {

@@ -15,8 +15,8 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Windows.Forms;
-using AgGateway.ADAPT.ApplicationDataModel.ADM;
 using AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries;
 using AgGateway.ADAPT.ApplicationDataModel.Guidance;
 using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
@@ -107,16 +107,25 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void _buttonExportDatacard_Click(object sender, EventArgs e)
         {
-            var pluginName = (string) _comboBoxPlugins.SelectedItem;
-            var plugin = _dataProvider.GetPlugin(pluginName);
-
-            if (_applicationDataModel == null || plugin == null)
+            try
             {
-                MessageBox.Show(@"Could not export, either not a comptable plugin or no data model to export");
-                return;
-            }
+                var pluginName = (string) _comboBoxPlugins.SelectedItem;
+                var plugin = _dataProvider.GetPlugin(pluginName);
 
-            DataProvider.Export(plugin, _applicationDataModel, _textBoxInitializeString.Text, GetExportDirectory());
+                if (_applicationDataModel == null || plugin == null)
+                {
+                    MessageBox.Show(@"Could not export, either not a comptable plugin or no data model to export");
+                    return;
+                }
+
+                DataProvider.Export(plugin, _applicationDataModel, _textBoxInitializeString.Text, GetExportDirectory());
+
+                MessageBox.Show(@"Data exported successfully.");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void _treeViewMetadata_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -179,7 +188,7 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ParseProperty(object element, TreeNode parentNode, PropertyInfo propertyInfo)
         {
-            if (element is Func<object> || element is Func<int, object>)
+            if (element is Func<object> || element is Func<int, object> || element is Meter || element is Section || element is DataLogTrigger)
                 return;
 
             var propertyType = propertyInfo.PropertyType;
@@ -192,7 +201,7 @@ namespace AgGateway.ADAPT.Visualizer
 
             var propertyValue = propertyInfo.GetIndexParameters().Any() ? null : propertyInfo.GetValue(element, null);
 
-            if (propertyType.IsPrimitive || propertyType == typeof (string) || propertyType == typeof (DateTime))
+            if (propertyType.IsPrimitive || propertyType == typeof (string) || propertyType == typeof (DateTime) || propertyType.IsEnum)
             {
                 parentNode.Nodes.Add(string.Format(@"{0}: {1}", propertyInfo.Name, propertyValue));
             }
@@ -251,18 +260,22 @@ namespace AgGateway.ADAPT.Visualizer
             if (treeNode.Tag is FieldBoundary)
             {
                 _boundaryProcessor.ProcessBoundary(treeNode.Tag as FieldBoundary);
+                _tabControlViewer.SelectedTab = _tabPageSpatial;
             }
             else if (treeNode.Tag is GuidanceGroup)
             {
                 _guidanceProcessor.ProcessGuidance(treeNode.Tag as GuidanceGroup, _applicationDataModel.Catalog.GuidancePatterns);
+                _tabControlViewer.SelectedTab = _tabPageSpatial;
             }
             else if (treeNode.Tag is GuidancePattern)
             {
                 _guidanceProcessor.ProccessGuidancePattern(treeNode.Tag as GuidancePattern);
+                _tabControlViewer.SelectedTab = _tabPageSpatial;
             }
             else if (treeNode.Tag is OperationData)
             {
                 _dataGridViewRawData.DataSource = _operationDataProcessor.ProcessOperationData(treeNode.Tag as OperationData);
+                _tabControlViewer.SelectedTab = _tabPageRawData;
             }
         }
 
@@ -274,6 +287,54 @@ namespace AgGateway.ADAPT.Visualizer
             }
 
             ProcessData(_tabPageSpatial.Tag as TreeNode);
+        }
+
+        private void _buttonExportRawData_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog = new SaveFileDialog
+            {
+                DefaultExt = ".csv", 
+                Filter = "CSV File (.csv)|*.csv"
+            };
+
+            var result = saveFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                WriteCsvFile(saveFileDialog);
+            }
+        }
+
+        private void WriteCsvFile(SaveFileDialog saveFileDialog)
+        {
+            using (var streamWriter = new StreamWriter(saveFileDialog.FileName))
+            {
+                var sb = new StringBuilder();
+
+                for (int i = 0; i < _dataGridViewRawData.Columns.Count; i++)
+                {
+                    if (i != 0)
+                        sb.Append(",");
+
+                    sb.Append(_dataGridViewRawData.Columns[i].Name);
+                }
+
+                foreach (DataGridViewRow row in _dataGridViewRawData.Rows)
+                {
+                    sb.Append("\n");
+                    for (int j = 0; j < _dataGridViewRawData.Columns.Count; j++)
+                    {
+                        if (j != 0)
+                            sb.Append(",");
+
+                        sb.Append(row.Cells[j].Value);
+                    }
+                }
+
+                streamWriter.WriteLine(sb.ToString());
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
         }
     }
 }

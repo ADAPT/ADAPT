@@ -8,16 +8,16 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation    
+  *    Kathleen Oneal - changed lists to ienumerables for effeciency  
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
-    public class EquipmentConfig : MarshalByRefObject
+    public class EquipmentConfig
     {
         public EquipmentConfig()
         {
@@ -32,10 +32,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 
         public int? ImplementConfigurationId { get; set; }
 
-        public List<Meter> Meters { get; set; }
+        public IEnumerable<Meter> Meters { get; set; }
 
-        public List<Section> Sections { get; set; }
+        public IEnumerable<Section> Sections { get; set; }
 
-        public List<DataLogTrigger> Triggers { get; set; }
+        public IEnumerable<DataLogTrigger> Triggers { get; set; }
     }
 }

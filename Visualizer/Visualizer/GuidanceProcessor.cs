@@ -7,6 +7,7 @@
   *
   * Contributors:
   *    Tarak Reddy - initial implementation
+  *    Joseph Ross - Made changes to account for mapping multiple guidence patterns with the same context
   *******************************************************************************/
 
 using System;
@@ -31,16 +32,23 @@ namespace AgGateway.ADAPT.Visualizer
 
         public void ProcessGuidance(GuidanceGroup guidanceGroup, List<GuidancePattern> guidancePatterns)
         {
-            foreach (var id in guidanceGroup.GuidancePatternIds)
+            using (var graphics = _spatialViewer.CreateGraphics())
             {
-                ProcessGuidancePattern(guidancePatterns, id);
+                _drawingUtil = new DrawingUtil(_spatialViewer.Width, _spatialViewer.Height, graphics);
+
+                SetMinMax(guidancePatterns, guidanceGroup.GuidancePatternIds);
+
+                foreach (var id in guidanceGroup.GuidancePatternIds)
+                {
+                    ProcessGuidancePattern(guidancePatterns, id);
+                }
             }
         }
 
         private void ProcessGuidancePattern(IEnumerable<GuidancePattern> guidancePatterns, int id)
         {
             var guidancePattern = guidancePatterns.First(pattern => pattern.Id.ReferenceId == id);
-            ProccessGuidancePattern(guidancePattern);
+            ProcessPattern(guidancePattern);
         }
 
         public void ProccessGuidancePattern(GuidancePattern guidancePattern)
@@ -49,43 +57,88 @@ namespace AgGateway.ADAPT.Visualizer
             {
                 _drawingUtil = new DrawingUtil(_spatialViewer.Width, _spatialViewer.Height, graphics);
 
-                if (guidancePattern is APlus)
-                {
-                    ProcessAPlus(guidancePattern as APlus);
-                }
-                else if (guidancePattern is AbLine)
-                {
-                    ProcessAbLine(guidancePattern as AbLine);
-                }
-                else if (guidancePattern is AbCurve)
-                {
-                    ProcessAbCurve(guidancePattern as AbCurve);
-                }
-                else if (guidancePattern is CenterPivot)
-                {
-                    ProcessCenterPivot(guidancePattern as CenterPivot);
-                }
-                else if (guidancePattern is MultiAbLine)
-                {
-                    ProcessMultiAbLine(guidancePattern as MultiAbLine);
-                }
-                else if (guidancePattern is Spiral)
-                {
-                    ProcessSpiral(guidancePattern as Spiral);
-                }
+                SetMinMax(guidancePattern);
+
+                ProcessPattern(guidancePattern);
+            }
+        }
+
+        private void SetMinMax(IEnumerable<GuidancePattern> guidancePatterns, List<int> guidancePatternIds)
+        {
+            var matchingGuidancePatterns = guidancePatterns.Where(pattern => guidancePatternIds.Contains(pattern.Id.ReferenceId));
+
+            foreach (var guidancePattern in matchingGuidancePatterns)
+            {
+                SetMinMax(guidancePattern);
+            }
+        }
+
+        private void SetMinMax(GuidancePattern guidancePattern)
+        {
+            if (guidancePattern is APlus)
+            {
+                (guidancePattern as APlus).SetMinMax(_drawingUtil);
+            }
+            else if (guidancePattern is AbLine)
+            {
+                (guidancePattern as AbLine).SetMinMax(_drawingUtil);
+            }
+            else if (guidancePattern is AbCurve)
+            {
+                (guidancePattern as AbCurve).SetMinMax(_drawingUtil);
+            }
+            else if (guidancePattern is CenterPivot)
+            {
+                (guidancePattern as CenterPivot).SetMinMax(_drawingUtil);
+            }
+            else if (guidancePattern is MultiAbLine)
+            {
+                (guidancePattern as MultiAbLine).SetMinMax(_drawingUtil);
+            }
+            else if (guidancePattern is Spiral)
+            {
+                (guidancePattern as Spiral).SetMinMax(_drawingUtil);
+            }
+        }
+
+        private void ProcessPattern(GuidancePattern guidancePattern)
+        {
+            if (guidancePattern is APlus)
+            {
+                ProcessAPlus(guidancePattern as APlus);
+            }
+            else if (guidancePattern is AbLine)
+            {
+                ProcessAbLine(guidancePattern as AbLine);
+            }
+            else if (guidancePattern is AbCurve)
+            {
+                ProcessAbCurve(guidancePattern as AbCurve);
+            }
+            else if (guidancePattern is CenterPivot)
+            {
+                ProcessCenterPivot(guidancePattern as CenterPivot);
+            }
+            else if (guidancePattern is MultiAbLine)
+            {
+                ProcessMultiAbLine(guidancePattern as MultiAbLine);
+            }
+            else if (guidancePattern is Spiral)
+            {
+                ProcessSpiral(guidancePattern as Spiral);
             }
         }
 
         private void ProcessSpiral(Spiral spiral)
         {
-            var delta = spiral.GetDelta(_drawingUtil);
+            var delta = _drawingUtil.GetDelta();
 
             ProcessLineString(spiral.Shape, delta);
         }
 
         private void ProcessMultiAbLine(MultiAbLine multiAbLine)
         {
-            var delta = multiAbLine.GetDelta(_drawingUtil);
+            var delta = _drawingUtil.GetDelta();
 
             foreach (var abLine in multiAbLine.AbLines)
             {
@@ -95,7 +148,7 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ProcessCenterPivot(CenterPivot centerPivot)
         {
-            var delta = centerPivot.GetDelta(_drawingUtil);
+            var delta = _drawingUtil.GetDelta();
             var center = centerPivot.Center.ToUtm().ToXy(_drawingUtil.MinX, _drawingUtil.MinY, delta);
             var radius = GetRadius(centerPivot);
             _drawingUtil.Graphics.DrawEllipse(DrawingUtil.Pen, center.X - radius, center.Y - radius, radius + radius, radius + radius);
@@ -110,7 +163,7 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ProcessAbCurve(AbCurve abCurve)
         {
-            var delta = abCurve.GetDelta(_drawingUtil);
+            var delta = _drawingUtil.GetDelta();
 
             foreach (var lineString in abCurve.Shape)
             {
@@ -120,14 +173,14 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ProcessAbLine(AbLine abLine)
         {
-            var delta = abLine.GetDelta(_drawingUtil);
+            var delta = _drawingUtil.GetDelta();
 
             ProcessPoints(new List<Point> {abLine.A, abLine.B}, delta);
         }
 
         private void ProcessAPlus(APlus aPlus)
         {
-            var delta = aPlus.GetDelta(_drawingUtil);
+            var delta = _drawingUtil.GetDelta();
             var projectedPoint = aPlus.Point;
         }
 
@@ -138,6 +191,11 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ProcessPoints(IEnumerable<Point> points, double delta)
         {
+            if (!points.Any() || points.Count() == 1)
+                return;
+
+            if (delta == 0.0)
+                delta = 1.0;
             var screenPoints = points.Select(point => point.ToUtm()).Select(point => point.ToXy(_drawingUtil.MinX, _drawingUtil.MinY, delta)).ToArray();
 
             _drawingUtil.Graphics.DrawLines(DrawingUtil.Pen, screenPoints);

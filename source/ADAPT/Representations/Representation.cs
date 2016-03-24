@@ -10,12 +10,11 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using System;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Representations
 {
-    public abstract class Representation : MarshalByRefObject
+    public abstract class Representation
     {
         protected Representation()
         {

@@ -10,13 +10,12 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.ADM;
 
 namespace AgGateway.ADAPT.TestPlugin
 {
-   public class TestPlugin : MarshalByRefObject, IPlugin
+   public class TestPlugin : IPlugin
    {
       public string Name
       {

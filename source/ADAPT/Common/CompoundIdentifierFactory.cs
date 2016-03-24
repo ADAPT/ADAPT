@@ -10,12 +10,11 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
-    public class CompoundIdentifierFactory : MarshalByRefObject
+    public class CompoundIdentifierFactory
     {
         private static CompoundIdentifierFactory _instance;
         private static int _lowestReferenceId;

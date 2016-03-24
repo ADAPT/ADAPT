@@ -10,13 +10,12 @@
   *    Justin Sliekers - initial API and implementation
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
-    public class RxShapeLookup : MarshalByRefObject
+    public class RxShapeLookup
     {
         public MultiPolygon Shape { get; set; }
 

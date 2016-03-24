@@ -11,12 +11,11 @@
  *    Kathleen Oneal - added properties, growerId, FarmIds, FieldIds, CropZoneIds
  *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class Summary : MarshalByRefObject
+    public class Summary
     {
         public int? GrowerId { get; set; }
 

@@ -10,12 +10,11 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using System;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
-    public class ImplementModel : MarshalByRefObject
+    public class ImplementModel
     {
         public ImplementModel()
         {

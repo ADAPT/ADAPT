@@ -12,12 +12,11 @@
   *    Justin Sliekers - dropping context items
   *******************************************************************************/
 
-using System;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
-    public class Manufacturer : MarshalByRefObject
+    public class Manufacturer
     {
         public Manufacturer()
         {

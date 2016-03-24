@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visualizer", "Visualizer\Visualizer.csproj", "{308B8C5A-715D-4F80-8EA4-C4CD9FBCB970}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualizerTests", "VisualizerTests\VisualizerTests.csproj", "{C0A52DC9-DE05-4897-A38A-709472CFE0D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +15,10 @@ Global
 		{308B8C5A-715D-4F80-8EA4-C4CD9FBCB970}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{308B8C5A-715D-4F80-8EA4-C4CD9FBCB970}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{308B8C5A-715D-4F80-8EA4-C4CD9FBCB970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0A52DC9-DE05-4897-A38A-709472CFE0D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0A52DC9-DE05-4897-A38A-709472CFE0D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0A52DC9-DE05-4897-A38A-709472CFE0D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0A52DC9-DE05-4897-A38A-709472CFE0D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

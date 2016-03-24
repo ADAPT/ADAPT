@@ -17,7 +17,7 @@ using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
-    public class Brand : MarshalByRefObject
+    public class Brand
     {
         public Brand()
         {
