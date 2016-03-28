@@ -48,6 +48,7 @@
     <Compile Include="Guidance\MultiAbLine.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Logistics\CropZone.cs" />
     <Compile Include="Products\ActiveIngredient.cs" />
     <Compile Include="Guidance\APlus.cs" />
     <Compile Include="ADM\ApplicationDataModel.cs" />
@@ -75,7 +76,6 @@
     <Compile Include="Products\CropNutritionIngredientCodeEnum.cs" />
     <Compile Include="Products\CropProtectionProduct.cs" />
     <Compile Include="Products\CropVariety.cs" />
-    <Compile Include="ReferenceLayers\CropZone.cs" />
     <Compile Include="LoggedData\DataLogTrigger.cs" />
     <Compile Include="Common\DateContextEnum.cs" />
     <Compile Include="Common\DateWithContext.cs" />

@@ -13,12 +13,11 @@
 
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
-using AgGateway.ADAPT.ApplicationDataModel.Logistics;
 using AgGateway.ADAPT.ApplicationDataModel.Notes;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
-namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
+namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
     public class CropZone
     {
