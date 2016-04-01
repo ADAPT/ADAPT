@@ -33,15 +33,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AgGateway.ADAPT.ApplicationDataModel, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.19\lib\AgGateway.ADAPT.ApplicationDataModel.dll</HintPath>
+      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.28\lib\AgGateway.ADAPT.ApplicationDataModel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AgGateway.ADAPT.PluginManager, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.19\lib\AgGateway.ADAPT.PluginManager.dll</HintPath>
+      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.28\lib\AgGateway.ADAPT.PluginManager.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AgGateway.ADAPT.Representation, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.19\lib\AgGateway.ADAPT.Representation.dll</HintPath>
+      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.28\lib\AgGateway.ADAPT.Representation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

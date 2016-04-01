@@ -22,7 +22,6 @@ using AgGateway.ADAPT.ApplicationDataModel.Equipment;
 using AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries;
 using AgGateway.ADAPT.ApplicationDataModel.Guidance;
 using AgGateway.ADAPT.ApplicationDataModel.Logistics;
-using AgGateway.ADAPT.ApplicationDataModel.Notes;
 using AgGateway.ADAPT.ApplicationDataModel.Prescriptions;
 using AgGateway.ADAPT.ApplicationDataModel.Products;
 using AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers;
@@ -35,6 +34,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<Connector> Connectors { get; set; }
 
+        public List<ContactInfo> ContactInfo { get; set; }
+
         public List<Container> Containers { get; set; } 
 
         public List<Crop> Crops { get; set; }
@@ -45,17 +46,19 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<CropZone> CropZones { get; set; }
 
+        public string Description { get; set; }
+
         public List<EquipmentConfig> EquipmentConfigs { get; set; }
 
         public List<Farm> Farms { get; set; }
+        
+        public List<FertilizerProduct> FertilizerProducts { get; set; }
 
         public List<Field> Fields { get; set; }
 
         public List<FieldBoundary> FieldBoundaries { get; set; }
 
         public List<Grower> Growers { get; set; }
-
-        public List<Ingredient> Ingredients { get; set; } 
 
         public List<GuidancePattern> GuidancePatterns { get; set; }
 
@@ -69,21 +72,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<ImplementConfiguration> ImplementConfigurations { get; set; } 
 
-        public string Description { get; set; }
-
-        public List<Person> Persons { get; set; } 
-
-        public List<PersonRole> PersonRoles { get; set; }
-
-        public List<ContactInfo> ContactInfo { get; set; }
-        
-        public List<Prescription> Prescriptions { get; set; }
-        
-        public List<FertilizerProduct> FertilizerProducts { get; set; }
-
-        public List<ProductMix> ProductMixes { get; set; }
-
-        public List<TimeScope> TimeScopes { get; set; }
+        public List<Ingredient> Ingredients { get; set; } 
 
         public List<Machine> Machines { get; set; }
 
@@ -94,5 +83,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public List<MachineType> MachineTypes { get; set; } 
 
         public List<MachineConfiguration> MachineConfigurations { get; set; } 
+
+        public List<Person> Persons { get; set; } 
+
+        public List<PersonRole> PersonRoles { get; set; }
+        
+        public List<Prescription> Prescriptions { get; set; }
+
+        public List<ProductMix> ProductMixes { get; set; }
+
+        public List<TimeScope> TimeScopes { get; set; }
     }
 }
