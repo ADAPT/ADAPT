@@ -10,18 +10,15 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using AgGateway.ADAPT.ApplicationDataModel.Common;
-
 namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
 {
     public abstract class Shape
     {
         protected Shape()
         {
-            Id = CompoundIdentifierFactory.Instance.Create();
         }
 
-        public CompoundIdentifier Id { get; private set; }
+        public int Id { get; private set; }
 
         public ShapeTypeEnum Type { get; protected set; }
     }

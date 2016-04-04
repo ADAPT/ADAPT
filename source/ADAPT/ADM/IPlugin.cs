@@ -9,8 +9,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         string Owner { get; }
         void Initialize(string args = null);
         bool IsDataCardSupported(string dataPath, Properties properties = null);
-        List<IError> ValidateDataOnCard(string dataPath, Properties properties = null);
-        ApplicationDataModel Import(string dataPath, Properties properties = null);
+        IList<IError> ValidateDataOnCard(string dataPath, Properties properties = null);
+        IList<ApplicationDataModel> Import(string dataPath, Properties properties = null);
         void Export(ApplicationDataModel dataModel, string exportPath, Properties properties = null);
         Properties GetProperties(string dataPath);
     }
