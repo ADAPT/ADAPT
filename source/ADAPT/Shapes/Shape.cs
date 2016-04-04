@@ -18,7 +18,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
         {
         }
 
-        public int Id { get; private set; }
+        public int Id { get; set; }
 
         public ShapeTypeEnum Type { get; protected set; }
     }
