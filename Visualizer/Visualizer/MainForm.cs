@@ -30,7 +30,8 @@ namespace AgGateway.ADAPT.Visualizer
         private readonly DataProvider _dataProvider;
         private readonly GuidanceProcessor _guidanceProcessor;
         private readonly OperationDataProcessor _operationDataProcessor;
-        private ApplicationDataModel.ADM.ApplicationDataModel _applicationDataModel;
+        private IList<ApplicationDataModel.ADM.ApplicationDataModel> _applicationDataModels;
+        private int _admIndex;
 
         public MainForm()
         {
@@ -113,13 +114,16 @@ namespace AgGateway.ADAPT.Visualizer
                 var pluginName = (string) _comboBoxPlugins.SelectedItem;
                 var plugin = _dataProvider.GetPlugin(pluginName);
 
-                if (_applicationDataModel == null || plugin == null)
+                if (_applicationDataModels == null || _applicationDataModels.Count == 0  || plugin == null)
                 {
                     MessageBox.Show(@"Could not export, either not a comptable plugin or no data model to export");
                     return;
                 }
 
-                DataProvider.Export(plugin, _applicationDataModel, _textBoxInitializeString.Text, GetExportDirectory());
+                foreach (var applicationDataModel in _applicationDataModels)
+                {
+                    DataProvider.Export(plugin, applicationDataModel, _textBoxInitializeString.Text, GetExportDirectory());
+                }
 
                 MessageBox.Show(@"Data exported successfully.");
             }
@@ -165,15 +169,20 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ImportDataCard(string datacardPath)
         {
-            _applicationDataModel = _dataProvider.Import(datacardPath, _textBoxInitializeString.Text);
-            if (_applicationDataModel == null)
+            _applicationDataModels = _dataProvider.Import(datacardPath, _textBoxInitializeString.Text);
+            if (_applicationDataModels == null || _applicationDataModels.Count == 0)
             {
                 MessageBox.Show(@"Not supported data format.");
                 return;
             }
 
-            var parentNode = _treeViewMetadata.Nodes.Add("ApplicationDataModel");
-            AddNode(_applicationDataModel, parentNode);
+            _admIndex = 0;
+            for (; _admIndex < _applicationDataModels.Count; _admIndex++)
+            {
+                var applicationDataModel = _applicationDataModels[_admIndex];
+                var parentNode = _treeViewMetadata.Nodes.Add("ApplicationDataModel");
+                AddNode(applicationDataModel, parentNode);
+            }
         }
 
         private void AddNode(object element, TreeNode parentNode)
@@ -229,7 +238,10 @@ namespace AgGateway.ADAPT.Visualizer
 
                 foreach (var child in collection)
                 {
-                    var node = new TreeNode(child.ToString()) {Tag = child};
+                    var node = new TreeNode(child.ToString())
+                    {
+                        Tag = new ObjectWithIndex {ApplicationDataModelIndex = _admIndex, Element = child}
+                    };
                     collectionNode.Nodes.Add(node);
                     AddNode(child, node);
                 }
@@ -261,24 +273,27 @@ namespace AgGateway.ADAPT.Visualizer
 
         private void ProcessData(TreeNode treeNode)
         {
-            if (treeNode.Tag is FieldBoundary)
+            var objectWithIndex = (ObjectWithIndex) treeNode.Tag;
+            var element = objectWithIndex.Element;
+
+            if (element is FieldBoundary)
             {
-                _boundaryProcessor.ProcessBoundary(treeNode.Tag as FieldBoundary);
+                _boundaryProcessor.ProcessBoundary(element as FieldBoundary);
                 _tabControlViewer.SelectedTab = _tabPageSpatial;
             }
-            else if (treeNode.Tag is GuidanceGroup)
+            else if (element is GuidanceGroup)
             {
-                _guidanceProcessor.ProcessGuidance(treeNode.Tag as GuidanceGroup, _applicationDataModel.Catalog.GuidancePatterns);
+                _guidanceProcessor.ProcessGuidance(element as GuidanceGroup, _applicationDataModels[objectWithIndex.ApplicationDataModelIndex].Catalog.GuidancePatterns);
                 _tabControlViewer.SelectedTab = _tabPageSpatial;
             }
-            else if (treeNode.Tag is GuidancePattern)
+            else if (element is GuidancePattern)
             {
-                _guidanceProcessor.ProccessGuidancePattern(treeNode.Tag as GuidancePattern);
+                _guidanceProcessor.ProccessGuidancePattern(element as GuidancePattern);
                 _tabControlViewer.SelectedTab = _tabPageSpatial;
             }
-            else if (treeNode.Tag is OperationData)
+            else if (element is OperationData)
             {
-                _dataGridViewRawData.DataSource = _operationDataProcessor.ProcessOperationData(treeNode.Tag as OperationData);
+                _dataGridViewRawData.DataSource = _operationDataProcessor.ProcessOperationData(element as OperationData);
                 _tabControlViewer.SelectedTab = _tabPageRawData;
             }
         }
@@ -340,5 +355,12 @@ namespace AgGateway.ADAPT.Visualizer
                 streamWriter.Close();
             }
         }
+    }
+
+    internal class ObjectWithIndex
+    {
+        public int ApplicationDataModelIndex { get; set; }
+
+        public Object Element { get; set; }
     }
 }
