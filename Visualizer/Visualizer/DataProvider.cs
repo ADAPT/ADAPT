@@ -34,9 +34,7 @@ namespace AgGateway.ADAPT.Visualizer
             get { return _pluginFactory; }
         }
 
-
-
-        public ApplicationDataModel.ADM.ApplicationDataModel Import(string datacardPath, string initializeString)
+        public IList<ApplicationDataModel.ADM.ApplicationDataModel> Import(string datacardPath, string initializeString)
         {
             foreach (var availablePlugin in AvailablePlugins)
             {

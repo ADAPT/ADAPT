@@ -32,17 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AgGateway.ADAPT.ApplicationDataModel, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.28\lib\AgGateway.ADAPT.ApplicationDataModel.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="AgGateway.ADAPT.ApplicationDataModel">
+      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.31\lib\AgGateway.ADAPT.ApplicationDataModel.dll</HintPath>
     </Reference>
-    <Reference Include="AgGateway.ADAPT.PluginManager, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.28\lib\AgGateway.ADAPT.PluginManager.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="AgGateway.ADAPT.PluginManager">
+      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.31\lib\AgGateway.ADAPT.PluginManager.dll</HintPath>
     </Reference>
-    <Reference Include="AgGateway.ADAPT.Representation, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.28\lib\AgGateway.ADAPT.Representation.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="AgGateway.ADAPT.Representation">
+      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.31\lib\AgGateway.ADAPT.Representation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -102,12 +99,12 @@
     <None Include="Resources\layers-24.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\RepresentationSystem.xml">
+    <None Include="Resources\RepresentationSystem.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\UnitSystem.xml">
+    </None>
+    <None Include="Resources\UnitSystem.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
