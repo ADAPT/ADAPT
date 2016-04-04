@@ -45,7 +45,5 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         public List<int> GuidanceGroupIds { get; set; }
 
         public List<int> TimeScopeIds { get; set; }
-
-        public List<int> ReferenceLayerIds { get; set; }
     }
 }
