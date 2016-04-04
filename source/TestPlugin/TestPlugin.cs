@@ -36,14 +36,14 @@ namespace AgGateway.ADAPT.TestPlugin
          return true;
       }
 
-      public List<IError> ValidateDataOnCard(string dataPath, Properties properties = null)
+      public IList<IError> ValidateDataOnCard(string dataPath, Properties properties = null)
       {
          return new List<IError>();
       }
 
-      public ApplicationDataModel.ADM.ApplicationDataModel Import(string dataPath, Properties properties = null)
+      public IList<ApplicationDataModel.ADM.ApplicationDataModel> Import(string dataPath, Properties properties = null)
       {
-         return new ApplicationDataModel.ADM.ApplicationDataModel();
+          return new[] {new ApplicationDataModel.ADM.ApplicationDataModel()};
       }
 
       public void Export(ApplicationDataModel.ADM.ApplicationDataModel dataModel, string exportPath, Properties properties = null)

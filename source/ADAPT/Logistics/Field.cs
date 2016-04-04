@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kathleen Oneal - added referenceLayerIds
   *******************************************************************************/
 
 using System.Collections.Generic;
