@@ -21,7 +21,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.Groups
             Add(RepresentationInstanceList.vrYieldVolumePerArea);
             Add(RepresentationInstanceList.vrYieldMass);
             Add(RepresentationInstanceList.vrYieldMassPerArea);
-            Add(RepresentationInstanceList.vrYieldWetMass);
+            Add(RepresentationInstanceList.vrYieldWetMassFlow);
             Add(RepresentationInstanceList.vrYieldWetMassPerArea);
             Add(RepresentationInstanceList.vrYieldWetVolume);
             Add(RepresentationInstanceList.vrYieldWetVolumePerArea);
