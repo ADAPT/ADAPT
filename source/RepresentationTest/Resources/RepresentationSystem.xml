@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2015 sp1 (x64) (http://www.altova.com) by Joseph Ross (Deere and Company) -->
 <RepresentationSystem xmlns="urn:schemas-adapt-aggateway-org:Representation" xmlns:bt="urn:schemas-adapt-aggateway-org:BasicTypes" xmlns:unit="urn:schemas-adapt-aggateway-org:UnitSystem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:schemas-adapt-aggateway-org:Representation RepresentationSystem.xsd">
 	<SchemaVersion major="1" minor="1"/>
-	<ContentVersion major="1" minor="1"/>
+	<ContentVersion major="1" minor="3"/>
 	<Representations>
 		<NumericRepresentation domainID="vrABRowSpacing" domainTag="1" digits="3" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="3" decimal="2" unitOfMeasureSystem="umsEnglish"/>
@@ -266,7 +267,7 @@
 			<Name locale="uk" description="Вологість зібраного врожаю">Вологість зібраного врожаю</Name>
 			<Name locale="ug" description="ھوسۇلدىكى نەملىك مقدارى">ھوسۇلدىكى نەملىك مقدارى</Name>
 			<Name locale="vi" description="Độ ẩm khi thu hoạch">Độ ẩm khi thu hoạch</Name>
-			<RelatedDDI ddi="99" unitOfMeasure="ppm" resolution="0.001" offset="0"/>
+			<RelatedDDI ddi="99" unitOfMeasure="ppm" resolution="0.0001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrCropWeightBale" domainTag="7" digits="6" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="lb1bale-1" minValue="0" maxValue="999999.99" digits="6" decimal="2" unitOfMeasureSystem="umsEnglish"/>
@@ -311,6 +312,7 @@
 			<Name locale="uk" description="ВагаКипиЗібраногоВрожаю">Вага кипи зібраного врожаю</Name>
 			<Name locale="ug" description="بولاقتىكى زىرائەت ئېغىرلىقى">بولاقتىكى زىرائەتنىڭ ئېغىرلىقى</Name>
 			<Name locale="vi" description="Bao trọng lượng theo vụ">Bao trọng lượng theo vụ</Name>
+			<RelatedDDI ddi="122" unitOfMeasure="mg" resolution="0.001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrCropWeightVolume" domainTag="8" digits="6" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="lb1bu-1" minValue="0" maxValue="999999.99" digits="6" decimal="2" unitOfMeasureSystem="umsEnglish"/>
@@ -355,6 +357,7 @@
 			<Name locale="uk" description="ВагаОб&apos;ємуЗібраногоВрожаю">ВагаОб&apos;ємуЗібраногоВрожаю</Name>
 			<Name locale="ug" description="زىرائەت ئېغىرلىق سىغىمى">زىرائەت ئېغىرلىق سىغىمى</Name>
 			<Name locale="vi" description="Bao trọng lượng theo thể tích">Bao trọng lượng theo thể tích</Name>
+			<RelatedDDI ddi="123" unitOfMeasure="ml" resolution="0.001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFSAArea" domainTag="9" digits="7" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="ac" minValue="0" maxValue="9999999.99" digits="7" decimal="2" unitOfMeasureSystem="umsEnglish"/>
@@ -443,6 +446,7 @@
 			<Name locale="uk" description="Площа поля.  Це значення надає володар або орендар поля.">Звітна площа поля</Name>
 			<Name locale="ug" description="ئېتىزنىڭ دائىرىسى.  بۇ قىممەت ئېتىزنىڭ ئېگىسى ياكى ئىشلىگۈچىسى تەرىپىدىن تەمىنلەنگەن.">ئېلان قىلىنغان ئېتىز دائىرىسى</Name>
 			<Name locale="vi" description="Diện tích của cánh đồng.  Giá trị này do chủ sở hữu hoặc người sản xuất của cánh đồng cung cấp.">Diện tích cánh đồng được báo cáo</Name>
+			<RelatedDDI ddi="116" unitOfMeasure="m2" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSpatialFieldArea" domainTag="11" digits="4" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="ac" digits="4" decimal="2" minValue="-9999.99" maxValue="9999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -487,6 +491,7 @@
 			<Name locale="uk" description="Площа, обчислена за даними про межі поля.">Площа за даними про межі</Name>
 			<Name locale="ug" description="ئېتىز چېگراسىدىن باشلاپ ھېسابلانغان دائىرە.">چېگرا رايونى</Name>
 			<Name locale="vi" description="Diện tích được tính từ đường giới hạn của một cánh đồng.">Khu vực đường giới hạn</Name>
+			<RelatedDDI ddi="116" unitOfMeasure="m2" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldTotalMass" domainTag="12" digits="8" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="8" decimal="2" minValue="0" maxValue="99999999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -536,6 +541,7 @@
 			<Name locale="uk" description="Маса зібраного врожаю">Маса зібраного врожаю</Name>
 			<Name locale="ug" description="ئومۇمىي مەھسۇلات مىقدارى">ئومۇمىي مەھسۇلات مىقدارى</Name>
 			<Name locale="vi" description="Khối lượng sản xuất">Khối lượng sản xuất</Name>
+			<RelatedDDI ddi="90" unitOfMeasure="kg" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldTotalVolume" domainTag="13" digits="7" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -580,6 +586,7 @@
 			<Name locale="uk" description="Об&apos;єм зібраного врожаю">Об&apos;єм зібраного врожаю</Name>
 			<Name locale="ug" description="ئومۇمىي مەھسۇلات سىغىمى">ئومۇمىي مەھسۇلات سىغىمى</Name>
 			<Name locale="vi" description="Thể tích sản xuất">Thể tích sản xuất</Name>
+			<RelatedDDI ddi="89" unitOfMeasure="l" resolution="0.001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrHeadlandOffset" domainTag="14" digits="4" decimal="3">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="4" decimal="3" minValue="0" maxValue="1000.000" unitOfMeasureSystem="umsEnglish"/>
@@ -668,6 +675,7 @@
 			<Name locale="uk" description="Затримка">Затримка</Name>
 			<Name locale="ug" description="كېچىكتۈرۈش">كېچىكتۈرۈش</Name>
 			<Name locale="vi" description="Độ trễ">Độ trễ</Name>
+			<RelatedDDI ddi="142" unitOfMeasure="ms" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrLoadArea" domainTag="16" digits="7" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="ac" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -756,6 +764,7 @@
 			<Name locale="uk" description="МасаНаТисНасінин">маса на тисячу насінин</Name>
 			<Name locale="ug" description="ھەر 1000 تال ئۇرۇقنىڭ ئېغىرلىقى">ھەر مىڭ تال ئۇرۇقنىڭ ئېغىرلىقى</Name>
 			<Name locale="vi" description="Khối lượng trên 1000 hạt giống">khối lượng trên một nghìn hạt giống</Name>
+			<RelatedDDI ddi="122" unitOfMeasure="mg" resolution="0.000001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrMassPerContainer" domainTag="18" digits="7" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="lb1container-1" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -803,6 +812,7 @@
 			<Name locale="uk" description="МасаНаКонтейнер">маса на контейнер</Name>
 			<Name locale="ug" description="ھەر بىر قاچىلىغۇچ ئېغىرلىقى">ھەر بىر قاچىلىغۇچنىڭ ئېغىرلىقى</Name>
 			<Name locale="vi" description="Khối lượng trên côngtenơ">khối lượng trên côngtenơ</Name>
+			<RelatedDDI ddi="122" unitOfMeasure="mg" resolution="0.000001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrMaturity" domainTag="19" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="day" digits="3" decimal="0" minValue="0" maxValue="999" unitOfMeasureSystem="umsEnglish"/>
@@ -891,6 +901,7 @@
 			<Name locale="uk" description="Ширина обладнання.  Найчастіше використовується зі знаряддями.  Зазначає фізичну ширину знаряддя.">ширина обладнання</Name>
 			<Name locale="ug" description="ئۈسكۈنە كەڭلىكى.  كۆپىنچە ئۈسكۈنىلەر بىلەن ئىشلىتىلىدۇ.  ئۈسكۈنىنىڭ كەڭلىكىنى بەلگىلەڭ.">ئۈسكۈنە كەڭلىكى</Name>
 			<Name locale="vi" description="Chiều rộng thiết bị.  Thường được sử dụng với các dụng cụ.  Cho biết độ rộng thực tế của dụng cụ.">chiều rộng thiết bị</Name>
+			<RelatedDDI ddi="66" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTrackSpacing" domainTag="21" digits="4" decimal="3">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="4" decimal="3" minValue="1.64" maxValue="9999.0" unitOfMeasureSystem="umsEnglish"/>
@@ -935,6 +946,7 @@
 			<Name locale="uk" description="Розмітка маршруту">Розмітка маршруту визначається як поперечна відстань між маршрутами та використовується лише для навігації.  Це фізична ширина знаряддя без будь-якого перетину.</Name>
 			<Name locale="ug" description="لېنىيە بوشلۇقى">لېنىيەلەر ئارىلىقلىرى يول باشلاش ئۈچۈنلا ئىشلىتىلگەچكە لېنىيە بوشلۇقى بەلگىلەندى.  بۇ ئۈسكۈنىنىڭ ئەمەلىي كەڭلىكىدىن بىرەر تەكرارلىقنى ئېلىۋەتكەنگە تەڭ.</Name>
 			<Name locale="vi" description="Khoảng cách hai rãnh">Khoảng cách hai rãnh được xác định là độ rộng giữa các rãnh và chỉ được sử dụng bởi dẫn hướng.  Đây là độ rộng thực tế của dụng cụ trừ đi mọi phần xếp chồng.</Name>
+			<RelatedDDI ddi="16" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrPathOverlap" domainTag="22" digits="3" decimal="3">
 			<UnitOfMeasureDefault unitOfMeasure="ft" minValue="0" maxValue="999.999" unitOfMeasureSystem="umsEnglish"/>
@@ -1023,6 +1035,7 @@
 			<Name locale="uk" description="ПоздовжнійЗсувСекціїМаршруту">поздовжній зсув секції маршруту</Name>
 			<Name locale="ug" description="بۆلۈم ئىچىدىن ئېغىش">بۆلۈم ئىچكى يولىدىن ئېغىش</Name>
 			<Name locale="vi" description="Dịch chuyển dọc phần">dịch chuyển theo đường dọc của phần</Name>
+			<RelatedDDI ddi="135" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrLateralOffset" domainTag="24" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="1" minValue="0" maxValue="240" unitOfMeasureSystem="umsEnglish"/>
@@ -1067,6 +1080,7 @@
 			<Name locale="uk" description="ПоперечнийЗсувЗнаряддя">поперечний зсув знаряддя</Name>
 			<Name locale="ug" description="ئۈسكۈنە يانغا ئېغىش">ئۈسكۈنە يانغا ئېغىش</Name>
 			<Name locale="vi" description="Dịch chuyển ngang của dụng cụ">dịch chuyển ngang của dụng cụ</Name>
+			<RelatedDDI ddi="134" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTotalInlineDistance" domainTag="280" digits="4" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="4" decimal="0" minValue="0" maxValue="1200" unitOfMeasureSystem="umsEnglish"/>
@@ -1199,6 +1213,7 @@
 			<Name locale="uk" description="ЗсувСекціїПоВертикалі">зсув секції по вертикалі</Name>
 			<Name locale="ug" description="بۆلۈم تىك ئېغىش">بۆلۈم تىك ئېغىش</Name>
 			<Name locale="vi" description="Dịch chuyển dọc phần">dịch chuyển dọc phần</Name>
+			<RelatedDDI ddi="136" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSectionWidth" domainTag="26" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="3" decimal="1" minValue="0" maxValue="210.0" unitOfMeasureSystem="umsEnglish"/>
@@ -1243,6 +1258,7 @@
 			<Name locale="uk" description="ШиринаСекції">ширина секції</Name>
 			<Name locale="ug" description="بۆلۈم كەڭلىكى">بۆلۈمنىڭ كەڭلىكى</Name>
 			<Name locale="vi" description="Chiều rộng phần">chiều rộng phần</Name>
+			<RelatedDDI ddi="66" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSeedGerminationPercent" domainTag="27" digits="3" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
@@ -1419,6 +1435,7 @@
 			<Name locale="uk" description="Метрика, асоційована з параметрами ПартіяНасіння СортКультури, використовується для конвертації з насіння в фунти або з фунтів у насіння чи інші одиниці вимірювання маси за потреби.">НасінняНаМасу</Name>
 			<Name locale="ug" description="زىرائەت ئۇرۇقى تۈرى بىلەن باغلانغان ئۆلچەم ئۇرۇقنى پوندقا ياكى پوندنى ئۇرۇققا، ۋە ياكى كېرەكلىك ئۆلچەم بىرلىكىنى ئۆزگەرتىشكە ئىشلىتىلىدۇ.">ھەر بىر ئېغىرلىقتىكى ئۇرۇق</Name>
 			<Name locale="vi" description="Một phép đo liên kết với Lô hạt giống cho nhiều vụ được dùng để chuyển đổi từ hạt giống sang pao hoặc từ pao sang hạt giống hoặc đơn vị đo khối lượng khác khi cần.">Số hạt giống trên khối lượng</Name>
+			<RelatedDDI ddi="122" unitOfMeasure="mg" resolution="0.000001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSolutionRateLiquid" domainTag="31" digits="5" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -1473,6 +1490,7 @@
 			<Name locale="uk" description="ПоказникРідкогоРозчину">показник рідкого розчину</Name>
 			<Name locale="ug" description="سۇيۇقلۇق ئېرىش نىسبىتى">سۇيۇقلۇق ئېرىش نىسبىتى</Name>
 			<Name locale="vi" description="Tỉ lệ hòa tan của chất lỏng">tỉ lệ hòa tan của chất lỏng</Name>
+			<RelatedDDI ddi="1" unitOfMeasure="[mm3]1[m2]-1" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSolutionRateMass" domainTag="32" digits="5" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsEnglish"/>
@@ -1525,6 +1543,7 @@
 			<Name locale="uk" description="МасовийПоказникРозчину">масовий показник розчину</Name>
 			<Name locale="ug" description="چوڭ ماددا ئېرىش نىسبىتى">چوڭ ماددا ئېرىش نىسبىتى</Name>
 			<Name locale="vi" description="Khối lượng theo tỉ lệ hòa tan">khối lượng theo tỉ lệ hòa tan</Name>
+			<RelatedDDI ddi="6" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSwathWidth" domainTag="33" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="3" decimal="1" minValue="0" maxValue="210.0" unitOfMeasureSystem="umsEnglish"/>
@@ -1569,6 +1588,7 @@
 			<Name locale="uk" description="ШиринаВалка">ширина валка</Name>
 			<Name locale="ug" description="ئەۋرىشكە كەڭلىكى">ئەۋرىشكە كەڭلىكى</Name>
 			<Name locale="vi" description="Độ rộng đường cắt cỏ">độ rộng đường cắt cỏ</Name>
+			<RelatedDDI ddi="66" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldBale" domainTag="34" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="bale" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -1613,6 +1633,7 @@
 			<Name locale="uk" description="Врожай у кипах">Врожай у кипах</Name>
 			<Name locale="ug" description="مەھسۇلات بولاق سانى">مەھسۇلات بولاق سانى</Name>
 			<Name locale="vi" description="Bao sản lượng">Bao sản lượng</Name>
+			<RelatedDDI ddi="91" unitOfMeasure="count" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldBalePerArea" domainTag="35" digits="2" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="bale1ac-1" digits="2" decimal="1" minValue="0" maxValue="99.9" unitOfMeasureSystem="umsEnglish"/>
@@ -1707,7 +1728,7 @@
 			<Name locale="uk" description="Harvest Wet Mass Flow">Harvest wet mass flow</Name>
 			<Name locale="ug" description="Harvest Wet Mass Flow">Harvest wet mass flow</Name>
 			<Name locale="vi" description="Harvest Wet Mass Flow">Harvest wet mass flow</Name>
-			<RelatedDDI ddi="87" unitOfMeasure="mg1sec-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="90" unitOfMeasure="kg" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldWetMassPerArea" domainTag="37" digits="6" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -1802,6 +1823,7 @@
 			<Name locale="uk" description="Об&apos;єм зібраного врожаю">об&apos;єм зібраного врожаю</Name>
 			<Name locale="ug" description="ئومۇمىي مەھسۇلات سىغىمى">ئومۇمىي مەھسۇلات سىغىمى</Name>
 			<Name locale="vi" description="Thể tích sản xuất">thể tích sản xuất</Name>
+			<RelatedDDI ddi="89" unitOfMeasure="l" resolution="0.001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldWetVolumePerArea" domainTag="39" digits="5" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="bu1ac-1" digits="5" decimal="2" unitOfMeasureSystem="umsEnglish"/>
@@ -1896,6 +1918,7 @@
 			<Name locale="uk" description="Маса сухого зібраного врожаю">Маса сухого зібраного врожаю</Name>
 			<Name locale="ug" description="قۇرۇق مەھسۇلات مىقدارى">قۇرۇق مەھسۇلات مىقدارى</Name>
 			<Name locale="vi" description="Khối lượng sản xuất khi khô">Khối lượng sản xuất khi khô</Name>
+			<RelatedDDI ddi="183" unitOfMeasure="kg" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldMassPerArea" domainTag="41" digits="7" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2034,6 +2057,7 @@
 			<Name locale="uk" description="Об&apos;єм зібраного врожаю на площу">об&apos;єм зібраного врожаю на площу</Name>
 			<Name locale="ug" description="ھەر بىر رايوندىكى مەھسۇلات سىغىمى">ھەر بىر رايوندىكى مەھسۇلات سىغىمى</Name>
 			<Name locale="vi" description="Thể tích sản xuất trên diện tích">thể tích sản xuất trên diện tích</Name>
+			<RelatedDDI ddi="83" unitOfMeasure="ml1[m2]-1" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateMassMetered" domainTag="44" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2047,7 +2071,7 @@
 			<UnitOfMeasurePreference unitOfMeasure="ozm1ac-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasurePreference unitOfMeasure="dg1[mm2]-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasurePreference unitOfMeasure="ton1ac-1" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsImperial"/>
-			<UnitOfMeasurePreference unitOfMeasure="ozm1ac-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsImperial"/>		
+			<UnitOfMeasurePreference unitOfMeasure="ozm1ac-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utMassPerArea"/>
 			<Name locale="en" description="AppRateMassMetered">application rate mass metered</Name>
 			<Name locale="de" description="Dosierte Ausbringratenmasse">Dosierte Ausbringratenmasse</Name>
@@ -2101,7 +2125,7 @@
 			<UnitOfMeasurePreference unitOfMeasure="ozm1ac-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasurePreference unitOfMeasure="dg1[mm2]-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasurePreference unitOfMeasure="ton1ac-1" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsImperial"/>
-			<UnitOfMeasurePreference unitOfMeasure="ozm1ac-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsImperial"/>			
+			<UnitOfMeasurePreference unitOfMeasure="ozm1ac-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utMassPerArea"/>
 			<Name locale="en" description="AppRateMassMeasured">application rate mass measured</Name>
 			<Name locale="de" description="Gemessene Ausbringratenmasse">Gemessene Ausbringratenmasse</Name>
@@ -2141,7 +2165,7 @@
 			<Name locale="uk" description="ВимірянаМасаВнесенихРечовин">виміряна маса внесених речовин</Name>
 			<Name locale="ug" description="ئۆلچەنگەن ئومۇمىي قوللانما ئېغىرلىق نىسبىتى">ئۆلچەنگەن ئومۇمىي قوللانما ئېغىرلىق نىسبىتى</Name>
 			<Name locale="vi" description="Khối lượng theo tốc độ ứng dụng được đo">khối lượng theo tốc độ ứng dụng được đo</Name>
-			<RelatedDDI ddi="7" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="7" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateMassControl" domainTag="46" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2195,7 +2219,7 @@
 			<Name locale="uk" description="МасаВнесенихРечовинЗаДанимиМапи">маса внесених речовин за даними мапи</Name>
 			<Name locale="ug" description="خەرىتە بىلەن ھېسابلانغان قوللانما ئېغىرلىق نىسبىتى">خەرىتە بىلەن ھېسابلانغان قوللانما ئېغىرلىق نىسبىتى</Name>
 			<Name locale="vi" description="Khối lượng theo tốc độ ứng dụng được ánh xạ">khối lượng theo tốc độ ứng dụng được ánh xạ</Name>
-			<RelatedDDI ddi="6" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="6" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateMassTarget" domainTag="47" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2249,7 +2273,7 @@
 			<Name locale="uk" description="ЦільоваМасаВнесенихРечовин">цільова маса внесених речовин</Name>
 			<Name locale="ug" description="نېشان قوللانما ئېغىرلىق نىسبىتى">نېشان قوللانما ئېغىرلىق نىسبىتى</Name>
 			<Name locale="vi" description="Mục tiêu khối lượng theo tốc độ ứng dụng">mục tiêu khối lượng theo tốc độ ứng dụng</Name>
-			<RelatedDDI ddi="6" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="8" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateVolumeMetered" domainTag="48" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2304,6 +2328,7 @@
 			<Name locale="uk" description="Об&apos;ємВнесенихРечовинЗаДанимиЛічильника">об&apos;єм внесених речовин за даними лічильника</Name>
 			<Name locale="ug" description="ئۆلچەنگەن قوللانما سىغىم نىسبىتى">ئۆلچەنگەن قوللانما سىغىم نىسبىتى</Name>
 			<Name locale="vi" description="Thể tích theo tốc độ ứng dụng được đo">thể tích theo tốc độ ứng dụng được đo</Name>
+			<RelatedDDI ddi="1" unitOfMeasure="mm3[m2]-1" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateVolumeMeasured" domainTag="49" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2358,6 +2383,7 @@
 			<Name locale="uk" description="ВимірянийОб&apos;ємВнесенихРечовин">цільовий об&apos;єм внесених речовин</Name>
 			<Name locale="ug" description="ئۆلچەنگەن قوللانمىنىڭ سىغىم نىسبىتى">ئۆلچەنگەن قوللانمىنىڭ سىغىم نىسبىتى</Name>
 			<Name locale="vi" description="Thể tích theo tốc độ ứng dụng được đo">thể tích theo tốc độ ứng dụng được đo</Name>
+			<RelatedDDI ddi="2" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateVolumeControl" domainTag="50" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2412,6 +2438,7 @@
 			<Name locale="uk" description="Об&apos;ємВнесенихРечовинЗаДанимиМапи">об&apos;єм внесених речовин за даними мапи</Name>
 			<Name locale="ug" description="خەرىتە بىلەن ئۆلچەنگەن قوللانمىنىڭ سىغىم نىسبىتى">خەرىتە بىلەن ئۆلچەنگەن قوللانمىنىڭ سىغىم نىسبىتى</Name>
 			<Name locale="vi" description="Thể tích theo tốc độ ứng dụng được ánh xạ">thể tích theo tốc độ ứng dụng được ánh xạ</Name>
+			<RelatedDDI ddi="1" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateVolumeTarget" domainTag="51" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2466,6 +2493,7 @@
 			<Name locale="uk" description="ЦільовийОб&apos;ємВнесенихРечовин">цільовий об&apos;єм внесених речовин</Name>
 			<Name locale="ug" description="نېشان قوللانما سىغىم نىسبىتى">نېشان قوللانما سىغىم نىسبىتى</Name>
 			<Name locale="vi" description="Mục tiêu thể tích theo tốc độ ứng dụng">mục tiêu thể tích theo tốc độ ứng dụng</Name>
+			<RelatedDDI ddi="3" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateVolumePerHour" domainTag="600" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="gal1hr-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2564,6 +2592,7 @@
 			<Name locale="uk" description="ЦільоваВисотаВнесення">цільова висота внесення</Name>
 			<Name locale="ug" description="نېشان قوللانما ئىگىزلىكى">نېشان قوللانما ئىگىزلىكى</Name>
 			<Name locale="vi" description="Mục tiêu độ cao ứng dụng">mục tiêu độ cao ứng dụng</Name>
+			<RelatedDDI ddi="61" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTillageDepthTarget" domainTag="53" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="1" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
@@ -2608,6 +2637,7 @@
 			<Name locale="uk" description="ЦільоваГлибинаОранки">цільова глибина оранки</Name>
 			<Name locale="ug" description="نېشان تېرىلغۇ چوڭقۇرلۇقى">نېشان تېرىلغۇ چوڭقۇرلۇقى</Name>
 			<Name locale="vi" description="Mục tiêu độ sâu đất canh tác">mục tiêu độ sâu đất canh tác</Name>
+			<RelatedDDI ddi="51" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSeedRateMassMetered" domainTag="54" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2697,7 +2727,7 @@
 			<Name locale="uk" description="ВимірянаМасоваНормаВисіву">виміряна масова норма висіву</Name>
 			<Name locale="ug" description="ئۆلچەنگەن ئۇرۇق ئېغىرلىق نىسبىتى">ئۆلچەنگەن ئۇرۇق ئېغىرلىق نىسبىتى</Name>
 			<Name locale="vi" description="Khối lượng theo tỉ lệ reo hạt được đo">khối lượng theo tỉ lệ reo hạt được đo</Name>
-			<RelatedDDI ddi="7" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="7" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSeedRateMassControl" domainTag="56" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2742,7 +2772,7 @@
 			<Name locale="uk" description="МасоваНормаВисівуЗаДанимиМапи">масова норма висіву за даними мапи</Name>
 			<Name locale="ug" description="خەرىتە بىلەن ئۆلچەنگەن ئۇرۇق ئېغىرلىق نىسبىتى">خەرىتە بىلەن ئۆلچەنگەن ئۇرۇق ئېغىرلىق نىسبىتى</Name>
 			<Name locale="vi" description="Khối lượng theo tỉ lệ reo hạt được ánh xạ">khối lượng theo tỉ lệ reo hạt được ánh xạ</Name>
-			<RelatedDDI ddi="6" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="6" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSeedRateMassTarget" domainTag="57" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -2787,7 +2817,7 @@
 			<Name locale="uk" description="Цільова масова норма висіву">Норма висіву подається на контролер в одиницях маси.</Name>
 			<Name locale="ug" description="نېشان ئۇرۇق ئېغىرلىق نىسبىتى">ئۇرۇق ئېغىرلىق نىسبىتى باشقۇرغۇچقا ئەۋەتىلدى.</Name>
 			<Name locale="vi" description="Mục tiêu khối lượng theo tỉ lệ reo hạt">Tỉ lệ reo hạt gửi tới bộ điều khiển theo khối lượng.</Name>
-			<RelatedDDI ddi="6" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="8" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSeedRateSeedsMetered" domainTag="58" digits="6" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="seeds1ac-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsEnglish"/>
@@ -3012,6 +3042,7 @@
 			<Name locale="uk" description="ЦільоваГлибинаВисіву">цільова глибина висіву</Name>
 			<Name locale="ug" description="نىشاندىكى ئۇرۇق چوڭقۇرلۇقى">نىشاندىكى ئۇرۇق چوڭقۇرلۇقى</Name>
 			<Name locale="vi" description="Mục tiêu về độ sâu reo hạt">mục tiêu về độ sâu reo hạt</Name>
+			<RelatedDDI ddi="58" unitOfMeasure="mm" resolution="1.00E-03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrRelativeHumidity" domainTag="63" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" minValue="0" maxValue="100" unitOfMeasureSystem="umsMetric"/>
@@ -3056,6 +3087,7 @@
 			<Name locale="uk" description="Виміряна відносна вологість довкілля.">Відносна вологість.</Name>
 			<Name locale="ug" description="سىرتتىكى نىسپىي نەملىك خاتىرلەندى.">نىسپىي نەملىك.</Name>
 			<Name locale="vi" description="Độ ẩm tương đối bên ngoài ghi được.">Độ ẩm tương đối.</Name>
+			<RelatedDDI ddi="209" unitOfMeasure="prcnt"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAirTemperature" domainTag="64" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="F" digits="3" decimal="1" minValue="-999" maxValue="999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -3100,6 +3132,7 @@
 			<Name locale="uk" description="Виміряна температура повітря довкілля">Температура повітря</Name>
 			<Name locale="ug" description="سىرتتىكى ھاۋا تېمپېراتۇرىسى خاتىرلەندى.">ھاۋا تېمپېراتۇرىسى</Name>
 			<Name locale="vi" description="Nhiệt độ không khí bên ngoài ghi được.">Nhiệt độ không khí</Name>
+			<RelatedDDI ddi="192" unitOfMeasure="K"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrWindSpeed" domainTag="65" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="km1hr-1" digits="3" decimal="1" minValue="0" maxValue="999.9" unitOfMeasureSystem="umsMetric"/>
@@ -3144,6 +3177,7 @@
 			<Name locale="uk" description="Виміряна швидкість вітру">Швидкість вітру</Name>
 			<Name locale="ug" description="خاتىرلەنگەن شامال سۈرئىتى">شامال سۈرئىتى</Name>
 			<Name locale="vi" description="Tốc độ gió ghi được">Tốc độ gió</Name>
+			<RelatedDDI ddi="207" unitOfMeasure="mm1sec-1" resolution="0.001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSoilTemperature" domainTag="66" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="F" digits="3" decimal="1" minValue="-999" maxValue="999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -3232,6 +3266,7 @@
 			<Name locale="uk" description="Загальна охоплена площа.">Загальна охоплена площа.</Name>
 			<Name locale="ug" description="بارلىق دائىرە تاماملاندى.">بارلىق دائىرە تاماملاندى.</Name>
 			<Name locale="vi" description="Tổng diện tích được che phủ.">Tổng diện tích được che phủ.</Name>
+			<RelatedDDI ddi="116" unitOfMeasure="m2" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTotalQuantityAppliedMass" domainTag="68" digits="8" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="9999999" unitOfMeasureSystem="umsEnglish"/>
@@ -3284,6 +3319,7 @@
 			<Name locale="uk" description="Загальна кількість за внесеною масою.">Загальна кількість за внесеною масою</Name>
 			<Name locale="ug" description="ئومۇمىي قوللانما ئېغىرلىقى.">ئومۇمىي قوللانما ئېغىرلىقى</Name>
 			<Name locale="vi" description="Tổng khối lượng được áp dụng theo số lượng.">Tổng khối lượng được áp dụng theo số lượng</Name>
+			<RelatedDDI ddi="81" unitOfMeasure="kg" resolution="1.00E+03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTotalQuantityAppliedVolume" domainTag="69" digits="7" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="gal" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -3338,6 +3374,7 @@
 			<Name locale="uk" description="Загальна кількість за внесеним об&apos;ємом.">Загальна кількість за внесеним об&apos;ємом</Name>
 			<Name locale="ug" description="ئومۇمىي قوللانما سىغىمى.">ئومۇمىي قوللانما سىغىمى</Name>
 			<Name locale="vi" description="Tổng thể tích được áp dụng theo số lượng.">Tổng thể tích được áp dụng theo số lượng</Name>
+			<RelatedDDI ddi="80" unitOfMeasure="l" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTotalSeedQuantityAppliedSeed" domainTag="70" digits="8" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="seeds" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsEnglish"/>
@@ -3382,6 +3419,7 @@
 			<Name locale="uk" description="Загальна кількість насіння за внесеною кількістю насінин.">Загальна кількість насіння за внесеною кількістю насінин</Name>
 			<Name locale="ug" description="ئۇرۇق ئىشلىتىش مىقدارىدىكى ئۇرۇق سانى.">ئۇرۇق ئىشلىتىش مىقدارىدىكى ئۇرۇق سانى</Name>
 			<Name locale="vi" description="Tổng hạt giống được áp dụng theo số lượng hạt giống.">Tổng hạt giống được áp dụng theo số lượng hạt giống</Name>
+			<RelatedDDI ddi="82" unitOfMeasure="count" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTotalSeedQuantityAppliedMass" domainTag="71" digits="6" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="6" decimal="1" minValue="0" maxValue="999999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -3426,6 +3464,7 @@
 			<Name locale="uk" description="Загальна кількість насіння за внесеною масою.">Загальна кількість насіння за внесеною масою</Name>
 			<Name locale="ug" description="ئۇرۇق ئىشلىتىش ئۇمۇمىي مىقدارى.">ئۇرۇق ئىشلىتىش ئۇمۇمىي مىقدارى</Name>
 			<Name locale="vi" description="Tổng khối lượng được áp dụng theo số lượng hạt giống.">Tổng khối lượng được áp dụng theo số lượng hạt giống</Name>
+			<RelatedDDI ddi="81" unitOfMeasure="kg" resolution="1.00E+03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTotalOperationTime" domainTag="72" digits="4" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="hr" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -3470,6 +3509,7 @@
 			<Name locale="uk" description="Загальний час роботи.">Загальний час роботи</Name>
 			<Name locale="ug" description="ئومۇمىي مەشغۇلات ۋاقتى.">ئومۇمىي مەشغۇلات ۋاقتى</Name>
 			<Name locale="vi" description="Tổng thời gian hoạt động.">Tổng thời gian hoạt động</Name>
+			<RelatedDDI ddi="119" unitOfMeasure="sec" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrHeading" domainTag="73" digits="3" decimal="4">
 			<UnitOfMeasureDefault unitOfMeasure="arcdeg" digits="3" decimal="4" minValue="0.0000" maxValue="359.9999" unitOfMeasureSystem="umsEnglish"/>
@@ -3514,6 +3554,7 @@
 			<Name locale="uk" description="Напрямок руху показує, куди спрямовано обладнання">Напрямок руху обладнання.  0 градусів відповідає півночі, 90 градусів - сходу.</Name>
 			<Name locale="ug" description="يۈنىلىش ئۈسكۈنىنىڭ يۆنىلىشىنى كۆرسىتىدۇ">ئۈسكۈنىنىڭ يۈنىلىشى.  0 گىرادۇس شىمالنى، 90 گرادۇس شەرقنى بىلدۈرىدۇ.</Name>
 			<Name locale="vi" description="Hướng hành trình cho biết hướng của thiết bị">Hướng hành trình của thiết bị.  0 độ là hướng bắc, 90 độ là hướng đông.</Name>
+			<RelatedDDI ddi="144" unitOfMeasure="arcdeg" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrElevation" domainTag="74" digits="4" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="4" decimal="2" minValue="-9999.99" maxValue="9999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -3602,6 +3643,7 @@
 			<Name locale="uk" description="Стандартна промислова вологість">СтандартнаПромисловаВологість</Name>
 			<Name locale="ug" description="تۆلەيدىغان ئۆلچەملىك نەملىك">تۆلەيدىغان ئۆلچەملىك نەملىك</Name>
 			<Name locale="vi" description="Độ ẩm có lợi chuẩn">Độ ẩm có lợi chuẩn</Name>
+			<RelatedDDI ddi="184" unitOfMeasure="ppm"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrLatitude" domainTag="76" digits="3" decimal="8">
 			<UnitOfMeasureDefault unitOfMeasure="arcdeg" digits="2" decimal="8" minValue="-90.00000000" maxValue="90.00000000" unitOfMeasureSystem="umsEnglish"/>
@@ -3734,6 +3776,7 @@
 			<Name locale="uk" description="ПройденаВідстань">ПройденаВідстань</Name>
 			<Name locale="ug" description="ساياھەت مۇساپىسى">ساياھەت مۇساپىسى</Name>
 			<Name locale="vi" description="Khoảng cách đã đi">Khoảng cách đã đi</Name>
+			<RelatedDDI ddi="117" unitOfMeasure="mm" resolution="1.00E-03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrNonLogTime" domainTag="80" digits="2" decimal="3">
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="3" unitOfMeasureSystem="umsEnglish"/>
@@ -3778,6 +3821,7 @@
 			<Name locale="uk" description="Час без ведення журналу">Час без ведення журналу</Name>
 			<Name locale="ug" description="خاتىرلەنمىگەن ۋاقىت">خاتىرلەنمىگەن ۋاقىت</Name>
 			<Name locale="vi" description="Thời gian không ghi nhật ký">Thời gian không ghi nhật ký</Name>
+			<RelatedDDI ddi="120" unitOfMeasure="sec" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrVehicleSpeed" domainTag="81" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="mi1hr-1" digits="3" decimal="1" minValue="0" maxValue="100.0" unitOfMeasureSystem="umsEnglish"/>
@@ -3822,6 +3866,7 @@
 			<Name locale="uk" description="ШвидкістьМашини">Швидкість машини</Name>
 			<Name locale="ug" description="قاتناش قۇرالى تىزلىكى">قاتناش قۇرالى تىزلىكى</Name>
 			<Name locale="vi" description="Tốc độ xe">Tốc độ xe</Name>
+			<RelatedDDI ddi="397" unitOfMeasure="mm1sec-1" resolution="0.001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrDeltaTime" domainTag="82" digits="2" decimal="3">
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="3" unitOfMeasureSystem="umsEnglish"/>
@@ -4311,6 +4356,7 @@
 			<Name locale="uk" description="Компенсація ведення">Компенсація ведення</Name>
 			<Name locale="ug" description="يېتەكچى تولۇقلىمىسى">يېتەكچى تولۇقلىمىسى</Name>
 			<Name locale="vi" description="Bù sớm">Bù sớm</Name>
+			<RelatedDDI ddi="260" unitOfMeasure="ms" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAccuracyBarStepSize" domainTag="94" digits="2" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="2" decimal="1" minValue="1" maxValue="12" unitOfMeasureSystem="umsEnglish"/>
@@ -4443,6 +4489,7 @@
 			<Name locale="uk" description="Розмітка маршруту в рядах">Розмітка маршруту визначається як поперечна відстань між маршрутами та використовується лише для навігації.  Це фізична ширина, виміряна в рядах культури, без будь-якого перетину.</Name>
 			<Name locale="ug" description="قۇردىكى لېنىيە ئارىلىقى">لېنىيەلەر ئارىلىقلىرى يول باشلاش ئۈچۈنلا ئىشلىتىلگەچكە لېنىيە بوشلۇقى بەلگىلەندى.  بۇ ئۈسكۈنىنىڭ زىرائەت قۇرىدىكى ئەمەلىي كەڭلىكىدىن بىرەر تەكرارلىقنى ئېلىۋەتكەنگە تەڭ.</Name>
 			<Name locale="vi" description="Khoảng cách hai rãnh theo Luống">Khoảng cách hai rãnh được xác định là độ rộng giữa các rãnh và chỉ được sử dụng bởi dẫn hướng.  Đây là độ rộng thực tế theo các luống cây trồng của dụng cụ trừ đi mọi phần xếp chồng.</Name>
+			<RelatedDDI ddi="159" unitOfMeasure="count" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrEquipmentWidthRows" domainTag="97" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="row" minValue="1" maxValue="120" unitOfMeasureSystem="umsEnglish"/>
@@ -4487,6 +4534,7 @@
 			<Name locale="uk" description="Ширина обладнання.  Найчастіше використовується зі знаряддями.  Зазначає фізичну ширину знаряддя, виміряну в рядах культури.">ширина обладнання, виміряна в рядах</Name>
 			<Name locale="ug" description="ئۈسكۈنە كەڭلىكى.  كۆپىنچە ئۈسكۈنىلەر بىلەن ئىشلىتىلىدۇ.  زىرائەت قۇرىدىكى ئۈسكۈنىنىڭ كەڭلىكىنى بەلگىلەڭ.">قۇردىكى ئۈسكۈنە كەڭلىكى</Name>
 			<Name locale="vi" description="Chiều rộng thiết bị.  Thường được sử dụng với các dụng cụ.  Cho biết độ rộng thực tế của dụng cụ theo các luống cây trồng.">độ rộng thiết bị theo luống</Name>
+			<RelatedDDI ddi="159" unitOfMeasure="count" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrPathOverlapRows" domainTag="98" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="row" minValue="0" maxValue="119" unitOfMeasureSystem="umsEnglish"/>
@@ -4531,6 +4579,7 @@
 			<Name locale="uk" description="Перетин, що використовується в навігаційних роботах.  Сума перетину та робочої ширини дорівнює ширині знаряддя, виміряній у рядах.">перетин навігаційних маршрутів, виміряний у рядах</Name>
 			<Name locale="ug" description="يول باشلاش مەشغۇلاتىدا تەكرارلىق ئىشلىتىلدى.  تەكرارلىق بىلەن خىزمەت كەڭلىكىنى قوشقاندا قۇردىكى ئۈسكۈنە كەڭلىكىگە تەڭ.">قۇردىكى يىتەكلەش يولى تەكرارلىقى</Name>
 			<Name locale="vi" description="Phần xếp chồng được dùng trong các hoạt động dẫn hướng.  Phần xếp chồng cộng Chiều rộng làm việc bằng chiều rộng của dụng cụ theo luống.">phần xếp chồng của đường dẫn hướng theo hàng</Name>
+			<RelatedDDI ddi="159" unitOfMeasure="count" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFuelRatePerHour" domainTag="99" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="gal1hr-1" minValue="0" maxValue="999" unitOfMeasureSystem="umsEnglish"/>
@@ -4575,6 +4624,7 @@
 			<Name locale="uk" description="Показник споживання палива">Показник споживання палива</Name>
 			<Name locale="ug" description="يېقىلغۇ خۇراش نىسبىتى">يېقىلغۇ خۇراش نىسبىتى</Name>
 			<Name locale="vi" description="Tỉ lệ tiêu thụ nhiên liệu">Tỉ lệ tiêu thụ nhiên liệu</Name>
+			<RelatedDDI ddi="149" unitOfMeasure="[mm3]1sec-1" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFuelTotal" domainTag="100" digits="4" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="gal" minValue="0" maxValue="9999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -4619,6 +4669,7 @@
 			<Name locale="uk" description="Загальне використання палива">Загальне використання палива</Name>
 			<Name locale="ug" description="جەمئىي ئىشلەتكەن يېقىلغۇ">جەمئىي ئىشلەتكەن يېقىلغۇ</Name>
 			<Name locale="vi" description="Tổng nhiên liệu sử dụng">Tổng nhiên liệu sử dụng</Name>
+			<RelatedDDI ddi="148" unitOfMeasure="ml" resolution="1.00E-03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTotalYieldVolume" domainTag="101" digits="7" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -4663,6 +4714,7 @@
 			<Name locale="uk" description="Об&apos;єм сухого зібраного врожаю">Об&apos;єм сухого зібраного врожаю</Name>
 			<Name locale="ug" description="قۇرۇق مەھسۇلات سىغىمى">قۇرۇق مەھسۇلات سىغىمى</Name>
 			<Name locale="vi" description="Thể tích sản xuất khi khô">Thể tích sản xuất khi khô</Name>
+			<RelatedDDI ddi="89" unitOfMeasure="l" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTotalYieldMass" domainTag="102" digits="7" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="8" decimal="2" minValue="0" maxValue="99999999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -4712,6 +4764,7 @@
 			<Name locale="uk" description="Маса сухого зібраного врожаю">Маса сухого зібраного врожаю</Name>
 			<Name locale="ug" description="قۇرۇق مەھسۇلات مىقدارى">قۇرۇق مەھسۇلات مىقدارى</Name>
 			<Name locale="vi" description="Khối lượng sản xuất khi khô">Khối lượng sản xuất khi khô</Name>
+			<RelatedDDI ddi="90" unitOfMeasure="kg" resolution="1.00E+03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTotalYieldWetMass" domainTag="103" digits="7" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="8" decimal="2" minValue="0" maxValue="99999999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -4761,6 +4814,7 @@
 			<Name locale="uk" description="Маса вологого зібраного врожаю">Маса вологого зібраного врожаю</Name>
 			<Name locale="ug" description="ھۆل مەھسۇلات مىقدارى">ھۆل مەھسۇلات مىقدارى</Name>
 			<Name locale="vi" description="Khối lượng sản xuất khi ướt">Khối lượng sản xuất khi ướt</Name>
+			<RelatedDDI ddi="90" unitOfMeasure="kg" resolution="1.00E+03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTotalYieldWetVolume" domainTag="104" digits="7" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="2" unitOfMeasureSystem="umsEnglish"/>
@@ -4805,6 +4859,7 @@
 			<Name locale="uk" description="Об&apos;єм зібраного врожаю">об&apos;єм зібраного врожаю</Name>
 			<Name locale="ug" description="ئومۇمىي مەھسۇلات سىغىمى">ئومۇمىي مەھسۇلات سىغىمى</Name>
 			<Name locale="vi" description="Thể tích sản xuất">thể tích sản xuất</Name>
+			<RelatedDDI ddi="89" unitOfMeasure="l" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTotalYieldBale" domainTag="105" digits="5" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="bale" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -4849,6 +4904,7 @@
 			<Name locale="uk" description="Врожай у кипах">Врожай у кипах</Name>
 			<Name locale="ug" description="مەھسۇلات بولاق سانى">مەھسۇلات بولاق سانى</Name>
 			<Name locale="vi" description="Bao sản lượng">Bao sản lượng</Name>
+			<RelatedDDI ddi="89" unitOfMeasure="l" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrHarvestMinimumMoisture" domainTag="106" digits="3" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
@@ -5945,6 +6001,7 @@
 			<Name locale="uk" description="Відсоток виходу сировини, що використовується для збирання бавовника">Вихід сировини</Name>
 			<Name locale="ug" description="كېۋەز يىغىش ئۈچۈن كەتكەن مەھسۇلات مىقدارى پىرسەنتى">مەھسۇلات مىقدارى</Name>
 			<Name locale="vi" description="Phần trăm năng suất được sử dụng để thu hoạch vải bông">Năng suất</Name>
+			<RelatedDDI ddi="191" unitOfMeasure="ppm" resolution="0.0001" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTaskArea" domainTag="130" digits="7" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="ac" minValue="0" maxValue="9999999.99" digits="7" decimal="2" unitOfMeasureSystem="umsEnglish"/>
@@ -5989,6 +6046,7 @@
 			<Name locale="uk" description="Площа, на якій визначено завдання чи область завдань">Площа завдання</Name>
 			<Name locale="ug" description="ۋەزىپە ياكى ۋەزىپە رايونى ئۆز ئىچىگە ئالغان دائىرە">ۋەزىپە دائىرىسى</Name>
 			<Name locale="vi" description="Diện tích được che phủ bởi một nhiệm vụ hoặc vùng nhiệm vụ">Khu vực nhiệm vụ</Name>
+			<RelatedDDI ddi="116" unitOfMeasure="m2" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrBoundaryOffset" domainTag="131" digits="3" decimal="3">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="3" decimal="3" minValue="0" maxValue="150.000" unitOfMeasureSystem="umsEnglish"/>
@@ -6121,6 +6179,7 @@
 			<Name locale="uk" description="Продуктивність на площу">Продуктивність на площу</Name>
 			<Name locale="ug" description="دائىرە ئۈنۈمدارلىقى">دائىرە ئۈنۈمدارلىقى</Name>
 			<Name locale="vi" description="Năng suất theo diện tích">Năng suất theo diện tích</Name>
+			<RelatedDDI ddi="151" unitOfMeasure="mm2sec-1"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrMassProductivity" domainTag="134" digits="6" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="lb1hr-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsEnglish"/>
@@ -6170,6 +6229,7 @@
 			<Name locale="uk" description="Продуктивність на масу">Продуктивність на масу</Name>
 			<Name locale="ug" description="ئېغىرلىق ئۈنۈمدارلىقى">ئېغىرلىق ئۈنۈمدارلىقى</Name>
 			<Name locale="vi" description="Năng suất theo khối lượng">Năng suất theo khối lượng</Name>
+			<RelatedDDI ddi="261" unitOfMeasure="mg1sec-1"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrVolumeProductivity" domainTag="135" digits="6" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="bu1hr-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsEnglish"/>
@@ -6214,6 +6274,7 @@
 			<Name locale="uk" description="Продуктивність на об&apos;єм">ПродуктивністьНаОб&apos;єм</Name>
 			<Name locale="ug" description="سىغىم ئۈنۈمدارلىقى">سىغىم ئۈنۈمدارلىقى</Name>
 			<Name locale="vi" description="Năng suất theo thể tích">Năng suất theo thể tích</Name>
+			<RelatedDDI ddi="86" unitOfMeasure="ml1sec-1"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrBaleProductivity" domainTag="136" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="bale1hr-1" digits="3" decimal="0" minValue="0" maxValue="999" unitOfMeasureSystem="umsEnglish"/>
@@ -6302,6 +6363,7 @@
 			<Name locale="uk" description="Продуктивність на насіння">ПродуктивністьНаНасіння</Name>
 			<Name locale="ug" description="ئۇرۇق ئۈنۈمدارلىقى">ئۇرۇق ئۈنۈمدارلىقى</Name>
 			<Name locale="vi" description="Năng suất theo hạt giống">Năng suất theo hạt giống</Name>
+			<RelatedDDI ddi="88" unitOfMeasure="seeds1sec-1"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrRadiusOffset" domainTag="138" digits="3" decimal="4">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="3" decimal="4" minValue="-500.0000" maxValue="500.0000" unitOfMeasureSystem="umsEnglish"/>
@@ -6522,6 +6584,7 @@
 			<Name locale="uk" description="ПоперечнийЗсувПриймача">зсув приймача</Name>
 			<Name locale="ug" description="قوبۇللىغۇچ يانغا ئېغىشى">قوبۇللىغۇچتىن ئېغىش</Name>
 			<Name locale="vi" description="Dịch chuyển ngang của máy thu">dịch chuyển máy thu</Name>
+			<RelatedDDI ddi="134" unitOfMeasure="mm" resolution="1.00E-03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrManagementZoneClipping" domainTag="143" digits="5" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -6706,6 +6769,7 @@
 			<Name locale="uk" description="Довжина різання">Довжина різання</Name>
 			<Name locale="ug" description="كېسىش ئۇزۇنلۇقى">كېسىش ئۇزۇنلۇقى</Name>
 			<Name locale="vi" description="Chiều dài cắt">Chiều dài cắt</Name>
+			<RelatedDDI ddi="177" unitOfMeasure="mm"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrHeadland" domainTag="147" digits="4" decimal="3">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="4" decimal="3" minValue="0" maxValue="1000.000" unitOfMeasureSystem="umsEnglish"/>
@@ -6838,6 +6902,7 @@
 			<Name locale="uk" description="Загальна накопичена вологість">Загальна накопичена вологість</Name>
 			<Name locale="ug" description="ئومۇمىي يىغىلغان نەملىك">ئومۇمىي يىغىلغان نەملىك</Name>
 			<Name locale="vi" description="Tổng độ ẩm tích tụ">Tổng độ ẩm tích tụ</Name>
+			<RelatedDDI ddi="262" unitOfMeasure="ppm"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrHarvestMoistureCount" domainTag="150" digits="9" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="points" digits="9" decimal="0" unitOfMeasureSystem="umsEnglish"/>
@@ -7454,6 +7519,7 @@
 			<Name locale="uk" description="Фізична ширина знаряддя">Фізична ширина знаряддя</Name>
 			<Name locale="ug" description="ئۈسكۈنىنىڭ فىزىكىلىق كەڭلىكى">ئۈسكۈنىنىڭ فىزىكىلىق كەڭلىكى</Name>
 			<Name locale="vi" description="Chiều rộng dụng cụ thực tế">Chiều rộng dụng cụ thực tế</Name>
+			<RelatedDDI ddi="155" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrImplementLength" domainTag="164" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="3" decimal="1" minValue="0.0" maxValue="100.0" unitOfMeasureSystem="umsEnglish"/>
@@ -7498,6 +7564,7 @@
 			<Name locale="uk" description="Довжина знаряддя">Довжина знаряддя</Name>
 			<Name locale="ug" description="ئۈسكۈنە ئوزۇنلۇقى">ئۈسكۈنە ئوزۇنلۇقى</Name>
 			<Name locale="vi" description="Chiều dài dụng cụ">Chiều dài dụng cụ</Name>
+			<RelatedDDI ddi="154" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrImplementFrontOffset" domainTag="165" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="3" decimal="1" minValue="0.0" maxValue="100.0" unitOfMeasureSystem="umsEnglish"/>
@@ -7938,6 +8005,7 @@
 			<Name locale="uk" description="Висота приймача знаряддя">Висота приймача знаряддя</Name>
 			<Name locale="ug" description="ئۈسكۈنە قوبۇللىغۇچ ئىگىزلىكى">ئۈسكۈنە قوبۇللىغۇچ ئىگىزلىكى</Name>
 			<Name locale="vi" description="Chiều cao máy thu của dụng cụ">Chiều cao máy thu của dụng cụ</Name>
+			<RelatedDDI ddi="156" unitOfMeasure="mm"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrStarfireHeight" domainTag="175" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="0" minValue="1" maxValue="200" unitOfMeasureSystem="umsEnglish"/>
@@ -8251,6 +8319,7 @@
 			<Name locale="uk" description="Загальна маса зібраного силосу">Загальна маса зібраного силосу</Name>
 			<Name locale="ug" description="يەم-خەشەك مەھسۇلاتى ئومۇمىي ئېغىرلىقى">يەم-خەشەك مەھسۇلاتى ئومۇمىي ئېغىرلىقى</Name>
 			<Name locale="vi" description="Tổng khối lượng sản xuất cỏ">Tổng khối lượng sản xuất cỏ</Name>
+			<RelatedDDI ddi="90" unitOfMeasure="kg" resolution="1.00E+03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldWetMassFrgPerArea" domainTag="182" digits="6" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="ton1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -8395,6 +8464,7 @@
 			<Name locale="uk" description="Діаметр модуля">Діаметр модуля</Name>
 			<Name locale="ug" description="مودېل دىئامېتىرى">مودېل دىئامېتىرى</Name>
 			<Name locale="vi" description="Đường kính mô-đun">Đường kính mô-đun</Name>
+			<RelatedDDI ddi="111" unitOfMeasure="mm" resolution="1.00E-03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrModuleWeight" domainTag="185" digits="8" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="8" decimal="2" minValue="0" maxValue="99999999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -8493,6 +8563,7 @@
 			<Name locale="uk" description="Маса зібраного силосу">Маса зібраного силосу</Name>
 			<Name locale="ug" description="يەم-خەشەك مەھسۇلاتى ئېغىرلىقى">يەم-خەشەك مەھسۇلاتى ئېغىرلىقى</Name>
 			<Name locale="vi" description="Khối lượng sản xuất cỏ">Khối lượng sản xuất cỏ</Name>
+			<RelatedDDI ddi="90" unitOfMeasure="kg" resolution="1.00E+03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSurveyTimeInterval" domainTag="187" digits="2" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="0" minValue="1" maxValue="99" unitOfMeasureSystem="umsEnglish"/>
@@ -8713,6 +8784,7 @@
 			<Name locale="uk" description="Тангаж обладнання">Тангаж обладнання</Name>
 			<Name locale="ug" description="ئۈسكۈنە قىيپاش بۇلۇڭى">ئۈسكۈنە قىيپاش بۇلۇڭى</Name>
 			<Name locale="vi" description="Góc bước của thiết bị">Góc bước của thiết bị</Name>
+			<RelatedDDI ddi="146" unitOfMeasure="arcdeg" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrRollAngle" domainTag="192" digits="3" decimal="3">
 			<UnitOfMeasureDefault unitOfMeasure="arcdeg" digits="3" decimal="3" minValue="-360.0" maxValue="360.0" unitOfMeasureSystem="umsEnglish"/>
@@ -8757,6 +8829,7 @@
 			<Name locale="uk" description="Крен обладнання">Крен обладнання</Name>
 			<Name locale="ug" description="ئۈسكۈنە دومىلاش بۇلۇڭى">ئۈسكۈنە دومىلاش بۇلۇڭى</Name>
 			<Name locale="vi" description="Góc lăn ngang của thiết bị">Góc lăn ngang của thiết bị</Name>
+			<RelatedDDI ddi="145" unitOfMeasure="arcdeg" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrEndTurnOffset" domainTag="193" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="3" decimal="1" minValue="-50.00" maxValue="50.00" unitOfMeasureSystem="umsEnglish"/>
@@ -8894,6 +8967,7 @@
 			<Name locale="uk" description="Маса вологого зібраного силосу">Маса вологого зібраного силосу</Name>
 			<Name locale="ug" description="يەم-خەشەك مەھسۇلاتلىرى نەم ئېغىرلىقى">يەم-خەشەك مەھسۇلاتلىرى نەم ئېغىرلىقى</Name>
 			<Name locale="vi" description="Khối lượng khi ướt của sản lượng cỏ">Khối lượng khi ướt của sản lượng cỏ</Name>
+			<RelatedDDI ddi="90" unitOfMeasure="kg" resolution="1.00E+03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldTotalWetMassForage" domainTag="196" digits="8" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="ton" digits="8" decimal="2" minValue="0" maxValue="99999999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -8943,6 +9017,7 @@
 			<Name locale="uk" description="Загальна маса зібраного силосу">Загальна маса вологого зібраного силосу</Name>
 			<Name locale="ug" description="يەم-خەشەك مەھسۇلاتى ئومۇمىي ئېغىرلىقى">يەم-خەشەك مەھسۇلاتى ئومۇمىي نەم ئېغىرلىقى</Name>
 			<Name locale="vi" description="Tổng khối lượng sản xuất cỏ">Tổng khối lượng khi ướt của sản lượng cỏ</Name>
+			<RelatedDDI ddi="90" unitOfMeasure="kg" resolution="1.00E+03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldMassMinForage" domainTag="197" digits="7" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="ton" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -9428,6 +9503,7 @@
 			<Name locale="uk" description="Продуктивність на масу">Продуктивність на масу</Name>
 			<Name locale="ug" description="ئېغىرلىق ئۈنۈمدارلىقى">ئېغىرلىق ئۈنۈمدارلىقى</Name>
 			<Name locale="vi" description="Năng suất theo khối lượng">Năng suất theo khối lượng</Name>
+			<RelatedDDI ddi="182" unitOfMeasure="mg1sec-1"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrGear" domainTag="207" digits="2" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="ratio" digits="2" decimal="0" minValue="0" maxValue="99" unitOfMeasureSystem="umsEnglish"/>
@@ -9560,6 +9636,7 @@
 			<Name locale="uk" description="Поздовжня відстань від задньої точки з&apos;єднання до передньої точки з&apos;єднання наступного знаряддя.">Поздовжня відстань від задньої точки з&apos;єднання до передньої точки з&apos;єднання наступного знаряддя.</Name>
 			<Name locale="ug" description="ئارقا ئۇلانما نوقتىسىدىن كېيىنكى ئۈسكۈنىنىڭ ئالدى ئۇلانما نوقتىسىغىچە بولغان ئىچكى ئارىلىق.">ئارقا ئۇلانما نوقتىسىدىن كېيىنكى ئۈسكۈنىنىڭ ئالدى ئۇلانما نوقتىسىغىچە بولغان ئىچكى ئارىلىق.</Name>
 			<Name locale="vi" description="Khoảng cách dọc từ điểm kết nối sau tới điểm kết nối trước của dụng cụ tiếp theo.">Khoảng cách dọc từ điểm kết nối sau tới điểm kết nối trước của dụng cụ tiếp theo.</Name>
+			<RelatedDDI ddi="135" unitOfMeasure="mm" resolution="1.00E-03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrLateralRearConnectionPointToConnectionPointOffset" domainTag="210" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="1" minValue="0.0" maxValue="120.0" unitOfMeasureSystem="umsEnglish"/>
@@ -9604,6 +9681,7 @@
 			<Name locale="uk" description="Поперечна відстань від задньої точки з&apos;єднання до передньої точки з&apos;єднання наступного знаряддя.">Поперечна відстань від задньої точки з&apos;єднання до передньої точки з&apos;єднання наступного знаряддя.</Name>
 			<Name locale="ug" description="ئارقا ئۇلانما نوقتىسىدىن كېيىنكى ئۈسكۈنىنىڭ ئالدى ئۇلانما نوقتىسىغىچە بولغان يان ئارىلىق.">ئارقا ئۇلانما نوقتىسىدىن كېيىنكى ئۈسكۈنىنىڭ ئالدى ئۇلانما نوقتىسىغىچە بولغان يان ئارىلىق.</Name>
 			<Name locale="vi" description="Khoảng cách ngang từ điểm kết nối sau tới điểm kết nối trước của dụng cụ tiếp theo.">Khoảng cách ngang từ điểm kết nối sau tới điểm kết nối trước của dụng cụ tiếp theo.</Name>
+			<RelatedDDI ddi="134" unitOfMeasure="mm" resolution="1.00E-03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrMachineVerticalReceiverOffset" domainTag="211" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="2" minValue="0.0" maxValue="200.0" unitOfMeasureSystem="umsEnglish"/>
@@ -9648,6 +9726,7 @@
 			<Name locale="uk" description="Вертикальна відстань від приймача GPS до рівня землі біля машини">Вертикальна відстань від приймача GPS до рівня землі біля машини</Name>
 			<Name locale="ug" description="GPS قوبۇللىغۇچتىن ماشىنىدىكى يەرگىچە بولغان تىك ئارىلىق">GPS قوبۇللىغۇچتىن ماشىنىدىكى يەرگىچە بولغان تىك ئارىلىق</Name>
 			<Name locale="vi" description="Khoảng cách dọc từ máy thu GPS đến sàn lót trên máy">Khoảng cách dọc từ máy thu GPS đến sàn lót trên máy</Name>
+			<RelatedDDI ddi="136" unitOfMeasure="mm" resolution="1.00E+03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrImplementVerticalReceiverToCuttingEdgeOffset" domainTag="212" digits="3" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="2" minValue="0.0" maxValue="200.0" unitOfMeasureSystem="umsEnglish"/>
@@ -9692,6 +9771,7 @@
 			<Name locale="uk" description="Вертикальна відстань від приймача GPS до ріжучого краю знаряддя">Вертикальна відстань від приймача GPS до ріжучого краю знаряддя</Name>
 			<Name locale="ug" description="GPS قوبۇللىغۇچتىن ئۈسكۈنىنىڭ كېسىش گىرۋىكىگىچە بولغان تىك ئارىلىق">GPS قوبۇللىغۇچتىن ئۈسكۈنىنىڭ كېسىش گىرۋىكىگىچە بولغان تىك ئارىلىق</Name>
 			<Name locale="vi" description="Khoảng cách dọc từ máy thu GPS đến lưỡi cắt trên dụng cụ">Khoảng cách dọc từ máy thu GPS đến lưỡi cắt trên dụng cụ</Name>
+			<RelatedDDI ddi="136" unitOfMeasure="mm" resolution="1.00E+03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrImplementVerticalCuttingEdgeToGroundOffset" domainTag="213" digits="3" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="2" minValue="0.00" maxValue="240.00" unitOfMeasureSystem="umsEnglish"/>
@@ -9736,6 +9816,7 @@
 			<Name locale="uk" description="Вертикальна відстань від ріжучого краю знаряддя до рівня землі біля машини">Вертикальна відстань від ріжучого краю знаряддя до рівня землі біля машини</Name>
 			<Name locale="ug" description="كېسىش گىرۋىكىدىن ئۈسكۈنىدىكى يەرگىچە بولغان تىك ئارىلىق">كېسىش گىرۋىكىدىن ئۈسكۈنىدىكى يەرگىچە بولغان تىك ئارىلىق</Name>
 			<Name locale="vi" description="Khoảng cách dọc từ lưỡi cắt đến sàn lót trên dụng cụ">Khoảng cách dọc từ lưỡi cắt đến sàn lót trên dụng cụ</Name>
+			<RelatedDDI ddi="136" unitOfMeasure="mm" resolution="1.00E+03" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrVerticalProfileGridSize" domainTag="214" digits="4" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="4" decimal="1" minValue="0.0" maxValue="9999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -11056,6 +11137,7 @@
 			<Name locale="uk" description="Об&apos;єм бака">Об&apos;єм бака</Name>
 			<Name locale="ug" description="باك سىغىمى">باك سىغىمى</Name>
 			<Name locale="vi" description="Thể tích bình chứa">Thể tích bình chứa</Name>
+			<RelatedDDI ddi="137" unitOfMeasure="ml"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrCargoWeightMass" domainTag="244" digits="5" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="kg" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsMetric"/>
@@ -12120,6 +12202,7 @@
 			<Name locale="uk" description="Температура гідравлічної оливи">Температура гідравлічної оливи</Name>
 			<Name locale="ug" description="سويۇق بېسىملىق ماي تېمپېراتۇرىسى">سويۇق بېسىملىق ماي تېمپېراتۇرىسى</Name>
 			<Name locale="vi" description="Nhiệt độ dầu thủy lực">Nhiệt độ dầu thủy lực</Name>
+			<RelatedDDI ddi="258" unitOfMeasure="K"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrEngineSpeed" domainTag="271" digits="4" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="4" decimal="0" minValue="0" maxValue="9999" unitOfMeasureSystem="umsEnglish"/>
@@ -12428,6 +12511,7 @@
 			<Name locale="uk" description="Густина компонента">Густина компонента</Name>
 			<Name locale="ug" description="تەركىب زىچلىقى">تەركىب زىچلىقى</Name>
 			<Name locale="vi" description="Mật độ thành phần">Mật độ thành phần</Name>
+			<RelatedDDI ddi="121" unitOfMeasure="mg1l-1"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrProvidedAmountTotalMass" domainTag="283" digits="5" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="kg" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsMetric"/>
@@ -12604,6 +12688,7 @@
 			<Name locale="uk" description="Інтервал висіву">Інтервал висіву</Name>
 			<Name locale="ug" description="ئۇرۇق ئارىلىقى">ئۇرۇق ئارىلىقى</Name>
 			<Name locale="vi" description="Khoảng cách reo hạt">Khoảng cách reo hạt</Name>
+			<RelatedDDI ddi="421" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrDownForceMargin" domainTag="287" digits="4" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="lbf" digits="4" decimal="0" minValue="0" maxValue="2000" unitOfMeasureSystem="umsEnglish"/>
@@ -13330,6 +13415,7 @@
 			<Name locale="uk" description="Вага, виміряна системою зважування">Вага, виміряна системою зважування</Name>
 			<Name locale="ug" description="ئېغىرلىق سىستېمىسى تەرىپىدىن ئۆلچەنگەن ئېغىرلىق">ئېغىرلىق سىستېمىسى تەرىپىدىن ئۆلچەنگەن ئېغىرلىق</Name>
 			<Name locale="vi" description="Trọng lượng đo được bằng hệ thống cân">Trọng lượng đo được bằng hệ thống cân</Name>
+			<RelatedDDI ddi="229" unitOfMeasure="g"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrBaleSize" domainTag="303" digits="5" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -13374,6 +13460,7 @@
 			<Name locale="uk" description="Фактичний розмір кипи">Фактичний розмір кипи як довжина для квадратного пакувального преса або діаметр для круглого пакувального преса</Name>
 			<Name locale="ug" description="ئەمەلىي بولاق چوڭلۇقى">ئەمەلىي بولاق چوڭلۇقى، ئۇزۇنلۇق كۋادرات بولاققا، دىئامېتىر يۇملاق بولاققا ئىشلىتىلىدۇ</Name>
 			<Name locale="vi" description="Kích thước bao thực">Kích thước bao thực là chiều dài đối với bao vuông hoặc đường kính đối với bao tròn</Name>
+			<RelatedDDI ddi="112" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrBaleTotal" domainTag="304" digits="8" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="count" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsEnglish"/>
@@ -13418,6 +13505,7 @@
 			<Name locale="uk" description="Всього кип">Загальна кількість кип</Name>
 			<Name locale="ug" description="ئومۇمىي بولاق">بولاقنىڭ ئومۇمىي سانى</Name>
 			<Name locale="vi" description="Tổng số bao">Tổng số lượng bao</Name>
+			<RelatedDDI ddi="111" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrLookAheadTime" domainTag="305" digits="2" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="1" minValue="0.3" maxValue="15" unitOfMeasureSystem="umsEnglish"/>
@@ -13594,6 +13682,7 @@
 			<Name locale="uk" description="Різниця в часі">Різниця в часі</Name>
 			<Name locale="ug" description="دېلتا T">دېلتا T</Name>
 			<Name locale="vi" description="Delta T">Delta T</Name>
+			<RelatedDDI ddi="224" unitOfMeasure="K"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrCountPerArea" domainTag="309" digits="8" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="count1ac-1" digits="8" decimal="2" minValue="0" maxValue="99999999.99" unitOfMeasureSystem="umsEnglish"/>
@@ -13638,6 +13727,7 @@
 			<Name locale="uk" description="Кількість на площу">кількість на площу</Name>
 			<Name locale="ug" description="ھەر بىر رايوندىكى سان">ھەر بىر رايوندىكى سان</Name>
 			<Name locale="vi" description="Tổng số trên diện tích">tổng số trên diện tích</Name>
+			<RelatedDDI ddi="85" unitOfMeasure="count1[m2]-1" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrConstituentCrudeProtein" domainTag="310" digits="3" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
@@ -16014,6 +16104,7 @@
 			<Name locale="uk" description="TillageDepthMeasured">tillage depth measured</Name>
 			<Name locale="ug" description="TillageDepthMeasured">tillage depth measured</Name>
 			<Name locale="vi" description="TillageDepthMeasured">tillage depth measured</Name>
+			<RelatedDDI ddi="52" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTillageDepthControl" domainTag="364" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="1" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
@@ -16058,6 +16149,7 @@
 			<Name locale="uk" description="TillageDepthControl">tillage depth control</Name>
 			<Name locale="ug" description="TillageDepthControl">tillage depth control</Name>
 			<Name locale="vi" description="TillageDepthControl">tillage depth control</Name>
+			<RelatedDDI ddi="51" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrCircleEdgeRadius" domainTag="365" digits="4" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="4" decimal="1" minValue="0.0" maxValue="5280.0" unitOfMeasureSystem="umsEnglish"/>
@@ -16240,6 +16332,7 @@
 			<Name locale="uk" description="TillagePressureTarget">tillage pressure target</Name>
 			<Name locale="ug" description="TillagePressureTarget">tillage pressure target</Name>
 			<Name locale="vi" description="TillagePressureTarget">tillage pressure target</Name>
+			<RelatedDDI ddi="365" unitOfMeasure="pa" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTillagePressureMeasured" domainTag="369" digits="4" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="PSI" digits="4" decimal="0" minValue="0" maxValue="9999" unitOfMeasureSystem="umsEnglish"/>
@@ -16284,6 +16377,7 @@
 			<Name locale="uk" description="TillagePressureMeasured">tillage pressure measured</Name>
 			<Name locale="ug" description="TillagePressureMeasured">tillage pressure measured</Name>
 			<Name locale="vi" description="TillagePressureMeasured">tillage pressure measured</Name>
+			<RelatedDDI ddi="366" unitOfMeasure="pa" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFuelProductivity" domainTag="370" digits="3" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
@@ -16456,6 +16550,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="unitless" digits="1" decimal="2" minValue="0" maxValue="1" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utUnitless"/>
 			<Name locale="en" description="Actual Seed Spacing CV">Actual Seed Spacing CV specified as percentage</Name>
+			<RelatedDDI ddi="421" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrPlantingSingulation" domainTag="377" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsEnglish"/>
@@ -16463,6 +16558,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utPercent"/>
 			<Name locale="en" description="Singulation">Singulation percentage</Name>
+			<RelatedDDI ddi="415" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrPlantingSkips" domainTag="378" digits="3" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsEnglish"/>
@@ -16547,6 +16643,7 @@
 			<Name locale="uk" description="TillagePressureControl">tillage pressure control</Name>
 			<Name locale="ug" description="TillagePressureControl">tillage pressure control</Name>
 			<Name locale="vi" description="TillagePressureControl">tillage pressure control</Name>
+			<RelatedDDI ddi="426" unitOfMeasure="N" resolution="0.01" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSCTurnOnTime" domainTag="500" digits="2" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="1" minValue="0.3" maxValue="15" unitOfMeasureSystem="umsEnglish"/>
@@ -16768,6 +16865,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utAngularVelocity"/>
 			<Name locale="en" description="Fan Speed Control">Fan Speed Control</Name>
+			<RelatedDDI ddi="254" unitOfMeasure="RPM" resolution="60" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFanSpeedTarget" domainTag="515" digits="5" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsEnglish"/>
@@ -16775,6 +16873,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utAngularVelocity"/>
 			<Name locale="en" description="Fan Speed Target">Fan Speed Target</Name>
+			<RelatedDDI ddi="254" unitOfMeasure="RPM" resolution="60" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFanSpeedMeasured" domainTag="516" digits="5" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsEnglish"/>
@@ -16782,6 +16881,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utAngularVelocity"/>
 			<Name locale="en" description="Fan Speed Measured">Fan Speed Measured</Name>
+			<RelatedDDI ddi="255" unitOfMeasure="RPM" resolution="60" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrThreshingSpeedControl" domainTag="517" digits="5" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsEnglish"/>
@@ -16852,6 +16952,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="1" decimal="0" minValue="-5" maxValue="5" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utDistance"/>
 			<Name locale="en" description="Sieve Position Control">Sieve Position Control</Name>
+			<RelatedDDI ddi="242" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSievePositionTarget" domainTag="527" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="1" decimal="0" minValue="-5" maxValue="5" unitOfMeasureSystem="umsEnglish"/>
@@ -16859,6 +16960,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="1" decimal="0" minValue="-5" maxValue="5" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utDistance"/>
 			<Name locale="en" description="Sieve Position Target">Sieve Position Target</Name>
+			<RelatedDDI ddi="242" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSievePositionMeasured" domainTag="528" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="1" decimal="0" minValue="-5" maxValue="5" unitOfMeasureSystem="umsEnglish"/>
@@ -16866,6 +16968,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="1" decimal="0" minValue="-5" maxValue="5" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utDistance"/>
 			<Name locale="en" description="Sieve Position Measured">Sieve Position Measured</Name>
+			<RelatedDDI ddi="243" unitOfMeasure="mm" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrRipperDepthControl" domainTag="529" digits="3" decimal="0">
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="2" decimal="1" minValue="-30.0" maxValue="20.0" unitOfMeasureSystem="umsEnglish"/>
@@ -17048,6 +17151,56 @@
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utMass"/>
 			<Name locale="en" description="Delta Product Application Mass">Delta Applied Mass</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrYieldWetMass" domainTag="553" digits="7" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="lb" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="kg" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="lb" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="ton" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="t" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="ton" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utMassPerTime"/>
+			<Name locale="en" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="de" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="fr" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="da" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="nl" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="es" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="it" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="pt" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="ru" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="hu" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="cs" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="sk" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="fi" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="sv" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="et" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="lv" description="Acumulated Harvest Wet Mass From Previous Pointe">Harvest wet mass</Name>
+			<Name locale="lt" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="no" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="pl" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="bg" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="hr" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="ro" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="tr" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="el" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="is" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="sr" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="sl" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="zh" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="ar" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="he" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="ja" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="kk" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="ko" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="mk" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="th" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="uk" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="ug" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="vi" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<RelatedDDI ddi="90" unitOfMeasure="kg" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<EnumeratedRepresentation domainID="dtApplicationMethod" domainTag="1001" attributeID="196" domainIDShort="Applicat">
 			<Name locale="en" description="ApplicationMethod">ApplicationMethod</Name>
@@ -18168,6 +18321,7 @@
 				<Name locale="ug" description="ئېتىك">ئېتىك</Name>
 				<Name locale="vi" description="Tắt">Tắt</Name>
 			</EnumeratedMember>
+			<RelatedDDI ddi="141"/>
 		</EnumeratedRepresentation>
 		<EnumeratedRepresentation domainID="dtWindDirection" domainTag="1004" domainIDShort="WindDire">
 			<Name locale="en" description="Wind direction in textual increments">Wind direction</Name>
@@ -18528,6 +18682,7 @@
 				<Name locale="ug" description="غەربىي شىمال">غەربىي شىمال</Name>
 				<Name locale="vi" description="Tây Bắc">TB</Name>
 			</EnumeratedMember>
+			<RelatedDDI ddi="208"/>
 		</EnumeratedRepresentation>
 		<EnumeratedRepresentation domainID="dtABLineSaveMethod" domainTag="1005" domainIDShort="ABLineSa">
 			<Name locale="en" description="The save method that was used to create the AB Line.">Save Method</Name>
@@ -19048,6 +19203,7 @@
 				<Name locale="ug" description="بۇلۇتسىز ھاۋا ئەھۋالى">بۇلۇتسىز</Name>
 				<Name locale="vi" description="Điều kiện bầu trời quang mây">Quang mây</Name>
 			</EnumeratedMember>
+			<RelatedDDI ddi="210"/>
 		</EnumeratedRepresentation>
 		<EnumeratedRepresentation domainID="dtInlineOffsetType" domainTag="1007" domainIDShort="Inline02">
 			<Name locale="en" description="Inline Offset">Inline Offset</Name>
@@ -19608,6 +19764,7 @@
 				<Name locale="ug" description="ئالدى مۇستەھكەملىكى 3 نوقتا">ئالدى ستەھكەملىكى 3 نوقت</Name>
 				<Name locale="vi" description="3 vị trí cứng phía trước">3 vị trí cứng phía trước</Name>
 			</EnumeratedMember>
+			<RelatedDDI ddi="157"/>
 		</EnumeratedRepresentation>
 		<EnumeratedRepresentation domainID="dtSoilMoisture" domainTag="1010" domainIDShort="SoilMois">
 			<Name locale="en" description="Soil Moisture">Soil Moisture</Name>
@@ -20608,6 +20765,7 @@
 				<Name locale="ug" description="كۆرسەتمە - باشقۇرۇشتىن ھالقىغان">باشقۇرۇشتىن ھالقىغان</Name>
 				<Name locale="vi" description="Hình đại diện - Đã ghi đè">Đã ghi đè</Name>
 			</EnumeratedMember>
+			<RelatedDDI ddi="158"/>
 		</EnumeratedRepresentation>
 		<EnumeratedRepresentation domainID="dtLoadType" domainTag="1015" domainIDShort="LoadType">
 			<Name locale="en" description="Harvest Load Type">Harvest Load Type</Name>
@@ -25968,6 +26126,7 @@
 				<Name locale="ug" description="ئېغىرلىق خاتالىق مەلۇم قىلۋاتىدۇ">ئېغىرلىق خاتالىقى</Name>
 				<Name locale="vi" description="Trọng lượng đang báo cáo lỗi">Lỗi trọng lượng</Name>
 			</EnumeratedMember>
+			<RelatedDDI ddi="230"/>
 		</EnumeratedRepresentation>
 		<EnumeratedRepresentation domainID="dtProjectionType" domainTag="1043" domainIDShort="ProjType">
 			<Name locale="en" description="Guidance projection type"/>
@@ -26692,6 +26851,278 @@
 				<Name locale="en" description="Undefined">Undefined</Name>
 			</EnumeratedMember>
 			<RelatedDDI ddi="158"/>
+		</EnumeratedRepresentation>
+		<EnumeratedRepresentation domainID="dtMachineType" domainTag="1505" domainIDShort="MchnType">
+			<Name locale="en" description="Machine Type">Machine Type</Name>
+			<Name locale="de" description="Machine Type">Machine Type</Name>
+			<Name locale="fr" description="Machine Type">Machine Type</Name>
+			<Name locale="da" description="Machine Type">Machine Type</Name>
+			<Name locale="nl" description="Machine Type">Machine Type</Name>
+			<Name locale="es" description="Machine Type">Machine Type</Name>
+			<Name locale="it" description="Machine Type">Machine Type</Name>
+			<Name locale="pt" description="Machine Type">Machine Type</Name>
+			<Name locale="ru" description="Machine Type">Machine Type</Name>
+			<Name locale="hu" description="Machine Type">Machine Type</Name>
+			<Name locale="cs" description="Machine Type">Machine Type</Name>
+			<Name locale="sk" description="Machine Type">Machine Type</Name>
+			<Name locale="fi" description="Machine Type">Machine Type</Name>
+			<Name locale="sv" description="Machine Type">Machine Type</Name>
+			<Name locale="et" description="Machine Type">Machine Type</Name>
+			<Name locale="lv" description="Machine Type">Machine Type</Name>
+			<Name locale="lt" description="Machine Type">Machine Type</Name>
+			<Name locale="no" description="Machine Type">Machine Type</Name>
+			<Name locale="pl" description="Machine Type">Machine Type</Name>
+			<Name locale="bg" description="Machine Type">Machine Type</Name>
+			<Name locale="hr" description="Machine Type">Machine Type</Name>
+			<Name locale="ro" description="Machine Type">Machine Type</Name>
+			<Name locale="tr" description="Machine Type">Machine Type</Name>
+			<Name locale="el" description="Machine Type">Machine Type</Name>
+			<Name locale="is" description="Machine Type">Machine Type</Name>
+			<Name locale="sr" description="Machine Type">Machine Type</Name>
+			<Name locale="sl" description="Machine Type">Machine Type</Name>
+			<Name locale="zh" description="Machine Type">Machine Type</Name>
+			<Name locale="ar" description="Machine Type">Machine Type</Name>
+			<Name locale="he" description="Machine Type">Machine Type</Name>
+			<Name locale="ja" description="Machine Type">Machine Type</Name>
+			<Name locale="kk" description="Machine Type">Machine Type</Name>
+			<Name locale="ko" description="Machine Type">Machine Type</Name>
+			<Name locale="mk" description="Machine Type">Machine Type</Name>
+			<Name locale="th" description="Machine Type">Machine Type</Name>
+			<Name locale="uk" description="Machine Type">Machine Type</Name>
+			<Name locale="ug" description="Machine Type">Machine Type</Name>
+			<Name locale="vi" description="Machine Type">Machine Type</Name>
+			<EnumeratedMember domainID="dtiCaneHarvester" domainTag="6036" refID="0">
+				<Name locale="en" description="Cane Harvester">Cane Harvester</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiCombine" domainTag="6037" refID="1">
+				<Name locale="en" description="Combine">Combine</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiCottonPicker" domainTag="6038" refID="2">
+				<Name locale="en" description="Cotton Picker">Cotton Picker</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiCottonStripper" domainTag="6039" refID="3">
+				<Name locale="en" description="Cotton Stripper">Cotton Stripper</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiForageHarvester" domainTag="6040" refID="4">
+				<Name locale="en" description="Forage Harvester">Forage Harvester</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiIrrigationSystem" domainTag="6041" refID="5">
+				<Name locale="en" description="Irrigation System">Irrigation System</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiLifter" domainTag="6042" refID="6">
+				<Name locale="en" description="Lifter">Lifter</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiMachineTypeOther" domainTag="6043" refID="7">
+				<Name locale="en" description="Other">Other</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPickupTruck" domainTag="6044" refID="8">
+				<Name locale="en" description="Pickup Truck">Pickup Truck</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiSprayer" domainTag="6045" refID="9">
+				<Name locale="en" description="Sprayer">Sprayer</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiTractor" domainTag="6046" refID="10">
+				<Name locale="en" description="Tractor">Tractor</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiTreeShaker" domainTag="6047" refID="11">
+				<Name locale="en" description="Tree Shaker">Tree Shaker</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiUtilityVehicle" domainTag="6048" refID="12">
+				<Name locale="en" description="Utility Vehicle">Utility Vehicle</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiWindrower" domainTag="6049" refID="13">
+				<Name locale="en" description="Windrower">Windrower</Name>
+			</EnumeratedMember>
+		</EnumeratedRepresentation>
+		<EnumeratedRepresentation domainID="dtImplementType" domainTag="1506" domainIDShort="ImtType">
+			<Name locale="en" description="Implement Type">Implement Type</Name>
+			<Name locale="de" description="Implement Type">Implement Type</Name>
+			<Name locale="fr" description="Implement Type">Implement Type</Name>
+			<Name locale="da" description="Implement Type">Implement Type</Name>
+			<Name locale="nl" description="Implement Type">Implement Type</Name>
+			<Name locale="es" description="Implement Type">Implement Type</Name>
+			<Name locale="it" description="Implement Type">Implement Type</Name>
+			<Name locale="pt" description="Implement Type">Implement Type</Name>
+			<Name locale="ru" description="Implement Type">Implement Type</Name>
+			<Name locale="hu" description="Implement Type">Implement Type</Name>
+			<Name locale="cs" description="Implement Type">Implement Type</Name>
+			<Name locale="sk" description="Implement Type">Implement Type</Name>
+			<Name locale="fi" description="Implement Type">Implement Type</Name>
+			<Name locale="sv" description="Implement Type">Implement Type</Name>
+			<Name locale="et" description="Implement Type">Implement Type</Name>
+			<Name locale="lv" description="Implement Type">Implement Type</Name>
+			<Name locale="lt" description="Implement Type">Implement Type</Name>
+			<Name locale="no" description="Implement Type">Implement Type</Name>
+			<Name locale="pl" description="Implement Type">Implement Type</Name>
+			<Name locale="bg" description="Implement Type">Implement Type</Name>
+			<Name locale="hr" description="Implement Type">Implement Type</Name>
+			<Name locale="ro" description="Implement Type">Implement Type</Name>
+			<Name locale="tr" description="Implement Type">Implement Type</Name>
+			<Name locale="el" description="Implement Type">Implement Type</Name>
+			<Name locale="is" description="Implement Type">Implement Type</Name>
+			<Name locale="sr" description="Implement Type">Implement Type</Name>
+			<Name locale="sl" description="Implement Type">Implement Type</Name>
+			<Name locale="zh" description="Implement Type">Implement Type</Name>
+			<Name locale="ar" description="Implement Type">Implement Type</Name>
+			<Name locale="he" description="Implement Type">Implement Type</Name>
+			<Name locale="ja" description="Implement Type">Implement Type</Name>
+			<Name locale="kk" description="Implement Type">Implement Type</Name>
+			<Name locale="ko" description="Implement Type">Implement Type</Name>
+			<Name locale="mk" description="Implement Type">Implement Type</Name>
+			<Name locale="th" description="Implement Type">Implement Type</Name>
+			<Name locale="uk" description="Implement Type">Implement Type</Name>
+			<Name locale="ug" description="Implement Type">Implement Type</Name>
+			<Name locale="vi" description="Implement Type">Implement Type</Name>
+			<EnumeratedMember domainID="dtiImpTillage" domainTag="6050" refID="0">
+				<Name locale="en" description="Tillage">Tillage</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiSecondaryTillage" domainTag="6051" refID="1">
+				<Name locale="en" description="Secondary Tillage">Secondary Tillage</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiSeedersPlanter" domainTag="6052" refID="2">
+				<Name locale="en" description="Seeders Planter">Seeders Planter</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFertilizer" domainTag="6053" refID="3">
+				<Name locale="en" description="Fertilizer">Fertilizer</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiImpSprayer" domainTag="6054" refID="4">
+				<Name locale="en" description="Sprayer">Sprayer</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiHarvester" domainTag="6055" refID="5">
+				<Name locale="en" description="Harvester">Harvester</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiRootHarvester" domainTag="6056" refID="6">
+				<Name locale="en" description="Root Harvester">Root Harvester</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiForage" domainTag="6057" refID="7">
+				<Name locale="en" description="Forage">Forage</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiIrrigation" domainTag="6058" refID="8">
+				<Name locale="en" description="Irrigation">Irrigation</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiTransportTrailers" domainTag="6059" refID="9">
+				<Name locale="en" description="Transport Trailer">Trasnport Trailer</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFarmsteadOperations" domainTag="6060" refID="10">
+				<Name locale="en" description="Farmstead Operations">Farmstead Operations</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPoweredAuxiliaryDevices" domainTag="6061" refID="11">
+				<Name locale="en" description="Powered Auxilairy Device">Powered Auxilairy Device</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiSpecialCrop" domainTag="6062" refID="12">
+				<Name locale="en" description="Special Crop">Special Crop</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiEarthworks" domainTag="6063" refID="13">
+				<Name locale="en" description="Earth Works">Earth Works</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiSkidders" domainTag="6064" refID="14">
+				<Name locale="en" description="Skidders">Skidders</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiSensorSystems" domainTag="6065" refID="15">
+				<Name locale="en" description="Sensor System">Sensor System</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiSlurryApplicators" domainTag="6066" refID="16">
+				<Name locale="en" description="Slurry Applicator">Slurry Applicator</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiImpPlanter" domainTag="6067" refID="17">
+				<Name locale="en" description="Planter">Planter</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiSeeder" domainTag="6068" refID="18">
+				<Name locale="en" description="Seeder">Seeder</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPullBehindSprayer" domainTag="6069" refID="19">
+				<Name locale="en" description="Pull Behind Sprayer">Pull Behind Sprayer</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiLiquidFertTool" domainTag="6070" refID="20">
+				<Name locale="en" description="Liquid Fert Tool">Liquid Fert Tool</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiNH3Tool" domainTag="6071" refID="21">
+				<Name locale="en" description="NH3 Tool">NH3 Tool</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiGrainDrill" domainTag="6072" refID="22">
+				<Name locale="en" description="Grain Drill">Grain Drill</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiDrySpreader" domainTag="6073" refID="23">
+				<Name locale="en" description="Dry Spreader">Dry Spreader</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiBeltPickup" domainTag="6074" refID="24">
+				<Name locale="en" description="Belt Pickup">Belt Pickup</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiDraper" domainTag="6075" refID="25">
+				<Name locale="en" description="Draper">Draper</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPlatform" domainTag="6076" refID="26">
+				<Name locale="en" description="Platform">Platform</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiCornHead" domainTag="6077" refID="27">
+				<Name locale="en" description="Corn Head">Corn Head</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiRowCropHead" domainTag="6078" refID="28">
+				<Name locale="en" description="Row Crop Head">Row Crop Head</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiRowUnits" domainTag="6079" refID="29">
+				<Name locale="en" description="Row Units">Row Units</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiRowDependent" domainTag="6080" refID="30">
+				<Name locale="en" description="Row Dependent">Row Dependent</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiRowIndependent" domainTag="6081" refID="31">
+				<Name locale="en" description="Row Independent">Row Independent</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiBoom" domainTag="6082" refID="32">
+				<Name locale="en" description="Boom">Boom</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiImplementTypeOther" domainTag="6083" refID="33">
+				<Name locale="en" description="Other">Other</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiRotaryDitcher" domainTag="6084" refID="34">
+				<Name locale="en" description="Rotary Ditcher">Rotary Ditcher</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiScraper" domainTag="6085" refID="35">
+				<Name locale="en" description="Scraper">Scraper</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPickup" domainTag="6086" refID="36">
+				<Name locale="en" description="Pickup">Pickup</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiAirCart" domainTag="6087" refID="37">
+				<Name locale="en" description="Air Cart">Air Cart</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiCart" domainTag="6088" refID="38">
+				<Name locale="en" description="Cart">Cart</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiChoppingCornHead" domainTag="6089" refID="39">
+				<Name locale="en" description="Chopping Corn Head">Chopping Corn Head</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiRigidPlatform" domainTag="6090" refID="40">
+				<Name locale="en" description="Rigid Platform">Rigid Platform</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFlexibleDraper" domainTag="6091" refID="41">
+				<Name locale="en" description="Flexible Draper">Flexible Draper</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFlexPlatform" domainTag="6092" refID="42">
+				<Name locale="en" description="Flex Platform">Flex Platform</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiHydraflexPlatform" domainTag="6093" refID="43">
+				<Name locale="en" description="Hydraflex Platform">Hydraflex Platform</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiUnknownHead" domainTag="6094" refID="44">
+				<Name locale="en" description="Unknown Head">Unknown Head</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiBaler" domainTag="6095" refID="45">
+				<Name locale="en" description="Baler">Baler</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiImpCottonStripper" domainTag="6096" refID="46">
+				<Name locale="en" description="Cotton Stripper">Cotton Stripper</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiImpCaneHarvester" domainTag="6097" refID="47">
+				<Name locale="en" description="Cane Harvest">Cane Harvest</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiImpCottonPicker" domainTag="6098" refID="48">
+				<Name locale="en" description="Cotton Picker">Cotton Picker</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiRotary" domainTag="6099" refID="49">
+				<Name locale="en" description="Rotary">Rotary</Name>
+			</EnumeratedMember>
 		</EnumeratedRepresentation>
 	</Representations>
 </RepresentationSystem>

@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2015 sp1 (x64) (http://www.altova.com) by Joseph Ross (Deere and Company) -->
 <RepresentationSystem xmlns="urn:schemas-adapt-aggateway-org:Representation" xmlns:bt="urn:schemas-adapt-aggateway-org:BasicTypes" xmlns:unit="urn:schemas-adapt-aggateway-org:UnitSystem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:schemas-adapt-aggateway-org:Representation RepresentationSystem.xsd">
 	<SchemaVersion major="1" minor="1"/>
-	<ContentVersion major="1" minor="2"/>
+	<ContentVersion major="1" minor="3"/>
 	<Representations>
 		<NumericRepresentation domainID="vrABRowSpacing" domainTag="1" digits="3" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="3" decimal="2" unitOfMeasureSystem="umsEnglish"/>
@@ -17151,6 +17151,56 @@
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utMass"/>
 			<Name locale="en" description="Delta Product Application Mass">Delta Applied Mass</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrYieldWetMass" domainTag="553" digits="7" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="lb" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="kg" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="lb" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="ton" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="t" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="ton" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utMassPerTime"/>
+			<Name locale="en" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="de" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="fr" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="da" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="nl" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="es" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="it" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="pt" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="ru" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="hu" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="cs" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="sk" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="fi" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="sv" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="et" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="lv" description="Acumulated Harvest Wet Mass From Previous Pointe">Harvest wet mass</Name>
+			<Name locale="lt" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="no" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="pl" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="bg" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="hr" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="ro" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="tr" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="el" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="is" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="sr" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="sl" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="zh" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="ar" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="he" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="ja" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="kk" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="ko" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="mk" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="th" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="uk" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="ug" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<Name locale="vi" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+			<RelatedDDI ddi="90" unitOfMeasure="kg" resolution="1" offset="0"/>
 		</NumericRepresentation>
 		<EnumeratedRepresentation domainID="dtApplicationMethod" domainTag="1001" attributeID="196" domainIDShort="Applicat">
 			<Name locale="en" description="ApplicationMethod">ApplicationMethod</Name>
