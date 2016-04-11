@@ -14,6 +14,7 @@
  *   Tarak Reddy - Moved GuidanceAllocations to Documents
  *   Joseph ross - Added Prescriptions to Catalog
  *   Kathleen Oneal - added equipmentConfigs and renamed Name to Description
+ *   Kathleen Oneal - added manufactures list
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -24,7 +25,6 @@ using AgGateway.ADAPT.ApplicationDataModel.Guidance;
 using AgGateway.ADAPT.ApplicationDataModel.Logistics;
 using AgGateway.ADAPT.ApplicationDataModel.Prescriptions;
 using AgGateway.ADAPT.ApplicationDataModel.Products;
-using AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
@@ -82,7 +82,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<MachineType> MachineTypes { get; set; } 
 
-        public List<MachineConfiguration> MachineConfigurations { get; set; } 
+        public List<MachineConfiguration> MachineConfigurations { get; set; }
+
+        public List<Manufacturer> Manufacturers { get; set; }
 
         public List<Person> Persons { get; set; } 
 
