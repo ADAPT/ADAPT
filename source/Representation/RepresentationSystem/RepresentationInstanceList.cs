@@ -98,6 +98,10 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         public static readonly EnumeratedRepresentation dtPrescriptionControlMasterState = (EnumeratedRepresentation)RepresentationManager.Instance.Representations["dtPrescriptionControlMasterState"];
 
+        public static readonly EnumeratedRepresentation dtMachineType = (EnumeratedRepresentation)RepresentationManager.Instance.Representations["dtMachineType"];
+
+        public static readonly EnumeratedRepresentation dtImplementType = (EnumeratedRepresentation)RepresentationManager.Instance.Representations["dtImplementType"];
+
         public static readonly NumericRepresentation vrABRowSpacing = (NumericRepresentation)RepresentationManager.Instance.Representations["vrABRowSpacing"];
 
         public static readonly NumericRepresentation vrABShiftTrack = (NumericRepresentation)RepresentationManager.Instance.Representations["vrABShiftTrack"];
@@ -949,6 +953,8 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
         public static readonly NumericRepresentation vrProductIndex = (NumericRepresentation)RepresentationManager.Instance.Representations["vrProductIndex"];
 
         public static readonly NumericRepresentation vrDeltaAppRateMass = (NumericRepresentation)RepresentationManager.Instance.Representations["vrDeltaAppRateMass"];
+
+        public static readonly NumericRepresentation vrYieldWetMass = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldWetMass"];
 
     }
 }

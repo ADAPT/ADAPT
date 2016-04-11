@@ -98,6 +98,10 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         dtPrescriptionControlMasterState = 1504,
 
+        dtMachineType = 1505,
+
+        dtImplementType = 1506,
+
         vrABRowSpacing = 1,
 
         vrABShiftTrack = 2,
@@ -949,6 +953,8 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
         vrProductIndex = 551,
 
         vrDeltaAppRateMass = 552,
+
+        vrYieldWetMass = 553,
 
     }
 }
