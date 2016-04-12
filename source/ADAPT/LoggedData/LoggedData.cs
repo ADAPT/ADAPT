@@ -34,7 +34,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public int? CropZoneId { get; set; }
 
-        public List<OperationData> OperationData { get; set; } 
+        public IEnumerable<OperationData> OperationData { get; set; } 
 
         public int? SummaryId { get; set; }
     }
