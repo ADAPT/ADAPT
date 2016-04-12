@@ -12,6 +12,7 @@
   *    Kathleen Oneal - changed OperationDataIds to WorkItemIds
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Documents;
 using AgGateway.ADAPT.ApplicationDataModel.Notes;
@@ -37,5 +38,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public IEnumerable<OperationData> OperationData { get; set; } 
 
         public int? SummaryId { get; set; }
+
+        public Action ReleaseSpatialData { get; set; }
     }
 }
