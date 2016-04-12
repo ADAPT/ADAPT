@@ -222,7 +222,7 @@ namespace AgGateway.ADAPT.Visualizer
             else
             {
                 var childNode = parentNode.Nodes.Add(propertyInfo.Name);
-                parentNode.Tag = element;
+                parentNode.Tag = new ObjectWithIndex(_admIndex, element);
                 AddNode(propertyValue, childNode);
             }
         }
@@ -240,7 +240,7 @@ namespace AgGateway.ADAPT.Visualizer
                 {
                     var node = new TreeNode(child.ToString())
                     {
-                        Tag = new ObjectWithIndex {ApplicationDataModelIndex = _admIndex, Element = child}
+                        Tag = new ObjectWithIndex(_admIndex, child)
                     };
                     collectionNode.Nodes.Add(node);
                     AddNode(child, node);
@@ -359,6 +359,16 @@ namespace AgGateway.ADAPT.Visualizer
 
     internal class ObjectWithIndex
     {
+        public ObjectWithIndex()
+        {
+            
+        }
+
+        public ObjectWithIndex(int applicationDataModelIndex, Object element)
+        {
+            ApplicationDataModelIndex = applicationDataModelIndex;
+            Element = element;
+        }
         public int ApplicationDataModelIndex { get; set; }
 
         public Object Element { get; set; }
