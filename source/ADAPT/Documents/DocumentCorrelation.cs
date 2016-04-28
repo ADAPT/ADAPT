@@ -10,7 +10,6 @@
   *    Kathleen Oneal - initial API and implementation
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
@@ -26,7 +25,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 
         public int CorrelatingDocumentId { get; set; }
 
-        public DateTime TimeStamp { get; set; }
+        public List<TimeScope> TimeScopes { get; set; }
 
         public List<int> PersonRoleIds { get; set; }
     }

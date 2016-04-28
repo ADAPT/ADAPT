@@ -7,29 +7,27 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Justin Sliekers - initial API and implementation
+  *    Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
-using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
-namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
+namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
-    public class PermittedProduct
+    public class RxProductLookup
     {
-        public PermittedProduct()
+        public RxProductLookup()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
         }
 
-        public CompoundIdentifier Id { get; set; }
+        public CompoundIdentifier Id { get; private set; }
 
-        public List<TimeScope> TimeScopes { get; set; }
-
-        public int GrowerId { get; set; }
-
-        public int ProductId { get; set; }
-
-        public List<ContextItem> ContextItems { get; set; }
+        public int? ProductId { get; set; }
+        
+        public NumericRepresentation Representation { get; set; }
+        
+        public UnitOfMeasure UnitOfMeasure { get; set; }
     }
 }

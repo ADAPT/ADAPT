@@ -12,6 +12,7 @@
  *    Kathleen Oneal - renamed property name from enumberatedValue to Value
  *******************************************************************************/
 
+using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
@@ -24,7 +25,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Notes
         
         public EnumeratedValue Value { get; set; }
         
-        public TimeScope TimeStamp { get; set; }
+        public List<TimeScope> TimeStamps { get; set; }
         
         public Shape SpatialContext { get; set; }
     }
