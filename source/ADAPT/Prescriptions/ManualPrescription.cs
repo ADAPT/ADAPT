@@ -11,10 +11,24 @@
   *    Justin Sliekers - dropping product uses and application strategy, adding rate
   *******************************************************************************/
 
+using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Products;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
+
 namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
     public class ManualPrescription : Prescription
     {
         public double Rate { get; set; }
+
+        public List<ProductUse> ProductUses { get; set; }
+
+        public NumericRepresentationValue TotalArea { get; set; }
+
+        public NumericRepresentationValue TankAmount { get; set; }
+
+        public double? TotalTanks { get; set; }
+
+        public ApplicationStrategyEnum ApplicationStrategy { get; set; }
     }
 }

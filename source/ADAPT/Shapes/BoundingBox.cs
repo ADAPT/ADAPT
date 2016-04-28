@@ -14,12 +14,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
 {
     public class BoundingBox
     {
-        public double MinLatitude { get; set; }
+        public double MinY { get; set; }
 
-        public double MinLongitude { get; set; }
+        public double MinX { get; set; }
 
-        public double MaxLatitude { get; set; }
+        public double MaxY { get; set; }
 
-        public double MaxLongitude { get; set; }
+        public double MaxX { get; set; }
     }
 }

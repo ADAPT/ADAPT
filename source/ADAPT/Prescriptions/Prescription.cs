@@ -32,6 +32,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 
         public int? CropZoneId { get; set; }
 
+        public List<RxProductLookup> RxProductLookups { get; set; }
+
         public List<int> ProductIds { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }

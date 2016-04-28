@@ -49,6 +49,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Logistics\CropZone.cs" />
+    <Compile Include="Prescriptions\RxProductLookup.cs" />
     <Compile Include="Products\ActiveIngredient.cs" />
     <Compile Include="Guidance\APlus.cs" />
     <Compile Include="ADM\ApplicationDataModel.cs" />

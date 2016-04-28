@@ -17,6 +17,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
     {
         public double Rate { get; set; }
 
-        public int? ProductId { get; set; }
+        public int RxProductLookupId { get; set; }
     }
 }
