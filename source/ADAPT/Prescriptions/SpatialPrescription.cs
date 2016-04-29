@@ -10,7 +10,6 @@
   *    Justin Sliekers - initial API and implementation
   *******************************************************************************/
 
-using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
@@ -23,7 +22,5 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
         public NumericRepresentationValue OutOfFieldRate { get; set; }
 
         public NumericRepresentationValue LossOfGpsRate { get; set; }
-
-        public UnitOfMeasure RateUnit { get; set; }
     }
 }

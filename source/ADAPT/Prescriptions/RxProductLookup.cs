@@ -7,16 +7,27 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Justin Sliekers - initial API and implementation
-  *    Kathleen Oneal - made ProductId nullable
+  *    Tim Shearouse - initial API and implementation
   *******************************************************************************/
+
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
-    public class RxRate
+    public class RxProductLookup
     {
-        public double Rate { get; set; }
+        public RxProductLookup()
+        {
+            Id = CompoundIdentifierFactory.Instance.Create();
+        }
 
-        public int RxProductLookupId { get; set; }
+        public CompoundIdentifier Id { get; private set; }
+
+        public int? ProductId { get; set; }
+        
+        public NumericRepresentation Representation { get; set; }
+        
+        public UnitOfMeasure UnitOfMeasure { get; set; }
     }
 }

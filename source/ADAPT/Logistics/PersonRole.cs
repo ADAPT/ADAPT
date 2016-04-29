@@ -32,7 +32,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         
         public int? GrowerId { get; set; }
 
-        public List<TimeScope> ActiveScopes { get; set; }
+        public List<TimeScope> TimeScopes { get; set; }
 
         public int? CompanyId { get; set; }
     }

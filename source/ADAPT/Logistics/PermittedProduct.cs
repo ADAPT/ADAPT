@@ -24,7 +24,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 
         public CompoundIdentifier Id { get; set; }
 
-        public TimeScope CropSeason { get; set; }
+        public List<TimeScope> TimeScopes { get; set; }
 
         public int GrowerId { get; set; }
 

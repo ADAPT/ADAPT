@@ -10,16 +10,18 @@
   *    Justin Sliekers - initial API and implementation
   *******************************************************************************/
 
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
+
 namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
 {
     public class BoundingBox
     {
-        public double MinLatitude { get; set; }
+        public NumericRepresentationValue MinY { get; set; }
 
-        public double MinLongitude { get; set; }
+        public NumericRepresentationValue MinX { get; set; }
 
-        public double MaxLatitude { get; set; }
+        public NumericRepresentationValue MaxY { get; set; }
 
-        public double MaxLongitude { get; set; }
+        public NumericRepresentationValue MaxX { get; set; }
     }
 }

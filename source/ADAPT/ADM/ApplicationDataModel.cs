@@ -24,6 +24,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public Documents Documents { get; set; }
 
-        public List<ReferenceLayer> ReferenceLayers { get; set; }
+        public IEnumerable<ReferenceLayer> ReferenceLayers { get; set; }
     }
 }

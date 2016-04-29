@@ -90,7 +90,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<PersonRole> PersonRoles { get; set; }
         
-        public List<Prescription> Prescriptions { get; set; }
+        public IEnumerable<Prescription> Prescriptions { get; set; }
 
         public List<ProductMix> ProductMixes { get; set; }
 

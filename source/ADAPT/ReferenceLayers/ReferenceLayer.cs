@@ -32,7 +32,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 
         public ReferenceLayerTypeEnum LayerType { get; set; }
 
-        public TimeScope TimeScope { get; set; }
+        public List<TimeScope> TimeScopes { get; set; }
 
         public Polygon BoundingPolygon { get; set; }
 

@@ -8,11 +8,14 @@
   *
   * Contributors:
   *    Kathleen Oneal - initial API and implementation
-  *******************************************************************************/  
+  *******************************************************************************/
+
+using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
     public class VectorPrescription : SpatialPrescription
     {
+        public List<RxShapeLookup> RxShapeLookups { get; set; }
     }
 }
