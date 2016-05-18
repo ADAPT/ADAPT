@@ -79,7 +79,6 @@
     <Compile Include="Products\CropVariety.cs" />
     <Compile Include="LoggedData\DataLogTrigger.cs" />
     <Compile Include="Common\DateContextEnum.cs" />
-    <Compile Include="Common\DateWithContext.cs" />
     <Compile Include="Products\DensityFactor.cs" />
     <Compile Include="Documents\Document.cs" />
     <Compile Include="Documents\DocumentCorrelation.cs" />
