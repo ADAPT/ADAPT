@@ -27,6 +27,14 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         Expiration,
         Creation,
         Modification,
+        ValidityRange,
+        RequestedShipping,
+        ActualShipping,
+        Calibration,
+        Load,
+        Unload,
+        Suspend,
+        Resume,
         Unspecified
     }
 }
