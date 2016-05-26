@@ -19,6 +19,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
     public class NumericMeter : Meter
     {
+        public NumericMeter()
+        {
+            Values = new List<double>();
+        }
+
         public UnitOfMeasure UnitOfMeasure { get; set; }
 
         public List<double> Values { get; set; }

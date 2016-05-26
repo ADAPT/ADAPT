@@ -22,6 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
         public GuidanceGroup()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            GuidancePatternIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }

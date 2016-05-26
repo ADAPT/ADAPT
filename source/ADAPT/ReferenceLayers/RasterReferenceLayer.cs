@@ -11,6 +11,7 @@
   *    Justin Sliekers - adding SpatialAttributes
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
@@ -19,6 +20,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 {
     public class RasterReferenceLayer : ReferenceLayer
     {
+        public RasterReferenceLayer()
+        {
+            EnumeratedRasterValues = new List<RasterData<EnumeratedRepresentation, EnumerationMember>>();
+            StringRasterValues = new List<RasterData<StringRepresentation, string>>();
+            NumericRasterValues = new List<RasterData<NumericRepresentation, NumericValue>>();
+        }
         public Point Origin { get; set; }
 
         public int RowCount { get; set; }

@@ -20,6 +20,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
         public Prescription()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            RxProductLookups = new List<RxProductLookup>();
+            ProductIds = new List<int>();
+            ContextItems = new List<ContextItem>();
         }
 
         public CompoundIdentifier Id { get; private set; }

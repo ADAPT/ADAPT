@@ -19,6 +19,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
         public MultiLineString()
         {
             Type = ShapeTypeEnum.MultiLineString;
+            LineStrings = new List<LineString>();
         }
 
         public List<LineString> LineStrings { get; set; }

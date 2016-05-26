@@ -20,6 +20,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         public ContactInfo()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            Contacts = new List<Contact>();
+            ContextItems = new List<ContextItem>();
         }
 
         public CompoundIdentifier Id { get; private set; }

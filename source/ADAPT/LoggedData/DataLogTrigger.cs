@@ -21,6 +21,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public DataLogTrigger()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+
+            ContextItems = new List<ContextItem>();
+            SectionIds = new List<int>();
+            MeterIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }

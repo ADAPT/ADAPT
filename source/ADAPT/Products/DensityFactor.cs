@@ -22,6 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
         public DensityFactor()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            TimeScopeIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; set; }

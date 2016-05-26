@@ -20,6 +20,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
         public AvailableProduct()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            ContextItems = new List<ContextItem>();
         }
 
         public CompoundIdentifier Id { get; private set; }

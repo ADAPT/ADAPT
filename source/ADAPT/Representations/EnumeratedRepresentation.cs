@@ -16,6 +16,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Representations
 {
     public class EnumeratedRepresentation : Representation
     {
+        public EnumeratedRepresentation()
+        {
+            EnumeratedMembers = new List<EnumerationMember>();
+        }
+
         public List<EnumerationMember> EnumeratedMembers { get; set; }
 
         public int RepresentationGroupId { get; set; }

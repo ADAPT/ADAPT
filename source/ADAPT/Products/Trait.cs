@@ -22,6 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
         public Trait()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            CropIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }

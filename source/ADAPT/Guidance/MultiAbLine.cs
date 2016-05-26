@@ -16,6 +16,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
     public class MultiAbLine : GuidancePattern
     {
+        public MultiAbLine()
+        {
+            AbLines = new List<AbLine>();
+        }
+
         public List<AbLine> AbLines { get; set; }
     }
 }

@@ -17,6 +17,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
     public class AbCurve : GuidancePattern
     {
+        public AbCurve()
+        {
+            Shape = new List<LineString>();    
+        }
+
         public int NumberOfSegments { get; set; }
 
         public double? Heading { get; set; }

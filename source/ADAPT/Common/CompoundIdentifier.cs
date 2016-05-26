@@ -20,11 +20,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         public CompoundIdentifier(int id)
         {
             ReferenceId = id;
-        }
-
-        private CompoundIdentifier()
-        {
-            
+            UniqueIds = new List<UniqueId>();   
         }
 
         public int ReferenceId { get; set; }

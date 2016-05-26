@@ -19,6 +19,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
    public class RasterGridPrescription : SpatialPrescription
    {
+       public RasterGridPrescription()
+       {
+           Rates = new List<RxRates>();
+       }
+
       public Point Origin { get; set; }
 
       public int RowCount { get; set; }

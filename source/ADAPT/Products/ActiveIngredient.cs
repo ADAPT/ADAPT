@@ -17,6 +17,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
     public class ActiveIngredient : Ingredient
     {
+        public ActiveIngredient()
+        {
+            ModesOfAction = new List<ModeOfAction>();
+        }
+
         public List<ModeOfAction> ModesOfAction { get; set; }
     }
 }

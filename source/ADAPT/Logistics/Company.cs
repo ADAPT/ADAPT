@@ -21,6 +21,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         public Company()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            ContextItems = new List<ContextItem>();
         }
 
         public CompoundIdentifier Id { get; private set; }

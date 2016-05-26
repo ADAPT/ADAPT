@@ -22,6 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
         public EquipmentConfig()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            TimeScopes = new List<TimeScope>();
         }
 
         public CompoundIdentifier Id { get; private set; }
