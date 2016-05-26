@@ -17,6 +17,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
     public class RxShapeLookup
     {
+        public RxShapeLookup()
+        {
+            Rates = new List<RxRate>();
+        }
+
         public MultiPolygon Shape { get; set; }
 
         public List<RxRate> Rates { get; set; } 

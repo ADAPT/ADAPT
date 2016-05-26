@@ -18,6 +18,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
     public class CropVariety : Product
     {
+        public CropVariety()
+        {
+            TraitIds = new List<int>();
+        }
+
         public int CropId { get; set; }
 
         public List<int> TraitIds { get; set; }

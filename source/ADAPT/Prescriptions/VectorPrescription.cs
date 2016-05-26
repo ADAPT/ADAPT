@@ -16,6 +16,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
     public class VectorPrescription : SpatialPrescription
     {
+        public VectorPrescription()
+        {
+            RxProductLookups = new List<RxProductLookup>();
+        }
+
         public List<RxShapeLookup> RxShapeLookups { get; set; }
     }
 }

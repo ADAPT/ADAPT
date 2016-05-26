@@ -24,6 +24,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries
         public FieldBoundary()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            Headlands = new List<Headland>();
+            InteriorBoundaryAttributes = new List<InteriorBoundaryAttribute>();
+            ContextItems = new List<ContextItem>();
         }
 
         public CompoundIdentifier Id { get; private set; }

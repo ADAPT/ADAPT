@@ -25,6 +25,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
         protected Product()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            ContextItems = new List<ContextItem>();
+            ProductComponents = new List<ProductComponent>();
         }
 
         public CompoundIdentifier Id { get; private set; }

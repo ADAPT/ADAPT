@@ -19,6 +19,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
         public Polygon()
         {
             Type = ShapeTypeEnum.Polygon;
+            InteriorRings = new List<LinearRing>();
         }
 
         public LinearRing ExteriorRing { get; set; }

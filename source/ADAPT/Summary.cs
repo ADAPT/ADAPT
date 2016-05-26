@@ -17,6 +17,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel
 {
     public class Summary
     {
+        public Summary()
+        {
+            FarmIds = new List<int>();
+            FieldIds = new List<int>();
+            CropZoneIds = new List<int>();
+        }
+
         public int? GrowerId { get; set; }
 
         public List<int> FarmIds { get; set; }

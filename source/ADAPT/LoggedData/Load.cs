@@ -20,6 +20,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
     public class Load
     {
+        public Load()
+        {
+            TimeScopeIds =new List<int>();
+            DestinationIds = new List<int>();
+        }
+
         public int Id { get; set; }
 
         public string Description { get; set; }

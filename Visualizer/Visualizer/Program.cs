@@ -11,6 +11,7 @@
 
 using System;
 using System.Windows.Forms;
+using AgGateway.ADAPT.Visualizer.UI;
 
 namespace AgGateway.ADAPT.Visualizer
 {

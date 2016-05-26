@@ -20,6 +20,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         public PermittedProduct()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            TimeScopes = new List<TimeScope>();
+            ContextItems = new List<ContextItem>();
         }
 
         public CompoundIdentifier Id { get; set; }

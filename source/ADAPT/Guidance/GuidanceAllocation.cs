@@ -23,6 +23,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
         public GuidanceAllocation()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+
+            TimeScopes = new List<TimeScope>();
         }
 
         public CompoundIdentifier Id { get; private set; }

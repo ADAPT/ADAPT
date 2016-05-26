@@ -17,6 +17,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
     public class EnumeratedMeter : Meter
     {
+        public EnumeratedMeter()
+        {
+            ValueCodes = new List<int>();
+        }
+
         public List<int> ValueCodes { get; set; }
     }
 }

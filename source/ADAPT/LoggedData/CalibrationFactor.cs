@@ -22,6 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public CalibrationFactor()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            TimeScopeIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }

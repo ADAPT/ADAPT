@@ -30,14 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AgGateway.ADAPT.ApplicationDataModel">
-      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.31\lib\AgGateway.ADAPT.ApplicationDataModel.dll</HintPath>
+    <Reference Include="AgGateway.ADAPT.ApplicationDataModel, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.38\lib\AgGateway.ADAPT.ApplicationDataModel.dll</HintPath>
     </Reference>
-    <Reference Include="AgGateway.ADAPT.PluginManager">
-      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.31\lib\AgGateway.ADAPT.PluginManager.dll</HintPath>
+    <Reference Include="AgGateway.ADAPT.PluginManager, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.38\lib\AgGateway.ADAPT.PluginManager.dll</HintPath>
     </Reference>
-    <Reference Include="AgGateway.ADAPT.Representation">
-      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.31\lib\AgGateway.ADAPT.Representation.dll</HintPath>
+    <Reference Include="AgGateway.ADAPT.Representation, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.38\lib\AgGateway.ADAPT.Representation.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=3.0.5813.39031, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.0.1\lib\net45\nunit.framework.dll</HintPath>

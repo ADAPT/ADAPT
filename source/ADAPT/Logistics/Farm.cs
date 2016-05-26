@@ -20,6 +20,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         public Farm()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            TimeScopeIds = new List<int>();
+            ContextItems = new List<ContextItem>();
         }
 
         public CompoundIdentifier Id { get; private set; }

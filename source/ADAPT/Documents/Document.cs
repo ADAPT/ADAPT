@@ -23,6 +23,14 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         protected Document()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+
+            ContextItems = new List<ContextItem>();
+            CropZoneIds = new List<int>();
+            FarmIds = new List<int>();
+            FieldIds = new List<int>();
+            Notes = new List<Note>();
+            PersonRoleIds = new List<int>();
+            TimeScopeIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }

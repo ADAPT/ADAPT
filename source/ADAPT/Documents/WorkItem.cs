@@ -24,6 +24,17 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         public WorkItem()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+
+            PlanIds = new List<int>();
+            RecommendationIds = new List<int>();
+            WorkOrderIds = new List<int>();
+            Notes = new List<Note>();
+            TimeScopeIds = new List<int>();
+            PeopleRoleIds = new List<int>();
+            ReferenceLayerIds = new List<int>();
+            WorkItemOperationIds = new List<int>();
+            GuidanceAllocationIds = new List<int>();
+            StatusUpdates = new List<StatusUpdate>();
         }
 
         public CompoundIdentifier Id { get; private set; }

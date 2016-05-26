@@ -17,6 +17,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
     public class GuidanceShift
     {
+        public GuidanceShift()
+        {
+            TimeScopeIds = new List<int>();
+        }
         public int GuidanceGroupId { get; set; }
 
         public int GuidancePatterId { get; set; }

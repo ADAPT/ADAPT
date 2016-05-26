@@ -24,6 +24,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
         protected ReferenceLayer()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            TimeScopes = new List<TimeScope>();
+            ContextItems = new List<ContextItem>();
+            FieldIds = new List<int>();
+            CropZoneIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }
