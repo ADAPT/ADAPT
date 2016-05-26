@@ -113,15 +113,27 @@ namespace AgGateway.ADAPT.Visualizer
             if (element == null)
                 return;
 
-            foreach (var propertyInfo in element.GetType().GetProperties())
+            var type = element.GetType();
+            type = CheckType(ref element, type);
+            foreach (var propertyInfo in type.GetProperties())
             {
                 ParseProperty(element, parentNode, propertyInfo);
             }
         }
 
+        private static Type CheckType(ref object element, Type type)
+        {
+            if (!type.Namespace.StartsWith("System") && !type.Namespace.StartsWith("AgGateway.ADAPT.ApplicationDataModel"))
+            {
+                type = type.BaseType;
+                element = Convert.ChangeType(element, type);
+            }
+            return type;
+        }
+
         private void ParseProperty(object element, TreeNode parentNode, PropertyInfo propertyInfo)
         {
-            if (element is Func<object> || element is Func<int, object>)
+            if (element is Func<object> || element is Func<int, object> || element is Action)
                 return;
 
             var propertyType = propertyInfo.PropertyType;
@@ -133,6 +145,8 @@ namespace AgGateway.ADAPT.Visualizer
             }
 
             var propertyValue = propertyInfo.GetIndexParameters().Any() ? null : propertyInfo.GetValue(element, null);
+
+            propertyType = CheckType(ref propertyValue, propertyType);
 
             if (propertyType.IsPrimitive || propertyType == typeof(string) || propertyType == typeof(DateTime) || propertyType.IsEnum)
             {
@@ -161,7 +175,9 @@ namespace AgGateway.ADAPT.Visualizer
 
                 foreach (var child in collection)
                 {
-                    var node = new TreeNode(child.ToString())
+                    var childObject = child;
+                    var type = CheckType(ref childObject, childObject.GetType());
+                    var node = new TreeNode(type.Name)
                     {
                         Tag = new ObjectWithIndex(_admIndex, child)
                     };
