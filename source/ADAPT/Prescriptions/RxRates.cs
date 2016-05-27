@@ -16,6 +16,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
     public class RxRates
     {
+        public RxRates()
+        {
+            RxRate = new List<RxRate>();
+        }
+
         public List<RxRate> RxRate { get; set; } 
     }
 }

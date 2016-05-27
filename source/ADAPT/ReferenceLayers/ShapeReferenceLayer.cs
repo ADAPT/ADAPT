@@ -16,6 +16,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 {
     public class ShapeReferenceLayer : ReferenceLayer
     {
+        public ShapeReferenceLayer()
+        {
+            ShapeLookups = new List<ShapeLookup>();
+        }
+
         public List<ShapeLookup> ShapeLookups { get; set; }
     }
 }

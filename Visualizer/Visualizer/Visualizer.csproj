@@ -32,14 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AgGateway.ADAPT.ApplicationDataModel">
-      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.31\lib\AgGateway.ADAPT.ApplicationDataModel.dll</HintPath>
+    <Reference Include="AgGateway.ADAPT.ApplicationDataModel, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.38\lib\AgGateway.ADAPT.ApplicationDataModel.dll</HintPath>
     </Reference>
-    <Reference Include="AgGateway.ADAPT.PluginManager">
-      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.31\lib\AgGateway.ADAPT.PluginManager.dll</HintPath>
+    <Reference Include="AgGateway.ADAPT.PluginManager, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.38\lib\AgGateway.ADAPT.PluginManager.dll</HintPath>
     </Reference>
-    <Reference Include="AgGateway.ADAPT.Representation">
-      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.31\lib\AgGateway.ADAPT.Representation.dll</HintPath>
+    <Reference Include="AgGateway.ADAPT.Representation, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AgGatewayADAPTFramework.1.0.0.38\lib\AgGateway.ADAPT.Representation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,17 +63,34 @@
     <Compile Include="OperationDataProcessor.cs" />
     <Compile Include="PointExtension.cs" />
     <Compile Include="DataProvider.cs" />
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainForm.resx">
+    <Compile Include="UI\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ExportForm.Designer.cs">
+      <DependentUpon>ExportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ImportForm.Designer.cs">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
+    </Compile>
+    <Compile Include="UI\ObjectWithIndex.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -81,6 +101,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExportForm.resx">
+      <DependentUpon>ExportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ImportForm.resx">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,12 +128,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\layers-24.ico" />
+    <None Include="Resources\Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\About-52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tractor-52.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RepresentationSystem.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Content Include="Resources\tractor.ico" />
     <None Include="Resources\UnitSystem.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

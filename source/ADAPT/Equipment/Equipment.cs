@@ -21,6 +21,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
         protected Equipment()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+
+            ContextItems = new List<ContextItem>();
         }
 
         public CompoundIdentifier Id { get; private set; }

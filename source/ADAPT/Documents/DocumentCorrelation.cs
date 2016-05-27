@@ -17,6 +17,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public class DocumentCorrelation
     {
+        public DocumentCorrelation()
+        {
+            TimeScopes = new List<TimeScope>();
+            PersonRoleIds = new List<int>();
+        }
+
         public CompoundIdentifier Id { get; set; }
 
         public DocRelationshipTypeEnum RelationshipType { get; set; }

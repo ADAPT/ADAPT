@@ -22,6 +22,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         public Field()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            ContextItems = new List<ContextItem>();
+            GuidanceGroupIds = new List<int>();
+            TimeScopeIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }

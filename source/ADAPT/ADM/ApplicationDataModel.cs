@@ -18,6 +18,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
     public class ApplicationDataModel
     {
+        public ApplicationDataModel()
+        {
+            ProprietaryValues = new List<ProprietaryValue>();
+        }
+
         public List<ProprietaryValue> ProprietaryValues { get; set; }
 
         public Catalog Catalog { get; set; }

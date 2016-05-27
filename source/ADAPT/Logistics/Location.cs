@@ -19,6 +19,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
     public class Location
     {
+        public Location()
+        {
+            ContextItems = new List<ContextItem>();
+        }
+
         public Point Position { get; set; }
         
         public List<ContextItem> ContextItems { get; set; }

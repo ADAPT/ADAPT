@@ -22,6 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel
         public Container()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            ContextItems = new List<ContextItem>();
         }
 
         public NumericRepresentationValue ProductAmount { get; set; }

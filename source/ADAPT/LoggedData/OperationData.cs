@@ -23,6 +23,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public OperationData()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            ConnectorIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }

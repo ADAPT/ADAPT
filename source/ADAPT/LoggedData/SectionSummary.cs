@@ -27,8 +27,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public int SectionId { get; set; }
 
-        public NumericRepresentation TotalDistanceTravelled { get; set; }
+        public NumericRepresentationValue TotalDistanceTravelled { get; set; }
 
-        public NumericRepresentation TotalElapsedTime { get; set; }
+        public NumericRepresentationValue TotalElapsedTime { get; set; }
     }
 }

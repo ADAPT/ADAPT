@@ -30,6 +30,42 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
     public class Catalog
     {
+        public Catalog()
+        {
+            Brands = new List<Brand>();
+            Connectors = new List<Connector>();
+            ContactInfo = new List<ContactInfo>();
+            Containers = new List<Container>();
+            Crops = new List<Crop>();
+            CropProtectionProducts = new List<CropProtectionProduct>();
+            CropVarieties = new List<CropVariety>();
+            CropZones = new List<CropZone>();
+            EquipmentConfigs = new List<EquipmentConfig>();
+            Farms = new List<Farm>();
+            FertilizerProducts = new List<FertilizerProduct>();
+            Fields = new List<Field>();
+            FieldBoundaries = new List<FieldBoundary>();
+            Growers = new List<Grower>();
+            GuidancePatterns = new List<GuidancePattern>();
+            GuidanceGroups = new List<GuidanceGroup>();
+            Implements = new List<Implement>();
+            ImplementModels = new List<ImplementModel>();
+            ImplementTypes = new List<ImplementType>();
+            ImplementConfigurations = new List<ImplementConfiguration>();
+            Ingredients = new List<Ingredient>();
+            Machines = new List<Machine>();
+            MachineModels = new List<MachineModel>();
+            MachineSeries = new List<MachineSeries>();
+            MachineTypes = new List<MachineType>();
+            MachineConfigurations = new List<MachineConfiguration>();
+            Manufacturers = new List<Manufacturer>();
+            Persons = new List<Person>();
+            PersonRoles = new List<PersonRole>();
+            Prescriptions = new List<Prescription>();
+            ProductMixes = new List<ProductMix>();
+            TimeScopes = new List<TimeScope>();
+        }
+
         public List<Brand> Brands { get; set; }
 
         public List<Connector> Connectors { get; set; }

@@ -24,6 +24,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         public CropZone()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            TimeScopeIds = new List<int>();
+            Notes = new List<Note>();
+            GuidanceGroupIds = new List<int>();
+            ContextItems = new List<ContextItem>();
         }
 
         public CompoundIdentifier Id { get; private set; }

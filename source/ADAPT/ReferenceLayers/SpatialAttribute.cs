@@ -17,6 +17,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
 {
     public class SpatialAttribute
     {
+        public SpatialAttribute()
+        {
+            Values = new List<RepresentationValue>();
+        }
+
         public List<RepresentationValue> Values { get; set; }
     }
 }

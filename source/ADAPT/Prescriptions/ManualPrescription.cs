@@ -19,6 +19,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
     public class ManualPrescription : Prescription
     {
+        public ManualPrescription()
+        {
+            ProductUses = new List<ProductUse>();
+        }
+
         public double Rate { get; set; }
 
         public List<ProductUse> ProductUses { get; set; }

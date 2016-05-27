@@ -19,6 +19,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
         public LinearRing()
         {
             Type = ShapeTypeEnum.LinearRing;
+            Points = new List<Point>();
         }
 
         public List<Point> Points { get; set; }

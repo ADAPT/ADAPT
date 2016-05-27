@@ -19,6 +19,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
         public LineString()
         {
             Type = ShapeTypeEnum.LineString;
+            Points = new List<Point>();
         }
 
         public List<Point> Points { get; set; }
