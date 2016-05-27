@@ -16,6 +16,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public class Plan : Document
     {
-
+        public int WorkItemIds { get; set; }
     }
 }

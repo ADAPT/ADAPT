@@ -8,9 +8,11 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Joseph Ross - changed comment to note to match uml
   *******************************************************************************/
 
 using System;
+using AgGateway.ADAPT.ApplicationDataModel.Notes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
@@ -18,7 +20,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
     {
         public WorkStatusEnum Status { get; set; }
 
-        public string Comment { get; set; }
+        public Note Note { get; set; }
 
         public DateTime TimeStamp { get; set; }
     }

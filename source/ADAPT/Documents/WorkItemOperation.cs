@@ -30,7 +30,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         
         public int? PrescriptionId { get; set; }
         
-        public int? ImplementId { get; set; }
+        public int? ImplementConfigId { get; set; }
         
         public int? EquipmentConfigId { get; set; }
     }

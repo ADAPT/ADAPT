@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Kathleen Oneal - initial API and implementation
+  *    Joseph Ross - added IsHotMix to match uml
   *******************************************************************************/
 
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
@@ -19,5 +20,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
         public NumericRepresentationValue TotalQuantity { get; set; }
 
         public bool IsTemporary { get; set; }
+
+        public bool IsHotMix { get; set; }
     }
 }

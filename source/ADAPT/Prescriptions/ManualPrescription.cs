@@ -9,6 +9,7 @@
   * Contributors:
   *    Justin Sliekers - initial API and implementation
   *    Justin Sliekers - dropping product uses and application strategy, adding rate
+  *    Joseph Ross - removing rate to match uml
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -23,8 +24,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
         {
             ProductUses = new List<ProductUse>();
         }
-
-        public double Rate { get; set; }
 
         public List<ProductUse> ProductUses { get; set; }
 

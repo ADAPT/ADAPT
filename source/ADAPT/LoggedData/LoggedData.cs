@@ -10,6 +10,7 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - moved machineId and guidanceAllocationIds from workRecord to this
   *    Kathleen Oneal - changed OperationDataIds to WorkItemIds
+  *    Joseph Ross - Added list of person roles and container uses
   *******************************************************************************/
 
 using System;
@@ -42,9 +43,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public int? CropZoneId { get; set; }
 
+        public List<int> PersonRoles { get; set; }
+
         public IEnumerable<OperationData> OperationData { get; set; } 
 
         public int? SummaryId { get; set; }
+
+        public List<int> ContainerUseIDs { get; set; }
 
         public Action ReleaseSpatialData { get; set; }
     }

@@ -7,33 +7,34 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Kathleen Oneal - initial API and implementation
-  *    Joseph Ross - renaming CorrelatingDocumentId to OriginatingDocumentId to match uml
+  *    Jospeh Ross - creating class
   *******************************************************************************/
 
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
-namespace AgGateway.ADAPT.ApplicationDataModel.Documents
+namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class DocumentCorrelation
+    public class ContainerUse
     {
-        public DocumentCorrelation()
+        public ContainerUse()
         {
             TimeScopes = new List<TimeScope>();
-            PersonRoleIds = new List<int>();
+            DocumentIds = new List<int>();
         }
 
-        public CompoundIdentifier Id { get; set; }
+        public NumericRepresentationValue AmountUsed { get; set; }
 
-        public DocRelationshipTypeEnum RelationshipType { get; set; }
+        public int ContainerId { get; set; }
 
-        public int DocumentId { get; set; }
+        public int ProductId { get; set; }
 
-        public int OriginatingDocumentId { get; set; }
+        public ContainerActionEnum ContainerAction { get; set; }
 
         public List<TimeScope> TimeScopes { get; set; }
 
-        public List<int> PersonRoleIds { get; set; }
+        public List<int> DocumentIds { get; set; } 
+
     }
 }

@@ -43,6 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContainerActionEnum.cs" />
+    <Compile Include="ContainerEquipmentAllocation.cs" />
+    <Compile Include="ContainerType.cs" />
+    <Compile Include="ContainerUse.cs" />
+    <Compile Include="Documents\MeteredValue.cs" />
+    <Compile Include="Documents\OperationSummary.cs" />
+    <Compile Include="Documents\StampedMeteredValues.cs" />
+    <Compile Include="Documents\Summary.cs" />
     <Compile Include="Guidance\AbCurve.cs" />
     <Compile Include="Guidance\AbLine.cs" />
     <Compile Include="Guidance\MultiAbLine.cs">
@@ -194,7 +202,6 @@
     <Compile Include="Prescriptions\SpatialPrescription.cs" />
     <Compile Include="LoggedData\SpatialRecord.cs" />
     <Compile Include="Guidance\Spiral.cs" />
-    <Compile Include="Summary.cs" />
     <Compile Include="Prescriptions\VectorPrescription.cs" />
     <Compile Include="Documents\WorkStatusEnum.cs" />
     <Compile Include="Documents\StatusUpdate.cs" />
