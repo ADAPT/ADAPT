@@ -52,7 +52,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
 
         public bool HasHarvestCommodity { get; set; }
 
-        public bool ManufacturerId { get; set; }
+        public int ManufacturerId { get; set; }
 
         public List<ProductComponent> ProductComponents { get; set; }
 

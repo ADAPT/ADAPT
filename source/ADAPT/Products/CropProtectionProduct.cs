@@ -22,7 +22,5 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
         public bool Organophosphate { get; set; }
 
         public bool Carbamate { get; set; }
-
-        public int Category { get; set; }
     }
 }
