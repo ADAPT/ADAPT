@@ -7,22 +7,20 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Joseph Ross Making Properties
-  *    Justin Sliekers - removing Ingredients
-  *    Joseph Ross - adding Category
+  *    Jospeh Ross - creating class
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel.Products
+namespace AgGateway.ADAPT.ApplicationDataModel
 {
-    public class CropProtectionProduct : Product
+    public enum ContainerActionEnum
     {
-        public bool Biological { get; set; }
-
-        public bool Organophosphate { get; set; }
-
-        public bool Carbamate { get; set; }
-
-        public int Category { get; set; }
+        Instantiate,
+        Load,
+        Unload,
+        Move,
+        BringToEmpty,
+        Clean,
+        Dispose,
+        BringToFull
     }
 }

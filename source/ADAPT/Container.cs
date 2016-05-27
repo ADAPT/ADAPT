@@ -9,6 +9,7 @@
   * Contributors:
   *    Justin Sliekers - creating class
   *    Kathleen Oneal - changed ProductAmount & Capacity from type NumericRepresentation to NumericRepresentationValue
+  *    Joseph Ross - removed ProductAmount & Capacity from type NumericRepresentation to NumericRepresentationValue and added ContainerType and Type Use to match uml
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -25,14 +26,14 @@ namespace AgGateway.ADAPT.ApplicationDataModel
             ContextItems = new List<ContextItem>();
         }
 
-        public NumericRepresentationValue ProductAmount { get; set; }
-        
-        public NumericRepresentationValue Capacity { get; set; }
-
         public List<ContextItem>  ContextItems { get; set; }
 
         public string Description { get; set; }
 
         public CompoundIdentifier Id { get; private set; }
+
+        public EnumeratedValue ContainerUseType { get; set; }
+
+        public int ContainerType { get; set; }
     }
 }

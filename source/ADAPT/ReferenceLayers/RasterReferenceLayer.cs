@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Justin Sliekers - adding SpatialAttributes
+  *    Joseph Ross - adding SpatialAttributes
   *******************************************************************************/
 
 using System;
@@ -25,6 +26,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
             EnumeratedRasterValues = new List<RasterData<EnumeratedRepresentation, EnumerationMember>>();
             StringRasterValues = new List<RasterData<StringRepresentation, string>>();
             NumericRasterValues = new List<RasterData<NumericRepresentation, NumericValue>>();
+            SpatialAttributes = new List<SpatialAttribute>();
         }
         public Point Origin { get; set; }
 
@@ -41,5 +43,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ReferenceLayers
         public List<RasterData<StringRepresentation, string>> StringRasterValues { get; set; }
        
         public List<RasterData<NumericRepresentation, NumericValue>> NumericRasterValues { get; set; }
+
+        public List<SpatialAttribute> SpatialAttributes { get; set; } 
     }
 }

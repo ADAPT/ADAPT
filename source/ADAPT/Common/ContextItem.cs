@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - changed ContextItemType to int
+  *    Joseph Ross - Added TimeScopes to match uml
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -23,5 +24,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         public RepresentationValue Value { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }
+
+        public List<TimeScope> TimeScopes { get; set; } 
     }
 }

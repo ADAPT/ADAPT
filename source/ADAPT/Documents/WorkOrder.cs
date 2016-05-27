@@ -9,12 +9,21 @@
   * Contributors:
   *    Justin Sliekers - initial API and implementation
   *    Kathleen Oneal - changes List of StatusUpdates to single
+  *    Joseph Ross - Added WorkItemIds
   *******************************************************************************/
+
+using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public class WorkOrder : Document
     {
+        public WorkOrder()
+        {
+            WorkItemIds = new List<int>();
+        }
+
         public StatusUpdate StatusUpdates { get; set; }
+        public List<int> WorkItemIds { get; set; }
     }
 }

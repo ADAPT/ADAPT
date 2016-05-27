@@ -10,12 +10,22 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Tarak Reddy - Updated List of GuidanceId to List GuidanceAllocationId
   *    Kathleen Oneal - removed all properties
+  *    Joseph Ross - Added LoggedDataIds and SummaryIds
   *******************************************************************************/
+
+using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public class WorkRecord : Document
     {
+        public WorkRecord()
+        {
+            LoggedDataIds = new List<int>();
+            SummariesIds = new List<int>();
+        }
 
+        public List<int> LoggedDataIds { get; set; }
+        public List<int> SummariesIds { get; set; }
     }
 }

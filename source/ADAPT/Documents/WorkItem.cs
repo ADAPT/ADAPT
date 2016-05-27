@@ -62,6 +62,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         public int? CropZoneId { get; set; }
         
         public int? MachineId { get; set; }
+
+        public int? MachineConfigId { get; set; }
         
         public List<int> ReferenceLayerIds { get; set; }
         

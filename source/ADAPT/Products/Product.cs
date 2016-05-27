@@ -12,6 +12,7 @@
   *    Kathleen Oneal - changed Name to Description
   *    Kathleen Oneal - renamed ProductTypeEnum to ProductType
   *    Justin Sliekers - dropping nullable from manufacturerId and brandId; dropping collection off Category; removing defaultUnit and WorkStatusEnum
+  *    Joseph Ross - Added HasCrop.. Protection, Nutrition, Variety and HasHarvestCommodity to match the uml
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -43,7 +44,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
 
         public ProductFormEnum Form { get; set; }
 
-        public int ManufacturerId { get; set; }
+        public bool HasCropProtection { get; set; }
+
+        public bool HasCropNutrition { get; set; }
+
+        public bool HasCropVariety { get; set; }
+
+        public bool HasHarvestCommodity { get; set; }
+
+        public bool ManufacturerId { get; set; }
 
         public List<ProductComponent> ProductComponents { get; set; }
 

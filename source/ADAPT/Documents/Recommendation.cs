@@ -10,12 +10,13 @@
   *    Justin Sliekers - initial API and implementation
   *    Kathleen Oneal - added props cropSeasonId, WorkItems, Attachments
   *    Justin Sliekers - removing all properties
+  *    Joseph Ross - adding workItemIds to match uml
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public class Recommendation : Document
     {
-
+        public int WorkItemIds { get; set; }
     }
 }
