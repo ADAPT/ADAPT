@@ -28,27 +28,27 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public DateTime Timestamp { get; set; }
 
-        public void SetMeterValue(Meter meter, RepresentationValue value)
+        public void SetMeterValue(WorkingData workingData, RepresentationValue value)
         {
-            _meterValues.Add(meter.Id.ReferenceId, value);
+            _meterValues.Add(workingData.Id.ReferenceId, value);
         }
 
-        public RepresentationValue GetMeterValue(Meter meter)
+        public RepresentationValue GetMeterValue(WorkingData workingData)
         {
-            if (_meterValues.ContainsKey(meter.Id.ReferenceId))
-                return _meterValues[meter.Id.ReferenceId];
+            if (_meterValues.ContainsKey(workingData.Id.ReferenceId))
+                return _meterValues[workingData.Id.ReferenceId];
             return null;
         }
 
-        public void SetAppliedLatency(Meter meter, int? latencyValue)
+        public void SetAppliedLatency(WorkingData workingData, int? latencyValue)
         {
-            _appliedLatencyValues.Add(meter.Id.ReferenceId, latencyValue);
+            _appliedLatencyValues.Add(workingData.Id.ReferenceId, latencyValue);
         }
 
-        public int? GetAppliedLatency(Meter meter)
+        public int? GetAppliedLatency(WorkingData workingData)
         {
-            if (_appliedLatencyValues.ContainsKey(meter.Id.ReferenceId))
-                return _appliedLatencyValues[meter.Id.ReferenceId];
+            if (_appliedLatencyValues.ContainsKey(workingData.Id.ReferenceId))
+                return _appliedLatencyValues[workingData.Id.ReferenceId];
             return null;
         }
     }

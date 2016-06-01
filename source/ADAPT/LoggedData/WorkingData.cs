@@ -9,19 +9,33 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
+  *    Kathleen Oneal - Added TriggerId
+  *    Kathleen Oneal - removed property Values
+ *    Justin Sliekers - implement device element changes
   *******************************************************************************/
 
-using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
-    public class EnumeratedMeter : Meter
+    public abstract class WorkingData
     {
-        public EnumeratedMeter()
+        protected WorkingData()
         {
-            ValueCodes = new List<int>();
+            Id = CompoundIdentifierFactory.Instance.Create();
         }
 
-        public List<int> ValueCodes { get; set; }
+        public CompoundIdentifier Id { get; private set; }
+
+        public int DeviceElementUseId { get; set; }
+        
+        public Representation Representation { get; set; }
+        
+        public NumericRepresentationValue AppliedLatency { get; set; }
+
+        public NumericRepresentationValue ReportedLatency { get; set; }
+
+        public int? TriggerId { get; set; }
     }
 }

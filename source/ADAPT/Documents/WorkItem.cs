@@ -11,6 +11,7 @@
   *    Tarak Reddy - Updated List of GuidanceId to List GuidanceAllocationId
   *    Tarak Reddy - Added parent document id that is required. A work item would have to exists as a Plan, Recommendation or WorkOrder.
   *    Kathleen Oneal - renamed ReferenceNoteIds to NoteIds; CropZoneId from list of ints to single int; renamed SpatialLayerIds to ReferenceLayerIds
+ *    Justin Sliekers - implement device element changes
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -24,10 +25,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         public WorkItem()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
-
-            PlanIds = new List<int>();
-            RecommendationIds = new List<int>();
-            WorkOrderIds = new List<int>();
             Notes = new List<Note>();
             TimeScopeIds = new List<int>();
             PeopleRoleIds = new List<int>();
@@ -39,42 +36,34 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 
         public CompoundIdentifier Id { get; private set; }
         
-        public List<int> PlanIds { get; set; }
-        
-        public List<int> RecommendationIds { get; set; }
-        
-        public List<int> WorkOrderIds { get; set; }
-        
         public List<Note> Notes { get; set; }
-        
-        public WorkItemPriorityEnum WorkItemPriority { get; set; }
-        
+
         public List<int> TimeScopeIds { get; set; }
         
+        public WorkItemPriorityEnum WorkItemPriority { get; set; }
+
         public List<int> PeopleRoleIds { get; set; }
-        
+
         public int? GrowerId { get; set; }
         
         public int? FarmId { get; set; }
-        
-        public int? FieldId { get; set; }
-        
-        public int? CropZoneId { get; set; }
-        
-        public int? MachineId { get; set; }
 
-        public int? MachineConfigId { get; set; }
-        
+        public int? FieldId { get; set; }
+
+        public int? CropZoneId { get; set; }
+
+        public int? ConnectorId { get; set; }
+
         public List<int> ReferenceLayerIds { get; set; }
-        
+
         public int? BoundaryId { get; set; }
-        
+
         public List<int> WorkItemOperationIds { get; set; }
-        
+
         public List<int> GuidanceAllocationIds { get; set; }
-        
+
         public List<StatusUpdate> StatusUpdates { get; set; }
-        
+
         public int ParentDocumentId { get; set; }
     }
 }

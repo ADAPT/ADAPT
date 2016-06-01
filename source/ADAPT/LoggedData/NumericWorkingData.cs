@@ -9,32 +9,23 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
-  *    Kathleen Oneal - Added TriggerId
-  *    Kathleen Oneal - removed property Values
+  *    Kathleen Oneal - add values property
   *******************************************************************************/
 
+using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
-using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
-    public abstract class Meter
+    public class NumericWorkingData : WorkingData
     {
-        protected Meter()
+        public NumericWorkingData()
         {
-            Id = CompoundIdentifierFactory.Instance.Create();
+            Values = new List<double>();
         }
 
-        public CompoundIdentifier Id { get; private set; }
+        public UnitOfMeasure UnitOfMeasure { get; set; }
 
-        public int SectionId { get; set; }
-
-        public Representation Representation { get; set; }
-        
-        public NumericRepresentationValue AppliedLatency { get; set; }
-
-        public NumericRepresentationValue ReportedLatency { get; set; }
-
-        public int? TriggerId { get; set; }
+        public List<double> Values { get; set; }
     }
 }

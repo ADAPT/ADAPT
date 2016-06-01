@@ -9,37 +9,19 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
- *    Kathleen Oneal - changed meters to GetMeters
   *******************************************************************************/
 
-using System;
 using System.Collections.Generic;
-using AgGateway.ADAPT.ApplicationDataModel.Common;
-using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
-    public class Section
+    public class EnumeratedWorkingData : WorkingData
     {
-        public Section()
+        public EnumeratedWorkingData()
         {
-            Id = CompoundIdentifierFactory.Instance.Create();
+            ValueCodes = new List<int>();
         }
 
-        public CompoundIdentifier Id { get; private set; }
-
-        public int OperationDataId { get; set; }
-
-        public int Depth { get; set; }
-
-        public int Order { get; set; }
-
-        public NumericRepresentationValue SectionWidth { get; set; }
-
-        public NumericRepresentationValue TotalDistanceTravelled { get; set; }
-
-        public NumericRepresentationValue TotalElapsedTime { get; set; }
-
-        public Func<IEnumerable<Meter>> GetMeters { get; set; }
+        public List<int> ValueCodes { get; set; }
     }
 }

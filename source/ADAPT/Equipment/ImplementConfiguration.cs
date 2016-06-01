@@ -10,38 +10,20 @@
  *    Tarak Reddy, Tim Shearouse - initial API and implementation
  *    Tarak Reddy - Added implement id 
  *    Kathleen Oneal - removed ImplementTypeId
+ *    Justin Sliekers - implement device element changes
  *******************************************************************************/
 
-using System.Collections.Generic;
-using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
-    public class ImplementConfiguration
+    public class ImplementConfiguration : DeviceElementConfiguration
     {
-        public ImplementConfiguration()
-        {
-            Id = CompoundIdentifierFactory.Instance.Create();
-            TimeScopes = new List<TimeScope>();
-            ControlPoint = new ReferencePoint();
-        }
-
-        public CompoundIdentifier Id { get; private set; }
-
-        public List<TimeScope> TimeScopes { get; set; }
-
-        public int ImplementId { get; set; }
-        
-        public string Description { get; set; }
-        
         public NumericRepresentationValue Width { get; set; }
         
         public NumericRepresentationValue TrackSpacing { get; set; }
         
         public NumericRepresentationValue PhysicalWidth { get; set; }
-        
-        public HitchTypeEnum HitchType { get; set; }
         
         public NumericRepresentationValue InGroundTurnRadius { get; set; }
         
@@ -50,8 +32,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
         public NumericRepresentationValue YOffset { get; set; }
         
         public NumericRepresentationValue VerticalCuttingEdgeZOffset { get; set; }
-        
-        public List<int> ConnectorIds { get; set; }
         
         public ReferencePoint ControlPoint { get; set; }
         
