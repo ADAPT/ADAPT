@@ -8,11 +8,11 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation    
-  *    Kathleen Oneal - changed lists to ienumerables for effeciency  
+  *    Kathleen Oneal - changed lists to ienumerables for effeciency
+ *    Justin Sliekers - implement device element changes
   *******************************************************************************/
 
 using System.Collections.Generic;
-using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
@@ -21,22 +21,20 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
     {
         public EquipmentConfig()
         {
-            Id = CompoundIdentifierFactory.Instance.Create();
-            TimeScopes = new List<TimeScope>();
+            DataLogTriggers = new List<DataLogTrigger>();
+            ContainerEquipmentAllocations = new List<ContainerEquipmentAllocation>();
         }
 
-        public CompoundIdentifier Id { get; private set; }
+        public int Connector1Id { get; set; }
 
-        public List<TimeScope> TimeScopes { get; set; }
+        public int Connector2Id { get; set; }
 
-        public int? MachineConfigurationId { get; set; }
+        public List<DataLogTrigger> DataLogTriggers { get; set; } 
 
-        public int? ImplementConfigurationId { get; set; }
+        public List<ContainerEquipmentAllocation> ContainerEquipmentAllocations { get; set; } 
 
-        public IEnumerable<Meter> Meters { get; set; }
+        public int? WorkItemOperationId { get; set; }
 
-        public IEnumerable<Section> Sections { get; set; }
-
-        public IEnumerable<DataLogTrigger> Triggers { get; set; }
+        public int? OperationDataId { get; set; }
     }
 }

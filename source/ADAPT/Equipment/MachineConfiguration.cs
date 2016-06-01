@@ -11,27 +11,15 @@
  *    Joseph Ross - Making Properties
  *    Tarak Reddy - Added MachineId
  *    Kathleen Oneal - changed TimeScope list of ints to single TimeScope
+ *    Justin Sliekers - implement device element changes
  *******************************************************************************/
 
-using System.Collections.Generic;
-using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
-    public class MachineConfiguration
+    public class MachineConfiguration : DeviceElementConfiguration
     {
-        public MachineConfiguration()
-        {
-            Id = CompoundIdentifierFactory.Instance.Create();
-            TimeScopes = new List<TimeScope>();
-            ConnectorIds = new List<int>();
-        }
-
-        public CompoundIdentifier Id { get; private set; }
-
-        public List<TimeScope> TimeScopes { get; set; }
-        
         public NumericRepresentationValue GpsReceiverXOffset { get; set; }
         
         public NumericRepresentationValue GpsReceiverYOffset { get; set; }
@@ -39,9 +27,5 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
         public NumericRepresentationValue GpsReceiverZOffset { get; set; }
         
         public OriginAxleLocationEnum OriginAxleLocation { get; set; }
-        
-        public List<int> ConnectorIds { get; set; }
-        
-        public int MachineId { get; set; }
     }
 }

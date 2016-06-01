@@ -11,6 +11,7 @@
   *    Justin Sliekers - udpating DefinedRepresentation to EnumeratedRepresentation
   *    Joseph Ross Making Properties
  *    Kathleen Oneal - changed connectorType to ConnectoryTypeEnum from EnumeratedRepresentation
+ *    Justin Sliekers - implement device element changes
   *******************************************************************************/
 
 using AgGateway.ADAPT.ApplicationDataModel.Common;
@@ -26,8 +27,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 
         public CompoundIdentifier Id { get; private set; }
 
-        public ConnectorTypeEnum ConnectorType { get; set; }
+        public int DeviceConfigurationId { get; set; }
 
-        public ReferencePoint ConnectorPointOffset { get; set; }
+        public int HitchPointId { get; set; }
     }
 } 

@@ -9,11 +9,11 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - removed implementConfigId and machineConfigId, added EquipmentConfigId
+ *    Justin Sliekers - implement device element changes
   *******************************************************************************/
 
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
@@ -23,15 +23,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public OperationData()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
-            ConnectorIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }
-
-        public int LoggedDataId { get; set; }
         
-        public List<int> ConnectorIds { get; set; }
-
         public int? LoadId { get; set; }
 
         public OperationTypeEnum OperationType { get; set; }
@@ -46,12 +41,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public int MaxDepth { get; set; }
 
-        public Func<IEnumerable<SpatialRecord>> GetSpatialRecords { get; set; }
-
-        public Func<int, IEnumerable<Section>> GetSections { get; set; }
-
         public int SpatialRecordCount { get; set; }
 
-        public int? EquipmentConfigId { get; set; }
+        public Func<IEnumerable<SpatialRecord>> GetSpatialRecords { get; set; }
+
+        public Func<int, IEnumerable<DeviceElementUse>> GetDeviceElementUses { get; set; }
     }
 }

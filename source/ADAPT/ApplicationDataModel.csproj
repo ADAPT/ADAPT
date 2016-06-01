@@ -52,6 +52,12 @@
     <Compile Include="Documents\OperationSummary.cs" />
     <Compile Include="Documents\StampedMeteredValues.cs" />
     <Compile Include="Documents\Summary.cs" />
+    <Compile Include="Equipment\DeviceElement.cs" />
+    <Compile Include="Equipment\DeviceElementConfiguration.cs" />
+    <Compile Include="Equipment\DeviceElementTypeEnum.cs" />
+    <Compile Include="Equipment\DeviceModel.cs" />
+    <Compile Include="Equipment\HitchPoint.cs" />
+    <Compile Include="Equipment\SectionConfiguration.cs" />
     <Compile Include="Guidance\AbCurve.cs" />
     <Compile Include="Guidance\AbLine.cs" />
     <Compile Include="Guidance\MultiAbLine.cs">
@@ -94,7 +100,7 @@
     <Compile Include="ADM\Documents.cs" />
     <Compile Include="FieldBoundaries\DrivenHeadland.cs" />
     <Compile Include="Representations\EnumerationMember.cs" />
-    <Compile Include="LoggedData\EnumeratedMeter.cs" />
+    <Compile Include="LoggedData\EnumeratedWorkingData.cs" />
     <Compile Include="Representations\EnumeratedRepresentation.cs" />
     <Compile Include="Representations\EnumeratedRepresentationGroup.cs" />
     <Compile Include="Representations\EnumeratedValue.cs" />
@@ -143,7 +149,7 @@
     <Compile Include="Equipment\MachineTypeEnum.cs" />
     <Compile Include="Prescriptions\ManualPrescription.cs" />
     <Compile Include="Logistics\Manufacturer.cs" />
-    <Compile Include="LoggedData\Meter.cs" />
+    <Compile Include="LoggedData\WorkingData.cs" />
     <Compile Include="Products\ModeOfAction.cs" />
     <Compile Include="Shapes\MultiLineString.cs" />
     <Compile Include="Shapes\MultiPoint.cs" />
@@ -156,7 +162,7 @@
     <Compile Include="ADM\Properties.cs" />
     <Compile Include="ReferenceLayers\ReferenceLayerTypeEnum.cs" />
     <Compile Include="Representations\NumericValue.cs" />
-    <Compile Include="LoggedData\NumericMeter.cs" />
+    <Compile Include="LoggedData\NumericWorkingData.cs" />
     <Compile Include="Representations\NumericRepresentation.cs" />
     <Compile Include="Representations\NumericRepresentationValue.cs" />
     <Compile Include="LoggedData\OperationData.cs" />
@@ -190,7 +196,7 @@
     <Compile Include="Prescriptions\RxRate.cs" />
     <Compile Include="Prescriptions\RxRates.cs" />
     <Compile Include="Prescriptions\RxShapeLookup.cs" />
-    <Compile Include="LoggedData\Section.cs" />
+    <Compile Include="LoggedData\DeviceElementUse.cs" />
     <Compile Include="LoggedData\SectionSummary.cs" />
     <Compile Include="Shapes\Shape.cs" />
     <Compile Include="FieldBoundaries\InteriorBoundaryAttribute.cs" />

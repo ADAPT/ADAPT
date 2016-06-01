@@ -15,6 +15,7 @@
  *   Joseph ross - Added Prescriptions to Catalog
  *   Kathleen Oneal - added equipmentConfigs and renamed Name to Description
  *   Kathleen Oneal - added manufactures list
+ *   Justin Sliekers - implement device element changes
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -64,6 +65,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             Prescriptions = new List<Prescription>();
             ProductMixes = new List<ProductMix>();
             TimeScopes = new List<TimeScope>();
+            DeviceElementConfigurations = new List<DeviceElementConfiguration>();
+            DeviceModels = new List<DeviceModel>();
+            DeviceElements = new List<DeviceElement>();
+            HitchPoints = new List<HitchPoint>();
         }
 
         public List<Brand> Brands { get; set; }
@@ -131,5 +136,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public List<ProductMix> ProductMixes { get; set; }
 
         public List<TimeScope> TimeScopes { get; set; }
+
+        public List<DeviceElement> DeviceElements { get; set; } 
+
+        public List<DeviceModel> DeviceModels { get; set; } 
+
+        public List<DeviceElementConfiguration> DeviceElementConfigurations { get; set; }
+
+        public List<HitchPoint> HitchPoints { get; set; } 
+
+
     }
 }

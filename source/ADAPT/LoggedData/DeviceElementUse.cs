@@ -9,23 +9,37 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Joseph Ross Making Properties
-  *    Kathleen Oneal - add values property
+ *    Kathleen Oneal - changed meters to GetMeters
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
-    public class NumericMeter : Meter
+    public class DeviceElementUse
     {
-        public NumericMeter()
+        public DeviceElementUse()
         {
-            Values = new List<double>();
+            Id = CompoundIdentifierFactory.Instance.Create();
         }
 
-        public UnitOfMeasure UnitOfMeasure { get; set; }
+        public CompoundIdentifier Id { get; private set; }
 
-        public List<double> Values { get; set; }
+        public int DeviceConfigurationId { get; set; }
+
+        public int OperationDataId { get; set; }
+
+        public int Depth { get; set; }
+
+        public int Order { get; set; }
+
+        public NumericRepresentationValue TotalDistanceTravelled { get; set; }
+
+        public NumericRepresentationValue TotalElapsedTime { get; set; }
+
+        public Func<IEnumerable<WorkingData>> GetWorkingDatas { get; set; }
     }
 }
