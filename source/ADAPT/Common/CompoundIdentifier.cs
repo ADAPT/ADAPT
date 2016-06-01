@@ -23,6 +23,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
             UniqueIds = new List<UniqueId>();   
         }
 
+        private CompoundIdentifier()
+        {
+
+        }
+
         public int ReferenceId { get; set; }
         public List<UniqueId> UniqueIds { get; set; } 
     }
