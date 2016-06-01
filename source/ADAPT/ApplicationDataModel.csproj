@@ -196,7 +196,7 @@
     <Compile Include="Prescriptions\RxRate.cs" />
     <Compile Include="Prescriptions\RxRates.cs" />
     <Compile Include="Prescriptions\RxShapeLookup.cs" />
-    <Compile Include="LoggedData\DeviceElementUse.cs" />
+    <Compile Include="Equipment\DeviceElementUse.cs" />
     <Compile Include="LoggedData\SectionSummary.cs" />
     <Compile Include="Shapes\Shape.cs" />
     <Compile Include="FieldBoundaries\InteriorBoundaryAttribute.cs" />

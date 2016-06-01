@@ -67,6 +67,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             TimeScopes = new List<TimeScope>();
             DeviceElementConfigurations = new List<DeviceElementConfiguration>();
             DeviceModels = new List<DeviceModel>();
+            DeviceElementUses = new List<DeviceElementUse>();
             DeviceElements = new List<DeviceElement>();
             HitchPoints = new List<HitchPoint>();
         }
@@ -88,6 +89,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public List<CropZone> CropZones { get; set; }
 
         public string Description { get; set; }
+
+        public List<DeviceElementUse> DeviceElementUses { get; set; } 
 
         public List<EquipmentConfig> EquipmentConfigs { get; set; }
 
