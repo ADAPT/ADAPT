@@ -57,6 +57,8 @@
     <Compile Include="Equipment\DeviceElementTypeEnum.cs" />
     <Compile Include="Equipment\DeviceModel.cs" />
     <Compile Include="Equipment\HitchPoint.cs" />
+    <Compile Include="Equipment\ImplementConfiguration.cs" />
+    <Compile Include="Equipment\MachineConfiguration.cs" />
     <Compile Include="Equipment\SectionConfiguration.cs" />
     <Compile Include="Guidance\AbCurve.cs" />
     <Compile Include="Guidance\AbLine.cs" />
