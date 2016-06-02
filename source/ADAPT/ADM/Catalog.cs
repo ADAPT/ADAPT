@@ -49,16 +49,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             Growers = new List<Grower>();
             GuidancePatterns = new List<GuidancePattern>();
             GuidanceGroups = new List<GuidanceGroup>();
-            Implements = new List<Implement>();
-            ImplementModels = new List<ImplementModel>();
-            ImplementTypes = new List<ImplementType>();
-            ImplementConfigurations = new List<ImplementConfiguration>();
             Ingredients = new List<Ingredient>();
-            Machines = new List<Machine>();
-            MachineModels = new List<MachineModel>();
-            MachineSeries = new List<MachineSeries>();
-            MachineTypes = new List<MachineType>();
-            MachineConfigurations = new List<MachineConfiguration>();
             Manufacturers = new List<Manufacturer>();
             Persons = new List<Person>();
             PersonRoles = new List<PersonRole>();
@@ -90,6 +81,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public string Description { get; set; }
 
+        public List<DeviceElement> DeviceElements { get; set; }
+
+        public List<DeviceModel> DeviceModels { get; set; }
+
+        public List<DeviceElementConfiguration> DeviceElementConfigurations { get; set; }
+
         public List<DeviceElementUse> DeviceElementUses { get; set; } 
 
         public List<EquipmentConfig> EquipmentConfigs { get; set; }
@@ -108,25 +105,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<GuidanceGroup> GuidanceGroups { get; set; }
 
-        public List<Implement> Implements { get; set; } 
-
-        public List<ImplementModel> ImplementModels { get; set; }
-
-        public List<ImplementType> ImplementTypes { get; set; } 
-
-        public List<ImplementConfiguration> ImplementConfigurations { get; set; } 
+        public List<HitchPoint> HitchPoints { get; set; } 
 
         public List<Ingredient> Ingredients { get; set; } 
-
-        public List<Machine> Machines { get; set; }
-
-        public List<MachineModel> MachineModels { get; set; }
-
-        public List<MachineSeries> MachineSeries { get; set; }
-
-        public List<MachineType> MachineTypes { get; set; } 
-
-        public List<MachineConfiguration> MachineConfigurations { get; set; }
 
         public List<Manufacturer> Manufacturers { get; set; }
 
@@ -139,15 +120,5 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public List<ProductMix> ProductMixes { get; set; }
 
         public List<TimeScope> TimeScopes { get; set; }
-
-        public List<DeviceElement> DeviceElements { get; set; } 
-
-        public List<DeviceModel> DeviceModels { get; set; } 
-
-        public List<DeviceElementConfiguration> DeviceElementConfigurations { get; set; }
-
-        public List<HitchPoint> HitchPoints { get; set; } 
-
-
     }
 }
