@@ -57,6 +57,8 @@
     <Compile Include="Equipment\DeviceElementTypeEnum.cs" />
     <Compile Include="Equipment\DeviceModel.cs" />
     <Compile Include="Equipment\HitchPoint.cs" />
+    <Compile Include="Equipment\ImplementConfiguration.cs" />
+    <Compile Include="Equipment\MachineConfiguration.cs" />
     <Compile Include="Equipment\SectionConfiguration.cs" />
     <Compile Include="Guidance\AbCurve.cs" />
     <Compile Include="Guidance\AbLine.cs" />
@@ -124,11 +126,6 @@
     <Compile Include="Guidance\GuidanceShift.cs" />
     <Compile Include="FieldBoundaries\Headland.cs" />
     <Compile Include="Equipment\HitchTypeEnum.cs" />
-    <Compile Include="Equipment\Implement.cs" />
-    <Compile Include="Equipment\ImplementConfiguration.cs" />
-    <Compile Include="Equipment\ImplementModel.cs" />
-    <Compile Include="Equipment\ImplementType.cs" />
-    <Compile Include="Equipment\ImplementTypeEnum.cs" />
     <Compile Include="Products\Ingredient.cs" />
     <Compile Include="Products\IngredientUse.cs" />
     <Compile Include="ADM\IPlugin.cs" />
@@ -141,11 +138,6 @@
     <Compile Include="LoggedData\LoggedData.cs" />
     <Compile Include="LoggedData\LoggingLevelEnum.cs" />
     <Compile Include="LoggedData\LoggingMethodEnum.cs" />
-    <Compile Include="Equipment\Machine.cs" />
-    <Compile Include="Equipment\MachineConfiguration.cs" />
-    <Compile Include="Equipment\MachineModel.cs" />
-    <Compile Include="Equipment\MachineSeries.cs" />
-    <Compile Include="Equipment\MachineType.cs" />
     <Compile Include="Equipment\MachineTypeEnum.cs" />
     <Compile Include="Prescriptions\ManualPrescription.cs" />
     <Compile Include="Logistics\Manufacturer.cs" />
@@ -196,7 +188,7 @@
     <Compile Include="Prescriptions\RxRate.cs" />
     <Compile Include="Prescriptions\RxRates.cs" />
     <Compile Include="Prescriptions\RxShapeLookup.cs" />
-    <Compile Include="LoggedData\DeviceElementUse.cs" />
+    <Compile Include="Equipment\DeviceElementUse.cs" />
     <Compile Include="LoggedData\SectionSummary.cs" />
     <Compile Include="Shapes\Shape.cs" />
     <Compile Include="FieldBoundaries\InteriorBoundaryAttribute.cs" />

@@ -32,6 +32,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
             WorkItemOperationIds = new List<int>();
             GuidanceAllocationIds = new List<int>();
             StatusUpdates = new List<StatusUpdate>();
+            WorkOrderIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -63,6 +64,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         public List<int> GuidanceAllocationIds { get; set; }
 
         public List<StatusUpdate> StatusUpdates { get; set; }
+
+        public List<int> WorkOrderIds { get; set; } 
 
         public int ParentDocumentId { get; set; }
     }
