@@ -13,30 +13,30 @@
   *    Joseph Ross - Added list of person roles and container uses
   *    Joseph Ross - Added EquipmentConfigurationGroup
   *    Joseph Ross - inherits document
+  *    Joseph Ross - removed inhertance from document added needed properties
   *******************************************************************************/
 
 using System;
 using System.Collections.Generic;
-using AgGateway.ADAPT.ApplicationDataModel.Documents;
+using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Equipment;
 using AgGateway.ADAPT.ApplicationDataModel.Notes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
-    public class LoggedData : Document
+    public class LoggedData
     {
         public LoggedData()
         {
             WorkItemIds = new List<int>();
             Notes = new List<Note>();
             GuidanceAllocationIds = new List<int>();
+            TimeScopes = new List<TimeScope>();
         }
 
         public List<int> WorkItemIds { get; set; } 
 
         public List<Note> Notes { get; set; } 
-
-        public int? MachineId { get; set; }
 
         public List<int> GuidanceAllocationIds { get; set; }
 
@@ -44,11 +44,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public int? FieldId { get; set; }
 
+        public int? GrowerId { get; set; }
+
         public int? CropZoneId { get; set; }
 
         public List<int> PersonRoles { get; set; }
 
-        public IEnumerable<OperationData> OperationData { get; set; } 
+        public IEnumerable<OperationData> OperationData { get; set; }
 
         public int? SummaryId { get; set; }
 
@@ -57,5 +59,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public Action ReleaseSpatialData { get; set; }
 
         public EquipmentConfigurationGroup EquipmentConfigurationGroup { get; set; }
+
+        public List<TimeScope> TimeScopes { get; set; }
+
+        public string Description { get; set; }
     }
 }

@@ -12,6 +12,7 @@
  *    Justin Sliekers - implement device element changes
  *    Joseph Ross - renamed class
  *    Joseph Ross - removed workItemOperationId and operationDataId Added Id and description
+ *    Joseph Ross - made Connector2Id nullable
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -35,7 +36,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 
         public int Connector1Id { get; set; }
 
-        public int Connector2Id { get; set; }
+        public int? Connector2Id { get; set; }
 
         public List<DataLogTrigger> DataLogTriggers { get; set; } 
 
