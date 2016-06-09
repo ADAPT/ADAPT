@@ -15,6 +15,7 @@
   *    Joseph Ross - inherits document
   *    Joseph Ross - removed inhertance from document added needed properties
   *    Joseph Ross - added Id
+ *    Joseph Ross - renaming person roles, and timescopes
   *******************************************************************************/
 
 using System;
@@ -33,7 +34,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
             WorkItemIds = new List<int>();
             Notes = new List<Note>();
             GuidanceAllocationIds = new List<int>();
-            TimeScopes = new List<TimeScope>();
+            TimeScopeIds = new List<TimeScope>();
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -52,7 +53,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public int? CropZoneId { get; set; }
 
-        public List<int> PersonRoles { get; set; }
+        public List<int> PersonRoleIds { get; set; }
 
         public IEnumerable<OperationData> OperationData { get; set; }
 
@@ -64,7 +65,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public EquipmentConfigurationGroup EquipmentConfigurationGroup { get; set; }
 
-        public List<TimeScope> TimeScopes { get; set; }
+        public List<TimeScope> TimeScopeIds { get; set; }
 
         public string Description { get; set; }
     }
