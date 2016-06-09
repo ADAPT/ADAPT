@@ -34,7 +34,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
             WorkItemIds = new List<int>();
             Notes = new List<Note>();
             GuidanceAllocationIds = new List<int>();
-            TimeScopeIds = new List<TimeScope>();
+            TimeScopes = new List<TimeScope>();
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -65,7 +65,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public EquipmentConfigurationGroup EquipmentConfigurationGroup { get; set; }
 
-        public List<TimeScope> TimeScopeIds { get; set; }
+        public List<TimeScope> TimeScopes { get; set; }
 
         public string Description { get; set; }
     }
