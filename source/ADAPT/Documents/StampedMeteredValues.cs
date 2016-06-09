@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Jospeh Ross - creating class
+  *    Jospeh Ross - Fixing Values and Stamp to be properties
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -22,8 +23,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
             Values = new List<MeteredValue>();
         }
 
-        public List<MeteredValue> Values;
+        public List<MeteredValue> Values { get; set; }
 
-        public TimeScope stamp;
+        public TimeScope Stamp { get; set; }
     }
 }
