@@ -14,6 +14,7 @@
   *    Joseph Ross - Added EquipmentConfigurationGroup
   *    Joseph Ross - inherits document
   *    Joseph Ross - removed inhertance from document added needed properties
+  *    Joseph Ross - added Id
   *******************************************************************************/
 
 using System;
@@ -28,11 +29,14 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
     {
         public LoggedData()
         {
+            Id = CompoundIdentifierFactory.Instance.Create();
             WorkItemIds = new List<int>();
             Notes = new List<Note>();
             GuidanceAllocationIds = new List<int>();
             TimeScopes = new List<TimeScope>();
         }
+
+        public CompoundIdentifier Id { get; private set; }
 
         public List<int> WorkItemIds { get; set; } 
 
