@@ -12,16 +12,18 @@
   *    Kathleen Oneal - changed OperationDataIds to WorkItemIds
   *    Joseph Ross - Added list of person roles and container uses
   *    Joseph Ross - Added EquipmentConfigurationGroup
+  *    Joseph Ross - inherits document
   *******************************************************************************/
 
 using System;
 using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Documents;
 using AgGateway.ADAPT.ApplicationDataModel.Equipment;
 using AgGateway.ADAPT.ApplicationDataModel.Notes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
-    public class LoggedData
+    public class LoggedData : Document
     {
         public LoggedData()
         {

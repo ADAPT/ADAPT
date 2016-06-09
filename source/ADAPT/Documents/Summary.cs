@@ -11,6 +11,7 @@
  *    Kathleen Oneal - added properties, growerId, FarmIds, FieldIds, CropZoneIds
  *    Joseph Ross - updated to match uml
  *    Joseph Ross - added EquipmentConfigurationGroup
+ *    Joseph Ross - inherits document
  *******************************************************************************/
 
 using System.Collections.Generic;
@@ -19,16 +20,11 @@ using AgGateway.ADAPT.ApplicationDataModel.Notes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
-    public class Summary
+    public class Summary : Document
     {
         public Summary()
         {
             SummaryData = new List<StampedMeteredValues>();
-            FarmIds = new List<int>();
-            FieldIds = new List<int>();
-            CropZoneIds = new List<int>();
-            PersonRoleIds = new List<int>();
-            Notes = new List<Note>();
             LoggedDataIds = new List<int>();
             WorkItemIds = new List<int>();
             OperationSummaries = new List<OperationSummary>();
@@ -36,18 +32,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 
         public List<StampedMeteredValues> SummaryData { get; set; }
         
-        public List<int> FarmIds { get; set; }
-
-        public List<int> FieldIds { get; set; }
-        
-        public List<int> CropZoneIds { get; set; }
-
-        public List<int> PersonRoleIds { get; set; } 
-
         public int MachineId { get; set; }
-
-        public List<Note> Notes { get; set; }
- 
+        
         public List<int> LoggedDataIds { get; set; }
 
         public List<int> WorkItemIds { get; set; } 
