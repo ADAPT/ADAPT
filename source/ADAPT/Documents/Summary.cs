@@ -12,6 +12,7 @@
  *    Joseph Ross - updated to match uml
  *    Joseph Ross - added EquipmentConfigurationGroup
  *    Joseph Ross - inherits document
+ *    Joseph Ross - removed Document Inheretance added properties
  *******************************************************************************/
 
 using System.Collections.Generic;
@@ -20,27 +21,38 @@ using AgGateway.ADAPT.ApplicationDataModel.Notes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
-    public class Summary : Document
+    public class Summary
     {
         public Summary()
         {
+            PersonRoles = new List<int>();
+            Notes = new List<Note>();
             SummaryData = new List<StampedMeteredValues>();
             LoggedDataIds = new List<int>();
             WorkItemIds = new List<int>();
             OperationSummaries = new List<OperationSummary>();
+            ContainerUseIds = new List<int>();
         }
 
         public List<StampedMeteredValues> SummaryData { get; set; }
+
+        public int? FarmId { get; set; }
+
+        public int? FieldId { get; set; }
+
+        public int? CropZoneId { get; set; }
+
+        public List<int> PersonRoles { get; set; }
         
-        public int MachineId { get; set; }
-        
+        public List<Note> Notes { get; set; } 
+
         public List<int> LoggedDataIds { get; set; }
 
         public List<int> WorkItemIds { get; set; } 
 
         public List<OperationSummary> OperationSummaries { get; set; }
 
-        public int ContainerUse { get; set; }
+        public List<int> ContainerUseIds { get; set; }
 
         public EquipmentConfigurationGroup EquipmentConfigurationGroup { get; set; }
     }
