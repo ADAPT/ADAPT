@@ -13,6 +13,7 @@
  *    Joseph Ross - added EquipmentConfigurationGroup
  *    Joseph Ross - inherits document
  *    Joseph Ross - removed Document Inheretance added properties
+ *    Joseph Ross - renaming person roles
  *******************************************************************************/
 
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
     {
         public Summary()
         {
-            PersonRoles = new List<int>();
+            PersonRoleIds = new List<int>();
             Notes = new List<Note>();
             SummaryData = new List<StampedMeteredValues>();
             LoggedDataIds = new List<int>();
@@ -42,7 +43,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 
         public int? CropZoneId { get; set; }
 
-        public List<int> PersonRoles { get; set; }
+        public List<int> PersonRoleIds { get; set; }
         
         public List<Note> Notes { get; set; } 
 
