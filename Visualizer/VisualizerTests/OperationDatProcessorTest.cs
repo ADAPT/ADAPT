@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using AgGateway.ADAPT.ApplicationDataModel.Equipment;
 using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 using AgGateway.ADAPT.Representation.RepresentationSystem;
@@ -17,19 +17,19 @@ namespace VisualizerTests
         private OperationDataProcessor _operationDataProcessor;
         private OperationData _operationData;
         private List<SpatialRecord> _spatialRecords;
-        private Dictionary<int, List<Section>> _sections;
-        private List<Meter> _meters;
+        private Dictionary<int, List<DeviceElementUse>> _deviceElementUses;
+        private List<WorkingData> _workingDatas;
 
         [SetUp]
         public void Setup()
         {
-            _meters = new List<Meter>();
-            _sections = new Dictionary<int, List<Section>>();
+            _workingDatas = new List<WorkingData>();
+            _deviceElementUses = new Dictionary<int, List<DeviceElementUse>>();
             _spatialRecords = new List<SpatialRecord>();
             _operationData = new OperationData
             {
                 GetSpatialRecords = () => _spatialRecords,
-                GetSections = x => _sections[x],
+                GetDeviceElementUses = x => _deviceElementUses[x],
                 MaxDepth = 0
             };
 
@@ -40,13 +40,13 @@ namespace VisualizerTests
         [Test]
         public void GivenOperationDataWhenProcessOperationDataThenColumnsAreAdded()
         {
-            _meters.Add(new NumericMeter {Representation = RepresentationInstanceList.vrHarvestMoisture.ToModelRepresentation()});
-            _sections.Add(0, new List<Section>
+            _workingDatas.Add(new NumericWorkingData { Representation = RepresentationInstanceList.vrHarvestMoisture.ToModelRepresentation() });
+            _deviceElementUses.Add(0, new List<DeviceElementUse>
             {
-                new Section
+                new DeviceElementUse
                 {
                     Depth = 0,
-                    GetMeters = () => _meters,
+                    GetWorkingDatas = () => _workingDatas,
                 }
             });
             _spatialRecords.Add(new SpatialRecord());
@@ -54,20 +54,20 @@ namespace VisualizerTests
             var dataTable = _operationDataProcessor.ProcessOperationData(_operationData);
 
             Assert.AreEqual(1, dataTable.Columns.Count);
-            Assert.AreEqual(_meters.First().Representation.Code + "-" + _meters.First().Id.ReferenceId + "-0", dataTable.Columns[0].ColumnName);
+            Assert.AreEqual(_workingDatas.First().Representation.Code + "-" + _workingDatas.First().Id.ReferenceId + "-0", dataTable.Columns[0].ColumnName);
         }
 
         [Test]
         public void GivenOperationDataWithSpatialRecordDataWithNumericRepValueWhenProcessOperationDAtaThenRowsAreAdded()
         {
-            var harvestMoistureMeter = new NumericMeter { Representation = RepresentationInstanceList.vrHarvestMoisture.ToModelRepresentation() };
-            _meters.Add(harvestMoistureMeter);
-            _sections.Add(0, new List<Section>
+            var harvestMoistureMeter = new NumericWorkingData { Representation = RepresentationInstanceList.vrHarvestMoisture.ToModelRepresentation() };
+            _workingDatas.Add(harvestMoistureMeter);
+            _deviceElementUses.Add(0, new List<DeviceElementUse>
             {
-                new Section
+                new DeviceElementUse
                 {
                     Depth = 0,
-                    GetMeters = () => _meters,
+                    GetWorkingDatas = () => _workingDatas,
                 }
             });
 
@@ -87,14 +87,14 @@ namespace VisualizerTests
         [Test]
         public void GivenOperationDataWithSpatialRecordDataWithEnumeratedValueWhenProcessOperationDataThenRowsAreAdded()
         {
-            var meter = new EnumeratedMeter { Representation = RepresentationInstanceList.dtRecordingStatus.ToModelRepresentation() };
-            _meters.Add(meter);
-            _sections.Add(0, new List<Section>
+            var meter = new EnumeratedWorkingData { Representation = RepresentationInstanceList.dtRecordingStatus.ToModelRepresentation() };
+            _workingDatas.Add(meter);
+            _deviceElementUses.Add(0, new List<DeviceElementUse>
             {
-                new Section
+                new DeviceElementUse
                 {
                     Depth = 0,
-                    GetMeters = () => _meters,
+                    GetWorkingDatas = () => _workingDatas,
                 }
             });
 
@@ -114,14 +114,14 @@ namespace VisualizerTests
         [Test]
         public void GivenOperationDataWithSpatialRecordDataWithNullMeterWhenProcessOperationDataThenRowsAreAdded()
         {
-            var meter = new EnumeratedMeter { Representation = RepresentationInstanceList.dtRecordingStatus.ToModelRepresentation() };
-            _meters.Add(meter);
-            _sections.Add(0, new List<Section>
+            var meter = new EnumeratedWorkingData { Representation = RepresentationInstanceList.dtRecordingStatus.ToModelRepresentation() };
+            _workingDatas.Add(meter);
+            _deviceElementUses.Add(0, new List<DeviceElementUse>
             {
-                new Section
+                new DeviceElementUse
                 {
                     Depth = 0,
-                    GetMeters = () => _meters,
+                    GetWorkingDatas = () => _workingDatas,
                 }
             });
 
@@ -138,14 +138,14 @@ namespace VisualizerTests
         [Test]
         public void GivenOperationDataWithSpatialRecordDataWithNullEnumeratedValueWhenProcessOperationDataThenRowsAreAdded()
         {
-            var meter = new EnumeratedMeter { Representation = RepresentationInstanceList.dtRecordingStatus.ToModelRepresentation() };
-            _meters.Add(meter);
-            _sections.Add(0, new List<Section>
+            var meter = new EnumeratedWorkingData { Representation = RepresentationInstanceList.dtRecordingStatus.ToModelRepresentation() };
+            _workingDatas.Add(meter);
+            _deviceElementUses.Add(0, new List<DeviceElementUse>
             {
-                new Section
+                new DeviceElementUse
                 {
                     Depth = 0,
-                    GetMeters = () => _meters,
+                    GetWorkingDatas = () => _workingDatas,
                 }
             });
             var spatialRecord = new SpatialRecord();
@@ -164,14 +164,14 @@ namespace VisualizerTests
         [Test]
         public void GivenOperationDataWithSpatialRecordDataWithNumericRepValueWhenProcessOperationDataThenColumnNamesContainUom()
         {
-            var harvestMoistureMeter = new NumericMeter { Representation = RepresentationInstanceList.vrHarvestMoisture.ToModelRepresentation() };
-            _meters.Add(harvestMoistureMeter);
-            _sections.Add(0, new List<Section>
+            var harvestMoistureMeter = new NumericWorkingData { Representation = RepresentationInstanceList.vrHarvestMoisture.ToModelRepresentation() };
+            _workingDatas.Add(harvestMoistureMeter);
+            _deviceElementUses.Add(0, new List<DeviceElementUse>
             {
-                new Section
+                new DeviceElementUse
                 {
                     Depth = 0,
-                    GetMeters = () => _meters,
+                    GetWorkingDatas = () => _workingDatas,
                 }
             });
 
@@ -184,28 +184,28 @@ namespace VisualizerTests
 
             var dataTable = _operationDataProcessor.ProcessOperationData(_operationData);
 
-            var expectedColumnName = _meters.First().Representation.Code + "-" + _meters.First().Id.ReferenceId + "-0-" +  numericRepresentation.Value.UnitOfMeasure.Code;
+            var expectedColumnName = _workingDatas.First().Representation.Code + "-" + _workingDatas.First().Id.ReferenceId + "-0-" +  numericRepresentation.Value.UnitOfMeasure.Code;
             Assert.AreEqual(expectedColumnName, dataTable.Columns[0].ColumnName);
         }
 
         [Test]
         public void GivenOperationDataWithMultipleMeterValuesWhenProcessOperationDataThenRowsAreAdded()
         {
-            _meters.Add(new NumericMeter { Representation = RepresentationInstanceList.vrHarvestMoisture.ToModelRepresentation() });
-            _sections.Add(0, new List<Section>
+            _workingDatas.Add(new NumericWorkingData { Representation = RepresentationInstanceList.vrHarvestMoisture.ToModelRepresentation() });
+            _deviceElementUses.Add(0, new List<DeviceElementUse>
             {
-                new Section
+                new DeviceElementUse
                 {
                     Depth = 0,
-                    GetMeters = () => _meters,
+                    GetWorkingDatas = () => _workingDatas,
                 }
             });
 
-            CreateHavestMoistureSpatialRecord(_meters[0], 3.0);
-            CreateHavestMoistureSpatialRecord(_meters[0], 5.0);
-            CreateHavestMoistureSpatialRecord(_meters[0], 9.0);
-            CreateHavestMoistureSpatialRecord(_meters[0], 2.0);
-            CreateHavestMoistureSpatialRecord(_meters[0], 333.0);
+            CreateHavestMoistureSpatialRecord(_workingDatas[0], 3.0);
+            CreateHavestMoistureSpatialRecord(_workingDatas[0], 5.0);
+            CreateHavestMoistureSpatialRecord(_workingDatas[0], 9.0);
+            CreateHavestMoistureSpatialRecord(_workingDatas[0], 2.0);
+            CreateHavestMoistureSpatialRecord(_workingDatas[0], 333.0);
 
             var dataTable = _operationDataProcessor.ProcessOperationData(_operationData);
 
@@ -217,11 +217,11 @@ namespace VisualizerTests
             Assert.AreEqual("333", dataTable.Rows[4][0]);
         }
 
-        private void CreateHavestMoistureSpatialRecord(Meter meter, double value)
+        private void CreateHavestMoistureSpatialRecord(WorkingData workingData, double value)
         {
             var spatialRecord = new SpatialRecord();
             var meter1Value1 = CreateHarvestMoisture(value);
-            spatialRecord.SetMeterValue(meter, meter1Value1);
+            spatialRecord.SetMeterValue(workingData, meter1Value1);
             _spatialRecords.Add(spatialRecord);
         }
 

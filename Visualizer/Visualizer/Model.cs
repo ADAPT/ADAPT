@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+using AgGateway.ADAPT.ApplicationDataModel.Equipment;
 using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
 using AgGateway.ADAPT.Visualizer.UI;
 
@@ -170,7 +171,7 @@ namespace AgGateway.ADAPT.Visualizer
             var collection = (IEnumerable)propertyValue;
             if (collection != null)
             {
-                if (collection is IEnumerable<Meter> || collection is IEnumerable<Section> || collection is IEnumerable<DataLogTrigger>)
+                if (collection is IEnumerable<WorkingData> || collection is IEnumerable<DeviceElementUse> || collection is IEnumerable<DataLogTrigger>)
                     return;
 
                 foreach (var child in collection)

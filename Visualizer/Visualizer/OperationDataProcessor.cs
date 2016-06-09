@@ -30,7 +30,7 @@ namespace AgGateway.ADAPT.Visualizer
             if (operationData.GetSpatialRecords != null)
             {
                 var spatialRecords = operationData.GetSpatialRecords().ToList();
-                var meters = GetMeters(operationData);
+                var meters = GetWorkingData(operationData);
 
                 CreateColumns(meters);
 
@@ -45,87 +45,87 @@ namespace AgGateway.ADAPT.Visualizer
             return _dataTable;
         }
 
-        private static Dictionary<int, IEnumerable<Meter>> GetMeters(OperationData operationData)
+        private static Dictionary<int, IEnumerable<WorkingData>> GetWorkingData(OperationData operationData)
         {
-            var metersWithDepthId = new Dictionary<int, IEnumerable<Meter>>();
+            var workingDataWithDepth = new Dictionary<int, IEnumerable<WorkingData>>();
             for (var i = 0; i <= operationData.MaxDepth; i++)
             {
-                var meters = operationData.GetSections(i).SelectMany(x=> x.GetMeters()).Where(x => x.Representation != null);
+                var meters = operationData.GetDeviceElementUses(i).SelectMany(x=> x.GetWorkingDatas()).Where(x => x.Representation != null);
 
-                metersWithDepthId.Add(i, meters);
+                workingDataWithDepth.Add(i, meters);
             }
-            return metersWithDepthId;
+            return workingDataWithDepth;
         }
 
-        private void CreateColumns(Dictionary<int, IEnumerable<Meter>> meters)
+        private void CreateColumns(Dictionary<int, IEnumerable<WorkingData>> workingDataDictionary)
         {
-            foreach (var kvp in meters)
+            foreach (var kvp in workingDataDictionary)
             {
-                foreach (var meter in kvp.Value)
+                foreach (var workingData in kvp.Value)
                 {
-                    _dataTable.Columns.Add(GetColumnName(meter, kvp.Key));
+                    _dataTable.Columns.Add(GetColumnName(workingData, kvp.Key));
                 }
             }
         }
 
-        private void CreateRow(Dictionary<int, IEnumerable<Meter>> meters, SpatialRecord spatialRecord)
+        private void CreateRow(Dictionary<int, IEnumerable<WorkingData>> workingDataDictionary, SpatialRecord spatialRecord)
         {
             var dataRow = _dataTable.NewRow();
 
-            foreach(var key in meters.Keys)
+            foreach(var key in workingDataDictionary.Keys)
             {
                 var depth = key;
 
-                foreach (var meter in meters[key])
+                foreach (var workingData in workingDataDictionary[key])
                 {
-                    if (meter as NumericMeter != null)
-                        CreateNumericMeterCell(spatialRecord, meter, depth, dataRow);
+                    if (workingData as NumericWorkingData != null)
+                        CreateNumericMeterCell(spatialRecord, workingData, depth, dataRow);
 
-                    if (meter as EnumeratedMeter != null)
-                        CreateEnumeratedMeterCell(spatialRecord, meter, depth, dataRow);
+                    if (workingData as EnumeratedWorkingData != null)
+                        CreateEnumeratedMeterCell(spatialRecord, workingData, depth, dataRow);
                 }
             }
 
             _dataTable.Rows.Add(dataRow);
         }
 
-        private static void CreateEnumeratedMeterCell(SpatialRecord spatialRecord, Meter meter, int depth, DataRow dataRow)
+        private static void CreateEnumeratedMeterCell(SpatialRecord spatialRecord, WorkingData workingData, int depth, DataRow dataRow)
         {
-            var enumeratedValue = spatialRecord.GetMeterValue(meter) as EnumeratedValue;
+            var enumeratedValue = spatialRecord.GetMeterValue(workingData) as EnumeratedValue;
 
-            dataRow[GetColumnName(meter, depth)] = enumeratedValue != null && enumeratedValue.Value != null ? enumeratedValue.Value.Value : "";
+            dataRow[GetColumnName(workingData, depth)] = enumeratedValue != null && enumeratedValue.Value != null ? enumeratedValue.Value.Value : "";
         }
 
-        private static void CreateNumericMeterCell(SpatialRecord spatialRecord, Meter meter, int depth, DataRow dataRow)
+        private static void CreateNumericMeterCell(SpatialRecord spatialRecord, WorkingData workingData, int depth, DataRow dataRow)
         {
-            var numericRepresentationValue = spatialRecord.GetMeterValue(meter) as NumericRepresentationValue;
+            var numericRepresentationValue = spatialRecord.GetMeterValue(workingData) as NumericRepresentationValue;
             var value = numericRepresentationValue != null
                 ? numericRepresentationValue.Value.Value.ToString(CultureInfo.InvariantCulture)
                 : "";
 
-            dataRow[GetColumnName(meter, depth)] = value;
+            dataRow[GetColumnName(workingData, depth)] = value;
         }
 
-        private void UpdateColumnNamesWithUom(Dictionary<int, IEnumerable<Meter>> meters, List<SpatialRecord> spatialRecords)
+        private void UpdateColumnNamesWithUom(Dictionary<int, IEnumerable<WorkingData>> workingDatas, List<SpatialRecord> spatialRecords)
         {
-            foreach (var kvp in meters)
+            foreach (var kvp in workingDatas)
             {
-                foreach (var meter1 in kvp.Value)
+                foreach (var data in kvp.Value)
                 {
-                    var meter = meter1;
-                    var meterValues = spatialRecords.Select(x => x.GetMeterValue(meter) as NumericRepresentationValue);
-                    var numericRepresentationValues = meterValues.Where(x => x != null);
+                    var data1 = data;
+                    var workingDataValues = spatialRecords.Select(x => x.GetMeterValue(data1) as NumericRepresentationValue);
+                    var numericRepresentationValues = workingDataValues.Where(x => x != null);
                     var uoms = numericRepresentationValues.Select(x => x.Value.UnitOfMeasure).ToList();
                 
                     if (uoms.Any())
-                        _dataTable.Columns[GetColumnName(meter, kvp.Key)].ColumnName += "-" + uoms.First().Code;
+                        _dataTable.Columns[GetColumnName(data, kvp.Key)].ColumnName += "-" + uoms.First().Code;
                 }
             }
         }
 
-        private static string GetColumnName(Meter meter, int depth)
+        private static string GetColumnName(WorkingData workingData, int depth)
         {
-            return String.Format("{0}-{1}-{2}", meter.Representation.Code, meter.Id.ReferenceId, depth);
+            return String.Format("{0}-{1}-{2}", workingData.Representation.Code, workingData.Id.ReferenceId, depth);
         }
     }
 }
