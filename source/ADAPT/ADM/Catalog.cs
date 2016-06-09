@@ -1,6 +1,6 @@
 /*******************************************************************************
-  * Copyright (C) 2015 AgGateway and ADAPT Contributors
-  * Copyright (C) 2015 Deere and Company
+  * Copyright (C) 2015-16 AgGateway and ADAPT Contributors
+  * Copyright (C) 2015-16 Deere and Company
   * All rights reserved. This program and the accompanying materials
   * are made available under the terms of the Eclipse Public License v1.0
   * which accompanies this distribution, and is available at
@@ -16,6 +16,7 @@
  *   Kathleen Oneal - added equipmentConfigs and renamed Name to Description
  *   Kathleen Oneal - added manufactures list
  *   Justin Sliekers - implement device element changes
+ *   Joseph Ross - added EquipmentConfigurationGroups
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -41,7 +42,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             CropProtectionProducts = new List<CropProtectionProduct>();
             CropVarieties = new List<CropVariety>();
             CropZones = new List<CropZone>();
-            EquipmentConfigs = new List<EquipmentConfig>();
+            EquipmentConfigurations = new List<EquipmentConfiguration>();
+            EquipmentConfigurationGroups = new List<EquipmentConfigurationGroup>();
             Farms = new List<Farm>();
             FertilizerProducts = new List<FertilizerProduct>();
             Fields = new List<Field>();
@@ -89,7 +91,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<DeviceElementUse> DeviceElementUses { get; set; } 
 
-        public List<EquipmentConfig> EquipmentConfigs { get; set; }
+        public List<EquipmentConfiguration> EquipmentConfigurations { get; set; }
+
+        public List<EquipmentConfigurationGroup> EquipmentConfigurationGroups { get; set; }
 
         public List<Farm> Farms { get; set; }
         
