@@ -63,6 +63,7 @@
     <Compile Include="Equipment\DeviceElementConfiguration.cs" />
     <Compile Include="Equipment\DeviceElementTypeEnum.cs" />
     <Compile Include="Equipment\DeviceModel.cs" />
+    <Compile Include="Equipment\EquipmentConfigurationGroup.cs" />
     <Compile Include="Equipment\HitchPoint.cs" />
     <Compile Include="Equipment\ImplementConfiguration.cs" />
     <Compile Include="Equipment\MachineConfiguration.cs" />
@@ -114,7 +115,7 @@
     <Compile Include="Representations\EnumeratedRepresentationGroup.cs" />
     <Compile Include="Representations\EnumeratedValue.cs" />
     <Compile Include="Equipment\Equipment.cs" />
-    <Compile Include="Equipment\EquipmentConfig.cs" />
+    <Compile Include="Equipment\EquipmentConfiguration.cs" />
     <Compile Include="Guidance\GuidanceExtensionEnum.cs" />
     <Compile Include="Logistics\Facility.cs" />
     <Compile Include="Logistics\FacilityTypeEnum.cs" />

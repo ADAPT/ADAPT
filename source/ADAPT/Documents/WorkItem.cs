@@ -1,6 +1,6 @@
 /*******************************************************************************
-  * Copyright (C) 2015 AgGateway and ADAPT Contributors
-  * Copyright (C) 2015 Deere and Company
+  * Copyright (C) 2015-16 AgGateway and ADAPT Contributors
+  * Copyright (C) 2015-16 Deere and Company
   * All rights reserved. This program and the accompanying materials
   * are made available under the terms of the Eclipse Public License v1.0
   * which accompanies this distribution, and is available at
@@ -11,11 +11,13 @@
   *    Tarak Reddy - Updated List of GuidanceId to List GuidanceAllocationId
   *    Tarak Reddy - Added parent document id that is required. A work item would have to exists as a Plan, Recommendation or WorkOrder.
   *    Kathleen Oneal - renamed ReferenceNoteIds to NoteIds; CropZoneId from list of ints to single int; renamed SpatialLayerIds to ReferenceLayerIds
- *    Justin Sliekers - implement device element changes
+  *    Justin Sliekers - implement device element changes
+  *    Joseph Ross - removed ConnectorID added EquipmentConfigurationGroup
   *******************************************************************************/
 
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Equipment;
 using AgGateway.ADAPT.ApplicationDataModel.Notes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
@@ -52,9 +54,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         public int? FieldId { get; set; }
 
         public int? CropZoneId { get; set; }
-
-        public int? ConnectorId { get; set; }
-
+        
         public List<int> ReferenceLayerIds { get; set; }
 
         public int? BoundaryId { get; set; }
@@ -65,8 +65,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 
         public List<StatusUpdate> StatusUpdates { get; set; }
 
-        public List<int> WorkOrderIds { get; set; } 
+        public List<int> WorkOrderIds { get; set; }
 
         public int ParentDocumentId { get; set; }
+
+        public EquipmentConfigurationGroup EquipmentConfigurationGroup { get; set; }
     }
 }

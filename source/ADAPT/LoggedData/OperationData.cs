@@ -1,6 +1,6 @@
 ﻿/*******************************************************************************
-  * Copyright (C) 2015 AgGateway and ADAPT Contributors
-  * Copyright (C) 2015 Deere and Company
+  * Copyright (C) 2015-16 AgGateway and ADAPT Contributors
+  * Copyright (C) 2015-16 Deere and Company
   * All rights reserved. This program and the accompanying materials
   * are made available under the terms of the Eclipse Public License v1.0
   * which accompanies this distribution, and is available at
@@ -9,7 +9,8 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - removed implementConfigId and machineConfigId, added EquipmentConfigId
- *    Justin Sliekers - implement device element changes
+  *    Justin Sliekers - implement device element changes
+  *    Joseph Ross - Added EquipmentConfigurationGroup
   *******************************************************************************/
 
 using System;
@@ -24,6 +25,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public OperationData()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            EquipmentConfigurationIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -43,6 +45,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public int MaxDepth { get; set; }
 
         public int SpatialRecordCount { get; set; }
+
+        public List<int> EquipmentConfigurationIds { get; set; } 
 
         public Func<IEnumerable<SpatialRecord>> GetSpatialRecords { get; set; }
 

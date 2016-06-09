@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright (C) 2015 AgGateway and ADAPT Contributors
- * Copyright (C) 2015 Deere and Company
+ * Copyright (C) 2015-16 AgGateway and ADAPT Contributors
+ * Copyright (C) 2015-16 Deere and Company
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,9 +10,11 @@
  *    Kathleen Oneal - initial API and implementation
  *    Kathleen Oneal - added properties, growerId, FarmIds, FieldIds, CropZoneIds
  *    Joseph Ross - updated to match uml
+ *    Joseph Ross - added EquipmentConfigurationGroup
  *******************************************************************************/
 
 using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Equipment;
 using AgGateway.ADAPT.ApplicationDataModel.Notes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
@@ -50,8 +52,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 
         public List<int> WorkItemIds { get; set; } 
 
-        public List<OperationSummary> OperationSummaries { get; set; } 
+        public List<OperationSummary> OperationSummaries { get; set; }
 
         public int ContainerUse { get; set; }
+
+        public EquipmentConfigurationGroup EquipmentConfigurationGroup { get; set; }
     }
 }
