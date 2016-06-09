@@ -7,12 +7,12 @@
 	<version buildtype="NoIncrement" revisiontype="Increment" path="${versionPath}${versionFile}" failonerror="false" prefix="adapt"/>
   </target>
    
-  <target name="unittest" description="Execute unit tests using nUnit" basdir="." depends="build">
+  <target name="unittest" description="Execute unit tests using nUnit" basdir=".">
     <property name="test.wildcard" value="*Test.dll" />
     <call target="nunitTest" />
   </target>
 
-  <target name="acceptancetest" description="Execute Acceptance tests using MSTest" basedir="." depends="build">
+  <target name="acceptancetest" description="Execute Acceptance tests using MSTest" basedir=".">
     <property name="test.wildcard" value="*AcceptanceTests.dll" />
     <call target="nunitTest" />
   </target>
