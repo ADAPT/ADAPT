@@ -16,9 +16,8 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.Groups
         public ApplicationVolumeDataGroup()
             : base(RepresentationGroupList.rgApplicationVolumeData)
         {
-            Add(RepresentationInstanceList.vrAppRateVolumeMeasured);
-            Add(RepresentationInstanceList.vrAppRateVolumeControl);
-            Add(RepresentationInstanceList.vrAppRateVolumeMetered);
+            Add(RepresentationInstanceList.vrAppRateVolumeActual);
+            Add(RepresentationInstanceList.vrAppRateVolumeSetPoint);
             Add(RepresentationInstanceList.vrAppRateVolumeTarget);
             Add(RepresentationInstanceList.vrAppHeightTarget);
         }

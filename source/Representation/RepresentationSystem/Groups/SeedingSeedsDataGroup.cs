@@ -16,9 +16,8 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.Groups
         public SeedingSeedsDataGroup()
             : base(RepresentationGroupList.rgSeedingSeedsData)
         {
-            Add(RepresentationInstanceList.vrSeedRateSeedsMeasured);
-            Add(RepresentationInstanceList.vrSeedRateSeedsControl);
-            Add(RepresentationInstanceList.vrSeedRateSeedsMetered);
+            Add(RepresentationInstanceList.vrSeedRateSeedsActual);
+            Add(RepresentationInstanceList.vrSeedRateSeedsSetPoint);
             Add(RepresentationInstanceList.vrSeedRateSeedsTarget);
             Add(RepresentationInstanceList.vrSeedDepthTarget);
         }
