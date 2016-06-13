@@ -16,9 +16,8 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.Groups
         public SeedingMassDataGroup()
             : base(RepresentationGroupList.rgSeedingMassData)
         {
-            Add(RepresentationInstanceList.vrSeedRateMassMeasured);
-            Add(RepresentationInstanceList.vrSeedRateMassControl);
-            Add(RepresentationInstanceList.vrSeedRateMassMetered);
+            Add(RepresentationInstanceList.vrSeedRateMassActual);
+            Add(RepresentationInstanceList.vrSeedRateMassSetPoint);
             Add(RepresentationInstanceList.vrSeedRateMassTarget);
             Add(RepresentationInstanceList.vrSeedDepthTarget);
         }

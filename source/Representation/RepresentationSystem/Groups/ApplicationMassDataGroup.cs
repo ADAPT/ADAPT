@@ -16,9 +16,8 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.Groups
         public ApplicationMassDataGroup()
             : base(RepresentationGroupList.rgApplicationMassData)
         {
-            Add(RepresentationInstanceList.vrAppRateMassMeasured);
-            Add(RepresentationInstanceList.vrAppRateMassControl);
-            Add(RepresentationInstanceList.vrAppRateMassMetered);
+            Add(RepresentationInstanceList.vrAppRateMassActual);
+            Add(RepresentationInstanceList.vrAppRateMassSetPoint);
             Add(RepresentationInstanceList.vrAppRateMassTarget);
             Add(RepresentationInstanceList.vrAppHeightTarget);
         }

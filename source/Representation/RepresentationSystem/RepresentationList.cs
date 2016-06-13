@@ -102,6 +102,12 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         dtImplementType = 1506,
 
+        vrAppRateVolumeSetPoint = 50,
+
+        vrAppRateVolumeActual = 49,
+
+        vrAppRateVolumeTarget = 51,
+
         vrABRowSpacing = 1,
 
         vrABShiftTrack = 2,
@@ -192,21 +198,11 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         vrYieldVolumePerArea = 43,
 
-        vrAppRateMassMetered = 44,
+        vrAppRateMassActual = 45,
 
-        vrAppRateMassMeasured = 45,
-
-        vrAppRateMassControl = 46,
+        vrAppRateMassSetPoint = 46,
 
         vrAppRateMassTarget = 47,
-
-        vrAppRateVolumeMetered = 48,
-
-        vrAppRateVolumeMeasured = 49,
-
-        vrAppRateVolumeControl = 50,
-
-        vrAppRateVolumeTarget = 51,
 
         vrAppRateVolumePerHour = 600,
 
@@ -214,19 +210,15 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         vrTillageDepthTarget = 53,
 
-        vrSeedRateMassMetered = 54,
+        vrSeedRateMassActual = 55,
 
-        vrSeedRateMassMeasured = 55,
-
-        vrSeedRateMassControl = 56,
+        vrSeedRateMassSetPoint = 56,
 
         vrSeedRateMassTarget = 57,
 
-        vrSeedRateSeedsMetered = 58,
+        vrSeedRateSeedsActual = 59,
 
-        vrSeedRateSeedsMeasured = 59,
-
-        vrSeedRateSeedsControl = 60,
+        vrSeedRateSeedsSetPoint = 60,
 
         vrSeedRateSeedsTarget = 61,
 
@@ -452,9 +444,9 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         vrImplementReceiverHeight = 174,
 
-        vrStarfireHeight = 175,
+        vrGPSHeight = 175,
 
-        vrStarfireForeAft = 176,
+        vrGPSAft = 176,
 
         vrBoundaryDistance = 177,
 
@@ -812,7 +804,7 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         vrManureTotalSolids = 362,
 
-        vrTillageDepthMeasured = 363,
+        vrTillageDepthActual = 363,
 
         vrTillageDepthControl = 364,
 
@@ -824,7 +816,7 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         vrTillagePressureTarget = 368,
 
-        vrTillagePressureMeasured = 369,
+        vrTillagePressureActual = 369,
 
         vrFuelProductivity = 370,
 
@@ -850,7 +842,7 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         vrRideQuality = 382,
 
-        vrTillagePressureControl = 383,
+        vrTillagePressureSetPoint = 383,
 
         vrSCTurnOnTime = 500,
 
@@ -876,59 +868,59 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         vrSCTuningSpeed = 513,
 
-        vrFanSpeedControl = 514,
+        vrFanSpeedSetPoint = 514,
 
         vrFanSpeedTarget = 515,
 
-        vrFanSpeedMeasured = 516,
+        vrFanSpeedActual = 516,
 
-        vrThreshingSpeedControl = 517,
+        vrThreshingSpeedSetPoint = 517,
 
         vrThreshingSpeedTarget = 518,
 
-        vrThreshingSpeedMeasured = 519,
+        vrThreshingSpeedActual = 519,
 
-        vrThreshingClearanceControl = 520,
+        vrThreshingClearanceSetPoint = 520,
 
         vrThreshingClearanceTarget = 521,
 
-        vrThreshingClearanceMeasured = 522,
+        vrThreshingClearanceActual = 522,
 
-        vrChaferPositionControl = 523,
+        vrChaferPositionSetPoint = 523,
 
         vrChafferPositionTarget = 524,
 
-        vrChafferPositionMeasured = 525,
+        vrChafferPositionActual = 525,
 
-        vrSievePositionControl = 526,
+        vrSievePositionSetPoint = 526,
 
         vrSievePositionTarget = 527,
 
-        vrSievePositionMeasured = 528,
+        vrSievePositionActual = 528,
 
-        vrRipperDepthControl = 529,
+        vrRipperDepthSetPoint = 529,
 
         vrRipperDepthTarget = 530,
 
-        vrRipperDepthMeasured = 531,
+        vrRipperDepthActual = 531,
 
-        vrOpeningDiscDepthControl = 532,
+        vrOpeningDiscDepthSetPoint = 532,
 
         vrOpeningDiscDepthTarget = 533,
 
-        vrOpeningDiscDepthMeasured = 534,
+        vrOpeningDiscDepthActual = 534,
 
-        vrClosingDiscDepthControl = 535,
+        vrClosingDiscDepthSetPoint = 535,
 
         vrClosingDiscDepthTarget = 536,
 
-        vrClosingDiscDepthMeasured = 537,
+        vrClosingDiscDepthActual = 537,
 
-        vrBasketPressureControl = 538,
+        vrBasketPressureSetPoint = 538,
 
         vrBasketPressureTarget = 539,
 
-        vrBasketPressureMeasured = 540,
+        vrBasketPressureActual = 540,
 
         vrPrescriptionRateMultiplier = 541,
 

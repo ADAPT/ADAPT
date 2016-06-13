@@ -1,4 +1,6 @@
-using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Representation.RepresentationSystem
+using AgGateway.ADAPT.ApplicationDataModel;
+
+namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public class RepresentationInstanceList 
     {
@@ -102,6 +104,12 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         public static readonly EnumeratedRepresentation dtImplementType = (EnumeratedRepresentation)RepresentationManager.Instance.Representations["dtImplementType"];
 
+        public static readonly NumericRepresentation vrAppRateVolumeSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateVolumeSetPoint"];
+
+        public static readonly NumericRepresentation vrAppRateVolumeActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateVolumeActual"];
+
+        public static readonly NumericRepresentation vrAppRateVolumeTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateVolumeTarget"];
+
         public static readonly NumericRepresentation vrABRowSpacing = (NumericRepresentation)RepresentationManager.Instance.Representations["vrABRowSpacing"];
 
         public static readonly NumericRepresentation vrABShiftTrack = (NumericRepresentation)RepresentationManager.Instance.Representations["vrABShiftTrack"];
@@ -192,21 +200,11 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         public static readonly NumericRepresentation vrYieldVolumePerArea = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldVolumePerArea"];
 
-        public static readonly NumericRepresentation vrAppRateMassMetered = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateMassMetered"];
+        public static readonly NumericRepresentation vrAppRateMassActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateMassActual"];
 
-        public static readonly NumericRepresentation vrAppRateMassMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateMassMeasured"];
-
-        public static readonly NumericRepresentation vrAppRateMassControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateMassControl"];
+        public static readonly NumericRepresentation vrAppRateMassSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateMassSetPoint"];
 
         public static readonly NumericRepresentation vrAppRateMassTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateMassTarget"];
-
-        public static readonly NumericRepresentation vrAppRateVolumeMetered = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateVolumeMetered"];
-
-        public static readonly NumericRepresentation vrAppRateVolumeMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateVolumeMeasured"];
-
-        public static readonly NumericRepresentation vrAppRateVolumeControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateVolumeControl"];
-
-        public static readonly NumericRepresentation vrAppRateVolumeTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateVolumeTarget"];
 
         public static readonly NumericRepresentation vrAppRateVolumePerHour = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateVolumePerHour"];
 
@@ -214,19 +212,15 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         public static readonly NumericRepresentation vrTillageDepthTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrTillageDepthTarget"];
 
-        public static readonly NumericRepresentation vrSeedRateMassMetered = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSeedRateMassMetered"];
+        public static readonly NumericRepresentation vrSeedRateMassActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSeedRateMassActual"];
 
-        public static readonly NumericRepresentation vrSeedRateMassMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSeedRateMassMeasured"];
-
-        public static readonly NumericRepresentation vrSeedRateMassControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSeedRateMassControl"];
+        public static readonly NumericRepresentation vrSeedRateMassSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSeedRateMassSetPoint"];
 
         public static readonly NumericRepresentation vrSeedRateMassTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSeedRateMassTarget"];
 
-        public static readonly NumericRepresentation vrSeedRateSeedsMetered = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSeedRateSeedsMetered"];
+        public static readonly NumericRepresentation vrSeedRateSeedsActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSeedRateSeedsActual"];
 
-        public static readonly NumericRepresentation vrSeedRateSeedsMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSeedRateSeedsMeasured"];
-
-        public static readonly NumericRepresentation vrSeedRateSeedsControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSeedRateSeedsControl"];
+        public static readonly NumericRepresentation vrSeedRateSeedsSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSeedRateSeedsSetPoint"];
 
         public static readonly NumericRepresentation vrSeedRateSeedsTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSeedRateSeedsTarget"];
 
@@ -452,9 +446,9 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         public static readonly NumericRepresentation vrImplementReceiverHeight = (NumericRepresentation)RepresentationManager.Instance.Representations["vrImplementReceiverHeight"];
 
-        public static readonly NumericRepresentation vrStarfireHeight = (NumericRepresentation)RepresentationManager.Instance.Representations["vrStarfireHeight"];
+        public static readonly NumericRepresentation vrGPSHeight = (NumericRepresentation)RepresentationManager.Instance.Representations["vrGPSHeight"];
 
-        public static readonly NumericRepresentation vrStarfireForeAft = (NumericRepresentation)RepresentationManager.Instance.Representations["vrStarfireForeAft"];
+        public static readonly NumericRepresentation vrGPSAft = (NumericRepresentation)RepresentationManager.Instance.Representations["vrGPSAft"];
 
         public static readonly NumericRepresentation vrBoundaryDistance = (NumericRepresentation)RepresentationManager.Instance.Representations["vrBoundaryDistance"];
 
@@ -812,7 +806,7 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         public static readonly NumericRepresentation vrManureTotalSolids = (NumericRepresentation)RepresentationManager.Instance.Representations["vrManureTotalSolids"];
 
-        public static readonly NumericRepresentation vrTillageDepthMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrTillageDepthMeasured"];
+        public static readonly NumericRepresentation vrTillageDepthActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrTillageDepthActual"];
 
         public static readonly NumericRepresentation vrTillageDepthControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrTillageDepthControl"];
 
@@ -824,7 +818,7 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         public static readonly NumericRepresentation vrTillagePressureTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrTillagePressureTarget"];
 
-        public static readonly NumericRepresentation vrTillagePressureMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrTillagePressureMeasured"];
+        public static readonly NumericRepresentation vrTillagePressureActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrTillagePressureActual"];
 
         public static readonly NumericRepresentation vrFuelProductivity = (NumericRepresentation)RepresentationManager.Instance.Representations["vrFuelProductivity"];
 
@@ -850,7 +844,7 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         public static readonly NumericRepresentation vrRideQuality = (NumericRepresentation)RepresentationManager.Instance.Representations["vrRideQuality"];
 
-        public static readonly NumericRepresentation vrTillagePressureControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrTillagePressureControl"];
+        public static readonly NumericRepresentation vrTillagePressureSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrTillagePressureSetPoint"];
 
         public static readonly NumericRepresentation vrSCTurnOnTime = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSCTurnOnTime"];
 
@@ -876,59 +870,59 @@ using AgGateway.ADAPT.ApplicationDataModel;namespace AgGateway.ADAPT.Represent
 
         public static readonly NumericRepresentation vrSCTuningSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSCTuningSpeed"];
 
-        public static readonly NumericRepresentation vrFanSpeedControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrFanSpeedControl"];
+        public static readonly NumericRepresentation vrFanSpeedSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrFanSpeedSetPoint"];
 
         public static readonly NumericRepresentation vrFanSpeedTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrFanSpeedTarget"];
 
-        public static readonly NumericRepresentation vrFanSpeedMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrFanSpeedMeasured"];
+        public static readonly NumericRepresentation vrFanSpeedActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrFanSpeedActual"];
 
-        public static readonly NumericRepresentation vrThreshingSpeedControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrThreshingSpeedControl"];
+        public static readonly NumericRepresentation vrThreshingSpeedSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrThreshingSpeedSetPoint"];
 
         public static readonly NumericRepresentation vrThreshingSpeedTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrThreshingSpeedTarget"];
 
-        public static readonly NumericRepresentation vrThreshingSpeedMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrThreshingSpeedMeasured"];
+        public static readonly NumericRepresentation vrThreshingSpeedActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrThreshingSpeedActual"];
 
-        public static readonly NumericRepresentation vrThreshingClearanceControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrThreshingClearanceControl"];
+        public static readonly NumericRepresentation vrThreshingClearanceSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrThreshingClearanceSetPoint"];
 
         public static readonly NumericRepresentation vrThreshingClearanceTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrThreshingClearanceTarget"];
 
-        public static readonly NumericRepresentation vrThreshingClearanceMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrThreshingClearanceMeasured"];
+        public static readonly NumericRepresentation vrThreshingClearanceActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrThreshingClearanceActual"];
 
-        public static readonly NumericRepresentation vrChaferPositionControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrChaferPositionControl"];
+        public static readonly NumericRepresentation vrChaferPositionSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrChaferPositionSetPoint"];
 
         public static readonly NumericRepresentation vrChafferPositionTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrChafferPositionTarget"];
 
-        public static readonly NumericRepresentation vrChafferPositionMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrChafferPositionMeasured"];
+        public static readonly NumericRepresentation vrChafferPositionActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrChafferPositionActual"];
 
-        public static readonly NumericRepresentation vrSievePositionControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSievePositionControl"];
+        public static readonly NumericRepresentation vrSievePositionSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSievePositionSetPoint"];
 
         public static readonly NumericRepresentation vrSievePositionTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSievePositionTarget"];
 
-        public static readonly NumericRepresentation vrSievePositionMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSievePositionMeasured"];
+        public static readonly NumericRepresentation vrSievePositionActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSievePositionActual"];
 
-        public static readonly NumericRepresentation vrRipperDepthControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrRipperDepthControl"];
+        public static readonly NumericRepresentation vrRipperDepthSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrRipperDepthSetPoint"];
 
         public static readonly NumericRepresentation vrRipperDepthTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrRipperDepthTarget"];
 
-        public static readonly NumericRepresentation vrRipperDepthMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrRipperDepthMeasured"];
+        public static readonly NumericRepresentation vrRipperDepthActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrRipperDepthActual"];
 
-        public static readonly NumericRepresentation vrOpeningDiscDepthControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrOpeningDiscDepthControl"];
+        public static readonly NumericRepresentation vrOpeningDiscDepthSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrOpeningDiscDepthSetPoint"];
 
         public static readonly NumericRepresentation vrOpeningDiscDepthTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrOpeningDiscDepthTarget"];
 
-        public static readonly NumericRepresentation vrOpeningDiscDepthMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrOpeningDiscDepthMeasured"];
+        public static readonly NumericRepresentation vrOpeningDiscDepthActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrOpeningDiscDepthActual"];
 
-        public static readonly NumericRepresentation vrClosingDiscDepthControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrClosingDiscDepthControl"];
+        public static readonly NumericRepresentation vrClosingDiscDepthSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrClosingDiscDepthSetPoint"];
 
         public static readonly NumericRepresentation vrClosingDiscDepthTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrClosingDiscDepthTarget"];
 
-        public static readonly NumericRepresentation vrClosingDiscDepthMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrClosingDiscDepthMeasured"];
+        public static readonly NumericRepresentation vrClosingDiscDepthActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrClosingDiscDepthActual"];
 
-        public static readonly NumericRepresentation vrBasketPressureControl = (NumericRepresentation)RepresentationManager.Instance.Representations["vrBasketPressureControl"];
+        public static readonly NumericRepresentation vrBasketPressureSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrBasketPressureSetPoint"];
 
         public static readonly NumericRepresentation vrBasketPressureTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrBasketPressureTarget"];
 
-        public static readonly NumericRepresentation vrBasketPressureMeasured = (NumericRepresentation)RepresentationManager.Instance.Representations["vrBasketPressureMeasured"];
+        public static readonly NumericRepresentation vrBasketPressureActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrBasketPressureActual"];
 
         public static readonly NumericRepresentation vrPrescriptionRateMultiplier = (NumericRepresentation)RepresentationManager.Instance.Representations["vrPrescriptionRateMultiplier"];
 
