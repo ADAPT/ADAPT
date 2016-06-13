@@ -71,6 +71,27 @@ namespace AgGateway.ADAPT.PluginManagerTest
       }
 
       [Test]
+      public void GetSupportedPluginsGivenPluginThatSupportsDatacard()
+      {
+          var fakeDatacardPath = Path.GetTempPath();
+          _mockPlugin.Setup(p => p.IsDataCardSupported(fakeDatacardPath, null)).Returns(true);
+
+          var result = _pluginFactory.GetSupportedPlugins(fakeDatacardPath);
+
+          Assert.AreSame(_mockPlugin.Object, result.Single());
+      }
+
+      [Test]
+      public void GetSupportedPluginsGivenNoPluginSupportsDatacard()
+      {
+          _mockPlugin.Setup(p => p.IsDataCardSupported(It.IsAny<string>(), It.IsAny<Properties>())).Returns(false);
+
+          var result = _pluginFactory.GetSupportedPlugins(Path.GetTempPath());
+
+          Assert.IsEmpty(result);
+      }
+
+      [Test]
       public void GetPluginShouldInitializePlugin()
       {
          var plugin = _pluginFactory.GetPlugin(_pluginMetadata.Name);
