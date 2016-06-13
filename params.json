@@ -1,0 +1,6 @@
+{
+  "name": "ADAPT",
+  "tagline": "",
+  "body": "#Getting started\r\n\r\n##Required setup\r\n###IDE: \r\n* Visual studio 2013 or MonoDevelop targeting Microsoft .NET Framework 4.5.1\r\n\r\n###Libraries: \r\n* ADAPT - http://www.nuget.org/packages/AgGatewayADAPTFramework/\r\n* ADM Plugin - http://www.nuget.org/packages/AgGatewayADMPlugin/\r\n* ISO Plugin - http://www.nuget.org/packages/AgGatewayISOPlugin/\r\n\r\n#Links\r\nADAPT: https://adaptframework.org/\r\n\r\nADAPT wiki: https://aggateway.atlassian.net/wiki/display/ADM/ADAPT+Public+Space+Home\r\n\r\nAgGateway: http://www.aggateway.org/\r\n\r\nContact us: https://adaptframework.org/about/contact-us/\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
