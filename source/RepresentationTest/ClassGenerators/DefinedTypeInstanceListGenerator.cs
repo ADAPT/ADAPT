@@ -10,35 +10,37 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
+using System.Text;
+
 namespace AgGateway.ADAPT.RepresentationTest.ClassGenerators
 {
-   //    public class DefinedTypeInstanceListGenerator : ClassGenerator
-   //    {
-   //        private const string DefinedTypeInstanceListPattern = "        {0} = {1},";
-   //
-   //        protected override string Name
-   //        {
-   //            get
-   //            {
-   //                return "DefinedTypeInstanceList";
-   //            }
-   //        }
-   //
-   //        protected override bool IsEnum
-   //        {
-   //            get
-   //            {
-   //                return true;
-   //            }
-   //        }
-   //
-   //        protected override void Append(DefinedRepresentation definedRepresentation, StringBuilder stringBuilder)
-   //        {
-   //            foreach (var enumerationMember in definedRepresentation.EnumerationMembers)
-   //            {
-   //                stringBuilder.AppendFormat(DefinedTypeInstanceListPattern, enumerationMember.DomainId, enumerationMember.DomainTag);
-   //                stringBuilder.Append("\n\n");
-   //            }
-   //        }
-   //    }
+    public class DefinedTypeInstanceListGenerator : ClassGenerator
+    {
+        private const string DefinedTypeInstanceListPattern = "        {0} = {1},";
+
+        protected override string Name
+        {
+            get
+            {
+                return "DefinedTypeInstanceList";
+            }
+        }
+
+        protected override bool IsEnum
+        {
+            get
+            {
+                return true;
+            }
+        }
+
+        protected override void Append(Representation.RepresentationSystem.EnumeratedRepresentation definedRepresentation, StringBuilder stringBuilder)
+        {
+            foreach (var enumerationMember in definedRepresentation.EnumerationMembers)
+            {
+                stringBuilder.AppendFormat(DefinedTypeInstanceListPattern, enumerationMember.DomainId, enumerationMember.DomainTag);
+                stringBuilder.Append("\n\n");
+            }
+        }
+    }
 }
