@@ -37,7 +37,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             Brands = new List<Brand>();
             Connectors = new List<Connector>();
             ContactInfo = new List<ContactInfo>();
-            Containers = new List<Container>();
             Crops = new List<Crop>();
             CropProtectionProducts = new List<CropProtectionProduct>();
             CropVarieties = new List<CropVariety>();
@@ -70,8 +69,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public List<Connector> Connectors { get; set; }
 
         public List<ContactInfo> ContactInfo { get; set; }
-
-        public List<Container> Containers { get; set; } 
 
         public List<Crop> Crops { get; set; }
 
