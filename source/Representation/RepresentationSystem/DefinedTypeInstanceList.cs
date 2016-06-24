@@ -1,6 +1,6 @@
 /*******************************************************************************
-  * Copyright (C) 2015 AgGateway and ADAPT Contributors
-  * Copyright (C) 2015 Deere and Company
+  * Copyright (C) 2015-2016 AgGateway and ADAPT Contributors
+  * Copyright (C) 2015-2016 Deere and Company
   * All rights reserved. This program and the accompanying materials
   * are made available under the terms of the Eclipse Public License v1.0
   * which accompanies this distribution, and is available at
@@ -9,9 +9,10 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
+
 namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
-    public enum DefinedTypeInstanceList 
+    public enum DefinedTypeInstanceList
     {
         dti1InchAway = 5041,
 
@@ -472,6 +473,134 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         dtiPrscMasterError = 6033,
 
         dtiPrscMasterUndefined = 6034,
+
+        dtiCaneHarvester = 6036,
+
+        dtiCombine = 6037,
+
+        dtiCottonPicker = 6038,
+
+        dtiCottonStripper = 6039,
+
+        dtiForageHarvester = 6040,
+
+        dtiIrrigationSystem = 6041,
+
+        dtiLifter = 6042,
+
+        dtiMachineTypeOther = 6043,
+
+        dtiPickupTruck = 6044,
+
+        dtiSprayer = 6045,
+
+        dtiTractor = 6046,
+
+        dtiTreeShaker = 6047,
+
+        dtiUtilityVehicle = 6048,
+
+        dtiWindrower = 6049,
+
+        dtiImpTillage = 6050,
+
+        dtiSecondaryTillage = 6051,
+
+        dtiSeedersPlanter = 6052,
+
+        dtiFertilizer = 6053,
+
+        dtiImpSprayer = 6054,
+
+        dtiHarvester = 6055,
+
+        dtiRootHarvester = 6056,
+
+        dtiForage = 6057,
+
+        dtiIrrigation = 6058,
+
+        dtiTransportTrailers = 6059,
+
+        dtiFarmsteadOperations = 6060,
+
+        dtiPoweredAuxiliaryDevices = 6061,
+
+        dtiSpecialCrop = 6062,
+
+        dtiEarthworks = 6063,
+
+        dtiSkidders = 6064,
+
+        dtiSensorSystems = 6065,
+
+        dtiSlurryApplicators = 6066,
+
+        dtiImpPlanter = 6067,
+
+        dtiSeeder = 6068,
+
+        dtiPullBehindSprayer = 6069,
+
+        dtiLiquidFertTool = 6070,
+
+        dtiNH3Tool = 6071,
+
+        dtiGrainDrill = 6072,
+
+        dtiDrySpreader = 6073,
+
+        dtiBeltPickup = 6074,
+
+        dtiDraper = 6075,
+
+        dtiPlatform = 6076,
+
+        dtiCornHead = 6077,
+
+        dtiRowCropHead = 6078,
+
+        dtiRowUnits = 6079,
+
+        dtiRowDependent = 6080,
+
+        dtiRowIndependent = 6081,
+
+        dtiBoom = 6082,
+
+        dtiImplementTypeOther = 6083,
+
+        dtiRotaryDitcher = 6084,
+
+        dtiScraper = 6085,
+
+        dtiPickup = 6086,
+
+        dtiAirCart = 6087,
+
+        dtiCart = 6088,
+
+        dtiChoppingCornHead = 6089,
+
+        dtiRigidPlatform = 6090,
+
+        dtiFlexibleDraper = 6091,
+
+        dtiFlexPlatform = 6092,
+
+        dtiHydraflexPlatform = 6093,
+
+        dtiUnknownHead = 6094,
+
+        dtiBaler = 6095,
+
+        dtiImpCottonStripper = 6096,
+
+        dtiImpCaneHarvester = 6097,
+
+        dtiImpCottonPicker = 6098,
+
+        dtiRotary = 6099,
 
     }
 }

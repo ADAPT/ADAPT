@@ -27,20 +27,20 @@ namespace AgGateway.ADAPT.RepresentationTest
             var path = Path.Combine(representationSystemDirectory, "RepresentationInstanceList.cs");
             GenerateClass(path, new RepresentationInstanceListGenerator());
 
-            //path = Path.Combine(representationSystemDirectory, "RepresentationTagList.cs");
-            //GenerateClass(path, new RepresentationTagListGenerator());
+            path = Path.Combine(representationSystemDirectory, "RepresentationTagList.cs");
+            GenerateClass(path, new RepresentationTagListGenerator());
 
-            //path = Path.Combine(representationSystemDirectory, "DefinedTypeInstanceList.cs");
-            //GenerateClass(path, new DefinedTypeInstanceListGenerator());
+            path = Path.Combine(representationSystemDirectory, "DefinedTypeInstanceList.cs");
+            GenerateClass(path, new DefinedTypeInstanceListGenerator());
 
-            //path = Path.Combine(representationSystemDirectory, "DefinedTypeEnumerationInstanceList.cs");
-            //GenerateClass(path, new DefinedTypeEnumerationInstanceListGenerator());
+            path = Path.Combine(representationSystemDirectory, "DefinedTypeEnumerationInstanceList.cs");
+            GenerateClass(path, new DefinedTypeEnumerationInstanceListGenerator());
 
             path = Path.Combine(representationSystemDirectory, "RepresentationList.cs");
             GenerateClass(path, new RepresentationListGenerator());
 
-            //path = Path.Combine(representationSystemDirectory, "RepresentationGroupInstanceList.cs");
-            //GenerateClass(path, new RepresentationGroupInstanceListGenerator());
+            path = Path.Combine(representationSystemDirectory, "RepresentationGroupInstanceList.cs");
+            GenerateClass(path, new RepresentationGroupInstanceListGenerator());
         }
 
         //[Test]
