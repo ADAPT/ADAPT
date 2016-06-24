@@ -27,7 +27,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
         {
             Id = CompoundIdentifierFactory.Instance.Create();
             DataLogTriggers = new List<DataLogTrigger>();
-            ContainerEquipmentAllocations = new List<ContainerEquipmentAllocation>();
+//            ContainerEquipmentAllocations = new List<ContainerEquipmentAllocation>();
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -40,6 +40,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 
         public List<DataLogTrigger> DataLogTriggers { get; set; } 
 
-        public List<ContainerEquipmentAllocation> ContainerEquipmentAllocations { get; set; } 
+//        public List<ContainerEquipmentAllocation> ContainerEquipmentAllocations { get; set; } 
     }
 }
