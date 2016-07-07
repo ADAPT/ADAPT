@@ -48,7 +48,7 @@ namespace AgGateway.ADAPT.Visualizer.UI
         {
             Cursor.Current = Cursors.WaitCursor;
 
-            _model.Export((string) _loadedPluginsListBox.SelectedItem, _initializeStringTextBox.Text, _exportPathTextBox.Text, cardProfileSelection.SelectedText);
+            _model.Export((string) _loadedPluginsListBox.SelectedItem, _initializeStringTextBox.Text, _exportPathTextBox.Text, cardProfileSelection.SelectedItem.ToString());
 
             Cursor.Current = Cursors.Default;
 
