@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using AgGateway.ADAPT.Visualizer.Properties;
 
@@ -14,6 +15,14 @@ namespace AgGateway.ADAPT.Visualizer.UI
             InitializeComponent();
 
             _model = model;
+
+            if (_model.AvailablePlugins().Any())
+                _loadedPluginsListBox.DataSource = _model.AvailablePlugins();
+
+            foreach (var applicationDataModel in _model.ApplicationDataModels.OrderBy(x => x.Catalog.Description))
+            {
+                cardProfileSelection.Items.Add(applicationDataModel.Catalog.Description);
+            }
         }
 
         private void BrowsePluginLocation_Click(object sender, EventArgs e)
@@ -39,7 +48,7 @@ namespace AgGateway.ADAPT.Visualizer.UI
         {
             Cursor.Current = Cursors.WaitCursor;
 
-            _model.Export((string) _loadedPluginsListBox.SelectedItem, _initializeStringTextBox.Text, _exportPathTextBox.Text);
+            _model.Export((string) _loadedPluginsListBox.SelectedItem, _initializeStringTextBox.Text, _exportPathTextBox.Text, cardProfileSelection.SelectedItem.ToString());
 
             Cursor.Current = Cursors.Default;
 

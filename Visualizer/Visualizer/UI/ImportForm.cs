@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Forms;
 using AgGateway.ADAPT.Visualizer.Properties;
 
@@ -18,6 +20,9 @@ namespace AgGateway.ADAPT.Visualizer.UI
             _model = model;
             _treeView = treeView;
             _dataGridViewRawData = dataGridViewRawData;
+
+            if (_model.AvailablePlugins().Any())
+                _loadedPluginsListBox.DataSource = _model.AvailablePlugins();
         }
 
         private void BrowsePluginLocation_Click(object sender, EventArgs e)
@@ -51,7 +56,6 @@ namespace AgGateway.ADAPT.Visualizer.UI
         {
             Cursor.Current = Cursors.WaitCursor;
 
-            _loadedPluginsListBox.Items.Clear();
             _loadedPluginsListBox.DataSource = _model.LoadPlugins(_pluginPathTextBox);
 
             Cursor.Current = Cursors.Default;

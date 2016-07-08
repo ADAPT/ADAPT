@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -25,9 +26,17 @@ namespace AgGateway.ADAPT.Visualizer
 
         public IList<ApplicationDataModel.ADM.ApplicationDataModel> ApplicationDataModels { get; private set; }
 
-        public string[] LoadPlugins(TextBox textBox)
+        public ObservableCollection<string> AvailablePlugins()
         {
-            var availablePlugins = new List<string>();
+            if (_dataProvider == null)
+                return new ObservableCollection<string>();
+
+            return new ObservableCollection<string>(_dataProvider.AvailablePlugins);
+        }
+
+        public ObservableCollection<string> LoadPlugins(TextBox textBox)
+        {
+            var availablePlugins = new ObservableCollection<string>();
 
             if (IsValid(textBox, "Plugin"))
             {
@@ -39,7 +48,7 @@ namespace AgGateway.ADAPT.Visualizer
                 }
             }
 
-            return availablePlugins.ToArray();
+            return availablePlugins;
         }
 
         public bool ArePluginsLoaded(TextBox pluginPathTextBox)
@@ -54,7 +63,7 @@ namespace AgGateway.ADAPT.Visualizer
             return true;
         }
 
-        public void Export(string pluginName, string initializeString, string exportPath)
+        public void Export(string pluginName, string initializeString, string exportPath, string cardProfileSelectedText)
         {
             try
             {
@@ -66,10 +75,8 @@ namespace AgGateway.ADAPT.Visualizer
                     return;
                 }
 
-                foreach (var applicationDataModel in ApplicationDataModels)
-                {
-                    DataProvider.Export(plugin, applicationDataModel, initializeString, GetExportDirectory(exportPath));
-                }
+                var selectApplicationDataModel = ApplicationDataModels.First(x => x.Catalog.Description.ToLower().Equals(cardProfileSelectedText.ToLower()));
+                DataProvider.Export(plugin, selectApplicationDataModel, initializeString, GetExportDirectory(exportPath));
 
                 MessageBox.Show(@"Data exported successfully.");
             }

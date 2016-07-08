@@ -10,6 +10,7 @@
  *******************************************************************************/
 
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using AgGateway.ADAPT.ApplicationDataModel.ADM;
 using AgGateway.ADAPT.PluginManager;
 
@@ -24,9 +25,15 @@ namespace AgGateway.ADAPT.Visualizer
             _pluginFactory = new PluginFactory(pluginsPath);
         }
 
-        public List<string> AvailablePlugins
+        public ObservableCollection<string> AvailablePlugins
         {
-            get { return PluginFactory.AvailablePlugins; }
+            get
+            {
+                if(_pluginFactory == null)
+                    return new ObservableCollection<string>();
+
+                return new ObservableCollection<string>(PluginFactory.AvailablePlugins);
+            }
         }
 
         public PluginFactory PluginFactory
