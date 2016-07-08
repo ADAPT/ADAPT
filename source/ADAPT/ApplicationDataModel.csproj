@@ -109,7 +109,6 @@
     <Compile Include="Representations\EnumeratedRepresentation.cs" />
     <Compile Include="Representations\EnumeratedRepresentationGroup.cs" />
     <Compile Include="Representations\EnumeratedValue.cs" />
-    <Compile Include="Equipment\Equipment.cs" />
     <Compile Include="Equipment\EquipmentConfiguration.cs" />
     <Compile Include="Guidance\GuidanceExtensionEnum.cs" />
     <Compile Include="Logistics\Facility.cs" />

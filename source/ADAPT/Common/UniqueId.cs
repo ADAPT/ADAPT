@@ -23,6 +23,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         
         public string Source { get; set; }
         
-        public IdSourceTypeEnum SourceType { get; set; }
+        public IdSourceTypeEnum? SourceType { get; set; }
     }
 }

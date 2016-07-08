@@ -62,9 +62,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             DeviceElementUses = new List<DeviceElementUse>();
             DeviceElements = new List<DeviceElement>();
             HitchPoints = new List<HitchPoint>();
+            Companies = new List<Company>();
+            Products = new List<Product>();
         }
 
         public List<Brand> Brands { get; set; }
+
+        public List<Company> Companies { get; set; }
 
         public List<Connector> Connectors { get; set; }
 
@@ -117,6 +121,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public List<PersonRole> PersonRoles { get; set; }
         
         public IEnumerable<Prescription> Prescriptions { get; set; }
+
+        public List<Product> Products { get; set; } 
 
         public List<ProductMix> ProductMixes { get; set; }
 

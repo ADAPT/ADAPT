@@ -38,6 +38,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
 
         public Location Location2 { get; set; }
 
-        public TimeSpan Duration { get; set; }
+        public TimeSpan? Duration { get; set; }
     }
 }

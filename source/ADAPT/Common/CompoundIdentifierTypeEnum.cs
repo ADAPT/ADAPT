@@ -17,6 +17,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
     {
         UUID,
         String,
-        LongInt
+        LongInt,
+        URI
     }
 }

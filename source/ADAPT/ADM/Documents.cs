@@ -15,14 +15,26 @@
  *******************************************************************************/
 
 using System.Collections.Generic;
+using System.Linq;
 using AgGateway.ADAPT.ApplicationDataModel.Documents;
 using AgGateway.ADAPT.ApplicationDataModel.Guidance;
-using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
     public class Documents
     {
+        public Documents()
+        {
+            WorkItems = Enumerable.Empty<WorkItem>();
+            WorkItemOperations = Enumerable.Empty<WorkItemOperation>();
+            LoggedData = Enumerable.Empty<LoggedData.LoggedData>();
+            Plans = Enumerable.Empty<Plan>();
+            WorkOrders = Enumerable.Empty<WorkOrder>();
+            Recommendations = Enumerable.Empty<Recommendation>();
+            GuidanceAllocations = Enumerable.Empty<GuidanceAllocation>();
+            Summaries = Enumerable.Empty<Summary>();
+        }
+
         public IEnumerable<WorkItem> WorkItems { get; set; }
 
         public IEnumerable<WorkItemOperation> WorkItemOperations { get; set; }
@@ -32,6 +44,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public IEnumerable<Plan> Plans { get; set; }
                
         public IEnumerable<WorkOrder> WorkOrders { get; set; }
+
+        public IEnumerable<WorkRecord> WorkRecords { get; set; }
                
         public IEnumerable<Recommendation> Recommendations { get; set; }
                
