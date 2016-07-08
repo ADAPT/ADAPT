@@ -27,6 +27,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 
         public int? NumberOfSatellites { get; set; }
 
-        public DateTime GpsUtcTime { get; set; }
+        public DateTime? GpsUtcTime { get; set; }
     }
 }
