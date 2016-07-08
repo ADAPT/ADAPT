@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="RepresentationSystem\RepresentationCollectionTest.cs" />
     <Compile Include="RepresentationSystem\RepresentationManagerTest.cs" />
+    <Compile Include="ClassGenerators\RepresentationTagListGenerator.cs" />
     <Compile Include="UnitSystem\UnitOfMeasureConverterTest.cs" />
     <Compile Include="UnitSystem\UnitOfMeasurePreferenceTest.cs" />
     <Compile Include="UnitSystem\NumericRepresentationExtensionsTest.cs" />

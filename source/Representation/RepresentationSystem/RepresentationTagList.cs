@@ -1,6 +1,6 @@
 /*******************************************************************************
-  * Copyright (C) 2015 AgGateway and ADAPT Contributors
-  * Copyright (C) 2015 Deere and Company
+  * Copyright (C) 2015-2016 AgGateway and ADAPT Contributors
+  * Copyright (C) 2015-2016 Deere and Company
   * All rights reserved. This program and the accompanying materials
   * are made available under the terms of the Eclipse Public License v1.0
   * which accompanies this distribution, and is available at
@@ -9,9 +9,10 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
+
 namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
-    public class RepresentationTagList 
+    public class RepresentationTagList
     {
         public const int dtApplicationMethod = 1001;
 
@@ -109,6 +110,16 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public const int dtPrescriptionControlMasterState = 1504;
 
+        public const int dtMachineType = 1505;
+
+        public const int dtImplementType = 1506;
+
+        public const int vrAppRateVolumeSetPoint = 50;
+
+        public const int vrAppRateVolumeActual = 49;
+
+        public const int vrAppRateVolumeTarget = 51;
+
         public const int vrABRowSpacing = 1;
 
         public const int vrABShiftTrack = 2;
@@ -183,7 +194,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public const int vrYieldBalePerArea = 35;
 
-        public const int vrYieldWetMass = 36;
+        public const int vrYieldWetMassFlow = 36;
 
         public const int vrYieldWetMassPerArea = 37;
 
@@ -199,21 +210,11 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public const int vrYieldVolumePerArea = 43;
 
-        public const int vrAppRateMassMetered = 44;
+        public const int vrAppRateMassActual = 45;
 
-        public const int vrAppRateMassMeasured = 45;
-
-        public const int vrAppRateMassControl = 46;
+        public const int vrAppRateMassSetPoint = 46;
 
         public const int vrAppRateMassTarget = 47;
-
-        public const int vrAppRateVolumeMetered = 48;
-
-        public const int vrAppRateVolumeMeasured = 49;
-
-        public const int vrAppRateVolumeControl = 50;
-
-        public const int vrAppRateVolumeTarget = 51;
 
         public const int vrAppRateVolumePerHour = 600;
 
@@ -221,19 +222,15 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public const int vrTillageDepthTarget = 53;
 
-        public const int vrSeedRateMassMetered = 54;
+        public const int vrSeedRateMassActual = 55;
 
-        public const int vrSeedRateMassMeasured = 55;
-
-        public const int vrSeedRateMassControl = 56;
+        public const int vrSeedRateMassSetPoint = 56;
 
         public const int vrSeedRateMassTarget = 57;
 
-        public const int vrSeedRateSeedsMetered = 58;
+        public const int vrSeedRateSeedsActual = 59;
 
-        public const int vrSeedRateSeedsMeasured = 59;
-
-        public const int vrSeedRateSeedsControl = 60;
+        public const int vrSeedRateSeedsSetPoint = 60;
 
         public const int vrSeedRateSeedsTarget = 61;
 
@@ -459,9 +456,9 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public const int vrImplementReceiverHeight = 174;
 
-        public const int vrStarfireHeight = 175;
+        public const int vrGPSHeight = 175;
 
-        public const int vrStarfireForeAft = 176;
+        public const int vrGPSAft = 176;
 
         public const int vrBoundaryDistance = 177;
 
@@ -819,7 +816,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public const int vrManureTotalSolids = 362;
 
-        public const int vrTillageDepthMeasured = 363;
+        public const int vrTillageDepthActual = 363;
 
         public const int vrTillageDepthControl = 364;
 
@@ -831,7 +828,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public const int vrTillagePressureTarget = 368;
 
-        public const int vrTillagePressureMeasured = 369;
+        public const int vrTillagePressureActual = 369;
 
         public const int vrFuelProductivity = 370;
 
@@ -857,7 +854,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public const int vrRideQuality = 382;
 
-        public const int vrTillagePressureControl = 383;
+        public const int vrTillagePressureSetPoint = 383;
 
         public const int vrSCTurnOnTime = 500;
 
@@ -877,67 +874,65 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public const int vrDeltaAppliedVolume = 509;
 
-        public const int vrHarvestWetMassFlow = 510;
-
         public const int vrSolutionSystemFlowRatePerMinute = 511;
 
         public const int vrSCTuningDistance = 512;
 
         public const int vrSCTuningSpeed = 513;
 
-        public const int vrFanSpeedControl = 514;
+        public const int vrFanSpeedSetPoint = 514;
 
         public const int vrFanSpeedTarget = 515;
 
-        public const int vrFanSpeedMeasured = 516;
+        public const int vrFanSpeedActual = 516;
 
-        public const int vrThreshingSpeedControl = 517;
+        public const int vrThreshingSpeedSetPoint = 517;
 
         public const int vrThreshingSpeedTarget = 518;
 
-        public const int vrThreshingSpeedMeasured = 519;
+        public const int vrThreshingSpeedActual = 519;
 
-        public const int vrThreshingClearanceControl = 520;
+        public const int vrThreshingClearanceSetPoint = 520;
 
         public const int vrThreshingClearanceTarget = 521;
 
-        public const int vrThreshingClearanceMeasured = 522;
+        public const int vrThreshingClearanceActual = 522;
 
-        public const int vrChaferPositionControl = 523;
+        public const int vrChaferPositionSetPoint = 523;
 
         public const int vrChafferPositionTarget = 524;
 
-        public const int vrChafferPositionMeasured = 525;
+        public const int vrChafferPositionActual = 525;
 
-        public const int vrSievePositionControl = 526;
+        public const int vrSievePositionSetPoint = 526;
 
         public const int vrSievePositionTarget = 527;
 
-        public const int vrSievePositionMeasured = 528;
+        public const int vrSievePositionActual = 528;
 
-        public const int vrRipperDepthControl = 529;
+        public const int vrRipperDepthSetPoint = 529;
 
         public const int vrRipperDepthTarget = 530;
 
-        public const int vrRipperDepthMeasured = 531;
+        public const int vrRipperDepthActual = 531;
 
-        public const int vrOpeningDiscDepthControl = 532;
+        public const int vrOpeningDiscDepthSetPoint = 532;
 
         public const int vrOpeningDiscDepthTarget = 533;
 
-        public const int vrOpeningDiscDepthMeasured = 534;
+        public const int vrOpeningDiscDepthActual = 534;
 
-        public const int vrClosingDiscDepthControl = 535;
+        public const int vrClosingDiscDepthSetPoint = 535;
 
         public const int vrClosingDiscDepthTarget = 536;
 
-        public const int vrClosingDiscDepthMeasured = 537;
+        public const int vrClosingDiscDepthActual = 537;
 
-        public const int vrBasketPressureControl = 538;
+        public const int vrBasketPressureSetPoint = 538;
 
         public const int vrBasketPressureTarget = 539;
 
-        public const int vrBasketPressureMeasured = 540;
+        public const int vrBasketPressureActual = 540;
 
         public const int vrPrescriptionRateMultiplier = 541;
 
@@ -962,6 +957,8 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         public const int vrProductIndex = 551;
 
         public const int vrDeltaAppRateMass = 552;
+
+        public const int vrYieldWetMass = 553;
 
     }
 }
