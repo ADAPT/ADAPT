@@ -25,8 +25,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 
         public NumericRepresentationValue VerticalAccuracy { get; set; }
 
-        public int NumberOfSatellites { get; set; }
+        public int? NumberOfSatellites { get; set; }
 
-        public DateTime GpsUtcTime { get; set; }
+        public DateTime? GpsUtcTime { get; set; }
     }
 }
