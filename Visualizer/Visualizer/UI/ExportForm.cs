@@ -67,16 +67,18 @@ namespace AgGateway.ADAPT.Visualizer.UI
             _exportPathTextBox.Text = Settings.Default.ExportPath;
 
             _proprietaryDataGridView.Rows.Clear();
-            foreach (var kvp in Settings.Default.ProprietaryValues)
-            {
-                var strings = kvp.Split(';');
 
-                var dataGridViewRow = new DataGridViewRow();
-                dataGridViewRow.Cells[0].Value = strings[0];
-                dataGridViewRow.Cells[1].Value = strings[1];
-
-                _proprietaryDataGridView.Rows.Add(dataGridViewRow);
-            }
+            //TODO: where do these values come from??
+//            foreach (var kvp in Settings.Default.ProprietaryValues)
+//            {
+//                var strings = kvp.Split(';');
+//
+//                var dataGridViewRow = new DataGridViewRow();
+//                dataGridViewRow.Cells.Add(new DataGridViewTextBoxCell { Value = strings[0] });
+//                dataGridViewRow.Cells.Add(new DataGridViewTextBoxCell { Value = strings[1] });
+//
+//                _proprietaryDataGridView.Rows.Add(dataGridViewRow);
+//            }
         }
 
         private void ExportForm_FormClosing(object sender, FormClosingEventArgs e)
