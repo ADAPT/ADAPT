@@ -15,7 +15,6 @@
  *******************************************************************************/
 
 using System.Collections.Generic;
-using System.Linq;
 using AgGateway.ADAPT.ApplicationDataModel.Documents;
 using AgGateway.ADAPT.ApplicationDataModel.Guidance;
 
@@ -25,14 +24,14 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
     {
         public Documents()
         {
-            WorkItems = Enumerable.Empty<WorkItem>();
-            WorkItemOperations = Enumerable.Empty<WorkItemOperation>();
-            LoggedData = Enumerable.Empty<LoggedData.LoggedData>();
-            Plans = Enumerable.Empty<Plan>();
-            WorkOrders = Enumerable.Empty<WorkOrder>();
-            Recommendations = Enumerable.Empty<Recommendation>();
-            GuidanceAllocations = Enumerable.Empty<GuidanceAllocation>();
-            Summaries = Enumerable.Empty<Summary>();
+            WorkItems = new List<WorkItem>();
+            WorkItemOperations = new List<WorkItemOperation>();
+            LoggedData = new List<LoggedData.LoggedData>();
+            Plans = new List<Plan>();
+            WorkOrders = new List<WorkOrder>();
+            Recommendations = new List<Recommendation>();
+            GuidanceAllocations = new List<GuidanceAllocation>();
+            Summaries = new List<Summary>();
         }
 
         public IEnumerable<WorkItem> WorkItems { get; set; }
