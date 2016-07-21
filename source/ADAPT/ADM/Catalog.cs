@@ -19,7 +19,9 @@
  *   Joseph Ross - added EquipmentConfigurationGroups
   *******************************************************************************/
 
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Equipment;
 using AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries;
@@ -38,13 +40,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             Connectors = new List<Connector>();
             ContactInfo = new List<ContactInfo>();
             Crops = new List<Crop>();
-            CropProtectionProducts = new List<CropProtectionProduct>();
-            CropVarieties = new List<CropVariety>();
             CropZones = new List<CropZone>();
             EquipmentConfigurations = new List<EquipmentConfiguration>();
             EquipmentConfigurationGroups = new List<EquipmentConfigurationGroup>();
             Farms = new List<Farm>();
-            FertilizerProducts = new List<FertilizerProduct>();
             Fields = new List<Field>();
             FieldBoundaries = new List<FieldBoundary>();
             Growers = new List<Grower>();
@@ -55,7 +54,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             Persons = new List<Person>();
             PersonRoles = new List<PersonRole>();
             Prescriptions = new List<Prescription>();
-            ProductMixes = new List<ProductMix>();
+            Products = new List<Product>();
             TimeScopes = new List<TimeScope>();
             DeviceElementConfigurations = new List<DeviceElementConfiguration>();
             DeviceModels = new List<DeviceModel>();
@@ -76,10 +75,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<Crop> Crops { get; set; }
 
-        public List<CropProtectionProduct> CropProtectionProducts { get; set; }
-
-        public List<CropVariety> CropVarieties { get; set; }
-
         public List<CropZone> CropZones { get; set; }
 
         public string Description { get; set; }
@@ -98,8 +93,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<Farm> Farms { get; set; }
         
-        public List<FertilizerProduct> FertilizerProducts { get; set; }
-
         public List<Field> Fields { get; set; }
 
         public List<FieldBoundary> FieldBoundaries { get; set; }
@@ -124,8 +117,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<Product> Products { get; set; } 
 
-        public List<ProductMix> ProductMixes { get; set; }
-
         public List<TimeScope> TimeScopes { get; set; }
+
     }
 }
