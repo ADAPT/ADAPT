@@ -252,6 +252,8 @@
             this.Name = "MainForm";
             this.Text = "ADAPT - Visualizer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this._splitContainerViewer.Panel1.ResumeLayout(false);
             this._splitContainerViewer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._splitContainerViewer)).EndInit();
