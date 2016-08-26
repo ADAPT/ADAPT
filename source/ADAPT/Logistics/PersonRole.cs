@@ -14,6 +14,7 @@
 
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
@@ -29,7 +30,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 
         public int PersonId { get; set; }
 
-        public PersonRolesEnum Role { get; set; }
+        public EnumeratedValue Role { get; set; }
         
         public int? GrowerId { get; set; }
 
