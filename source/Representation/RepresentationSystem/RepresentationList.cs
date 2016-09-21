@@ -114,6 +114,10 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         dtImplementType = 1506,
 
+        dtFacilityType = 1507,
+
+        dtPersonRole = 1508,
+
         vrAppRateVolumeSetPoint = 50,
 
         vrAppRateVolumeActual = 49,

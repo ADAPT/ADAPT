@@ -27179,7 +27179,6 @@
 		</EnumeratedRepresentation>
 		<EnumeratedRepresentation domainID="dtImplementType" domainTag="1506" domainIDShort="ImtType">
 			<Name locale="en" description="Implement Type">Implement Type</Name>
-			<Name locale="en" description="Implement Type">Implement Type</Name>
 			<Name locale="de" description="Implement Type">Implement Type</Name>
 			<Name locale="fr" description="Implement Type">Implement Type</Name>
 			<Name locale="da" description="Implement Type">Implement Type</Name>

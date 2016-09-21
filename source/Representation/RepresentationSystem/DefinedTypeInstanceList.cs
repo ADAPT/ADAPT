@@ -9,10 +9,9 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
-
-namespace AgGateway.ADAPT.Representation.RepresentationSystem
+namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
-    public enum DefinedTypeInstanceList
+    public enum DefinedTypeInstanceList 
     {
         dti1InchAway = 5041,
 
@@ -601,6 +600,56 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         dtiImpCottonPicker = 6098,
 
         dtiRotary = 6099,
+
+        dtiFacilityTypeBin = 6100,
+
+        dtiFacilityTypeBarn = 6101,
+
+        dtiFacilityTypeManureStorage = 6102,
+
+        dtiFacilityTypeOffice = 6103,
+
+        dtiPersonRoleAuthorizer = 6104,
+
+        dtiPersonRoleCropAdvisor = 6105,
+
+        dtiPersonRoleCustomer = 6106,
+
+        dtiPersonRoleCustomServiceProvider = 6107,
+
+        dtiPersonRoleDataServicesProvider = 6108,
+
+        dtiPersonRoleEndUser = 6109,
+
+        dtiPersonRoleFarmManager = 6110,
+
+        dtiPersonRoleFinancier = 6111,
+
+        dtiPersonRoleFixedAssetSupplier = 6112,
+
+        dtiPersonRoleGovernmentAgency = 6113,
+
+        dtiPersonRoleGrower = 6114,
+
+        dtiPersonRoleInputSupplier = 6115,
+
+        dtiPersonRoleInsuranceAgent = 6116,
+
+        dtiPersonRoleIrrigationManager = 6117,
+
+        dtiPersonRoleLaborer = 6118,
+
+        dtiPersonRoleMarketAdvisor = 6119,
+
+        dtiPersonRoleMarketProvider = 6120,
+
+        dtiPersonRoleMobileAssetSupplier = 6121,
+
+        dtiPersonRoleOperator = 6122,
+
+        dtiPersonRoleOwner = 6123,
+
+        dtiPersonRoleTransporter = 6124,
 
     }
 }

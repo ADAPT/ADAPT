@@ -8,11 +8,9 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/
-
-namespace AgGateway.ADAPT.Representation.RepresentationSystem
+  *******************************************************************************/namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
-    public class DefinedTypeEnumerationInstanceList
+    public class DefinedTypeEnumerationInstanceList 
     {
         public static readonly EnumerationMember dti1InchAway = RepresentationInstanceList.dtApplicationMethod.EnumerationMembers[(int)DefinedTypeInstanceList.dti1InchAway];
 
@@ -601,6 +599,56 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         public static readonly EnumerationMember dtiImpCottonPicker = RepresentationInstanceList.dtImplementType.EnumerationMembers[(int)DefinedTypeInstanceList.dtiImpCottonPicker];
 
         public static readonly EnumerationMember dtiRotary = RepresentationInstanceList.dtImplementType.EnumerationMembers[(int)DefinedTypeInstanceList.dtiRotary];
+
+        public static readonly EnumerationMember dtiFacilityTypeBin = RepresentationInstanceList.dtFacilityType.EnumerationMembers[(int)DefinedTypeInstanceList.dtiFacilityTypeBin];
+
+        public static readonly EnumerationMember dtiFacilityTypeBarn = RepresentationInstanceList.dtFacilityType.EnumerationMembers[(int)DefinedTypeInstanceList.dtiFacilityTypeBarn];
+
+        public static readonly EnumerationMember dtiFacilityTypeManureStorage = RepresentationInstanceList.dtFacilityType.EnumerationMembers[(int)DefinedTypeInstanceList.dtiFacilityTypeManureStorage];
+
+        public static readonly EnumerationMember dtiFacilityTypeOffice = RepresentationInstanceList.dtFacilityType.EnumerationMembers[(int)DefinedTypeInstanceList.dtiFacilityTypeOffice];
+
+        public static readonly EnumerationMember dtiPersonRoleAuthorizer = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleAuthorizer];
+
+        public static readonly EnumerationMember dtiPersonRoleCropAdvisor = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleCropAdvisor];
+
+        public static readonly EnumerationMember dtiPersonRoleCustomer = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleCustomer];
+
+        public static readonly EnumerationMember dtiPersonRoleCustomServiceProvider = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleCustomServiceProvider];
+
+        public static readonly EnumerationMember dtiPersonRoleDataServicesProvider = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleDataServicesProvider];
+
+        public static readonly EnumerationMember dtiPersonRoleEndUser = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleEndUser];
+
+        public static readonly EnumerationMember dtiPersonRoleFarmManager = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleFarmManager];
+
+        public static readonly EnumerationMember dtiPersonRoleFinancier = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleFinancier];
+
+        public static readonly EnumerationMember dtiPersonRoleFixedAssetSupplier = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleFixedAssetSupplier];
+
+        public static readonly EnumerationMember dtiPersonRoleGovernmentAgency = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleGovernmentAgency];
+
+        public static readonly EnumerationMember dtiPersonRoleGrower = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleGrower];
+
+        public static readonly EnumerationMember dtiPersonRoleInputSupplier = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleInputSupplier];
+
+        public static readonly EnumerationMember dtiPersonRoleInsuranceAgent = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleInsuranceAgent];
+
+        public static readonly EnumerationMember dtiPersonRoleIrrigationManager = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleIrrigationManager];
+
+        public static readonly EnumerationMember dtiPersonRoleLaborer = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleLaborer];
+
+        public static readonly EnumerationMember dtiPersonRoleMarketAdvisor = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleMarketAdvisor];
+
+        public static readonly EnumerationMember dtiPersonRoleMarketProvider = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleMarketProvider];
+
+        public static readonly EnumerationMember dtiPersonRoleMobileAssetSupplier = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleMobileAssetSupplier];
+
+        public static readonly EnumerationMember dtiPersonRoleOperator = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleOperator];
+
+        public static readonly EnumerationMember dtiPersonRoleOwner = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleOwner];
+
+        public static readonly EnumerationMember dtiPersonRoleTransporter = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleTransporter];
 
     }
 }

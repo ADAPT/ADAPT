@@ -8,9 +8,11 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/namespace AgGateway.ADAPT.Representation.RepresentationSystem
+  *******************************************************************************/
+
+namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
-    public class RepresentationTagList 
+    public class RepresentationTagList
     {
         public const int dtApplicationMethod = 1001;
 
@@ -111,6 +113,10 @@
         public const int dtMachineType = 1505;
 
         public const int dtImplementType = 1506;
+
+        public const int dtFacilityType = 1507;
+
+        public const int dtPersonRole = 1508;
 
         public const int vrAppRateVolumeSetPoint = 50;
 

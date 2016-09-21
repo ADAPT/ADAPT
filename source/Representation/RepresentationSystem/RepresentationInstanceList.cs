@@ -114,6 +114,10 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public static readonly EnumeratedRepresentation dtImplementType = (EnumeratedRepresentation)RepresentationManager.Instance.Representations["dtImplementType"];
 
+        public static readonly EnumeratedRepresentation dtFacilityType = (EnumeratedRepresentation)RepresentationManager.Instance.Representations["dtFacilityType"];
+
+        public static readonly EnumeratedRepresentation dtPersonRole = (EnumeratedRepresentation)RepresentationManager.Instance.Representations["dtPersonRole"];
+
         public static readonly NumericRepresentation vrAppRateVolumeSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateVolumeSetPoint"];
 
         public static readonly NumericRepresentation vrAppRateVolumeActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateVolumeActual"];
