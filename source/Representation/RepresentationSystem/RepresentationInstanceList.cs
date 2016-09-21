@@ -856,6 +856,24 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public static readonly NumericRepresentation vrTillagePressureSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrTillagePressureSetPoint"];
 
+        public static readonly NumericRepresentation vrHarvestTrash = (NumericRepresentation)RepresentationManager.Instance.Representations["vrHarvestTrash"];
+
+        public static readonly NumericRepresentation vrYieldMassCane = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldMassCane"];
+
+        public static readonly NumericRepresentation vrYieldMassCanePerArea = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldMassCanePerArea"];
+
+        public static readonly NumericRepresentation vrYieldRawMassCane = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldRawMassCane"];
+
+        public static readonly NumericRepresentation vrYieldRawMassCanePerArea = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldRawMassCanePerArea"];
+
+        public static readonly NumericRepresentation vrCaneBilletLossMass = (NumericRepresentation)RepresentationManager.Instance.Representations["vrCaneBilletLossMass"];
+
+        public static readonly NumericRepresentation vrCaneResidueMass = (NumericRepresentation)RepresentationManager.Instance.Representations["vrCaneResidueMass"];
+
+        public static readonly NumericRepresentation vrYieldRawMass = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldRawMass"];
+
+        public static readonly NumericRepresentation vrYieldRawMassPerArea = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldRawMassPerArea"];
+
         public static readonly NumericRepresentation vrSCTurnOnTime = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSCTurnOnTime"];
 
         public static readonly NumericRepresentation vrSCTurnOffTime = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSCTurnOffTime"];

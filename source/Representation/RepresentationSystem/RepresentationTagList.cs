@@ -8,11 +8,9 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *******************************************************************************/
-
-namespace AgGateway.ADAPT.Representation.RepresentationSystem
+  *******************************************************************************/namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
-    public class RepresentationTagList
+    public class RepresentationTagList 
     {
         public const int dtApplicationMethod = 1001;
 
@@ -855,6 +853,24 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         public const int vrRideQuality = 382;
 
         public const int vrTillagePressureSetPoint = 383;
+
+        public const int vrHarvestTrash = 384;
+
+        public const int vrYieldMassCane = 385;
+
+        public const int vrYieldMassCanePerArea = 386;
+
+        public const int vrYieldRawMassCane = 387;
+
+        public const int vrYieldRawMassCanePerArea = 388;
+
+        public const int vrCaneBilletLossMass = 389;
+
+        public const int vrCaneResidueMass = 390;
+
+        public const int vrYieldRawMass = 391;
+
+        public const int vrYieldRawMassPerArea = 392;
 
         public const int vrSCTurnOnTime = 500;
 
