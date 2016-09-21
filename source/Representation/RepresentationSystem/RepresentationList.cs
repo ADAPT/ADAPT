@@ -856,6 +856,24 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         vrTillagePressureSetPoint = 383,
 
+        vrHarvestTrash = 384,
+
+        vrYieldMassCane = 385,
+
+        vrYieldMassCanePerArea = 386,
+
+        vrYieldRawMassCane = 387,
+
+        vrYieldRawMassCanePerArea = 388,
+
+        vrCaneBilletLossMass = 389,
+
+        vrCaneResidueMass = 390,
+
+        vrYieldRawMass = 391,
+
+        vrYieldRawMassPerArea = 392,
+
         vrSCTurnOnTime = 500,
 
         vrSCTurnOffTime = 501,
