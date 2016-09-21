@@ -112,7 +112,6 @@
     <Compile Include="Equipment\EquipmentConfiguration.cs" />
     <Compile Include="Guidance\GuidanceExtensionEnum.cs" />
     <Compile Include="Logistics\Facility.cs" />
-    <Compile Include="Logistics\FacilityTypeEnum.cs" />
     <Compile Include="Logistics\Farm.cs" />
     <Compile Include="Products\FertilizerProduct.cs" />
     <Compile Include="Logistics\Field.cs" />
@@ -186,7 +185,6 @@
     <Compile Include="Representations\Representation.cs" />
     <Compile Include="Representations\RepresentationCodeSourceEnum.cs" />
     <Compile Include="Representations\RepresentationValue.cs" />
-    <Compile Include="Logistics\PersonRolesEnum.cs" />
     <Compile Include="Prescriptions\RxRate.cs" />
     <Compile Include="Prescriptions\RxRates.cs" />
     <Compile Include="Prescriptions\RxShapeLookup.cs" />

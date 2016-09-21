@@ -24,17 +24,48 @@ namespace AgGateway.ADAPT.Visualizer.UI
         private readonly BoundaryProcessor _boundaryProcessor;
         private readonly GuidanceProcessor _guidanceProcessor;
         private readonly OperationDataProcessor _operationDataProcessor;
+        private Action<Model.State, string> _updateStatusAction;
+        private static BusyForm _busyForm;
 
         public MainForm()
         {
             InitializeComponent();
 
-            _model = new Model();
+            _updateStatusAction = UpdateStatus;
+            _model = new Model(_updateStatusAction);
             _operationDataProcessor = new OperationDataProcessor();
             _boundaryProcessor = new BoundaryProcessor(_tabPageSpatial);
             _guidanceProcessor = new GuidanceProcessor(_tabPageSpatial);
+
+            _busyForm = new BusyForm();
         }
-        
+
+        private void UpdateStatus(Model.State state, string s)
+        {
+            if (state == Model.State.StateIdle)
+            {
+                _busyForm.Invoke(new Action(() =>
+                {
+                    _busyForm.Hide();
+                    _busyForm.UpdateLabel("Busy");
+                }));
+                
+                return;
+            }
+
+            if (_busyForm != null)
+            {
+                if (_busyForm.InvokeRequired)
+                {
+                    _busyForm.Invoke(new Action(() =>
+                    {
+                        _busyForm.UpdateLabel(s);
+                    }));
+                }
+                _busyForm.UpdateLabel(s);
+            }
+        }
+
         private void _treeViewMetadata_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             _tabControlViewer.SelectTab(_tabPageSpatial);
@@ -73,19 +104,58 @@ namespace AgGateway.ADAPT.Visualizer.UI
             ShowForm(new AboutForm());
         }
 
+        private bool OkToShowImportExport()
+        {
+            if (_model.CurrentState == Model.State.StateImporting)
+            {
+                MessageBox.Show("Currently importing.  Please Wait.");
+                return false;
+            }
+
+            if (_model.CurrentState == Model.State.StateExporting)
+            {
+                MessageBox.Show("Currently exporting.  Please Wait.");
+                return false;
+            }
+
+            if (_model.CurrentState != Model.State.StateIdle)
+            {
+                MessageBox.Show("Currently busy.  Please Wait.");
+                return false;
+            }
+
+            return true;
+        }
+
         private void _importToolStripButton_Click(object sender, EventArgs e)
         {
-            ShowForm(new ImportForm(_model, _treeViewMetadata, _dataGridViewRawData));
+            if (OkToShowImportExport())
+            {
+                ShowForm(new ImportForm(_model, _treeViewMetadata, _dataGridViewRawData));
+                CheckIfBusy();
+            }
         }
 
         private void _exportToolStripButton_Click(object sender, EventArgs e)
         {
-            ShowForm(new ExportForm(_model));
+            if (OkToShowImportExport())
+            {
+                ShowForm(new ExportForm(_model));
+                CheckIfBusy();
+            }
         }
 
         private void ShowForm(Form form)
         {
             form.ShowDialog(this);
+        }
+
+        private void CheckIfBusy()
+        {
+            if (_model.CurrentState != Model.State.StateIdle)
+            {      
+                _busyForm.Show(this);
+            }
         }
 
         private void _buttonExportRawData_Click(object sender, EventArgs e)
@@ -127,6 +197,34 @@ namespace AgGateway.ADAPT.Visualizer.UI
                 _dataGridViewRawData.DataSource = _operationDataProcessor.ProcessOperationData(element as OperationData);
                 _tabControlViewer.SelectedTab = _tabPageRawData;
             }
+        }
+
+        private void MainForm_LocationChanged(object sender, EventArgs e)
+        {
+            ResizeBusyForm();
+        }
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            ResizeBusyForm();
+        }
+
+        private void ResizeBusyForm()
+        {
+            if (_busyForm == null || _busyForm.Visible != true)
+                return;
+
+            Point mainFormCoords = this.Location;
+            int mainFormWidth = this.Size.Width;
+            int mainFormHeight = this.Size.Height;
+            Point mainFormCenter = new Point();
+            mainFormCenter.X = mainFormCoords.X + (mainFormWidth / 2);
+            mainFormCenter.Y = mainFormCoords.Y + (mainFormHeight / 2);
+            Point waitFormLocation = new Point();
+            waitFormLocation.X = mainFormCenter.X - (_busyForm.Width / 2);
+            waitFormLocation.Y = mainFormCenter.Y - (_busyForm.Height / 2);
+            _busyForm.StartPosition = FormStartPosition.Manual;
+            _busyForm.Location = waitFormLocation;  
         }
     }
 }

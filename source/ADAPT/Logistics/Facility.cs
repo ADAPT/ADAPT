@@ -13,6 +13,7 @@
 
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
@@ -32,7 +33,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 
         public ContactInfo ContactInfo { get; set; }
 
-        public FacilityTypeEnum FacilityType { get; set; }
+        public EnumeratedValue FacilityType { get; set; }
 
         public List<ContextItem> ContextItems { get; set; } 
     }

@@ -5,7 +5,9 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using AgGateway.ADAPT.ApplicationDataModel.Equipment;
 using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
@@ -15,13 +17,46 @@ namespace AgGateway.ADAPT.Visualizer
 {
     public class Model
     {
+        private readonly Action<State, string> _updateStatusAction;
+
+        public enum State
+        {
+            StateIdle,
+            StateImporting,
+            StateExporting
+        };
+
         private readonly DataProvider _dataProvider;
         private int _admIndex;
+        private static TreeView _treeView;
 
-        public Model()
+        private State _currentState;
+        public State CurrentState
         {
+            get
+            {
+                return _currentState;
+            }
+
+            set
+            {
+                if (_currentState == State.StateImporting && value == State.StateIdle)
+                    ShowMessageBox(@"Import Complete");
+
+                if(_currentState == State.StateExporting && value == State.StateIdle)
+                    ShowMessageBox(@"Data exported successfully.");
+
+                _currentState = value;
+            }
+        }
+
+        public Model(Action<State, string> updateStatusAction)
+        {
+            _updateStatusAction = updateStatusAction;
             _dataProvider = new DataProvider();
             ApplicationDataModels = new List<ApplicationDataModel.ADM.ApplicationDataModel>();
+
+            CurrentState = State.StateIdle;
         }
 
         public IList<ApplicationDataModel.ADM.ApplicationDataModel> ApplicationDataModels { get; private set; }
@@ -75,10 +110,21 @@ namespace AgGateway.ADAPT.Visualizer
                     return;
                 }
 
-                var selectApplicationDataModel = ApplicationDataModels.First(x => x.Catalog.Description.ToLower().Equals(cardProfileSelectedText.ToLower()));
-                DataProvider.Export(plugin, selectApplicationDataModel, initializeString, GetExportDirectory(exportPath));
+                Task.Run(() =>
+                {
 
-                MessageBox.Show(@"Data exported successfully.");
+                    CurrentState = State.StateExporting;
+                    _updateStatusAction(CurrentState, "Export in Progress");
+
+                    var selectApplicationDataModel =
+                        ApplicationDataModels.First(
+                            x => x.Catalog.Description.ToLower().Equals(cardProfileSelectedText.ToLower()));
+                    DataProvider.Export(plugin, selectApplicationDataModel, initializeString,
+                        GetExportDirectory(exportPath));
+
+                    CurrentState = State.StateIdle;
+                    _updateStatusAction(CurrentState, "Done");
+                });
             }
             catch (Exception exception)
             {
@@ -90,31 +136,57 @@ namespace AgGateway.ADAPT.Visualizer
         {
             if (IsValid(dataCardTextBox, "Datacard"))
             {
+                CurrentState = State.StateImporting;
                 treeView.BeginUpdate();
 
                 ImportDataCard(dataCardTextBox.Text, initializeString, treeView);
 
                 treeView.EndUpdate();
-            }
+            }   
+        }
+
+        private void ShowMessageBox(string message)
+        {
+            _treeView.Invoke(new Action(() => MessageBox.Show(message)));
         }
 
         private void ImportDataCard(string datacardPath, string initializeString, TreeView treeView)
         {
-            ApplicationDataModels = _dataProvider.Import(datacardPath, initializeString);
-            if (ApplicationDataModels == null || ApplicationDataModels.Count == 0)
-            {
-                MessageBox.Show(@"Not supported data format.");
-                return;
-            }
+            _treeView = treeView;
 
-            _admIndex = 0;
-            for (; _admIndex < ApplicationDataModels.Count; _admIndex++)
+            Task.Run(() =>
             {
-                var applicationDataModel = ApplicationDataModels[_admIndex];
-                var parentNode = treeView.Nodes.Add("ApplicationDataModel");
-                AddNode(applicationDataModel, parentNode);
-            }
+                _updateStatusAction(CurrentState, "Starting Import");
+
+                ApplicationDataModels = _dataProvider.Import(datacardPath, initializeString);
+                if (ApplicationDataModels == null || ApplicationDataModels.Count == 0)
+                {
+                    MessageBox.Show(@"Not supported data format.");
+                    CurrentState = State.StateIdle;
+                    _updateStatusAction(CurrentState, "Done");
+                    return;
+                }
+
+                _admIndex = 0;
+                for (; _admIndex < ApplicationDataModels.Count; _admIndex++)
+                {
+                    var applicationDataModel = ApplicationDataModels[_admIndex];
+
+                    applicationDataModel.Documents.LoggedData.SelectMany(x => x.OperationData.ToList()).ToList();
+                    
+                    var parentNode = (TreeNode)_treeView.Invoke(new Func<TreeNode>(() => treeView.Nodes.Add("ApplicationDataModel")));
+
+                    AddNode(applicationDataModel, parentNode);
+                }
+                
+                CurrentState = State.StateIdle;
+                _updateStatusAction(CurrentState, "Done");
+                
+            });
+
+            
         }
+
 
         private void AddNode(object element, TreeNode parentNode)
         {
@@ -128,6 +200,8 @@ namespace AgGateway.ADAPT.Visualizer
                 ParseProperty(element, parentNode, propertyInfo);
             }
         }
+
+       
 
         private static Type CheckType(ref object element, Type type)
         {
@@ -158,7 +232,8 @@ namespace AgGateway.ADAPT.Visualizer
 
             if (propertyType.IsPrimitive || propertyType == typeof(string) || propertyType == typeof(DateTime) || propertyType.IsEnum)
             {
-                parentNode.Nodes.Add(String.Format(@"{0}: {1}", propertyInfo.Name, propertyValue));
+                _treeView.Invoke(new Action(() => parentNode.Nodes.Add(String.Format(@"{0}: {1}", propertyInfo.Name,
+                    propertyValue))));
             }
             else if (typeof(IEnumerable).IsAssignableFrom(propertyType))
             {
@@ -166,15 +241,20 @@ namespace AgGateway.ADAPT.Visualizer
             }
             else
             {
-                var childNode = parentNode.Nodes.Add(propertyInfo.Name);
+                var childNode = (TreeNode)_treeView.Invoke(new Func<TreeNode>(() => parentNode.Nodes.Add(propertyInfo.Name)));
                 parentNode.Tag = new ObjectWithIndex(_admIndex, element);
+
                 AddNode(propertyValue, childNode);
             }
         }
 
+
         private void ParseArrays(TreeNode parentNode, PropertyInfo propertyInfo, object propertyValue)
         {
-            var collectionNode = parentNode.Nodes.Add(propertyInfo.Name);
+
+            _updateStatusAction(CurrentState, "Parsing: " + propertyInfo.Name);
+
+            var collectionNode = (TreeNode)_treeView.Invoke(new Func<TreeNode>(() => parentNode.Nodes.Add(propertyInfo.Name)));
             var collection = (IEnumerable)propertyValue;
             if (collection != null)
             {
@@ -189,12 +269,12 @@ namespace AgGateway.ADAPT.Visualizer
                     {
                         Tag = new ObjectWithIndex(_admIndex, child)
                     };
-                    collectionNode.Nodes.Add(node);
+                    _treeView.Invoke(new Action(() => collectionNode.Nodes.Add(node)));
                     AddNode(child, node);
                 }
             }
         }
-
+        
         private bool IsValid(TextBox textBox, string text)
         {
             if (textBox.Text == null || !Directory.Exists(textBox.Text))

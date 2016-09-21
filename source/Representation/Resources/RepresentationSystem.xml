@@ -27179,6 +27179,7 @@
 		</EnumeratedRepresentation>
 		<EnumeratedRepresentation domainID="dtImplementType" domainTag="1506" domainIDShort="ImtType">
 			<Name locale="en" description="Implement Type">Implement Type</Name>
+			<Name locale="en" description="Implement Type">Implement Type</Name>
 			<Name locale="de" description="Implement Type">Implement Type</Name>
 			<Name locale="fr" description="Implement Type">Implement Type</Name>
 			<Name locale="da" description="Implement Type">Implement Type</Name>
@@ -27365,6 +27366,87 @@
 			</EnumeratedMember>
 			<EnumeratedMember domainID="dtiRotary" domainTag="6099" refID="49">
 				<Name locale="en" description="Rotary">Rotary</Name>
+			</EnumeratedMember>
+		</EnumeratedRepresentation>
+		<EnumeratedRepresentation domainID="dtFacilityType" domainTag="1507" domainIDShort="FacType">
+			<Name locale="en" description="Facility Type">Facility Type</Name>
+			<EnumeratedMember domainID="dtiFacilityTypeBin" domainTag="6100" refID="0">
+				<Name locale="en" description="Bin">Bin</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeBarn" domainTag="6101" refID="1">
+				<Name locale="en" description="Barn">Barn</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeManureStorage" domainTag="6102" refID="2">
+				<Name locale="en" description="Manure Storage">Manure Storage</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeOffice" domainTag="6103" refID="3">
+				<Name locale="en" description="Office">Office</Name>
+			</EnumeratedMember>
+		</EnumeratedRepresentation>
+		<EnumeratedRepresentation domainID="dtPersonRole" domainTag="1508" domainIDShort="Roles">
+			<Name locale="en" description="Person Role">Person Role</Name>
+			<EnumeratedMember domainID="dtiPersonRoleAuthorizer" domainTag="6104" refID="0">
+				<Name locale="en" description="Authorizer">Authorizer</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleCropAdvisor" domainTag="6105" refID="1">
+				<Name locale="en" description="Crop Advisor">Crop Advisor</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleCustomer" domainTag="6106" refID="2">
+				<Name locale="en" description="Customer">Customer</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleCustomServiceProvider" domainTag="6107" refID="3">
+				<Name locale="en" description="Custom Service Provider">Custom Service Provider</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleDataServicesProvider" domainTag="6108" refID="4">
+				<Name locale="en" description="Data Services Provider">Data Services Provider</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleEndUser" domainTag="6109" refID="5">
+				<Name locale="en" description="End User">End User</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleFarmManager" domainTag="6110" refID="6">
+				<Name locale="en" description="Farm Manager">Farm Manager</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleFinancier" domainTag="6111" refID="7">
+				<Name locale="en" description="Financier">Financier</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleFixedAssetSupplier" domainTag="6112" refID="8">
+				<Name locale="en" description="Fixed Asset Supplier">Fixed Asset Supplier</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleGovernmentAgency" domainTag="6113" refID="9">
+				<Name locale="en" description="Government Agency">Government Agency</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleGrower" domainTag="6114" refID="10">
+				<Name locale="en" description="Grower">Grower</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleInputSupplier" domainTag="6115" refID="11">
+				<Name locale="en" description="Input Supplier">Input Supplier</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleInsuranceAgent" domainTag="6116" refID="12">
+				<Name locale="en" description="Insurance Agent">Insurance Agent</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleIrrigationManager" domainTag="6117" refID="13">
+				<Name locale="en" description="Irrigation Manager">Irrigation Manager</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleLaborer" domainTag="6118" refID="14">
+				<Name locale="en" description="Laborer">Laborer</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleMarketAdvisor" domainTag="6119" refID="15">
+				<Name locale="en" description="Market Advisor">Market Advisor</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleMarketProvider" domainTag="6120" refID="16">
+				<Name locale="en" description="Market Provider">Market Provider</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleMobileAssetSupplier" domainTag="6121" refID="17">
+				<Name locale="en" description="Mobile Asset Supplier">Mobile Asset Supplier</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleOperator" domainTag="6122" refID="18">
+				<Name locale="en" description="Operator">Operator</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleOwner" domainTag="6123" refID="19">
+				<Name locale="en" description="Owner">Owner</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleTransporter" domainTag="6124" refID="20">
+				<Name locale="en" description="Transporter">Transporter</Name>
 			</EnumeratedMember>
 		</EnumeratedRepresentation>
 	</Representations>
