@@ -45,13 +45,13 @@
         <property name="packagesDirectory" value="${directory::get-parent-directory(pluginSolution)}\packages" />
         <echo message="${packagesDirectory}" />
         <mkdir dir="${packagesDirectory}" unless="${directory::exists(packagesDirectory)}" />
-		<echo message="restoring nuget packages : ${pluginSolution}" />
-		<exec program="NuGet.exe"> 
-			<arg line="restore ${pluginSolution} -Verbosity detailed" />
-		</exec>
+                                <echo message="restoring nuget packages : ${pluginSolution}" />
+                                <exec program="NuGet.exe"> 
+                                                <arg line="restore ${pluginSolution} -noninteractive -Verbosity detailed" />
+                                </exec>
         <echo message="updating nuget packages : ${pluginSolution}" />
         <exec program="NuGet.exe" >
-          <arg line="update ${pluginSolution} -Verbosity detailed" />
+          <arg line="update ${pluginSolution} -noninteractive -Verbosity detailed" />
         </exec>
       </do>
     </foreach>
