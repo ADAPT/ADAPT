@@ -16445,7 +16445,450 @@
 			<Name locale="ug" description="TillagePressureSetPoint">tillage pressure SetPoint</Name>
 			<Name locale="vi" description="TillagePressureSetPoint">tillage pressure SetPoint</Name>
 		</NumericRepresentation>
-		<NumericRepresentation domainID="vrSCTurnOnTime" domainTag="500" digits="2" decimal="1">
+    <NumericRepresentation domainID="vrHarvestTrash" domainTag="384" useThousandSeparators="false" digits="3" decimal="2" unitOfMeasure="prcnt" domainIDShort="HrvTrash">
+			<RelatedDDI ddi="98" unitOfMeasure="ppm" resolution="1" offset="0"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsImperial"/>
+			<UnitTypeRef unitType="utPercent"/>
+			<Name locale="en" description="Harvest trash">Trash</Name>
+			<Name locale="de" description="Ernterückstände">Abfall</Name>
+			<Name locale="fr" description="Débris de récolte">Débris</Name>
+			<Name locale="da" description="Høstaffald">Affald</Name>
+			<Name locale="nl" description="Oogstvuil">Vuil</Name>
+			<Name locale="es" description="Desperdicio de cosecha">Desperdicio</Name>
+			<Name locale="it" description="Residui di raccolta">Residui</Name>
+			<Name locale="pt" description="Refugo da Colheita">Refugo</Name>
+			<Name locale="ru" description="Пожнивные остатки">Пожнивные остатки</Name>
+			<Name locale="hu" description="Betakarítási hulladék">Hulladék</Name>
+			<Name locale="cs" description="Sklizňové zbytky">Koš</Name>
+			<Name locale="sk" description="Odpad pri žatve">Odpad</Name>
+			<Name locale="fi" description="Kasvijätteet">Jätteet</Name>
+			<Name locale="sv" description="Skördeavfall">Avfall</Name>
+			<Name locale="et" description="Koristusjäägid">Jäägid</Name>
+			<Name locale="lv" description="Ražas pelavas">Pelavas</Name>
+			<Name locale="lt" description="Derliaus šiukšlės">Šiukšlės</Name>
+			<Name locale="no" description="Høstingsavfall">Avfall</Name>
+			<Name locale="pl" description="Pozostałości zbioru">Pozostałości</Name>
+			<Name locale="bg" description="Отпадък от жътвата">Отпадък</Name>
+			<Name locale="hr" description="Otpad žetve">Otpad</Name>
+			<Name locale="ro" description="Reziduuri recoltă">Reziduuri</Name>
+			<Name locale="tr" description="Hasat çöpü">Çöp</Name>
+			<Name locale="el" description="Υπολείμματα συγκομιδής">Υπολείμματα</Name>
+			<Name locale="is" description="Rusl frá uppskeru">Rusl</Name>
+			<Name locale="sr" description="Otpaci žetve">Otpaci</Name>
+			<Name locale="sl" description="Smeti žetve">Smeti</Name>
+			<Name locale="zh" description="收获甘蔗渣">甘蔗渣</Name>
+			<Name locale="ar" description="مخلفات الحصاد">مخلفات</Name>
+			<Name locale="he" description="פסולת קציר">פסולת</Name>
+			<Name locale="ja" description="収穫廃棄物">廃棄物</Name>
+			<Name locale="kk" description="Егін қалдығы">Қалдық</Name>
+			<Name locale="ko" description="수확 찌꺼기">찌꺼기</Name>
+			<Name locale="mk" description="Ѓубре од бербата">Ѓубре</Name>
+			<Name locale="th" description="ถังขยะเก็บเกี่ยว">ถังขยะ</Name>
+			<Name locale="uk" description="Harvest trash">Trash</Name>
+			<Name locale="ug" description="Harvest trash">Trash</Name>
+			<Name locale="vi" description="Tạp chất thu hoạch">Tạp chất</Name>
+		</NumericRepresentation>
+    <NumericRepresentation domainID="vrYieldMassCane" domainTag="385" useThousandSeparators="true" digits="8" decimal="0" unitOfMeasure="lb" domainIDShort="YldCane">
+			<RelatedDDI ddi="183" unitOfMeasure="kg" resolution="1" offset="0"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="t" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="kg" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitTypeRef unitType="utMass"/>
+			<Name locale="en" description="Cane yield mass">Billet</Name>
+			<Name locale="de" description="Zuckerrohr-Ertragsmasse">Scheit</Name>
+			<Name locale="fr" description="Rendement en masse de canne">Tige</Name>
+			<Name locale="da" description="Afgrødemasse fra sukkerrør">Trille</Name>
+			<Name locale="nl" description="Massa opbrengst riet">Stengel (billet)</Name>
+			<Name locale="es" description="Rendimiento de caña">Esqueje</Name>
+			<Name locale="it" description="Massa resa canna da zucchero">Ceppo</Name>
+			<Name locale="pt" description="Massa de rendimento de cana">Pedaços de cana</Name>
+			<Name locale="ru" description="Масса урожая тростника">Части стебля</Name>
+			<Name locale="hu" description="Nád hozamtömeg">Szár</Name>
+			<Name locale="cs" description="Hmotnost výnosu cukr.třtiny">Řízek</Name>
+			<Name locale="sk" description="Hmotnosť výnosu trstiny">Poleno</Name>
+			<Name locale="fi" description="Ruokosadon massa">Aihiot</Name>
+			<Name locale="sv" description="Avkastn.mängd rörsocker">Billets</Name>
+			<Name locale="et" description="Roosaagi mass">Roomaterjal</Name>
+			<Name locale="lv" description="Cukurniedru ražas masa">Daļa</Name>
+			<Name locale="lt" description="Cukranendrių derliaus masė">Sukapoti ūgliai</Name>
+			<Name locale="no" description="Sukkerrørmasse">Rørdel</Name>
+			<Name locale="pl" description="Ciężar plonu trzciny">Kawałek</Name>
+			<Name locale="bg" description="Маса на добива на захарна тръстика">Клечки</Name>
+			<Name locale="hr" description="Masa prinosa trske">Sadnica trske</Name>
+			<Name locale="ro" description="Masă producție trestie">Bucăți</Name>
+			<Name locale="tr" description="Kamış verimi kütlesi">Çıra parçası</Name>
+			<Name locale="el" description="Απόδοση κατεργασίας ζαχαροκάλαμων">Καλάμια</Name>
+			<Name locale="is" description="Uppskerumassi reyrs">Reyrbútur</Name>
+			<Name locale="sr" description="Masa prinosa trske">Stablo</Name>
+			<Name locale="sl" description="Masa pridelanega sladkornega trsa">Proso</Name>
+			<Name locale="zh" description="甘蔗产量质量">坯料</Name>
+			<Name locale="ar" description="إجمالي إنتاجية القصب">قضيب مسنن</Name>
+			<Name locale="he" description="מסת יבול קנים">פיסה</Name>
+			<Name locale="ja" description="サトウキビ収穫高質量">ビレット</Name>
+			<Name locale="kk" description="Қант құрағының түсім массасы">Отырғызу құралы</Name>
+			<Name locale="ko" description="수수 수율 질량">빌렛</Name>
+			<Name locale="mk" description="Маса на приносот од шеќерна трска">Стебленца</Name>
+			<Name locale="th" description="มวลผลผลิตต้นอ้อย">ท่อน</Name>
+			<Name locale="uk" description="Cane yield mass">Billet</Name>
+			<Name locale="ug" description="Cane yield mass">Billet</Name>
+			<Name locale="vi" description="Khối lượng năng suất cây">Khúc</Name>
+		</NumericRepresentation>
+    <NumericRepresentation domainID="vrYieldMassCanePerArea" domainTag="386" useThousandSeparators="true" digits="7" decimal="1" unitOfMeasure="lb1ac-1" domainIDShort="YdCPA">
+			<RelatedDDI ddi="181" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="t1ha-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb1ac-1" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="kg1ha-1" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb1ac-1" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitTypeRef unitType="utMassPerArea"/>
+			<Name locale="en" description="Cane yield mass per area">Billet per area</Name>
+			<Name locale="de" description="Zuckerrohr-Ertragsmasse pro Fläche">Scheite pro Fläche</Name>
+			<Name locale="fr" description="Rendement en masse de canne par surface">Rondin par surface</Name>
+			<Name locale="da" description="Afgrødemasse fra sukkerrør pr. areal">Trille pr. areal</Name>
+			<Name locale="nl" description="Massa opbrengst riet per oppervlakte">Stengels (billets) per oppervlakte</Name>
+			<Name locale="es" description="Rendimiento de caña por superficie">Esquejes por superficie</Name>
+			<Name locale="it" description="Massa resa canna da zucchero per area">Ceppo per area</Name>
+			<Name locale="pt" description="Massa de rendimento de cana por área">Pedaços de cana por área</Name>
+			<Name locale="ru" description="Масса урожая тростника на единицу площади">Количество частей стебля на единицу площади</Name>
+			<Name locale="hu" description="Területenkénti nád hozamtömeg">Területenkénti szármennyiség</Name>
+			<Name locale="cs" description="Hmotnost výnosu cukr.třtiny na plochu">Řízků na oblast</Name>
+			<Name locale="sk" description="Hmotnosť výnosu trstiny na plochu">Poleno na plochu</Name>
+			<Name locale="fi" description="Ruokosadon massa / pinta-ala">Aihiot / pinta-ala</Name>
+			<Name locale="sv" description="Avkastn.mängd rörsocker per areal">Billets per areal</Name>
+			<Name locale="et" description="Roomass pindala kohta">Roomaterjal pindala kohta</Name>
+			<Name locale="lv" description="Cukurniedru ražas masa no platības">Daļa no platības</Name>
+			<Name locale="lt" description="Cukranendrių derliaus masė plotui">Sukapotų ūglių kiekis plotui</Name>
+			<Name locale="no" description="Sukkerrørmasse per areal">Rørdel per areal</Name>
+			<Name locale="pl" description="Ciężar plonu trzciny na obszar">Kawałki na obszar</Name>
+			<Name locale="bg" description="Маса на добива на захарна тръстика за единица площ">Клечки за единица площ</Name>
+			<Name locale="hr" description="Masa prinosa trske po području">Sadnica trske po području</Name>
+			<Name locale="ro" description="Masă producție trestie per suprafață">Bucăți per suprafață</Name>
+			<Name locale="tr" description="Alan başına kamış verimi kütlesi">Alan başına çıra parçası</Name>
+			<Name locale="el" description="Απόδοση κατεργασίας ζαχαροκάλαμων ανά εμβαδόν">Καλάμια ανά εμβαδόν</Name>
+			<Name locale="is" description="Uppskerumassi reyrs á svæði">Reyrbútar á svæði</Name>
+			<Name locale="sr" description="Masa prinosa trske po površini">Stabla po površini</Name>
+			<Name locale="sl" description="Masa pridelanega sladkornega trsa na površino">Proso na površino</Name>
+			<Name locale="zh" description="单位面积的甘蔗产量质量">单位面积坯料</Name>
+			<Name locale="ar" description="إجمالي إنتاجية القصب لكل منطقة">القضيب المسنن لكل منطقة</Name>
+			<Name locale="he" description="מסת יבול קנים לשטח">פיסות לשטח</Name>
+			<Name locale="ja" description="面積当たりサトウキビ収穫高質量">面積当たりビレット</Name>
+			<Name locale="kk" description="Қант құрағының түсім массасы/аумақ">Отырғызу құралы/аумақ</Name>
+			<Name locale="ko" description="면적당 수수 수율 질량">면적당 빌렛</Name>
+			<Name locale="mk" description="Маса на приносот од шеќерна трска по површина">Стебленца по површина</Name>
+			<Name locale="th" description="มวลผลผลิตต้นอ้อยต่อพื้นที่">ท่อนต่อพื้นที่</Name>
+			<Name locale="uk" description="Cane yield mass per area">Billet per area</Name>
+			<Name locale="ug" description="Cane yield mass per area">Billet per area</Name>
+			<Name locale="vi" description="Khối lượng năng suất cây trên diện tích">Khúc trên diện tích</Name>
+		</NumericRepresentation>
+    <NumericRepresentation domainID="vrYieldRawMassCane" domainTag="387" useThousandSeparators="true" digits="8" decimal="0" unitOfMeasure="lb" domainIDShort="YldRCane">
+			<RelatedDDI ddi="183" unitOfMeasure="kg" resolution="1" offset="0"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="t" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="kg" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitTypeRef unitType="utMass"/>
+			<Name locale="en" description="Cane raw yield mass">Crop</Name>
+			<Name locale="de" description="Zuckerrohr-Rohertragsmasse">Frucht</Name>
+			<Name locale="fr" description="Rendement en masse brut de canne">Culture</Name>
+			<Name locale="da" description="Rå afgrødemasse fra sukkerrør">Afgrøde</Name>
+			<Name locale="nl" description="Massa onbewerkte opbrengst riet">Gewas</Name>
+			<Name locale="es" description="Peso de caña sin procesar">Cultivo</Name>
+			<Name locale="it" description="Massa resa canna da zucchero grezza">Prodotto</Name>
+			<Name locale="pt" description="Massa de rendimento bruto de cana">Cultura</Name>
+			<Name locale="ru" description="Масса необработанного урожая тростника">Культура</Name>
+			<Name locale="hu" description="Nyers nád hozamtömeg">Termény</Name>
+			<Name locale="cs" description="Hmotnost výnosu surové cukr.třtiny">Plodina</Name>
+			<Name locale="sk" description="Hrubá hmotnosť výnosu trstiny">Plodina</Name>
+			<Name locale="fi" description="Raakaruo&apos;on massa">Kasvit</Name>
+			<Name locale="sv" description="Avkastn. råmängd rörsocker">Gröda</Name>
+			<Name locale="et" description="Roo toorsaagi mass">Vili</Name>
+			<Name locale="lv" description="Cukurniedru ražas jēlmasa">Graudaugi</Name>
+			<Name locale="lt" description="Cukranendrių neapdoroto derliaus masė">Pasėliai</Name>
+			<Name locale="no" description="Rå sukkerrørmasse">Avling</Name>
+			<Name locale="pl" description="Ciężar surowego plonu trzciny">Uprawa</Name>
+			<Name locale="bg" description="Маса на добива на необработена захарна тръстика">Култура</Name>
+			<Name locale="hr" description="Masa sirovog prinosa trske">Kultura</Name>
+			<Name locale="ro" description="Masă producție trestie brută">Cultură</Name>
+			<Name locale="tr" description="Ham kamış verimi kütlesi">Ekin</Name>
+			<Name locale="el" description="Απόδοση ακατέργαστων ζαχαροκάλαμων">Καλλιέργεια</Name>
+			<Name locale="is" description="Hráuppskerumassi reyrs">Uppskera</Name>
+			<Name locale="sr" description="Masa prinosa sirove trske">Usev</Name>
+			<Name locale="sl" description="Masa pridelanega surovega sladkornega trsa">Posevek</Name>
+			<Name locale="zh" description="原蔗产量质量">农作物</Name>
+			<Name locale="ar" description="إجمالي إنتاجية القصب الخام">محصول</Name>
+			<Name locale="he" description="מסת יבול קנים גולמית">יבול</Name>
+			<Name locale="ja" description="サトウキビ生収穫高質量">作物</Name>
+			<Name locale="kk" description="Аршылмаған қант құрағының түсім массасы">Егін</Name>
+			<Name locale="ko" description="생 수수 수율 질량">작물</Name>
+			<Name locale="mk" description="Необработена маса на приносот од шеќерна трска">Жетва</Name>
+			<Name locale="th" description="มวลผลผลิตดิบต้นอ้อย">พืชที่เก็บเกี่ยว</Name>
+			<Name locale="uk" description="Cane raw yield mass">Crop</Name>
+			<Name locale="ug" description="Cane raw yield mass">Crop</Name>
+			<Name locale="vi" description="Khối lượng năng suất cây thô">Thu hoạch</Name>
+		</NumericRepresentation>
+    <NumericRepresentation domainID="vrYieldRawMassCanePerArea" domainTag="388" useThousandSeparators="true" digits="7" decimal="1" unitOfMeasure="lb1ac-1" domainIDShort="YdRCPA">
+			<RelatedDDI ddi="181" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="t1ha-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb1ac-1" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="kg1ha-1" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb1ac-1" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitTypeRef unitType="utMassPerArea"/>
+			<Name locale="en" description="Cane raw yield mass per area">Crop per area</Name>
+			<Name locale="de" description="Zuckerrohr-Rohertragsmasse pro Fläche">Frucht pro Fläche</Name>
+			<Name locale="fr" description="Rendement en masse brut de canne par surface">Culture par surface</Name>
+			<Name locale="da" description="Rå afgrødemasse fra sukkerrør pr. areal">Afgrøde pr. areal</Name>
+			<Name locale="nl" description="Massa rauwe opbrengst riet per oppervlakte">Gewas per oppervlakte</Name>
+			<Name locale="es" description="Peso de caña sin procesar por superficie">Cultivo por superficie</Name>
+			<Name locale="it" description="Massa resa canna da zucchero grezza per area">Prodotto per area</Name>
+			<Name locale="pt" description="Massa de rendimento bruto de cana por área">Cultura por área</Name>
+			<Name locale="ru" description="Масса необработанного урожая тростника на единицу площади">Культура на единицу площади</Name>
+			<Name locale="hu" description="Területenkénti nyers nád hozamtömeg">Területenkénti termény</Name>
+			<Name locale="cs" description="Hmotnost výnosu surové cukr.třtiny na plochu">Plodina na oblast</Name>
+			<Name locale="sk" description="Hrubá hmotnosť výnosu trstiny na plochu">Plodina na plochu</Name>
+			<Name locale="fi" description="Raakaruo&apos;on massa / pinta-ala">Kasvit/pinta-ala</Name>
+			<Name locale="sv" description="Avkastn. råmängd rörsocker per areal">Gröda per areal</Name>
+			<Name locale="et" description="Roo toorsaagi mass pindala kohta">Vilja pindala kohta</Name>
+			<Name locale="lv" description="Cukurniedru ražas jēlmasa no platības">Graudaugi no platības</Name>
+			<Name locale="lt" description="Cukranendrių nepadoroto derliaus masė plotui">Pasėlių kiekis plotui</Name>
+			<Name locale="no" description="Rå sukkerrørmasse per areal">Avling per areal</Name>
+			<Name locale="pl" description="Ciężar surowego plonu trzciny na obszar">Uprawa na obszar</Name>
+			<Name locale="bg" description="Добивът на необработена захарна тръстика за единица площ">Култура за единица площ</Name>
+			<Name locale="hr" description="Masa sirovog prinosa trske po području">Kultura po području</Name>
+			<Name locale="ro" description="Masă producție trestie brută per suprafață">Cultură per suprafață</Name>
+			<Name locale="tr" description="Alan başına ham kamış verimi kütlesi">Alan başına ekin</Name>
+			<Name locale="el" description="Απόδοση ακατέργαστων ζαχαροκάλαμων ανά εμβαδόν">Καλλιέργεια ανά εμβαδόν</Name>
+			<Name locale="is" description="Hráuppskerumassi reyrs á svæði">Uppskera á svæði</Name>
+			<Name locale="sr" description="Masa prinosa sirove trske po površini">Usevi po površini</Name>
+			<Name locale="sl" description="Masa pridelanega surovega trsja na površino">Posevek na površino</Name>
+			<Name locale="zh" description="单位面积的原蔗产量质量">单位面积的农作物</Name>
+			<Name locale="ar" description="إجمالي إنتاجية القصب الخام لكل منطقة">المحصول لكل منطقة</Name>
+			<Name locale="he" description="מסת יבול קנים גולמית לשטח">יבול לשטח</Name>
+			<Name locale="ja" description="面積当たりサトウキビ生収穫高質量">面積当たり作物</Name>
+			<Name locale="kk" description="Аршылмаған қант құрағының түсім массасы/аумақ">Егін/аумақ</Name>
+			<Name locale="ko" description="면적당 생 수수 수율 질량">면적당 작물</Name>
+			<Name locale="mk" description="Необработена маса на приносот од шеќерна трска по површина">Жетва по површина</Name>
+			<Name locale="th" description="มวลผลผลิตดิบต้นอ้อยต่อพื้นที่">พืชที่เก็บเกี่ยวต่อพื้นที่</Name>
+			<Name locale="uk" description="Cane raw yield mass per area">Crop per area</Name>
+			<Name locale="ug" description="Cane raw yield mass per area">Crop per area</Name>
+			<Name locale="vi" description="Khối lượng năng suất thô của cây trên diện tích">Thu hoạch trên diện tích</Name>
+		</NumericRepresentation>
+    <NumericRepresentation domainID="vrCaneBilletLossMass" domainTag="389" useThousandSeparators="true" digits="8" decimal="0" unitOfMeasure="lb" domainIDShort="CaneLoss">
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="t" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="kg" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitTypeRef unitType="utMass"/>
+			<Name locale="en" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="de" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="fr" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="da" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="nl" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="es" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="it" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="pt" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="ru" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="hu" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="cs" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="sk" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="fi" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="sv" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="et" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="lv" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="lt" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="no" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="pl" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="bg" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="hr" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="ro" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="tr" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="el" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="is" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="sr" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="sl" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="zh" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="ar" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="he" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="ja" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="kk" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="ko" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="mk" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="th" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="uk" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="ug" description="Cane billet loss mass">Billet Loss</Name>
+			<Name locale="vi" description="Cane billet loss mass">Billet Loss</Name>
+		</NumericRepresentation>
+    <NumericRepresentation domainID="vrCaneResidueMass" domainTag="390" useThousandSeparators="true" digits="8" decimal="0" unitOfMeasure="lb" domainIDShort="CneRsdue">
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="t" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="kg" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitTypeRef unitType="utMass"/>
+			<Name locale="en" description="Cane residue mass">Residue</Name>
+			<Name locale="de" description="Cane residue mass">Residue</Name>
+			<Name locale="fr" description="Cane residue mass">Residue</Name>
+			<Name locale="da" description="Cane residue mass">Residue</Name>
+			<Name locale="nl" description="Cane residue mass">Residue</Name>
+			<Name locale="es" description="Cane residue mass">Residue</Name>
+			<Name locale="it" description="Cane residue mass">Residue</Name>
+			<Name locale="pt" description="Cane residue mass">Residue</Name>
+			<Name locale="ru" description="Cane residue mass">Residue</Name>
+			<Name locale="hu" description="Cane residue mass">Residue</Name>
+			<Name locale="cs" description="Cane residue mass">Residue</Name>
+			<Name locale="sk" description="Cane residue mass">Residue</Name>
+			<Name locale="fi" description="Cane residue mass">Residue</Name>
+			<Name locale="sv" description="Cane residue mass">Residue</Name>
+			<Name locale="et" description="Cane residue mass">Residue</Name>
+			<Name locale="lv" description="Cane residue mass">Residue</Name>
+			<Name locale="lt" description="Cane residue mass">Residue</Name>
+			<Name locale="no" description="Cane residue mass">Residue</Name>
+			<Name locale="pl" description="Cane residue mass">Residue</Name>
+			<Name locale="bg" description="Cane residue mass">Residue</Name>
+			<Name locale="hr" description="Cane residue mass">Residue</Name>
+			<Name locale="ro" description="Cane residue mass">Residue</Name>
+			<Name locale="tr" description="Cane residue mass">Residue</Name>
+			<Name locale="el" description="Cane residue mass">Residue</Name>
+			<Name locale="is" description="Cane residue mass">Residue</Name>
+			<Name locale="sr" description="Cane residue mass">Residue</Name>
+			<Name locale="sl" description="Cane residue mass">Residue</Name>
+			<Name locale="zh" description="Cane residue mass">Residue</Name>
+			<Name locale="ar" description="Cane residue mass">Residue</Name>
+			<Name locale="he" description="Cane residue mass">Residue</Name>
+			<Name locale="ja" description="Cane residue mass">Residue</Name>
+			<Name locale="kk" description="Cane residue mass">Residue</Name>
+			<Name locale="ko" description="Cane residue mass">Residue</Name>
+			<Name locale="mk" description="Cane residue mass">Residue</Name>
+			<Name locale="th" description="Cane residue mass">Residue</Name>
+			<Name locale="uk" description="Cane residue mass">Residue</Name>
+			<Name locale="ug" description="Cane residue mass">Residue</Name>
+			<Name locale="vi" description="Cane residue mass">Residue</Name>
+		</NumericRepresentation>
+    <NumericRepresentation domainID="vrYieldRawMass" domainTag="391" useThousandSeparators="true" digits="8" decimal="0" unitOfMeasure="lb" domainIDShort="YldRaw">
+			<RelatedDDI ddi="183" unitOfMeasure="kg" resolution="1" offset="0"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="t" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="kg" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitTypeRef unitType="utMass"/>
+			<Name locale="en" description="Raw yield mass">Crop</Name>
+			<Name locale="de" description="Raw yield mass">Crop</Name>
+			<Name locale="fr" description="Raw yield mass">Crop</Name>
+			<Name locale="da" description="Raw yield mass">Crop</Name>
+			<Name locale="nl" description="Raw yield mass">Crop</Name>
+			<Name locale="es" description="Raw yield mass">Crop</Name>
+			<Name locale="it" description="Raw yield mass">Crop</Name>
+			<Name locale="pt" description="Raw yield mass">Crop</Name>
+			<Name locale="ru" description="Raw yield mass">Crop</Name>
+			<Name locale="hu" description="Raw yield mass">Crop</Name>
+			<Name locale="cs" description="Raw yield mass">Crop</Name>
+			<Name locale="sk" description="Raw yield mass">Crop</Name>
+			<Name locale="fi" description="Raw yield mass">Crop</Name>
+			<Name locale="sv" description="Raw yield mass">Crop</Name>
+			<Name locale="et" description="Raw yield mass">Crop</Name>
+			<Name locale="lv" description="Raw yield mass">Crop</Name>
+			<Name locale="lt" description="Raw yield mass">Crop</Name>
+			<Name locale="no" description="Raw yield mass">Crop</Name>
+			<Name locale="pl" description="Raw yield mass">Crop</Name>
+			<Name locale="bg" description="Raw yield mass">Crop</Name>
+			<Name locale="hr" description="Raw yield mass">Crop</Name>
+			<Name locale="ro" description="Raw yield mass">Crop</Name>
+			<Name locale="tr" description="Raw yield mass">Crop</Name>
+			<Name locale="el" description="Raw yield mass">Crop</Name>
+			<Name locale="is" description="Raw yield mass">Crop</Name>
+			<Name locale="sr" description="Raw yield mass">Crop</Name>
+			<Name locale="sl" description="Raw yield mass">Crop</Name>
+			<Name locale="zh" description="Raw yield mass">Crop</Name>
+			<Name locale="ar" description="Raw yield mass">Crop</Name>
+			<Name locale="he" description="Raw yield mass">Crop</Name>
+			<Name locale="ja" description="Raw yield mass">Crop</Name>
+			<Name locale="kk" description="Raw yield mass">Crop</Name>
+			<Name locale="ko" description="Raw yield mass">Crop</Name>
+			<Name locale="mk" description="Raw yield mass">Crop</Name>
+			<Name locale="th" description="Raw yield mass">Crop</Name>
+			<Name locale="uk" description="Raw yield mass">Crop</Name>
+			<Name locale="ug" description="Raw yield mass">Crop</Name>
+			<Name locale="vi" description="Raw yield mass">Crop</Name>
+		</NumericRepresentation>
+    <NumericRepresentation domainID="vrYieldRawMassPerArea" domainTag="392" useThousandSeparators="true" digits="7" decimal="1" unitOfMeasure="lb1ac-1" domainIDShort="YdRawPA">
+			<RelatedDDI ddi="181" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="t1ha-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb1ac-1" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="kg1ha-1" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb1ac-1" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitTypeRef unitType="utMassPerArea"/>
+			<Name locale="en" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="de" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="fr" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="da" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="nl" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="es" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="it" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="pt" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="ru" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="hu" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="cs" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="sk" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="fi" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="sv" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="et" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="lv" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="lt" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="no" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="pl" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="bg" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="hr" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="ro" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="tr" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="el" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="is" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="sr" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="sl" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="zh" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="ar" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="he" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="ja" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="kk" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="ko" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="mk" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="th" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="uk" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="ug" description="Raw yield mass per area">Crop per area</Name>
+			<Name locale="vi" description="Raw yield mass per area">Crop per area</Name>
+		</NumericRepresentation>
+  <NumericRepresentation domainID="vrSCTurnOnTime" domainTag="500" digits="2" decimal="1">
 			<RelatedDDI ddi="205" unitOfMeasure="ms" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="1" minValue="0.3" maxValue="15" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="1" minValue="0.3" maxValue="15" unitOfMeasureSystem="umsMetric"/>
@@ -26922,6 +27365,87 @@
 			</EnumeratedMember>
 			<EnumeratedMember domainID="dtiRotary" domainTag="6099" refID="49">
 				<Name locale="en" description="Rotary">Rotary</Name>
+			</EnumeratedMember>
+		</EnumeratedRepresentation>
+		<EnumeratedRepresentation domainID="dtFacilityType" domainTag="1507" domainIDShort="FacType">
+			<Name locale="en" description="Facility Type">Facility Type</Name>
+			<EnumeratedMember domainID="dtiFacilityTypeBin" domainTag="6100" refID="0">
+				<Name locale="en" description="Bin">Bin</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeBarn" domainTag="6101" refID="1">
+				<Name locale="en" description="Barn">Barn</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeManureStorage" domainTag="6102" refID="2">
+				<Name locale="en" description="Manure Storage">Manure Storage</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeOffice" domainTag="6103" refID="3">
+				<Name locale="en" description="Office">Office</Name>
+			</EnumeratedMember>
+		</EnumeratedRepresentation>
+		<EnumeratedRepresentation domainID="dtPersonRole" domainTag="1508" domainIDShort="Roles">
+			<Name locale="en" description="Person Role">Person Role</Name>
+			<EnumeratedMember domainID="dtiPersonRoleAuthorizer" domainTag="6104" refID="0">
+				<Name locale="en" description="Authorizer">Authorizer</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleCropAdvisor" domainTag="6105" refID="1">
+				<Name locale="en" description="Crop Advisor">Crop Advisor</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleCustomer" domainTag="6106" refID="2">
+				<Name locale="en" description="Customer">Customer</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleCustomServiceProvider" domainTag="6107" refID="3">
+				<Name locale="en" description="Custom Service Provider">Custom Service Provider</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleDataServicesProvider" domainTag="6108" refID="4">
+				<Name locale="en" description="Data Services Provider">Data Services Provider</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleEndUser" domainTag="6109" refID="5">
+				<Name locale="en" description="End User">End User</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleFarmManager" domainTag="6110" refID="6">
+				<Name locale="en" description="Farm Manager">Farm Manager</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleFinancier" domainTag="6111" refID="7">
+				<Name locale="en" description="Financier">Financier</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleFixedAssetSupplier" domainTag="6112" refID="8">
+				<Name locale="en" description="Fixed Asset Supplier">Fixed Asset Supplier</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleGovernmentAgency" domainTag="6113" refID="9">
+				<Name locale="en" description="Government Agency">Government Agency</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleGrower" domainTag="6114" refID="10">
+				<Name locale="en" description="Grower">Grower</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleInputSupplier" domainTag="6115" refID="11">
+				<Name locale="en" description="Input Supplier">Input Supplier</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleInsuranceAgent" domainTag="6116" refID="12">
+				<Name locale="en" description="Insurance Agent">Insurance Agent</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleIrrigationManager" domainTag="6117" refID="13">
+				<Name locale="en" description="Irrigation Manager">Irrigation Manager</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleLaborer" domainTag="6118" refID="14">
+				<Name locale="en" description="Laborer">Laborer</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleMarketAdvisor" domainTag="6119" refID="15">
+				<Name locale="en" description="Market Advisor">Market Advisor</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleMarketProvider" domainTag="6120" refID="16">
+				<Name locale="en" description="Market Provider">Market Provider</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleMobileAssetSupplier" domainTag="6121" refID="17">
+				<Name locale="en" description="Mobile Asset Supplier">Mobile Asset Supplier</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleOperator" domainTag="6122" refID="18">
+				<Name locale="en" description="Operator">Operator</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleOwner" domainTag="6123" refID="19">
+				<Name locale="en" description="Owner">Owner</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiPersonRoleTransporter" domainTag="6124" refID="20">
+				<Name locale="en" description="Transporter">Transporter</Name>
 			</EnumeratedMember>
 		</EnumeratedRepresentation>
 	</Representations>
