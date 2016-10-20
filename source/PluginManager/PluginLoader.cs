@@ -73,7 +73,8 @@ namespace AgGateway.ADAPT.PluginManager
       {
          try
          {
-            return assembly.GetTypes().FirstOrDefault(x => x.GetInterface(_pluginInterfaceName, true) != null);
+            return assembly.GetTypes().FirstOrDefault(
+					x => x.GetInterfaces().Any(i => i.FullName == _pluginInterfaceName));
          }
          catch (ReflectionTypeLoadException)
          {
