@@ -31,15 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AgGateway.ADAPT.ApplicationDataModel">
+    <Reference Include="AgGateway.ADAPT.ApplicationDataModel, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AgGatewayADAPTFramework.1.1.0.6\lib\AgGateway.ADAPT.ApplicationDataModel.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="AgGateway.ADAPT.PluginManager">
+    <Reference Include="AgGateway.ADAPT.PluginManager, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AgGatewayADAPTFramework.1.1.0.6\lib\AgGateway.ADAPT.PluginManager.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="AgGateway.ADAPT.Representation">
+    <Reference Include="AgGateway.ADAPT.Representation, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AgGatewayADAPTFramework.1.1.0.6\lib\AgGateway.ADAPT.Representation.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -72,12 +72,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\RepresentationSystem.xml">
+    <Content Include="Resources\RepresentationSystem.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\UnitSystem.xml">
+    </Content>
+    <Content Include="Resources\UnitSystem.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
