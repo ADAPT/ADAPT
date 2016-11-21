@@ -13,7 +13,7 @@
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
-    public enum CompoundIdentifierTypeEnum
+    public enum IdTypeEnum
     {
         UUID,
         String,

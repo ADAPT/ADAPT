@@ -17,6 +17,7 @@
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Documents;
 using AgGateway.ADAPT.ApplicationDataModel.Guidance;
+using AgGateway.ADAPT.ApplicationDataModel.Equipment;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
@@ -32,6 +33,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             Recommendations = new List<Recommendation>();
             GuidanceAllocations = new List<GuidanceAllocation>();
             Summaries = new List<Summary>();
+            WorkRecords = new List<WorkRecord>();
+            DeviceElementUses = new List<DeviceElementUse>();
         }
 
         public IEnumerable<WorkItem> WorkItems { get; set; }
@@ -53,5 +56,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public IEnumerable<Summary> Summaries { get; set; }
 
         public int LoggedDataCatalog { get; set; }
+
+        public IEnumerable<DeviceElementUse> DeviceElementUses { get; set; }
     }
 }

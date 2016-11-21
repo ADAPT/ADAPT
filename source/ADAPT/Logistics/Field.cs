@@ -24,7 +24,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
             Id = CompoundIdentifierFactory.Instance.Create();
             ContextItems = new List<ContextItem>();
             GuidanceGroupIds = new List<int>();
-            TimeScopeIds = new List<int>();
+            TimeScopes = new List<TimeScope>();
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -47,6 +47,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 
         public List<int> GuidanceGroupIds { get; set; }
 
-        public List<int> TimeScopeIds { get; set; }
+        public List<TimeScope> TimeScopes { get; set; }
     }
 }

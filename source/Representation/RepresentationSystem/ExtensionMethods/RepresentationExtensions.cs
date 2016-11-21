@@ -27,7 +27,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.ExtensionMethods
           numericRepresentation.Id.UniqueIds.Add(new UniqueId
           {
               Id = representation.DomainId,
-              CiTypeEnum = CompoundIdentifierTypeEnum.LongInt,
+              IdType = IdTypeEnum.LongInt,
               Source = "http://dictionary.isobus.net/isobus/",
               SourceType = IdSourceTypeEnum.URI
           });
@@ -46,7 +46,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.ExtensionMethods
           enumeratedRepresentation.Id.UniqueIds.Add(new UniqueId
           {
               Id = representation.DomainId,
-              CiTypeEnum = CompoundIdentifierTypeEnum.LongInt,
+              IdType = IdTypeEnum.LongInt,
               Source = "http://dictionary.isobus.net/isobus/",
               SourceType = IdSourceTypeEnum.URI
           });
