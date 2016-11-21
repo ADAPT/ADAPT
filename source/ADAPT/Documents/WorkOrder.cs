@@ -21,9 +21,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         public WorkOrder()
         {
             WorkItemIds = new List<int>();
+            StatusUpdates = new List<StatusUpdate>();
         }
 
-        public StatusUpdate StatusUpdates { get; set; }
+        public List<StatusUpdate> StatusUpdates { get; set; }
         public List<int> WorkItemIds { get; set; }
     }
 }

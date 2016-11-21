@@ -30,7 +30,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
             FieldIds = new List<int>();
             Notes = new List<Note>();
             PersonRoleIds = new List<int>();
-            TimeScopeIds = new List<int>();
+            TimeScopes = new List<TimeScope>();
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -55,7 +55,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 
         public List<int> PersonRoleIds { get; set; }
 
-        public List<int> TimeScopeIds { get; set; }
+        public List<TimeScope> TimeScopes { get; set; }
 
         public int? Version { get; set; }
     }

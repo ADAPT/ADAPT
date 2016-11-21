@@ -13,10 +13,17 @@
   *    Joseph Ross - adding workItemIds to match uml
   *******************************************************************************/
 
+using System.Collections.Generic;
+
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public class Recommendation : Document
     {
-        public int WorkItemIds { get; set; }
+        public Recommendation()
+        {
+            WorkItemIds = new List<int>();
+        }
+
+        public List<int> WorkItemIds { get; set; }
     }
 }

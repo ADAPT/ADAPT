@@ -28,7 +28,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         {
             Id = CompoundIdentifierFactory.Instance.Create();
             Notes = new List<Note>();
-            TimeScopeIds = new List<int>();
+            TimeScopes = new List<TimeScope>();
             PeopleRoleIds = new List<int>();
             ReferenceLayerIds = new List<int>();
             WorkItemOperationIds = new List<int>();
@@ -41,7 +41,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         
         public List<Note> Notes { get; set; }
 
-        public List<int> TimeScopeIds { get; set; }
+        public List<TimeScope> TimeScopes { get; set; }
         
         public WorkItemPriorityEnum WorkItemPriority { get; set; }
 
