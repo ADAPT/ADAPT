@@ -9,8 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
-
-namespace AgGateway.ADAPT.Representation.RepresentationSystem
+namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public class RepresentationInstanceList 
     {
@@ -877,6 +876,16 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         public static readonly NumericRepresentation vrYieldRawMass = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldRawMass"];
 
         public static readonly NumericRepresentation vrYieldRawMassPerArea = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldRawMassPerArea"];
+
+        public static readonly NumericRepresentation vrYieldNetMass = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldNetMass"];
+
+        public static readonly NumericRepresentation vrYieldNetMassPerArea = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldNetMassPerArea"];
+
+        public static readonly NumericRepresentation vrYieldRawMassTotal = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldRawMassTotal"];
+
+        public static readonly NumericRepresentation vrYieldNetMassTotal = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldNetMassTotal"];
+
+        public static readonly NumericRepresentation vrSpecialtyCropMassProductivity = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSpecialtyCropMassProductivity"];
 
         public static readonly NumericRepresentation vrSCTurnOnTime = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSCTurnOnTime"];
 
