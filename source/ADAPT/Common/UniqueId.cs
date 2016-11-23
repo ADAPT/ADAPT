@@ -19,7 +19,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
     {
         public string Id { get; set; }
         
-        public CompoundIdentifierTypeEnum CiTypeEnum { get; set; }
+        public IdTypeEnum IdType { get; set; }
         
         public string Source { get; set; }
         

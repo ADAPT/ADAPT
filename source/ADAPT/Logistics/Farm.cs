@@ -20,7 +20,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         public Farm()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
-            TimeScopeIds = new List<int>();
+            TimeScopes = new List<TimeScope>();
             ContextItems = new List<ContextItem>();
         }
 
@@ -32,7 +32,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 
         public ContactInfo ContactInfo { get; set; }
 
-        public List<int> TimeScopeIds { get; set; }
+        public List<TimeScope> TimeScopes { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }
     }

@@ -84,7 +84,7 @@
     <Compile Include="Logistics\Company.cs" />
     <Compile Include="Common\CompoundIdentifier.cs" />
     <Compile Include="Common\CompoundIdentifierFactory.cs" />
-    <Compile Include="Common\CompoundIdentifierTypeEnum.cs" />
+    <Compile Include="Common\IdTypeEnum.cs" />
     <Compile Include="Equipment\Connector.cs" />
     <Compile Include="Equipment\ConnectorTypeEnum.cs" />
     <Compile Include="FieldBoundaries\ConstantOffsetHeadland.cs" />

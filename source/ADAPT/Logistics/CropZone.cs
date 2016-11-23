@@ -24,7 +24,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         public CropZone()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
-            TimeScopeIds = new List<int>();
+            TimeScopes = new List<TimeScope>();
             Notes = new List<Note>();
             GuidanceGroupIds = new List<int>();
             ContextItems = new List<ContextItem>();
@@ -32,7 +32,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 
         public CompoundIdentifier Id { get; private set; }
 
-        public List<int> TimeScopeIds { get; set; }
+        public List<TimeScope> TimeScopes { get; set; }
 
         public string Description { get; set; }
 
@@ -44,7 +44,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 
         public MultiPolygon BoundingRegion { get; set; }
 
-        public GpsSourceEnum BoundarySource { get; set; }
+        public GpsSource BoundarySource { get; set; }
 
         public List<Note> Notes { get; set; }
 

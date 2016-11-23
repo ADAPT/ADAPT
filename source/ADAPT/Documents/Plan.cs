@@ -12,10 +12,17 @@
   *    Justin Sliekers - removed CropSeasonId
   *******************************************************************************/
 
+using System.Collections.Generic;
+
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public class Plan : Document
     {
-        public int WorkItemIds { get; set; }
+        public Plan()
+        {
+            WorkItemIds = new List<int>();
+        }
+
+        public List<int> WorkItemIds { get; set; }
     }
 }

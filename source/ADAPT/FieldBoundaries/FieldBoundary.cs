@@ -27,6 +27,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries
             Headlands = new List<Headland>();
             InteriorBoundaryAttributes = new List<InteriorBoundaryAttribute>();
             ContextItems = new List<ContextItem>();
+            TimeScopes = new List<TimeScope>();
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -37,11 +38,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries
         
         public MultiPolygon SpatialData { get; set; }
         
-        public List<int> TimeScopeIds { get; set; }
+        public List<TimeScope> TimeScopes { get; set; }
         
         public List<Headland> Headlands { get; set; }
         
-        public GpsSourceEnum GpsSource { get; set; }
+        public GpsSource GpsSource { get; set; }
         
         public string OriginalEpsgCode { get; set; }
         
