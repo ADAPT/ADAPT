@@ -63,7 +63,8 @@ namespace AgGateway.ADAPT.Visualizer
             {
                 foreach (var workingData in kvp.Value)
                 {
-                    _dataTable.Columns.Add(GetColumnName(workingData, kvp.Key));
+                    if (!_dataTable.Columns.Contains(GetColumnName(workingData, kvp.Key)))
+                        _dataTable.Columns.Add(GetColumnName(workingData, kvp.Key));
                 }
             }
         }
@@ -117,8 +118,10 @@ namespace AgGateway.ADAPT.Visualizer
                     var numericRepresentationValues = workingDataValues.Where(x => x != null);
                     var uoms = numericRepresentationValues.Select(x => x.Value.UnitOfMeasure).ToList();
                 
-                    if (uoms.Any())
-                        _dataTable.Columns[GetColumnName(data, kvp.Key)].ColumnName += "-" + uoms.First().Code;
+                    var columnName = GetColumnName(data, kvp.Key);
+                    if (uoms.Any() && _dataTable.Columns[columnName + "-" + uoms.First().Code] == null )
+                        _dataTable.Columns[columnName].ColumnName += "-" + uoms.First().Code;
+
                 }
             }
         }
