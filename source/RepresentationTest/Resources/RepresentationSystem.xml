@@ -17176,7 +17176,7 @@
 		  <Name locale="uk" description="Seed Spacing Distance">Seed Spacing Distance</Name>
 		  <Name locale="ug" description="Seed Spacing Distance">Seed Spacing Distance</Name>
 		  <Name locale="vi" description="Seed Spacing Distance">Seed Spacing Distance</Name>
-	  </NumericRepresentation>
+	    </NumericRepresentation>
 		<NumericRepresentation domainID="vrSCTurnOnTime" domainTag="500" digits="2" decimal="1">
 			<RelatedDDI ddi="205" unitOfMeasure="ms" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="1" minValue="0.3" maxValue="15" unitOfMeasureSystem="umsEnglish"/>
