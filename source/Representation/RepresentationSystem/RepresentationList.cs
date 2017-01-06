@@ -887,6 +887,8 @@
 
         vrSpecialtyCropMassProductivity = 397,
 
+        vrSeedSpacingDistance = 398,
+
         vrSCTurnOnTime = 500,
 
         vrSCTurnOffTime = 501,
