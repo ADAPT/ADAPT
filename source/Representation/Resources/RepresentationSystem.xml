@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2012 rel. 2 sp1 (http://www.altova.com) by Tarak Reddy (DEERE & CO) -->
 <RepresentationSystem xmlns="urn:schemas-adapt-aggateway-org:Representation" xmlns:bt="urn:schemas-adapt-aggateway-org:BasicTypes" xmlns:unit="urn:schemas-adapt-aggateway-org:UnitSystem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:schemas-adapt-aggateway-org:Representation RepresentationSystem.xsd">
 	<SchemaVersion major="1" minor="1"/>
-	<ContentVersion major="1" minor="4"/>
+	<ContentVersion major="1" minor="6"/>
 	<Representations>
 		<NumericRepresentation domainID="vrAppRateVolumeSetPoint" domainTag="50" digits="5" decimal="1">
 			<RelatedDDI ddi="1" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0"/>
@@ -16888,7 +16888,296 @@
 			<Name locale="ug" description="Raw yield mass per area">Crop per area</Name>
 			<Name locale="vi" description="Raw yield mass per area">Crop per area</Name>
 		</NumericRepresentation>
-  <NumericRepresentation domainID="vrSCTurnOnTime" domainTag="500" digits="2" decimal="1">
+    <NumericRepresentation domainID="vrYieldNetMass" domainTag="393" useThousandSeparators="true" digits="8" decimal="0" unitOfMeasure="lb" domainIDShort="YldNet">
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="t" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="kg" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitTypeRef unitType="utMass"/>
+			<Name locale="en" description="Net yield mass">Crop</Name>
+			<Name locale="de" description="Net yield mass">Crop</Name>
+			<Name locale="fr" description="Net yield mass">Crop</Name>
+			<Name locale="da" description="Net yield mass">Crop</Name>
+			<Name locale="nl" description="Net yield mass">Crop</Name>
+			<Name locale="es" description="Net yield mass">Crop</Name>
+			<Name locale="it" description="Net yield mass">Crop</Name>
+			<Name locale="pt" description="Net yield mass">Crop</Name>
+			<Name locale="ru" description="Net yield mass">Crop</Name>
+			<Name locale="hu" description="Net yield mass">Crop</Name>
+			<Name locale="cs" description="Net yield mass">Crop</Name>
+			<Name locale="sk" description="Net yield mass">Crop</Name>
+			<Name locale="fi" description="Net yield mass">Crop</Name>
+			<Name locale="sv" description="Net yield mass">Crop</Name>
+			<Name locale="et" description="Net yield mass">Crop</Name>
+			<Name locale="lv" description="Net yield mass">Crop</Name>
+			<Name locale="lt" description="Net yield mass">Crop</Name>
+			<Name locale="no" description="Net yield mass">Crop</Name>
+			<Name locale="pl" description="Net yield mass">Crop</Name>
+			<Name locale="bg" description="Net yield mass">Crop</Name>
+			<Name locale="hr" description="Net yield mass">Crop</Name>
+			<Name locale="ro" description="Net yield mass">Crop</Name>
+			<Name locale="tr" description="Net yield mass">Crop</Name>
+			<Name locale="el" description="Net yield mass">Crop</Name>
+			<Name locale="is" description="Net yield mass">Crop</Name>
+			<Name locale="sr" description="Net yield mass">Crop</Name>
+			<Name locale="sl" description="Net yield mass">Crop</Name>
+			<Name locale="zh" description="Net yield mass">Crop</Name>
+			<Name locale="ar" description="Net yield mass">Crop</Name>
+			<Name locale="he" description="Net yield mass">Crop</Name>
+			<Name locale="ja" description="Net yield mass">Crop</Name>
+			<Name locale="kk" description="Net yield mass">Crop</Name>
+			<Name locale="ko" description="Net yield mass">Crop</Name>
+			<Name locale="mk" description="Net yield mass">Crop</Name>
+			<Name locale="th" description="Net yield mass">Crop</Name>
+			<Name locale="uk" description="Net yield mass">Crop</Name>
+			<Name locale="ug" description="Net yield mass">Crop</Name>
+			<Name locale="vi" description="Net yield mass">Crop</Name>
+		</NumericRepresentation>
+    <NumericRepresentation domainID="vrYieldNetMassPerArea" domainTag="394" useThousandSeparators="true" digits="7" decimal="1" unitOfMeasure="lb1ac-1" domainIDShort="YdNetPA">
+			<UnitOfMeasureDefault unitOfMeasure="ton1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="t1ha-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb1ac-1" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="kg1ha-1" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb1ac-1" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitTypeRef unitType="utMassPerArea"/>
+			<Name locale="en" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="de" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="fr" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="da" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="nl" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="es" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="it" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="pt" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="ru" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="hu" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="cs" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="sk" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="fi" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="sv" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="et" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="lv" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="lt" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="no" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="pl" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="bg" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="hr" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="ro" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="tr" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="el" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="is" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="sr" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="sl" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="zh" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="ar" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="he" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="ja" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="kk" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="ko" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="mk" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="th" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="uk" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="ug" description="Net yield mass per area">Crop per area</Name>
+			<Name locale="vi" description="Net yield mass per area">Crop per area</Name>
+		</NumericRepresentation>
+    <NumericRepresentation domainID="vrYieldRawMassTotal" domainTag="395" useThousandSeparators="true" digits="8" decimal="0" unitOfMeasure="lb" domainIDShort="YdRawTot">
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="t" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="kg" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitTypeRef unitType="utMass"/>
+			<Name locale="en" description="Total Raw Yield">Crop</Name>
+			<Name locale="de" description="Total Raw Yield">Crop</Name>
+			<Name locale="fr" description="Total Raw Yield">Crop</Name>
+			<Name locale="da" description="Total Raw Yield">Crop</Name>
+			<Name locale="nl" description="Total Raw Yield">Crop</Name>
+			<Name locale="es" description="Total Raw Yield">Crop</Name>
+			<Name locale="it" description="Total Raw Yield">Crop</Name>
+			<Name locale="pt" description="Total Raw Yield">Crop</Name>
+			<Name locale="ru" description="Total Raw Yield">Crop</Name>
+			<Name locale="hu" description="Total Raw Yield">Crop</Name>
+			<Name locale="cs" description="Total Raw Yield">Crop</Name>
+			<Name locale="sk" description="Total Raw Yield">Crop</Name>
+			<Name locale="fi" description="Total Raw Yield">Crop</Name>
+			<Name locale="sv" description="Total Raw Yield">Crop</Name>
+			<Name locale="et" description="Total Raw Yield">Crop</Name>
+			<Name locale="lv" description="Total Raw Yield">Crop</Name>
+			<Name locale="lt" description="Total Raw Yield">Crop</Name>
+			<Name locale="no" description="Total Raw Yield">Crop</Name>
+			<Name locale="pl" description="Total Raw Yield">Crop</Name>
+			<Name locale="bg" description="Total Raw Yield">Crop</Name>
+			<Name locale="hr" description="Total Raw Yield">Crop</Name>
+			<Name locale="ro" description="Total Raw Yield">Crop</Name>
+			<Name locale="tr" description="Total Raw Yield">Crop</Name>
+			<Name locale="el" description="Total Raw Yield">Crop</Name>
+			<Name locale="is" description="Total Raw Yield">Crop</Name>
+			<Name locale="sr" description="Total Raw Yield">Crop</Name>
+			<Name locale="sl" description="Total Raw Yield">Crop</Name>
+			<Name locale="zh" description="Total Raw Yield">Crop</Name>
+			<Name locale="ar" description="Total Raw Yield">Crop</Name>
+			<Name locale="he" description="Total Raw Yield">Crop</Name>
+			<Name locale="ja" description="Total Raw Yield">Crop</Name>
+			<Name locale="kk" description="Total Raw Yield">Crop</Name>
+			<Name locale="ko" description="Total Raw Yield">Crop</Name>
+			<Name locale="mk" description="Total Raw Yield">Crop</Name>
+			<Name locale="th" description="Total Raw Yield">Crop</Name>
+			<Name locale="uk" description="Total Raw Yield">Crop</Name>
+			<Name locale="ug" description="Total Raw Yield">Crop</Name>
+			<Name locale="vi" description="Total Raw Yield">Crop</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrYieldNetMassTotal" domainTag="396" useThousandSeparators="true" digits="8" decimal="0" unitOfMeasure="lb" domainIDShort="YdNetTot">
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="t" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="kg" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitTypeRef unitType="utMass"/>
+			<Name locale="en" description="Total Net Yield">Crop</Name>
+			<Name locale="de" description="Total Net Yield">Crop</Name>
+			<Name locale="fr" description="Total Net Yield">Crop</Name>
+			<Name locale="da" description="Total Net Yield">Crop</Name>
+			<Name locale="nl" description="Total Net Yield">Crop</Name>
+			<Name locale="es" description="Total Net Yield">Crop</Name>
+			<Name locale="it" description="Total Net Yield">Crop</Name>
+			<Name locale="pt" description="Total Net Yield">Crop</Name>
+			<Name locale="ru" description="Total Net Yield">Crop</Name>
+			<Name locale="hu" description="Total Net Yield">Crop</Name>
+			<Name locale="cs" description="Total Net Yield">Crop</Name>
+			<Name locale="sk" description="Total Net Yield">Crop</Name>
+			<Name locale="fi" description="Total Net Yield">Crop</Name>
+			<Name locale="sv" description="Total Net Yield">Crop</Name>
+			<Name locale="et" description="Total Net Yield">Crop</Name>
+			<Name locale="lv" description="Total Net Yield">Crop</Name>
+			<Name locale="lt" description="Total Net Yield">Crop</Name>
+			<Name locale="no" description="Total Net Yield">Crop</Name>
+			<Name locale="pl" description="Total Net Yield">Crop</Name>
+			<Name locale="bg" description="Total Net Yield">Crop</Name>
+			<Name locale="hr" description="Total Net Yield">Crop</Name>
+			<Name locale="ro" description="Total Net Yield">Crop</Name>
+			<Name locale="tr" description="Total Net Yield">Crop</Name>
+			<Name locale="el" description="Total Net Yield">Crop</Name>
+			<Name locale="is" description="Total Net Yield">Crop</Name>
+			<Name locale="sr" description="Total Net Yield">Crop</Name>
+			<Name locale="sl" description="Total Net Yield">Crop</Name>
+			<Name locale="zh" description="Total Net Yield">Crop</Name>
+			<Name locale="ar" description="Total Net Yield">Crop</Name>
+			<Name locale="he" description="Total Net Yield">Crop</Name>
+			<Name locale="ja" description="Total Net Yield">Crop</Name>
+			<Name locale="kk" description="Total Net Yield">Crop</Name>
+			<Name locale="ko" description="Total Net Yield">Crop</Name>
+			<Name locale="mk" description="Total Net Yield">Crop</Name>
+			<Name locale="th" description="Total Net Yield">Crop</Name>
+			<Name locale="uk" description="Total Net Yield">Crop</Name>
+			<Name locale="ug" description="Total Net Yield">Crop</Name>
+			<Name locale="vi" description="Total Net Yield">Crop</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrSpecialtyCropMassProductivity" domainTag="397" useThousandSeparators="true" digits="3" decimal="2" unitOfMeasure="ton1hr-1" domainIDShort="SCMProd">
+			<UnitOfMeasureDefault unitOfMeasure="ton1hr-1" digits="3" decimal="2" minValue="0" maxValue="999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="t1hr-1" digits="3" decimal="2" minValue="0" maxValue="999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ton1hr-1" digits="3" decimal="2" minValue="0" maxValue="999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb1hr-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt1hr-1" digits="3" decimal="2" minValue="0" maxValue="999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasurePreference unitOfMeasure="kg1hr-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasurePreference unitOfMeasure="lb1hr-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsImperial"/>
+			<UnitOfMeasurePreference unitOfMeasure="cwt1hr-1" digits="3" decimal="2" minValue="0" maxValue="999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitTypeRef unitType="utMassPerTime"/>
+			<Name locale="en" description="Mass Productivity">Crop</Name>
+			<Name locale="de" description="Mass Productivity">Crop</Name>
+			<Name locale="fr" description="Mass Productivity">Crop</Name>
+			<Name locale="da" description="Mass Productivity">Crop</Name>
+			<Name locale="nl" description="Mass Productivity">Crop</Name>
+			<Name locale="es" description="Mass Productivity">Crop</Name>
+			<Name locale="it" description="Mass Productivity">Crop</Name>
+			<Name locale="pt" description="Mass Productivity">Crop</Name>
+			<Name locale="ru" description="Mass Productivity">Crop</Name>
+			<Name locale="hu" description="Mass Productivity">Crop</Name>
+			<Name locale="cs" description="Mass Productivity">Crop</Name>
+			<Name locale="sk" description="Mass Productivity">Crop</Name>
+			<Name locale="fi" description="Mass Productivity">Crop</Name>
+			<Name locale="sv" description="Mass Productivity">Crop</Name>
+			<Name locale="et" description="Mass Productivity">Crop</Name>
+			<Name locale="lv" description="Mass Productivity">Crop</Name>
+			<Name locale="lt" description="Mass Productivity">Crop</Name>
+			<Name locale="no" description="Mass Productivity">Crop</Name>
+			<Name locale="pl" description="Mass Productivity">Crop</Name>
+			<Name locale="bg" description="Mass Productivity">Crop</Name>
+			<Name locale="hr" description="Mass Productivity">Crop</Name>
+			<Name locale="ro" description="Mass Productivity">Crop</Name>
+			<Name locale="tr" description="Mass Productivity">Crop</Name>
+			<Name locale="el" description="Mass Productivity">Crop</Name>
+			<Name locale="is" description="Mass Productivity">Crop</Name>
+			<Name locale="sr" description="Mass Productivity">Crop</Name>
+			<Name locale="sl" description="Mass Productivity">Crop</Name>
+			<Name locale="zh" description="Mass Productivity">Crop</Name>
+			<Name locale="ar" description="Mass Productivity">Crop</Name>
+			<Name locale="he" description="Mass Productivity">Crop</Name>
+			<Name locale="ja" description="Mass Productivity">Crop</Name>
+			<Name locale="kk" description="Mass Productivity">Crop</Name>
+			<Name locale="ko" description="Mass Productivity">Crop</Name>
+			<Name locale="mk" description="Mass Productivity">Crop</Name>
+			<Name locale="th" description="Mass Productivity">Crop</Name>
+			<Name locale="uk" description="Mass Productivity">Crop</Name>
+			<Name locale="ug" description="Mass Productivity">Crop</Name>
+			<Name locale="vi" description="Mass Productivity">Crop</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrSeedSpacingDistance" domainTag="398" useThousandSeparators="false" digits="3" decimal="2" unitOfMeasure="in" domainIDShort="SdSpcDis">
+		  <UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="2" minValue="0" maxValue="100.0" unitOfMeasureSystem="umsEnglish"/>
+		  <UnitOfMeasureDefault unitOfMeasure="cm" digits="3" decimal="2" minValue="0" maxValue="254.0" unitOfMeasureSystem="umsMetric"/>
+		  <UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="2" minValue="0" maxValue="100.0" unitOfMeasureSystem="umsImperial"/>
+		  <UnitTypeRef unitType="utDistance"/>
+		  <Name locale="en" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="de" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="fr" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="da" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="nl" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="es" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="it" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="pt" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="ru" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="hu" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="cs" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="sk" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="fi" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="sv" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="et" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="lv" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="lt" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="no" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="pl" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="bg" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="hr" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="ro" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="tr" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="el" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="is" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="sr" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="sl" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="zh" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="ar" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="he" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="ja" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="kk" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="ko" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="mk" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="th" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="uk" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="ug" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="vi" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+	    </NumericRepresentation>
+		<NumericRepresentation domainID="vrSCTurnOnTime" domainTag="500" digits="2" decimal="1">
 			<RelatedDDI ddi="205" unitOfMeasure="ms" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="1" minValue="0.3" maxValue="15" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="1" minValue="0.3" maxValue="15" unitOfMeasureSystem="umsMetric"/>

@@ -9,8 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
-
-namespace AgGateway.ADAPT.Representation.RepresentationSystem
+namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public enum RepresentationList 
     {
@@ -877,6 +876,18 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         vrYieldRawMass = 391,
 
         vrYieldRawMassPerArea = 392,
+
+        vrYieldNetMass = 393,
+
+        vrYieldNetMassPerArea = 394,
+
+        vrYieldRawMassTotal = 395,
+
+        vrYieldNetMassTotal = 396,
+
+        vrSpecialtyCropMassProductivity = 397,
+
+        vrSeedSpacingDistance = 398,
 
         vrSCTurnOnTime = 500,
 
