@@ -8,12 +8,15 @@
   *
   * Contributors:
   *    Kathleen Oneal - initial API and implementation
+  *    Stuart Rhea - #112 CropNutritionIngredientCodeEnum needs to be changed into an EnumeratedRepresentation and have the oxides added to the list
   *******************************************************************************/
+
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
     public class CropNutritionIngredient : Ingredient
     {
-        public CropNutritionIngredientCodeEnum IngredientCode { get; set; }
+        public EnumeratedValue IngredientCode { get; set; }
     }
 }

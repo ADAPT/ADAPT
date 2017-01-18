@@ -15,7 +15,10 @@
   *    Joseph Ross - inherits document
   *    Joseph Ross - removed inhertance from document added needed properties
   *    Joseph Ross - added Id
- *    Joseph Ross - renaming person roles, and timescopes
+  *    Joseph Ross - renaming person roles, and timescopes
+  *    Stuart Rhea - Removed LoggedData.ContinerUseIds per model.
+  *                 Added LoggedData.WorkRecordId per model.
+  *                 Added Loggged.Data PersonRolIds initializer to constructor.
   *******************************************************************************/
 
 using System;
@@ -31,41 +34,42 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public LoggedData()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
+            TimeScopes = new List<TimeScope>();
+            PersonRoleIds = new List<int>();
+            GuidanceAllocationIds = new List<int>();
             WorkItemIds = new List<int>();
             Notes = new List<Note>();
-            GuidanceAllocationIds = new List<int>();
-            TimeScopes = new List<TimeScope>();
         }
 
         public CompoundIdentifier Id { get; private set; }
 
-        public List<int> WorkItemIds { get; set; } 
+        public int WorkRecordId { get; set; }
 
-        public List<Note> Notes { get; set; } 
-
-        public List<int> GuidanceAllocationIds { get; set; }
+        public int? GrowerId { get; set; }
 
         public int? FarmId { get; set; }
 
         public int? FieldId { get; set; }
 
-        public int? GrowerId { get; set; }
-
         public int? CropZoneId { get; set; }
+
+        public List<TimeScope> TimeScopes { get; set; }
 
         public List<int> PersonRoleIds { get; set; }
 
-        public IEnumerable<OperationData> OperationData { get; set; }
+        public EquipmentConfigurationGroup EquipmentConfigurationGroup { get; set; }
+
+        public List<int> GuidanceAllocationIds { get; set; }
+
+        public List<int> WorkItemIds { get; set; }
 
         public int? SummaryId { get; set; }
 
-        public List<int> ContainerUseIDs { get; set; }
+        public List<Note> Notes { get; set; }
+
+        public IEnumerable<OperationData> OperationData { get; set; }
 
         public Action ReleaseSpatialData { get; set; }
-
-        public EquipmentConfigurationGroup EquipmentConfigurationGroup { get; set; }
-
-        public List<TimeScope> TimeScopes { get; set; }
 
         public string Description { get; set; }
     }

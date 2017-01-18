@@ -7,27 +7,16 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Kathleen Oneal - initial API and implementation
+  *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Joseph Ross Making Properties
+  *    Kathleen Oneal - added periodic, IsManure, FulvicAcid, and Humic Acid properties
+  *    Stuart Rhea - Renamed from FertilizerProduct to CropNutritionProduct per model
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    public enum CropNutritionIngredientCodeEnum
+    public class CropNutritionProduct : Product
     {
-        N,
-        P,
-        K,
-        Ca,
-        Mg,
-        S,
-        B,
-        Cl,
-        Cu,
-        Fe,
-        Mn,
-        Mo,
-        Zn,
-        FulvicAcid,
-        HumicAcid
+        public bool IsManure { get; set; }
     }
 }

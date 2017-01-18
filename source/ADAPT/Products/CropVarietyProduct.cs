@@ -8,18 +8,26 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Joseph Ross Making Properties
+  *    Kathleen Oneal - changed the list of traits to have ids instead of the object
+  *    Stuart Rhea - Renamed from CropVariety to CropVarietyProduct per model
   *******************************************************************************/
 
-using AgGateway.ADAPT.ApplicationDataModel.Shapes;
+using System.Collections.Generic;
 
-namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
+namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    public class CenterPivot : GuidancePattern
+    public class CropVarietyProduct : Product
     {
-        public Point StartPoint { get; set; }
+        public CropVarietyProduct()
+        {
+            TraitIds = new List<int>();
+        }
 
-        public Point EndPoint { get; set; }
+        public int CropId { get; set; }
 
-        public Point Center { get; set; }
+        public List<int> TraitIds { get; set; }
+
+        public bool GeneticallyEnhanced { get; set; }
     }
 }

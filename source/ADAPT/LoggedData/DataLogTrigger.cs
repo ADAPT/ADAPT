@@ -7,7 +7,9 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation    
+  *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Stuart Rhea - #96 Remove SectionId from DataLogTrigger
+  *                  #97 Replace DataLogTrigger.MeterId with DataLogTrigger.DeviceElementId   
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -23,8 +25,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
             Id = CompoundIdentifierFactory.Instance.Create();
 
             ContextItems = new List<ContextItem>();
-            SectionIds = new List<int>();
-            MeterIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -47,8 +47,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public Representation Representation { get; set; }
 
-        public List<int> SectionIds { get; set; }
-
-        public List<int> MeterIds { get; set; } 
+        public int? DeviceElementId { get; set; } 
     }
 }

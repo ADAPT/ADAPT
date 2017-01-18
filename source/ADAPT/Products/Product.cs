@@ -13,6 +13,7 @@
   *    Kathleen Oneal - renamed ProductTypeEnum to ProductType
   *    Justin Sliekers - dropping nullable from manufacturerId and brandId; dropping collection off Category; removing defaultUnit and WorkStatusEnum
   *    Joseph Ross - Added HasCrop.. Protection, Nutrition, Variety and HasHarvestCommodity to match the uml
+  *    Stuart Rhea - Modified Product.BrandId and Product.ManufacturerId to be nullable (int?) per model.
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
 
         public CompoundIdentifier Id { get; private set; }
 
-        public int BrandId { get; set; }
+        public int? BrandId { get; set; }
 
         public CategoryEnum Category { get; set; }
         
@@ -52,7 +53,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
 
         public bool HasHarvestCommodity { get; set; }
 
-        public int ManufacturerId { get; set; }
+        public int? ManufacturerId { get; set; }
 
         public List<ProductComponent> ProductComponents { get; set; }
 
