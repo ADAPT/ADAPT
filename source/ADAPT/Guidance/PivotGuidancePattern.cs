@@ -8,14 +8,19 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Joseph Ross Making Properties
-  *    Kathleen Oneal - added periodic, IsManure, FulvicAcid, and Humic Acid properties
+  *    Stuart Rhea - #116 Rename CenterPivot to PivotGuidancePattern
   *******************************************************************************/
 
-namespace AgGateway.ADAPT.ApplicationDataModel.Products
+using AgGateway.ADAPT.ApplicationDataModel.Shapes;
+
+namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
-    public class FertilizerProduct : Product
+    public class PivotGuidancePattern : GuidancePattern
     {
-        public bool IsManure { get; set; }
+        public Point StartPoint { get; set; }
+
+        public Point EndPoint { get; set; }
+
+        public Point Center { get; set; }
     }
 }

@@ -12,6 +12,7 @@
   *    Kathleen Oneal - Added TriggerId
   *    Kathleen Oneal - removed property Values
  *    Justin Sliekers - implement device element changes
+ *    Stuart Rhea - #98 Remove WorkingData.TriggerId
   *******************************************************************************/
 
 using AgGateway.ADAPT.ApplicationDataModel.Common;
@@ -36,6 +37,5 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public NumericRepresentationValue ReportedLatency { get; set; }
 
-        public int? TriggerId { get; set; }
     }
 }

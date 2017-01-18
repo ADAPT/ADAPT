@@ -7,26 +7,21 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Tarak Reddy, Tim Shearouse - initial API and implementation
-  *    Joseph Ross Making Properties
-  *    Kathleen Oneal - changed the list of traits to have ids instead of the object
+  *    Kathleen Oneal - initial API and implementation
+  *    Joseph Ross - added IsHotMix to match uml
+  *    Stuart Rhea - Renamed from ProductMix to MixProduct per model
   *******************************************************************************/
 
-using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    public class CropVariety : Product
+    public class MixProduct : Product
     {
-        public CropVariety()
-        {
-            TraitIds = new List<int>();
-        }
+        public NumericRepresentationValue TotalQuantity { get; set; }
 
-        public int CropId { get; set; }
+        public bool IsTemporary { get; set; }
 
-        public List<int> TraitIds { get; set; }
-
-        public bool GeneticallyEnhanced { get; set; }
+        public bool IsHotMix { get; set; }
     }
 }

@@ -9,6 +9,7 @@
   * Contributors:
   *    Justin Sliekers, Kathleen Oneal - initial API and implementation
   *    Kathleen Oneal - Added parent class Ingredient and removed duplicate props
+  *    Stuart Rhea - #111 Remove ModeOfAction collection from ActiveIngredient
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -19,9 +20,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
     {
         public ActiveIngredient()
         {
-            ModesOfAction = new List<ModeOfAction>();
         }
-
-        public List<ModeOfAction> ModesOfAction { get; set; }
     }
 }
