@@ -11,7 +11,7 @@
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    class HarvestedCommodityProduct : Product
+    public class HarvestedCommodityProduct : Product
     {
         public HarvestedCommodityProduct()
         {
