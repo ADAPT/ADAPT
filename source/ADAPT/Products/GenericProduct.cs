@@ -11,7 +11,7 @@
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    class GenericProduct : Product
+    public class GenericProduct : Product
     {
     }
 }
