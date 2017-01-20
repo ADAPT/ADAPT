@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2012 rel. 2 sp1 (http://www.altova.com) by Tarak Reddy (DEERE & CO) -->
 <RepresentationSystem xmlns="urn:schemas-adapt-aggateway-org:Representation" xmlns:bt="urn:schemas-adapt-aggateway-org:BasicTypes" xmlns:unit="urn:schemas-adapt-aggateway-org:UnitSystem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:schemas-adapt-aggateway-org:Representation RepresentationSystem.xsd">
 	<SchemaVersion major="1" minor="1"/>
-	<ContentVersion major="1" minor="5"/>
+	<ContentVersion major="1" minor="6"/>
 	<Representations>
 		<NumericRepresentation domainID="vrAppRateVolumeSetPoint" domainTag="50" digits="5" decimal="1">
 			<RelatedDDI ddi="1" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0"/>
@@ -17133,7 +17133,51 @@
 			<Name locale="ug" description="Mass Productivity">Crop</Name>
 			<Name locale="vi" description="Mass Productivity">Crop</Name>
 		</NumericRepresentation>
-  <NumericRepresentation domainID="vrSCTurnOnTime" domainTag="500" digits="2" decimal="1">
+		<NumericRepresentation domainID="vrSeedSpacingDistance" domainTag="398" useThousandSeparators="false" digits="3" decimal="2" unitOfMeasure="in" domainIDShort="SdSpcDis">
+		  <UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="2" minValue="0" maxValue="100.0" unitOfMeasureSystem="umsEnglish"/>
+		  <UnitOfMeasureDefault unitOfMeasure="cm" digits="3" decimal="2" minValue="0" maxValue="254.0" unitOfMeasureSystem="umsMetric"/>
+		  <UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="2" minValue="0" maxValue="100.0" unitOfMeasureSystem="umsImperial"/>
+		  <UnitTypeRef unitType="utDistance"/>
+		  <Name locale="en" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="de" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="fr" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="da" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="nl" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="es" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="it" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="pt" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="ru" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="hu" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="cs" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="sk" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="fi" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="sv" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="et" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="lv" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="lt" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="no" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="pl" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="bg" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="hr" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="ro" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="tr" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="el" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="is" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="sr" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="sl" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="zh" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="ar" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="he" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="ja" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="kk" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="ko" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="mk" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="th" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="uk" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="ug" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+		  <Name locale="vi" description="Seed Spacing Distance">Seed Spacing Distance</Name>
+	    </NumericRepresentation>
+		<NumericRepresentation domainID="vrSCTurnOnTime" domainTag="500" digits="2" decimal="1">
 			<RelatedDDI ddi="205" unitOfMeasure="ms" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="1" minValue="0.3" maxValue="15" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="1" minValue="0.3" maxValue="15" unitOfMeasureSystem="umsMetric"/>
