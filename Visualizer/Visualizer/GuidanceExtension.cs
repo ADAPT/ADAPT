@@ -41,7 +41,7 @@ namespace AgGateway.ADAPT.Visualizer
             SetMinMax(drawingUtil, points);
         }
 
-        public static void SetMinMax(this CenterPivot centerPivot, DrawingUtil drawingUtil)
+        public static void SetMinMax(this PivotGuidancePattern centerPivot, DrawingUtil drawingUtil)
         {
             var centerUtm = centerPivot.Center.ToUtm();
             var radius = Math.Abs(centerUtm.X - centerPivot.EndPoint.ToUtm().X);

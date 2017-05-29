@@ -27670,6 +27670,9 @@
 			<EnumeratedMember domainID="dtiFacilityTypeOffice" domainTag="6103" refID="3">
 				<Name locale="en" description="Office">Office</Name>
 			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeTemporaryStorage" domainTag="6125" refID="4">
+				<Name locale="en" description="Temporary Storage">Temporary Storage</Name>
+			</EnumeratedMember>			
 		</EnumeratedRepresentation>
 		<EnumeratedRepresentation domainID="dtPersonRole" domainTag="1508" domainIDShort="Roles">
 			<Name locale="en" description="Person Role">Person Role</Name>

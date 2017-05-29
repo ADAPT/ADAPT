@@ -12,6 +12,7 @@
   *    Joseph Ross Making Properties
  *    Kathleen Oneal - changed connectorType to ConnectoryTypeEnum from EnumeratedRepresentation
  *    Justin Sliekers - implement device element changes
+ *    Stuart Rhea - #95 Rename Connector.DeviceConfigurationId to Connector.DeviceElementConfigurationId
   *******************************************************************************/
 
 using AgGateway.ADAPT.ApplicationDataModel.Common;
@@ -27,7 +28,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 
         public CompoundIdentifier Id { get; private set; }
 
-        public int DeviceConfigurationId { get; set; }
+        public int DeviceElementConfigurationId { get; set; }
 
         public int HitchPointId { get; set; }
     }

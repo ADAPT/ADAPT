@@ -8,23 +8,38 @@
   *
   * Contributors:
   *    Jospeh Ross - creating class
+  *	   Stuart Rhea - Added ContextItems per model.
   *******************************************************************************/
 
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
     public class OperationSummary
     {
+        public OperationSummary()
+        {
+            Id = CompoundIdentifierFactory.Instance.Create();
+            EquipmentConfigurationIds = new List<int>();
+            ContextItems = new List<ContextItem>();
+        }
+
+        public CompoundIdentifier Id { get; private set; }
+
         public OperationTypeEnum OperationType { get; set; }
 
         public int ProductId { get; set; }
 
-        public int WorkItemOperationId { get; set; }
+        public int? WorkItemOperationId { get; set; }
         
         public List<StampedMeteredValues> Data { get; set; }
 
-        public int EquipmentConfigId { get; set; }
+        public List<int> EquipmentConfigurationIds { get; set; }
+
+        public MultiPolygon CoverageShape { get; set; }
+
+        public List<ContextItem> ContextItems { get; set; }
     }
 }

@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Kathleen Oneal - initial API and implementation
+  *    Stuart Rhea - #113 Add list of TimeScopes to AvailableProduct
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
         {
             Id = CompoundIdentifierFactory.Instance.Create();
             ContextItems = new List<ContextItem>();
+            TimeScopes = new List<TimeScope>();
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -30,5 +32,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
         public int GrowerId { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }
+
+        public List<TimeScope> TimeScopes { get; set; }
     }
 }
