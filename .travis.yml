@@ -19,7 +19,7 @@ jobs:
         - VERSION=$(echo $TRAVIS_TAG | grep -i -P -o '(?<=^v)\d+\.\d+\.\d+(?:.+)?$'); VERSION_NUMBER=$(echo $VERSION | grep -i -P -o '^\d+\.\d+\.\d+')
         - dotnet build ./ADAPT.sln -c Release /p:Version=$VERSION /p:FileVersion=$VERSION_NUMBER.$TRAVIS_BUILD_NUMBER
         - mkdir -p ./dist; nuget pack ./AgGatewayADAPTFramework.nuspec -verbosity detailed -outputdirectory ./dist -version $VERSION
-        - echo "Deploy version ${VERSION} to nuGet here..."
+        - [ -n "${NUGET_API_KEY}" ] && nuget push ./dist/AgGatewayADAPTFramework.${VERSION}.nupkg -apikey $NUGET_API_KEY -source https://api.nuget.org/v3/index.json
       deploy:
         provider: releases
         api_key: $GITHUB_OAUTH_TOKEN
