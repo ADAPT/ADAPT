@@ -56,8 +56,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         {
             var serializer = new XmlSerializer(typeof(Generated.RepresentationSystem));
 
-            var assemblyLocation = Assembly.GetAssembly(typeof(RepresentationManager)).Location;
-            assemblyLocation = Path.GetDirectoryName(assemblyLocation);
+            var assemblyLocation = AppDomain.CurrentDomain.BaseDirectory;
             var repSystemXml = Path.Combine(assemblyLocation, "Resources", "RepresentationSystem.xml");
 
             var xmlStringBytes = File.ReadAllBytes(repSystemXml);

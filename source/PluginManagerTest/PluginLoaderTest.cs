@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -12,6 +12,7 @@
 
 using System;
 using System.IO;
+using System.Reflection;
 using AgGateway.ADAPT.ApplicationDataModel.ADM;
 using AgGateway.ADAPT.PluginManager;
 using Moq;
@@ -45,8 +46,7 @@ namespace AgGateway.ADAPT.PluginManagerTest
          var assemblyMetadata = _pluginLoader.InspectAssembly(_pluginFileName);
 
          Assert.AreEqual("TestPlugin", assemblyMetadata.Name);
-         Assert.AreEqual(1, assemblyMetadata.ModelVersion.Major);
-         Assert.AreEqual(0, assemblyMetadata.ModelVersion.Minor);
+         Assert.AreEqual(Assembly.GetExecutingAssembly().GetName().Version, assemblyMetadata.ModelVersion);
          Assert.AreEqual(_pluginFileName, assemblyMetadata.AssemblyLocation);
          Assert.AreEqual("AgGateway.ADAPT.TestPlugin.TestPlugin", assemblyMetadata.EntryClass);
       }

@@ -1,177 +1,43 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{00D0CB8E-2EDE-4766-B261-1EB0CB655F07}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AgGateway.ADAPT.Representation</RootNamespace>
+    <TargetFrameworks>netstandard2.0;net451</TargetFrameworks>
+    <Version>0.0.0</Version>
+    <Authors>AgGateway and ADAPT Contributors</Authors>
+    <Company>AgGateway</Company>
+    <Product>ADAPT</Product>
+    <NeutralLanguage>en-US</NeutralLanguage>
     <AssemblyName>AgGateway.ADAPT.Representation</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <RootNamespace>AgGateway.ADAPT.Representation</RootNamespace>
+    <Copyright>Copyright (C) 2015-18 AgGateway and ADAPT Contributors</Copyright>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <ProjectReference Include="..\ADAPT\ApplicationDataModel.csproj" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="CultureInfoDefault.cs" />
-    <Compile Include="Generated\DomainIdToUnRec20.cs" />
-    <Compile Include="Generated\GeneratedClasses.cs" />
-    <Compile Include="ICopy.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
+    <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="RepresentationSystem\EnumeratedRepresentation.cs" />
-    <Compile Include="RepresentationSystem\DefinedTypeEnumerationInstanceList.cs" />
-    <Compile Include="RepresentationSystem\DefinedTypeInstanceList.cs" />
-    <Compile Include="RepresentationSystem\DefinedTypeValue.cs" />
-    <Compile Include="RepresentationSystem\EnumerationMember.cs" />
-    <Compile Include="RepresentationSystem\ExtensionMethods\RepresentationExtensions.cs" />
-    <Compile Include="RepresentationSystem\Groups\ApplicationMassDataGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\ApplicationVolumeDataGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\FunctionValueGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\HarvestDataGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\HarvestElevationGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\HarvestForageGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\HarvestMoistureGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\HarvestYieldGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\HarvestYieldMaximumGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\PricePerCottonGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\PricePerEquipmentGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\PricePerForageGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\PricePerGrainForage.cs" />
-    <Compile Include="RepresentationSystem\Groups\PricePerGrainGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\PricePerMiscellaneousItemGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\PricePerOperatorGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\PricePerSeedPackageGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\SeedingMassDataGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\SeedingSeedsDataGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\SeedsMeasuredQuantityGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\SeedsPerPackageSeedsGroup.cs" />
-    <Compile Include="RepresentationSystem\Groups\SeedsPerPackageWeightGroup.cs" />
-    <Compile Include="RepresentationSystem\PricePerGrainForage.cs" />
-    <Compile Include="RepresentationSystem\Representation.cs" />
-    <Compile Include="RepresentationSystem\RepresentationCollection.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="RepresentationSystem\RepresentationGroup.cs" />
-    <Compile Include="RepresentationSystem\RepresentationGroupInstanceList.cs" />
-    <Compile Include="RepresentationSystem\RepresentationGroupList.cs" />
-    <Compile Include="RepresentationSystem\RepresentationGroups.cs" />
-    <Compile Include="RepresentationSystem\RepresentationInstanceList.cs" />
-    <Compile Include="RepresentationSystem\RepresentationList.cs" />
-    <Compile Include="RepresentationSystem\RepresentationManager.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="RepresentationSystem\RepresentationTagList.cs" />
-    <Compile Include="RepresentationSystem\UnitOfMeasurePreference.cs" />
-    <Compile Include="RepresentationSystem\NumericRepresentation.cs" />
-    <Compile Include="UnitSystem\ExtensionMethods\NumericalValueExtensions.cs" />
-    <Compile Include="UnitSystem\ExtensionMethods\NumericRepresentationValueExtensions.cs" />
-    <Compile Include="UnitSystem\CompositeConversionFactor.cs" />
-    <Compile Include="UnitSystem\CompositeUnitOfMeasure.cs" />
-    <Compile Include="UnitSystem\ExtensionMethods\UnitOfMeasureExtensions.cs" />
-    <Compile Include="UnitSystem\IUnit.cs" />
-    <Compile Include="UnitSystem\ScalarUnitOfMeasure.cs" />
-    <Compile Include="UnitSystem\UnitArithmetic\BaseNumberDivision.cs" />
-    <Compile Include="UnitSystem\UnitArithmetic\BaseNumberMultiplication.cs" />
-    <Compile Include="UnitSystem\UnitArithmetic\UnitOfMeasureComponentSimplifier.cs" />
-    <Compile Include="UnitSystem\UnitArithmetic\UnitOfMeasureDecomposer.cs" />
-    <Compile Include="UnitSystem\UnitCollection.cs" />
-    <Compile Include="UnitSystem\UnitDimensionComponent.cs" />
-    <Compile Include="UnitSystem\UnitOfMeasure.cs" />
-    <Compile Include="UnitSystem\UnitOfMeasureCollection.cs" />
-    <Compile Include="UnitSystem\UnitOfMeasureComponent.cs" />
-    <Compile Include="UnitSystem\UnitOfMeasureConverter.cs" />
-    <Compile Include="UnitSystem\UnitOfMeasureDoesNotExistException.cs" />
-    <Compile Include="UnitSystem\UnitOfMeasurePreference.cs" />
-    <Compile Include="UnitSystem\UnitOfMeasureSystem.cs" />
-    <Compile Include="UnitSystem\UnitOfMeasureSystemCollection.cs" />
-    <Compile Include="UnitSystem\UnitRepresentation.cs" />
-    <Compile Include="UnitSystem\InternalUnitSystemManager.cs" />
-    <Compile Include="UnitSystem\UnitDimension.cs" />
-    <Compile Include="UnitSystem\UnitSystemManager.cs" />
   </ItemGroup>
+
   <ItemGroup>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Resources\basictypes.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Resources\gen_classes.bat" />
-    <None Include="Resources\RepresentationSystem.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Resources\UnitSystem.xsd">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\ddiExport.txt" />
-    <Content Include="Resources\DomainIdToUNRec20.xml" />
-    <None Include="Resources\RepresentationSystem.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\UnitSystem.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ADAPT\ApplicationDataModel.csproj">
-      <Project>{af77f596-0c06-4873-a094-6f3ab987b0a5}</Project>
-      <Name>ApplicationDataModel</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
+  <ItemGroup>
+    <None Update="Resources\RepresentationSystem.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\UnitSystem.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
