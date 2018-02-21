@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package
+  xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>AgGatewayADAPTFramework</id>
+    <version>0.0.0</version>
+    <authors>AgGateway and ADAPT Contributors</authors>
+    <owners>AgGateway and ADAPT Contributors</owners>
+    <licenseUrl>https://www.eclipse.org/legal/epl-v10.html</licenseUrl>
+    <projectUrl>https://github.com/ADAPT/ADAPT</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>AgGateway ADAPT framework</description>
+    <copyright>Copyright (C) 2015-18 AgGateway and ADAPT Contributors</copyright>
+    <tags>aggateway adapt agriculture</tags>
+    <references>
+      <reference file="AgGateway.ADAPT.ApplicationDataModel.dll"/>
+      <reference file="AgGateway.ADAPT.PluginManager.dll"/>
+      <reference file="AgGateway.ADAPT.Representation.dll"/>
+    </references>
+  </metadata>
+  <files>
+    <file src="source/Representation/bin/Release/netstandard2.0/Resources/RepresentationSystem.xml" target="build/Resources/RepresentationSystem.xml" />
+    <file src="source/Representation/bin/Release/netstandard2.0/Resources/UnitSystem.xml" target="build/Resources/UnitSystem.xml" />
+    <file src="AgGatewayADAPTFramework.targets" target="build/AgGatewayADAPTFramework.targets" />
+    <file src="source/ADAPT/bin/Release/netstandard2.0/AgGateway.ADAPT.ApplicationDataModel.dll" target="lib/netstandard2.0/AgGateway.ADAPT.ApplicationDataModel.dll"/>
+    <file src="source/ADAPT/bin/Release/net451/AgGateway.ADAPT.ApplicationDataModel.dll" target="lib/net451/AgGateway.ADAPT.ApplicationDataModel.dll"/>
+    <file src="source/PluginManager/bin/Release/netstandard2.0/AgGateway.ADAPT.PluginManager.dll" target="lib/netstandard2.0/AgGateway.ADAPT.PluginManager.dll"/>
+    <file src="source/PluginManager/bin/Release/net451/AgGateway.ADAPT.PluginManager.dll" target="lib/net451/AgGateway.ADAPT.PluginManager.dll"/>
+    <file src="source/Representation/bin/Release/netstandard2.0/AgGateway.ADAPT.Representation.dll" target="lib/netstandard2.0/AgGateway.ADAPT.Representation.dll"/>
+    <file src="source/Representation/bin/Release/net451/AgGateway.ADAPT.Representation.dll" target="lib/net451/AgGateway.ADAPT.Representation.dll"/>
+  </files>
+</package>
