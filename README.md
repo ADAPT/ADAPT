@@ -14,15 +14,21 @@ An example would be that the release tag version *v1.2.3-beta2* will create a Nu
 ### Local Builds
 The ADAPT Framework can be built locally on a developer machine if the repository is cloned.
 
+#### Visual Studio Code
+- Open the repository directory with Visual Studio Code
+- Run the *Build* or *Test* task
+
 #### Visual Studio 2017
 - Open *ADAPT.sln* in the repository directory with Visual Studio 2017
 - Run the *Build > Rebuild Solution* command
 
 #### .NET CLI
 - Navigate to the repository directory in a shell
-- Run `dotnet build ./ADAPT.sln -c Release`
+- Run `dotnet build ./ADAPT.sln -c Debug` for a debug build
+- Run `dotnet build ./ADAPT.sln -c Release` for a release build (with the addition argument ` /p:Version=<VERSION>` if you want a version other than *0.0.0*)
 
 #### NuGet Package
 
+- Make sure that the code has been build for the *Release* configuration
 - Navigate to the repository directory in a shell
-- Run `nuget pack ./AgGatewayADAPTFramework.nuspec -outputdirectory ./dist`
+- Run `nuget pack ./AgGatewayADAPTFramework.nuspec -outputdirectory ./dist` (with the addition argument `-version <VERSION>` if you want a package version other than *0.0.0*)

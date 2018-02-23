@@ -1,0 +1,61 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/ADAPT.sln"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+              "kind": "build",
+              "isDefault": true
+            }
+        },
+        {
+            "label": "test",
+            "dependsOn": [
+              "test-adm",
+              "test-plugin-manager",
+              "test-representation"
+            ],
+            "group": {
+              "kind": "test",
+              "isDefault": true
+            }
+        },
+        {
+            "label": "test-adm",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/source/ApplicationDataModelTest/ApplicationDataModelTest.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "test-plugin-manager",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/source/PluginManagerTest/PluginManagerTest.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "test-representation",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/source/RepresentationTest/RepresentationTest.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
