@@ -8,6 +8,7 @@
  *
  * Contributors:
  *    Justin Sliekers - implement device element changes, initial creation
+ *    Stuart Rhea - #99 HitchPoint.RefPoint needs to be renamed to HitchPoint.ReferncePoint and made of type ReferencePoint
  *******************************************************************************/
 
 using AgGateway.ADAPT.ApplicationDataModel.Common;
@@ -25,6 +26,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 
         public HitchTypeEnum HitchTypeEnum { get; set; }
 
-        public int RefPoint { get; set; }
+        public ReferencePoint ReferencePoint { get; set; }
     }
 }

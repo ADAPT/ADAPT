@@ -7,16 +7,16 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Kathleen Oneal - initial API and implementation
-  *    Stuart Rhea - #112 CropNutritionIngredientCodeEnum needs to be changed into an EnumeratedRepresentation and have the oxides added to the list
+  *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Joseph Ross Making Properties
+  *    Kathleen Oneal - added periodic, IsManure, FulvicAcid, and Humic Acid properties
+  *    Stuart Rhea - Renamed from FertilizerProduct to CropNutritionProduct per model
   *******************************************************************************/
-
-using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    public class CropNutritionIngredient : Ingredient
+    public class CropNutritionProduct : Product
     {
-        public EnumeratedValue IngredientCode { get; set; }
+        public bool IsManure { get; set; }
     }
 }

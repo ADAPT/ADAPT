@@ -7,32 +7,27 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Kathleen Oneal - initial API and implementation
-  *    Stuart Rhea - #113 Add list of TimeScopes to AvailableProduct
+  *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Joseph Ross Making Properties
+  *    Kathleen Oneal - changed the list of traits to have ids instead of the object
+  *    Stuart Rhea - Renamed from CropVariety to CropVarietyProduct per model
   *******************************************************************************/
 
 using System.Collections.Generic;
-using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    public class AvailableProduct
+    public class CropVarietyProduct : Product
     {
-        public AvailableProduct()
+        public CropVarietyProduct()
         {
-            Id = CompoundIdentifierFactory.Instance.Create();
-            ContextItems = new List<ContextItem>();
-            TimeScopes = new List<TimeScope>();
+            TraitIds = new List<int>();
         }
 
-        public CompoundIdentifier Id { get; private set; }
+        public int CropId { get; set; }
 
-        public int ProductId { get; set; }
+        public List<int> TraitIds { get; set; }
 
-        public int GrowerId { get; set; }
-
-        public List<ContextItem> ContextItems { get; set; }
-
-        public List<TimeScope> TimeScopes { get; set; }
+        public bool GeneticallyEnhanced { get; set; }
     }
 }

@@ -8,31 +8,20 @@
   *
   * Contributors:
   *    Kathleen Oneal - initial API and implementation
-  *    Stuart Rhea - #113 Add list of TimeScopes to AvailableProduct
+  *    Joseph Ross - added IsHotMix to match uml
+  *    Stuart Rhea - Renamed from ProductMix to MixProduct per model
   *******************************************************************************/
 
-using System.Collections.Generic;
-using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    public class AvailableProduct
+    public class MixProduct : Product
     {
-        public AvailableProduct()
-        {
-            Id = CompoundIdentifierFactory.Instance.Create();
-            ContextItems = new List<ContextItem>();
-            TimeScopes = new List<TimeScope>();
-        }
+        public NumericRepresentationValue TotalQuantity { get; set; }
 
-        public CompoundIdentifier Id { get; private set; }
+        public bool IsTemporary { get; set; }
 
-        public int ProductId { get; set; }
-
-        public int GrowerId { get; set; }
-
-        public List<ContextItem> ContextItems { get; set; }
-
-        public List<TimeScope> TimeScopes { get; set; }
+        public bool IsHotMix { get; set; }
     }
 }

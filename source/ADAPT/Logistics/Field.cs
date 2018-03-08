@@ -31,6 +31,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 
         public string Description { get; set; }
 
+        public int? GrowerId { get; set; }
+
         public int? FarmId { get; set; }
 
         public NumericRepresentationValue Area { get; set; }

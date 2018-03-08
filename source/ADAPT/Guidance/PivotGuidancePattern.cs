@@ -7,16 +7,20 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    Kathleen Oneal - initial API and implementation
-  *    Stuart Rhea - #112 CropNutritionIngredientCodeEnum needs to be changed into an EnumeratedRepresentation and have the oxides added to the list
+  *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Stuart Rhea - #116 Rename CenterPivot to PivotGuidancePattern
   *******************************************************************************/
 
-using AgGateway.ADAPT.ApplicationDataModel.Representations;
+using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
-namespace AgGateway.ADAPT.ApplicationDataModel.Products
+namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
-    public class CropNutritionIngredient : Ingredient
+    public class PivotGuidancePattern : GuidancePattern
     {
-        public EnumeratedValue IngredientCode { get; set; }
+        public Point StartPoint { get; set; }
+
+        public Point EndPoint { get; set; }
+
+        public Point Center { get; set; }
     }
 }

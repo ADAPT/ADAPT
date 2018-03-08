@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -10,6 +10,7 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -92,8 +93,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
         {
             var serializer = new XmlSerializer(typeof(Generated.UnitSystem));
 
-            var assemblyLocation = Assembly.GetAssembly(typeof (InternalUnitSystemManager)).Location;
-            assemblyLocation = Path.GetDirectoryName(assemblyLocation);
+            var assemblyLocation = AppDomain.CurrentDomain.BaseDirectory;
             var unitSystemXml = Path.Combine(assemblyLocation, "Resources", "UnitSystem.xml");
 
             var xmlStringBytes = File.ReadAllBytes(unitSystemXml);
