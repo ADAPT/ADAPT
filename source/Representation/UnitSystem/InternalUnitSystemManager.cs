@@ -17,6 +17,7 @@ using System.Linq;
 using System.Reflection;
 using System.Xml.Serialization;
 using AgGateway.ADAPT.Representation.Generated;
+using AgGateway.ADAPT.Representation.Resources;
 
 namespace AgGateway.ADAPT.Representation.UnitSystem
 {
@@ -93,9 +94,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
         {
             var serializer = new XmlSerializer(typeof(Generated.UnitSystem));
 
-            var assemblyLocation = AppDomain.CurrentDomain.BaseDirectory;
-            var unitSystemXml = Path.Combine(assemblyLocation, "Resources", "UnitSystem.xml");
-
+            var unitSystemXml = ResourcePathUtil.FullResourcePath("UnitSystem.xml");
             var xmlStringBytes = File.ReadAllBytes(unitSystemXml);
             using (var stream = new MemoryStream(xmlStringBytes))
                 return (Generated.UnitSystem)serializer.Deserialize(stream);

@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -14,6 +14,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml.Serialization;
+using AgGateway.ADAPT.Representation.Resources;
 
 namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
@@ -56,9 +57,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         {
             var serializer = new XmlSerializer(typeof(Generated.RepresentationSystem));
 
-            var assemblyLocation = AppDomain.CurrentDomain.BaseDirectory;
-            var repSystemXml = Path.Combine(assemblyLocation, "Resources", "RepresentationSystem.xml");
-
+            var repSystemXml = ResourcePathUtil.FullResourcePath("RepresentationSystem.xml");
             var xmlStringBytes = File.ReadAllBytes(repSystemXml);
             using (var stream = new MemoryStream(xmlStringBytes))
                 return (Generated.RepresentationSystem)serializer.Deserialize(stream);

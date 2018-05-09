@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -24,6 +24,13 @@ namespace AgGateway.ADAPT.RepresentationTest.RepresentationSystem
             var firstInstance = RepresentationManager.Instance;
             var secondInstance = RepresentationManager.Instance;
             Assert.AreSame(firstInstance, secondInstance);
+        }
+
+        [Test]
+        public void GivenRepresentationManagerWhenAccessRepresentationsTheyAreLoaded()
+        {
+            var result = RepresentationManager.Instance.Representations.Count;
+            Assert.True(result > 0);
         }
     }
 }
