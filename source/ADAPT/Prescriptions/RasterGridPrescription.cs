@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -21,7 +21,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
    {
        public RasterGridPrescription()
        {
-           Rates = new List<RxRates>();
+           Rates = new List<RxCellLookup>();
        }
 
       public Point Origin { get; set; }
@@ -34,6 +34,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 
       public NumericRepresentationValue CellHeight { get; set; }
 
-      public List<RxRates> Rates { get; set; }
+      public List<RxCellLookup> Rates { get; set; }
    }
 }
