@@ -12,6 +12,7 @@
 
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
+using AgGateway.ADAPT.ApplicationDataModel.Logistics;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
@@ -24,6 +25,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
             ProductIds = new List<int>();
             ContextItems = new List<ContextItem>();
             TimeScopes = new List<TimeScope>();
+            PersonRoles = new List<PersonRole>();
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -43,6 +45,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
         public List<ContextItem> ContextItems { get; set; }
 
         public List<TimeScope> TimeScopes { get; set; }
+
+        public List<PersonRole> PersonRoles { get; set; }
 
     }
 }
