@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015-16 AgGateway and ADAPT Contributors
   * Copyright (C) 2015-16 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -51,5 +51,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public Func<IEnumerable<SpatialRecord>> GetSpatialRecords { get; set; }
 
         public Func<int, IEnumerable<DeviceElementUse>> GetDeviceElementUses { get; set; }
+
+        public string Description { get; set; }
+
     }
 }
