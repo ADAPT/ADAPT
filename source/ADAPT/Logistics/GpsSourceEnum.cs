@@ -24,15 +24,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         DeereWAAS,
         GNSSfix,
         DGNSSfix,
-        PPP, //Precise Point Positioning
         PreciseGNSS,
         RTKFixedInteger,
         RTKFloat,
         EstDRmode,
         ManualInput,
-        SBAS, //Satellite Based Augmentation System
         SimulateMode,
         DesktopGeneratedData,
-        Other
+        Other,
+        PPP, //Precise Point Positioning
+        SBAS, //Satellite Based Augmentation System
     }
 }

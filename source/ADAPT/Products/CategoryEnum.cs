@@ -22,15 +22,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
     {
         Additive,
         Carrier,
-        Fertilizer, //non-manure
         Fungicide,
         GrowthRegulator,
         Insecticide,
         Herbicide,
         Manure,
         NitrogenStabilizer,
-        Pesticide, //non-Insecticide
         Unknown,
         Variety,
+        Fertilizer, //non-manure
+        Pesticide, //non-Insecticide
     }
 }
