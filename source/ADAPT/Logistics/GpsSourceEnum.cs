@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -24,11 +24,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         DeereWAAS,
         GNSSfix,
         DGNSSfix,
+        PPP, //Precise Point Positioning
         PreciseGNSS,
         RTKFixedInteger,
         RTKFloat,
         EstDRmode,
         ManualInput,
+        SBAS, //Satellite Based Augmentation System
         SimulateMode,
         DesktopGeneratedData,
         Other
