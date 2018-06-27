@@ -9,6 +9,7 @@
   * Contributors:
   *    Justin Sliekers - initial API and implementation
   *    Justin Sliekers - removing all properties
+  *    Jason Roesbeke - changed List<RxRates> to List<RxCellLookup> because the class name has been changed
   *******************************************************************************/
 
 using System.Collections.Generic;

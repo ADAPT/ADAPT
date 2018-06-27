@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Jason Roesbeke - Added PPP & SBAS
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics

@@ -14,6 +14,7 @@
   *    Kathleen Oneal - added variety value
   *    Kathleen Oneal - added Additive, GrowthRegulator, Insecticide, and NitrogenStabilizer values
   *    Kathleen Oneal - added Carrier
+  *    Jason Roesbeke - added Fertilizer & Pesticide
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products

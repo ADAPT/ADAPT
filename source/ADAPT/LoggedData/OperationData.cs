@@ -11,6 +11,7 @@
   *    Kathleen Oneal - removed implementConfigId and machineConfigId, added EquipmentConfigId
   *    Justin Sliekers - implement device element changes
   *    Joseph Ross - Added EquipmentConfigurationGroup
+  *	   Jason Roesbeke - added Description    
   *******************************************************************************/
 
 using System;

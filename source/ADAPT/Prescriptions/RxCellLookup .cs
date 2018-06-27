@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Justin Sliekers - initial API and implementation
+  *    Jason Roesbeke - Changed class name from RxRates to RxCellLookup 
   *******************************************************************************/
 
 using System.Collections.Generic;

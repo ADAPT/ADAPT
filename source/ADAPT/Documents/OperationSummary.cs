@@ -9,6 +9,7 @@
   * Contributors:
   *    Jospeh Ross - creating class
   *	   Stuart Rhea - Added ContextItems per model.
+  *	   Jason Roesbeke - added Description
   *******************************************************************************/
 
 using System.Collections.Generic;

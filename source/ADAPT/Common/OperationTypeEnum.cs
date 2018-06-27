@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - added values
+  *    Jason Roesbeke - added Irrigation
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Common

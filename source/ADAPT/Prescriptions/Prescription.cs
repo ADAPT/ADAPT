@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Justin Sliekers - initial API and implementation
+  *    Jason Roesbeke - Added a list with TimeScopes and a list with Personroles
   *******************************************************************************/
 
 using System.Collections.Generic;
