@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright (C) 2015 AgGateway and ADAPT Contributors
  * Copyright (C) 2015 Deere and Company
  * All rights reserved. This program and the accompanying materials
@@ -12,12 +12,14 @@
  *    Tarak Reddy - Mowed LoggedData and OperationData from LoggedDataCatalog
  *    Tarak Reddy - Moved GuidanceAllocations from Catalog
  *    Kathleen Oneal - added Summaries and LoggedDataCatalog
+ *    Tim Shearouse - Added Loads
  *******************************************************************************/
 
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Documents;
 using AgGateway.ADAPT.ApplicationDataModel.Guidance;
 using AgGateway.ADAPT.ApplicationDataModel.Equipment;
+using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
@@ -35,6 +37,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             Summaries = new List<Summary>();
             WorkRecords = new List<WorkRecord>();
             DeviceElementUses = new List<DeviceElementUse>();
+            Loads = new List<Load>();
         }
 
         public IEnumerable<WorkItem> WorkItems { get; set; }
@@ -58,5 +61,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public int LoggedDataCatalog { get; set; }
 
         public IEnumerable<DeviceElementUse> DeviceElementUses { get; set; }
+
+        public IEnumerable<Load> Loads { get; set; }
     }
 }

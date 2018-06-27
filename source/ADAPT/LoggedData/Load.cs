@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -22,7 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
     {
         public Load()
         {
-            TimeScopeIds =new List<int>();
+            TimeScopeIds = new List<int>();
             DestinationIds = new List<int>();
         }
 
