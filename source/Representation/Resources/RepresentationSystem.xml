@@ -1157,7 +1157,7 @@
 			<Name locale="vi" description="Phần xếp chồng được dùng trong các hoạt động dẫn hướng.  Phần xếp chồng cộng Chiều rộng làm việc bằng chiều rộng của dụng cụ.">phần xếp chồng đường dẫn hướng</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrInlineOffset" domainTag="23" digits="2" decimal="1">
-			<RelatedDDI ddi="135" unitOfMeasure="mm" resolution="0.01" offset="0"/>
+			<RelatedDDI ddi="134" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="2" decimal="1" minValue="0" maxValue="99.9" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="m" digits="2" decimal="2" minValue="0" maxValue="30.48" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="2" decimal="1" minValue="0" maxValue="99.9" unitOfMeasureSystem="umsImperial"/>
@@ -1202,7 +1202,7 @@
 			<Name locale="vi" description="Dịch chuyển dọc phần">dịch chuyển theo đường dọc của phần</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrLateralOffset" domainTag="24" digits="3" decimal="1">
-			<RelatedDDI ddi="134" unitOfMeasure="mm" resolution="0.01" offset="0"/>
+			<RelatedDDI ddi="135" unitOfMeasure="mm" resolution="0.01" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="1" minValue="0" maxValue="240" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="m" digits="3" decimal="2" minValue="0" maxValue="6.096" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="1" minValue="0" maxValue="240" unitOfMeasureSystem="umsImperial"/>

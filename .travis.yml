@@ -1,0 +1,29 @@
+language: csharp
+dotnet: 2.1.4
+
+env:
+  - FrameworkPathOverride=/usr/lib/mono/4.5/
+
+jobs:
+  include:
+    - stage: test
+      mono: none
+      script:
+        - dotnet test ./source/ApplicationDataModelTest/ApplicationDataModelTest.csproj -c Release
+        - dotnet test ./source/PluginManagerTest/PluginManagerTest.csproj -c Release
+        - dotnet test ./source/RepresentationTest/RepresentationTest.csproj -c Release
+    - stage: deploy
+      if: tag =~ ^v\d+\.\d+\.\d+
+      mono: 5.8.0
+      script:
+        - VERSION=$(echo $TRAVIS_TAG | grep -i -P -o '(?<=^v)\d+\.\d+\.\d+(?:.+)?$'); VERSION_NUMBER=$(echo $VERSION | grep -i -P -o '^\d+\.\d+\.\d+')
+        - dotnet build ./ADAPT.sln -c Release /p:Version=$VERSION /p:FileVersion=$VERSION_NUMBER.$TRAVIS_BUILD_NUMBER
+        - mkdir -p ./dist; nuget pack ./AgGatewayADAPTFramework.nuspec -verbosity detailed -outputdirectory ./dist -version $VERSION
+        - if [ -n "${NUGET_API_KEY}" ]; then dotnet nuget push ./dist/AgGatewayADAPTFramework.${VERSION}.nupkg --api-key $NUGET_API_KEY --source https://api.nuget.org/v3/index.json; fi
+      deploy:
+        provider: releases
+        api_key: $GITHUB_OAUTH_TOKEN
+        file: "./dist/AgGatewayADAPTFramework.${VERSION}.nupkg"
+        skip_cleanup: true
+        on:
+          tags: true

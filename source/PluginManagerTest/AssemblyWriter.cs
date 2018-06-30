@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -11,6 +11,7 @@
   *******************************************************************************/
 
 using System.IO;
+using System.Reflection;
 
 namespace AgGateway.ADAPT.PluginManagerTest
 {
@@ -18,15 +19,15 @@ namespace AgGateway.ADAPT.PluginManagerTest
     {
         public static void WriteTestPlugin(string directory, string fileName)
         {
-            WritePlugin(directory, fileName, Resources.AgGateway_ADAPT_TestPlugin);
+            WritePlugin(directory, fileName, Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "AgGateway.ADAPT.TestPlugin.dll"));
         }
 
-        private static void WritePlugin(string directory, string fileName, byte[] plugin)
+        private static void WritePlugin(string directory, string fileName, string source)
         {
             Directory.CreateDirectory(directory);
             var pluginFileName = Path.Combine(directory, fileName);
 
-            File.WriteAllBytes(pluginFileName, plugin);
+            File.Copy(source, pluginFileName);
         }
     }
 }

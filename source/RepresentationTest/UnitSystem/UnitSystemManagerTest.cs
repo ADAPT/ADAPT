@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Xml.Serialization;
 using AgGateway.ADAPT.Representation;
 using AgGateway.ADAPT.Representation.Generated;
@@ -128,9 +129,10 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 
         private Representation.Generated.UnitSystem DeserializeUnitSystem()
         {
+            var assemblyLocation = AppDomain.CurrentDomain.BaseDirectory;
+            var unitSystemXml = Path.Combine(assemblyLocation, "Resources", "UnitSystem.xml");
             var serializer = new XmlSerializer(typeof(Representation.Generated.UnitSystem));
-            var xmlStringBytes = System.Text.Encoding.UTF8.GetBytes(Properties.Resources.UnitSystem);
-            using (var stream = new MemoryStream(xmlStringBytes))
+            using (var stream = File.OpenRead(unitSystemXml))
                 return (Representation.Generated.UnitSystem)serializer.Deserialize(stream);
         }
     }

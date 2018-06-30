@@ -1,131 +1,31 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9A78403A-98A9-4E85-8DAC-8E9C9A71305C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Version>0.0.0</Version>
+    <Authors>AgGateway and ADAPT Contributors</Authors>
+    <Company>AgGateway</Company>
+    <Product>ADAPT</Product>
     <RootNamespace>AgGateway.ADAPT.RepresentationTest</RootNamespace>
     <AssemblyName>AgGateway.ADAPT.RepresentationTest</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-    <TargetFrameworkProfile />
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Copyright>Copyright (C) 2015-18 AgGateway and ADAPT Contributors</Copyright>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="nunit.framework, Version=3.0.5813.39031, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.0.1\lib\net45\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+    <PackageReference Include="Moq" Version="4.8.1" />
+    <PackageReference Include="NUnit" Version="3.9.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.9.0" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="ClassGenerators\ClassGenerator.cs" />
-    <Compile Include="ClassGenerators\DefinedTypeEnumerationInstanceListGenerator.cs" />
-    <Compile Include="ClassGenerators\DefinedTypeInstanceListGenerator.cs" />
-    <Compile Include="ClassGenerators\RepresentationGroupInstanceListGenerator.cs" />
-    <Compile Include="ClassGenerators\RepresentationListGenerator.cs" />
-    <Compile Include="ClassGenerators\RepresentationInstanceListGenerator.cs" />
-    <Compile Include="GenerateRepresentationInstanceList.cs" />
-    <Compile Include="PerformanceTest.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="RepresentationSystem\RepresentationCollectionTest.cs" />
-    <Compile Include="RepresentationSystem\RepresentationManagerTest.cs" />
-    <Compile Include="ClassGenerators\RepresentationTagListGenerator.cs" />
-    <Compile Include="UnitSystem\UnitOfMeasureConverterTest.cs" />
-    <Compile Include="UnitSystem\UnitOfMeasurePreferenceTest.cs" />
-    <Compile Include="UnitSystem\NumericRepresentationExtensionsTest.cs" />
-    <Compile Include="UnitSystem\NumericValueExtensionsTest.cs" />
-    <Compile Include="UnitSystem\CompositeUnitOfMeasureTest.cs" />
-    <Compile Include="UnitSystem\UnitCollectionTest.cs" />
-    <Compile Include="UnitSystem\UnitOfMeasureCollectionTest.cs" />
-    <Compile Include="UnitSystem\UnitOfMeasureDoesNotExistExceptionTest.cs" />
-    <Compile Include="UnitSystem\UnitOfMeasureSystemTest.cs" />
-    <Compile Include="UnitSystem\ScalarUnitOfMeasureTest.cs" />
-    <Compile Include="UnitSystem\UnitSystemManagerTest.cs" />
-    <Compile Include="UnitSystem\UnitDimensionTest.cs" />
+    <ProjectReference Include="..\ADAPT\ApplicationDataModel.csproj" />
+    <ProjectReference Include="..\Representation\Representation.csproj" />
   </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\ADAPT\ApplicationDataModel.csproj">
-      <Project>{AF77F596-0C06-4873-A094-6F3AB987B0A5}</Project>
-      <Name>ApplicationDataModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Representation\Representation.csproj">
-      <Project>{00D0CB8E-2EDE-4766-B261-1EB0CB655F07}</Project>
-      <Name>Representation</Name>
-    </ProjectReference>
+    <Folder Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RepresentationSystem.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UnitSystem.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
