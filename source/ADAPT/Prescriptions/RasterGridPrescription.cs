@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
   * Contributors:
   *    Justin Sliekers - initial API and implementation
   *    Justin Sliekers - removing all properties
+  *    Jason Roesbeke - changed List<RxRates> to List<RxCellLookup> because the class name has been changed
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
    {
        public RasterGridPrescription()
        {
-           Rates = new List<RxRates>();
+           Rates = new List<RxCellLookup>();
        }
 
       public Point Origin { get; set; }
@@ -34,6 +35,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 
       public NumericRepresentationValue CellHeight { get; set; }
 
-      public List<RxRates> Rates { get; set; }
+      public List<RxCellLookup> Rates { get; set; }
    }
 }
