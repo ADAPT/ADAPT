@@ -4,7 +4,7 @@
   * All rights reserved. This program and the accompanying materials
   * are made available under the terms of the Eclipse Public License v1.0
   * which accompanies this distribution, and is available at
-  * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
+  * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html>
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
@@ -14,6 +14,7 @@
 
 
 using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
@@ -24,9 +25,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         {
             TimeScopeIds = new List<int>();
             DestinationIds = new List<int>();
+            Id = CompoundIdentifierFactory.Instance.Create();
         }
 
-        public int Id { get; set; }
+        public CompoundIdentifier Id { get; set; }
 
         public string Description { get; set; }
 
