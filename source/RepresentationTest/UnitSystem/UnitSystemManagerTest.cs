@@ -129,7 +129,7 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 
         private Representation.Generated.UnitSystem DeserializeUnitSystem()
         {
-            var assemblyLocation = AppDomain.CurrentDomain.BaseDirectory;
+            var assemblyLocation = Path.GetDirectoryName((new Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath);
             var unitSystemXml = Path.Combine(assemblyLocation, "Resources", "UnitSystem.xml");
             var serializer = new XmlSerializer(typeof(Representation.Generated.UnitSystem));
             using (var stream = File.OpenRead(unitSystemXml))
