@@ -37,7 +37,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public int? PrescriptionId { get; set; }
 
-        public int? ProductId { get; set; }
+        public List<int> ProductId { get; set; }
 
         public int? VarietyLocatorId { get; set; }
 
