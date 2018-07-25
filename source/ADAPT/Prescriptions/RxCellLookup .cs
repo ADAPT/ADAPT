@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -8,19 +8,20 @@
   *
   * Contributors:
   *    Justin Sliekers - initial API and implementation
+  *    Jason Roesbeke - Changed class name from RxRates to RxCellLookup 
   *******************************************************************************/
 
 using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
-    public class RxRates
+    public class RxCellLookup
     {
-        public RxRates()
+        public RxCellLookup()
         {
-            RxRate = new List<RxRate>();
+            RxRates = new List<RxRate>();
         }
 
-        public List<RxRate> RxRate { get; set; } 
+        public List<RxRate> RxRates { get; set; } 
     }
 }

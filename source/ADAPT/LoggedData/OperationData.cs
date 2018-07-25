@@ -11,7 +11,7 @@
   *    Kathleen Oneal - removed implementConfigId and machineConfigId, added EquipmentConfigId
   *    Justin Sliekers - implement device element changes
   *    Joseph Ross - Added EquipmentConfigurationGroup
-  *    Kelly Nelson - Changed ProductId to allow for multiples
+  *	   Jason Roesbeke - added Description    
   *******************************************************************************/
 
 using System;
@@ -37,7 +37,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public int? PrescriptionId { get; set; }
 
-        public List<int> ProductIds { get; set; }
+        public List<int> ProductId { get; set; }
 
         public int? VarietyLocatorId { get; set; }
 
@@ -52,5 +52,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public Func<IEnumerable<SpatialRecord>> GetSpatialRecords { get; set; }
 
         public Func<int, IEnumerable<DeviceElementUse>> GetDeviceElementUses { get; set; }
+
+        public string Description { get; set; }
+
     }
 }

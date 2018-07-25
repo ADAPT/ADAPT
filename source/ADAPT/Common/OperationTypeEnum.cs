@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - added values
+  *    Jason Roesbeke - added Irrigation
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Common
@@ -26,6 +27,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         Harvesting,
         ForageHarvesting,
         Transport,
-        Swathing
+        Swathing,
+        Irrigation
     }
 }

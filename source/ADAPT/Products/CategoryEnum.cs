@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -14,6 +14,7 @@
   *    Kathleen Oneal - added variety value
   *    Kathleen Oneal - added Additive, GrowthRegulator, Insecticide, and NitrogenStabilizer values
   *    Kathleen Oneal - added Carrier
+  *    Jason Roesbeke - added Fertilizer & Pesticide
   *******************************************************************************/
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
@@ -30,5 +31,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
         NitrogenStabilizer,
         Unknown,
         Variety,
+        Fertilizer, //non-manure
+        Pesticide, //non-Insecticide
     }
 }
