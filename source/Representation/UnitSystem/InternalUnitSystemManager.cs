@@ -93,7 +93,7 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
         {
             var serializer = new XmlSerializer(typeof(Generated.UnitSystem));
 
-            var assemblyLocation = AppDomain.CurrentDomain.BaseDirectory;
+            var assemblyLocation = Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath);
             var unitSystemXml = Path.Combine(assemblyLocation, "Resources", "UnitSystem.xml");
 
             var xmlStringBytes = File.ReadAllBytes(unitSystemXml);
