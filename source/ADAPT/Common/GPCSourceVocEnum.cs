@@ -17,8 +17,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
     /// </summary>
     public enum GPCSourceVocEnum
     {
-        ISO3166-1A3,
-        ISO3166-2,
+        ISO3166_1A3,
+        ISO3166_2,
         GeoNames,
         FAOGPO
     }
