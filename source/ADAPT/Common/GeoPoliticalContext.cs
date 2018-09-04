@@ -12,6 +12,7 @@
   *    Joseph Ross - Adding intializer for id
   *    R. Andres Ferreyra - Added GPCLevel, GPCVocSource, Lexicalizations 
   *******************************************************************************/
+using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
