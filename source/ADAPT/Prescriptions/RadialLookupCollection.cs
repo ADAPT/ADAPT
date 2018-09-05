@@ -18,7 +18,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
     public class RadialLookupCollection
     {
-        public RadialPrescription()
+        public RadialLookupCollection()
         {
             RadialLookups = new List<RxRadialLookup>();
             ShapeLookups = new List<RxShapeLookup>();
