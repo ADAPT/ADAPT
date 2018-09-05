@@ -46,6 +46,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             Farms = new List<Farm>();
             Fields = new List<Field>();
             FieldBoundaries = new List<FieldBoundary>();
+            GeoPoliticalContexts = new List<GeoPoliticalContext>();
             Growers = new List<Grower>();
             GuidancePatterns = new List<GuidancePattern>();
             GuidanceGroups = new List<GuidanceGroup>();
@@ -94,6 +95,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<FieldBoundary> FieldBoundaries { get; set; }
 
+        public List<GeoPoliticalContext> GeoPoliticalContexts { get; set; }
+        
         public List<Grower> Growers { get; set; }
 
         public List<GuidancePattern> GuidancePatterns { get; set; }
