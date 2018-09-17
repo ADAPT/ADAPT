@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Jospeh Ross - creating class
+  *    Kelly Nelson - added reference to DeviceElementConfiguration
   *******************************************************************************/
 
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
@@ -18,6 +19,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
     {
         public RepresentationValue Value { get; set; }
 
-        public int MeterId { get; set; }
+        public int? MeterId { get; set; }
+
+        public int? DeviceConfigurationId { get; set; }
     }
 }

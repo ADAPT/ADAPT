@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -9,8 +9,10 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Stuart Rhea - #116 Rename CenterPivot to PivotGuidancePattern
+  *    Kelly Nelson - #167 Allow for multiple definition methods
   *******************************************************************************/
 
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
@@ -22,5 +24,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
         public Point EndPoint { get; set; }
 
         public Point Center { get; set; }
+
+        public NumericRepresentationValue Radius { get; set; }
+
+        public Point Point1 { get; set; }
+
+        public Point Point2 { get; set; }
+
+        public Point Point3 { get; set; }
+
+        public PivotGuidanceDefinitionEnum DefinitionMethod { get; set; }
     }
 }
