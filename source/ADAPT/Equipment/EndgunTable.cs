@@ -15,8 +15,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
     {
         public EndgunTable()
         {
-            TableEntry = new List<EndgunTableEntry>();
+            TableEntries = new List<EndgunTableEntry>();
         }
-        public List<EndgunTableEntry> TableEntry { get; set; }
+        public List<EndgunTableEntry> TableEntries { get; set; }
     }
 }
