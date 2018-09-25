@@ -9,6 +9,8 @@
  *    
  *******************************************************************************/
 
+using System.Collections.Generic;
+
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
     class EndgunTable
