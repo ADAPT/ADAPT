@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
@@ -13,6 +13,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         IList<ApplicationDataModel> Import(string dataPath, Properties properties = null);
         void Export(ApplicationDataModel dataModel, string exportPath, Properties properties = null);
         Properties GetProperties(string dataPath);
+        IList<IError> Errors { get; }
     }
 
     public interface IError
