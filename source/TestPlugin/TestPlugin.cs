@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kelly Nelson - Added Errors collection
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -54,5 +55,8 @@ namespace AgGateway.ADAPT.TestPlugin
       {
          return new Properties();
       }
-   }
+
+      public IList<IError> Errors { get { return new List<IError>(); } } 
+
+    }
 }
