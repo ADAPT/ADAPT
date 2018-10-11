@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 
 {
-    class EndgunTable
+    public class EndgunTable
     {
         public EndgunTable()
         {
