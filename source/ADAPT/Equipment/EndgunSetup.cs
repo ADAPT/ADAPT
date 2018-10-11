@@ -12,7 +12,7 @@
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
-    class EndgunSetup
+    public class EndgunSetup
     {
         public int ManufacturerId { get; set; }
         public int ModelId { get; set; }
