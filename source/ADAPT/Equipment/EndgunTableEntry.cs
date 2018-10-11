@@ -13,7 +13,7 @@ using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
-    class EndgunTableEntry
+    public class EndgunTableEntry
     {
         public NumericRepresentationValue Pressure { get; set; }
         public NumericRepresentationValue FlowValue { get; set; }
