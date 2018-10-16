@@ -14,7 +14,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
      /// <summary>
      /// This enumeration provides a vocabulary for specifying the pedigree of timestamp data sources.
-     /// This is important information that can allow users of work records to better interpret the data.
+     /// This is important information; it can allow users of work records to better interpret the data.
      /// </summary>
     public enum TimeDataSourceEnum
     {
