@@ -27,7 +27,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
         public IrrSystemConfiguration()
         {
             SectionConfigurationIds = new List<int>();
-            EngdunConfigurationIds = new List<int>();
+            EndgunConfigurationIds = new List<int>();
             Notes = new List<Note>();
             ContextItems = new List<ContextItem>();
         }
