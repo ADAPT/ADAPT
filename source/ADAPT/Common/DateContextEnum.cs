@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - added additional values
+  *    R. Andres Ferreyra - added PAIL / OM-related values, and comments.
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Common
@@ -27,7 +28,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         Expiration,
         Creation,
         Modification,
-        ValidityRange,
+        ValidityRange, // Used for Recommendation documents, also for specialized ISO 19156 Observations (such as forecasts)
         RequestedShipping,
         ActualShipping,
         Calibration,
@@ -35,6 +36,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         Unload,
         Suspend,
         Resume,
-        Unspecified
+        Unspecified,
+        Installation, // When was the device, sensor, etc. installed?
+        Maintenance, // When was maintenance performed on the device, sensor, etc.?
+        PhenomenonTime, // Important attribute of an ISO 19156 Observation
+        ResultTime // Important attribute od an ISO 19156 Observation
     }
 }
