@@ -6,7 +6,7 @@
   * which accompanies this distribution, and is available at
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
-  * Contributors: Aaron Berger, transcribe from PAIL; R. ANdres Ferreyra, documentation
+  * Contributors: Aaron Berger, transcription from PAIL; R. Andres Ferreyra, documentation
   *    
   *    
   *******************************************************************************/
@@ -14,15 +14,12 @@
 namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
     /// <summary>
-    /// This enumeration provides a simple vocabulary to specify the location within the irrigation system where pressure is being measured.
-    /// This is important because corrections for height/head may be necessary in order to compare pressures measured at
-    /// different locations. 
-    /// </summary>  
-    public enum IrrPressureLocationEnum
+    /// This enumeration provides a simple, consensus vocabularyto  specify the type of error reported by an irrigation system.
+    /// </summary>     
+    public enum IrrErrorCodeEnum
     {
-        AtPump,
-        AtBaseOfSystem,
-        AtEndOfSystem,
-        Unknown
+        Communication,
+        LowPressure,
+        Unspecified
     }
 }

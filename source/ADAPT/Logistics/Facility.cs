@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - made companyId nullable, renamed property name from FactilityTypeEnum to FacilityType
+  *    R. Andres Ferreyra - added nullable ParentFacilityId for PAIL compatibility.
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -35,6 +36,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 
         public EnumeratedValue FacilityType { get; set; }
 
-        public List<ContextItem> ContextItems { get; set; } 
+        public List<ContextItem> ContextItems { get; set; }
+        
+        public int? ParentFacilityId { get; set; } // Enables a hierarchical structure for facilities. 
     }
 }
