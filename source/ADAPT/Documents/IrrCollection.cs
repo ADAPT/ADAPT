@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
  *
  * Contributors:
- *    R. Andres Ferreyra - Adapting from PAIL S632-3 schema.
+ *    R. Andres Ferreyra - Adapted from PAIL S632-3 schema.
  *******************************************************************************/
 
 using System.Collections.Generic;
