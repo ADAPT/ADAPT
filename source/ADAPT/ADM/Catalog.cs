@@ -19,7 +19,7 @@
  *   Joseph Ross - added EquipmentConfigurationGroups
  *   R. Andres Ferreyra - added Facilities, DeviceSeries, IrrSystemModels,
  *                        IrrSystemConfigurations, IrrSectionConfigurations, 
- *                        EndgunConfigurations
+ *                        EndgunConfigurations.
   *******************************************************************************/
 
 using System.Collections;
