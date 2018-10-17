@@ -23,7 +23,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         /// Specify using radial start/end angle notation (inner/outer radii are provided by the sections).
         /// Used for center pivots.
         /// </summary>  
-        public RadialSpatialScope RadialScope { get; set; }
+        public IrrRadialSpatialScope RadialScope { get; set; }
 
         /// <summary>
         /// Specify using a multipolygon: good for stationary suystems.
