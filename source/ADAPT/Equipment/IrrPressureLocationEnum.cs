@@ -15,7 +15,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 {
     /// <summary>
     /// This enumeration provides a simple vocabulary to specify the location within the irrigation system where pressure is being measured.
-    /// This is important because corrections for height/head may need to be made in order to compare pressures measured at
+    /// This is important because corrections for height/head may be necessary in order to compare pressures measured at
     /// different locations. 
     /// </summary>  
     public enum IrrPressureLocationEnum
