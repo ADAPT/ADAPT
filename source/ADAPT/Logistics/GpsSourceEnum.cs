@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Jason Roesbeke - Added PPP & SBAS
+  *    R. ANdres Ferreyra - Added mechanical
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
@@ -35,5 +36,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         Other,
         PPP, //Precise Point Positioning
         SBAS, //Satellite Based Augmentation System
+        Mechanical // Represents mechanical and optical angle encoding mechanisms used primarily in center pivot irrigation systems.
     }
 }
