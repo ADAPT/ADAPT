@@ -13224,7 +13224,7 @@
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utDistance"/>
 			<Name locale="en" description="Actual bale size">Actual bale size as length for a square baler or diameter for a round baler</Name>
-			<Name locale="de" description="Ist-Ballengröße">Ist-Ballengröße, d. h. Länge bei Rechteckballenpresse bzw. Durchmesser bei Rundballenpresse</Name>
+			<Name locale="de" description="Ist-Ballengröße">Ist-Ballengröße, d. h. Länge bei Rechteckballenpresse bzw. Durchmesser bei Rundballenpresse</Name>
 			<Name locale="fr" description="Taille de balle réelle">Taille de balle réelle: longueur pour presse à balles carrées ou diamètre pour presse à balles cylindriques</Name>
 			<Name locale="da" description="Faktisk ballestørrelse">Faktisk ballestørrelse i længde fra firkantballepresser eller diameter fra rundballepresser</Name>
 			<Name locale="nl" description="Werkelijke baalgrootte">Werkelijke baalgrootte als lengte voor vierkante of diameter voor ronde balenmachine</Name>
@@ -27669,6 +27669,18 @@
 			</EnumeratedMember>
 			<EnumeratedMember domainID="dtiFacilityTypeOffice" domainTag="6103" refID="3">
 				<Name locale="en" description="Office">Office</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeWeatherStation" domainTag="6125" refID="4">
+				<Name locale="en" description="Weather Station">Weather Station</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeObservationSite" domainTag="6126" refID="5">
+				<Name locale="en" description="Observation Site">Observation Site</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeInstrumentShelter" domainTag="6127" refID="6">
+				<Name locale="en" description="Instrument Shelter">Instrument Shelter</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeSamplingLocation" domainTag="6128" refID="7">
+				<Name locale="en" description="Sampling Location">Sampling Location</Name>
 			</EnumeratedMember>
 		</EnumeratedRepresentation>
 		<EnumeratedRepresentation domainID="dtPersonRole" domainTag="1508" domainIDShort="Roles">
