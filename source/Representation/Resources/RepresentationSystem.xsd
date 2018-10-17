@@ -100,6 +100,7 @@ If not present the unit of measure lable will be used.</xs:documentation>
 												<xs:attribute name="unitOfMeasure" type="unit:unitOfMeasureDomainID" use="required"/>
 												<xs:attribute name="resolution" type="xs:double" default="1"/>
 												<xs:attribute name="offset" type="xs:double" default="0"/>
+                        <xs:attribute name="isDefaultRepresentationForDDI" type="xs:string" use="optional"/>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
@@ -177,6 +178,7 @@ If not present the unit of measure lable will be used.</xs:documentation>
 										<xs:element name="RelatedDDI" minOccurs="0" maxOccurs="unbounded">
 											<xs:complexType>
 												<xs:attribute name="ddi" type="xs:int" use="required"/>
+                        <xs:attribute name="isDefaultRepresentationForDDI" type="xs:string" use="optional"/>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
