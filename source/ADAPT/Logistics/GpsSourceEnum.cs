@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -8,6 +8,8 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Jason Roesbeke - Added PPP & SBAS
+  *    R. ANdres Ferreyra - Added mechanical
   *******************************************************************************/  
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
@@ -31,6 +33,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         ManualInput,
         SimulateMode,
         DesktopGeneratedData,
-        Other
+        Other,
+        PPP, //Precise Point Positioning
+        SBAS, //Satellite Based Augmentation System
+        Mechanical // Represents mechanical and optical angle encoding mechanisms used primarily in center pivot irrigation systems.
     }
 }

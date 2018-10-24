@@ -1,5 +1,5 @@
 /*******************************************************************************
-  * Copyright (C) 2015-16 AgGateway and ADAPT Contributors
+  * Copyright (C) 2015-16, 2018 AgGateway and ADAPT Contributors
   * Copyright (C) 2015-16 Deere and Company
   * All rights reserved. This program and the accompanying materials
   * are made available under the terms of the Eclipse Public License v1.0
@@ -17,6 +17,9 @@
  *   Kathleen Oneal - added manufactures list
  *   Justin Sliekers - implement device element changes
  *   Joseph Ross - added EquipmentConfigurationGroups
+ *   R. Andres Ferreyra - added Facilities, DeviceSeries, IrrSystemModels,
+ *                        IrrSystemConfigurations, IrrSectionConfigurations, 
+ *                        EndgunConfigurations.
   *******************************************************************************/
 
 using System.Collections;
@@ -46,6 +49,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             Farms = new List<Farm>();
             Fields = new List<Field>();
             FieldBoundaries = new List<FieldBoundary>();
+            GeoPoliticalContexts = new List<GeoPoliticalContext>();
             Growers = new List<Grower>();
             GuidancePatterns = new List<GuidancePattern>();
             GuidanceGroups = new List<GuidanceGroup>();
@@ -82,6 +86,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<DeviceModel> DeviceModels { get; set; }
 
+        public List<IrrSystemModel> IrrSystemModels { get; set; }
+
+        public List<DeviceSeries> DeviceSeries { get; set; }
+
         public List<DeviceElementConfiguration> DeviceElementConfigurations { get; set; }
 
         public List<EquipmentConfiguration> EquipmentConfigurations { get; set; }
@@ -94,6 +102,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 
         public List<FieldBoundary> FieldBoundaries { get; set; }
 
+        public List<GeoPoliticalContext> GeoPoliticalContexts { get; set; }
+        
         public List<Grower> Growers { get; set; }
 
         public List<GuidancePattern> GuidancePatterns { get; set; }
@@ -115,6 +125,14 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public List<Product> Products { get; set; } 
 
         public List<TimeScope> TimeScopes { get; set; }
+
+        public List<Facility> Facilities { get; set; }
+
+        public List<IrrSystemConfiguration> IrrSystemConfigurations { get; set; }
+
+        public List<IrrSectionConfiguration> IrrSectionConfigurations { get; set; }
+
+        public List<EndgunConfiguration> EndgunConfigurations { get; set; }
 
     }
 }

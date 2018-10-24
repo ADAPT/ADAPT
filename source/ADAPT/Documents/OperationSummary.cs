@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
   * Contributors:
   *    Jospeh Ross - creating class
   *	   Stuart Rhea - Added ContextItems per model.
+  *	   Jason Roesbeke - added Description
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -41,5 +42,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         public MultiPolygon CoverageShape { get; set; }
 
         public List<ContextItem> ContextItems { get; set; }
+
+        public string Description { get; set; }
+
     }
 }
