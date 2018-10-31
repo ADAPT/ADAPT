@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -21,6 +21,21 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
     {
         private static RepresentationManager _instance;
         private static readonly object BlueThreadLock = new Object();
+
+        private static string representationSystemDataLocation = null;
+
+        public static string RepresentationSystemDataLocation {
+            get {
+                if(representationSystemDataLocation == null) {
+                    var assemblyLocation = Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath);
+                    var repSystemXml = Path.Combine(assemblyLocation, "Resources", "RepresentationSystem.xml");
+                    return repSystemXml;
+                } else {
+                    return representationSystemDataLocation;
+                }
+            }
+            set { representationSystemDataLocation = value; }
+        }
 
         public static RepresentationManager Instance
         {
@@ -56,10 +71,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         {
             var serializer = new XmlSerializer(typeof(Generated.RepresentationSystem));
 
-            var assemblyLocation = Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath);
-            var repSystemXml = Path.Combine(assemblyLocation, "Resources", "RepresentationSystem.xml");
-
-            var xmlStringBytes = File.ReadAllBytes(repSystemXml);
+            var xmlStringBytes = File.ReadAllBytes(RepresentationSystemDataLocation);
             using (var stream = new MemoryStream(xmlStringBytes))
                 return (Generated.RepresentationSystem)serializer.Deserialize(stream);
         }
