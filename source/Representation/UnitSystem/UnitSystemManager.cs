@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -10,11 +10,28 @@
   *    Tim Shearouse - initial API and implementation
   *******************************************************************************/
 using AgGateway.ADAPT.Representation.UnitSystem.ExtensionMethods;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace AgGateway.ADAPT.Representation.UnitSystem
 {
     public static class UnitSystemManager
     {
+        private static string unitSystemDataLocation = null;
+        public static string UnitSystemDataLocation {
+            get {
+                if (unitSystemDataLocation == null) {
+                    var assemblyLocation = Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath);
+                    var repSystemXml = Path.Combine(assemblyLocation, "Resources", "UnitSystem.xml");
+                    return repSystemXml;
+                } else {
+                    return unitSystemDataLocation;
+                }
+            }
+            set { unitSystemDataLocation = value; }
+        }
+
         public static ApplicationDataModel.Common.UnitOfMeasure GetUnitOfMeasure(string code)
         {
             return InternalUnitSystemManager.Instance.UnitOfMeasures[code].ToModelUom();
