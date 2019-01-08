@@ -1335,7 +1335,6 @@
 					<Name locale="fr" label="°F" plural="Fahrenheit">Fahrenheit</Name>
 					<Name locale="da" label="°F" plural="fahrenheit">fahrenheit</Name>
 					<Name locale="nl" label="°F" plural="fahrenheit">fahrenheit</Name>
-					<Name locale="nl" label="°F" plural="fahrenheit">fahrenheit</Name>
 					<Name locale="es" label="°F" plural="fahrenheit">fahrenheit</Name>
 					<Name locale="it" label="°F" plural="fahrenheit">fahrenheit</Name>
 					<Name locale="pt" label="°F" plural="fahrenheit">fahrenheit</Name>
