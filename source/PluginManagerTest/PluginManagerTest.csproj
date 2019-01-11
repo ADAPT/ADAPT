@@ -9,7 +9,7 @@
     <Company>AgGateway</Company>
     <Product>ADAPT</Product>
     <NeutralLanguage>English (United States)</NeutralLanguage>
-    <Copyright>Copyright (C) 2015-18 AgGateway and ADAPT Contributors</Copyright>
+    <Copyright>Copyright (C) 2015-19 AgGateway and ADAPT Contributors</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
