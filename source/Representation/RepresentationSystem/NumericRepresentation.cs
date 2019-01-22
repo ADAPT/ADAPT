@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kelly Nelson - Added IsDefaultRepresentationForDDI
   *******************************************************************************/
 using System.Collections.Generic;
 using System.Globalization;
@@ -56,8 +57,14 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
             Name = name != null ? name.Value : null;
             Description = name != null ? name.description : null;
             UnitDimension = FindUnitDimension(representation);
-            if(representation.RelatedDDI != null)
+            if (representation.RelatedDDI != null)
+            {
                 Ddi = representation.RelatedDDI[0].ddi;
+                if (representation.RelatedDDI.Any(d => d.isDefaultRepresentationForDDI))
+                {
+                    IsDefaultRepresentationForDDI = true;
+                }
+            }
 
             _unitOfMeasureDefaults = GetDefaultUnitOfMeasures(representation.Items);
             _unitOfMeasurePreferences = GetUnitOfMeasurePreferences(representation.Items);
