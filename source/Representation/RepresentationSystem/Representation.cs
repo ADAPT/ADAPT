@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kelly Nelson - Added IsDefaultRepresentationForDDI
   *******************************************************************************/
 namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
@@ -18,6 +19,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         public string Name { get; protected set; }
         public string Description { get; protected set; }
         public int? Ddi { get; protected set; }
+        public bool IsDefaultRepresentationForDDI { get; protected set; }
 
         protected Representation(string domainId, long domainTag)
         {
