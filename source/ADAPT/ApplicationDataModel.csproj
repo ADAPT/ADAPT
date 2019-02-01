@@ -9,7 +9,7 @@
     <AssemblyName>AgGateway.ADAPT.ApplicationDataModel</AssemblyName>
     <RootNamespace>AgGateway.ADAPT.ApplicationDataModel</RootNamespace>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Copyright>Copyright (C) 2015-18 AgGateway and ADAPT Contributors</Copyright>
+    <Copyright>Copyright (C) 2015-19 AgGateway and ADAPT Contributors</Copyright>
   </PropertyGroup>
 
 </Project>

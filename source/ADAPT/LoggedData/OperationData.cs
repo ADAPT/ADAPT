@@ -1,5 +1,5 @@
 /*******************************************************************************
-  * Copyright (C) 2015-16 AgGateway and ADAPT Contributors
+  * Copyright (C) 2015-16, 2018 AgGateway and ADAPT Contributors
   * Copyright (C) 2015-16 Deere and Company
   * All rights reserved. This program and the accompanying materials
   * are made available under the terms of the Eclipse Public License v1.0
@@ -14,6 +14,7 @@
   *	   Jason Roesbeke - added Description
   *	   Kelly Nelson -  Changed ProductId to allow for multiples
   *	   Kelly Nelson -  Added CoinicidentOperationDataIDs
+  *    R. Andres Ferreyra - Added initialization of CoinicidentOperationDataIDs
   *******************************************************************************/
 
 using System;
@@ -29,6 +30,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         {
             Id = CompoundIdentifierFactory.Instance.Create();
             EquipmentConfigurationIds = new List<int>();
+            CoincidentOperationDataIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }

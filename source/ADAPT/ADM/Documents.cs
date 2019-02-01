@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (C) 2015 AgGateway and ADAPT Contributors
+ * Copyright (C) 2015, 2018 AgGateway and ADAPT Contributors
  * Copyright (C) 2015 Deere and Company
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -13,6 +13,7 @@
  *    Tarak Reddy - Moved GuidanceAllocations from Catalog
  *    Kathleen Oneal - added Summaries and LoggedDataCatalog
  *    Tim Shearouse - Added Loads
+ *    R. Andres Ferreyra - Added IrrCollections, IrrRecords, DocumentCorrelations
  *******************************************************************************/
 
 using System.Collections.Generic;
@@ -38,6 +39,9 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             WorkRecords = new List<WorkRecord>();
             DeviceElementUses = new List<DeviceElementUse>();
             Loads = new List<Load>();
+            IrrCollections = new List<IrrCollection>();
+            IrrRecords = new List<IrrRecord>();
+            DocumentCorrelations = new List<DocumentCorrelation>();
         }
 
         public IEnumerable<WorkItem> WorkItems { get; set; }
@@ -63,5 +67,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public IEnumerable<DeviceElementUse> DeviceElementUses { get; set; }
 
         public IEnumerable<Load> Loads { get; set; }
+
+        public IEnumerable<IrrCollection> IrrCollections { get; set; }
+
+        public IEnumerable<IrrRecord> IrrRecords { get; set; }
+
+        public IEnumerable<DocumentCorrelation> DocumentCorrelations { get; set; }
     }
 }
