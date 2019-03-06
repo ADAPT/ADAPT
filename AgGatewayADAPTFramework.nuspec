@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package
-  xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>AgGatewayADAPTFramework</id>
     <version>0.0.0</version>
@@ -10,7 +9,7 @@
     <projectUrl>https://github.com/ADAPT/ADAPT</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>AgGateway ADAPT framework</description>
-    <copyright>Copyright (C) 2015-18 AgGateway and ADAPT Contributors</copyright>
+    <copyright>Copyright (C) 2015-19 AgGateway and ADAPT Contributors</copyright>
     <tags>aggateway adapt agriculture</tags>
     <references>
       <reference file="AgGateway.ADAPT.ApplicationDataModel.dll"/>

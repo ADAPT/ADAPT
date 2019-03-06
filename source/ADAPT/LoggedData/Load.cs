@@ -1,5 +1,5 @@
 /*******************************************************************************
-  * Copyright (C) 2015, 2018 AgGateway and ADAPT Contributors
+  * Copyright (C) 2015, 2018, 2019 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
   * are made available under the terms of the Eclipse Public License v1.0
@@ -11,7 +11,8 @@
   *    Justin Sliekers - udpating DefinedRepresentation to EnumeratedRepresentation
   *    Justin Sliekers - udpating DestinationId to collection and changed loadtype from EnumeratedRepresentation to LoadTypeEnum
   *    R. Andres Ferreyra - fixing typo: renaming LoadQuality to LoadQuantity. Adding QUALITY attributes (i.e, OMs) can wait to v2.1
-  *    R. ANdres Ferreyra - fixing bug: TimeScopes are used by value in ADAPT, not by reference. Changing accordingly. 
+  *    R. Andres Ferreyra - fixing bug: TimeScopes are used by value in ADAPT, not by reference. Changing accordingly.
+  *    R. Andres Ferreyra - Adding list of ContextItems, to accommodate USDA-specific attributes for cotton. 
   *******************************************************************************/
 
 
@@ -28,6 +29,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
             TimeScopes = new List<TimeScope>();
             DestinationIds = new List<int>();
             Id = CompoundIdentifierFactory.Instance.Create();
+            ContextItems = new List<ContextItem>();
         }
 
         public CompoundIdentifier Id { get; set; }
@@ -43,5 +45,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public NumericRepresentationValue LoadQuantity { get; set; }
 
         public List<int> DestinationIds { get; set; }
+        
+        public List<ContextItem> ContextItems { get; set; }
     }
 }

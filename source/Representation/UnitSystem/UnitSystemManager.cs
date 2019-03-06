@@ -18,7 +18,6 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 {
   public static class UnitSystemManager
   {
-
     public static ApplicationDataModel.Common.UnitOfMeasure GetUnitOfMeasure(string code)
     {
       return InternalUnitSystemManager.Instance.UnitOfMeasures[code].ToModelUom();

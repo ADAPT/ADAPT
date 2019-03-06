@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kelly Nelson - Added IsDefaultRepresentationForDDI
   *******************************************************************************/
 using System.Globalization;
 using System.Linq;
@@ -34,7 +35,13 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
             Name = name != null ? name.Value : null;
             Description = name != null ? name.description : null;
             if (enumeratedRepresentation.RelatedDDI != null)
+            {
                 Ddi = enumeratedRepresentation.RelatedDDI[0].ddi;
+                if (enumeratedRepresentation.RelatedDDI.Any(d => d.isDefaultRepresentationForDDI))
+                {
+                    IsDefaultRepresentationForDDI = true;
+                }
+            }
         }
 
         private static RepresentationCollection<EnumerationMember> GetEnumerationMembers(RepresentationSystemRepresentationsEnumeratedRepresentation enumeratedRepresentation)

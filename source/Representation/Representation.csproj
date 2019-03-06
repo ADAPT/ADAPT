@@ -9,7 +9,7 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <AssemblyName>AgGateway.ADAPT.Representation</AssemblyName>
     <RootNamespace>AgGateway.ADAPT.Representation</RootNamespace>
-    <Copyright>Copyright (C) 2015-18 AgGateway and ADAPT Contributors</Copyright>
+    <Copyright>Copyright (C) 2015-19 AgGateway and ADAPT Contributors</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
