@@ -14,6 +14,7 @@
 
 using System;
 using AgGateway.ADAPT.ApplicationDataModel.Logistics;
+using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
@@ -39,5 +40,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         public Location Location2 { get; set; }
 
         public TimeSpan? Duration { get; set; }
+
+        public Representation Representation { get; set; }
     }
 }
