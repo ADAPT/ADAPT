@@ -1,5 +1,5 @@
 /*******************************************************************************
-  * Copyright (C) 2015-16 AgGateway and ADAPT Contributors
+  * Copyright (C) 2015-16, 2018 AgGateway and ADAPT Contributors
   * Copyright (C) 2015-16 Deere and Company
   * All rights reserved. This program and the accompanying materials
   * are made available under the terms of the Eclipse Public License v1.0
@@ -11,7 +11,10 @@
   *    Kathleen Oneal - removed implementConfigId and machineConfigId, added EquipmentConfigId
   *    Justin Sliekers - implement device element changes
   *    Joseph Ross - Added EquipmentConfigurationGroup
-  *	   Jason Roesbeke - added Description    
+  *	   Jason Roesbeke - added Description
+  *	   Kelly Nelson -  Changed ProductId to allow for multiples
+  *	   Kelly Nelson -  Added CoinicidentOperationDataIDs
+  *    R. Andres Ferreyra - Added initialization of CoinicidentOperationDataIDs
   *******************************************************************************/
 
 using System;
@@ -27,6 +30,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         {
             Id = CompoundIdentifierFactory.Instance.Create();
             EquipmentConfigurationIds = new List<int>();
+            CoincidentOperationDataIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -37,7 +41,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public int? PrescriptionId { get; set; }
 
-        public List<int> ProductId { get; set; }
+        public List<int> ProductIds { get; set; }
 
         public int? VarietyLocatorId { get; set; }
 
@@ -54,6 +58,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public Func<int, IEnumerable<DeviceElementUse>> GetDeviceElementUses { get; set; }
 
         public string Description { get; set; }
+
+        public List<int> CoincidentOperationDataIds { get; set; }
 
     }
 }

@@ -9,6 +9,7 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Kathleen Oneal - added GpsSource
+  *    R. Andres Ferreyra - added nullable ParentFacilityId for PAIL compatibility.
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -29,5 +30,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         public List<ContextItem> ContextItems { get; set; }
         
         public GpsSource GpsSource { get; set; }
+        
+        public int? ParentFacilityId { get; set; } // Locations in PAIL have Ids; they don't in ADAPT. This provides a way to
+                                                   // enable using ADAPT facilities to stand in for Locations (by reference) when needed.         
     }
 }

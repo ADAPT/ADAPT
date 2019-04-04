@@ -9,7 +9,7 @@
     <RootNamespace>AgGateway.ADAPT.RepresentationTest</RootNamespace>
     <AssemblyName>AgGateway.ADAPT.RepresentationTest</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Copyright>Copyright (C) 2015-18 AgGateway and ADAPT Contributors</Copyright>
+    <Copyright>Copyright (C) 2015-19 AgGateway and ADAPT Contributors</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
