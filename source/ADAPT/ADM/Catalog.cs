@@ -1,6 +1,7 @@
 /*******************************************************************************
   * Copyright (C) 2015-16, 2018 AgGateway and ADAPT Contributors
   * Copyright (C) 2015-16 Deere and Company
+  * Copyright (C) 2019 Syngenta
   * All rights reserved. This program and the accompanying materials
   * are made available under the terms of the Eclipse Public License v1.0
   * which accompanies this distribution, and is available at
@@ -19,7 +20,8 @@
  *   Joseph Ross - added EquipmentConfigurationGroups
  *   R. Andres Ferreyra - added Facilities, DeviceSeries, IrrSystemModels,
  *                        IrrSystemConfigurations, IrrSectionConfigurations, 
- *                        EndgunConfigurations.
+ *                        EndgunConfigurations
+ *   R. Andres Ferreyra 4/30/2019 - added OMCodes
   *******************************************************************************/
 
 using System.Collections;
@@ -66,6 +68,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             HitchPoints = new List<HitchPoint>();
             Companies = new List<Company>();
             Products = new List<Product>();
+            OMCodes = new List<OMCode>();
         }
 
         public List<Brand> Brands { get; set; }
@@ -133,6 +136,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public List<IrrSectionConfiguration> IrrSectionConfigurations { get; set; }
 
         public List<EndgunConfiguration> EndgunConfigurations { get; set; }
+
+        public List<OMCode> OMCodes { get; set; }
 
     }
 }
