@@ -12,7 +12,6 @@
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
-using AgGateway.ADAPT.ApplicationDataModel.Documents;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
