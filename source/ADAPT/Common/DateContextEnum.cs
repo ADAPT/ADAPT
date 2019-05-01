@@ -1,6 +1,7 @@
 /*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
+  * Copyright (C) 2019 Syngenta
   * All rights reserved. This program and the accompanying materials
   * are made available under the terms of the Eclipse Public License v1.0
   * which accompanies this distribution, and is available at
@@ -19,8 +20,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         Approval,
         ProposedStart,
         ProposedEnd,
-        CropSeason,
-        TimingEvent,
+        CropSeason,  // Interval
+        TimingEvent, // Interval
         ActualStart,
         ActualEnd,
         RequestedStart,
@@ -28,7 +29,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         Expiration,
         Creation,
         Modification,
-        ValidityRange, // Used for Recommendation documents, also for specialized ISO 19156 Observations (such as forecasts)
+        ValidityRange, // Interval. Used for Recommendation documents, also for specialized ISO 19156 Observations (such as forecasts)
         RequestedShipping,
         ActualShipping,
         Calibration,
@@ -40,6 +41,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         Installation, // When was the device, sensor, etc. installed?
         Maintenance, // When was maintenance performed on the device, sensor, etc.?
         PhenomenonTime, // Important attribute of an ISO 19156 Observation
-        ResultTime // Important attribute od an ISO 19156 Observation
+        ResultTime // Interval. Important attribute of an ISO 19156 Observation
     }
 }
