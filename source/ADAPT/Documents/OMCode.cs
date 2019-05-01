@@ -5,9 +5,12 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
  *
- * Contributors: R. Andres Ferreyra: Translate from PAIL Part 2 Schema
+ * Contributors: 20190430 R. Andres Ferreyra: Translate from PAIL Part 2 Schema
  *    
  *******************************************************************************/
+
+using System.Collections.Generic;
+using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
