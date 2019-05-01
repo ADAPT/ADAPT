@@ -26,7 +26,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         public string Code { get; set; }
         public string PId { get; set; }
         public string Description { get; set; }
-        public List<int> CodeComponentsIds { get; set; }       
+        public List<int> CodeComponentIds { get; set; }       
         public List<ContextItem> ContextItems { get; set; }       
     }
 }
