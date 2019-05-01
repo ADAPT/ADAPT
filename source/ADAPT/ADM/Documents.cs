@@ -1,6 +1,7 @@
 /*******************************************************************************
  * Copyright (C) 2015, 2018 AgGateway and ADAPT Contributors
  * Copyright (C) 2015 Deere and Company
+ * Copyright (C) 2019 Syngenta
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +15,7 @@
  *    Kathleen Oneal - added Summaries and LoggedDataCatalog
  *    Tim Shearouse - Added Loads
  *    R. Andres Ferreyra - Added IrrCollections, IrrRecords, DocumentCorrelations
+ *    R. Andres Ferreyra - Added OMs, OMCollections, OMDatasets, Observations
  *******************************************************************************/
 
 using System.Collections.Generic;
@@ -42,6 +44,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             IrrCollections = new List<IrrCollection>();
             IrrRecords = new List<IrrRecord>();
             DocumentCorrelations = new List<DocumentCorrelation>();
+            OMs = new List<OM>();
+            OMCollections = new List<OMCollection>();
+            OMDatasets = new List<OMDataset>();
+            Observations = new List<Observations>();
         }
 
         public IEnumerable<WorkItem> WorkItems { get; set; }
@@ -73,5 +79,14 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public IEnumerable<IrrRecord> IrrRecords { get; set; }
 
         public IEnumerable<DocumentCorrelation> DocumentCorrelations { get; set; }
+
+        public IEnumerable<OM> OMs { get; set; }
+
+        public IEnumerable<OMCollection> OMCollections { get; set; }
+
+        public IEnumerable<OMDataset> OMDatasets { get; set; }
+
+        public IEnumerable<Observations> Observations { get; set; }
+
     }
 }
