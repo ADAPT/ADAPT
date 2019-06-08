@@ -24,7 +24,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
         ISO64894PitonTypeCoupling,
         ISO56922PivotWagonHitch,
         ISO24347BallTypeHitch,
-
-        ChassisMountedSelfPropelled
+        ChassisMountedSelfPropelled,
     }
 }
