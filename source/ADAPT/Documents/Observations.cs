@@ -17,8 +17,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
     {
         public Observations()
         {
-            OMDatasetIds = new List<int>();
+            ObsDatasetIds = new List<int>();
         }
-        public List<int> OMDatasetIds { get; set; }
+        public List<int> ObsDatasetIds { get; set; }
     }
 }
