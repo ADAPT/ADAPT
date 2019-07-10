@@ -6,6 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
  *
  * Contributors: 20190430 R. Andres Ferreyra: Translate from PAIL Part 2 Schema
+ *               20190710 R. Andres Ferreyra: Added documentation
  *    
  *******************************************************************************/
 
@@ -14,18 +15,19 @@ using AgGateway.ADAPT.ApplicationDataModel.Common;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Documents
 {
-    public class OMCode
+    public class OMCode // Go-to way of expressing the meaning of an Obs (observation)
     {
         public OMCode()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
-            CodeComponentIds = new List<int>();
+            CodeComponentIds = new List<int>(); 
             ContextItems = new List<ContextItem>();
         }
-        public CompoundIdentifier Id { get; private set; }
-        public string Code { get; set; }
-        public string Description { get; set; }
-        public List<int> CodeComponentIds { get; set; }       
+        public CompoundIdentifier Id { get; private set; } // Each OmCode has its own CompoundIdentifier
+        public string Code { get; set; }  // This is the key for key,value representations of an observation. 
+        public string Description { get; set; } // Human-readable description of what the OMCode means.
+        public List<int> CodeComponentIds { get; set; } // These are the units of meaning stat specify aspects of the OMCode's
+          // meaning, such as feature of interest, observed property, observation method, aggregation method, etc.
         public List<ContextItem> ContextItems { get; set; }       
     }
 }
