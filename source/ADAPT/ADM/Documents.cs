@@ -1,6 +1,7 @@
 /*******************************************************************************
  * Copyright (C) 2015, 2018 AgGateway and ADAPT Contributors
  * Copyright (C) 2015 Deere and Company
+ * Copyright (C) 2019 Syngenta
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +15,7 @@
  *    Kathleen Oneal - added Summaries and LoggedDataCatalog
  *    Tim Shearouse - Added Loads
  *    R. Andres Ferreyra - Added IrrCollections, IrrRecords, DocumentCorrelations
+ *    R. Andres Ferreyra - Added Obs, ObsCollections, ObsDatasets, Observations
  *******************************************************************************/
 
 using System.Collections.Generic;
@@ -42,6 +44,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             IrrCollections = new List<IrrCollection>();
             IrrRecords = new List<IrrRecord>();
             DocumentCorrelations = new List<DocumentCorrelation>();
+            Obs = new List<Obs>(); // An implementation of the ISO 19156 Observation (/Measurement) class
+            ObsCollections = new List<ObsCollection>(); // Collections of related Obs (Observation/Measurement) OR related ObsCollections 
+            ObsDatasets = new List<ObsDataset>();    // Datasets contained in the Observations Core Document
+            Observations = new List<Observations>(); // Core Document. Sibling to Plan, Work Order, etc.
         }
 
         public IEnumerable<WorkItem> WorkItems { get; set; }
@@ -73,5 +79,14 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public IEnumerable<IrrRecord> IrrRecords { get; set; }
 
         public IEnumerable<DocumentCorrelation> DocumentCorrelations { get; set; }
+
+        public IEnumerable<Obs> Obs { get; set; }
+
+        public IEnumerable<ObsCollection> ObsCollections { get; set; }
+
+        public IEnumerable<ObsDataset> ObsDatasets { get; set; }
+
+        public IEnumerable<Observations> Observations { get; set; }
+
     }
 }
