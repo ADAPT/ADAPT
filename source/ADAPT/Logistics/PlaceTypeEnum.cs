@@ -14,10 +14,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
 {
     public enum PlaceTypeEnum
     {
-        Position, // This case produces a Place that is functionally equivalent to a PAIL Location. 
-        LineString, // Enables PAIL's LineString feature-of-interest
-        MultiPolygon, // Enables PAIL's MultiPolygon feature-of-interest
-        Location,
+        Location, // This case produces a Place that is functionally equivalent to a PAIL / ISO 19112 Location. 
         Facility,
         DeviceElement,
         Container, 
