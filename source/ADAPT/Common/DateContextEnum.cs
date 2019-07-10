@@ -26,13 +26,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         ActualEnd,
         RequestedStart,
         RequestedEnd,
-        Expiration,
-        Creation,
-        Modification,
+        Expiration,  // Relevant for Plans, Work Orders, and Recommendations
+        Creation,  // Relevant to any document or object instance
+        Modification,  // Relevant to any document or object instance
         ValidityRange, // Interval. Used for Recommendation documents, also for specialized ISO 19156 Observations (such as forecasts)
         RequestedShipping,
         ActualShipping,
-        Calibration,
+        Calibration,  // Relevant to a DeviceElement (esp. Sensor)
         Load,
         Unload,
         Suspend,
