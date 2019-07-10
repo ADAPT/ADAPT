@@ -35,16 +35,13 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Logistics
         /// This declares what class the Place is standing in for (e.g., Position, Container, etc. This value is required. Note that "Mixed" is an option.</value>
         public PlaceTypeEnum PlaceType { get; set; }
 
-        public int? DeviceElementId { get; set; }
-        public int? ContainerId { get; set; }
+        public int? DeviceElementId { get; set; } // Allows associating an observation or ProductContainerOperation to a DeviceElement
+        public int? ContainerId { get; set; } // Allows associating an observation or ProductContainerOperation to a Container
         public int? FarmId { get; set; }
         public int? FieldId { get; set; }
         public int? CropZoneId { get; set; }
         public int? FacilityId { get; set; }
-        public MultiPolygon MultiPolygon { get; set; }
-        public LineString LineString { get; set; }
-        public Location Location { get; set; }
-        public Point Position { get; set; }
+        public Location Location { get; set; } // Enables using Locations by reference, like in PAIL and ISO 19112.
 
         /// <summary>
         /// ContextItems property. </summary>
