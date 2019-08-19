@@ -20,6 +20,7 @@
  *   R. Andres Ferreyra - added Facilities, DeviceSeries, IrrSystemModels,
  *                        IrrSystemConfigurations, IrrSectionConfigurations, 
  *                        EndgunConfigurations.
+ *   R. Andres Ferreyra - added list of Places
   *******************************************************************************/
 
 using System.Collections;
@@ -66,6 +67,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             HitchPoints = new List<HitchPoint>();
             Companies = new List<Company>();
             Products = new List<Product>();
+            Places = new List<Place>();
         }
 
         public List<Brand> Brands { get; set; }
@@ -133,6 +135,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public List<IrrSectionConfiguration> IrrSectionConfigurations { get; set; }
 
         public List<EndgunConfiguration> EndgunConfigurations { get; set; }
+
+        public List<Place> Places { get; set; }
 
     }
 }
