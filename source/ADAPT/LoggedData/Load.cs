@@ -15,6 +15,7 @@
   *    R. Andres Ferreyra - fixing bug: TimeScopes are used by value in ADAPT, not by reference. Changing accordingly.
   *    R. Andres Ferreyra - Adding list of ContextItems, to accommodate USDA-specific attributes for cotton.
   *    20190430 R. Andres Ferreyra - Adding reference to an Observations document.
+  *    20190819 R. Andres Ferreyra - Adding reference to an ObsCollection object (assumed within the Observations document).
   *******************************************************************************/
 
 
@@ -51,5 +52,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public List<ContextItem> ContextItems { get; set; }
         
         public int? ObservationsId { get; set; } // 20190430 Added O&M support
+        
+        public int? ObsCollectionId { get; set; } // 20190819 Added reference to a specific ObsCollection to hold this load's observations
     }
 }
