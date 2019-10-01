@@ -9,7 +9,8 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
-namespace AgGateway.ADAPT.Representation.RepresentationSystem
+
+namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public class RepresentationTagList 
     {
@@ -990,6 +991,10 @@
         public const int vrDeltaAppRateMass = 552;
 
         public const int vrYieldWetMass = 553;
+
+        public const int vrSolutionRateLiquidDistance = 554;
+
+        public const int vrSolutionRateMassDistance = 555;
 
     }
 }
