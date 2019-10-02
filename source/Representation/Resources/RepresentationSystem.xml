@@ -17734,6 +17734,20 @@
 			<Name locale="ug" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
 			<Name locale="vi" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
 		</NumericRepresentation>
+	  <NumericRepresentation domainID="vrSolutionRateLiquidDistance" domainTag="554" digits="5" decimal="2">
+	    <UnitOfMeasureDefault unitOfMeasure="gal1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsEnglish"/>
+	    <UnitOfMeasureDefault unitOfMeasure="l1hdm-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsMetric"/>
+	    <UnitOfMeasureDefault unitOfMeasure="igal1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsImperial"/>
+	    <UnitDimensionRef unitDimension="utVolumePerDistance"/>
+	    <Name locale="en" description="Solution rate of a liquid tank measured mix per distance">solution rate liquid distance</Name>
+	  </NumericRepresentation>
+	  <NumericRepresentation domainID="vrSolutionRateMassDistance" domainTag="555" digits="5" decimal="2">
+	    <UnitOfMeasureDefault unitOfMeasure="lb1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsEnglish"/>
+	    <UnitOfMeasureDefault unitOfMeasure="kg1hdm-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsMetric"/>
+	    <UnitOfMeasureDefault unitOfMeasure="lb1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsImperial"/>
+	    <UnitDimensionRef unitDimension="utMassPerDistance"/>
+	    <Name locale="en" description="Solution rate of a mass tank measured mix per distance">solution rate mass distance</Name>
+	  </NumericRepresentation>
 		<EnumeratedRepresentation domainID="dtApplicationMethod" domainTag="1001" attributeID="196" domainIDShort="Applicat">
 			<Name locale="en" description="ApplicationMethod">ApplicationMethod</Name>
 			<Name locale="de" description="Ausbringmethode">Ausbringmethode</Name>

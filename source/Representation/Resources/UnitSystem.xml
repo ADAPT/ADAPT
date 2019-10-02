@@ -925,6 +925,84 @@
 					<Name locale="ug" label="ئاتتومېتىر" plural="ئاتتومېتىر">ئاتتومېتىر</Name>
 					<Name locale="vi" label="am" plural="attomet">attomet</Name>
 				</UnitOfMeasure>
+        <UnitOfMeasure domainID="hdm" scale="1.00E+02" baseOffset="0">
+          <Name locale="en" label="100m" plural="Hundred Meter">Hundred Meter</Name>
+          <Name locale="de" label="100 m" plural="Hundert Meter">Hundert Meter</Name>
+          <Name locale="fr" label="100 m" plural="Cent mètres">Cent mètres</Name>
+          <Name locale="da" label="100 m" plural="Hundrede meter">Hundrede meter</Name>
+          <Name locale="nl" label="100 m" plural="Honderd meter">Honderd meter</Name>
+          <Name locale="es" label="100 m" plural="Cien metros">Cien metros</Name>
+          <Name locale="it" label="100 m" plural="Cento metri">Cento metri</Name>
+          <Name locale="pt" label="100 m" plural="Cem Metros">Cem Metros</Name>
+          <Name locale="ru" label="100 м" plural="Сто метров">Сто метров</Name>
+          <Name locale="hu" label="100 m" plural="Száz méter">Száz méter</Name>
+          <Name locale="cs" label="100 m" plural="Sto metrů">Sto metrů</Name>
+          <Name locale="sk" label="100 m" plural="Sto metrov">Sto metrov</Name>
+          <Name locale="fi" label="100 m" plural="Sata metriä">Sata metriä</Name>
+          <Name locale="sv" label="100 m" plural="Hundra meter">Hundra meter</Name>
+          <Name locale="et" label="100 m" plural="Sada meetrit">Sada meetrit</Name>
+          <Name locale="lv" label="100 m" plural="Simts metri">Simts metri</Name>
+          <Name locale="lt" label="100 m" plural="Šimtas metrų">Šimtas metrų</Name>
+          <Name locale="no" label="100m" plural="Hundre meter">Hundre meter</Name>
+          <Name locale="pl" label="100 m" plural="Sto metrów">Sto metrów</Name>
+          <Name locale="bg" label="100m" plural="Сто метра">Сто метра</Name>
+          <Name locale="hr" label="100m" plural="Stotinu metara">Stotinu metara</Name>
+          <Name locale="ro" label="100 m" plural="O sută de metri">O sută de metri</Name>
+          <Name locale="tr" label="100 m" plural="Yüz Metre">Yüz Metre</Name>
+          <Name locale="el" label="100 μ." plural="Εκατό μέτρα">Εκατό μέτρα</Name>
+          <Name locale="is" label="100 m" plural="Hundrað metrar">Hundrað metrar</Name>
+          <Name locale="sr" label="100m" plural="Sto metara">Sto metara</Name>
+          <Name locale="sl" label="100 m" plural="Sto metrov">Sto metrov</Name>
+          <Name locale="zh" label="100m" plural="百米">百米</Name>
+          <Name locale="ar" label="100 م" plural="مائة متر">مائة متر</Name>
+          <Name locale="he" label="100 מ&apos;" plural="100 מטר">100 מטר</Name>
+          <Name locale="ja" label="100m" plural="100メートル">100メートル</Name>
+          <Name locale="kk" label="100 м" plural="Жүз метр">Жүз метр</Name>
+          <Name locale="ko" label="100m" plural="백미터">백미터</Name>
+          <Name locale="mk" label="100 m" plural="Сто метри">Сто метри</Name>
+          <Name locale="th" label="100 ม." plural="ร้อยเมตร">ร้อยเมตร</Name>
+          <Name locale="uk" label="100 м" plural="Сто метрів">Сто метрів</Name>
+          <Name locale="vi" label="100m" plural="trăm mét">trăm mét</Name>
+        </UnitOfMeasure>
+        <UnitOfMeasure domainID="hdyd" scale="91.44" baseOffset="0">
+					<Name locale="en" label="100yd" plural="Hundred Yard">Hundred Yard</Name>
+					<Name locale="de" label="100 yd" plural="Hundert Yards">Hundert Yards</Name>
+					<Name locale="fr" label="100 yd" plural="Hundred Yard">Hundred Yard</Name>
+					<Name locale="da" label="100 yd" plural="Hundrede yard">Hundrede yard</Name>
+					<Name locale="nl" label="100 yd" plural="Honderd yard">Honderd yard</Name>
+					<Name locale="es" label="100 yd" plural="Cien yardas">Cien yardas</Name>
+					<Name locale="it" label="100 yd" plural="Cento iarde">Cento iarde</Name>
+					<Name locale="pt" label="100 yd" plural="Cem Jardas">Cem Jardas</Name>
+					<Name locale="ru" label="100 ярдов" plural="Сто ярдов">Сто ярдов</Name>
+					<Name locale="hu" label="100 yd" plural="Száz yard">Száz yard</Name>
+					<Name locale="cs" label="100 yd" plural="Sto yardů">Sto yardů</Name>
+					<Name locale="sk" label="100 yd" plural="Sto yardov">Sto yardov</Name>
+					<Name locale="fi" label="100 yd" plural="Sata jaardia">Sata jaardia</Name>
+					<Name locale="sv" label="100 yd" plural="Hundra yard">Hundra yard</Name>
+					<Name locale="et" label="100 yd" plural="Sada jardi">Sada jardi</Name>
+					<Name locale="lv" label="100 yd" plural="Simts jardi">Simts jardi</Name>
+					<Name locale="lt" label="100 yd" plural="Šimtas jardų">Šimtas jardų</Name>
+					<Name locale="no" label="100 yd" plural="Hundre yard">Hundre yard</Name>
+					<Name locale="pl" label="100 yd" plural="Sto jardów">Sto jardów</Name>
+					<Name locale="bg" label="100 yd" plural="Сто ярда">Сто ярда</Name>
+					<Name locale="hr" label="100 yd" plural="Stotinu jardi">Stotinu jardi</Name>
+					<Name locale="ro" label="100 yd" plural="O sută de yarzi">O sută de yarzi</Name>
+					<Name locale="tr" label="100 yd" plural="Yüz Yard">Yüz Yard</Name>
+					<Name locale="el" label="100 yd" plural="Εκατό γιάρδες">Εκατό γιάρδες</Name>
+					<Name locale="is" label="100 yd" plural="Hundrað yard">Hundrað yard</Name>
+					<Name locale="sr" label="100 yd" plural="Sto jardi">Sto jardi</Name>
+					<Name locale="sl" label="100 yd" plural="Sto jardov">Sto jardov</Name>
+					<Name locale="zh" label="100yd" plural="一百码">一百码</Name>
+					<Name locale="ar" label="100يارد" plural="مئة يارد">مئة يارد</Name>
+					<Name locale="he" label="100 yd" plural="מאה יארד">מאה יארד</Name>
+					<Name locale="ja" label="100 yd" plural="100 ヤード">100 ヤード</Name>
+					<Name locale="kk" label="100 ярд" plural="Жүз ярд">Жүз ярд</Name>
+					<Name locale="ko" label="100 yd" plural="100야드">100야드</Name>
+					<Name locale="mk" label="100 јарди" plural="Сто јарди">Сто јарди</Name>
+					<Name locale="th" label="100 หลา" plural="ร้อยหลา">ร้อยหลา</Name>
+					<Name locale="uk" label="100 ярдів" plural="Сто ярдів">Сто ярдів</Name>
+					<Name locale="vi" label="100 thước" plural="Trăm yard">Trăm yard</Name>
+				</UnitOfMeasure>
 			</UnitDimensionRepresentation>
 			<Name locale="en">distance</Name>
 			<Name locale="de">Abstand</Name>
@@ -2831,6 +2909,45 @@
 					<Name locale="ug" label="1000 كۇۋادرات فۇت" plural="مىڭ كۇۋادرات فۇت">مىڭ كۇۋادرات فۇت</Name>
 					<Name locale="vi" label="1000 ft vuông" plural="một nghìn phút vuông">một nghìn phút vuông</Name>
 				</UnitOfMeasure>
+        <UnitOfMeasure domainID="a" scale="0.01" baseOffset="0">
+          <Name locale="en" label="a" plural="ares">are</Name>
+          <Name locale="de" label="a" plural="Ar">Ar</Name>
+          <Name locale="fr" label="a" plural="ares">are</Name>
+          <Name locale="da" label="a" plural="ares">are</Name>
+          <Name locale="nl" label="a" plural="ares">are</Name>
+          <Name locale="es" label="a" plural="áreas">área</Name>
+          <Name locale="it" label="a" plural="are">ara</Name>
+          <Name locale="pt" label="a" plural="ares">are</Name>
+          <Name locale="ru" label="ары" plural="ары">ар</Name>
+          <Name locale="hu" label="a" plural="ár">ár</Name>
+          <Name locale="cs" label="a" plural="ary">ar</Name>
+          <Name locale="sk" label="a" plural="áry">ár</Name>
+          <Name locale="fi" label="a" plural="aareja">aari</Name>
+          <Name locale="sv" label="a" plural="ar">ar</Name>
+          <Name locale="et" label="a" plural="aari">aar</Name>
+          <Name locale="lv" label="a" plural="ares">ir</Name>
+          <Name locale="lt" label="ar" plural="arai">aras</Name>
+          <Name locale="no" label="a" plural="ar">ar</Name>
+          <Name locale="pl" label="a" plural="ary(-ów)">ar</Name>
+          <Name locale="bg" label="a" plural="ара">ар</Name>
+          <Name locale="hr" label="a" plural="ari">ar</Name>
+          <Name locale="ro" label="a" plural="ari">ar</Name>
+          <Name locale="tr" label="a" plural="ar">ar</Name>
+          <Name locale="el" label="άριο" plural="άρια">άριο</Name>
+          <Name locale="is" label="a" plural="arar (flatarmálseining)">ari (flatarmálseining)</Name>
+          <Name locale="sr" label="a" plural="ari">ar</Name>
+          <Name locale="sl" label="a" plural="ari">ar</Name>
+          <Name locale="zh" label="a" plural="公亩">公亩</Name>
+          <Name locale="ar" label="a" plural="فدادين">فدان</Name>
+          <Name locale="he" label="א" plural="אר">אר</Name>
+          <Name locale="ja" label="a" plural="アール">アール</Name>
+          <Name locale="kk" label="а" plural="ар">ар</Name>
+          <Name locale="ko" label="a" plural="아르">아르</Name>
+          <Name locale="mk" label="а" plural="ари">ар</Name>
+          <Name locale="th" label="รุ่น" plural="อาร์">อาร์</Name>
+          <Name locale="uk" label="а" plural="ари">ар</Name>
+          <Name locale="vi" label="a" plural="ares">are</Name>
+        </UnitOfMeasure>
 			</UnitDimensionRepresentation>
 			<CompositeUnitDimensionRepresentation domainID="urAreaDistanceSquared" scale="0.0001" baseOffset="0">
 				<UnitDimensionRef UnitDimensionRef="utDistance" power="2" baseUnitOfMeasureRef="m"/>
@@ -8258,6 +8375,92 @@
 			<Name locale="ug">ھەر بىر رايوندىكى سان</Name>
 			<Name locale="vi">tổng số trên diện tích</Name>
 		</UnitDimension>
+    <UnitDimension domainID="utVolumePerDistance">
+      <CompositeUnitDimensionRepresentation domainID="urVolumePerDistance" scale="1" baseOffset="0">
+        <UnitDimensionRef UnitDimensionRef="utVolume" baseUnitOfMeasureRef="l"/>
+        <UnitDimensionRef UnitDimensionRef="utDistance" baseUnitOfMeasureRef="m" power="-1"/>
+      </CompositeUnitDimensionRepresentation>
+      <Name locale="en">volume per distance</Name>
+      <Name locale="de">Volumen/Entfernung</Name>
+      <Name locale="fr">volume par distance</Name>
+      <Name locale="da">volumen pr distance</Name>
+      <Name locale="nl">volume per afstand</Name>
+      <Name locale="es">volumen por distancia</Name>
+      <Name locale="it">volume per distanza</Name>
+      <Name locale="pt">volume por distância</Name>
+      <Name locale="ru">объем на единицу расстояния</Name>
+      <Name locale="hu">térfogat/távolág</Name>
+      <Name locale="cs">objem na jednotku vzdálenosti</Name>
+      <Name locale="sk">objem na vzdialenosť</Name>
+      <Name locale="fi">tilavuus/etäisyys</Name>
+      <Name locale="sv">volym per avstånd</Name>
+      <Name locale="et">maht vahemaa kohta</Name>
+      <Name locale="lv">apjoms uz attālumu</Name>
+      <Name locale="lt">tūris atstumui</Name>
+      <Name locale="no">volum per distanse</Name>
+      <Name locale="pl">objętość na odległość</Name>
+      <Name locale="bg">обем за разстояние</Name>
+      <Name locale="hr">volumen po udaljenosti</Name>
+      <Name locale="ro">volum per distanţă</Name>
+      <Name locale="tr">mesafe başına hacim</Name>
+      <Name locale="el">όγκος ανά απόσταση</Name>
+      <Name locale="is">rúmtak eftir vegalengd</Name>
+      <Name locale="sr">zapremina po rastojanju</Name>
+      <Name locale="sl">prostornina na razdaljo</Name>
+      <Name locale="zh">单位距离体积</Name>
+      <Name locale="ar">الكمية حسب المساحة</Name>
+      <Name locale="he">נפח לפי מרחק</Name>
+      <Name locale="ja">距離当たりの体積</Name>
+      <Name locale="kk">көлем/аралық</Name>
+      <Name locale="ko">거리별 용적</Name>
+      <Name locale="mk">волумен на далечина</Name>
+      <Name locale="th">ปริมาณต่อระยะทาง</Name>
+      <Name locale="uk">об&apos;єм на відстань</Name>
+      <Name locale="vi">thể tích/khoảng cách</Name>
+    </UnitDimension>
+     <UnitDimension domainID="utMassPerDistance">
+      <CompositeUnitDimensionRepresentation domainID="urMassPerDistance" scale="1" baseOffset="0">
+        <UnitDimensionRef UnitDimensionRef="utMass" baseUnitOfMeasureRef="g"/>
+        <UnitDimensionRef UnitDimensionRef="utDistance" baseUnitOfMeasureRef="m" power="-1"/>
+      </CompositeUnitDimensionRepresentation>
+       <Name locale="en">mass per distance</Name>
+       <Name locale="de">Masse pro Länge</Name>
+       <Name locale="fr">masse par distance</Name>
+       <Name locale="da">masse pr. afstand</Name>
+       <Name locale="nl">massa per afstand</Name>
+       <Name locale="es">masa por distancia</Name>
+       <Name locale="it">massa per distanza</Name>
+       <Name locale="pt">massa por distância</Name>
+       <Name locale="ru">масса на единицу расстояния</Name>
+       <Name locale="hu">tömeg/távolság</Name>
+       <Name locale="cs">hmotnost na vzdálenost</Name>
+       <Name locale="sk">hmotnosť za vzdialenosť</Name>
+       <Name locale="fi">massa etäisyyttä kohti</Name>
+       <Name locale="sv">massa per avstånd</Name>
+       <Name locale="et">mass vahemaa kohta</Name>
+       <Name locale="lv">masa uz attālumu</Name>
+       <Name locale="lt">masė per atstumą</Name>
+       <Name locale="no">masse per strekning</Name>
+       <Name locale="pl">masa na odległość</Name>
+       <Name locale="bg">маса на разстояние</Name>
+       <Name locale="hr">masa po udaljenosti</Name>
+       <Name locale="ro">masă per distanţă</Name>
+       <Name locale="tr">mesafe başına kütle</Name>
+       <Name locale="el">μάζα ανά απόσταση</Name>
+       <Name locale="is">massi á fjarlægð</Name>
+       <Name locale="sr">masa po rastojanju</Name>
+       <Name locale="sl">masa na razdaljo</Name>
+       <Name locale="zh">质量/距离</Name>
+       <Name locale="ar">الكتلة للمسافة</Name>
+       <Name locale="he">מסה למרחק</Name>
+       <Name locale="ja">距離当たりの重量</Name>
+       <Name locale="kk">аралықтағы масса</Name>
+       <Name locale="ko">거리당 질량</Name>
+       <Name locale="mk">маса по растојание</Name>
+       <Name locale="th">มวลต่อระยะทาง</Name>
+       <Name locale="uk">маса на відстань</Name>
+       <Name locale="vi">khối trên chiều dài</Name>
+    </UnitDimension>
 	</UnitDimensions>
 	<UnitOfMeasureSystems>
 		<UnitOfMeasureSystem domainID="umsEnglish">
