@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -11,6 +11,7 @@
   *******************************************************************************/
 
 using System.Collections.Generic;
+using System.Threading;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Common
 {
@@ -19,7 +20,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         private static CompoundIdentifierFactory _instance;
         private static int _lowestReferenceId;
         private static readonly object InstanceThreadLock = new object();
-        private static readonly object CreateThreadLock = new object();
 
         private CompoundIdentifierFactory()
         {
@@ -44,12 +44,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
 
         public CompoundIdentifier Create()
         {
-            int referenceId;
-            lock (CreateThreadLock)
-            {
-                _lowestReferenceId--;
-                referenceId = _lowestReferenceId;
-            }
+            int referenceId = Interlocked.Decrement(ref _lowestReferenceId);
             return new CompoundIdentifier(referenceId)
             {
                 UniqueIds = new List<UniqueId>()
