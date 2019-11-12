@@ -66,7 +66,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             DeviceElements = new List<DeviceElement>();
             HitchPoints = new List<HitchPoint>();
             Companies = new List<Company>();
-            Products = new List<Product>();
             Places = new List<Place>();
         }
 
