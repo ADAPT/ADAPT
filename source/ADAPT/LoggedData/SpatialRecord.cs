@@ -30,6 +30,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
             _appliedLatencyValues = new Dictionary<Int32,Int32?>();
         }
 
+        // This overload offers a small performance improvement by avoiding dictionary resizing when calling SetMeterValue.
         public SpatialRecord(int numberOfMeters)
         {
             _meterValues = new Dictionary<Int32,RepresentationValue>(numberOfMeters);
