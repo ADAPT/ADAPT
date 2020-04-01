@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Kathleen Oneal - initial API and implementation
+  *    Kelly Nelson - Correcting RxShapeLookups initialization in constructor
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
     {
         public VectorPrescription()
         {
-            RxProductLookups = new List<RxProductLookup>();
+            RxShapeLookups = new List<RxShapeLookup>();
         }
 
         public List<RxShapeLookup> RxShapeLookups { get; set; }
