@@ -93,5 +93,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         SeedsPerMass,
         MassPerArea,
         PerArea,
+        MassPerDistance,
+        VolumePerDistance
     }
 }

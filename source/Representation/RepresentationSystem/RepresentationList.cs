@@ -9,7 +9,8 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
-namespace AgGateway.ADAPT.Representation.RepresentationSystem
+
+namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public enum RepresentationList 
     {
@@ -992,6 +993,10 @@
         vrDeltaAppRateMass = 552,
 
         vrYieldWetMass = 553,
+
+        vrSolutionRateLiquidDistance = 554,
+
+        vrSolutionRateMassDistance = 555,
 
     }
 }
