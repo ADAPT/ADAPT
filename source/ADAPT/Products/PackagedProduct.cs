@@ -22,7 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
         public PackagedProduct()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
-            ContainedPackagedProducts = new List(ContainedPackageProduct)
+            ContainedPackagedProducts = new List(ContainedPackageProduct);
             ContextItems = new List<ContextItem>();
         }
 
