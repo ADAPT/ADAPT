@@ -70,7 +70,14 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             Companies = new List<Company>();
             Places = new List<Place>();
             ContainerModels = new List<ContainerModel>();
-            PackagedProducts = new List<PackagedProduct>();
+            PackagedProducts = new List<PackagedProduct>();           
+            DeviceSeries = new List<DeviceSeries>();
+            EndgunConfigurations = new List<EndgunConfiguration>();
+            Facilities = new List<Facility>();
+            IrrSectionConfigurations = new List<IrrSectionConfiguration>();
+            IrrSystemConfigurations = new List<IrrSystemConfiguration>();
+            IrrSystemModels = new List<IrrSystemModel>();
+            
         }
 
         public List<Brand> Brands { get; set; }
