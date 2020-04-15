@@ -76,7 +76,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             Facilities = new List<Facility>();
             IrrSectionConfigurations = new List<IrrSectionConfiguration>();
             IrrSystemConfigurations = new List<IrrSystemConfiguration>();
-            IrrSystemModels = new List<IrrSystemModel>()
+            IrrSystemModels = new List<IrrSystemModel>();
         }
 
         public List<Brand> Brands { get; set; }
