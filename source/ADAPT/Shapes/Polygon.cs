@@ -22,7 +22,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Shapes
             InteriorRings = new List<LinearRing>();
         }
 
-        public LinearRing ExteriorRing { get; set; }
+        public List<LinearRing> ExteriorRing { get; set; }
 
         public List<LinearRing> InteriorRings { get; set; }
     }
