@@ -9,7 +9,9 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
-namespace AgGateway.ADAPT.Representation.RepresentationSystem
+
+
+namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public class RepresentationInstanceList 
     {
@@ -990,6 +992,10 @@
         public static readonly NumericRepresentation vrDeltaAppRateMass = (NumericRepresentation)RepresentationManager.Instance.Representations["vrDeltaAppRateMass"];
 
         public static readonly NumericRepresentation vrYieldWetMass = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldWetMass"];
+
+        public static readonly NumericRepresentation vrSolutionRateLiquidDistance = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSolutionRateLiquidDistance"];
+
+        public static readonly NumericRepresentation vrSolutionRateMassDistance = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSolutionRateMassDistance"];
 
     }
 }
