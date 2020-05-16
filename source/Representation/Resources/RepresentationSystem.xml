@@ -17749,7 +17749,7 @@
 	    <Name locale="en" description="Solution rate of a mass tank measured mix per distance">solution rate mass distance</Name>
 	  </NumericRepresentation>
 		<NumericRepresentation domainID="vrWorkingWidthTarget" domainTag="556" digits="5" decimal="3">
-			<RelatedDDI ddi="66" unitOfMeasure="mm" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
+			<RelatedDDI ddi="66" unitOfMeasure="mm" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="m" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsImperial"/>
