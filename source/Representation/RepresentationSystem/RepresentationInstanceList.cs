@@ -997,5 +997,11 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public static readonly NumericRepresentation vrSolutionRateMassDistance = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSolutionRateMassDistance"];
 
+        public static readonly NumericRepresentation vrWorkingWidthTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrWorkingWidthTarget"];
+
+        public static readonly NumericRepresentation vrWorkingWidthActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrWorkingWidthActual"];
+
+        public static readonly NumericRepresentation vrWorkingWidthDefault = (NumericRepresentation)RepresentationManager.Instance.Representations["vrWorkingWidthDefault"];
+
     }
 }
