@@ -1013,6 +1013,8 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public static readonly NumericRepresentation vrSlipCurrentSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSlipCurrentSpeed"];
 
+        public static readonly NumericRepresentation vrFuelProductivityTotal = (NumericRepresentation)RepresentationManager.Instance.Representations["vrFuelProductivityTotal"];
+
     }
 
 }

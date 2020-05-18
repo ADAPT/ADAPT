@@ -1014,5 +1014,8 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         vrSlipCurrentSpeed = 566,
 
+        vrFuelProductivityTotal = 567,
+
+
     }
 }

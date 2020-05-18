@@ -1012,5 +1012,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public const int vrSlipCurrentSpeed = 566;
 
+        public const int vrFuelProductivityTotal = 567;
+
     }
 }
