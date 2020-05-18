@@ -996,5 +996,21 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public const int vrSolutionRateMassDistance = 555;
 
+        public const int vrEnginePower = 559;
+
+        public const int vrElectricalPowerSetPoint = 560;
+
+        public const int vrElectricalPowerActual = 561;
+
+        public const int vrPTOLoadCurrentSpeed = 562;
+
+        public const int vrTransmissionLoadCurrentSpeed = 563;
+
+        public const int vrFuelTotalConsumptionEffective = 564;
+
+        public const int vrFuelTotalConsumptionIneffective = 565;
+
+        public const int vrSlipCurrentSpeed = 566;
+
     }
 }

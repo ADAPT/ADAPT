@@ -16180,6 +16180,7 @@
 			<Name locale="vi" description="TillagePressureActual">tillage pressure Actual</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFuelProductivity" domainTag="370" digits="3" decimal="2">
+			<RelatedDDI ddi="278" unitOfMeasure="[mm3]1[m2]-1" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="l1ha-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="igal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsImperial"/>
@@ -17748,6 +17749,66 @@
 	    <UnitDimensionRef unitDimension="utMassPerDistance"/>
 	    <Name locale="en" description="Solution rate of a mass tank measured mix per distance">solution rate mass distance</Name>
 	  </NumericRepresentation>
+		<NumericRepresentation domainID="vrEnginePower" domainTag="559" digits="6" decimal="3">
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPower"/>
+			<Name locale="en" description="Engine Power">Engine Power</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrElectricalPowerSetPoint" domainTag="560" digits="6" decimal="3">
+			<RelatedDDI ddi="568" unitOfMeasure="kg" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPower"/>
+			<Name locale="en" description="Electrical Power Setpoint">Setpoint Electrical Power of Device Element</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrElectricalPowerActual" domainTag="561" digits="6" decimal="3">		
+			<RelatedDDI ddi="569" unitOfMeasure="kg" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPower"/>
+			<Name locale="en" description="Electrical Power Actual">Actual Electrical Power of Device Element</Name>
+		</NumericRepresentation>	
+		<NumericRepresentation domainID="vrPTOLoadCurrentSpeed" domainTag="562" digits="3" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPercent"/>
+			<Name locale="en" description="PTO Load at Current Speed">The ratio of actual PTO (Power Take-Off) percent torque (indicated) to maximum indicated torque available at the current PTO speed.</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrTransmissionLoadCurrentSpeed" domainTag="563" digits="3" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPercent"/>
+			<Name locale="en" description="Transmission Load at Current Speed">The ratio of actual Transmission percent torque (indicated) to maximum indicated torque available at the current Transmission speed.</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrFuelTotalConsumptionEffective" domainTag="564" digits="5" decimal="0">		
+			<RelatedDDI ddi="316" unitOfMeasure="ml" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="gal" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="igal" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utVolume"/>
+			<Name locale="en" description="Fuel Total Consumption Effective">Accumulated total fuel consumption in working position.</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrFuelTotalConsumptionIneffective" domainTag="565" digits="5" decimal="0">		
+			<RelatedDDI ddi="317" unitOfMeasure="ml" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="gal" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="igal" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utVolume"/>
+			<Name locale="en" description="Fuel Total Consumption Ineffective">Accumulated total fuel consumption in non working position.</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrSlipCurrentSpeed" domainTag="566" digits="3" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPercent"/>
+			<Name locale="en" description="Slip at Current Speed">Slip at Current Speed</Name>
+		</NumericRepresentation>
 		<EnumeratedRepresentation domainID="dtApplicationMethod" domainTag="1001" attributeID="196" domainIDShort="Applicat">
 			<Name locale="en" description="ApplicationMethod">ApplicationMethod</Name>
 			<Name locale="de" description="Ausbringmethode">Ausbringmethode</Name>

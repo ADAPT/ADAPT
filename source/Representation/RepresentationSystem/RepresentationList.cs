@@ -998,5 +998,21 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         vrSolutionRateMassDistance = 555,
 
+        vrEnginePower = 559,
+
+        vrElectricalPowerSetPoint = 560,
+
+        vrElectricalPowerActual = 561,
+
+        vrPTOLoadCurrentSpeed = 562,
+
+        vrTransmissionLoadCurrentSpeed = 563,
+
+        vrFuelTotalConsumptionEffective = 564,
+
+        vrFuelTotalConsumptionIneffective = 565,
+
+        vrSlipCurrentSpeed = 566,
+
     }
 }
