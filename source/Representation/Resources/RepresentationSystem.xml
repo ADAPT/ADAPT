@@ -16180,7 +16180,7 @@
 			<Name locale="vi" description="TillagePressureActual">tillage pressure Actual</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFuelProductivity" domainTag="370" digits="3" decimal="2">
-			<RelatedDDI ddi="278" unitOfMeasure="[mm3]1[m2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="150" unitOfMeasure="[mm3]1[m2]-1" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="l1ha-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="igal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsImperial"/>
@@ -17808,6 +17808,40 @@
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utPercent"/>
 			<Name locale="en" description="Slip at Current Speed">Slip at Current Speed</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrFuelProductivityTotal" domainTag="567" digits="3" decimal="2">
+			<RelatedDDI ddi="278" unitOfMeasure="[mm3]1[m2]-1" resolution="1" offset="0"isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="l1ha-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="igal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utVolumePerArea"/>
+			<Name locale="en" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="de" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="fr" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="da" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="nl" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="es" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="it" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="pt" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="ru" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="hu" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="cs" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="sk" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="fi" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="sv" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="et" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="lv" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="lt" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="no" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="pl" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="bg" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="hr" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="ro" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="tr" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="el" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="is" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="sr" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="sl" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
 		</NumericRepresentation>
 		<EnumeratedRepresentation domainID="dtApplicationMethod" domainTag="1001" attributeID="196" domainIDShort="Applicat">
 			<Name locale="en" description="ApplicationMethod">ApplicationMethod</Name>
