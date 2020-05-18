@@ -11072,6 +11072,7 @@
 			<Name locale="vi" description="Mức bình chứa theo Phần trăm">Mức bình chứa theo Phần trăm</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrEngineHours" domainTag="247" digits="3" decimal="0">
+			<RelatedDDI ddi="493" unitOfMeasure="hr" resolution="0.1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="hr" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="hr" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="hr" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsImperial"/>
@@ -13530,6 +13531,7 @@
 			<Name locale="vi" description="Tổng số trên diện tích">tổng số trên diện tích</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrConstituentCrudeProtein" domainTag="310" digits="3" decimal="2">
+			<RelatedDDI ddi="407" unitOfMeasure="prcnt" resolution="0.01" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsImperial"/>
@@ -17634,7 +17636,7 @@
 			<Name locale="en" description="Average Dry Yield Mass Per Area">Average Dry Yield Mass Per Area</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAvgHarvestMoisture" domainTag="546" digits="3" decimal="2">
-			<RelatedDDI ddi="99" unitOfMeasure="ppm" resolution="0.001" offset="0"/>
+			<RelatedDDI ddi="262" unitOfMeasure="ppm" resolution="0.001" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsImperial"/>
