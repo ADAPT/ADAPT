@@ -94,6 +94,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         MassPerArea,
         PerArea,
         MassPerDistance,
-        VolumePerDistance
+        VolumePerDistance,
+        Energy,
+        Power
     }
 }
