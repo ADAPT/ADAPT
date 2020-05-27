@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <UnitSystem xmlns="urn:schemas-adapt-aggateway-org:UnitSystem" xmlns:bt="urn:schemas-adapt-aggateway-org:BasicTypes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:schemas-adapt-aggateway-org:UnitSystem UnitSystem.xsd">
 	<SchemaVersion major="1" minor="1"/>
-	<ContentVersion major="1" minor="1"/>
+	<ContentVersion major="1" minor="2"/>
 	<SupportedLanguages>
 		<Language>en</Language>
 		<Language>de</Language>
@@ -7261,6 +7261,11 @@
 					<Name label="lbf" locale="vi" plural="pao lực">pao lực</Name>
 				</UnitOfMeasure>
 			</UnitDimensionRepresentation>
+			<CompositeUnitDimensionRepresentation domainID="urMassDistancePerTimeCubed" scale="1" baseOffset="0">
+				<UnitDimensionRef UnitDimensionRef="utMass" baseUnitOfMeasureRef="kg" power="1"/>
+				<UnitDimensionRef UnitDimensionRef="utDistance" baseUnitOfMeasureRef="m" power="1"/>
+				<UnitDimensionRef UnitDimensionRef="utTime" baseUnitOfMeasureRef="sec" power="-2"/>
+			</CompositeUnitDimensionRepresentation>
 			<Name locale="en">force</Name>
 			<Name locale="de">Kraft</Name>
 			<Name locale="fr">force</Name>
@@ -8375,92 +8380,262 @@
 			<Name locale="ug">ھەر بىر رايوندىكى سان</Name>
 			<Name locale="vi">tổng số trên diện tích</Name>
 		</UnitDimension>
-    <UnitDimension domainID="utVolumePerDistance">
-      <CompositeUnitDimensionRepresentation domainID="urVolumePerDistance" scale="1" baseOffset="0">
-        <UnitDimensionRef UnitDimensionRef="utVolume" baseUnitOfMeasureRef="l"/>
-        <UnitDimensionRef UnitDimensionRef="utDistance" baseUnitOfMeasureRef="m" power="-1"/>
-      </CompositeUnitDimensionRepresentation>
-      <Name locale="en">volume per distance</Name>
-      <Name locale="de">Volumen/Entfernung</Name>
-      <Name locale="fr">volume par distance</Name>
-      <Name locale="da">volumen pr distance</Name>
-      <Name locale="nl">volume per afstand</Name>
-      <Name locale="es">volumen por distancia</Name>
-      <Name locale="it">volume per distanza</Name>
-      <Name locale="pt">volume por distância</Name>
-      <Name locale="ru">объем на единицу расстояния</Name>
-      <Name locale="hu">térfogat/távolág</Name>
-      <Name locale="cs">objem na jednotku vzdálenosti</Name>
-      <Name locale="sk">objem na vzdialenosť</Name>
-      <Name locale="fi">tilavuus/etäisyys</Name>
-      <Name locale="sv">volym per avstånd</Name>
-      <Name locale="et">maht vahemaa kohta</Name>
-      <Name locale="lv">apjoms uz attālumu</Name>
-      <Name locale="lt">tūris atstumui</Name>
-      <Name locale="no">volum per distanse</Name>
-      <Name locale="pl">objętość na odległość</Name>
-      <Name locale="bg">обем за разстояние</Name>
-      <Name locale="hr">volumen po udaljenosti</Name>
-      <Name locale="ro">volum per distanţă</Name>
-      <Name locale="tr">mesafe başına hacim</Name>
-      <Name locale="el">όγκος ανά απόσταση</Name>
-      <Name locale="is">rúmtak eftir vegalengd</Name>
-      <Name locale="sr">zapremina po rastojanju</Name>
-      <Name locale="sl">prostornina na razdaljo</Name>
-      <Name locale="zh">单位距离体积</Name>
-      <Name locale="ar">الكمية حسب المساحة</Name>
-      <Name locale="he">נפח לפי מרחק</Name>
-      <Name locale="ja">距離当たりの体積</Name>
-      <Name locale="kk">көлем/аралық</Name>
-      <Name locale="ko">거리별 용적</Name>
-      <Name locale="mk">волумен на далечина</Name>
-      <Name locale="th">ปริมาณต่อระยะทาง</Name>
-      <Name locale="uk">об&apos;єм на відстань</Name>
-      <Name locale="vi">thể tích/khoảng cách</Name>
-    </UnitDimension>
-     <UnitDimension domainID="utMassPerDistance">
-      <CompositeUnitDimensionRepresentation domainID="urMassPerDistance" scale="1" baseOffset="0">
-        <UnitDimensionRef UnitDimensionRef="utMass" baseUnitOfMeasureRef="g"/>
-        <UnitDimensionRef UnitDimensionRef="utDistance" baseUnitOfMeasureRef="m" power="-1"/>
-      </CompositeUnitDimensionRepresentation>
-       <Name locale="en">mass per distance</Name>
-       <Name locale="de">Masse pro Länge</Name>
-       <Name locale="fr">masse par distance</Name>
-       <Name locale="da">masse pr. afstand</Name>
-       <Name locale="nl">massa per afstand</Name>
-       <Name locale="es">masa por distancia</Name>
-       <Name locale="it">massa per distanza</Name>
-       <Name locale="pt">massa por distância</Name>
-       <Name locale="ru">масса на единицу расстояния</Name>
-       <Name locale="hu">tömeg/távolság</Name>
-       <Name locale="cs">hmotnost na vzdálenost</Name>
-       <Name locale="sk">hmotnosť za vzdialenosť</Name>
-       <Name locale="fi">massa etäisyyttä kohti</Name>
-       <Name locale="sv">massa per avstånd</Name>
-       <Name locale="et">mass vahemaa kohta</Name>
-       <Name locale="lv">masa uz attālumu</Name>
-       <Name locale="lt">masė per atstumą</Name>
-       <Name locale="no">masse per strekning</Name>
-       <Name locale="pl">masa na odległość</Name>
-       <Name locale="bg">маса на разстояние</Name>
-       <Name locale="hr">masa po udaljenosti</Name>
-       <Name locale="ro">masă per distanţă</Name>
-       <Name locale="tr">mesafe başına kütle</Name>
-       <Name locale="el">μάζα ανά απόσταση</Name>
-       <Name locale="is">massi á fjarlægð</Name>
-       <Name locale="sr">masa po rastojanju</Name>
-       <Name locale="sl">masa na razdaljo</Name>
-       <Name locale="zh">质量/距离</Name>
-       <Name locale="ar">الكتلة للمسافة</Name>
-       <Name locale="he">מסה למרחק</Name>
-       <Name locale="ja">距離当たりの重量</Name>
-       <Name locale="kk">аралықтағы масса</Name>
-       <Name locale="ko">거리당 질량</Name>
-       <Name locale="mk">маса по растојание</Name>
-       <Name locale="th">มวลต่อระยะทาง</Name>
-       <Name locale="uk">маса на відстань</Name>
-       <Name locale="vi">khối trên chiều dài</Name>
-    </UnitDimension>
+		<UnitDimension domainID="utVolumePerDistance">
+			<CompositeUnitDimensionRepresentation domainID="urVolumePerDistance" scale="1" baseOffset="0">
+				<UnitDimensionRef UnitDimensionRef="utVolume" baseUnitOfMeasureRef="l"/>
+				<UnitDimensionRef UnitDimensionRef="utDistance" baseUnitOfMeasureRef="m" power="-1"/>
+			</CompositeUnitDimensionRepresentation>
+			<Name locale="en">volume per distance</Name>
+			<Name locale="de">Volumen/Entfernung</Name>
+			<Name locale="fr">volume par distance</Name>
+			<Name locale="da">volumen pr distance</Name>
+			<Name locale="nl">volume per afstand</Name>
+			<Name locale="es">volumen por distancia</Name>
+			<Name locale="it">volume per distanza</Name>
+			<Name locale="pt">volume por distância</Name>
+			<Name locale="ru">объем на единицу расстояния</Name>
+			<Name locale="hu">térfogat/távolág</Name>
+			<Name locale="cs">objem na jednotku vzdálenosti</Name>
+			<Name locale="sk">objem na vzdialenosť</Name>
+			<Name locale="fi">tilavuus/etäisyys</Name>
+			<Name locale="sv">volym per avstånd</Name>
+			<Name locale="et">maht vahemaa kohta</Name>
+			<Name locale="lv">apjoms uz attālumu</Name>
+			<Name locale="lt">tūris atstumui</Name>
+			<Name locale="no">volum per distanse</Name>
+			<Name locale="pl">objętość na odległość</Name>
+			<Name locale="bg">обем за разстояние</Name>
+			<Name locale="hr">volumen po udaljenosti</Name>
+			<Name locale="ro">volum per distanţă</Name>
+			<Name locale="tr">mesafe başına hacim</Name>
+			<Name locale="el">όγκος ανά απόσταση</Name>
+			<Name locale="is">rúmtak eftir vegalengd</Name>
+			<Name locale="sr">zapremina po rastojanju</Name>
+			<Name locale="sl">prostornina na razdaljo</Name>
+			<Name locale="zh">单位距离体积</Name>
+			<Name locale="ar">الكمية حسب المساحة</Name>
+			<Name locale="he">נפח לפי מרחק</Name>
+			<Name locale="ja">距離当たりの体積</Name>
+			<Name locale="kk">көлем/аралық</Name>
+			<Name locale="ko">거리별 용적</Name>
+			<Name locale="mk">волумен на далечина</Name>
+			<Name locale="th">ปริมาณต่อระยะทาง</Name>
+			<Name locale="uk">об&apos;єм на відстань</Name>
+			<Name locale="vi">thể tích/khoảng cách</Name>
+		</UnitDimension>
+		<UnitDimension domainID="utMassPerDistance">
+			<CompositeUnitDimensionRepresentation domainID="urMassPerDistance" scale="1" baseOffset="0">
+				<UnitDimensionRef UnitDimensionRef="utMass" baseUnitOfMeasureRef="g"/>
+				<UnitDimensionRef UnitDimensionRef="utDistance" baseUnitOfMeasureRef="m" power="-1"/>
+			</CompositeUnitDimensionRepresentation>
+			<Name locale="en">mass per distance</Name>
+			<Name locale="de">Masse pro Länge</Name>
+			<Name locale="fr">masse par distance</Name>
+			<Name locale="da">masse pr. afstand</Name>
+			<Name locale="nl">massa per afstand</Name>
+			<Name locale="es">masa por distancia</Name>
+			<Name locale="it">massa per distanza</Name>
+			<Name locale="pt">massa por distância</Name>
+			<Name locale="ru">масса на единицу расстояния</Name>
+			<Name locale="hu">tömeg/távolság</Name>
+			<Name locale="cs">hmotnost na vzdálenost</Name>
+			<Name locale="sk">hmotnosť za vzdialenosť</Name>
+			<Name locale="fi">massa etäisyyttä kohti</Name>
+			<Name locale="sv">massa per avstånd</Name>
+			<Name locale="et">mass vahemaa kohta</Name>
+			<Name locale="lv">masa uz attālumu</Name>
+			<Name locale="lt">masė per atstumą</Name>
+			<Name locale="no">masse per strekning</Name>
+			<Name locale="pl">masa na odległość</Name>
+			<Name locale="bg">маса на разстояние</Name>
+			<Name locale="hr">masa po udaljenosti</Name>
+			<Name locale="ro">masă per distanţă</Name>
+			<Name locale="tr">mesafe başına kütle</Name>
+			<Name locale="el">μάζα ανά απόσταση</Name>
+			<Name locale="is">massi á fjarlægð</Name>
+			<Name locale="sr">masa po rastojanju</Name>
+			<Name locale="sl">masa na razdaljo</Name>
+			<Name locale="zh">质量/距离</Name>
+			<Name locale="ar">الكتلة للمسافة</Name>
+			<Name locale="he">מסה למרחק</Name>
+			<Name locale="ja">距離当たりの重量</Name>
+			<Name locale="kk">аралықтағы масса</Name>
+			<Name locale="ko">거리당 질량</Name>
+			<Name locale="mk">маса по растојание</Name>
+			<Name locale="th">มวลต่อระยะทาง</Name>
+			<Name locale="uk">маса на відстань</Name>
+			<Name locale="vi">khối trên chiều dài</Name>
+		</UnitDimension>
+		<UnitDimension domainID="utEnergy">
+			<UnitDimensionRepresentation domainID="urEnergy">
+				<UnitOfMeasure domainID="J" scale="1" baseOffset="0">
+					<Name locale="en" label="J" plural="Joules">Joule</Name>
+					<Name locale="de" label="J" plural="Joules">Joule</Name>
+					<Name locale="fr" label="J" plural="Joules">Joule</Name>
+					<Name locale="da" label="J" plural="Joules">Joule</Name>
+					<Name locale="nl" label="J" plural="Joules">Joule</Name>
+					<Name locale="es" label="J" plural="Joules">Joule</Name>
+					<Name locale="it" label="J" plural="Joules">Joule</Name>
+					<Name locale="pt" label="J" plural="Joules">Joule</Name>
+					<Name locale="ru" label="J" plural="Joules">Joule</Name>
+					<Name locale="hu" label="J" plural="Joules">Joule</Name>
+					<Name locale="cs" label="J" plural="Joules">Joule</Name>
+					<Name locale="sk" label="J" plural="Joules">Joule</Name>
+					<Name locale="fi" label="J" plural="Joules">Joule</Name>
+					<Name locale="sv" label="J" plural="Joules">Joule</Name>
+					<Name locale="et" label="J" plural="Joules">Joule</Name>
+					<Name locale="lv" label="J" plural="Joules">Joule</Name>
+					<Name locale="lt" label="J" plural="Joules">Joule</Name>
+					<Name locale="no" label="J" plural="Joules">Joule</Name>
+					<Name locale="pl" label="J" plural="Joules">Joule</Name>
+					<Name locale="bg" label="J" plural="Joules">Joule</Name>
+					<Name locale="hr" label="J" plural="Joules">Joule</Name>
+					<Name locale="ro" label="J" plural="Joules">Joule</Name>
+					<Name locale="tr" label="J" plural="Joules">Joule</Name>
+					<Name locale="el" label="J" plural="Joules">Joule</Name>
+					<Name locale="is" label="J" plural="Joules">Joule</Name>
+					<Name locale="sr" label="J" plural="Joules">Joule</Name>
+					<Name locale="sl" label="J" plural="Joules">Joule</Name>
+					<Name locale="zh" label="J" plural="Joules">Joule</Name>
+					<Name locale="ar" label="J" plural="Joules">Joule</Name>
+					<Name locale="he" label="J" plural="Joules">Joule</Name>
+					<Name locale="ja" label="J" plural="Joules">Joule</Name>
+					<Name locale="kk" label="J" plural="Joules">Joule</Name>
+					<Name locale="ko" label="J" plural="Joules">Joule</Name>
+					<Name locale="mk" label="J" plural="Joules">Joule</Name>
+					<Name locale="th" label="J" plural="Joules">Joule</Name>
+					<Name locale="uk" label="J" plural="Joules">Joule</Name>
+					<Name locale="ug" label="J" plural="Joules">Joule</Name>
+					<Name locale="vi" label="J" plural="Joules">Joule</Name>
+				</UnitOfMeasure>
+			</UnitDimensionRepresentation>
+			<CompositeUnitDimensionRepresentation domainID="urForceDistance" scale="1" baseOffset="0">
+				<UnitDimensionRef UnitDimensionRef="utForce" baseUnitOfMeasureRef="N" power="1"/>
+				<UnitDimensionRef UnitDimensionRef="utDistance" baseUnitOfMeasureRef="m" power="1"/>
+			</CompositeUnitDimensionRepresentation>
+			<Name locale="en">Energy</Name>
+			<Name locale="de">Energy</Name>
+			<Name locale="fr">Energy</Name>
+			<Name locale="da">Energy</Name>
+			<Name locale="nl">Energy</Name>
+			<Name locale="es">Energy</Name>
+			<Name locale="it">Energy</Name>
+			<Name locale="pt">Energy</Name>
+			<Name locale="ru">Energy</Name>
+			<Name locale="hu">Energy</Name>
+			<Name locale="cs">Energy</Name>
+			<Name locale="sk">Energy</Name>
+			<Name locale="fi">Energy</Name>
+			<Name locale="sv">Energy</Name>
+			<Name locale="et">Energy</Name>
+			<Name locale="lv">Energy</Name>
+			<Name locale="lt">Energy</Name>
+			<Name locale="no">Energy</Name>
+			<Name locale="pl">Energy</Name>
+			<Name locale="bg">Energy</Name>
+			<Name locale="hr">Energy</Name>
+			<Name locale="ro">Energy</Name>
+			<Name locale="tr">Energy</Name>
+			<Name locale="el">Energy</Name>
+			<Name locale="is">Energy</Name>
+			<Name locale="sr">Energy</Name>
+			<Name locale="sl">Energy</Name>
+			<Name locale="zh">Energy</Name>
+			<Name locale="ar">Energy</Name>
+			<Name locale="he">Energy</Name>
+			<Name locale="ja">Energy</Name>
+			<Name locale="kk">Energy</Name>
+			<Name locale="ko">Energy</Name>
+			<Name locale="mk">Energy</Name>
+			<Name locale="th">Energy</Name>
+			<Name locale="uk">Energy</Name>
+			<Name locale="vi">Energy</Name>
+		</UnitDimension>
+		<UnitDimension domainID="utPower">
+			<UnitDimensionRepresentation domainID="urPower">
+				<UnitOfMeasure domainID="W" scale="1" baseOffset="0">
+					<Name locale="en" label="W" plural="Watts">Watt</Name>
+					<Name locale="de" label="W" plural="Watts">Watt</Name>
+					<Name locale="fr" label="W" plural="Watts">Watt</Name>
+					<Name locale="da" label="W" plural="Watts">Watt</Name>
+					<Name locale="nl" label="W" plural="Watts">Watt</Name>
+					<Name locale="es" label="W" plural="Watts">Watt</Name>
+					<Name locale="it" label="W" plural="Watts">Watt</Name>
+					<Name locale="pt" label="W" plural="Watts">Watt</Name>
+					<Name locale="ru" label="W" plural="Watts">Watt</Name>
+					<Name locale="hu" label="W" plural="Watts">Watt</Name>
+					<Name locale="cs" label="W" plural="Watts">Watt</Name>
+					<Name locale="sk" label="W" plural="Watts">Watt</Name>
+					<Name locale="fi" label="W" plural="Watts">Watt</Name>
+					<Name locale="sv" label="W" plural="Watts">Watt</Name>
+					<Name locale="et" label="W" plural="Watts">Watt</Name>
+					<Name locale="lv" label="W" plural="Watts">Watt</Name>
+					<Name locale="lt" label="W" plural="Watts">Watt</Name>
+					<Name locale="no" label="W" plural="Watts">Watt</Name>
+					<Name locale="pl" label="W" plural="Watts">Watt</Name>
+					<Name locale="bg" label="W" plural="Watts">Watt</Name>
+					<Name locale="hr" label="W" plural="Watts">Watt</Name>
+					<Name locale="ro" label="W" plural="Watts">Watt</Name>
+					<Name locale="tr" label="W" plural="Watts">Watt</Name>
+					<Name locale="el" label="W" plural="Watts">Watt</Name>
+					<Name locale="is" label="W" plural="Watts">Watt</Name>
+					<Name locale="sr" label="W" plural="Watts">Watt</Name>
+					<Name locale="sl" label="W" plural="Watts">Watt</Name>
+					<Name locale="zh" label="W" plural="Watts">Watt</Name>
+					<Name locale="ar" label="W" plural="Watts">Watt</Name>
+					<Name locale="he" label="W" plural="Watts">Watt</Name>
+					<Name locale="ja" label="W" plural="Watts">Watt</Name>
+					<Name locale="kk" label="W" plural="Watts">Watt</Name>
+					<Name locale="ko" label="W" plural="Watts">Watt</Name>
+					<Name locale="mk" label="W" plural="Watts">Watt</Name>
+					<Name locale="th" label="W" plural="Watts">Watt</Name>
+					<Name locale="uk" label="W" plural="Watts">Watt</Name>
+					<Name locale="ug" label="W" plural="Watts">Watt</Name>
+					<Name locale="vi" label="W" plural="Watts">Watt</Name>
+				</UnitOfMeasure>
+			</UnitDimensionRepresentation>
+			<CompositeUnitDimensionRepresentation domainID="urEnergyPerTime" scale="1" baseOffset="0">
+				<UnitDimensionRef UnitDimensionRef="utEnergy" baseUnitOfMeasureRef="J" power="1"/>
+				<UnitDimensionRef UnitDimensionRef="utTime" baseUnitOfMeasureRef="sec" power="-1"/>
+			</CompositeUnitDimensionRepresentation>
+			<Name locale="en">Power</Name>
+			<Name locale="de">Power</Name>
+			<Name locale="fr">Power</Name>
+			<Name locale="da">Power</Name>
+			<Name locale="nl">Power</Name>
+			<Name locale="es">Power</Name>
+			<Name locale="it">Power</Name>
+			<Name locale="pt">Power</Name>
+			<Name locale="ru">Power</Name>
+			<Name locale="hu">Power</Name>
+			<Name locale="cs">Power</Name>
+			<Name locale="sk">Power</Name>
+			<Name locale="fi">Power</Name>
+			<Name locale="sv">Power</Name>
+			<Name locale="et">Power</Name>
+			<Name locale="lv">Power</Name>
+			<Name locale="lt">Power</Name>
+			<Name locale="no">Power</Name>
+			<Name locale="pl">Power</Name>
+			<Name locale="bg">Power</Name>
+			<Name locale="hr">Power</Name>
+			<Name locale="ro">Power</Name>
+			<Name locale="tr">Power</Name>
+			<Name locale="el">Power</Name>
+			<Name locale="is">Power</Name>
+			<Name locale="sr">Power</Name>
+			<Name locale="sl">Power</Name>
+			<Name locale="zh">Power</Name>
+			<Name locale="ar">Power</Name>
+			<Name locale="he">Power</Name>
+			<Name locale="ja">Power</Name>
+			<Name locale="kk">Power</Name>
+			<Name locale="ko">Power</Name>
+			<Name locale="mk">Power</Name>
+			<Name locale="th">Power</Name>
+			<Name locale="uk">Power</Name>
+			<Name locale="vi">Power</Name>
+		</UnitDimension>
 	</UnitDimensions>
 	<UnitOfMeasureSystems>
 		<UnitOfMeasureSystem domainID="umsEnglish">
