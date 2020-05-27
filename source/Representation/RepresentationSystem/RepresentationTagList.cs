@@ -996,5 +996,11 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public const int vrSolutionRateMassDistance = 555;
 
+        public const int vrWorkingWidthTarget = 556;
+
+        public const int vrWorkingWidthActual = 557;
+
+        public const int vrWorkingWidthDefault = 558;
+
     }
 }
