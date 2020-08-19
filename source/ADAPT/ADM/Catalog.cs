@@ -23,6 +23,7 @@
  *                        EndgunConfigurations.
  *   R. Andres Ferreyra - added list of Places
  *   R. Andres Ferreyra - added lists of ContainerModel, PackagedProduct
+ *   R. Andres Ferreyra - added list of PackagedProductInstance, Container 8/18/2020
   *******************************************************************************/
 
 using System.Collections;
@@ -71,6 +72,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             Places = new List<Place>();
             ContainerModels = new List<ContainerModel>();
             PackagedProducts = new List<PackagedProduct>();
+            PackagedProductInstances = new List<PackagedProductInstance>();
+            Containers = new List<Container>();
             DeviceSeries = new List<DeviceSeries>();
             EndgunConfigurations = new List<EndgunConfiguration>();
             Facilities = new List<Facility>();
@@ -150,6 +153,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public List<ContainerModel> ContainerModels { get; set; }
 
         public List<PackagedProduct> PackagedProducts { get; set; }
+
+        public List<PackagedProductInstance> PackagedProductInstances { get; set; }
+
+        public List<Container> Containers { get; set; }
 
     }
 }
