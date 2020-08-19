@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2012 rel. 2 sp1 (http://www.altova.com) by Tarak Reddy (DEERE & CO) -->
 <RepresentationSystem xmlns="urn:schemas-adapt-aggateway-org:Representation" xmlns:bt="urn:schemas-adapt-aggateway-org:BasicTypes" xmlns:unit="urn:schemas-adapt-aggateway-org:UnitSystem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:schemas-adapt-aggateway-org:Representation RepresentationSystem.xsd">
 	<SchemaVersion major="1" minor="1"/>
-	<ContentVersion major="1" minor="6"/>
+	<ContentVersion major="1" minor="7"/>
 	<Representations>
 		<NumericRepresentation domainID="vrAppRateVolumeSetPoint" domainTag="50" digits="5" decimal="1">
 			<RelatedDDI ddi="1" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0" isDefaultRepresentationForDDI="true" />
@@ -11072,6 +11072,7 @@
 			<Name locale="vi" description="Mức bình chứa theo Phần trăm">Mức bình chứa theo Phần trăm</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrEngineHours" domainTag="247" digits="3" decimal="0">
+			<RelatedDDI ddi="493" unitOfMeasure="hr" resolution="0.1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="hr" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="hr" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="hr" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsImperial"/>
@@ -13530,6 +13531,7 @@
 			<Name locale="vi" description="Tổng số trên diện tích">tổng số trên diện tích</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrConstituentCrudeProtein" domainTag="310" digits="3" decimal="2">
+			<RelatedDDI ddi="407" unitOfMeasure="prcnt" resolution="0.01" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsImperial"/>
@@ -17634,7 +17636,7 @@
 			<Name locale="en" description="Average Dry Yield Mass Per Area">Average Dry Yield Mass Per Area</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAvgHarvestMoisture" domainTag="546" digits="3" decimal="2">
-			<RelatedDDI ddi="99" unitOfMeasure="ppm" resolution="0.001" offset="0"/>
+			<RelatedDDI ddi="262" unitOfMeasure="ppm" resolution="0.001" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsImperial"/>
@@ -17748,6 +17750,30 @@
 	    <UnitDimensionRef unitDimension="utMassPerDistance"/>
 	    <Name locale="en" description="Solution rate of a mass tank measured mix per distance">solution rate mass distance</Name>
 	  </NumericRepresentation>
+		<NumericRepresentation domainID="vrWorkingWidthTarget" domainTag="556" digits="5" decimal="3">
+			<RelatedDDI ddi="66" unitOfMeasure="mm" resolution="1" offset="0"/>
+			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="m" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utDistance"/>
+			<Name locale="en" description="Working Width Setpoint">Working Width Setpoint</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrWorkingWidthActual" domainTag="557" digits="5" decimal="3">
+			<RelatedDDI ddi="67" unitOfMeasure="mm" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
+			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="m" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utDistance"/>
+			<Name locale="en" description="Working Width Actual">Working Width Actual</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrWorkingWidthDefault" domainTag="558" digits="5" decimal="3">
+			<RelatedDDI ddi="68" unitOfMeasure="mm" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
+			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="m" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utDistance"/>
+			<Name locale="en" description="Working Width Default">Working Width Default</Name>
+		</NumericRepresentation>
 		<EnumeratedRepresentation domainID="dtApplicationMethod" domainTag="1001" attributeID="196" domainIDShort="Applicat">
 			<Name locale="en" description="ApplicationMethod">ApplicationMethod</Name>
 			<Name locale="de" description="Ausbringmethode">Ausbringmethode</Name>
