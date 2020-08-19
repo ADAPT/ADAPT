@@ -7,8 +7,7 @@
   * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
   *
   * Contributors:
-  *    R. Andres Ferreyra - initial implementation based on ProductStatusEnum class.
-  *    R. Andres Ferreyra - added IsBulk attribute 8/18/20.
+  *    R. Andres Ferreyra - initial implementation
   *  *******************************************************************************/
 
 using System.Collections.Generic;
@@ -17,13 +16,13 @@ using AgGateway.ADAPT.ApplicationDataModel.Representations;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Products
 {
-    public class PackagedProduct
+    public class PackagedProductInstance
     {
 
-        public PackagedProduct()
+        public PackagedProductInstance()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
-            ContainedPackagedProducts = new List<ContainedPackagedProduct>();
+            ContainedPackagedProductInstanceIds = new List<int>();
             ContextItems = new List<ContextItem>();
         }
 
@@ -31,21 +30,19 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
 
         public string Description { get; set; }
 
-        public int ProductId { get; set; }
+        public int PackagedProductId { get; set; }
 
-        public int ContainerModelId { get; set; }
-
-        public bool IsBulk { get; set; }
-
-        public PackagedProductStatusEnum Status { get; set; }
-        
         public NumericRepresentationValue ProductQuantity { get; set; }
 
-        public List<ContainedPackagedProduct> ContainedPackagedProducts { get; set; }
+        public List<int> ContainedPackagedProductInstanceIds { get; set; }
+
+        public NumericRepresentationValue Height { get; set; }
 
         public NumericRepresentationValue GrossWeight { get; set; }
 
         public NumericRepresentationValue NetWeight { get; set; }
+
+        public int? ContainerId { get; set; } 
 
         public List<ContextItem> ContextItems { get; set; } 
 
