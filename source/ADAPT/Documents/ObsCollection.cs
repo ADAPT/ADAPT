@@ -29,6 +29,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         public CompoundIdentifier Id { get; private set; }
         public int? OMSourceId { get; set; } // OMSource reduces child Obs to (mostly) key,value pair even with sensors, installation 
         public int? OMCodeId { get; set; } // OMCode reduces child Obs to (mostly) key,value pair when installation data is not needed
+        public string OMCode { get; set; } // The string value provides the simplest form of meaning, by referring a pre-existing semantic resource by name (code).
         public List<int> CodeComponentIds { get; set; }  // List of code components refs to allow parameters, semantic refinement      
         public List<TimeScope> TimeScopes { get; set; }
         public int? GrowerId { get; set; } // Optional, provides ability to put an ObsCollection in the context of a grower
