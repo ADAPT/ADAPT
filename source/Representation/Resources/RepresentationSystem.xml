@@ -16363,7 +16363,7 @@
 			<Name locale="en" description="Singulation">Singulation percentage</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrPlantingSkips" domainTag="378" digits="3" decimal="1">
-			<RelatedDDI ddi="417" unitOfMeasure="prcnt" resolution="0.1" offset="0"/>
+			<RelatedDDI ddi="417" unitOfMeasure="ppm" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsImperial"/>
@@ -16371,7 +16371,7 @@
 			<Name locale="en" description="Skips">Skips percentage</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrPlantingDoubles" domainTag="379" digits="3" decimal="1">
-			<RelatedDDI ddi="419" unitOfMeasure="prcnt" resolution="0.1" offset="0"/>
+			<RelatedDDI ddi="419" unitOfMeasure="ppm" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsImperial"/>
