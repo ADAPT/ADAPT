@@ -1,6 +1,7 @@
 /*******************************************************************************
   * Copyright (C) 2015-16, 2018 AgGateway and ADAPT Contributors
   * Copyright (C) 2015-16 Deere and Company
+  * Copyright (C) 2020 Syngenta
   * All rights reserved. This program and the accompanying materials
   * are made available under the terms of the Eclipse Public License v1.0
   * which accompanies this distribution, and is available at
@@ -21,6 +22,8 @@
  *                        IrrSystemConfigurations, IrrSectionConfigurations, 
  *                        EndgunConfigurations.
  *   R. Andres Ferreyra - added list of Places
+ *   R. Andres Ferreyra - added lists of ContainerModel, PackagedProduct
+ *   R. Andres Ferreyra - added list of PackagedProductInstance, Container 8/18/2020
   *******************************************************************************/
 
 using System.Collections;
@@ -67,6 +70,16 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             HitchPoints = new List<HitchPoint>();
             Companies = new List<Company>();
             Places = new List<Place>();
+            ContainerModels = new List<ContainerModel>();
+            PackagedProducts = new List<PackagedProduct>();
+            PackagedProductInstances = new List<PackagedProductInstance>();
+            Containers = new List<Container>();
+            DeviceSeries = new List<DeviceSeries>();
+            EndgunConfigurations = new List<EndgunConfiguration>();
+            Facilities = new List<Facility>();
+            IrrSectionConfigurations = new List<IrrSectionConfiguration>();
+            IrrSystemConfigurations = new List<IrrSystemConfiguration>();
+            IrrSystemModels = new List<IrrSystemModel>();
         }
 
         public List<Brand> Brands { get; set; }
@@ -136,6 +149,14 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public List<EndgunConfiguration> EndgunConfigurations { get; set; }
 
         public List<Place> Places { get; set; }
+
+        public List<ContainerModel> ContainerModels { get; set; }
+
+        public List<PackagedProduct> PackagedProducts { get; set; }
+
+        public List<PackagedProductInstance> PackagedProductInstances { get; set; }
+
+        public List<Container> Containers { get; set; }
 
     }
 }

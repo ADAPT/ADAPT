@@ -997,6 +997,11 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         vrSolutionRateLiquidDistance = 554,
 
         vrSolutionRateMassDistance = 555,
+        
+        vrWorkingWidthTarget = 556,
 
+        vrWorkingWidthActual = 557,
+
+        vrWorkingWidthDefault = 558,
     }
 }

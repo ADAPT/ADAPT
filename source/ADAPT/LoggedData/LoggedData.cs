@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015-16 AgGateway and ADAPT Contributors
   * Copyright (C) 2015-16 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -19,6 +19,7 @@
   *    Stuart Rhea - Removed LoggedData.ContinerUseIds per model.
   *                 Added LoggedData.WorkRecordId per model.
   *                 Added Loggged.Data PersonRolIds initializer to constructor.
+  *    Kelly Nelson - Added CalibrationFactors
   *******************************************************************************/
 
 using System;
@@ -39,6 +40,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
             GuidanceAllocationIds = new List<int>();
             WorkItemIds = new List<int>();
             Notes = new List<Note>();
+            CalibrationFactors = new List<CalibrationFactor>();
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -68,6 +70,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public List<Note> Notes { get; set; }
 
         public IEnumerable<OperationData> OperationData { get; set; }
+
+        public List<CalibrationFactor> CalibrationFactors { get; set; }
 
         public Action ReleaseSpatialData { get; set; }
 
