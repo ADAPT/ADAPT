@@ -1,7 +1,7 @@
 /*******************************************************************************
  * Copyright (C) 2015, 2018 AgGateway and ADAPT Contributors
  * Copyright (C) 2015 Deere and Company
- * Copyright (C) 2019 Syngenta
+ * Copyright (C) 2019, 2020 Syngenta
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,6 +16,7 @@
  *    Tim Shearouse - Added Loads
  *    R. Andres Ferreyra - Added IrrCollections, IrrRecords, DocumentCorrelations
  *    R. Andres Ferreyra - Added Obs, ObsCollections, ObsDatasets, Observations
+ *    R. Andres Ferreyra - Added ObsCodeComponents
  *******************************************************************************/
 
 using System.Collections.Generic;
@@ -48,6 +49,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             ObsCollections = new List<ObsCollection>(); // Collections of related Obs (Observation/Measurement) OR related ObsCollections 
             ObsDatasets = new List<ObsDataset>();    // Datasets contained in the Observations Core Document
             Observations = new List<Observations>(); // Core Document. Sibling to Plan, Work Order, etc.
+            ObsCodeComponents = new List<ObsCodeComponent>(); // Additional components of meaning added to an Obs or ObsCollection
         }
 
         public IEnumerable<WorkItem> WorkItems { get; set; }
@@ -87,6 +89,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public IEnumerable<ObsDataset> ObsDatasets { get; set; }
 
         public IEnumerable<Observations> Observations { get; set; }
+
+        public IEnumerable<ObsCodeComponent> ObsCodeComponents { get; set; }
 
     }
 }
