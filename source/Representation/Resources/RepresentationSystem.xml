@@ -16363,7 +16363,7 @@
 			<Name locale="en" description="Singulation">Singulation percentage</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrPlantingSkips" domainTag="378" digits="3" decimal="1">
-			<RelatedDDI ddi="57361" unitOfMeasure="prcnt" resolution="0.1" offset="0"/>
+			<RelatedDDI ddi="417" unitOfMeasure="ppm" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsImperial"/>
@@ -16371,7 +16371,7 @@
 			<Name locale="en" description="Skips">Skips percentage</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrPlantingDoubles" domainTag="379" digits="3" decimal="1">
-			<RelatedDDI ddi="57360" unitOfMeasure="prcnt" resolution="0.1" offset="0"/>
+			<RelatedDDI ddi="419" unitOfMeasure="ppm" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsImperial"/>
@@ -16379,7 +16379,7 @@
 			<Name locale="en" description="Doubles">Doubles percentage</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrDownForceApplied" domainTag="380" digits="4" decimal="1">
-			<RelatedDDI ddi="57357" unitOfMeasure="N" resolution="1" offset="0"/>
+			<RelatedDDI ddi="427" unitOfMeasure="N" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="lbf" digits="4" decimal="0" minValue="0" maxValue="2000" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="N" digits="4" decimal="0" minValue="0" maxValue="8896" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="lbf" digits="4" decimal="0" minValue="0" maxValue="2000" unitOfMeasureSystem="umsImperial"/>
