@@ -20,7 +20,6 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         public Obs()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
-            CodeComponentIds = new List<int>(); // List of code components by reference to allow parameters, semantic refinement
             CodeComponents = new List<ObsCodeComponent>(); // List of code components by value to allow parameters, semantic refinement
             TimeScopes = new List<TimeScope>(); // PhenomenonTime / ResultTime / ValidityRange as per ISO 19156
             ContextItems = new List<ContextItem>();
@@ -29,8 +28,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         public int? OMSourceId { get; set; } // OMSource reduces Obs to (mostly) key,value pair even with sensors, installation 
         public int? OMCodeId { get; set; } // OMCode reduces Obs to (mostly) key,value pair when installation data is not needed
         public string OMCode { get; set; } // The string value provides the simplest form of meaning, by referring a pre-existing semantic resource by name (code).
-        public List<int> CodeComponentIds { get; set; }  // List of code components refs to allow parameters, semantic refinement      
-        public List<int> CodeComponents { get; set; }  // List of code components (by value) to allow parameters, semantic refinement      
+        public List<ObsCodeComponent> CodeComponents { get; set; }  // List of code components (by value) to allow parameters, semantic refinement      
         public List<TimeScope> TimeScopes { get; set; }
         public int? GrowerId { get; set; } // Optional, provides ability to put an Obs in the context of a grower
         public int? PlaceId { get; set; } // Optional, provides ability to put an Obs in the context of a Place 
