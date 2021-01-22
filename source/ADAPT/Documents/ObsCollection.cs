@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html <http://www.eclipse.org/legal/epl-v10.html> 
  *
  * Contributors: 20190430 R. Andres Ferreyra: Translate from PAIL Part 2 Schema
- *    
+ *               20210119 R. Andres Ferreyra: Adding code components by value, removing by reference   *    
  *******************************************************************************/
 
 using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         public ObsCollection()
         {
             Id = CompoundIdentifierFactory.Instance.Create();
-            CodeComponentIds = new List<int>();  // List of code components that apply to all child Obs in the collection
+            CodeComponents = new List<ObsCodeComponent>(); // List of code components by value to allow parameters, semantic refinement
             TimeScopes = new List<TimeScope>(); // List of TimeScopes that apply to all child Obs in the collection
             ContextItems = new List<ContextItem>();
             ObsCollectionIds = new List<int>(); // Note: these are references to ObsCollections in Documents
@@ -30,7 +30,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         public int? OMSourceId { get; set; } // OMSource reduces child Obs to (mostly) key,value pair even with sensors, installation 
         public int? OMCodeId { get; set; } // OMCode reduces child Obs to (mostly) key,value pair when installation data is not needed
         public string OMCode { get; set; } // The string value provides the simplest form of meaning, by referring a pre-existing semantic resource by name (code).
-        public List<int> CodeComponentIds { get; set; }  // List of code components refs to allow parameters, semantic refinement      
+        public List<ObsCodeComponent> CodeComponents { get; set; }  // List of code components (by value) to allow parameters, semantic refinement
         public List<TimeScope> TimeScopes { get; set; }
         public int? GrowerId { get; set; } // Optional, provides ability to put an ObsCollection in the context of a grower
         public int? PlaceId { get; set; } // Optional, provides ability to put an ObsCollection in the context of a Place 

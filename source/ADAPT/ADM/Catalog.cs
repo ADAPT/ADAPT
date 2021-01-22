@@ -24,6 +24,7 @@
  *   R. Andres Ferreyra - added list of Places
  *   R. Andres Ferreyra - added lists of ContainerModel, PackagedProduct
  *   R. Andres Ferreyra - added list of PackagedProductInstance, Container 8/18/2020
+ *   R. Andres Ferreyra - Added ObsCodeComponents 12/9/2020
   *******************************************************************************/
 
 using System.Collections;
@@ -36,6 +37,7 @@ using AgGateway.ADAPT.ApplicationDataModel.Guidance;
 using AgGateway.ADAPT.ApplicationDataModel.Logistics;
 using AgGateway.ADAPT.ApplicationDataModel.Prescriptions;
 using AgGateway.ADAPT.ApplicationDataModel.Products;
+using AgGateway.ADAPT.ApplicationDataModel.Documents;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.ADM
 {
@@ -80,6 +82,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
             IrrSectionConfigurations = new List<IrrSectionConfiguration>();
             IrrSystemConfigurations = new List<IrrSystemConfiguration>();
             IrrSystemModels = new List<IrrSystemModel>();
+            ObsCodeComponents = new List<ObsCodeComponent>(); // Additional components of meaning added to an Obs or ObsCollection            
         }
 
         public List<Brand> Brands { get; set; }
@@ -157,6 +160,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.ADM
         public List<PackagedProductInstance> PackagedProductInstances { get; set; }
 
         public List<Container> Containers { get; set; }
+        
+        public IEnumerable<ObsCodeComponent> ObsCodeComponents { get; set; }        
 
     }
 }
