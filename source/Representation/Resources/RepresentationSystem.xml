@@ -27789,5 +27789,52 @@
 				<Name locale="en" description="Transporter">Transporter</Name>
 			</EnumeratedMember>
 		</EnumeratedRepresentation>
+    <EnumeratedRepresentation domainID="dtCropNutritionIngredient" domainTag="1509" domainIDShort="Ingredients">
+      <EnumeratedMember domainID="dtiN" domainTag="6129" refID="1">
+        <Name locale="en" description="Nitrogen">Nitrogen</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiP" domainTag="6130" refID="2">
+        <Name locale="en" description="Phosphorus">Phosphorus</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiK" domainTag="6131" refID="3">
+        <Name locale="en" description="Potassium">Potassium</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiCa" domainTag="6132" refID="4">
+        <Name locale="en" description="Calcium">Calcium</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiMg" domainTag="6133" refID="5">
+        <Name locale="en" description="Magnesium">Magnesium</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiS" domainTag="6134" refID="6">
+        <Name locale="en" description="Sulphur">Sulphur</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiB" domainTag="6135" refID="7">
+        <Name locale="en" description="Boron">Boron</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiCl" domainTag="6136" refID="8">
+        <Name locale="en" description="Chlorine">Chlorine</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiCu" domainTag="6137" refID="9">
+        <Name locale="en" description="Copper">Copper</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiFe" domainTag="6138" refID="10">
+        <Name locale="en" description="Iron">Iron</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiMn" domainTag="6139" refID="11">
+        <Name locale="en" description="Manganese">Manganese</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiMo" domainTag="6140" refID="12">
+        <Name locale="en" description="Molybdenum">Molybdenum</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiZn" domainTag="6141" refID="13">
+        <Name locale="en" description="Zinc">Zinc</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiFulvicAcid" domainTag="6143" refID="14">
+        <Name locale="en" description="FulvicAcid">FulvicAcid</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiHumicAcid" domainTag="6144" refID="15">
+        <Name locale="en" description="HumicAcid">HumicAcid</Name>
+      </EnumeratedMember>
+    </EnumeratedRepresentation>
 	</Representations>
 </RepresentationSystem>
