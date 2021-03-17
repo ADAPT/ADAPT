@@ -118,6 +118,8 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         dtPersonRole = 1508,
 
+        dtCropNutritionIngredient = 1509,
+
         vrAppRateVolumeSetPoint = 50,
 
         vrAppRateVolumeActual = 49,
