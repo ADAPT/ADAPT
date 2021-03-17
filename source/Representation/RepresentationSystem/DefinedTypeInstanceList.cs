@@ -651,5 +651,43 @@
 
         dtiPersonRoleTransporter = 6124,
 
+        dtiFacilityTypeWeatherStation = 6125,
+
+        dtiFacilityTypeObservationSite = 6126,
+
+        dtiFacilityTypeInstrumentShelter = 6127,
+
+        dtiFacilityTypeSamplingLocation = 6128,
+
+        dtiN = 6129,
+
+        dtiP = 6130,
+
+        dtiK = 6131,
+
+        dtiCa = 6132,
+
+        dtiMg = 6133,
+
+        dtiS = 6134,
+
+        dtiB = 6135,
+
+        dtiCl = 6136,
+
+        dtiCu = 6137,
+
+        dtiFe = 6138,
+
+        dtiMn = 6139,
+
+        dtiMo = 6140,
+
+        dtiZn = 6141,
+
+        dtiFulvicAcid = 6142,
+
+        dtiHumicAcid = 6143
+
     }
 }

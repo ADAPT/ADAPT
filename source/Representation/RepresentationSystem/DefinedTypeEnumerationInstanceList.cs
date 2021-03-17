@@ -650,5 +650,44 @@
 
         public static readonly EnumerationMember dtiPersonRoleTransporter = RepresentationInstanceList.dtPersonRole.EnumerationMembers[(int)DefinedTypeInstanceList.dtiPersonRoleTransporter];
 
+        public static readonly EnumerationMember dtiFacilityTypeWeatherStation = RepresentationInstanceList.dtFacilityType.EnumerationMembers[(int)DefinedTypeInstanceList.dtiFacilityTypeWeatherStation];
+
+        public static readonly EnumerationMember dtiFacilityTypeObservationSite = RepresentationInstanceList.dtFacilityType.EnumerationMembers[(int)DefinedTypeInstanceList.dtiFacilityTypeObservationSite];
+
+        public static readonly EnumerationMember dtiFacilityTypeInstrumentShelter = RepresentationInstanceList.dtFacilityType.EnumerationMembers[(int)DefinedTypeInstanceList.dtiFacilityTypeInstrumentShelter];
+
+        public static readonly EnumerationMember dtiFacilityTypeSamplingLocation = RepresentationInstanceList.dtFacilityType.EnumerationMembers[(int)DefinedTypeInstanceList.dtiFacilityTypeSamplingLocation];
+
+        public static readonly EnumerationMember dtiN = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiN];
+
+        public static readonly EnumerationMember dtiP = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiP];
+
+        public static readonly EnumerationMember dtiK = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiK];
+
+        public static readonly EnumerationMember dtiCa = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiCa];
+
+        public static readonly EnumerationMember dtiMg = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiMg];
+
+        public static readonly EnumerationMember dtiS = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiS];
+
+        public static readonly EnumerationMember dtiB = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiB];
+
+        public static readonly EnumerationMember dtiCl = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiCl];
+
+        public static readonly EnumerationMember dtiCu = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiCu];
+
+        public static readonly EnumerationMember dtiFe = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiFe];
+
+        public static readonly EnumerationMember dtiMn = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiMn];
+
+        public static readonly EnumerationMember dtiMo = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiMo];
+
+        public static readonly EnumerationMember dtiZn = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiZn];
+
+        public static readonly EnumerationMember dtiFulvicAcid = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiFulvicAcid];
+
+        public static readonly EnumerationMember dtiHumicAcid = RepresentationInstanceList.dtCropNutritionIngredient.EnumerationMembers[(int)DefinedTypeInstanceList.dtiHumicAcid];
+
+
     }
 }

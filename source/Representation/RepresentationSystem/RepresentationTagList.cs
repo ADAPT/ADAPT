@@ -118,6 +118,8 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
 
         public const int dtPersonRole = 1508;
 
+        public const int dtCropNutritionIngredient = 1509;
+
         public const int vrAppRateVolumeSetPoint = 50;
 
         public const int vrAppRateVolumeActual = 49;
