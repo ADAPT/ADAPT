@@ -60,6 +60,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public string Description { get; set; }
 
         public List<int> CoincidentOperationDataIds { get; set; }
-
+        
+        public List<ContextItem> ContextItems { get; set; }
     }
 }
