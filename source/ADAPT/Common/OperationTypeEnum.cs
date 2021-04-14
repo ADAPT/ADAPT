@@ -28,6 +28,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         ForageHarvesting,
         Transport,
         Swathing,
-        Irrigation
+        Irrigation,
+        DataCollection
     }
 }
