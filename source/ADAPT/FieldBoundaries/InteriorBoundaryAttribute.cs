@@ -11,16 +11,26 @@
   *    Joseph Ross Making Properties
   *    Kathleen Oneal - changed Passable to IsPassable and Name to Description
   *    Kelly Nelson  - changed ShapeIdRef to Shape
+  *    Kelly Nelson  - added ContextItems
   *******************************************************************************/
+
+using AgGateway.ADAPT.ApplicationDataModel.Common;
+using System.Collections.Generic;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.FieldBoundaries
 {
     public class InteriorBoundaryAttribute
     {
+        public InteriorBoundaryAttribute()
+        {
+            ContextItems = new List<ContextItem>();
+        }
         public Shapes.Shape Shape { get; set; }
 
         public bool IsPassable { get; set; }
 
         public string Description { get; set; }
+
+        public List<ContextItem> ContextItems { get; set; }
     }
 }
