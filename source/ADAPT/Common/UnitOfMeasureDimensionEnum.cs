@@ -96,6 +96,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Common
         MassPerDistance,
         VolumePerDistance,
         Energy,
-        Power
+        Power,
+        Torque,
+        Gear
     }
 }
