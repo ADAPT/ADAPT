@@ -22,26 +22,6 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
     private static RepresentationManager _instance;
     private static readonly object BlueThreadLock = new Object();
 
-    private static string _representationSystemDataLocation = null;
-
-    public static string RepresentationSystemDataLocation
-    {
-      get
-      {
-        if (_representationSystemDataLocation == null)
-        {
-          var assemblyLocation = AppDomain.CurrentDomain.BaseDirectory;
-          var repSystemXml = Path.Combine(assemblyLocation, "Resources", "RepresentationSystem.xml");
-          return repSystemXml;
-        }
-        else
-        {
-          return _representationSystemDataLocation;
-        }
-      }
-      set { _representationSystemDataLocation = value; }
-    }
-
     public static RepresentationManager Instance
     {
       get
@@ -76,8 +56,7 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
     {
       var serializer = new XmlSerializer(typeof(Generated.RepresentationSystem));
 
-      var xmlStringBytes = File.ReadAllBytes(RepresentationSystemDataLocation);
-      using (var stream = new MemoryStream(xmlStringBytes))
+      using (var stream = ResourceManager.GetResourceStream("RepresentationSystem.xml"))
       {
         return (Generated.RepresentationSystem)serializer.Deserialize(stream);
       }

@@ -18,26 +18,6 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 {
   public static class UnitSystemManager
   {
-    private static string _unitSystemDataLocation = null;
-
-    public static string UnitSystemDataLocation
-    {
-      get
-      {
-        if (_unitSystemDataLocation == null)
-        {
-          var assemblyLocation = AppDomain.CurrentDomain.BaseDirectory;
-          var repSystemXml = Path.Combine(assemblyLocation, "Resources", "UnitSystem.xml");
-          return repSystemXml;
-        }
-        else
-        {
-          return _unitSystemDataLocation;
-        }
-      }
-      set { _unitSystemDataLocation = value; }
-    }
-
     public static ApplicationDataModel.Common.UnitOfMeasure GetUnitOfMeasure(string code)
     {
       return InternalUnitSystemManager.Instance.UnitOfMeasures[code].ToModelUom();
