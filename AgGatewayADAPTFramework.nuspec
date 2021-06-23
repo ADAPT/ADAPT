@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>AgGatewayADAPTFramework2</id>
+    <id>AgGatewayADAPTFramework</id>
     <version>0.0.0</version>
     <authors>AgGateway and ADAPT Contributors</authors>
     <owners>AgGateway and ADAPT Contributors</owners>
