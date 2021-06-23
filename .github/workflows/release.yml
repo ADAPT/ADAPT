@@ -16,7 +16,7 @@ jobs:
       - name: Set VERSION variable from tag
         run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
       - name: Set VERSION_NUMBER
-        run: echo "VERSION_NUMBER=$(echo $VERSION | ggrep -i -P -o '^\d+\.\d+\.\d+')" >> $GITHUB_ENV
+        run: echo "VERSION_NUMBER=$(echo $VERSION | grep -i -P -o '^\d+\.\d+\.\d+')" >> $GITHUB_ENV
       - name: Build artifacts
         run: dotnet build --configuration Release /p:Version=${{ env.VERSION }} /p:FileVersion=${{ env.VERSION_NUMBER }}.${{ github.run_number }}
       - name: Package
