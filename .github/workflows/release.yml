@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  push:
+    tags:
+    - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  build:
+    # target 18.04 due to netcoreapp2.0 requiring OpenSSL 1.0 and newer versions of Ubuntu shipping with OpenSSL 1.1
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set VERSION variable from tag
+        run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+      - name: Set VERSION_NUMBER
+        run: echo "VERSION_NUMBER=$(echo $VERSION | grep -i -P -o '^\d+\.\d+\.\d+')" >> $GITHUB_ENV
+      - name: Build artifacts
+        run: dotnet build --configuration Release /p:Version=${{ env.VERSION }} /p:FileVersion=${{ env.VERSION_NUMBER }}.${{ github.run_number }}
+      - name: Package
+        run: mkdir -p ./dist; nuget pack ./AgGatewayADAPTFramework.nuspec -outputdirectory ./dist -version ${{ env.VERSION }} 
+      - name: Push release to Github
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./dist/AgGatewayADAPTFramework.${{ env.VERSION }}.nupkg
+          tag: ${{ github.ref }}
+      - name: Push release to public Nuget
+        run: dotnet nuget push ./dist/AgGatewayADAPTFramework.${{ env.VERSION }}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_API_KEY}
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
