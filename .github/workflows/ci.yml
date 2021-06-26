@@ -16,15 +16,6 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup .NET Core SDK '2.0'
-        uses: actions/setup-dotnet@v1.7.2
-        with:
-          dotnet-version: '2.0.x'
-      - name: Setup .NET Core SDK '3.1'
-        uses: actions/setup-dotnet@v1.7.2
-        with:
-          dotnet-version: '3.1.x'
       - name: Setup .NET '5.0'
         uses: actions/setup-dotnet@v1.7.2
         with:
