@@ -25,6 +25,10 @@ jobs:
         uses: actions/setup-dotnet@v1.7.2
         with:
           dotnet-version: '3.1.x'
+      - name: Setup .NET '5.0'
+        uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: '5.0.x'
       - name: Install dependencies
         run: dotnet restore
       - name: Application Data Model Test
