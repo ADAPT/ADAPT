@@ -7,8 +7,7 @@ on:
 
 jobs:
   build:
-    # target 18.04 due to netcoreapp2.0 requiring OpenSSL 1.0 and newer versions of Ubuntu shipping with OpenSSL 1.1
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
