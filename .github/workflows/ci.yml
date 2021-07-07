@@ -11,20 +11,15 @@ on:
       - develop
 
 jobs:
-  build:
-    # target 18.04 due to netcoreapp2.0 requiring OpenSSL 1.0 and newer versions of Ubuntu shipping with OpenSSL 1.1
-    runs-on: ubuntu-18.04
+  build-and-test:
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup .NET Core SDK '2.0'
+      - name: Setup .NET '5.0'
         uses: actions/setup-dotnet@v1.7.2
         with:
-          dotnet-version: '2.0.x'
-      - name: Setup .NET Core SDK '3.1'
-        uses: actions/setup-dotnet@v1.7.2
-        with:
-          dotnet-version: '3.1.x'
+          dotnet-version: '5.0.x'
       - name: Install dependencies
         run: dotnet restore
       - name: Application Data Model Test
