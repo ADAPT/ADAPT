@@ -43,7 +43,7 @@
 		<Language>vi</Language>
 	</SupportedLanguages>
 	<UnitDimensions>
-		<UnitDimension domainID="utDistance">
+    <UnitDimension domainID="utDistance">
 			<UnitDimensionRepresentation domainID="urDistance">
 				<UnitOfMeasure domainID="m" scale="1" baseOffset="0">
 					<Name locale="en" label="m" plural="meters">meter</Name>
@@ -8593,6 +8593,45 @@
 					<Name locale="ug" label="W" plural="Watts">Watt</Name>
 					<Name locale="vi" label="W" plural="Watts">Watt</Name>
 				</UnitOfMeasure>
+        <UnitOfMeasure domainID="kW" scale="1000" baseOffset="0">
+          <Name locale="en" label="kW" plural="kilowatts">kilowatt</Name>
+          <Name locale="de" label="kW" plural="Kilowatt">Kilowatt</Name>
+          <Name locale="fr" label="kW" plural="kilowatts">kilowatt</Name>
+          <Name locale="da" label="kW" plural="kilowatt">kilowatt</Name>
+          <Name locale="nl" label="kW" plural="kilowatt">kilowatt</Name>
+          <Name locale="es" label="kW" plural="kilovatios">kilovatio</Name>
+          <Name locale="it" label="kW" plural="kilowatt">kilowatt</Name>
+          <Name locale="pt" label="kW" plural="kilowatts">kilowatt</Name>
+          <Name locale="ru" label="кВт" plural="киловатты">киловатт</Name>
+          <Name locale="hu" label="kW" plural="kilowatt">kilowatt</Name>
+          <Name locale="cs" label="kW" plural="kilowatty">kilowatt</Name>
+          <Name locale="sk" label="kW" plural="kilowaty">kilowatt</Name>
+          <Name locale="fi" label="kW" plural="kilowattia">kilowatti</Name>
+          <Name locale="sv" label="kW" plural="kilowatt">kilowatt</Name>
+          <Name locale="et" label="kW" plural="kilovatti">kilovatti</Name>
+          <Name locale="lv" label="kW" plural="kilovati">kilovats</Name>
+          <Name locale="lt" label="kW" plural="kilovatai">kilovatas</Name>
+          <Name locale="no" label="kW" plural="kilowatt">kilowatt</Name>
+          <Name locale="pl" label="kW" plural="kilowaty">kilowat</Name>
+          <Name locale="bg" label="kW" plural="киловати">киловат</Name>
+          <Name locale="hr" label="kW" plural="kilovati">kilovat</Name>
+          <Name locale="ro" label="kW" plural="kilowaţi">kilowatt</Name>
+          <Name locale="tr" label="kW" plural="kilowatt">kilowatt</Name>
+          <Name locale="el" label="kW" plural="kilowatts">kilowatt</Name>
+          <Name locale="is" label="kW" plural="kílóvött">kílóvatt</Name>
+          <Name locale="sr" label="kW" plural="kilovati">kilovat</Name>
+          <Name locale="sl" label="kW" plural="kilovati">kilovat</Name>
+          <Name locale="zh" label="千瓦" plural="千瓦">千瓦</Name>
+          <Name locale="ar" label="كيلووات" plural="كيلووات">كيلووات</Name>
+          <Name locale="he" label="kW" plural="קילוואט">קילוואט</Name>
+          <Name locale="ja" label="kW" plural="kW">kW</Name>
+          <Name locale="kk" label="кВт" plural="киловатт">киловатт</Name>
+          <Name locale="ko" label="kW" plural="킬로와트">킬로와트</Name>
+          <Name locale="mk" label="kW" plural="киловати">киловат</Name>
+          <Name locale="th" label="kW" plural="กิโลวัตต์">กิโลวัตต์</Name>
+          <Name locale="uk" label="кВт" plural="кіловати">кіловат</Name>
+          <Name locale="vi" label="kW" plural="kilowatt">kilowatt</Name>
+        </UnitOfMeasure>
 			</UnitDimensionRepresentation>
 			<CompositeUnitDimensionRepresentation domainID="urEnergyPerTime" scale="1" baseOffset="0">
 				<UnitDimensionRef UnitDimensionRef="utEnergy" baseUnitOfMeasureRef="J" power="1"/>
@@ -8636,6 +8675,166 @@
 			<Name locale="uk">Power</Name>
 			<Name locale="vi">Power</Name>
 		</UnitDimension>
+    <UnitDimension domainID="utGear">
+      <UnitDimensionRepresentation domainID="urGear">
+        <UnitOfMeasure domainID="gear" scale="1" baseOffset="0">
+          <Name locale="en" label="gear" plural="gears">gear</Name>
+          <Name locale="de" label="Gang" plural="Gänge">Gang</Name>
+          <Name locale="fr" label="rapport" plural="rapports">rapport</Name>
+          <Name locale="da" label="gear" plural="gear">gear</Name>
+          <Name locale="nl" label="versnelling" plural="versnellingen">versnelling</Name>
+          <Name locale="es" label="marcha" plural="marchas">marcha</Name>
+          <Name locale="it" label="ingranaggio" plural="ingranaggi">ingranaggio</Name>
+          <Name locale="pt" label="marcha" plural="marchas">marcha</Name>
+          <Name locale="ru" label="передача" plural="передачи">передача</Name>
+          <Name locale="hu" label="fokozat" plural="fokozat">fokozat</Name>
+          <Name locale="cs" label="převod" plural="převody">převod</Name>
+          <Name locale="sk" label="prevod" plural="prevodové stupne">prevod</Name>
+          <Name locale="fi" label="vaihde" plural="vaihdetta">vaihde</Name>
+          <Name locale="sv" label="växel" plural="växlar">växel</Name>
+          <Name locale="et" label="autokäik" plural="autokäigud">autokäik</Name>
+          <Name locale="lv" label="pārnesums" plural="pārnesumi">pārnesums</Name>
+          <Name locale="lt" label="pavara" plural="pavaros">pavara</Name>
+          <Name locale="no" label="gir" plural="gir">gir</Name>
+          <Name locale="pl" label="bieg" plural="biegi">bieg</Name>
+          <Name locale="bg" label="предавка" plural="предавки">предавка</Name>
+          <Name locale="hr" label="stupanj" plural="stupnjevi">stupanj</Name>
+          <Name locale="ro" label="treaptă de viteză" plural="trepte de viteză">treaptă de viteză</Name>
+          <Name locale="tr" label="vites" plural="vites">vites</Name>
+          <Name locale="el" label="αμάξι ταχύτητα" plural="αμάξι ταχύτητες">αμάξι ταχύτητα</Name>
+          <Name locale="is" label="gír" plural="gírar">gír</Name>
+          <Name locale="sr" label="zupčanik" plural="zupčaniki">zupčanik</Name>
+          <Name locale="sl" label="prestava" plural="prestave">prestava</Name>
+          <Name locale="zh" label="齿轮" plural="齿轮">齿轮</Name>
+          <Name locale="ar" label="الغيار" plural="الغيارات">الغيار</Name>
+          <Name locale="he" label="הילוך" plural="הילוכים">הילוך</Name>
+          <Name locale="ja" label="ギア" plural="ギア">ギア</Name>
+          <Name locale="kk" label="беріліс" plural="берілістер">беріліс</Name>
+          <Name locale="ko" label="기어" plural="기어">기어</Name>
+          <Name locale="mk" label="запченик" plural="запченици">запченик</Name>
+          <Name locale="th" label="เกียร์" plural="เกียร์">เกียร์</Name>
+          <Name locale="uk" label="передача" plural="передачі">передача</Name>
+          <Name locale="vi" label="số" plural="số">số</Name>
+        </UnitOfMeasure>
+      </UnitDimensionRepresentation>
+      <Name locale="en">gear</Name>
+      <Name locale="de">Gang</Name>
+      <Name locale="fr">rapport</Name>
+      <Name locale="da">gear</Name>
+      <Name locale="nl">versnelling</Name>
+      <Name locale="es">marcha</Name>
+      <Name locale="it">ingranaggio</Name>
+      <Name locale="pt">marcha</Name>
+      <Name locale="ru">передача</Name>
+      <Name locale="hu">fokozat</Name>
+      <Name locale="cs">převod</Name>
+      <Name locale="sk">prevod</Name>
+      <Name locale="fi">vaihde</Name>
+      <Name locale="sv">växel</Name>
+      <Name locale="et">autokäik</Name>
+      <Name locale="lv">pārnesums</Name>
+      <Name locale="lt">pavara</Name>
+      <Name locale="no">gir</Name>
+      <Name locale="pl">bieg</Name>
+      <Name locale="bg">предавка</Name>
+      <Name locale="hr">stupanj</Name>
+      <Name locale="ro">treaptă de viteză</Name>
+      <Name locale="tr">vites</Name>
+      <Name locale="el">αμάξι ταχύτητα</Name>
+      <Name locale="is">gír</Name>
+      <Name locale="sr">zupčanik</Name>
+      <Name locale="sl">prestava</Name>
+      <Name locale="zh">齿轮</Name>
+      <Name locale="ar">الغيار</Name>
+      <Name locale="he">הילוך</Name>
+      <Name locale="ja">ギア</Name>
+      <Name locale="kk">беріліс</Name>
+      <Name locale="ko">기어</Name>
+      <Name locale="mk">запченик</Name>
+      <Name locale="th">เกียร์</Name>
+      <Name locale="uk">передача</Name>
+      <Name locale="vi">số</Name>
+    </UnitDimension>
+    <UnitDimension domainID="utTorque">
+      <UnitDimensionRepresentation domainID="urTorque">
+        <UnitOfMeasure domainID="Nm" scale="1" baseOffset="0">
+          <Name locale="en" label="newton meter" plural="newton meter">newton meter</Name>
+          <Name locale="de" label="Newtonmeter" plural="Newtonmeter">Newtonmeter</Name>
+          <Name locale="fr" label="newton mètre" plural="newton mètre">newton mètre</Name>
+          <Name locale="da" label="newtonmeter" plural="newtonmeter">newtonmeter</Name>
+          <Name locale="nl" label="newtonmeter" plural="newtonmeter">newtonmeter</Name>
+          <Name locale="es" label="newton metro" plural="newton metro">newton metro</Name>
+          <Name locale="it" label="newton metro" plural="newton metro">newton metro</Name>
+          <Name locale="pt" label="newton metro" plural="newton metro">newton metro</Name>
+          <Name locale="ru" label="ньютон-метр" plural="ньютон-метр">ньютон-метр</Name>
+          <Name locale="hu" label="newtonméter" plural="newtonméter">newtonméter</Name>
+          <Name locale="cs" label="newtonmetr" plural="newtonmetr">newtonmetr</Name>
+          <Name locale="sk" label="newtonmetre" plural="newtonmetre">newtonmetre</Name>
+          <Name locale="fi" label="newtonmetri" plural="newtonmetri">newtonmetri</Name>
+          <Name locale="sv" label="newtonmeter" plural="newtonmeter">newtonmeter</Name>
+          <Name locale="et" label="njuutonmeeter" plural="njuutonmeeter">njuutonmeeter</Name>
+          <Name locale="lv" label="ņūtonmetrs" plural="ņūtonmetrs">ņūtonmetrs</Name>
+          <Name locale="lt" label="niutonmetras" plural="niutonmetras">niutonmetras</Name>
+          <Name locale="no" label="newtonmeter" plural="newtonmeter">newtonmeter</Name>
+          <Name locale="pl" label="niutonometr" plural="niutonometr">niutonometr</Name>
+          <Name locale="bg" label="нютон метър" plural="нютон метър">нютон метър</Name>
+          <Name locale="hr" label="njutnmetar" plural="njutnmetar">njutnmetar</Name>
+          <Name locale="ro" label="newton-metru" plural="newton-metru">newton-metru</Name>
+          <Name locale="tr" label="newton metre" plural="newton metre">newton metre</Name>
+          <Name locale="el" label="μέτρο newton" plural="μέτρο newton">μέτρο newton</Name>
+          <Name locale="is" label="newtonmetri" plural="newtonmetri">newtonmetri</Name>
+          <Name locale="sr" label="njutn metar" plural="njutn metar">njutn metar</Name>
+          <Name locale="sl" label="newton meter" plural="newton meter">newton meter</Name>
+          <Name locale="zh" label="牛顿米" plural="牛顿米">牛顿米</Name>
+          <Name locale="ar" label="نيوتن متر" plural="نيوتن متر">نيوتن متر</Name>
+          <Name locale="he" label="ניוטון מטר" plural="ניוטון מטר">ניוטון מטר</Name>
+          <Name locale="ja" label="ニュートン・メートル" plural="ニュートン・メートル">ニュートン・メートル</Name>
+          <Name locale="kk" label="ньютон метр" plural="ньютон метр">ньютон метр</Name>
+          <Name locale="ko" label="뉴턴 미터" plural="뉴턴 미터">뉴턴 미터</Name>
+          <Name locale="mk" label="њутнметар" plural="њутнметар">њутнметар</Name>
+          <Name locale="th" label="นิวตันเมตร" plural="นิวตันเมตร">นิวตันเมตร</Name>
+          <Name locale="uk" label="ньютон-метр" plural="ньютон-метр">ньютон-метр</Name>
+          <Name locale="vi" label="newton mét" plural="newton mét">newton mét</Name>
+        </UnitOfMeasure>
+      </UnitDimensionRepresentation>
+      <Name locale="en">torque</Name>
+      <Name locale="de">Drehmoment</Name>
+      <Name locale="fr">couple de serrage</Name>
+      <Name locale="da">drejningsmoment</Name>
+      <Name locale="nl">koppel</Name>
+      <Name locale="es">par</Name>
+      <Name locale="it">coppia</Name>
+      <Name locale="pt">torque</Name>
+      <Name locale="ru">момент затяжки</Name>
+      <Name locale="hu">nyomaték</Name>
+      <Name locale="cs">točivý moment</Name>
+      <Name locale="sk">krútiaci moment</Name>
+      <Name locale="fi">vääntö</Name>
+      <Name locale="sv">vridmoment</Name>
+      <Name locale="et">pöördemoment</Name>
+      <Name locale="lv">griezes moments</Name>
+      <Name locale="lt">sukimo momentas</Name>
+      <Name locale="no">dreiemoment</Name>
+      <Name locale="pl">moment</Name>
+      <Name locale="bg">въртящ момент</Name>
+      <Name locale="hr">moment</Name>
+      <Name locale="ro">cuplu de strângere</Name>
+      <Name locale="tr">tork</Name>
+      <Name locale="el">ροπή</Name>
+      <Name locale="is">átak</Name>
+      <Name locale="sr">obrtni moment</Name>
+      <Name locale="sl">navor</Name>
+      <Name locale="zh">扭矩</Name>
+      <Name locale="ar">العزم</Name>
+      <Name locale="he">מומנט</Name>
+      <Name locale="ja">トルク</Name>
+      <Name locale="kk">айналу кезеңі</Name>
+      <Name locale="ko">토크</Name>
+      <Name locale="mk">момент на сила</Name>
+      <Name locale="th">แรงบิด</Name>
+      <Name locale="uk">крутильний момент</Name>
+      <Name locale="vi">mô-men xoắn</Name>
+    </UnitDimension>
 	</UnitDimensions>
 	<UnitOfMeasureSystems>
 		<UnitOfMeasureSystem domainID="umsEnglish">
@@ -8732,6 +8931,9 @@
 			<UnitOfMeasureRef unitOfMeasureRef="field"/>
 			<UnitOfMeasureRef unitOfMeasureRef="knot"/>
 			<UnitOfMeasureRef unitOfMeasureRef="ppm"/>
+      <UnitOfMeasureRef unitOfMeasureRef="Nm"/>
+      <UnitOfMeasureRef unitOfMeasureRef="kW"/>
+      <UnitOfMeasureRef unitOfMeasureRef="gear"/>
 		</UnitOfMeasureSystem>
 		<UnitOfMeasureSystem domainID="umsMetric">
 			<Name locale="en" label="metric">Metric</Name>
@@ -8863,6 +9065,9 @@
 			<UnitOfMeasureRef unitOfMeasureRef="field"/>
 			<UnitOfMeasureRef unitOfMeasureRef="knot"/>
 			<UnitOfMeasureRef unitOfMeasureRef="ppm"/>
+      <UnitOfMeasureRef unitOfMeasureRef="Nm"/>
+      <UnitOfMeasureRef unitOfMeasureRef="kW"/>
+      <UnitOfMeasureRef unitOfMeasureRef="gear"/>
 		</UnitOfMeasureSystem>
 		<UnitOfMeasureSystem domainID="umsImperial">
 			<Name locale="en" label="us">Imperial</Name>
@@ -8957,7 +9162,10 @@
 			<UnitOfMeasureRef unitOfMeasureRef="field"/>
 			<UnitOfMeasureRef unitOfMeasureRef="knot"/>
 			<UnitOfMeasureRef unitOfMeasureRef="ppm"/>
-		</UnitOfMeasureSystem>
+      <UnitOfMeasureRef unitOfMeasureRef="Nm"/>
+      <UnitOfMeasureRef unitOfMeasureRef="kW"/>
+      <UnitOfMeasureRef unitOfMeasureRef="gear"/>
+    </UnitOfMeasureSystem>
 		<UnitOfMeasureSystem domainID="umsMixed">
 			<Name locale="en" label="mixed">Mixed</Name>
 			<Name locale="de" label="gemischt">Gemischt</Name>
