@@ -1004,6 +1004,25 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem
         public static readonly NumericRepresentation vrWorkingWidthActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrWorkingWidthActual"];
 
         public static readonly NumericRepresentation vrWorkingWidthDefault = (NumericRepresentation)RepresentationManager.Instance.Representations["vrWorkingWidthDefault"];
+        
+        public static readonly NumericRepresentation vrEnginePower = (NumericRepresentation)RepresentationManager.Instance.Representations["vrEnginePower"];
+
+        public static readonly NumericRepresentation vrElectricalPowerSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrElectricalPowerSetPoint"];
+
+        public static readonly NumericRepresentation vrElectricalPowerActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrElectricalPowerActual"];
+
+        public static readonly NumericRepresentation vrPTOLoadCurrentSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations["vrPTOLoadCurrentSpeed"];
+
+        public static readonly NumericRepresentation vrTransmissionLoadCurrentSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations["vrTransmissionLoadCurrentSpeed"];
+
+        public static readonly NumericRepresentation vrFuelTotalConsumptionEffective = (NumericRepresentation)RepresentationManager.Instance.Representations["vrFuelTotalConsumptionEffective"];
+
+        public static readonly NumericRepresentation vrFuelTotalConsumptionIneffective = (NumericRepresentation)RepresentationManager.Instance.Representations["vrFuelTotalConsumptionIneffective"];
+
+        public static readonly NumericRepresentation vrSlipCurrentSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSlipCurrentSpeed"];
+
+        public static readonly NumericRepresentation vrFuelProductivityTotal = (NumericRepresentation)RepresentationManager.Instance.Representations["vrFuelProductivityTotal"];
 
     }
+
 }

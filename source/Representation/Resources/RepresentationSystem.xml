@@ -16182,6 +16182,7 @@
 			<Name locale="vi" description="TillagePressureActual">tillage pressure Actual</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFuelProductivity" domainTag="370" digits="3" decimal="2">
+			<RelatedDDI ddi="150" unitOfMeasure="[mm3]1[m2]-1" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="l1ha-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="igal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsImperial"/>
@@ -17736,20 +17737,20 @@
 			<Name locale="ug" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
 			<Name locale="vi" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
 		</NumericRepresentation>
-	  <NumericRepresentation domainID="vrSolutionRateLiquidDistance" domainTag="554" digits="5" decimal="2">
-	    <UnitOfMeasureDefault unitOfMeasure="gal1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsEnglish"/>
-	    <UnitOfMeasureDefault unitOfMeasure="l1hdm-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsMetric"/>
-	    <UnitOfMeasureDefault unitOfMeasure="igal1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsImperial"/>
-	    <UnitDimensionRef unitDimension="utVolumePerDistance"/>
-	    <Name locale="en" description="Solution rate of a liquid tank measured mix per distance">solution rate liquid distance</Name>
-	  </NumericRepresentation>
-	  <NumericRepresentation domainID="vrSolutionRateMassDistance" domainTag="555" digits="5" decimal="2">
-	    <UnitOfMeasureDefault unitOfMeasure="lb1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsEnglish"/>
-	    <UnitOfMeasureDefault unitOfMeasure="kg1hdm-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsMetric"/>
-	    <UnitOfMeasureDefault unitOfMeasure="lb1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsImperial"/>
-	    <UnitDimensionRef unitDimension="utMassPerDistance"/>
-	    <Name locale="en" description="Solution rate of a mass tank measured mix per distance">solution rate mass distance</Name>
-	  </NumericRepresentation>
+		<NumericRepresentation domainID="vrSolutionRateLiquidDistance" domainTag="554" digits="5" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="gal1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="l1hdm-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="igal1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utVolumePerDistance"/>
+			<Name locale="en" description="Solution rate of a liquid tank measured mix per distance">solution rate liquid distance</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrSolutionRateMassDistance" domainTag="555" digits="5" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="lb1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="kg1hdm-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="lb1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utMassPerDistance"/>
+			<Name locale="en" description="Solution rate of a mass tank measured mix per distance">solution rate mass distance</Name>
+		</NumericRepresentation>
 		<NumericRepresentation domainID="vrWorkingWidthTarget" domainTag="556" digits="5" decimal="3">
 			<RelatedDDI ddi="66" unitOfMeasure="mm" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsEnglish"/>
@@ -17773,6 +17774,99 @@
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utDistance"/>
 			<Name locale="en" description="Working Width Default">Working Width Default</Name>
+		<NumericRepresentation domainID="vrEnginePower" domainTag="559" digits="6" decimal="3">
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPower"/>
+			<Name locale="en" description="Engine Power">Engine Power</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrElectricalPowerSetPoint" domainTag="560" digits="6" decimal="3">
+			<RelatedDDI ddi="568" unitOfMeasure="kg" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPower"/>
+			<Name locale="en" description="Electrical Power Setpoint">Setpoint Electrical Power of Device Element</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrElectricalPowerActual" domainTag="561" digits="6" decimal="3">		
+			<RelatedDDI ddi="569" unitOfMeasure="kg" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPower"/>
+			<Name locale="en" description="Electrical Power Actual">Actual Electrical Power of Device Element</Name>
+		</NumericRepresentation>	
+		<NumericRepresentation domainID="vrPTOLoadCurrentSpeed" domainTag="562" digits="3" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPercent"/>
+			<Name locale="en" description="PTO Load at Current Speed">The ratio of actual PTO (Power Take-Off) percent torque (indicated) to maximum indicated torque available at the current PTO speed.</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrTransmissionLoadCurrentSpeed" domainTag="563" digits="3" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPercent"/>
+			<Name locale="en" description="Transmission Load at Current Speed">The ratio of actual Transmission percent torque (indicated) to maximum indicated torque available at the current Transmission speed.</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrFuelTotalConsumptionEffective" domainTag="564" digits="5" decimal="0">		
+			<RelatedDDI ddi="316" unitOfMeasure="ml" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="gal" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="igal" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utVolume"/>
+			<Name locale="en" description="Fuel Total Consumption Effective">Accumulated total fuel consumption in working position.</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrFuelTotalConsumptionIneffective" domainTag="565" digits="5" decimal="0">		
+			<RelatedDDI ddi="317" unitOfMeasure="ml" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="gal" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="igal" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utVolume"/>
+			<Name locale="en" description="Fuel Total Consumption Ineffective">Accumulated total fuel consumption in non working position.</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrSlipCurrentSpeed" domainTag="566" digits="3" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPercent"/>
+			<Name locale="en" description="Slip at Current Speed">Slip at Current Speed</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrFuelProductivityTotal" domainTag="567" digits="3" decimal="2">
+			<RelatedDDI ddi="278" unitOfMeasure="[mm3]1[m2]-1" resolution="1" offset="0"isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="l1ha-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="igal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utVolumePerArea"/>
+			<Name locale="en" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="de" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="fr" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="da" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="nl" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="es" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="it" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="pt" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="ru" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="hu" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="cs" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="sk" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="fi" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="sv" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="et" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="lv" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="lt" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="no" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="pl" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="bg" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="hr" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="ro" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="tr" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="el" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="is" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="sr" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="sl" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
 		</NumericRepresentation>
 		<EnumeratedRepresentation domainID="dtApplicationMethod" domainTag="1001" attributeID="196" domainIDShort="Applicat">
 			<Name locale="en" description="ApplicationMethod">ApplicationMethod</Name>
