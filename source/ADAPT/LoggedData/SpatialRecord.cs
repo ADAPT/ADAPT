@@ -41,6 +41,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 
         public DateTime Timestamp { get; set; }
 
+        public EnumeratedValue SignalType { get; set; }
+
         public void SetMeterValue(WorkingData workingData, RepresentationValue value)
         {
             _meterValues.Add(workingData.Id.ReferenceId, value);
