@@ -4,12 +4,12 @@
 The ADAPT Framework requires the .NET Core 2.x SDK and the .NET 4.5.1 SDK to be built correctly. It is possible to build the projects with just the .NET Core 2.x SDK if you use the .NET CLI and use the *-Framework* flag.
 
 ### CI Builds
-The ADAPT Framework has it's tests run every time any code changes through a Travis CI job.
+The ADAPT Framework has it's tests run every time any code changes through a GitHub Actions pipeline.
 
 ### Release Builds
-The ADAPT Framework is built by creating a GitHub Release that triggers a Travis CI job. The release tag version should conform to the pattern *vX.X.X-alphaX* for an alpha release, *vX.X.X-betaX* for a beta release, *vX.X.X-rcX* for a release candidate release and *vX.X.X* for a production release. The job takes the release tag version and publishes a NuGet package using that.
+The ADAPT Framework is built by creating a GitHub Release that triggers a GitHub Actions pipeline. The release tag version should conform to the pattern *vX.X.X-alphaX* for an alpha release, *vX.X.X-betaX* for a beta release, *vX.X.X-rcX* for a release candidate release and *vX.X.X* for a production release. The job takes the release tag version and publishes a NuGet package using that.
 
-An example would be that the release tag version *v1.2.3-beta2* will create a NuGet package with the version *1.2.3-beta2* and the assemblies would have the file version *1.2.3.N* where **N** is the Travis CI build number.
+An example would be that the release tag version *v1.2.3-beta2* will create a NuGet package with the version *1.2.3-beta2* and the assemblies would have the file version *1.2.3.N* where **N** is the GitHub Actions run number.
 
 ### Local Builds
 The ADAPT Framework can be built locally on a developer machine if the repository is cloned.
