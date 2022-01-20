@@ -40,11 +40,8 @@ namespace AgGateway.ADAPT.Representation.UnitSystem
 
     public static ApplicationDataModel.Common.UnitOfMeasure GetUnitOfMeasure(string code)
     {
-        if (InternalUnitSystemManager.Instance.UnitOfMeasures.Contains(code))
-        {
-            return InternalUnitSystemManager.Instance.UnitOfMeasures[code].ToModelUom();
-        }
-        return null;
+        //The UnitOfMeasures indexer will return any simple UOMs (preloaded) or lazily create composite UOMs
+        return InternalUnitSystemManager.Instance.UnitOfMeasures[code].ToModelUom();
     }
 
     public static ApplicationDataModel.Common.UnitOfMeasure FromUNRec20Code(string code)
