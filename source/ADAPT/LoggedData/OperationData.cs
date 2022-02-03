@@ -31,6 +31,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
             Id = CompoundIdentifierFactory.Instance.Create();
             EquipmentConfigurationIds = new List<int>();
             CoincidentOperationDataIds = new List<int>();
+            ProductIds = new List<int>();
         }
 
         public CompoundIdentifier Id { get; private set; }
