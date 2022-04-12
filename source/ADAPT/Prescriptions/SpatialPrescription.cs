@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -8,10 +8,12 @@
   *
   * Contributors:
   *    Justin Sliekers - initial API and implementation
+  *    Kelly Nelson - Marking default rates obsolete in favor of per-product default rates
   *******************************************************************************/
 
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
+using System;
 
 namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
 {
@@ -19,8 +21,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Prescriptions
     {
         public BoundingBox BoundingBox { get; set; }
 
+        [Obsolete("Set out of field rates on each RxProductLookup")]
         public NumericRepresentationValue OutOfFieldRate { get; set; }
 
+        [Obsolete("Set loss of GPS rates on each RxProductLookup")]
         public NumericRepresentationValue LossOfGpsRate { get; set; }
     }
 }
