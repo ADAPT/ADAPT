@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015-16 AgGateway and ADAPT Contributors
   * Copyright (C) 2015-16 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -13,8 +13,10 @@
  *    Joseph Ross - renamed class
  *    Joseph Ross - removed workItemOperationId and operationDataId Added Id and description
  *    Joseph Ross - made Connector2Id nullable
+ *    Kelly Nelson - making DataLogTriggers obsolete
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.LoggedData;
@@ -38,6 +40,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Equipment
 
         public int? Connector2Id { get; set; }
 
+        [Obsolete("Data log triggers are assigned on Work Items")]
         public List<DataLogTrigger> DataLogTriggers { get; set; } 
 
 //        public List<ContainerEquipmentAllocation> ContainerEquipmentAllocations { get; set; } 
