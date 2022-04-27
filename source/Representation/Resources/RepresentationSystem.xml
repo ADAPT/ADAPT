@@ -11697,6 +11697,7 @@
 			<Name locale="vi" description="Tỉ lệ nảy mầm xác định khả năng tạo thành mầm của một hạt giống.">Tỉ lệ nảy mầm xác định 				khả năng tạo thành mầm của một hạt giống.</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainTag="261" domainID="vrProvidedAmountVolume" digits="4" decimal="2">
+      <RelatedDDI ddi="72" unitOfMeasure="ml" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
 			<UnitOfMeasureDefault unitOfMeasure="gal" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="l" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="igal" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsImperial"/>
@@ -11741,6 +11742,7 @@
 			<Name locale="vi" description="Xác định thể tích sản phẩm được cung cấp cho bình chứa có máy tính đổ bình.">Xác định thể tích sản phẩm được cung cấp cho bình chứa có máy tính đổ bình.</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainTag="262" domainID="vrProvidedAmountMass" digits="4" decimal="2">
+      <RelatedDDI ddi="75" unitOfMeasure="g" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="kg" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsImperial"/>
