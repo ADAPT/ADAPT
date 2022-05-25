@@ -15,6 +15,7 @@
   *    Joseph Ross - Added HasCrop.. Protection, Nutrition, Variety and HasHarvestCommodity to match the uml
   *    Stuart Rhea - Modified Product.BrandId and Product.ManufacturerId to be nullable (int?) per model.
   *    Kelly Nelson - Added SpecificGravity
+  *    Kelly Nelson - Initializing Form
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -30,6 +31,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
             Id = CompoundIdentifierFactory.Instance.Create();
             ContextItems = new List<ContextItem>();
             ProductComponents = new List<ProductComponent>();
+            Form = ProductFormEnum.Unknown; //Handle the unfortunate placement of Unknown in the form enum so that all products don't initialize as Gas.
         }
 
         public CompoundIdentifier Id { get; private set; }
