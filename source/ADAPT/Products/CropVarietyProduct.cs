@@ -12,6 +12,7 @@
   *    Kathleen Oneal - changed the list of traits to have ids instead of the object
   *    Stuart Rhea - Renamed from CropVariety to CropVarietyProduct per model
   *    Kelly Nelson - Appropriately initializing Product Type
+  *    Kelly Nelson - Initializing Product Form
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -24,6 +25,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
         {
             TraitIds = new List<int>();
             ProductType = ProductTypeEnum.Variety;
+            Form = ProductFormEnum.Solid;
         }
 
         public int CropId { get; set; }
