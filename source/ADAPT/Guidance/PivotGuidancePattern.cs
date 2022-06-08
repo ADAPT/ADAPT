@@ -10,6 +10,7 @@
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Stuart Rhea - #116 Rename CenterPivot to PivotGuidancePattern
   *    Kelly Nelson - #167 Allow for multiple definition methods
+  *    Kelly Nelson - Setting type in default constructor
   *******************************************************************************/
 
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
@@ -19,6 +20,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
     public class PivotGuidancePattern : GuidancePattern
     {
+        public PivotGuidancePattern()
+        {
+            GuidancePatternType = GuidancePatternTypeEnum.CenterPivot;
+        }
         public Point StartPoint { get; set; }
 
         public Point EndPoint { get; set; }
