@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kelly Nelson - Setting type in default constructor
   *******************************************************************************/
 
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
@@ -16,6 +17,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
     public class Spiral : GuidancePattern
     {
+        public Spiral()
+        {
+            GuidancePatternType = GuidancePatternTypeEnum.Spiral;
+        }
         public LineString Shape { get; set; }
     }
 }
