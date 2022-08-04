@@ -33,5 +33,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
         Variety,
         Fertilizer, //non-manure
         Pesticide, //non-Insecticide
+        Adjuvant,
+        Defoliant
     }
 }
