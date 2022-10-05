@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -14,6 +14,8 @@
   *    Justin Sliekers - dropping nullable from manufacturerId and brandId; dropping collection off Category; removing defaultUnit and WorkStatusEnum
   *    Joseph Ross - Added HasCrop.. Protection, Nutrition, Variety and HasHarvestCommodity to match the uml
   *    Stuart Rhea - Modified Product.BrandId and Product.ManufacturerId to be nullable (int?) per model.
+  *    Kelly Nelson - Added SpecificGravity
+  *    Kelly Nelson - Initializing Form
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -29,6 +31,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
             Id = CompoundIdentifierFactory.Instance.Create();
             ContextItems = new List<ContextItem>();
             ProductComponents = new List<ProductComponent>();
+            Form = ProductFormEnum.Unknown; //Handle the unfortunate placement of Unknown in the form enum so that all products don't initialize as Gas.
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -39,7 +42,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
         
         public List<ContextItem> ContextItems { get; set; }
 
+        /// <summary>
+        /// The density of the product (mass per volume)
+        /// </summary>
         public NumericRepresentationValue Density { get; set; }
+
+        /// <summary>
+        /// A unitless specific gravity ratio
+        /// </summary>
+        public double? SpecificGravity { get; set; }
 
         public string Description { get; set; }
 

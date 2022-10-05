@@ -1,0 +1,30 @@
+name: CI
+
+on: 
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET '5.0'
+        uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: '5.0.x'
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Application Data Model Test
+        run: dotnet test ./source/ApplicationDataModelTest/ApplicationDataModelTest.csproj -c Release
+      - name: Plugin Manager Test
+        run: dotnet test ./source/PluginManagerTest/PluginManagerTest.csproj -c Release
+      - name: Representation Test
+        run: dotnet test ./source/RepresentationTest/RepresentationTest.csproj -c Release

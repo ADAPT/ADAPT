@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -21,12 +21,27 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
 {
     public class SpatialRecord
     {
-        private readonly Dictionary<int, RepresentationValue> _meterValues = new Dictionary<int, RepresentationValue>(); 
-        private readonly Dictionary<int, int?> _appliedLatencyValues = new Dictionary<int, int?>(); 
+        private readonly Dictionary<int, RepresentationValue> _meterValues; 
+        private readonly Dictionary<int, int?> _appliedLatencyValues;
+
+        public SpatialRecord()
+        {
+            _meterValues = new Dictionary<Int32, RepresentationValue>();
+            _appliedLatencyValues = new Dictionary<Int32,Int32?>();
+        }
+
+        // This overload offers a small performance improvement by avoiding dictionary resizing when calling SetMeterValue.
+        public SpatialRecord(int numberOfMeters)
+        {
+            _meterValues = new Dictionary<Int32,RepresentationValue>(numberOfMeters);
+            _appliedLatencyValues = new Dictionary<Int32,Int32?>();
+        }
 
         public Shape Geometry { get; set; }
 
         public DateTime Timestamp { get; set; }
+
+        public EnumeratedValue SignalType { get; set; }
 
         public void SetMeterValue(WorkingData workingData, RepresentationValue value)
         {

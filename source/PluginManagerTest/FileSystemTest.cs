@@ -65,6 +65,7 @@ namespace AgGateway.ADAPT.PluginManagerTest
         [Test]
         public void GetSubDirectoriesGivenPathShouldReturnEmptyList()
         {
+            _directoryLocation = Path.Combine(_directoryLocation, Guid.NewGuid().ToString());
             var result = _fileSystem.GetSubDirectories(_directoryLocation);
             Assert.IsEmpty(result);
         }
@@ -72,6 +73,7 @@ namespace AgGateway.ADAPT.PluginManagerTest
         [Test]
         public void GetSubDirectoriesGivenPathShouldReturnTwoDirectories()
         {
+            _directoryLocation = Path.Combine(_directoryLocation, Guid.NewGuid().ToString());
             var subDirectory1 = Path.Combine(_directoryLocation, Guid.NewGuid().ToString());
             Directory.CreateDirectory(subDirectory1);
 

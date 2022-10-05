@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <Version>0.0.0</Version>
     <Authors>AgGateway and ADAPT Contributors</Authors>
     <Company>AgGateway</Company>
@@ -9,7 +9,7 @@
     <RootNamespace>AgGateway.ADAPT.RepresentationTest</RootNamespace>
     <AssemblyName>AgGateway.ADAPT.RepresentationTest</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Copyright>Copyright (C) 2015-18 AgGateway and ADAPT Contributors</Copyright>
+    <Copyright>Copyright (C) 2015-19 AgGateway and ADAPT Contributors</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

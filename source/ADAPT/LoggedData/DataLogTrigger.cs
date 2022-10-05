@@ -9,9 +9,11 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *    Stuart Rhea - #96 Remove SectionId from DataLogTrigger
-  *                  #97 Replace DataLogTrigger.MeterId with DataLogTrigger.DeviceElementId   
+  *                  #97 Replace DataLogTrigger.MeterId with DataLogTrigger.DeviceElementId
+  *    Kelly Nelson - Change DataLogMethod to DataLogMethods and add RequestDefaultProcessData
   *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
@@ -25,11 +27,15 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
             Id = CompoundIdentifierFactory.Instance.Create();
 
             ContextItems = new List<ContextItem>();
+            DataLogMethods = new List<LoggingMethodEnum>();
         }
 
         public CompoundIdentifier Id { get; private set; }
 
+        [Obsolete("Prefer DataLogMethods to capture multiple methods")]
         public LoggingMethodEnum DataLogMethod { get; set; }
+
+        public List<LoggingMethodEnum> DataLogMethods { get; set; }
 
         public NumericRepresentationValue DataLogDistanceInterval { get; set; }
 
@@ -46,6 +52,12 @@ namespace AgGateway.ADAPT.ApplicationDataModel.LoggedData
         public LoggingLevelEnum LoggingLevel { get; set; }
 
         public Representation Representation { get; set; }
+
+        /// <summary>
+        /// A special DataLogTrigger that indicates that the task controller should log its default set of data
+        /// If this is true, Representation should not be set.
+        /// </summary>
+        public bool RequestDefaultProcessData { get; set; }
 
         public int? DeviceElementId { get; set; } 
     }

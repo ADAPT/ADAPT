@@ -9,7 +9,9 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
-namespace AgGateway.ADAPT.Representation.RepresentationSystem
+
+
+namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public class RepresentationInstanceList 
     {
@@ -116,6 +118,8 @@
         public static readonly EnumeratedRepresentation dtFacilityType = (EnumeratedRepresentation)RepresentationManager.Instance.Representations["dtFacilityType"];
 
         public static readonly EnumeratedRepresentation dtPersonRole = (EnumeratedRepresentation)RepresentationManager.Instance.Representations["dtPersonRole"];
+
+        public static readonly EnumeratedRepresentation dtCropNutritionIngredient = (EnumeratedRepresentation)RepresentationManager.Instance.Representations["dtCropNutritionIngredient"];
 
         public static readonly NumericRepresentation vrAppRateVolumeSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrAppRateVolumeSetPoint"];
 
@@ -991,5 +995,34 @@
 
         public static readonly NumericRepresentation vrYieldWetMass = (NumericRepresentation)RepresentationManager.Instance.Representations["vrYieldWetMass"];
 
+        public static readonly NumericRepresentation vrSolutionRateLiquidDistance = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSolutionRateLiquidDistance"];
+
+        public static readonly NumericRepresentation vrSolutionRateMassDistance = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSolutionRateMassDistance"];
+
+        public static readonly NumericRepresentation vrWorkingWidthTarget = (NumericRepresentation)RepresentationManager.Instance.Representations["vrWorkingWidthTarget"];
+
+        public static readonly NumericRepresentation vrWorkingWidthActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrWorkingWidthActual"];
+
+        public static readonly NumericRepresentation vrWorkingWidthDefault = (NumericRepresentation)RepresentationManager.Instance.Representations["vrWorkingWidthDefault"];
+        
+        public static readonly NumericRepresentation vrEnginePower = (NumericRepresentation)RepresentationManager.Instance.Representations["vrEnginePower"];
+
+        public static readonly NumericRepresentation vrElectricalPowerSetPoint = (NumericRepresentation)RepresentationManager.Instance.Representations["vrElectricalPowerSetPoint"];
+
+        public static readonly NumericRepresentation vrElectricalPowerActual = (NumericRepresentation)RepresentationManager.Instance.Representations["vrElectricalPowerActual"];
+
+        public static readonly NumericRepresentation vrPTOLoadCurrentSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations["vrPTOLoadCurrentSpeed"];
+
+        public static readonly NumericRepresentation vrTransmissionLoadCurrentSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations["vrTransmissionLoadCurrentSpeed"];
+
+        public static readonly NumericRepresentation vrFuelTotalConsumptionEffective = (NumericRepresentation)RepresentationManager.Instance.Representations["vrFuelTotalConsumptionEffective"];
+
+        public static readonly NumericRepresentation vrFuelTotalConsumptionIneffective = (NumericRepresentation)RepresentationManager.Instance.Representations["vrFuelTotalConsumptionIneffective"];
+
+        public static readonly NumericRepresentation vrSlipCurrentSpeed = (NumericRepresentation)RepresentationManager.Instance.Representations["vrSlipCurrentSpeed"];
+
+        public static readonly NumericRepresentation vrFuelProductivityTotal = (NumericRepresentation)RepresentationManager.Instance.Representations["vrFuelProductivityTotal"];
+
     }
+
 }

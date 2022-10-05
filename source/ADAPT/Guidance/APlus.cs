@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Kelly Nelson - Setting type in default constructor
   *******************************************************************************/
 
 using AgGateway.ADAPT.ApplicationDataModel.Shapes;
@@ -16,6 +17,11 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Guidance
 {
     public class APlus : GuidancePattern
     {
+        public APlus()
+        {
+            GuidancePatternType = GuidancePatternTypeEnum.APlus;
+        }
+
         public Point Point { get; set; }
 
         public double Heading { get; set; }

@@ -9,7 +9,8 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
-namespace AgGateway.ADAPT.Representation.RepresentationSystem
+
+namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public enum RepresentationList 
     {
@@ -116,6 +117,8 @@
         dtFacilityType = 1507,
 
         dtPersonRole = 1508,
+
+        dtCropNutritionIngredient = 1509,
 
         vrAppRateVolumeSetPoint = 50,
 
@@ -992,6 +995,35 @@
         vrDeltaAppRateMass = 552,
 
         vrYieldWetMass = 553,
+
+        vrSolutionRateLiquidDistance = 554,
+
+        vrSolutionRateMassDistance = 555,
+        
+        vrWorkingWidthTarget = 556,
+
+        vrWorkingWidthActual = 557,
+
+        vrWorkingWidthDefault = 558,
+        
+        vrEnginePower = 559,
+
+        vrElectricalPowerSetPoint = 560,
+
+        vrElectricalPowerActual = 561,
+
+        vrPTOLoadCurrentSpeed = 562,
+
+        vrTransmissionLoadCurrentSpeed = 563,
+
+        vrFuelTotalConsumptionEffective = 564,
+
+        vrFuelTotalConsumptionIneffective = 565,
+
+        vrSlipCurrentSpeed = 566,
+
+        vrFuelProductivityTotal = 567,
+
 
     }
 }

@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net451</TargetFrameworks>
+  </PropertyGroup>
+  <PropertyGroup>
     <Version>0.0.0</Version>
     <Authors>AgGateway and ADAPT Contributors</Authors>
     <Company>AgGateway</Company>
@@ -9,7 +11,7 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <AssemblyName>AgGateway.ADAPT.Representation</AssemblyName>
     <RootNamespace>AgGateway.ADAPT.Representation</RootNamespace>
-    <Copyright>Copyright (C) 2015-18 AgGateway and ADAPT Contributors</Copyright>
+    <Copyright>Copyright (C) 2015-19 AgGateway and ADAPT Contributors</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

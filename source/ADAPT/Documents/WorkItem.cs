@@ -13,6 +13,7 @@
   *    Kathleen Oneal - renamed ReferenceNoteIds to NoteIds; CropZoneId from list of ints to single int; renamed SpatialLayerIds to ReferenceLayerIds
   *    Justin Sliekers - implement device element changes
   *    Joseph Ross - removed ConnectorID added EquipmentConfigurationGroup
+  *    Kelly Nelson - adding DataLogTriggers
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -35,6 +36,7 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
             GuidanceAllocationIds = new List<int>();
             StatusUpdates = new List<StatusUpdate>();
             WorkOrderIds = new List<int>();
+            DataLogTriggers = new List<LoggedData.DataLogTrigger>();
         }
 
         public CompoundIdentifier Id { get; private set; }
@@ -70,5 +72,10 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Documents
         public int ParentDocumentId { get; set; }
 
         public EquipmentConfigurationGroup EquipmentConfigurationGroup { get; set; }
+
+        /// <summary>
+        /// A DataLogTrigger is an ISO11783 concept prescribing what data should be logged by the devices performing the task (work item)
+        /// </summary>
+        public List<LoggedData.DataLogTrigger> DataLogTriggers { get; set; }
     }
 }

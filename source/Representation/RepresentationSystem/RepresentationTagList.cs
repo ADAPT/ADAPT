@@ -9,7 +9,8 @@
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
   *******************************************************************************/
-namespace AgGateway.ADAPT.Representation.RepresentationSystem
+
+namespace AgGateway.ADAPT.Representation.RepresentationSystem
 {
     public class RepresentationTagList 
     {
@@ -116,6 +117,8 @@
         public const int dtFacilityType = 1507;
 
         public const int dtPersonRole = 1508;
+
+        public const int dtCropNutritionIngredient = 1509;
 
         public const int vrAppRateVolumeSetPoint = 50;
 
@@ -990,6 +993,34 @@
         public const int vrDeltaAppRateMass = 552;
 
         public const int vrYieldWetMass = 553;
+
+        public const int vrSolutionRateLiquidDistance = 554;
+
+        public const int vrSolutionRateMassDistance = 555;
+
+        public const int vrWorkingWidthTarget = 556;
+
+        public const int vrWorkingWidthActual = 557;
+
+        public const int vrWorkingWidthDefault = 558;
+        
+        public const int vrEnginePower = 559;
+
+        public const int vrElectricalPowerSetPoint = 560;
+
+        public const int vrElectricalPowerActual = 561;
+
+        public const int vrPTOLoadCurrentSpeed = 562;
+
+        public const int vrTransmissionLoadCurrentSpeed = 563;
+
+        public const int vrFuelTotalConsumptionEffective = 564;
+
+        public const int vrFuelTotalConsumptionIneffective = 565;
+
+        public const int vrSlipCurrentSpeed = 566;
+
+        public const int vrFuelProductivityTotal = 567;
 
     }
 }

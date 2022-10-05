@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>AgGateway.ADAPT.PluginManagerTest</AssemblyName>
     <RootNamespace>AgGateway.ADAPT.PluginManagerTest</RootNamespace>
     <Version>0.0.0</Version>
@@ -9,7 +9,7 @@
     <Company>AgGateway</Company>
     <Product>ADAPT</Product>
     <NeutralLanguage>English (United States)</NeutralLanguage>
-    <Copyright>Copyright (C) 2015-18 AgGateway and ADAPT Contributors</Copyright>
+    <Copyright>Copyright (C) 2015-19 AgGateway and ADAPT Contributors</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
   * Copyright (C) 2015 AgGateway and ADAPT Contributors
   * Copyright (C) 2015 Deere and Company
   * All rights reserved. This program and the accompanying materials
@@ -11,6 +11,8 @@
   *    Joseph Ross Making Properties
   *    Kathleen Oneal - changed the list of traits to have ids instead of the object
   *    Stuart Rhea - Renamed from CropVariety to CropVarietyProduct per model
+  *    Kelly Nelson - Appropriately initializing Product Type
+  *    Kelly Nelson - Initializing Product Form
   *******************************************************************************/
 
 using System.Collections.Generic;
@@ -22,6 +24,8 @@ namespace AgGateway.ADAPT.ApplicationDataModel.Products
         public CropVarietyProduct()
         {
             TraitIds = new List<int>();
+            ProductType = ProductTypeEnum.Variety;
+            Form = ProductFormEnum.Solid;
         }
 
         public int CropId { get; set; }

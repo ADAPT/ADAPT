@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>AgGateway.ADAPT.ApplicationDataModelTest</AssemblyName>
     <RootNamespace>AgGateway.ADAPT.ApplicationDataModelTest</RootNamespace>
     <Authors>AgGateway and ADAPT Contributors</Authors>
@@ -10,7 +10,7 @@
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <Version>0.0.0</Version>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Copyright>Copyright (C) 2015-18 AgGateway and ADAPT Contributors</Copyright>
+    <Copyright>Copyright (C) 2015-19 AgGateway and ADAPT Contributors</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

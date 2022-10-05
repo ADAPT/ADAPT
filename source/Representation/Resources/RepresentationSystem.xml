@@ -2,10 +2,10 @@
 <!-- edited with XMLSpy v2012 rel. 2 sp1 (http://www.altova.com) by Tarak Reddy (DEERE & CO) -->
 <RepresentationSystem xmlns="urn:schemas-adapt-aggateway-org:Representation" xmlns:bt="urn:schemas-adapt-aggateway-org:BasicTypes" xmlns:unit="urn:schemas-adapt-aggateway-org:UnitSystem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:schemas-adapt-aggateway-org:Representation RepresentationSystem.xsd">
 	<SchemaVersion major="1" minor="1"/>
-	<ContentVersion major="1" minor="6"/>
+	<ContentVersion major="1" minor="7"/>
 	<Representations>
 		<NumericRepresentation domainID="vrAppRateVolumeSetPoint" domainTag="50" digits="5" decimal="1">
-			<RelatedDDI ddi="1" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0"/>
+			<RelatedDDI ddi="1" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="l1ha-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="igal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsImperial"/>
@@ -60,7 +60,7 @@
 			<Name locale="vi" description="Thể tích theo tốc độ ứng dụng được ánh xạ">thể tích theo tốc độ ứng dụng được ánh xạ</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateVolumeActual" domainTag="49" digits="5" decimal="1">
-			<RelatedDDI ddi="2" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0"/>
+			<RelatedDDI ddi="2" unitOfMeasure="[mm3]1[m2]-1" resolution="0.01" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="l1ha-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="igal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsImperial"/>
@@ -389,7 +389,7 @@
 			<Name locale="vi" description="Giá cả hàng hóa trên thể tích">Giá cả hàng hóa trên thể tích</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrHarvestMoisture" domainTag="6" digits="3" decimal="2">
-			<RelatedDDI ddi="99" unitOfMeasure="ppm" resolution="0.0001" offset="0"/>
+			<RelatedDDI ddi="99" unitOfMeasure="ppm" resolution="0.0001" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsImperial"/>
@@ -658,7 +658,7 @@
 			<Name locale="vi" description="Diện tích được tính từ đường giới hạn của một cánh đồng.">Khu vực đường giới hạn</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldTotalMass" domainTag="12" digits="8" decimal="2">
-			<RelatedDDI ddi="90" unitOfMeasure="kg" resolution="1" offset="0"/>
+			<RelatedDDI ddi="90" unitOfMeasure="kg" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="8" decimal="2" minValue="0" maxValue="99999999.99" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="kg" digits="8" decimal="2" minValue="0" maxValue="99999999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="8" decimal="2" minValue="0" maxValue="99999999.99" unitOfMeasureSystem="umsImperial"/>
@@ -708,9 +708,9 @@
 			<Name locale="vi" description="Khối lượng sản xuất">Khối lượng sản xuất</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldTotalVolume" domainTag="13" digits="7" decimal="2">
-			<RelatedDDI ddi="89" unitOfMeasure="l" resolution="0.001" offset="0"/>
+			<RelatedDDI ddi="89" unitOfMeasure="l" resolution="0.001" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsEnglish"/>
-			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utVolume"/>
 			<Name locale="en" description="Yield Volume">Yield Volume</Name>
@@ -931,7 +931,7 @@
 			<Name locale="vi" description="Khối lượng trên 1000 hạt giống">khối lượng trên một nghìn hạt giống</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrMassPerContainer" domainTag="18" digits="7" decimal="2">
-			<RelatedDDI ddi="122" unitOfMeasure="mg" resolution="0.000001" offset="0"/>
+			<RelatedDDI ddi="122" unitOfMeasure="mg" resolution="0.000001" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="lb1container-1" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="kg1container-1" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="lb1container-1" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsImperial"/>
@@ -1157,7 +1157,7 @@
 			<Name locale="vi" description="Phần xếp chồng được dùng trong các hoạt động dẫn hướng.  Phần xếp chồng cộng Chiều rộng làm việc bằng chiều rộng của dụng cụ.">phần xếp chồng đường dẫn hướng</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrInlineOffset" domainTag="23" digits="2" decimal="1">
-			<RelatedDDI ddi="134" unitOfMeasure="mm" resolution="0.01" offset="0"/>
+			<RelatedDDI ddi="134" unitOfMeasure="mm" resolution="0.01" offset="0" isDefaultRepresentationForDDI="true"/>
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="2" decimal="1" minValue="0" maxValue="99.9" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="m" digits="2" decimal="2" minValue="0" maxValue="30.48" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="2" decimal="1" minValue="0" maxValue="99.9" unitOfMeasureSystem="umsImperial"/>
@@ -1202,7 +1202,7 @@
 			<Name locale="vi" description="Dịch chuyển dọc phần">dịch chuyển theo đường dọc của phần</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrLateralOffset" domainTag="24" digits="3" decimal="1">
-			<RelatedDDI ddi="135" unitOfMeasure="mm" resolution="0.01" offset="0"/>
+			<RelatedDDI ddi="135" unitOfMeasure="mm" resolution="0.01" offset="0" isDefaultRepresentationForDDI="true"/>
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="1" minValue="0" maxValue="240" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="m" digits="3" decimal="2" minValue="0" maxValue="6.096" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="1" minValue="0" maxValue="240" unitOfMeasureSystem="umsImperial"/>
@@ -1335,7 +1335,7 @@
 			<Name locale="vi" description="Tổng khoảng cách ngang">Tổng khoảng cách ngang</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrVerticalOffset" domainTag="25" digits="2" decimal="0">
-			<RelatedDDI ddi="136" unitOfMeasure="mm" resolution="0.01" offset="0"/>
+			<RelatedDDI ddi="136" unitOfMeasure="mm" resolution="0.01" offset="0" isDefaultRepresentationForDDI="true"/>
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="2" decimal="0" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="cm" digits="2" decimal="0" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="2" decimal="0" unitOfMeasureSystem="umsImperial"/>
@@ -1602,7 +1602,7 @@
 			<Name locale="vi" description="Một phép đo liên kết với Lô hạt giống cho nhiều vụ được dùng để chuyển đổi từ hạt giống sang pao hoặc từ pao sang hạt giống hoặc đơn vị đo khối lượng khác khi cần.">Số hạt giống trên khối lượng</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSolutionRateLiquid" domainTag="31" digits="5" decimal="2">
-			<RelatedDDI ddi="1" unitOfMeasure="[mm3]1[m2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="2" unitOfMeasure="[mm3]1[m2]-1" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="l1ha-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="igal1ac-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsImperial"/>
@@ -1657,7 +1657,7 @@
 			<Name locale="vi" description="Tỉ lệ hòa tan của chất lỏng">tỉ lệ hòa tan của chất lỏng</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSolutionRateMass" domainTag="32" digits="5" decimal="2">
-			<RelatedDDI ddi="6" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0"/>
+			<RelatedDDI ddi="7" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="kg1ha-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsImperial"/>
@@ -1710,7 +1710,7 @@
 			<Name locale="vi" description="Khối lượng theo tỉ lệ hòa tan">khối lượng theo tỉ lệ hòa tan</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSwathWidth" domainTag="33" digits="3" decimal="1">
-			<RelatedDDI ddi="66" unitOfMeasure="mm" resolution="0.01" offset="0"/>
+			<RelatedDDI ddi="66" unitOfMeasure="mm" resolution="0.01" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="3" decimal="1" minValue="0" maxValue="210.0" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="m" digits="2" decimal="1" minValue="0" maxValue="64.0" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="3" decimal="1" minValue="0" maxValue="210.0" unitOfMeasureSystem="umsImperial"/>
@@ -1895,7 +1895,7 @@
 			<Name locale="vi" description="Harvest Wet Mass Flow">Harvest wet mass flow</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldWetMassPerArea" domainTag="37" digits="6" decimal="2">
-			<RelatedDDI ddi="84" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="84" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="t1ha-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
@@ -1947,7 +1947,7 @@
 		<NumericRepresentation domainID="vrYieldWetVolume" domainTag="38" digits="5" decimal="2">
 			<RelatedDDI ddi="89" unitOfMeasure="l" resolution="0.001" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="5" decimal="2" unitOfMeasureSystem="umsEnglish"/>
-			<UnitOfMeasureDefault unitOfMeasure="bu" digits="5" decimal="2" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="5" decimal="2" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="5" decimal="2" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utVolume"/>
 			<Name locale="en" description="Yield Volume">yield volume</Name>
@@ -1992,7 +1992,7 @@
 		<NumericRepresentation domainID="vrYieldWetVolumePerArea" domainTag="39" digits="5" decimal="2">
 			<RelatedDDI ddi="83" unitOfMeasure="ml1[m2]-1" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu1ac-1" digits="5" decimal="2" unitOfMeasureSystem="umsEnglish"/>
-			<UnitOfMeasureDefault unitOfMeasure="bu1ha-1" digits="5" decimal="2" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="l1ha-1" digits="5" decimal="2" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu1ac-1" digits="5" decimal="2" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utVolumePerArea"/>
 			<Name locale="en" description="Wet yield volume per area">Wet yield volume per area</Name>
@@ -2035,7 +2035,7 @@
 			<Name locale="vi" description="Thể tích sản xuất khi ướt trên diện tích">Thể tích sản xuất khi ướt trên diện tích</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldMass" domainTag="40" digits="8" decimal="0">
-			<RelatedDDI ddi="183" unitOfMeasure="kg" resolution="1" offset="0"/>
+			<RelatedDDI ddi="183" unitOfMeasure="kg" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="kg" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsImperial"/>
@@ -2136,7 +2136,7 @@
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldVolume" domainTag="42" digits="7" decimal="1">
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsEnglish"/>
-			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="1" minValue="0" maxValue="9999999.9" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utVolume"/>
 			<Name locale="en" description="Dry yield volume">Dry yield volume</Name>
@@ -2179,9 +2179,9 @@
 			<Name locale="vi" description="Thể tích sản xuất khi khô">Thể tích sản xuất khi khô</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldVolumePerArea" domainTag="43" digits="5" decimal="1">
-			<RelatedDDI ddi="83" unitOfMeasure="ml1[m2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="83" unitOfMeasure="ml1[m2]-1" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="bu1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
-			<UnitOfMeasureDefault unitOfMeasure="bu1ha-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="l1ha-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utVolumePerArea"/>
 			<Name locale="en" description="Yield Volume Per Area">yield volume per area</Name>
@@ -2224,7 +2224,7 @@
 			<Name locale="vi" description="Thể tích sản xuất trên diện tích">thể tích sản xuất trên diện tích</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateMassActual" domainTag="45" digits="5" decimal="1">
-			<RelatedDDI ddi="7" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0"/>
+			<RelatedDDI ddi="7" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="kg1ha-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsImperial"/>
@@ -2278,7 +2278,7 @@
 			<Name locale="vi" description="Khối lượng theo tốc độ ứng dụng được đo">khối lượng theo tốc độ ứng dụng được đo</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateMassSetPoint" domainTag="46" digits="5" decimal="1">
-			<RelatedDDI ddi="6" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0"/>
+			<RelatedDDI ddi="6" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="kg1ha-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsImperial"/>
@@ -2332,7 +2332,7 @@
 			<Name locale="vi" description="Khối lượng theo tốc độ ứng dụng được ánh xạ">khối lượng theo tốc độ ứng dụng được ánh xạ</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppRateMassTarget" domainTag="47" digits="5" decimal="1">
-			<RelatedDDI ddi="8" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0"/>
+			<RelatedDDI ddi="8" unitOfMeasure="mg1[m2]-1" resolution="0.000001" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="kg1ha-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsImperial"/>
@@ -2485,7 +2485,7 @@
 			<Name locale="vi" description="Mục tiêu độ cao ứng dụng">mục tiêu độ cao ứng dụng</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTillageDepthTarget" domainTag="53" digits="3" decimal="1">
-			<RelatedDDI ddi="51" unitOfMeasure="mm" resolution="0.01" offset="0"/>
+			<RelatedDDI ddi="51" unitOfMeasure="mm" resolution="0.01" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="1" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="cm" digits="3" decimal="1" minValue="0" maxValue="254" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="3" decimal="1" minValue="0" maxValue="100" unitOfMeasureSystem="umsImperial"/>
@@ -2755,7 +2755,7 @@
 			<Name locale="vi" description="Điều khiển số hạt giống theo tỉ lệ reo hạt">Tỉ lệ reo hạt theo số hạt giống từ hình đại diện được gửi tới bộ điều khiển.</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSeedRateSeedsTarget" domainTag="61" digits="6" decimal="0">
-			<RelatedDDI ddi="11" unitOfMeasure="seeds1[m2]-1" resolution="0.001" offset="0"/>
+			<RelatedDDI ddi="11" unitOfMeasure="seeds1[m2]-1" resolution="0.001" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="seeds1ac-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="seeds1ha-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="seeds1ac-1" digits="6" decimal="0" minValue="0" maxValue="999999" unitOfMeasureSystem="umsImperial"/>
@@ -3024,7 +3024,7 @@
 			<Name locale="vi" description="Nhiệt độ đất ghi được.">Nhiệt độ đất</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTotalAreaCovered" domainTag="67" digits="6" decimal="2">
-			<RelatedDDI ddi="116" unitOfMeasure="m2" resolution="1" offset="0"/>
+			<RelatedDDI ddi="116" unitOfMeasure="m2" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="ac" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="ha" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="ac" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
@@ -3069,7 +3069,7 @@
 			<Name locale="vi" description="Tổng diện tích được che phủ.">Tổng diện tích được che phủ.</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrTotalQuantityAppliedMass" domainTag="68" digits="8" decimal="0">
-			<RelatedDDI ddi="81" unitOfMeasure="kg" resolution="1.00E+03" offset="0"/>
+			<RelatedDDI ddi="81" unitOfMeasure="kg" resolution="1.00E+03" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="9999999" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="kg" digits="8" decimal="0" minValue="0" maxValue="9999999" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="8" decimal="0" minValue="0" maxValue="9999999" unitOfMeasureSystem="umsImperial"/>
@@ -4474,7 +4474,7 @@
 		<NumericRepresentation domainID="vrTotalYieldVolume" domainTag="101" digits="7" decimal="2">
 			<RelatedDDI ddi="89" unitOfMeasure="l" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsEnglish"/>
-			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="2" minValue="0" maxValue="9999999.99" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utVolume"/>
 			<Name locale="en" description="Dry yield volume">Dry yield volume</Name>
@@ -4619,7 +4619,7 @@
 		<NumericRepresentation domainID="vrTotalYieldWetVolume" domainTag="104" digits="7" decimal="2">
 			<RelatedDDI ddi="89" unitOfMeasure="l" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="2" unitOfMeasureSystem="umsEnglish"/>
-			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="2" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="7" decimal="2" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="7" decimal="2" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utVolume"/>
 			<Name locale="en" description="Yield Volume">yield volume</Name>
@@ -4992,7 +4992,7 @@
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldVolumeMinimum" domainTag="112" digits="6" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
-			<UnitOfMeasureDefault unitOfMeasure="bu" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utVolume"/>
 			<Name locale="en" description="Dry yield volume">Dry yield volume</Name>
@@ -5036,7 +5036,7 @@
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldVolumeMaximum" domainTag="113" digits="6" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
-			<UnitOfMeasureDefault unitOfMeasure="bu" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utVolume"/>
 			<Name locale="en" description="Dry yield volume">Dry yield volume</Name>
@@ -5496,7 +5496,7 @@
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldWetVolumeMinimum" domainTag="123" digits="5" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="5" decimal="2" unitOfMeasureSystem="umsEnglish"/>
-			<UnitOfMeasureDefault unitOfMeasure="bu" digits="5" decimal="2" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="5" decimal="2" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="5" decimal="2" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utVolume"/>
 			<Name locale="en" description="Yield Volume">yield volume</Name>
@@ -5540,7 +5540,7 @@
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldWetVolumeMaximum" domainTag="124" digits="5" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="5" decimal="2" unitOfMeasureSystem="umsEnglish"/>
-			<UnitOfMeasureDefault unitOfMeasure="bu" digits="5" decimal="2" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="5" decimal="2" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu" digits="5" decimal="2" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utVolume"/>
 			<Name locale="en" description="Yield Volume">yield volume</Name>
@@ -5584,7 +5584,7 @@
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldWetVolumePerAreaMinimum" domainTag="125" digits="5" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="bu1ac-1" digits="5" decimal="2" unitOfMeasureSystem="umsEnglish"/>
-			<UnitOfMeasureDefault unitOfMeasure="bu1ha-1" digits="5" decimal="2" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="l1ha-1" digits="5" decimal="2" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu1ac-1" digits="5" decimal="2" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utVolumePerArea"/>
 			<Name locale="en" description="Wet yield volume per area">Wet yield volume per area</Name>
@@ -5628,7 +5628,7 @@
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldWetVolumePerAreaMaximum" domainTag="126" digits="5" decimal="2">
 			<UnitOfMeasureDefault unitOfMeasure="bu1ac-1" digits="5" decimal="2" unitOfMeasureSystem="umsEnglish"/>
-			<UnitOfMeasureDefault unitOfMeasure="bu1ha-1" digits="5" decimal="2" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="l1ha-1" digits="5" decimal="2" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="bu1ac-1" digits="5" decimal="2" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utVolumePerArea"/>
 			<Name locale="en" description="Wet yield volume per area">Wet yield volume per area</Name>
@@ -8222,7 +8222,7 @@
 			<Name locale="vi" description="Khối lượng sản xuất cỏ khô trên diện tích">Khối lượng sản xuất cỏ khô trên diện tích</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrModuleDiameter" domainTag="184" digits="2" decimal="1">
-			<RelatedDDI ddi="111" unitOfMeasure="mm" resolution="1.00E-03" offset="0"/>
+			<RelatedDDI ddi="112" unitOfMeasure="mm" resolution="1.00E-03" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="2" decimal="1" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="m" digits="2" decimal="1" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="ft" digits="2" decimal="1" unitOfMeasureSystem="umsImperial"/>
@@ -11072,6 +11072,7 @@
 			<Name locale="vi" description="Mức bình chứa theo Phần trăm">Mức bình chứa theo Phần trăm</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrEngineHours" domainTag="247" digits="3" decimal="0">
+			<RelatedDDI ddi="493" unitOfMeasure="hr" resolution="0.1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="hr" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="hr" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="hr" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsImperial"/>
@@ -11696,6 +11697,7 @@
 			<Name locale="vi" description="Tỉ lệ nảy mầm xác định khả năng tạo thành mầm của một hạt giống.">Tỉ lệ nảy mầm xác định 				khả năng tạo thành mầm của một hạt giống.</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainTag="261" domainID="vrProvidedAmountVolume" digits="4" decimal="2">
+      <RelatedDDI ddi="72" unitOfMeasure="ml" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
 			<UnitOfMeasureDefault unitOfMeasure="gal" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="l" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="igal" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsImperial"/>
@@ -11740,6 +11742,7 @@
 			<Name locale="vi" description="Xác định thể tích sản phẩm được cung cấp cho bình chứa có máy tính đổ bình.">Xác định thể tích sản phẩm được cung cấp cho bình chứa có máy tính đổ bình.</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainTag="262" domainID="vrProvidedAmountMass" digits="4" decimal="2">
+      <RelatedDDI ddi="75" unitOfMeasure="g" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="kg" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="lb" digits="4" decimal="2" minValue="0" maxValue="9999.99" unitOfMeasureSystem="umsImperial"/>
@@ -12446,7 +12449,7 @@
 			<Name locale="vi" description="Về bản chất, hoạt động sinh học của một loại thuốc trừ sâu mang tính hóa học hoặc sinh học, được xác định theo thành phần hoạt tính của nó, còn được gọi là chất hoạt tính.">Về bản chất, hoạt động sinh học của một loại thuốc trừ sâu mang tính hóa học hoặc sinh học, 			được xác định theo thành phần hoạt tính của nó, còn được gọi là chất hoạt tính.</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSeedSpacing" domainTag="286" digits="3" decimal="0">
-			<RelatedDDI ddi="421" unitOfMeasure="mm" resolution="1" offset="0"/>
+			<RelatedDDI ddi="421" unitOfMeasure="mm" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="0" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="0" minValue="0" maxValue="100" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="0" minValue="0" maxValue="100" unitOfMeasureSystem="umsImperial"/>
@@ -13218,13 +13221,13 @@
 			<Name locale="vi" description="Trọng lượng đo được bằng hệ thống cân">Trọng lượng đo được bằng hệ thống cân</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrBaleSize" domainTag="303" digits="5" decimal="0">
-			<RelatedDDI ddi="112" unitOfMeasure="mm" resolution="1" offset="0"/>
+			<RelatedDDI ddi="112" unitOfMeasure="mm" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="mm" digits="5" decimal="2" minValue="0" maxValue="2540000" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsImperial"/>
 			<UnitDimensionRef unitDimension="utDistance"/>
 			<Name locale="en" description="Actual bale size">Actual bale size as length for a square baler or diameter for a round baler</Name>
-			<Name locale="de" description="Ist-Ballengröße">Ist-Ballengröße, d. h. Länge bei Rechteckballenpresse bzw. Durchmesser bei Rundballenpresse</Name>
+			<Name locale="de" description="Ist-Ballengröße">Ist-Ballengröße, d. h. Länge bei Rechteckballenpresse bzw. Durchmesser bei Rundballenpresse</Name>
 			<Name locale="fr" description="Taille de balle réelle">Taille de balle réelle: longueur pour presse à balles carrées ou diamètre pour presse à balles cylindriques</Name>
 			<Name locale="da" description="Faktisk ballestørrelse">Faktisk ballestørrelse i længde fra firkantballepresser eller diameter fra rundballepresser</Name>
 			<Name locale="nl" description="Werkelijke baalgrootte">Werkelijke baalgrootte als lengte voor vierkante of diameter voor ronde balenmachine</Name>
@@ -13263,7 +13266,7 @@
 			<Name locale="vi" description="Kích thước bao thực">Kích thước bao thực là chiều dài đối với bao vuông hoặc đường kính đối với bao tròn</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrBaleTotal" domainTag="304" digits="8" decimal="0">
-			<RelatedDDI ddi="111" unitOfMeasure="mm" resolution="1" offset="0"/>
+			<RelatedDDI ddi="91" unitOfMeasure="mm" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="count" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="count" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="count" digits="8" decimal="0" minValue="0" maxValue="99999999" unitOfMeasureSystem="umsImperial"/>
@@ -13485,7 +13488,7 @@
 			<Name locale="vi" description="Delta T">Delta T</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrCountPerArea" domainTag="309" digits="8" decimal="2">
-			<RelatedDDI ddi="85" unitOfMeasure="count1[m2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="85" unitOfMeasure="count1[m2]-1" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="count1ac-1" digits="8" decimal="2" minValue="0" maxValue="99999999.99" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="count1ha-1" digits="8" decimal="2" minValue="0" maxValue="99999999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="count1ac-1" digits="8" decimal="2" minValue="0" maxValue="99999999.99" unitOfMeasureSystem="umsImperial"/>
@@ -13530,6 +13533,7 @@
 			<Name locale="vi" description="Tổng số trên diện tích">tổng số trên diện tích</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrConstituentCrudeProtein" domainTag="310" digits="3" decimal="2">
+			<RelatedDDI ddi="407" unitOfMeasure="prcnt" resolution="0.01" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsImperial"/>
@@ -16180,6 +16184,7 @@
 			<Name locale="vi" description="TillagePressureActual">tillage pressure Actual</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFuelProductivity" domainTag="370" digits="3" decimal="2">
+			<RelatedDDI ddi="150" unitOfMeasure="[mm3]1[m2]-1" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="l1ha-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="igal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsImperial"/>
@@ -16361,7 +16366,7 @@
 			<Name locale="en" description="Singulation">Singulation percentage</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrPlantingSkips" domainTag="378" digits="3" decimal="1">
-			<RelatedDDI ddi="57361" unitOfMeasure="prcnt" resolution="0.1" offset="0"/>
+			<RelatedDDI ddi="417" unitOfMeasure="ppm" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsImperial"/>
@@ -16369,7 +16374,7 @@
 			<Name locale="en" description="Skips">Skips percentage</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrPlantingDoubles" domainTag="379" digits="3" decimal="1">
-			<RelatedDDI ddi="57360" unitOfMeasure="prcnt" resolution="0.1" offset="0"/>
+			<RelatedDDI ddi="419" unitOfMeasure="ppm" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="1" unitOfMeasureSystem="umsImperial"/>
@@ -16377,7 +16382,7 @@
 			<Name locale="en" description="Doubles">Doubles percentage</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrDownForceApplied" domainTag="380" digits="4" decimal="1">
-			<RelatedDDI ddi="57357" unitOfMeasure="N" resolution="1" offset="0"/>
+			<RelatedDDI ddi="427" unitOfMeasure="N" resolution="1" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="lbf" digits="4" decimal="0" minValue="0" maxValue="2000" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="N" digits="4" decimal="0" minValue="0" maxValue="8896" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="lbf" digits="4" decimal="0" minValue="0" maxValue="2000" unitOfMeasureSystem="umsImperial"/>
@@ -17194,7 +17199,7 @@
 			<Name locale="en" description="Mechanical off delay time">Latency</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAppliedYieldLatency" domainTag="503" digits="2" decimal="3">
-			<RelatedDDI ddi="143" unitOfMeasure="ms" resolution="1" offset="0"/>
+			<RelatedDDI ddi="143" unitOfMeasure="ms" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="3" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="3" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="sec" digits="2" decimal="3" unitOfMeasureSystem="umsImperial"/>
@@ -17392,7 +17397,7 @@
 			<Name locale="vi" description="Section Control tuning speed">Section Control tuning speed</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrFanSpeedSetPoint" domainTag="514" digits="5" decimal="0">
-			<RelatedDDI ddi="254" unitOfMeasure="RPM" resolution="60" offset="0"/>
+			<RelatedDDI ddi="254" unitOfMeasure="RPM" resolution="60" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="RPM" digits="5" decimal="0" minValue="0" maxValue="64255" unitOfMeasureSystem="umsImperial"/>
@@ -17479,7 +17484,7 @@
 			<Name locale="en" description="Chaffer Position Actual">Chaffer Position Actual</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrSievePositionSetPoint" domainTag="526" digits="3" decimal="0">
-			<RelatedDDI ddi="242" unitOfMeasure="mm" resolution="1" offset="0"/>
+			<RelatedDDI ddi="242" unitOfMeasure="mm" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="1" decimal="0" minValue="-5" maxValue="5" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="mm" digits="3" decimal="0" minValue="-125" maxValue="125" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="in" digits="1" decimal="0" minValue="-5" maxValue="5" unitOfMeasureSystem="umsImperial"/>
@@ -17621,7 +17626,7 @@
 			<Name locale="en" description="Average Wet Yield Mass Per Area">Average Wet Yield Mass Per Area</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAvgYieldMassPerArea" domainTag="545" digits="6" decimal="2">
-			<RelatedDDI ddi="181" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0"/>
+			<RelatedDDI ddi="181" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="6" decimal="2" minValue="0" maxValue="149682.79" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="t1ha-1" digits="6" decimal="2" minValue="0" maxValue="167.77" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="lb1ac-1" digits="6" decimal="2" minValue="0" maxValue="149682.79" unitOfMeasureSystem="umsImperial"/>
@@ -17634,7 +17639,7 @@
 			<Name locale="en" description="Average Dry Yield Mass Per Area">Average Dry Yield Mass Per Area</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrAvgHarvestMoisture" domainTag="546" digits="3" decimal="2">
-			<RelatedDDI ddi="99" unitOfMeasure="ppm" resolution="0.001" offset="0"/>
+			<RelatedDDI ddi="262" unitOfMeasure="ppm" resolution="0.001" offset="0"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="100" unitOfMeasureSystem="umsImperial"/>
@@ -17733,6 +17738,138 @@
 			<Name locale="uk" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
 			<Name locale="ug" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
 			<Name locale="vi" description="Acumulated Harvest Wet Mass From Previous Point">Harvest wet mass</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrSolutionRateLiquidDistance" domainTag="554" digits="5" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="gal1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="l1hdm-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="igal1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.99" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utVolumePerDistance"/>
+			<Name locale="en" description="Solution rate of a liquid tank measured mix per distance">solution rate liquid distance</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrSolutionRateMassDistance" domainTag="555" digits="5" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="lb1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="kg1hdm-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="lb1hdyd-1" digits="5" decimal="2" minValue="0" maxValue="99999.999" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utMassPerDistance"/>
+			<Name locale="en" description="Solution rate of a mass tank measured mix per distance">solution rate mass distance</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrWorkingWidthTarget" domainTag="556" digits="5" decimal="3">
+			<RelatedDDI ddi="66" unitOfMeasure="mm" resolution="1" offset="0"/>
+			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="m" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utDistance"/>
+			<Name locale="en" description="Working Width Setpoint">Working Width Setpoint</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrWorkingWidthActual" domainTag="557" digits="5" decimal="3">
+			<RelatedDDI ddi="67" unitOfMeasure="mm" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
+			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="m" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utDistance"/>
+			<Name locale="en" description="Working Width Actual">Working Width Actual</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrWorkingWidthDefault" domainTag="558" digits="5" decimal="3">
+			<RelatedDDI ddi="68" unitOfMeasure="mm" resolution="1" offset="0" isDefaultRepresentationForDDI="true" />
+			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="m" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="ft" digits="5" decimal="3" minValue="0" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utDistance"/>
+			<Name locale="en" description="Working Width Default">Working Width Default</Name>
+    </NumericRepresentation>
+		<NumericRepresentation domainID="vrEnginePower" domainTag="559" digits="6" decimal="3">
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPower"/>
+			<Name locale="en" description="Engine Power">Engine Power</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrElectricalPowerSetPoint" domainTag="560" digits="6" decimal="3">
+			<RelatedDDI ddi="568" unitOfMeasure="kg" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPower"/>
+			<Name locale="en" description="Electrical Power Setpoint">Setpoint Electrical Power of Device Element</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrElectricalPowerActual" domainTag="561" digits="6" decimal="3">
+			<RelatedDDI ddi="569" unitOfMeasure="kg" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="W" digits="6" decimal="3" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPower"/>
+			<Name locale="en" description="Electrical Power Actual">Actual Electrical Power of Device Element</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrPTOLoadCurrentSpeed" domainTag="562" digits="3" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPercent"/>
+			<Name locale="en" description="PTO Load at Current Speed">The ratio of actual PTO (Power Take-Off) percent torque (indicated) to maximum indicated torque available at the current PTO speed.</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrTransmissionLoadCurrentSpeed" domainTag="563" digits="3" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPercent"/>
+			<Name locale="en" description="Transmission Load at Current Speed">The ratio of actual Transmission percent torque (indicated) to maximum indicated torque available at the current Transmission speed.</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrFuelTotalConsumptionEffective" domainTag="564" digits="5" decimal="0">
+			<RelatedDDI ddi="316" unitOfMeasure="ml" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="gal" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="igal" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utVolume"/>
+			<Name locale="en" description="Fuel Total Consumption Effective">Accumulated total fuel consumption in working position.</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrFuelTotalConsumptionIneffective" domainTag="565" digits="5" decimal="0">
+			<RelatedDDI ddi="317" unitOfMeasure="ml" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="l" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="gal" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="igal" digits="5" decimal="0" minValue="0" maxValue="99999" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utVolume"/>
+			<Name locale="en" description="Fuel Total Consumption Ineffective">Accumulated total fuel consumption in non working position.</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrSlipCurrentSpeed" domainTag="566" digits="3" decimal="2">
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="prcnt" digits="3" decimal="2" minValue="0" maxValue="250" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utPercent"/>
+			<Name locale="en" description="Slip at Current Speed">Slip at Current Speed</Name>
+		</NumericRepresentation>
+		<NumericRepresentation domainID="vrFuelProductivityTotal" domainTag="567" digits="3" decimal="2">
+			<RelatedDDI ddi="278" unitOfMeasure="[mm3]1[m2]-1" resolution="1" offset="0" isDefaultRepresentationForDDI="true"/>
+			<UnitOfMeasureDefault unitOfMeasure="gal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsEnglish"/>
+			<UnitOfMeasureDefault unitOfMeasure="l1ha-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsMetric"/>
+			<UnitOfMeasureDefault unitOfMeasure="igal1ac-1" digits="5" decimal="1" minValue="0" maxValue="99999.9" unitOfMeasureSystem="umsImperial"/>
+			<UnitDimensionRef unitDimension="utVolumePerArea"/>
+			<Name locale="en" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="de" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="fr" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="da" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="nl" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="es" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="it" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="pt" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="ru" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="hu" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="cs" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="sk" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="fi" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="sv" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="et" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="lv" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="lt" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="no" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="pl" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="bg" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="hr" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="ro" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="tr" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="el" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="is" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="sr" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
+			<Name locale="sl" description="Fuel Productivity Total">Entire Average Fuel Consumption per Area of the device lifetime.</Name>
 		</NumericRepresentation>
 		<EnumeratedRepresentation domainID="dtApplicationMethod" domainTag="1001" attributeID="196" domainIDShort="Applicat">
 			<Name locale="en" description="ApplicationMethod">ApplicationMethod</Name>
@@ -21297,7 +21434,7 @@
 				<Name locale="ug" description="كۆرسەتمە - باشقۇرۇشتىن ھالقىغان">باشقۇرۇشتىن ھالقىغان</Name>
 				<Name locale="vi" description="Hình đại diện - Đã ghi đè">Đã ghi đè</Name>
 			</EnumeratedMember>
-			<RelatedDDI ddi="158"/>
+			<RelatedDDI ddi="158" isDefaultRepresentationForDDI="true" />
 		</EnumeratedRepresentation>
 		<EnumeratedRepresentation domainID="dtLoadType" domainTag="1015" domainIDShort="LoadType">
 			<Name locale="en" description="Harvest Load Type">Harvest Load Type</Name>
@@ -27670,6 +27807,18 @@
 			<EnumeratedMember domainID="dtiFacilityTypeOffice" domainTag="6103" refID="3">
 				<Name locale="en" description="Office">Office</Name>
 			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeWeatherStation" domainTag="6125" refID="4">
+				<Name locale="en" description="Weather Station">Weather Station</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeObservationSite" domainTag="6126" refID="5">
+				<Name locale="en" description="Observation Site">Observation Site</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeInstrumentShelter" domainTag="6127" refID="6">
+				<Name locale="en" description="Instrument Shelter">Instrument Shelter</Name>
+			</EnumeratedMember>
+			<EnumeratedMember domainID="dtiFacilityTypeSamplingLocation" domainTag="6128" refID="7">
+				<Name locale="en" description="Sampling Location">Sampling Location</Name>
+			</EnumeratedMember>
 		</EnumeratedRepresentation>
 		<EnumeratedRepresentation domainID="dtPersonRole" domainTag="1508" domainIDShort="Roles">
 			<Name locale="en" description="Person Role">Person Role</Name>
@@ -27737,5 +27886,53 @@
 				<Name locale="en" description="Transporter">Transporter</Name>
 			</EnumeratedMember>
 		</EnumeratedRepresentation>
-	</Representations>
+    <EnumeratedRepresentation domainID="dtCropNutritionIngredient" domainTag="1509" domainIDShort="Ingredients">
+      <EnumeratedMember domainID="dtiN" domainTag="6129" refID="1">
+        <Name locale="en" description="Nitrogen">Nitrogen</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiP" domainTag="6130" refID="2">
+        <Name locale="en" description="Phosphorus">Phosphorus</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiK" domainTag="6131" refID="3">
+        <Name locale="en" description="Potassium">Potassium</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiCa" domainTag="6132" refID="4">
+        <Name locale="en" description="Calcium">Calcium</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiMg" domainTag="6133" refID="5">
+        <Name locale="en" description="Magnesium">Magnesium</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiS" domainTag="6134" refID="6">
+        <Name locale="en" description="Sulphur">Sulphur</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiB" domainTag="6135" refID="7">
+        <Name locale="en" description="Boron">Boron</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiCl" domainTag="6136" refID="8">
+        <Name locale="en" description="Chlorine">Chlorine</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiCu" domainTag="6137" refID="9">
+        <Name locale="en" description="Copper">Copper</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiFe" domainTag="6138" refID="10">
+        <Name locale="en" description="Iron">Iron</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiMn" domainTag="6139" refID="11">
+        <Name locale="en" description="Manganese">Manganese</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiMo" domainTag="6140" refID="12">
+        <Name locale="en" description="Molybdenum">Molybdenum</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiZn" domainTag="6141" refID="13">
+        <Name locale="en" description="Zinc">Zinc</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiFulvicAcid" domainTag="6142" refID="14">
+        <Name locale="en" description="FulvicAcid">FulvicAcid</Name>
+      </EnumeratedMember>
+      <EnumeratedMember domainID="dtiHumicAcid" domainTag="6143" refID="15">
+        <Name locale="en" description="HumicAcid">HumicAcid</Name>
+      </EnumeratedMember>
+    </EnumeratedRepresentation>
+
+  </Representations>
 </RepresentationSystem>
