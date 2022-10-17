@@ -2017,6 +2017,46 @@
 					<Name locale="ug" label="مېگاگرام" plural="مېگاگرام">مېگاگرام</Name>
 					<Name locale="vi" label="Mg" plural="megagram">megagram</Name>
 				</UnitOfMeasure>
+        <UnitOfMeasure domainID="q" scale="1.00E+05" baseOffset="0">
+					<Name locale="en" label="q" plural="hundred weight">metric quintal</Name>
+					<Name locale="de" label="q" plural="Hundredweight">quintal</Name>
+					<Name locale="fr" label="q" plural="quintal">quintal</Name>
+					<Name locale="da" label="q" plural="hundredweight">quintal</Name>
+					<Name locale="nl" label="q" plural="hundredweight">quintal</Name>
+					<Name locale="es" label="q" plural="hundred weight">quintal</Name>
+					<Name locale="it" label="q" plural="hundredweight">quintal</Name>
+					<Name locale="pt" label="q" plural="quintal">quintal</Name>
+					<Name locale="ru" label="ц" plural="центнер">метрический центнер</Name>
+					<Name locale="hu" label="q" plural="hundredweight">quintal</Name>
+					<Name locale="cs" label="q" plural="cent">quintal</Name>
+					<Name locale="sk" label="q" plural="cent">quintal</Name>
+					<Name locale="fi" label="q" plural="sentneri">quintal</Name>
+					<Name locale="sv" label="q" plural="hundred weight">quintal</Name>
+					<Name locale="et" label="q" plural="tsentner">tsentner</Name>
+					<Name locale="lv" label="q" plural="centners">centners</Name>
+					<Name locale="lt" label="q" plural="centneris">centneris</Name>
+					<Name locale="no" label="q" plural="hundrevekt">hundrevekt</Name>
+					<Name locale="pl" label="q" plural="cetnar">cetnar</Name>
+					<Name locale="bg" label="ц" plural="центнер">центнер</Name>
+					<Name locale="hr" label="q" plural="kvintal">kvintal</Name>
+					<Name locale="ro" label="q" plural="chintal">chintal</Name>
+					<Name locale="tr" label="q" plural="yüz libre">yüz libre</Name>
+					<Name locale="el" label="q." plural="στατήρας">στατήρας</Name>
+					<Name locale="is" label="q" plural="vætt">vætt</Name>
+					<Name locale="sr" label="q" plural="centa">centa</Name>
+					<Name locale="sl" label="q" plural="stot">stot</Name>
+					<Name locale="zh" label="q" plural="英担">英担</Name>
+					<Name locale="ar" label="q" plural="وزن مائة">وزن مائة</Name>
+					<Name locale="he" label="q" plural="מאה">מאה</Name>
+					<Name locale="ja" label="q" plural="ハンドレッドウェイト ">ハンドレッドウェイト </Name>
+					<Name locale="kk" label="ц" plural="центнер">центнер</Name>
+					<Name locale="ko" label="q" plural="100웨이트">100웨이트</Name>
+					<Name locale="mk" label="q" plural="цента">цента</Name>
+					<Name locale="th" label="q" plural="ฮันเดรดเวท">ฮันเดรดเวท</Name>
+					<Name locale="uk" label="ц" plural="центнер">центнер</Name>
+					<Name locale="ug" label="q" plural="يۈز ئېغىرلىق">يۈز ئېغىرلىق</Name>
+					<Name locale="vi" label="q" plural="tạ">tạ</Name>
+				</UnitOfMeasure>
 				<UnitOfMeasure domainID="kg" scale="1.00E+03" baseOffset="0">
 					<Name locale="en" label="kg" plural="kilograms">kilogram</Name>
 					<Name locale="de" label="kg" plural="Kilogramm">Kilogramm</Name>
@@ -9011,6 +9051,7 @@
 			<UnitOfMeasureRef unitOfMeasureRef="Tg"/>
 			<UnitOfMeasureRef unitOfMeasureRef="Gg"/>
 			<UnitOfMeasureRef unitOfMeasureRef="Mg"/>
+      <UnitOfMeasureRef unitOfMeasureRef="q"/>
 			<UnitOfMeasureRef unitOfMeasureRef="kg"/>
 			<UnitOfMeasureRef unitOfMeasureRef="hg"/>
 			<UnitOfMeasureRef unitOfMeasureRef="dag"/>
