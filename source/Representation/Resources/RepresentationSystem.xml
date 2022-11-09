@@ -8172,7 +8172,7 @@
 			<Name locale="vi" description="Khối lượng sản xuất cỏ trên diện tích">Khối lượng sản xuất cỏ trên diện tích</Name>
 		</NumericRepresentation>
 		<NumericRepresentation domainID="vrYieldMassFrgPerArea" domainTag="183" digits="6" decimal="2">
-      <RelatedDDI ddi="84" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0"/>
+      <RelatedDDI ddi="181" unitOfMeasure="mg1[m2]-1" resolution="1" offset="0"/>
       <UnitOfMeasureDefault unitOfMeasure="ton1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsEnglish"/>
 			<UnitOfMeasureDefault unitOfMeasure="t1ha-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsMetric"/>
 			<UnitOfMeasureDefault unitOfMeasure="ton1ac-1" digits="6" decimal="2" minValue="0" maxValue="999999.99" unitOfMeasureSystem="umsImperial"/>
