@@ -8548,6 +8548,45 @@
 					<Name locale="ug" label="J" plural="Joules">Joule</Name>
 					<Name locale="vi" label="J" plural="Joules">Joule</Name>
 				</UnitOfMeasure>
+				<UnitOfMeasure domainID="MJ" scale="1.00E+06" baseOffset="0">
+					<Name locale="en" label="MJ" plural="megajoule">megajoule</Name>
+					<Name locale="de" label="MJ" plural="Megajoule">Megajoule</Name>
+					<Name locale="fr" label="MJ" plural="mégajoule">mégajoule</Name>
+					<Name locale="da" label="MJ" plural="megajoule">megajoule</Name>
+					<Name locale="nl" label="MJ" plural="megajoule">megajoule</Name>
+					<Name locale="es" label="MJ" plural="megajoule">megajoule</Name>
+					<Name locale="it" label="MJ" plural="megajoule">megajoule</Name>
+					<Name locale="pt" label="MJ" plural="megajoule">megajoule</Name>
+					<Name locale="ru" label="MJ" plural="megajoule">megajoule</Name>
+					<Name locale="hu" label="MJ" plural="megajoule">megajoule</Name>
+					<Name locale="cs" label="MJ" plural="megajoul">megajoul</Name>
+					<Name locale="sk" label="MJ" plural="megajoule">megajoule</Name>
+					<Name locale="fi" label="MJ" plural="megajoule">megajoule</Name>
+					<Name locale="sv" label="MJ" plural="megajoule">megajoule</Name>
+					<Name locale="et" label="MJ" plural="megadžaul">megadžaul</Name>
+					<Name locale="lv" label="MJ" plural="megadžouls">megadžouls</Name>
+					<Name locale="lt" label="MJ" plural="megadžaulis">megadžaulis</Name>
+					<Name locale="no" label="MJ" plural="megajoule">megajoule</Name>
+					<Name locale="pl" label="MJ" plural="megadżul">megadżul</Name>
+					<Name locale="bg" label="MJ" plural="мегаджаул">мегаджаул</Name>
+					<Name locale="hr" label="MJ" plural="megadžul">megadžul</Name>
+					<Name locale="ro" label="MJ" plural="megajoule">megajoule</Name>
+					<Name locale="tr" label="MJ" plural="megajul">megajul</Name>
+					<Name locale="el" label="MJ" plural="megajoule">megajoule</Name>
+					<Name locale="is" label="MJ" plural="megajúl">megajúl</Name>
+					<Name locale="sr" label="MJ" plural="megadžul">megadžul</Name>
+					<Name locale="sl" label="MJ" plural="megadžul">megadžul</Name>
+					<Name locale="zh" label="MJ" plural="兆焦耳">兆焦耳</Name>
+					<Name locale="ar" label="ميجا جول" plural="ميجا جول">ميجا جول</Name>
+					<Name locale="he" label="MJ" plural="מיליון ג&apos;אול">מיליון ג&apos;אול</Name>
+					<Name locale="ja" label="MJ" plural="メガジュール">メガジュール</Name>
+					<Name locale="kk" label="мДж" plural="мегаджоуль">мегаджоуль</Name>
+					<Name locale="ko" label="MJ" plural="메가줄">메가줄</Name>
+					<Name locale="mk" label="MJ" plural="мегаџул">мегаџул</Name>
+					<Name locale="th" label="MJ" plural="เมกะจูล">เมกะจูล</Name>
+					<Name locale="uk" label="мДж" plural="мегаджоуль">мегаджоуль</Name>
+					<Name locale="vi" label="MJ" plural="Mega Jun">Mega Jun</Name>
+				</UnitOfMeasure>
 			</UnitDimensionRepresentation>
 			<CompositeUnitDimensionRepresentation domainID="urForceDistance" scale="1" baseOffset="0">
 				<UnitDimensionRef UnitDimensionRef="utForce" baseUnitOfMeasureRef="N" power="1"/>
@@ -9109,6 +9148,7 @@
       <UnitOfMeasureRef unitOfMeasureRef="Nm"/>
       <UnitOfMeasureRef unitOfMeasureRef="kW"/>
       <UnitOfMeasureRef unitOfMeasureRef="gear"/>
+	  		<UnitOfMeasureRef unitOfMeasureRef="MJ"/>
 		</UnitOfMeasureSystem>
 		<UnitOfMeasureSystem domainID="umsImperial">
 			<Name locale="en" label="us">Imperial</Name>
