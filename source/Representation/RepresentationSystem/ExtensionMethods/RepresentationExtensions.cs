@@ -23,15 +23,18 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.ExtensionMethods
           {
               Code = representation.DomainId,
               Description = representation.Description,
+              CodeSource = RepresentationCodeSourceEnum.ADAPT
           };
-          numericRepresentation.Id.UniqueIds.Add(new UniqueId
+          if (representation.Ddi.HasValue)
           {
-              Id = representation.DomainId,
-              IdType = IdTypeEnum.LongInt,
-              Source = "http://dictionary.isobus.net/isobus/",
-              SourceType = IdSourceTypeEnum.URI
-          });
-
+            numericRepresentation.Id.UniqueIds.Add(new UniqueId
+            {
+               Id = representation.Ddi.Value.ToString(),
+               IdType = IdTypeEnum.LongInt,
+               Source = "http://dictionary.isobus.net/isobus/",
+               SourceType = IdSourceTypeEnum.URI
+            });
+          }
           return numericRepresentation;
       }
 
@@ -41,15 +44,19 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.ExtensionMethods
           {
               Code = representation.DomainId,
               Description = representation.Description,
+              CodeSource = RepresentationCodeSourceEnum.ADAPT,
               EnumeratedMembers = representation.EnumerationMembers.Select(m => m.ToModelEnumMember()).ToList(),
           };
-          enumeratedRepresentation.Id.UniqueIds.Add(new UniqueId
+          if (representation.Ddi.HasValue)
           {
-              Id = representation.DomainId,
-              IdType = IdTypeEnum.LongInt,
-              Source = "http://dictionary.isobus.net/isobus/",
-              SourceType = IdSourceTypeEnum.URI
-          });
+            enumeratedRepresentation.Id.UniqueIds.Add(new UniqueId
+            {
+               Id = representation.Ddi.Value.ToString(),
+               IdType = IdTypeEnum.LongInt,
+               Source = "http://dictionary.isobus.net/isobus/",
+               SourceType = IdSourceTypeEnum.URI
+            });
+          }
           return enumeratedRepresentation;
       }
 
