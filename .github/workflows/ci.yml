@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup .NET '5.0'
-        uses: actions/setup-dotnet@v1.7.2
+      - uses: actions/checkout@v4.1.6
+      - name: Setup .NET '8.0'
+        uses: actions/setup-dotnet@v4.0.0
         with:
-          dotnet-version: '5.0.x'
+          dotnet-version: '8.0.x'
       - name: Install dependencies
         run: dotnet restore
       - name: Application Data Model Test
