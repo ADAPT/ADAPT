@@ -8,6 +8,7 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Abhinav Mir - added Kelvin and milliKelvin conversion tests
   *******************************************************************************/
 
 using System;
@@ -131,6 +132,46 @@ namespace AgGateway.ADAPT.RepresentationTest.UnitSystem
 
             var result = _unitOfMeasureConverter.Convert(kilometerPerHour, milesPerHour, 0.055);
             Assert.AreEqual(0.034175415573053369, result);
+        }
+
+        [Test]
+        public void GivenFahrenheitAndKelvinWhenConvertThenValueIsConverted()
+        {
+            var sourceUom = InternalUnitSystemManager.Instance.UnitOfMeasures["F"];
+            var targetUom = InternalUnitSystemManager.Instance.UnitOfMeasures["K"];
+
+            Assert.AreEqual(310.15, _unitOfMeasureConverter.Convert(sourceUom, targetUom, 98.6), Epsilon);
+            Assert.AreEqual(255.372, _unitOfMeasureConverter.Convert(sourceUom, targetUom, 0), Epsilon);
+        }
+
+        [Test]
+        public void GivenFahrenheitAndMilliKelvinWhenConvertThenValueIsConverted()
+        {
+            var sourceUom = InternalUnitSystemManager.Instance.UnitOfMeasures["F"];
+            var targetUom = InternalUnitSystemManager.Instance.UnitOfMeasures["mK"];
+
+            Assert.AreEqual(310150, _unitOfMeasureConverter.Convert(sourceUom, targetUom, 98.6), Epsilon);
+            Assert.AreEqual(255372.222, _unitOfMeasureConverter.Convert(sourceUom, targetUom, 0), Epsilon);
+        }
+
+        [Test]
+        public void GivenKelvinAndMilliKelvinWhenConvertThenValueIsScaledByOneThousand()
+        {
+            var kelvin = InternalUnitSystemManager.Instance.UnitOfMeasures["K"];
+            var milliKelvin = InternalUnitSystemManager.Instance.UnitOfMeasures["mK"];
+
+            Assert.AreEqual(300000, _unitOfMeasureConverter.Convert(kelvin, milliKelvin, 300), Epsilon);
+            Assert.AreEqual(300, _unitOfMeasureConverter.Convert(milliKelvin, kelvin, 300000), Epsilon);
+        }
+
+        [Test]
+        public void GivenMilliKelvinAndCelsiusWhenConvertThenValueIsConverted()
+        {
+            var sourceUom = InternalUnitSystemManager.Instance.UnitOfMeasures["mK"];
+            var targetUom = InternalUnitSystemManager.Instance.UnitOfMeasures["C"];
+
+            Assert.AreEqual(15, _unitOfMeasureConverter.Convert(sourceUom, targetUom, 288150), Epsilon);
+            Assert.AreEqual(0, _unitOfMeasureConverter.Convert(sourceUom, targetUom, 273150), Epsilon);
         }
     }
 }
