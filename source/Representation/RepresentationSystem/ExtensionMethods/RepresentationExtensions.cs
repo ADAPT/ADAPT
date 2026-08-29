@@ -8,7 +8,9 @@
   *
   * Contributors:
   *    Tarak Reddy, Tim Shearouse - initial API and implementation
+  *    Abhinav Mir - set Dimension from the unit dimension of the representation
   *******************************************************************************/
+using System;
 using System.Linq;
 using AgGateway.ADAPT.ApplicationDataModel.Common;
 using AgGateway.ADAPT.ApplicationDataModel.Representations;
@@ -25,6 +27,11 @@ namespace AgGateway.ADAPT.Representation.RepresentationSystem.ExtensionMethods
               Description = representation.Description,
               CodeSource = RepresentationCodeSourceEnum.ADAPT
           };
+          if (representation.UnitDimension != null)
+          {
+             var unitDimensionId = representation.UnitDimension.DomainID.TrimStart(new[] { 'u', 't' });
+             numericRepresentation.Dimension = (UnitOfMeasureDimensionEnum) Enum.Parse(typeof (UnitOfMeasureDimensionEnum), unitDimensionId);
+          }
           if (representation.Ddi.HasValue)
           {
             numericRepresentation.Id.UniqueIds.Add(new UniqueId
