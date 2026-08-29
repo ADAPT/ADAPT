@@ -1487,7 +1487,7 @@
           <Name locale="ug" label="كېلىۋىن" plural="كېلىۋىن">كېلىۋىن</Name>
           <Name locale="vi" label="K" plural="kelvin">kelvin</Name>
         </UnitOfMeasure>
-        <UnitOfMeasure domainID="mK" scale="0.001" baseOffset="-0.27315">
+        <UnitOfMeasure domainID="mK" scale="0.001" baseOffset="-273.15">
           <Name locale="en" label="mK" plural="milliKelvin">milliKelvin</Name>
         </UnitOfMeasure>
       </UnitDimensionRepresentation>
